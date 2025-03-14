@@ -7,7 +7,7 @@ cdv2025:
           path: /cdv2025/syllabus
     - title: Fundamentals
       items:
-        - title: 'Day 1: Introduction'
+        - title: 'Day 1: Introduction to Computer Science'
           path: /cdv2025/day-1
     - title: Collection and Encoding
       items: []

@@ -1,5 +1,5 @@
 ---
-title: "Day 1: Introduction"
+title: "Day 1: Introduction to Computer Science"
 date: "2023-09-05"
 description: "First day of class covering course overview and introduction to programming concepts."
 published: true
@@ -25,9 +25,15 @@ assignments:
 
 ## Overview
 
-Welcome to cdv2025: Introduction to Computer Science! In this first class, we'll cover the course syllabus, expectations, and introduce basic programming concepts.
+Welcome to **cdv2025: Introduction to Computer Science**! In this first class, we'll cover the course syllabus, expectations, and introduce basic programming concepts.
+
+<div class="important">
+  <p><strong>Important:</strong> Please make sure to complete the environment setup before the next class. This will ensure you can follow along with the coding examples.</p>
+</div>
 
 ## Key Topics
+
+Our first session will introduce fundamental concepts that will form the foundation for the entire course:
 
 - Course overview and expectations
 - What is Computer Science?
@@ -36,20 +42,78 @@ Welcome to cdv2025: Introduction to Computer Science! In this first class, we'll
 - Basic programming concepts
 - Setting up your development environment
 
-## Code Example
+## What is Computer Science?
 
-Here's a simple example of a "Hello, World" program in Python:
+Computer Science is the study of computation, automation, and information. Computers themselves are just tools; the real essence of CS is problem-solving.
 
-```python
-# This is a comment
-print("Hello, World!")
-```
+<div class="note">
+  <p><strong>Note:</strong> Computer Science is not just about programming. It encompasses a wide range of topics including algorithms, data structures, computer architecture, artificial intelligence, and more.</p>
+</div>
 
-## Lecture Notes
+### The Computational Thinking Process
 
-Computer Science is the study of computation, automation, and information. Computers themselves are just tools; the real essence of CS is problem-solving. 
+Computational thinking involves breaking down complex problems into smaller, more manageable parts:
+
+1. **Decomposition**: Breaking a complex problem into smaller, more manageable parts
+2. **Pattern Recognition**: Looking for similarities among problems
+3. **Abstraction**: Focusing on the important information only, ignoring irrelevant details
+4. **Algorithms**: Developing step-by-step solutions
+
+## Introduction to Algorithms
 
 Algorithms are step-by-step procedures for solving problems. We'll be studying various algorithms throughout this course and understanding their efficiency.
+
+<details>
+  <summary>What makes a good algorithm?</summary>
+  <p>A good algorithm should be:</p>
+  <ul>
+    <li><strong>Correct</strong>: It should solve the problem it was designed to solve</li>
+    <li><strong>Efficient</strong>: It should use computational resources wisely</li>
+    <li><strong>Clear</strong>: It should be easy to understand and implement</li>
+    <li><strong>Finite</strong>: It should terminate after a finite number of steps</li>
+  </ul>
+</details>
+
+### Example Algorithm: Finding the Maximum
+
+Here's a simple algorithm to find the maximum value in a list:
+
+1. Start with the first number as the current maximum
+2. Compare each number in the list to the current maximum
+3. If a number is larger than the current maximum, update the maximum
+4. Return the maximum value after checking all numbers
+
+## Code Example
+
+Here's a simple example of a "Hello, World" program in Python, the programming language we'll be using throughout this course:
+
+```python
+# This is a comment - it's ignored by the computer
+print("Hello, World!")  # This prints text to the screen
+```
+
+<div class="warning">
+  <p><strong>Warning:</strong> Case matters in programming! <code>Print()</code> is not the same as <code>print()</code>.</p>
+</div>
+
+## Programming Concepts
+
+Let's briefly look at some basic programming concepts we'll explore in more depth:
+
+| Concept | Description | Example |
+|---------|-------------|---------|
+| Variables | Named storage locations | `name = "Alice"` |
+| Data Types | Categories of data | `numbers, strings, booleans` |
+| Control Flow | Decision making and loops | `if, else, for, while` |
+| Functions | Reusable code blocks | `def greet(name): ...` |
+
+## Setting Up Your Environment
+
+For this course, you'll need to install:
+
+1. **Python 3.x**: The programming language we'll use
+2. **Visual Studio Code**: A code editor with helpful features
+3. **Git**: Version control for tracking changes
 
 ## Further Reading
 
