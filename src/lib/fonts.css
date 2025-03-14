@@ -1,0 +1,42 @@
+
+@import '@fontsource/roboto-condensed/300.css';
+@import '@fontsource/roboto-condensed/400.css';
+@import '@fontsource/roboto-condensed/700.css';
+
+
+@import '@fontsource-variable/archivo';
+
+@font-face {
+    font-family: 'LibreCaslonCondensed';
+    src: url('./fonts/LibreCaslonCondensed-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'LibreCaslonCondensed';
+    src: url('./fonts/LibreCaslonCondensed-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+     font-display: swap;
+  }
+  
+
+  
+  @font-face {
+    font-family: 'LibreCaslonCondensed';
+    src: url('./fonts/LibreCaslonCondensed-Medium.woff2') format('woff2');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+     font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'LibreCaslonCondensed';
+    src: url('./fonts/LibreCaslonCondensed-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+     font-display: swap;
+  }
+  
