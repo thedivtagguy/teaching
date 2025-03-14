@@ -6,42 +6,17 @@
   <title>Submit Data Entry</title>
 </svelte:head>
 
-<div class="container">
-  <header>
-    <h1>DataViz Course</h1>
-    <p>Submit your entry using the form below</p>
+<div class="max-w-[800px] mx-auto p-8">
+  <header class="mb-8 text-center">
+    <h1 class="text-blue mb-2 font-libre-caslon text-4xl font-bold">DataViz Course</h1>
+    <p class="font-archivo">Submit your entry using the form below</p>
   </header>
   
   <main>
     <EntryForm />
   </main>
   
-  <footer>
+  <footer class="mt-12 text-center text-base-300 text-sm font-archivo">
     <p>Data is stored in a Google Spreadsheet using the schema-based configuration</p>
   </footer>
-</div>
-
-<style>
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  header {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #2a5885;
-    margin-bottom: 0.5rem;
-  }
-  
-  footer {
-    margin-top: 3rem;
-    text-align: center;
-    color: #666;
-    font-size: 0.9rem;
-  }
-</style> 
+</div> 
