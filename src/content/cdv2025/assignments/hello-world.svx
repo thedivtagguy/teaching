@@ -1,0 +1,78 @@
+---
+title: "First Program: Hello World"
+due: "2023-09-12"
+description: "Write your first program in Python to display text on the screen."
+points: 10
+published: true
+---
+
+# Hello World Assignment
+
+In this assignment, you will write your first program in Python. The goal is to create a simple program that displays the text "Hello, World!" on the screen.
+
+## Learning Objectives
+
+- Understand how to write and run a basic Python program
+- Learn about the print function in Python
+- Understand how to use comments in your code
+
+## Assignment Requirements
+
+1. Create a new file named `hello_world.py`
+2. Write a Python program that prints "Hello, World!" to the console
+3. Add comments to explain what your code is doing
+4. Include at least one additional print statement with a different message
+
+### Example Solution
+
+Here's an example of what your program might look like:
+
+```python
+# This is my first Python program
+# It will print "Hello, World!" to the console
+
+# Print the traditional greeting
+print("Hello, World!")
+
+# Print an additional message
+print("I'm learning Python programming!")
+```
+
+## Submission Guidelines
+
+To submit this assignment:
+
+1. Save your `hello_world.py` file
+2. Upload the file to the course submission system
+3. Include a brief reflection (1-2 sentences) about what you learned from this assignment
+
+## Grading Criteria
+
+| Criteria | Points |
+|----------|--------|
+| Program runs without errors | 3 |
+| Displays "Hello, World!" | 2 |
+| Includes additional print statement | 2 |
+| Proper use of comments | 2 |
+| Reflection submitted | 1 |
+| **Total** | **10** |
+
+## Helpful Tips
+
+- Make sure to check your spelling and capitalization
+- Python is case-sensitive, so `print()` is different from `Print()`
+- Save your file with the `.py` extension
+- Run your program using the command `python hello_world.py`
+
+<div class="note">
+  <p><strong>Note:</strong> This assignment is designed to be straightforward. Don't worry if it seems too simple - everyone starts somewhere!</p>
+</div>
+
+## Additional Resources
+
+- [Python Documentation - print function](https://docs.python.org/3/library/functions.html#print)
+- [Python Comments Tutorial](https://www.w3schools.com/python/python_comments.asp)
+
+---
+
+Good luck with your first Python program! Remember, programming is learned by doing. Don't be afraid to experiment with different messages and see what happens. 

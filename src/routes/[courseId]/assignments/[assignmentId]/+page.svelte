@@ -1,0 +1,156 @@
+<script lang="ts">
+  import { page } from '$app/stores';
+  import { onMount } from 'svelte';
+  import MDLayout from '$lib/components/MDLayout.svelte';
+  import { Calendar, ArrowLeft, CheckCircle } from 'lucide-svelte';
+  
+  // Get course ID and assignment ID from URL params
+  $: courseId = $page.params.courseId;
+  $: assignmentId = $page.params.assignmentId;
+  
+  let assignment: any = null;
+  let error: string | null = null;
+  
+  // Use a reactive statement to load assignment content
+  $: {
+    const loadAssignment = async () => {
+      // Reset content and error when parameters change
+      assignment = null;
+      error = null;
+      
+      try {
+        // Dynamically import the assignment based on course and assignment ID
+        const module = await import(`../../../../content/${courseId}/assignments/${assignmentId}.svx`);
+        assignment = module.default;
+      } catch (err) {
+        console.error(err);
+        error = `Could not load assignment: ${assignmentId}`;
+      }
+    };
+    
+    // Call the function to load assignment
+    loadAssignment();
+  }
+  
+  // Track completion status (this would typically come from a database)
+  let isCompleted = false;
+  let isSubmitted = false;
+  
+  function markAsCompleted() {
+    isCompleted = true;
+    // In a real app, you'd save this to a database
+  }
+  
+  function submitAssignment() {
+    isSubmitted = true;
+    // In a real app, this would trigger an assignment submission
+  }
+</script>
+
+<svelte:head>
+  {#if assignment?.metadata?.title}
+    <title>{assignment.metadata.title} | {courseId.toUpperCase()}</title>
+  {:else}
+    <title>Assignment | {courseId.toUpperCase()}</title>
+  {/if}
+</svelte:head>
+
+<div class="max-w-3xl mx-auto">
+  <!-- Back to course link -->
+  <div class="mb-6">
+    <a href="/{courseId}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+      <ArrowLeft class="w-4 h-4 mr-2" />
+      <span class="font-archivo">Back to course</span>
+    </a>
+  </div>
+  
+  {#if error}
+    <div class="bg-red-50 border border-red-200 text-red-800 rounded-lg p-6 mb-6 shadow-sm">
+      <p class="font-archivo text-lg">{error}</p>
+    </div>
+  {:else if assignment}
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+      <!-- Assignment header -->
+      <div class="border-b border-gray-100 bg-gradient-to-r from-blue-50 to-green-50 p-6">
+        <h1 class="text-2xl font-libre-caslon mb-3">
+          {assignment.metadata?.title || 'Assignment'}
+        </h1>
+        
+        <div class="flex flex-wrap gap-4 text-sm">
+          {#if assignment.metadata?.due}
+            <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border border-red-100">
+              <Calendar class="w-4 h-4 mr-2 text-red-500" />
+              <span class="font-archivo text-red-600">Due: {assignment.metadata.due}</span>
+            </div>
+          {/if}
+          
+          {#if assignment.metadata?.points}
+            <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border border-blue-100">
+              <span class="font-archivo text-blue-600">Points: {assignment.metadata.points}</span>
+            </div>
+          {/if}
+          
+          {#if isCompleted}
+            <div class="flex items-center bg-green-100 px-3 py-1 rounded-full shadow-sm border border-green-200">
+              <CheckCircle class="w-4 h-4 mr-1 text-green-600" />
+              <span class="font-archivo text-green-700">Completed</span>
+            </div>
+          {/if}
+        </div>
+      </div>
+      
+      <!-- Assignment description -->
+      <div class="p-6">
+        {#if assignment.metadata?.description}
+          <div class="mb-6 font-archivo text-gray-700 text-lg border-l-4 border-blue-200 pl-4 py-2 bg-blue-50 rounded-r-md">
+            {assignment.metadata.description}
+          </div>
+        {/if}
+        
+        <!-- Main assignment content -->
+        <MDLayout>
+          <svelte:component this={assignment} />
+        </MDLayout>
+      </div>
+      
+      <!-- Assignment submission/actions -->
+      <div class="p-6 bg-gray-50 border-t border-gray-100">
+        <div class="flex flex-wrap gap-4 justify-between items-center">
+          <div>
+            {#if !isCompleted}
+              <button 
+                on:click={markAsCompleted}
+                class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded font-archivo transition-colors"
+              >
+                Mark as Completed
+              </button>
+            {/if}
+          </div>
+          
+          <div>
+            {#if !isSubmitted}
+              <button 
+                on:click={submitAssignment}
+                class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-archivo transition-colors"
+              >
+                Submit Assignment
+              </button>
+            {:else}
+              <div class="text-green-600 font-archivo flex items-center">
+                <CheckCircle class="w-5 h-5 mr-2" />
+                Submitted
+              </div>
+            {/if}
+          </div>
+        </div>
+      </div>
+    </div>
+  {:else}
+    <div class="flex justify-center items-center h-64 bg-white rounded-lg shadow-sm">
+      <div class="animate-pulse text-gray-400 font-archivo flex flex-col items-center">
+        <div class="w-8 h-8 border-4 border-t-blue-500 border-blue-200 rounded-full animate-spin mb-4"></div>
+        <div>Loading assignment...</div>
+      </div>
+    </div>
+  {/if}
+</div> 

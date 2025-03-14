@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import * as yaml from 'js-yaml';
 import grayMatter from 'gray-matter';
-import type { MenuDataType, CourseMenu, MenuSection, MenuItem } from './menu';
+import type { MenuDataType, CourseMenu, MenuSection, MenuItem, Reading, Assignment } from './menu';
 
 // Define rootDir directly using a relative path instead of import.meta
 // This assumes menuGenerator.ts is in src/lib/utils
@@ -57,10 +57,12 @@ export async function generateMenuConfig(): Promise<MenuDataType> {
       // Get course metadata
       const metadata = getCourseMetadata(courseId, courseDir);
       
-      // Create course menu structure
+      // Create course menu structure with empty arrays for readings and assignments
       const courseMenu: CourseMenu = {
         title: metadata?.title || getCourseTitle(courseId, courseFiles, courseDir),
-        sections: []
+        sections: [],
+        readings: [],
+        assignments: []
       };
       
       // Track sections to avoid duplicates
@@ -108,6 +110,36 @@ export async function generateMenuConfig(): Promise<MenuDataType> {
         };
         
         sectionMap[section].items.push(menuItem);
+        
+        // Check for readings in the content file
+        if (data.readings && Array.isArray(data.readings)) {
+          for (const reading of data.readings) {
+            if (reading.title) {
+              // Add file path to link readings to their source
+              if (courseMenu.readings) {
+                courseMenu.readings.push({
+                  ...reading,
+                  path: pagePath
+                });
+              }
+            }
+          }
+        }
+        
+        // Check for assignments in the content file
+        if (data.assignments && Array.isArray(data.assignments)) {
+          for (const assignment of data.assignments) {
+            if (assignment.title) {
+              // Add file path to link assignments to their source
+              if (courseMenu.assignments) {
+                courseMenu.assignments.push({
+                  ...assignment,
+                  path: pagePath
+                });
+              }
+            }
+          }
+        }
       }
       
       // Sort sections based on metadata order if available
@@ -133,6 +165,15 @@ export async function generateMenuConfig(): Promise<MenuDataType> {
           return orderA - orderB;
         });
       });
+      
+      // Include course-level readings and assignments from metadata if available
+      if (metadata?.readings && Array.isArray(metadata.readings) && courseMenu.readings) {
+        courseMenu.readings.push(...metadata.readings);
+      }
+      
+      if (metadata?.assignments && Array.isArray(metadata.assignments) && courseMenu.assignments) {
+        courseMenu.assignments.push(...metadata.assignments);
+      }
       
       // Add course to menu data
       if (courseMenu.sections.length > 0) {
