@@ -3,7 +3,7 @@
   export let metadata = {};
 </script>
 
-<div class="md-content prose prose-blue max-w-none">
+<div class="md-content prose prose-neutral max-w-none noise-image">
   <slot />
 </div>
 
@@ -20,7 +20,7 @@
   :global(.md-content h4) {
     position: relative; /* Position context for absolute positioning of anchor */
     font-family: var(--font-libre-caslon);
-    color: #2d3748;
+    color: var(--color-neutral);
   }
   
   :global(.md-content h1) {
@@ -28,7 +28,7 @@
     margin-bottom: 1.5rem;
     font-size: 2.25rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 2px solid var(--color-neutral);
   }
   
   :global(.md-content h2) {
@@ -37,7 +37,7 @@
     margin-bottom: 1rem;
     font-size: 1.75rem;
     padding-bottom: 0.25rem;
-    border-bottom: 1px solid #edf2f7;
+    border-bottom: 1px solid var(--color-base-300);
   }
   
   :global(.md-content h3) {
@@ -52,7 +52,7 @@
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
     font-size: 1.25rem;
-    color: #4a5568;
+    color: var(--color-neutral);
   }
   
   /* Anchor link styling */
@@ -62,7 +62,7 @@
     opacity: 0;
     vertical-align: middle;
     transition: opacity 0.2s;
-    color: #4299e1 !important;
+    color: var(--color-blue) !important;
     text-decoration: none !important;
     border-bottom: none !important;
   }
@@ -84,20 +84,20 @@
   }
 
   /* Content styling */
-  :global(.md-content p) {
+  :global(.md-content p:not(.important p, .note p, .warning p)) {
     font-family: var(--font-archivo);
     margin-bottom: 1.25rem;
-    color: #2d3748;
+    color: var(--color-neutral);
   }
   
   :global(.md-content strong) {
     font-weight: 600;
-    color: #1a202c;
+    color: var(--color-neutral);
   }
   
   :global(.md-content em) {
     font-style: italic;
-    color: #4a5568;
+    color: var(--color-neutral);
   }
   
   :global(.md-content ul, .md-content ol) {
@@ -129,28 +129,30 @@
   }
   
   :global(.md-content a) {
-    color: #3182ce;
+    color: var(--color-blue);
     text-decoration: none;
-    border-bottom: 1px solid rgba(49, 130, 206, 0.3);
+    border-bottom: 1px solid var(--color-blue);
     transition: color 0.2s, border-bottom-color 0.2s;
   }
   
   :global(.md-content a:hover) {
-    color: #2c5282;
-    border-bottom-color: rgba(44, 82, 130, 0.6);
+    color: var(--color-purple);
+    border-bottom-color: var(--color-purple);
   }
   
   :global(.md-content blockquote) {
-    border-left: 4px solid #4299e1;
+    border-left: 4px solid var(--color-yellow);
     padding-left: 1rem;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 1.5rem;
     font-style: italic;
-    color: #4a5568;
-    background-color: #ebf8ff;
+    color: var(--color-neutral);
+    background-color: var(--color-base-200);
     padding: 1rem 1.5rem;
     border-radius: 0.25rem;
+    border: 2px solid var(--color-neutral);
+    box-shadow: var(--shadow-btn-drop-shadow);
   }
   
   :global(.md-content blockquote p:last-child) {
@@ -158,23 +160,23 @@
   }
   
   :global(.md-content code) {
-    font-family: var(--font-fira-code);
-    background-color: rgba(226, 232, 240, 0.5);
+    font-family: var(--font-fira);
+    background-color: var(--color-base-200);
     padding: 0.2em 0.4em;
     border-radius: 3px;
     font-size: 0.875em;
-    color: #2d3748;
-    border: 1px solid rgba(203, 213, 224, 0.5);
+    color: var(--color-neutral);
+    border: 1px solid var(--color-base-300);
   }
   
   :global(.md-content pre) {
-    background-color: #f8fafc;
+    background-color: var(--color-neutral);
     padding: 1.25rem;
     border-radius: 0.5rem;
     overflow-x: auto;
     margin-bottom: 1.75rem;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--color-neutral);
+    box-shadow: var(--shadow-btn-drop-shadow);
   }
   
   :global(.md-content pre code) {
@@ -182,7 +184,7 @@
     padding: 0;
     font-size: 0.9em;
     border: none;
-    color: #2d3748;
+    color: var(--color-base-100);
     line-height: 1.6;
   }
   
@@ -194,7 +196,7 @@
   :global(.md-content dt) {
     font-weight: 600;
     font-family: var(--font-archivo);
-    color: #2d3748;
+    color: var(--color-neutral);
     margin-bottom: 0.5rem;
   }
   
@@ -209,23 +211,28 @@
   :global(.md-content .note),
   :global(.md-content .warning) {
     padding: 1rem;
-    margin-bottom: 1.5rem;
+   
     border-radius: 0.5rem;
+    border: 2px solid var(--color-neutral);
+    box-shadow: var(--shadow-btn-drop-shadow);
   }
   
   :global(.md-content .important) {
-    background-color: #ebf8ff;
-    border-left: 4px solid #4299e1;
+    background-color: var(--color-blue);
+    border-left: 4px solid var(--color-neutral);
+   
   }
-  
+
   :global(.md-content .note) {
-    background-color: #f0fff4;
-    border-left: 4px solid #48bb78;
+    background-color: var(--color-sage);
+    border-left: 4px solid var(--color-neutral);
+    color: var(--color-neutral);
   }
   
   :global(.md-content .warning) {
-    background-color: #fffaf0;
-    border-left: 4px solid #ed8936;
+    background-color: var(--color-orange);
+    border-left: 4px solid var(--color-neutral);
+    color: var(--color-neutral);
   }
   
   /* Tables */
@@ -233,29 +240,24 @@
     width: 100%;
     margin-bottom: 1.5rem;
     border-collapse: collapse;
-    border: 1px solid #e2e8f0;
+    border: 2px solid var(--color-neutral);
+    box-shadow: var(--shadow-btn-drop-shadow);
   }
   
   :global(.md-content th) {
-    background-color: #f7fafc;
+    background-color: var(--color-base-200);
     padding: 0.75rem 1rem;
     text-align: left;
     font-weight: 600;
-    border-bottom: 2px solid #e2e8f0;
-    color: #1a202c;
+    font-family: var(--font-roboto);
+    border-bottom: 2px solid var(--color-neutral);
+    color: var(--color-neutral);
+    text-transform: uppercase;
   }
   
   :global(.md-content td) {
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  
-  :global(.md-content tr:nth-child(even)) {
-    background-color: #f7fafc;
-  }
-  
-  :global(.md-content tr:hover) {
-    background-color: #edf2f7;
+    border-bottom: 1px solid var(--color-base-300);
   }
   
   /* Images */

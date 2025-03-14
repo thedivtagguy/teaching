@@ -64,12 +64,12 @@
   };
 </script>
 
-<div class="flex min-h-screen flex-col md:flex-row">
+<div class="flex min-h-screen flex-col md:flex-row bg-base-100">
   <!-- Mobile header with menu toggle -->
-  <div class="sticky top-0 z-10 flex items-center justify-between bg-white p-4 md:hidden">
+  <div class="sticky top-0 z-10 flex items-center justify-between bg-base-100 p-4 border-b border-base-300 md:hidden">
     <button 
       on:click={toggleMenu} 
-      class="rounded border border-gray-300 p-2 text-gray-500"
+      class="rounded-md border-2 border-neutral btn-drop-shadow p-2 text-neutral font-bold font-roboto"
       aria-label="Toggle menu"
     >
       {#if $isMenuOpen}
@@ -81,24 +81,23 @@
     
     <!-- Course selector in header on mobile -->
     <div class="flex items-center ml-4">
-      <button on:click={() => goto('/')} class="bg-base-200 w-full flex items-center text-neutral group justify-center text-white py-2 px-4 rounded font-medium text-center transition-colors hover:bg-purple">
-        <ArrowLeft class="w-4 h-4 stroke-neutral group-hover:stroke-white" />  <span class="ml-2 font-archivo text-base-300 group-hover:text-white">Back</span>
+      <button on:click={() => goto('/')} class="bg-base-200 flex items-center text-neutral group justify-center py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-center transition-colors hover:bg-purple">
+        <ArrowLeft class="w-4 h-4 stroke-neutral group-hover:stroke-white" />  <span class="ml-2 font-archivo text-neutral group-hover:text-white">Back</span>
       </button>
     </div>
   </div>
 
   <!-- Sidebar - fixed on desktop, slides in on mobile -->
   <aside 
-    class={`fixed inset-y-0 left-0 z-20 w-64 transform bg-white p-4 shadow-lg transition-transform duration-300 ${$isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:static md:translate-x-0 md:shadow-none md:border-r border-gray-200`}
+    class={`fixed inset-y-0 left-0 z-20 w-68 transform bg-base-100 p-6 border-r border-base-300 transition-transform duration-300 ${$isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:static md:translate-x-0 md:shadow-none`}
   >
-    <div class="hidden md:block mb-4">
-      <button on:click={() => goto('/')} class="bg-base-200 w-full flex group items-center text-base-300 justify-center text-white py-2 px-4 rounded font-medium text-center transition-colors hover:bg-purple">
-        <ArrowLeft class="w-4 h-4 stroke-base-300 group-hover:stroke-white" />  <span class="group-hover:text-white ml-2 font-archivo text-base-300">Back</span>
+    <div class="hidden md:block mb-6">
+      <button on:click={() => goto('/')} class="bg-base-200 w-full flex group items-center text-neutral justify-center py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-center transition-colors hover:bg-purple">
+        <ArrowLeft class="w-4 h-4 stroke-neutral group-hover:stroke-white" />  
+        <span class="group-hover:text-white ml-2 font-roboto">Back</span>
       </button>
     </div>
     
-    <!-- Quick resource navigation links -->
-   
     <!-- Use our enhanced CourseMenu component with combined data -->
     {#if menuData[$selectedCourse]}
       <CourseMenu 
@@ -110,14 +109,14 @@
   </aside>
 
   <!-- Main content area -->
-  <main class="flex-1 p-6 md:p-8">
+  <main class="flex-1 p-6 md:p-8 noise-image">
     <slot />
   </main>
   
   <!-- Overlay for mobile menu (shown when menu is open) -->
   {#if $isMenuOpen}
     <div 
-      class="fixed inset-0 z-10 bg-black bg-opacity-20 md:hidden" 
+      class="fixed inset-0 z-10 bg-neutral bg-opacity-20 md:hidden" 
       on:click={() => ($isMenuOpen = false)} 
       aria-hidden="true"
     ></div>

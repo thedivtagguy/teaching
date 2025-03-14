@@ -121,7 +121,7 @@
 <div class="block md:hidden mt-2 mb-6">
   <button 
     on:click={toggleToc} 
-    class="w-full flex items-center justify-between p-3 bg-gray-100 rounded-lg text-gray-700 font-archivo font-medium text-sm"
+    class="w-full flex items-center justify-between p-3 bg-base-200 rounded-md text-neutral font-roboto font-bold text-sm uppercase border-2 border-neutral btn-drop-shadow"
     aria-expanded={tocVisible}
     aria-controls="mobile-toc"
   >
@@ -134,14 +134,14 @@
   </button>
   
   {#if tocVisible}
-    <div id="mobile-toc" class="bg-gray-50 mt-1 p-4 rounded-lg border border-gray-200 shadow-sm">
+    <div id="mobile-toc" class="bg-base-100 mt-2 p-4 rounded-md border-2 border-neutral btn-drop-shadow">
       <nav aria-label="Table of contents">
         <ul class="space-y-2">
           {#each headings as heading}
             <li style="margin-left: {(heading.level - 2) * 1}rem">
               <a 
                 href="#{heading.id}" 
-                class="block py-1 hover:text-blue-600 text-sm font-archivo {activeId === heading.id ? 'text-blue-600 font-medium' : 'text-gray-700'}"
+                class="block py-1 hover:text-blue text-sm font-archivo {activeId === heading.id ? 'text-blue font-bold' : 'text-neutral'}"
                 on:click|preventDefault={() => scrollToHeading(heading.id)}
               >
                 {heading.text}
@@ -158,14 +158,14 @@
 <div class="hidden md:block">
   {#if headings.length > 0}
     <div class="sticky top-8">
-      <h4 class="text-sm font-semibold text-gray-500 mb-4 font-archivo uppercase tracking-wide">On this page</h4>
+      <h4 class="text-sm font-bold text-neutral mb-4 font-roboto uppercase tracking-wide">On this page</h4>
       <nav aria-label="Table of contents">
-        <ul class="space-y-2 border-l border-gray-200">
+        <ul class="space-y-2 border-l-2 border-base-300">
           {#each headings as heading}
             <li style="margin-left: {(heading.level - 2) * 0.75}rem">
               <a 
                 href="#{heading.id}" 
-                class="block pl-3 py-1 hover:text-blue-600 text-sm font-archivo border-l-2 -ml-px {activeId === heading.id ? 'border-blue-500 text-blue-600 font-medium' : 'border-transparent text-gray-600'}"
+                class="block pl-3 py-1 hover:text-blue text-sm font-archivo border-l-2 -ml-px {activeId === heading.id ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral'}"
                 on:click|preventDefault={() => scrollToHeading(heading.id)}
               >
                 {heading.text}

@@ -55,32 +55,30 @@
 </script>
 
 <div class="course-menu sticky top-8 overflow-y-auto overflow-x-hidden pr-4 max-h-[calc(100vh-8rem)]">
-  <header class="mb-6">
-   
-  
-    <a href="/{courseId}" class="inline-block">
-      <h3 class="text-2xl font-semibold !font-archivo text-gray-800 hover:text-blue-600 transition-colors">
+  <header class="mb-6 border-b border-base-300 pb-4">
+    <a href="/{courseId}" class="inline-block mb-2">
+      <h3 class="text-2xl font-semibold !font-libre-caslon text-neutral hover:text-blue transition-colors">
         {menuData?.title}
       </h3>
     </a>
-    <p class="text-sm text-gray-600 mt-1 font-archivo">
+    <p class="text-sm text-base-300 font-archivo mb-4">
       {courseId.toUpperCase() || 'Course Content'}
     </p>
     {#if selectedCourse}
-    <div class="flex w-fit gap-1 my-4 ">
+    <div class="flex  gap-2 my-4">
       <a 
         href="/{selectedCourse}/readings" 
-        class="flex gap-1 items-center justify-center bg-blue-50 hover:bg-blue-100 text-blue-700 py-2 px-3 rounded font-archivo text-xsß transition-colors"
+        class="flex gap-1 items-center justify-center bg-base-200 hover:bg-blue text-neutral hover:text-white py-2 px-3 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-sm transition-colors"
       >
         <BookOpen class="size-3" />
-        <span class="text-sm">Readings</span>
+        <span>Readings</span>
       </a>
       <a 
         href="/{selectedCourse}/assignments" 
-        class="flex gap-1 items-center justify-center bg-green-50 hover:bg-green-100 text-green-700 py-2 px-3 rounded font-archivo text-xsß transition-colors"
+        class="flex gap-1 items-center justify-center bg-base-200 hover:bg-sage text-neutral hover:text-neutral py-2 px-3 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-sm transition-colors"
       >
         <Clipboard class="size-3" />
-        <span class="text-sm">Assignments</span>
+        <span>Assignments</span>
       </a>
     </div>
   {/if}
@@ -88,25 +86,23 @@
   
   {#if menuData}
     <nav aria-label="Course navigation">
-      <ul class="space-y-6">
+      <ul class="space-y-4 w-full">
         <!-- Course Content Sections -->
         {#each menuData.sections as section}
-          <li>
+          <li >
             <div class="course-section">
               <button 
                 class="w-full flex items-center justify-between text-left mb-3 group"
                 on:click={() => toggleSection(section.title)}
                 aria-expanded={expandedSections[section.title] || false}
               >
-                <h4 class="font-archivo font-semibold text-gray-700 group-hover:text-blue-600 flex items-center">
-                  
-                
+                <h4 class="font-libre-caslon font-bold text-neutral group-hover:text-blue flex items-center">
                   {section.title}
                 </h4>
                 {#if expandedSections[section.title]}
-                  <ChevronUp class="w-4 h-4 text-gray-500" />
+                  <ChevronUp class="w-4 h-4 text-neutral" />
                 {:else}
-                  <ChevronDown class="w-4 h-4 text-gray-500" />
+                  <ChevronDown class="w-4 h-4 text-neutral" />
                 {/if}
               </button>
               
@@ -116,7 +112,7 @@
                     <li>
                       <a
                         href={item.path}
-                        class="block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors {currentPath === item.path ? 'border-blue-500 text-blue-600 font-medium' : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'}"
+                        class="block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors {currentPath === item.path ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral hover:text-blue hover:border-base-300'}"
                       >
                         {item.title}
                       </a>
@@ -127,13 +123,11 @@
             </div>
           </li>
         {/each}
-        
-       
       </ul>
     </nav>
   {:else}
-    <div class="p-4 bg-gray-50 rounded-lg">
-      <p class="text-gray-500 font-archivo">No menu data available</p>
+    <div class="p-4 bg-base-200 rounded-lg border-2 border-neutral btn-drop-shadow">
+      <p class="text-neutral font-archivo">No menu data available</p>
     </div>
   {/if}
 </div>

@@ -51,7 +51,7 @@
       <a href="/{courseId}/schedule" class="inline-block bg-blue text-white py-2 px-4 rounded font-archivo transition-colors hover:bg-purple">
         View Schedule
       </a>
-      <a href="/submit" class="inline-block border border-blue text-blue py-2 px-4 rounded font-archivo transition-colors hover:bg-blue hover:text-white">
+      <a href="/{courseId}/submit" class="inline-block border border-blue text-blue py-2 px-4 rounded font-archivo transition-colors hover:bg-blue hover:text-white">
         Submit Form
       </a>
     </div>

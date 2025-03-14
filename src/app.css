@@ -101,7 +101,6 @@ html {
 
 .noise-image {
     position: relative;
-    pointer-events: none;
 }
 
 .noise-image::after {
@@ -115,7 +114,7 @@ html {
     mix-blend-mode: overlay;
     opacity: 1;
     pointer-events: none;
-
+   
 }
 
 

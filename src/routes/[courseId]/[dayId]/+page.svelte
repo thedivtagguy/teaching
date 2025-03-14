@@ -170,15 +170,15 @@
 
           <!-- Assignments section -->
           {#if content.metadata?.assignments && content.metadata.assignments.length > 0}
-            <div class="bg-green-50 rounded-lg p-6 shadow-sm">
+            <div class="bg-sage-50 rounded-lg p-6 shadow-sm">
               <h2 class="text-xl font-libre-caslon mb-4 flex items-center">
-                <Clipboard class="w-5 h-5 mr-2 text-green-700" />
+                <Clipboard class="w-5 h-5 mr-2 text-sage-700" />
                 <span>Assignments</span>
               </h2>
               <ul class="space-y-4">
                 {#each content.metadata.assignments as assignment}
-                  <li class="font-archivo bg-white p-3 rounded shadow-sm border border-green-100">
-                    <div class="font-semibold text-green-800">{assignment.title}</div>
+                  <li class="font-archivo bg-white p-3 rounded shadow-sm border border-sage-100">
+                    <div class="font-semibold text-sage-800">{assignment.title}</div>
                     {#if assignment.due}
                       <div class="text-sm text-red-600 mt-1 font-medium">Due: {assignment.due}</div>
                     {/if}
