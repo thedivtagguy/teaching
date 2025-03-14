@@ -45,6 +45,9 @@
 		]
 	},
 	"dependencies": {
+		"@fontsource-variable/archivo": "^5.2.5",
+		"@fontsource-variable/fira-code": "^5.2.5",
+		"@fontsource/roboto-condensed": "^5.2.5",
 		"google-auth-library": "^9.15.1",
 		"google-spreadsheet": "^4.1.4",
 		"zod": "^3.24.2"
