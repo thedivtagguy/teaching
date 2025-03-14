@@ -12,9 +12,28 @@ export type MenuSection = {
   items: MenuItem[];
 };
 
+export type Reading = {
+  title: string;
+  author?: string;
+  url?: string;
+  pages?: string;
+  path?: string;
+  source?: string;
+};
+
+export type Assignment = {
+  title: string;
+  due?: string;
+  description?: string;
+  path?: string;
+  source?: string;
+};
+
 export type CourseMenu = {
   title: string;
   sections: MenuSection[];
+  readings?: Reading[];
+  assignments?: Assignment[];
 };
 
 export type MenuDataType = Record<string, CourseMenu>; 

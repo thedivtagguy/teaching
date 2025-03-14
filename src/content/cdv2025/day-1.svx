@@ -9,16 +9,24 @@ readings:
   - title: "Introduction to Algorithms"
     author: "Cormen, Leiserson, Rivest, Stein"
     pages: "1-20"
+    url: "https://example.com/algorithms-textbook"
   - title: "Code: The Hidden Language of Computer Hardware and Software"
     author: "Charles Petzold"
     pages: "1-15"
+    url: "https://example.com/code-textbook"
+  - title: "The Art of Computer Programming, Vol. 1"
+    author: "Donald Knuth"
+    pages: "10-25"
+    url: "https://example.com/knuth-vol1"
 assignments:
   - title: "Setup Development Environment"
     due: "2023-09-12"
     description: "Install required software for the course."
+    path: "/cdv2025/assignments/setup"
   - title: "First Program"
     due: "2023-09-12"
     description: "Write your first 'Hello, World' program."
+    path: "/cdv2025/assignments/hello-world"
 ---
 
 # Day 1: Introduction to Computer Science
@@ -83,13 +91,34 @@ Here's a simple algorithm to find the maximum value in a list:
 3. If a number is larger than the current maximum, update the maximum
 4. Return the maximum value after checking all numbers
 
-## Code Example
+## Code Examples
 
 Here's a simple example of a "Hello, World" program in Python, the programming language we'll be using throughout this course:
 
 ```python
 # This is a comment - it's ignored by the computer
 print("Hello, World!")  # This prints text to the screen
+```
+
+For more advanced implementation, here's a Python function that finds the maximum value in a list:
+
+```python
+def find_maximum(numbers):
+    if not numbers:  # Check if list is empty
+        return None
+        
+    maximum = numbers[0]  # Start with first number
+    
+    for num in numbers:
+        if num > maximum:
+            maximum = num
+            
+    return maximum
+
+# Example usage
+my_list = [4, 2, 8, 5, 1, 9, 3]
+max_value = find_maximum(my_list)
+print(f"The maximum value is: {max_value}")  # Output: The maximum value is: 9
 ```
 
 <div class="warning">
@@ -106,6 +135,36 @@ Let's briefly look at some basic programming concepts we'll explore in more dept
 | Data Types | Categories of data | `numbers, strings, booleans` |
 | Control Flow | Decision making and loops | `if, else, for, while` |
 | Functions | Reusable code blocks | `def greet(name): ...` |
+| Objects | Data and behavior bundled together | `class Person: ...` |
+
+Here's a more complex table showing various data types in Python:
+
+| Data Type | Description | Example | Usage |
+|-----------|-------------|---------|-------|
+| Integer | Whole numbers | `42` | `count = 42` |
+| Float | Decimal numbers | `3.14159` | `pi = 3.14159` |
+| String | Text | `"Hello"` | `greeting = "Hello"` |
+| Boolean | True/False values | `True` | `is_active = True` |
+| List | Ordered collection | `[1, 2, 3]` | `numbers = [1, 2, 3]` |
+| Dictionary | Key-value pairs | `{"name": "Alice"}` | `person = {"name": "Alice"}` |
+| Tuple | Immutable sequence | `(1, 2, 3)` | `coordinates = (1, 2, 3)` |
+
+## The History of Computing
+
+> "Computing is not about computers anymore. It is about living." — Nicholas Negroponte
+
+The history of computing spans centuries, from mechanical calculators to quantum computers. Here's a brief timeline:
+
+- **Ancient Times**: Abacus and other counting devices
+- **1642**: Pascal's mechanical calculator
+- **1837**: Babbage's Analytical Engine concept
+- **1940s**: First electronic computers (ENIAC)
+- **1970s**: Personal computers emerge
+- **1990s**: World Wide Web revolutionizes information sharing
+- **2000s**: Mobile computing and cloud technologies
+- **2010s+**: AI and machine learning become mainstream
+
+---
 
 ## Setting Up Your Environment
 
@@ -115,15 +174,101 @@ For this course, you'll need to install:
 2. **Visual Studio Code**: A code editor with helpful features
 3. **Git**: Version control for tracking changes
 
+### Installation Instructions
+
+<details>
+  <summary>Installing Python</summary>
+  <ol>
+    <li>Go to <a href="https://python.org/downloads">python.org/downloads</a></li>
+    <li>Download the latest version for your operating system</li>
+    <li>Run the installer, checking "Add Python to PATH"</li>
+    <li>Verify the installation by opening a terminal and typing <code>python --version</code></li>
+  </ol>
+</details>
+
+<details>
+  <summary>Installing Visual Studio Code</summary>
+  <ol>
+    <li>Go to <a href="https://code.visualstudio.com">code.visualstudio.com</a></li>
+    <li>Download the appropriate version for your OS</li>
+    <li>Run the installer</li>
+    <li>Install the Python extension from the Extensions marketplace</li>
+  </ol>
+</details>
+
+## Visual Examples
+
+Here's what good Python code formatting looks like:
+
+```python
+def calculate_average(numbers):
+    """
+    Calculate the average of a list of numbers.
+    
+    Args:
+        numbers (list): A list of numbers
+        
+    Returns:
+        float: The average of the numbers
+    """
+    total = sum(numbers)
+    count = len(numbers)
+    
+    if count == 0:
+        return 0
+    
+    return total / count
+```
+
+## Special Formatting Examples
+
+### Definition List
+
+<dl>
+  <dt>Algorithm</dt>
+  <dd>A step-by-step procedure for calculations or problem-solving.</dd>
+  
+  <dt>Programming</dt>
+  <dd>The process of writing computer code to create software.</dd>
+  
+  <dt>Debugging</dt>
+  <dd>The process of finding and fixing errors in software code.</dd>
+</dl>
+
+### Blockquote with Attribution
+
+> Computer science inverts the normal. In normal science, you're given a world, and your job is to find out the rules. In computer science, you give the computer the rules, and it creates the world.
+> 
+> — Alan Kay
+
+### Nested Lists
+
+- Programming Paradigms
+  - Imperative
+    - Procedural
+    - Object-Oriented
+  - Declarative
+    - Functional
+    - Logic
+
 ## Further Reading
 
 Check out the following resources for more information:
 - [Computer Science Basics](https://example.com/cs-basics)
 - [Introduction to Programming](https://example.com/intro-programming)
+- [Learn Python](https://python.org/about/gettingstarted/)
 
 ## Next Class Preparation
 
 For our next session, please:
 1. Read Chapter 1 of our textbook
 2. Install the required software (Python and VSCode)
-3. Try writing your first "Hello, World" program 
+3. Try writing your first "Hello, World" program
+
+<div class="important">
+  <p><strong>Assignment Reminder:</strong> Your first programming assignment is due next Tuesday. Don't forget to submit it through the course portal.</p>
+</div>
+
+---
+
+*This document was last updated on September 1, 2023* 

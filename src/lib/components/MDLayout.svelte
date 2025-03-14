@@ -14,38 +14,40 @@
     font-size: 1.05rem;
   }
   
-  :global(.md-content h1) {
+  :global(.md-content h1),
+  :global(.md-content h2),
+  :global(.md-content h3),
+  :global(.md-content h4) {
+    position: relative; /* Position context for absolute positioning of anchor */
     font-family: var(--font-libre-caslon);
+    color: #2d3748;
+  }
+  
+  :global(.md-content h1) {
     font-weight: 700;
     margin-bottom: 1.5rem;
     font-size: 2.25rem;
-    color: #1a202c;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #e2e8f0;
   }
   
   :global(.md-content h2) {
-    font-family: var(--font-libre-caslon);
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-size: 1.75rem;
-    color: #2d3748;
     padding-bottom: 0.25rem;
     border-bottom: 1px solid #edf2f7;
   }
   
   :global(.md-content h3) {
-    font-family: var(--font-libre-caslon);
     font-weight: 600;
     margin-top: 1.75rem;
     margin-bottom: 0.75rem;
     font-size: 1.5rem;
-    color: #2d3748;
   }
   
   :global(.md-content h4) {
-    font-family: var(--font-libre-caslon);
     font-weight: 600;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
@@ -53,6 +55,35 @@
     color: #4a5568;
   }
   
+  /* Anchor link styling */
+  :global(.anchor-link) {
+    display: inline-block;
+    margin-left: 0.5rem;
+    opacity: 0;
+    vertical-align: middle;
+    transition: opacity 0.2s;
+    color: #4299e1 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  :global(.md-content h1:hover .anchor-link),
+  :global(.md-content h2:hover .anchor-link),
+  :global(.md-content h3:hover .anchor-link),
+  :global(.md-content h4:hover .anchor-link) {
+    opacity: 0.8;
+  }
+  
+  :global(.anchor-link:hover) {
+    opacity: 1 !important;
+  }
+  
+  :global(.link-icon) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* Content styling */
   :global(.md-content p) {
     font-family: var(--font-archivo);
     margin-bottom: 1.25rem;
@@ -243,21 +274,6 @@
     border: 0;
     height: 1px;
     background-color: #e2e8f0;
-  }
-
-  /* Anchor links */
-  :global(.anchor-link) {
-    opacity: 0;
-    transition: opacity 0.2s;
-    margin-left: 0.5rem;
-    font-size: 0.85em;
-    border-bottom: none !important;
-  }
-  
-  :global(.md-content h2:hover .anchor-link, 
-           .md-content h3:hover .anchor-link, 
-           .md-content h4:hover .anchor-link) {
-    opacity: 0.8;
   }
   
   /* Special elements for educational content */
