@@ -84,7 +84,16 @@ async function handleGet(sheet, segments) {
 	if (segments.length === 0) {
 		// Get all rows
 		const rows = await sheet.getRows();
-		const serializedRows = rows.map(serializeRow);
+		console.log(`Fetched ${rows.length} rows from sheet`);
+		
+		// Debug: Log the first row if it exists
+		if (rows.length > 0) {
+			console.log('First row structure:', Object.keys(rows[0]));
+			console.log('Row data sample:', JSON.stringify(rows[0].toObject()));
+		}
+		
+		// Use the toObject() method instead of our custom serializer
+		const serializedRows = rows.map(row => row.toObject());
 		return {
 			statusCode: 200,
 			body: JSON.stringify(serializedRows)
@@ -94,7 +103,7 @@ async function handleGet(sheet, segments) {
 		const rowId = parseInt(segments[0]);
 		const rows = await sheet.getRows();
 		if (rowId >= 0 && rowId < rows.length) {
-			const serializedRow = serializeRow(rows[rowId]);
+			const serializedRow = rows[rowId].toObject();
 			return {
 				statusCode: 200,
 				body: JSON.stringify(serializedRow)
@@ -225,9 +234,21 @@ async function handleDelete(sheet, segments) {
  */
 function serializeRow(row) {
 	let temp = {};
-	row._sheet.headerValues.forEach((header) => {
-		temp[header] = row.get(header);
-	});
+	// Make this more defensive against undefined properties
+	if (row && row._sheet && row._sheet.headerValues) {
+		row._sheet.headerValues.forEach((header) => {
+			temp[header] = row.get(header);
+		});
+	} else {
+		// Fallback for when the sheet structure is unexpected
+		// Extract data directly from the row's properties
+		Object.keys(row).forEach(key => {
+			// Skip internal properties that start with underscore
+			if (!key.startsWith('_') && typeof row[key] !== 'function') {
+				temp[key] = row[key];
+			}
+		});
+	}
 	return temp;
 }
 
