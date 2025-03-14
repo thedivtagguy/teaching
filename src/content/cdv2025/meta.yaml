@@ -1,0 +1,24 @@
+# Course Metadata for cdv2025
+title: "Introduction to Data Visualization"
+code: "cdv2025"
+description: "This course provides a broad introduction to data visualization."
+instructor:
+  name: "Aman Bhargava"
+  email: "amanbhargava2001+cdv2025@gmail.com"
+  hours: "2-4pm, or by appointment via email"
+navigation:
+  sections:
+    - title: "Course Info"
+      order: 1
+    - title: "Fundamentals" 
+      order: 2
+    - title: "Collection and Encoding"
+      order: 3
+    - title: "Visualization Design"
+      order: 4
+    - title: "Geographic Visualization"
+      order: 5
+    - title: "Final Project"
+      order: 6 
+    - title: "Advanced Topics"
+      order: 7

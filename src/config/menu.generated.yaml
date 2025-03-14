@@ -1,0 +1,21 @@
+cdv2025:
+  title: Introduction to Data Visualization
+  sections:
+    - title: Course Info
+      items:
+        - title: 'cdv2025: Introduction to Computer Science - Syllabus'
+          path: /cdv2025/syllabus
+    - title: Fundamentals
+      items:
+        - title: 'Day 1: Introduction'
+          path: /cdv2025/day-1
+    - title: Collection and Encoding
+      items: []
+    - title: Visualization Design
+      items: []
+    - title: Geographic Visualization
+      items: []
+    - title: Final Project
+      items: []
+    - title: Advanced Topics
+      items: []
