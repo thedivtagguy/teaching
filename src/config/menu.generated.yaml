@@ -39,8 +39,8 @@ cdv2025:
     - title: Setup Development Environment
       due: '2023-09-12'
       description: Install required software for the course.
-      path: /cdv2025/day-1
+      path: /cdv2025/assignments/setup
     - title: First Program
       due: '2023-09-12'
       description: Write your first 'Hello, World' program.
-      path: /cdv2025/day-1
+      path: /cdv2025/assignments/hello-world

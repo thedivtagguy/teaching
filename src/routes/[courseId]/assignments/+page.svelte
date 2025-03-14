@@ -40,6 +40,7 @@
       return groups;
     }, {});
   }
+ 
 </script>
 
 <svelte:head>
@@ -87,11 +88,7 @@
                       {assignment.title}
                     </h3>
                     
-                    {#if assignment.source}
-                      <span class="text-xs text-gray-500 font-archivo bg-gray-100 px-2 py-1 rounded-full">
-                        From: {assignment.source}
-                      </span>
-                    {/if}
+                   
                   </div>
                   
                   {#if assignment.description}
@@ -101,7 +98,7 @@
                   <div class="mt-4 flex flex-wrap gap-2">
                     {#if assignment.path}
                       <a 
-                        href={assignment.path} 
+                        href="{assignment.path}"
                         class="bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded text-sm font-archivo inline-flex items-center transition-colors"
                       >
                         <span>View Assignment</span>

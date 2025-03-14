@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { Book, Calendar, ChevronDown, ChevronUp, FileText, Clipboard } from 'lucide-svelte';
+  import { BookOpen, Book, Calendar, ChevronDown, ChevronUp, FileText, Clipboard } from 'lucide-svelte';
   import type { MenuSection } from '$lib/utils/menu';
   
   // Define the MenuData interface if it doesn't exist in the menu utils
@@ -28,17 +28,14 @@
   
   export let courseId: string;
   export let menuData: MenuData | null = null;
-  
+  export let selectedCourse: string | null = null;
   // Current path for highlighting active item
   $: currentPath = $page.url.pathname;
   
   // Track expanded sections
   let expandedSections: Record<string, boolean> = {};
   
-  // New state for resource sections
-  let showReadings = false;
-  let showAssignments = false;
-  
+
   // Initialize expanded state based on current path
   $: {
     if (menuData) {
@@ -57,16 +54,36 @@
   }
 </script>
 
-<div class="course-menu sticky top-8 overflow-y-auto pr-4 max-h-[calc(100vh-8rem)]">
+<div class="course-menu sticky top-8 overflow-y-auto overflow-x-hidden pr-4 max-h-[calc(100vh-8rem)]">
   <header class="mb-6">
+   
+  
     <a href="/{courseId}" class="inline-block">
-      <h3 class="text-2xl font-semibold font-libre-caslon text-gray-800 hover:text-blue-600 transition-colors">
-        {courseId.toUpperCase()}
+      <h3 class="text-2xl font-semibold !font-archivo text-gray-800 hover:text-blue-600 transition-colors">
+        {menuData?.title}
       </h3>
     </a>
     <p class="text-sm text-gray-600 mt-1 font-archivo">
-      {menuData?.title || 'Course Content'}
+      {courseId.toUpperCase() || 'Course Content'}
     </p>
+    {#if selectedCourse}
+    <div class="flex w-fit gap-1 my-4 ">
+      <a 
+        href="/{selectedCourse}/readings" 
+        class="flex gap-1 items-center justify-center bg-blue-50 hover:bg-blue-100 text-blue-700 py-2 px-3 rounded font-archivo text-xsß transition-colors"
+      >
+        <BookOpen class="size-3" />
+        <span class="text-sm">Readings</span>
+      </a>
+      <a 
+        href="/{selectedCourse}/assignments" 
+        class="flex gap-1 items-center justify-center bg-green-50 hover:bg-green-100 text-green-700 py-2 px-3 rounded font-archivo text-xsß transition-colors"
+      >
+        <Clipboard class="size-3" />
+        <span class="text-sm">Assignments</span>
+      </a>
+    </div>
+  {/if}
   </header>
   
   {#if menuData}
@@ -82,11 +99,8 @@
                 aria-expanded={expandedSections[section.title] || false}
               >
                 <h4 class="font-archivo font-semibold text-gray-700 group-hover:text-blue-600 flex items-center">
-                  {#if section.title.toLowerCase().includes('assignment')}
-                    <Calendar class="w-4 h-4 mr-2 text-green-600" />
-                  {:else}
-                    <Book class="w-4 h-4 mr-2 text-blue-600" />
-                  {/if}
+                  
+                
                   {section.title}
                 </h4>
                 {#if expandedSections[section.title]}
@@ -114,98 +128,7 @@
           </li>
         {/each}
         
-        <!-- Readings Section (if available) -->
-        {#if menuData.readings && menuData.readings.length > 0}
-          <li>
-            <div class="course-section">
-              <button 
-                class="w-full flex items-center justify-between text-left mb-3 group"
-                on:click={() => showReadings = !showReadings}
-                aria-expanded={showReadings}
-              >
-                <h4 class="font-archivo font-semibold text-gray-700 group-hover:text-blue-600 flex items-center">
-                  <FileText class="w-4 h-4 mr-2 text-purple-600" />
-                  Course Readings
-                </h4>
-                {#if showReadings}
-                  <ChevronUp class="w-4 h-4 text-gray-500" />
-                {:else}
-                  <ChevronDown class="w-4 h-4 text-gray-500" />
-                {/if}
-              </button>
-              
-              {#if showReadings}
-                <ul class="pl-6 space-y-3">
-                  {#each menuData.readings as reading}
-                    <li>
-                      <div class="border-l-2 border-purple-300 pl-3 -ml-px py-1">
-                        <p class="text-sm font-medium text-gray-800">{reading.title}</p>
-                        {#if reading.author}
-                          <p class="text-xs text-gray-600">by {reading.author}</p>
-                        {/if}
-                        {#if reading.pages}
-                          <p class="text-xs text-gray-500">Pages: {reading.pages}</p>
-                        {/if}
-                        {#if reading.url}
-                          <a href={reading.url} class="text-xs text-blue-600 hover:underline" target="_blank" rel="noopener">
-                            Access online →
-                          </a>
-                        {/if}
-                      </div>
-                    </li>
-                  {/each}
-                </ul>
-              {/if}
-            </div>
-          </li>
-        {/if}
-        
-        <!-- Assignments Section (if available) -->
-        {#if menuData.assignments && menuData.assignments.length > 0}
-          <li>
-            <div class="course-section">
-              <button 
-                class="w-full flex items-center justify-between text-left mb-3 group"
-                on:click={() => showAssignments = !showAssignments}
-                aria-expanded={showAssignments}
-              >
-                <h4 class="font-archivo font-semibold text-gray-700 group-hover:text-blue-600 flex items-center">
-                  <Clipboard class="w-4 h-4 mr-2 text-green-600" />
-                  Assignments
-                </h4>
-                {#if showAssignments}
-                  <ChevronUp class="w-4 h-4 text-gray-500" />
-                {:else}
-                  <ChevronDown class="w-4 h-4 text-gray-500" />
-                {/if}
-              </button>
-              
-              {#if showAssignments}
-                <ul class="pl-6 space-y-3">
-                  {#each menuData.assignments as assignment}
-                    <li>
-                      <div class="border-l-2 border-green-300 pl-3 -ml-px py-1">
-                        {#if assignment.path}
-                          <a href={assignment.path} class="text-sm font-medium text-gray-800 hover:text-blue-600">
-                            {assignment.title}
-                          </a>
-                        {:else}
-                          <p class="text-sm font-medium text-gray-800">{assignment.title}</p>
-                        {/if}
-                        {#if assignment.due}
-                          <p class="text-xs text-red-600 font-medium">Due: {assignment.due}</p>
-                        {/if}
-                        {#if assignment.description}
-                          <p class="text-xs text-gray-600 mt-1">{assignment.description}</p>
-                        {/if}
-                      </div>
-                    </li>
-                  {/each}
-                </ul>
-              {/if}
-            </div>
-          </li>
-        {/if}
+       
       </ul>
     </nav>
   {:else}
