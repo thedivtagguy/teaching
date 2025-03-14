@@ -1,15 +1,19 @@
-const { GoogleSpreadsheet } = require('google-spreadsheet');
-const { JWT } = require('google-auth-library');
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { JWT } from 'google-auth-library';
+// Import the schema validation from our local ES module file
+import { spreadsheetConfig, formatDate } from './schema.js';
 
-function formatDate(date) {
-	const d = new Date(date);
-	const day = String(d.getDate()).padStart(2, '0');
-	const month = String(d.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-	const year = String(d.getFullYear()).slice(-2);
-	return `${day}/${month}/${year}`;
-}
+// We don't need the formatDate function since we import it from schema.js
+// function formatDate(date) {
+// 	const d = new Date(date);
+// 	const day = String(d.getDate()).padStart(2, '0');
+// 	const month = String(d.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+// 	const year = String(d.getFullYear()).slice(-2);
+// 	return `${day}/${month}/${year}`;
+// }
 
-exports.handler = async (event, context) => {
+// This is the correct format for Netlify Functions with ES modules
+export const handler = async function(event, context) {
 	const UserIP = event.headers['x-nf-client-connection-ip'] || '6.9.6.9';
 
 	const serviceAccountAuth = new JWT({
@@ -20,7 +24,7 @@ exports.handler = async (event, context) => {
 	const doc = new GoogleSpreadsheet(process.env.VITE_GOOGLE_SHEET_ID, serviceAccountAuth);
 
 	await doc.loadInfo();
-	const sheetTitle = 'Phone numbers'; // Default to 'Sheet1' if not specified
+	const sheetTitle = spreadsheetConfig.sheetTitle; // Use the sheet title from our config
 	const sheet = doc.sheetsByTitle[sheetTitle];
 
 	if (!sheet) {
@@ -64,12 +68,26 @@ exports.handler = async (event, context) => {
 
 			case 'POST':
 				const data = JSON.parse(event.body);
+				
+				// Include all required fields from our schema
 				const newRow = {
 					id: Date.now().toString(), // Generate a unique ID
-					date: formatDate(new Date()),
-					constituency: data.constituency || '',
-					number: data.number
+					date: data.date || formatDate(new Date()),
+					username: data.username,
+					class_confidence: data.class_confidence,
+					sentence_summary: data.sentence_summary,
+					keywords: data.keywords
 				};
+				
+				// Add optional fields if present
+				if (data.sleep_hours !== undefined) {
+					newRow.sleep_hours = data.sleep_hours;
+				}
+				
+				if (data.skipped_meals_prev_day !== undefined) {
+					newRow.skipped_meals_prev_day = data.skipped_meals_prev_day;
+				}
+				
 				const addedRow = await sheet.addRow(newRow);
 				return {
 					statusCode: 200,
@@ -113,7 +131,7 @@ exports.handler = async (event, context) => {
 						statusCode: 400,
 						body: JSON.stringify({
 							error:
-								'Invalid DELETE request, must be /.netlify/functions/google-spreadsheet-fn/{rowId}'
+								'Invalid DELETE request, must be /.netlify/functions/google-spreadsheet/{rowId}'
 						})
 					};
 				}
@@ -155,21 +173,25 @@ exports.handler = async (event, context) => {
 			})
 		};
 	}
-
-	function serializeRow(row) {
-		let temp = {};
-		sheet.headerValues.forEach((header) => {
-			temp[header] = row.get(header);
-		});
-		return temp;
-	}
 };
 
+// Helper function to serialize row data
+function serializeRow(row) {
+	let temp = {};
+	row._sheet.headerValues.forEach((header) => {
+		temp[header] = row.get(header);
+	});
+	return temp;
+}
+
+// Helper function to ensure the header row exists
 async function ensureHeaderRow(sheet) {
 	await sheet.loadHeaderRow();
-	if (sheet.headerValues.length === 0) {
-		console.log('Header row is empty. Initializing with new headers.');
-		const newHeaders = ['id', 'date', 'constituency', 'number'];
-		await sheet.setHeaderRow(newHeaders);
+	if (sheet.headerValues.length === 0 || 
+        !spreadsheetConfig.requiredColumns.every(col => sheet.headerValues.includes(col))) {
+		console.log('Header row is missing required columns. Initializing with schema columns.');
+		// Make sure we include ID column as well
+		const allColumns = ['id', ...spreadsheetConfig.allColumns];
+		await sheet.setHeaderRow(allColumns);
 	}
-}
+} 
