@@ -110,37 +110,37 @@
 </script>
 
 <form on:submit|preventDefault={handleSubmit} class="entry-form">
-  <h2>Submit Data Entry</h2>
   
   {#if submitSuccess}
-    <div class="success-message">
+    <div class="bg-sage p-4 mb-6 rounded-md border-2 border-neutral btn-drop-shadow text-white font-archivo font-bold">
       Entry submitted successfully!
     </div>
   {/if}
   
   {#if submitError}
-    <div class="error-message">
+    <div class="bg-red p-4 mb-6 rounded-md border-2 border-neutral btn-drop-shadow text-white font-archivo font-bold">
       {submitError}
     </div>
   {/if}
   
   <!-- Required fields -->
-  <div class="form-group">
-    <label for="username">Username *</label>
+  <div class="mb-6">
+    <label for="username" class="block font-bold font-roboto text-neutral uppercase mb-2">Username *</label>
     <input
       type="text"
       id="username"
       bind:value={formData.username}
       on:blur={() => validateField('username', formData.username)}
+      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
       required
     />
     {#if errors.username}
-      <span class="error">{errors.username}</span>
+      <span class="text-red font-archivo mt-1 block">{errors.username}</span>
     {/if}
   </div>
   
-  <div class="form-group">
-    <label for="class_confidence">Class Confidence (0-100) *</label>
+  <div class="mb-6">
+    <label for="class_confidence" class="block font-bold font-roboto text-neutral uppercase mb-2">Class Confidence (0-100) *</label>
     <input
       type="number"
       id="class_confidence"
@@ -148,46 +148,49 @@
       max="100"
       bind:value={formData.class_confidence}
       on:blur={() => validateField('class_confidence', formData.class_confidence)}
+      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
       required
     />
     {#if errors.class_confidence}
-      <span class="error">{errors.class_confidence}</span>
+      <span class="text-red font-archivo mt-1 block">{errors.class_confidence}</span>
     {/if}
   </div>
   
-  <div class="form-group">
-    <label for="sentence_summary">Sentence Summary *</label>
+  <div class="mb-6">
+    <label for="sentence_summary" class="block font-bold font-roboto text-neutral uppercase mb-2">Sentence Summary *</label>
     <textarea
       id="sentence_summary"
       bind:value={formData.sentence_summary}
       on:blur={() => validateField('sentence_summary', formData.sentence_summary)}
+      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue h-32"
       required
     ></textarea>
     {#if errors.sentence_summary}
-      <span class="error">{errors.sentence_summary}</span>
+      <span class="text-red font-archivo mt-1 block">{errors.sentence_summary}</span>
     {/if}
   </div>
   
-  <div class="form-group">
-    <label for="keywords">Keywords (comma-separated) *</label>
+  <div class="mb-6">
+    <label for="keywords" class="block font-bold font-roboto text-neutral uppercase mb-2">Keywords (comma-separated) *</label>
     <input
       type="text"
       id="keywords"
       bind:value={formData.keywords}
       on:blur={() => validateField('keywords', formData.keywords)}
       placeholder="e.g. visualization, data, chart"
+      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
       required
     />
     {#if errors.keywords}
-      <span class="error">{errors.keywords}</span>
+      <span class="text-red font-archivo mt-1 block">{errors.keywords}</span>
     {/if}
   </div>
   
   <!-- Optional fields -->
-  <h3>Optional Information</h3>
+  <h3 class="text-xl font-bold font-libre-caslon text-neutral border-b border-base-300 pb-2 mb-6 mt-10">Optional Information</h3>
   
-  <div class="form-group">
-    <label for="sleep_hours">Sleep Hours</label>
+  <div class="mb-6">
+    <label for="sleep_hours" class="block font-bold font-roboto text-neutral uppercase mb-2">Sleep Hours</label>
     <input
       type="number"
       id="sleep_hours"
@@ -200,14 +203,15 @@
           validateField('sleep_hours', formData.sleep_hours);
         }
       }}
+      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
     />
     {#if errors.sleep_hours}
-      <span class="error">{errors.sleep_hours}</span>
+      <span class="text-red font-archivo mt-1 block">{errors.sleep_hours}</span>
     {/if}
   </div>
   
-  <div class="form-group">
-    <label for="skipped_meals">Skipped Meals (comma-separated)</label>
+  <div class="mb-6">
+    <label for="skipped_meals" class="block font-bold font-roboto text-neutral uppercase mb-2">Skipped Meals (comma-separated)</label>
     <input
       type="text"
       id="skipped_meals"
@@ -218,14 +222,19 @@
           validateField('skipped_meals_prev_day', formData.skipped_meals_prev_day);
         }
       }}
+      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
     />
     {#if errors.skipped_meals_prev_day}
-      <span class="error">{errors.skipped_meals_prev_day}</span>
+      <span class="text-red font-archivo mt-1 block">{errors.skipped_meals_prev_day}</span>
     {/if}
   </div>
   
-  <div class="form-actions">
-    <button type="submit" disabled={isSubmitting}>
+  <div class="mt-8">
+    <button 
+      type="submit" 
+      disabled={isSubmitting}
+      class="bg-blue hover:bg-purple text-white py-3 px-6 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold uppercase transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+    >
       {isSubmitting ? 'Submitting...' : 'Submit Entry'}
     </button>
   </div>
@@ -234,17 +243,13 @@
 <style>
   .entry-form {
     max-width: 600px;
-    margin: 0 auto;
+  
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-  }
   
   h3 {
     color: #555;
@@ -252,9 +257,7 @@
     font-size: 1.1em;
   }
   
-  .form-group {
-    margin-bottom: 16px;
-  }
+ 
   
   label {
     display: block;

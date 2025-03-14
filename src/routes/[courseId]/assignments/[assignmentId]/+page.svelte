@@ -71,7 +71,7 @@
   {:else if assignment}
     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
       <!-- Assignment header -->
-      <div class="border-b border-gray-100 bg-gradient-to-r from-blue-50 to-green-50 p-6">
+      <div class="border-b border-gray-100 bg-gradient-to-r from-blue-50 to-sage-50 p-6">
         <h1 class="text-2xl font-libre-caslon mb-3">
           {assignment.metadata?.title || 'Assignment'}
         </h1>
@@ -91,9 +91,9 @@
           {/if}
           
           {#if isCompleted}
-            <div class="flex items-center bg-green-100 px-3 py-1 rounded-full shadow-sm border border-green-200">
-              <CheckCircle class="w-4 h-4 mr-1 text-green-600" />
-              <span class="font-archivo text-green-700">Completed</span>
+            <div class="flex items-center bg-sage-100 px-3 py-1 rounded-full shadow-sm border border-sage-200">
+              <CheckCircle class="w-4 h-4 mr-1 text-sage-600" />
+              <span class="font-archivo text-sage-700">Completed</span>
             </div>
           {/if}
         </div>
@@ -120,7 +120,7 @@
             {#if !isCompleted}
               <button 
                 on:click={markAsCompleted}
-                class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded font-archivo transition-colors"
+                class="bg-sage-600 hover:bg-sage-700 text-white py-2 px-4 rounded font-archivo transition-colors"
               >
                 Mark as Completed
               </button>
@@ -136,7 +136,7 @@
                 Submit Assignment
               </button>
             {:else}
-              <div class="text-green-600 font-archivo flex items-center">
+              <div class="text-sage-600 font-archivo flex items-center">
                 <CheckCircle class="w-5 h-5 mr-2" />
                 Submitted
               </div>
