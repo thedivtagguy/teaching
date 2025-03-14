@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { BookOpen, ExternalLink, BookmarkIcon } from 'lucide-svelte';
+  import { BookOpen, ExternalLink  } from 'lucide-svelte';
   
   // Interface definitions
   interface Reading {
@@ -36,14 +36,7 @@
   // Keep track of saved readings (would usually be stored in a database or localStorage)
   let savedReadings = new Set<string>();
   
-  function toggleSaveReading(title: string): void {
-    if (savedReadings.has(title)) {
-      savedReadings.delete(title);
-    } else {
-      savedReadings.add(title);
-    }
-    savedReadings = savedReadings; // Trigger reactivity
-  }
+
 </script>
 
 <svelte:head>
@@ -56,7 +49,7 @@
   <div class="mb-8">
     <h1 class="text-3xl font-libre-caslon mb-2 flex items-center text-blue-900">
       <BookOpen class="w-8 h-8 mr-3 text-blue-600" />
-      Course Readings
+      Readings
     </h1>
     <p class="text-lg text-gray-700 font-archivo">
       All required and recommended readings for {courseId.toUpperCase()}.
@@ -76,7 +69,7 @@
       {#each Object.entries(readingGroups) as [source, readings], index}
         <div class={`${index > 0 ? 'border-t border-gray-100' : ''}`}>
           <div class="bg-blue-50 px-6 py-3">
-            <h2 class="font-archivo font-semibold text-lg text-blue-800">{source}</h2>
+            <h2 class="font-archivo font-semibold text-lg text-blue-800">{courseId.toUpperCase() }</h2>
           </div>
           
           <ul class="divide-y divide-gray-100">
@@ -84,7 +77,7 @@
               <li class="p-6 hover:bg-blue-50 transition-colors">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="font-archivo font-semibold text-lg text-gray-900">{reading.title}</h3>
+                    <h3 class="!font-archivo font-semibold text-lg text-gray-900">{reading.title}</h3>
                     
                     {#if reading.author}
                       <p class="text-gray-700 mt-1">by {reading.author}</p>
@@ -97,20 +90,14 @@
                       
                       {#if reading.path}
                         <a href={reading.path} class="text-blue-600 hover:text-blue-800 mr-4 flex items-center">
-                          <span>View Lesson</span>
+                          <span>View More</span>
                         </a>
                       {/if}
                     </div>
                   </div>
                   
                   <div class="flex space-x-2">
-                    <button 
-                      on:click={() => toggleSaveReading(reading.title)}
-                      class="p-2 rounded-full {savedReadings.has(reading.title) ? 'bg-yellow-100 text-yellow-600' : 'bg-gray-100 text-gray-500'} hover:bg-yellow-100 hover:text-yellow-600 transition-colors"
-                      aria-label={savedReadings.has(reading.title) ? "Unsave reading" : "Save reading"}
-                    >
-                      <BookmarkIcon class="w-5 h-5" />
-                    </button>
+                   
                     
                     {#if reading.url}
                       <a 

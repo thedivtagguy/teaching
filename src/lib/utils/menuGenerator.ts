@@ -119,7 +119,8 @@ export async function generateMenuConfig(): Promise<MenuDataType> {
               if (courseMenu.readings) {
                 courseMenu.readings.push({
                   ...reading,
-                  path: pagePath
+                  // Only use pagePath as fallback if no path is specified
+                  path: reading.path || pagePath
                 });
               }
             }
@@ -134,7 +135,8 @@ export async function generateMenuConfig(): Promise<MenuDataType> {
               if (courseMenu.assignments) {
                 courseMenu.assignments.push({
                   ...assignment,
-                  path: pagePath
+                  // Only use pagePath as fallback if no path is specified
+                  path: assignment.path || pagePath
                 });
               }
             }
