@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { page } from '$app/stores';
   import { spreadsheetConfig, type SpreadsheetEntry } from '$lib/schema';
   
   let entries: SpreadsheetEntry[] = [];
@@ -8,10 +9,12 @@
   let username = '';
   let filterByUser = false;
   
-  // Fetch all entries on mount
-  onMount(async () => {
-    await fetchEntries();
-  });
+  // Use immediate async function instead of onMount
+  // This will run when the component initializes and when URL parameters change
+  $: {
+    // Immediately fetch entries when component loads
+    fetchEntries();
+  }
   
   // Fetch entries (all or filtered by username)
   async function fetchEntries() {

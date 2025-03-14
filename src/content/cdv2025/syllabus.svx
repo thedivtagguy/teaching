@@ -1,0 +1,72 @@
+---
+title: "cdv2025: Introduction to Computer Science - Syllabus"
+date: "Fall 2023"
+description: "Course syllabus for cdv2025: Introduction to Computer Science."
+published: true
+section: "Course Info"
+order: 1
+---
+
+# cdv2025: Introduction to Computer Science
+## Course Syllabus - Fall 2023
+
+### Instructor Information
+- **Name:** Aman Bhargava
+- **Email:** jsmith@university.edu
+- **Office:** Science Building, Room 301
+- **Office Hours:** Monday 2-4pm, Wednesday 1-3pm, or by appointment
+
+### Course Description
+This course provides a broad introduction to computer science and programming. Topics include basic programming concepts, algorithms, data structures, problem-solving strategies, and an introduction to computer systems. The course is designed for students with little or no prior programming experience.
+
+### Course Objectives
+By the end of this course, students should be able to:
+1. Understand fundamental programming concepts and paradigms
+2. Design, implement, and debug programs in Python
+3. Analyze and evaluate algorithmic solutions to problems
+4. Apply computational thinking to solve real-world problems
+5. Understand the basic architecture of computer systems
+
+### Required Materials
+- **Textbook:** "Introduction to Computer Science using Python" by John Smith
+- **Software:** Python 3.x, Visual Studio Code (or similar IDE)
+- **Hardware:** Laptop with internet access
+
+### Grading
+- **Assignments (40%)**: Weekly programming assignments
+- **Midterm Exam (20%)**: In-class examination
+- **Final Project (25%)**: Comprehensive programming project
+- **Participation (15%)**: In-class activities and discussions
+
+### Course Schedule
+
+#### Module 1: Fundamentals
+- **Week 1**: Course introduction, programming basics
+- **Week 2**: Variables, data types, and expressions
+- **Week 3**: Control flow (conditionals, loops)
+
+#### Module 2: Data Structures
+- **Week 4**: Lists and arrays
+- **Week 5**: Dictionaries and sets
+- **Week 6**: Strings and text processing
+
+#### Module 3: Functions and Modules
+- **Week 7**: Functions and scope
+- **Week 8**: Modules and libraries
+- **Week 9**: Midterm review and exam
+
+#### Module 4: Advanced Topics
+- **Week 10**: Recursion
+- **Week 11**: Object-oriented programming
+- **Week 12**: File I/O and exceptions
+
+#### Module 5: Applications
+- **Week 13**: Algorithmic thinking
+- **Week 14**: Final project work
+- **Week 15**: Final project presentations
+
+### Course Policies
+- **Attendance**: Regular attendance is expected. Please notify the instructor in advance if you will be absent.
+- **Late Assignments**: Assignments submitted late will receive a 10% penalty per day.
+- **Academic Integrity**: All submitted work must be your own. Plagiarism or cheating will result in a failing grade for the assignment or course.
+- **Accommodations**: Students with disabilities requiring accommodations should contact the instructor and disability services office. 

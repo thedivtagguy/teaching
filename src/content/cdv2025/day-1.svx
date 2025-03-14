@@ -1,0 +1,65 @@
+---
+title: "Day 1: Introduction"
+date: "2023-09-05"
+description: "First day of class covering course overview and introduction to programming concepts."
+published: true
+section: "Fundamentals"
+order: 1
+readings:
+  - title: "Introduction to Algorithms"
+    author: "Cormen, Leiserson, Rivest, Stein"
+    pages: "1-20"
+  - title: "Code: The Hidden Language of Computer Hardware and Software"
+    author: "Charles Petzold"
+    pages: "1-15"
+assignments:
+  - title: "Setup Development Environment"
+    due: "2023-09-12"
+    description: "Install required software for the course."
+  - title: "First Program"
+    due: "2023-09-12"
+    description: "Write your first 'Hello, World' program."
+---
+
+# Day 1: Introduction to Computer Science
+
+## Overview
+
+Welcome to cdv2025: Introduction to Computer Science! In this first class, we'll cover the course syllabus, expectations, and introduce basic programming concepts.
+
+## Key Topics
+
+- Course overview and expectations
+- What is Computer Science?
+- History of computing
+- Introduction to algorithms
+- Basic programming concepts
+- Setting up your development environment
+
+## Code Example
+
+Here's a simple example of a "Hello, World" program in Python:
+
+```python
+# This is a comment
+print("Hello, World!")
+```
+
+## Lecture Notes
+
+Computer Science is the study of computation, automation, and information. Computers themselves are just tools; the real essence of CS is problem-solving. 
+
+Algorithms are step-by-step procedures for solving problems. We'll be studying various algorithms throughout this course and understanding their efficiency.
+
+## Further Reading
+
+Check out the following resources for more information:
+- [Computer Science Basics](https://example.com/cs-basics)
+- [Introduction to Programming](https://example.com/intro-programming)
+
+## Next Class Preparation
+
+For our next session, please:
+1. Read Chapter 1 of our textbook
+2. Install the required software (Python and VSCode)
+3. Try writing your first "Hello, World" program 

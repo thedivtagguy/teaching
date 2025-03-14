@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
-	let { children } = $props();
+	// Data from server-side load function containing menu configuration
+	export let data;
 </script>
 
-{@render children()}
+<!-- Pass data to child routes via the slot -->
+<slot />
