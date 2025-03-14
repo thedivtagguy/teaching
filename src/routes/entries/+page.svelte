@@ -68,36 +68,37 @@
   <title>Data Entries</title>
 </svelte:head>
 
-<div class="container">
-  <header>
-    <h1>DataViz Course Entries</h1>
-    <p>View and filter entries from the Google Spreadsheet</p>
+<div class="max-w-[1200px] mx-auto p-8">
+  <header class="mb-8 text-center">
+    <h1 class="text-blue mb-2 font-libre-caslon text-4xl font-bold">DataViz Course Entries</h1>
+    <p class="font-archivo">View and filter entries from the Google Spreadsheet</p>
   </header>
   
-  <div class="filters">
-    <h2>Filter Entries</h2>
+  <div class="bg-base-200 p-6 rounded-lg mb-8">
+    <h2 class="text-xl text-neutral mb-4 font-libre-caslon font-bold">Filter Entries</h2>
     
     <form on:submit|preventDefault={handleSubmit}>
-      <div class="filter-group">
-        <label>
+      <div class="mb-4">
+        <label class="flex items-center gap-2 font-archivo">
           <input type="checkbox" bind:checked={filterByUser}>
           Filter by username
         </label>
         
         {#if filterByUser}
-          <div class="username-filter">
+          <div class="mt-2 flex gap-2">
             <input 
               type="text" 
               bind:value={username} 
               placeholder="Enter username"
               required={filterByUser}
+              class="py-2 px-3 border border-base-300 rounded flex-grow font-archivo"
             >
-            <button type="submit">Apply Filter</button>
+            <button type="submit" class="bg-blue text-white py-2 px-4 rounded font-archivo hover:bg-purple transition-colors">Apply Filter</button>
           </div>
         {/if}
       </div>
       
-      <button type="button" on:click={resetFilters} class="reset-button">
+      <button type="button" on:click={resetFilters} class="bg-red text-white py-2 px-4 rounded font-archivo hover:opacity-90 transition-opacity">
         Reset Filters
       </button>
     </form>
@@ -105,57 +106,57 @@
   
   <main>
     {#if loading}
-      <p class="loading">Loading entries...</p>
+      <p class="text-center py-8 bg-base-100 rounded-lg font-archivo">Loading entries...</p>
     {:else if error}
-      <p class="error">Error: {error}</p>
+      <p class="text-center py-8 bg-base-100 rounded-lg text-red font-archivo">Error: {error}</p>
     {:else if entries.length === 0}
-      <p class="no-data">No entries found</p>
+      <p class="text-center py-8 bg-base-100 rounded-lg font-archivo">No entries found</p>
     {:else}
-      <div class="entries-count">
+      <div class="mb-4 font-archivo">
         Showing {entries.length} {entries.length === 1 ? 'entry' : 'entries'}
         {#if filterByUser && username}
           for user <strong>{username}</strong>
         {/if}
       </div>
       
-      <div class="table-container">
-        <table>
-          <thead>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead class="bg-base-200">
             <tr>
-              <th>Date</th>
-              <th>Username</th>
-              <th>Class Confidence</th>
-              <th>Summary</th>
-              <th>Keywords</th>
+              <th class="border border-base-300 p-3 text-left font-archivo">Date</th>
+              <th class="border border-base-300 p-3 text-left font-archivo">Username</th>
+              <th class="border border-base-300 p-3 text-left font-archivo">Class Confidence</th>
+              <th class="border border-base-300 p-3 text-left font-archivo">Summary</th>
+              <th class="border border-base-300 p-3 text-left font-archivo">Keywords</th>
               {#if entries.some(entry => entry.sleep_hours !== undefined)}
-                <th>Sleep Hours</th>
+                <th class="border border-base-300 p-3 text-left font-archivo">Sleep Hours</th>
               {/if}
               {#if entries.some(entry => entry.skipped_meals_prev_day)}
-                <th>Skipped Meals</th>
+                <th class="border border-base-300 p-3 text-left font-archivo">Skipped Meals</th>
               {/if}
             </tr>
           </thead>
           <tbody>
             {#each entries as entry}
-              <tr>
-                <td>{entry.date}</td>
-                <td>{entry.username}</td>
-                <td>{entry.class_confidence}</td>
-                <td>{entry.sentence_summary}</td>
-                <td>
-                  <div class="keywords">
+              <tr class="hover:bg-base-200">
+                <td class="border border-base-300 p-3 font-archivo">{entry.date}</td>
+                <td class="border border-base-300 p-3 font-archivo">{entry.username}</td>
+                <td class="border border-base-300 p-3 font-archivo">{entry.class_confidence}</td>
+                <td class="border border-base-300 p-3 font-archivo">{entry.sentence_summary}</td>
+                <td class="border border-base-300 p-3 font-archivo">
+                  <div class="flex flex-wrap gap-1">
                     {#each entry.keywords.split(',').map((k: string) => k.trim()) as keyword}
                       {#if keyword}
-                        <span class="keyword">{keyword}</span>
+                        <span class="bg-blue bg-opacity-10 text-blue px-2 py-1 rounded-full text-sm">{keyword}</span>
                       {/if}
                     {/each}
                   </div>
                 </td>
                 {#if entries.some(entry => entry.sleep_hours !== undefined)}
-                  <td>{entry.sleep_hours !== undefined ? entry.sleep_hours : '-'}</td>
+                  <td class="border border-base-300 p-3 font-archivo">{entry.sleep_hours !== undefined ? entry.sleep_hours : '-'}</td>
                 {/if}
                 {#if entries.some(entry => entry.skipped_meals_prev_day)}
-                  <td>{entry.skipped_meals_prev_day || '-'}</td>
+                  <td class="border border-base-300 p-3 font-archivo">{entry.skipped_meals_prev_day || '-'}</td>
                 {/if}
               </tr>
             {/each}
@@ -164,119 +165,4 @@
       </div>
     {/if}
   </main>
-</div>
-
-<style>
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  header {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #2a5885;
-    margin-bottom: 0.5rem;
-  }
-  
-  h2 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .filters {
-    background-color: #f5f5f5;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-  }
-  
-  .filter-group {
-    margin-bottom: 1rem;
-  }
-  
-  .username-filter {
-    margin-top: 0.5rem;
-    display: flex;
-    gap: 10px;
-  }
-  
-  input[type="text"] {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    flex-grow: 1;
-  }
-  
-  button {
-    background-color: #2a5885;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .reset-button {
-    background-color: #f44336;
-  }
-  
-  .loading, .error, .no-data {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  .error {
-    color: #f44336;
-  }
-  
-  .entries-count {
-    margin-bottom: 1rem;
-  }
-  
-  .table-container {
-    overflow-x: auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f5f5f5;
-    font-weight: 600;
-  }
-  
-  tr:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .keywords {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  
-  .keyword {
-    background-color: #e1f5fe;
-    color: #0277bd;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    white-space: nowrap;
-  }
-</style> 
+</div> 
