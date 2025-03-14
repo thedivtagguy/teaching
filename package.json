@@ -11,7 +11,10 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"netlify": "netlify dev",
+		"netlify:build": "netlify build",
+		"functions:serve": "netlify functions:serve"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
@@ -25,6 +28,7 @@
 		"eslint-plugin-svelte": "^3.0.0",
 		"globals": "^16.0.0",
 		"mdsvex": "^0.12.3",
+		"netlify-cli": "^19.0.2",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
@@ -42,6 +46,7 @@
 	},
 	"dependencies": {
 		"google-auth-library": "^9.15.1",
-		"google-spreadsheet": "^4.1.4"
+		"google-spreadsheet": "^4.1.4",
+		"zod": "^3.24.2"
 	}
 }

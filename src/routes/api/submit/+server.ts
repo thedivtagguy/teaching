@@ -1,10 +1,25 @@
 import { json } from '@sveltejs/kit';
+import type { RequestEvent } from '@sveltejs/kit';
+import { validateSpreadsheetEntry, formatDate } from '$lib/schema';
 
-export async function POST({ request, url }) {
+export async function POST(event: RequestEvent) {
+	const { request, url } = event;
 	const formData = await request.json();
 
 	try {
-		const functionUrl = new URL('/.netlify/functions/google-spreadsheet-fn', url.origin).href;
+		// Validate the incoming data against our schema
+		// This will throw if validation fails
+		const validatedData = validateSpreadsheetEntry({
+			...formData,
+			// Ensure date is in the correct format if not provided
+			date: formData.date || formatDate(new Date())
+		});
+
+		// Use the correct URL for local development vs. production
+		const functionUrl = import.meta.env.DEV 
+			? new URL('/.netlify/functions/google-spreadsheet-function', url.origin).href
+			: `${url.origin}/.netlify/functions/google-spreadsheet-function`;
+
 		console.log('Attempting to call function at:', functionUrl);
 
 		const response = await fetch(functionUrl, {
@@ -12,10 +27,7 @@ export async function POST({ request, url }) {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({
-				number: formData.number,
-				constituency: formData.constituency
-			})
+			body: JSON.stringify(validatedData)
 		});
 
 		console.log('Response status:', response.status);
@@ -31,6 +43,8 @@ export async function POST({ request, url }) {
 		return json(result);
 	} catch (error) {
 		console.error('Error:', error);
-		return json({ error: 'Failed to submit data', details: error.message }, { status: 500 });
+		// Safely handle error of unknown type
+		const errorMessage = error instanceof Error ? error.message : String(error);
+		return json({ error: 'Failed to submit data', details: errorMessage }, { status: 500 });
 	}
 }
