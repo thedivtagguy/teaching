@@ -4,8 +4,7 @@
   import { writable } from 'svelte/store';
   import { ArrowLeft, Menu, X, BookOpen, Clipboard } from 'lucide-svelte';
   import CourseMenu from './CourseMenu.svelte';
-  
-  type MenuDataType = Record<string, any>;
+  import type { MenuDataType, CourseMenu as CourseMenuType, Reading, Assignment } from '$lib/utils/contentSchema';
   
   export let menuData: MenuDataType = {};
   export let availableCourses: string[] = ['cdv2025', 'cs201'];
@@ -46,7 +45,7 @@
   }
   
   // Extract readings and assignments from current page data if available
-  $: currentCourseData = $selectedCourse ? menuData[$selectedCourse] || {} : {};
+  $: currentCourseData = $selectedCourse ? menuData[$selectedCourse] as CourseMenuType || {} : {};
   
   // Combine course readings and current page readings if both exist
   $: combinedMenuData = {
@@ -54,14 +53,14 @@
     readings: [
       ...(currentCourseData.readings || []),
       // If current page has readings, add those too
-      ...(currentDayContent?.readings || [])
+      ...((currentDayContent?.readings || []) as Reading[])
     ],
     assignments: [
       ...(currentCourseData.assignments || []),
       // If current page has assignments, add those too
-      ...(currentDayContent?.assignments || [])
+      ...((currentDayContent?.assignments || []) as Assignment[])
     ]
-  };
+  } as CourseMenuType;
 </script>
 
 <div class="flex min-h-screen flex-col md:flex-row bg-base-100">

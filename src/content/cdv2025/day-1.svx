@@ -18,15 +18,7 @@ readings:
     author: "Donald Knuth"
     pages: "10-25"
     url: "https://example.com/knuth-vol1"
-assignments:
-  - title: "Setup Development Environment"
-    due: "2023-09-12"
-    description: "Install required software for the course."
-    path: "/cdv2025/assignments/setup"
-  - title: "First Program"
-    due: "2023-09-12"
-    description: "Write your first 'Hello, World' program."
-    path: "/cdv2025/assignments/hello-world"
+
 ---
 
 # Day 1: Introduction to Computer Science

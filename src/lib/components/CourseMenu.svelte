@@ -1,47 +1,24 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { BookOpen, Book, Calendar, ChevronDown, ChevronUp, FileText, Clipboard } from 'lucide-svelte';
-  import type { MenuSection } from '$lib/utils/menu';
-  
-  // Define the MenuData interface if it doesn't exist in the menu utils
-  interface MenuData {
-    title: string;
-    sections: MenuSection[];
-    readings?: ReadingItem[];
-    assignments?: AssignmentItem[];
-  }
-  
-  // Define interfaces for readings and assignments
-  interface ReadingItem {
-    title: string;
-    author?: string;
-    pages?: string;
-    url?: string;
-  }
-  
-  interface AssignmentItem {
-    title: string;
-    due?: string;
-    description?: string;
-    path?: string;
-  }
+  import type { CourseMenu, MenuSection, Reading, Assignment } from '$lib/utils/contentSchema';
   
   export let courseId: string;
-  export let menuData: MenuData | null = null;
+  export let menuData: CourseMenu | null = null;
   export let selectedCourse: string | null = null;
+  
   // Current path for highlighting active item
   $: currentPath = $page.url.pathname;
   
   // Track expanded sections
   let expandedSections: Record<string, boolean> = {};
   
-
   // Initialize expanded state based on current path
   $: {
     if (menuData) {
       menuData.sections.forEach((section: MenuSection) => {
         // Auto-expand the section that contains the active item
-        const hasActiveItem = section.items.some((item: { path: string }) => item.path === currentPath);
+        const hasActiveItem = section.items.some(item => item.path === currentPath);
         if (hasActiveItem && !expandedSections[section.title]) {
           expandedSections[section.title] = true;
         }
