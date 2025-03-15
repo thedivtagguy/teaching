@@ -23,28 +23,45 @@
       // Construct full URL to prevent errors during prerendering
       const apiUrl = new URL('/api/entries', window.location.origin).href;
       
-      if (filterByUser && username) {
-        // Fetch entries for a specific user
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username })
-        });
+      // In production, we might need to call the Netlify function directly
+      const entriesApi = apiUrl;
+      console.log('Fetching entries from:', entriesApi);
+      
+      try {
+        let response;
         
-        if (!response.ok) {
-          throw new Error('Failed to fetch entries');
+        if (filterByUser && username) {
+          // Fetch entries for a specific user
+          response = await fetch(entriesApi, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username })
+          });
+        } else {
+          // Fetch all entries
+          response = await fetch(entriesApi);
         }
         
-        entries = await response.json();
-      } else {
-        // Fetch all entries
-        const response = await fetch(apiUrl);
-        
         if (!response.ok) {
-          throw new Error('Failed to fetch entries');
+          const errorText = await response.text();
+          console.error('Response error:', response.status, errorText);
+          throw new Error(`Failed to fetch entries: ${response.status}`);
         }
         
-        entries = await response.json();
+        const data = await response.json();
+        console.log('Entries data:', data);
+        
+        // Handle both direct array responses and error object responses
+        if (Array.isArray(data)) {
+          entries = data;
+        } else if (data.error) {
+          throw new Error(data.error);
+        } else {
+          entries = [];
+        }
+      } catch (err) {
+        console.error('Fetch error:', err);
+        throw err;
       }
     } catch (err: unknown) {
       console.error('Error fetching entries:', err);

@@ -75,7 +75,14 @@
     try {
       isSubmitting = true;
       
-      const response = await fetch('/api/submit', {
+      // Use either the SvelteKit API endpoint or direct Netlify function URL
+      const apiUrl = typeof window !== 'undefined' 
+        ? new URL('/api/submit', window.location.origin).href
+        : '';
+      
+      console.log('Submitting form to:', apiUrl);
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
