@@ -1,18 +1,17 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import type { MenuDataType, MenuSection, MenuItem } from '$lib/utils/menu';
+  import type { MenuSection, CourseMeta, CourseMenu } from '$lib/utils/contentSchema';
   
   // Get course ID from URL parameter
   const courseId = $page.params.courseId;
   
-  // Get course metadata from page data (loaded by +page.server.ts)
-  $: metadata = $page.data.courseMetadata;
-  
-  // Get menu data from the page data (populated by layout.server.ts)
-  $: menuData = ($page.data.menuData?.[courseId] || { sections: [] }) as { sections: MenuSection[] };
+  // Get course data from page data (loaded by +page.server.ts)
+  $: courseData = $page.data.courseData;
+  $: metadata = courseData?.metadata as CourseMeta;
+  $: menu = courseData?.menu as CourseMenu;
   
   // Filter sections to exclude Course Info
-  $: contentSections = menuData.sections.filter(section => section.title !== 'Course Info');
+  $: contentSections = menu?.sections?.filter(section => section.title !== 'Course Info') || [];
 </script>
 
 <svelte:head>

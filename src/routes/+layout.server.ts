@@ -1,35 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import yaml from 'js-yaml';
-import type { MenuDataType } from '$lib/utils/menu';
-import { generateMenuConfig } from '$lib/utils/menuGenerator';
-import { getAllCourses, resetMetadataCache } from '$lib/utils/courseMetadata';
+import type { MenuDataType } from '$lib/utils/contentSchema';
+import { generateMenuConfig, getAllCourses, resetContentCache } from '$lib/utils/contentService';
 import type { LayoutServerLoad } from './$types';
 import { dev } from '$app/environment';
-
-// Get the directory path for the current module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '../..');
-
-/**
- * Load menu configuration from YAML file
- * This is a fallback if dynamic generation fails
- */
-function loadMenuConfigFromFile(): MenuDataType {
-  try {
-    // Use the correct path to the menu.yaml file in the src directory
-    const configPath = path.resolve(rootDir, 'src/config/menu.yaml');
-    console.log('Looking for menu file at:', configPath);
-    const fileContents = fs.readFileSync(configPath, 'utf8');
-    const parsedConfig = yaml.load(fileContents) as MenuDataType;
-    return parsedConfig;
-  } catch (error) {
-    console.error('Error loading menu configuration:', error);
-    return {};
-  }
-}
 
 /**
  * Get list of available course IDs from menu configuration
@@ -45,25 +17,11 @@ export const load: LayoutServerLoad = async ({ depends }) => {
   
   // In development, reset cache on each load to ensure fresh data
   if (dev) {
-    resetMetadataCache();
+    resetContentCache();
   }
   
-  // Try to dynamically generate the menu from content files
-  let menuData: MenuDataType;
-  try {
-    menuData = await generateMenuConfig();
-    
-    // Optionally, write the generated config to disk for inspection
-    // This is useful for debugging but can be removed in production
-    const configPath = path.resolve(rootDir, 'src/config/menu.generated.yaml');
-    const yamlContent = yaml.dump(menuData, { lineWidth: 100 });
-    fs.writeFileSync(configPath, yamlContent, 'utf8');
-    
-  } catch (error) {
-    console.error('Error generating menu configuration, falling back to static file:', error);
-    // Fallback to reading the static file
-    menuData = loadMenuConfigFromFile();
-  }
+  // Generate the menu from content files using the unified content service
+  const menuData = generateMenuConfig();
   
   // Get course IDs from menu
   const availableCourses = getAvailableCourses(menuData);

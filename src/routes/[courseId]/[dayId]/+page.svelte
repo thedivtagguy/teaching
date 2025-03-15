@@ -4,7 +4,7 @@
   import MDLayout from '$lib/components/MDLayout.svelte';
   import TableOfContents from '$lib/components/TableOfContents.svelte';
   import { Calendar, BookOpen, Clipboard, ArrowLeft, ArrowRight } from 'lucide-svelte';
-  import type { MenuSection } from '$lib/utils/menu';
+  import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
   
   // Get course ID and day ID from URL params
   $: courseId = $page.params.courseId;
@@ -14,14 +14,21 @@
   let error: string | null = null;
   
   // Get menu data for navigation between days
-  $: menuData = $page.data.menuData?.[courseId] || { sections: [] };
+  $: menuData = $page.data.menuData?.[courseId] as CourseMenu || { sections: [], title: '', readings: [], assignments: [] };
   $: currentDayPath = `/${courseId}/${dayId}`;
   
   // Find next and previous pages for navigation
   $: {
-    let allItems: { path: string; title: string }[] = [];
+    let allItems: MenuItem[] = [];
     menuData.sections.forEach((section: MenuSection) => {
       allItems = [...allItems, ...section.items];
+    });
+    
+    // Sort all items by their order property
+    allItems.sort((a, b) => {
+      const orderA = a.order !== undefined ? a.order : 999;
+      const orderB = b.order !== undefined ? b.order : 999;
+      return orderA - orderB;
     });
     
     const currentIndex = allItems.findIndex(item => item.path === currentDayPath);
@@ -29,8 +36,8 @@
     nextPage = currentIndex < allItems.length - 1 ? allItems[currentIndex + 1] : null;
   }
   
-  let previousPage: { path: string; title: string } | null = null;
-  let nextPage: { path: string; title: string } | null = null;
+  let previousPage: MenuItem | null = null;
+  let nextPage: MenuItem | null = null;
   
   // Use a reactive statement instead of onMount to load content
   // This will re-run whenever courseId or dayId changes
