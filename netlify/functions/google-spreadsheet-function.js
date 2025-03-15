@@ -11,8 +11,30 @@ import { spreadsheetConfig, formatDate } from './schema.js';
  * @returns {Object} Response object
  */
 export const handler = async function(event, context) {
+	// For debugging - log the event details
+	console.log('Event path:', event.path);
+	console.log('HTTP method:', event.httpMethod);
+	console.log('Headers:', JSON.stringify(event.headers, null, 2));
+	console.log('Body:', event.body);
+	
 	// Parse client IP for tracking
 	const userIP = event.headers['x-nf-client-connection-ip'] || '127.0.0.1';
+	
+	// Add CORS headers for browser requests
+	const headers = {
+		'Access-Control-Allow-Origin': '*',
+		'Access-Control-Allow-Headers': 'Content-Type',
+		'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+	};
+	
+	// Handle OPTIONS request (CORS preflight)
+	if (event.httpMethod === 'OPTIONS') {
+		return {
+			statusCode: 200,
+			headers,
+			body: JSON.stringify({ message: 'CORS preflight response' })
+		};
+	}
 	
 	// Setup Google Sheets authentication
 	try {
@@ -33,6 +55,7 @@ export const handler = async function(event, context) {
 		if (!sheet) {
 			return {
 				statusCode: 404,
+				headers,
 				body: JSON.stringify({ 
 					error: `Sheet "${sheetTitle}" not found in the spreadsheet` 
 				})
@@ -42,33 +65,61 @@ export const handler = async function(event, context) {
 		// Ensure the sheet has the required columns
 		await ensureHeaderRow(sheet);
 
-		// Handle the request based on HTTP method
+		// Extract path info
 		const path = event.path.replace(/\.netlify\/functions\/[^/]+/, '');
 		const segments = path.split('/').filter((e) => e);
-
-		switch (event.httpMethod) {
-			case 'GET':
-				return handleGet(sheet, segments);
-				
-			case 'POST':
-				return handlePost(sheet, event.body);
-				
-			case 'PUT':
-				return handlePut(sheet, segments, event.body, userIP);
-				
-			case 'DELETE':
-				return handleDelete(sheet, segments);
-				
-			default:
-				return {
-					statusCode: 405,
-					body: JSON.stringify({ error: 'Method not allowed' })
-				};
+		
+		// Determine the request API type from path or referer
+		const isEntriesRequest = 
+			event.path.includes('/api/entries') || 
+			(event.headers.referer && event.headers.referer.includes('/entries'));
+			
+		const isSubmitRequest = 
+			event.path.includes('/api/submit') || 
+			(event.headers.referer && event.headers.referer.includes('/submit'));
+			
+		console.log('API request type:', { isEntriesRequest, isSubmitRequest });
+		
+		// Handle the request based on method and API type
+		let result;
+		
+		if (event.httpMethod === 'GET' || (event.httpMethod === 'GET' && isEntriesRequest)) {
+			// Handle GET requests for entries
+			result = await handleGet(sheet, segments);
 		}
+		else if (event.httpMethod === 'POST' && isSubmitRequest) {
+			// Handle form submissions
+			result = await handlePost(sheet, event.body);
+		}
+		else if (event.httpMethod === 'POST' && isEntriesRequest) {
+			// Handle filtered entries requests
+			result = await handleFilteredEntries(sheet, event.body);
+		}
+		else if (event.httpMethod === 'PUT') {
+			// Handle PUT requests
+			result = await handlePut(sheet, segments, event.body, userIP);
+		}
+		else if (event.httpMethod === 'DELETE') {
+			// Handle DELETE requests
+			result = await handleDelete(sheet, segments);
+		}
+		else {
+			// Method not allowed
+			result = {
+				statusCode: 405,
+				body: JSON.stringify({ error: 'Method not allowed' })
+			};
+		}
+		
+		// Add CORS headers to the response
+		result.headers = { ...result.headers, ...headers };
+		return result;
+		
 	} catch (err) {
 		console.error('Error occurred in processing: ', err);
 		return {
 			statusCode: 500,
+			headers,
 			body: JSON.stringify({
 				error: err.message,
 				details: err.stack
@@ -76,6 +127,43 @@ export const handler = async function(event, context) {
 		};
 	}
 };
+
+/**
+ * Handle filtered entries by username
+ */
+async function handleFilteredEntries(sheet, body) {
+	try {
+		const data = JSON.parse(body);
+		const username = data.username;
+		
+		if (!username) {
+			return {
+				statusCode: 400,
+				body: JSON.stringify({ error: 'Username is required for filtering' })
+			};
+		}
+		
+		// Get all entries and filter by username
+		const rows = await sheet.getRows();
+		const filteredRows = rows.filter(row => {
+			const rowData = row.toObject();
+			return rowData.username === username;
+		});
+		
+		const serializedRows = filteredRows.map(row => row.toObject());
+		
+		return {
+			statusCode: 200,
+			body: JSON.stringify(serializedRows)
+		};
+	} catch (err) {
+		console.error('Error filtering entries:', err);
+		return {
+			statusCode: 500,
+			body: JSON.stringify({ error: 'Failed to filter entries', details: err.message })
+		};
+	}
+}
 
 /**
  * Handle GET requests
@@ -227,29 +315,6 @@ async function handleDelete(sheet, segments) {
 			body: JSON.stringify({ error: 'Row not found' })
 		};
 	}
-}
-
-/**
- * Helper function to serialize row data
- */
-function serializeRow(row) {
-	let temp = {};
-	// Make this more defensive against undefined properties
-	if (row && row._sheet && row._sheet.headerValues) {
-		row._sheet.headerValues.forEach((header) => {
-			temp[header] = row.get(header);
-		});
-	} else {
-		// Fallback for when the sheet structure is unexpected
-		// Extract data directly from the row's properties
-		Object.keys(row).forEach(key => {
-			// Skip internal properties that start with underscore
-			if (!key.startsWith('_') && typeof row[key] !== 'function') {
-				temp[key] = row[key];
-			}
-		});
-	}
-	return temp;
 }
 
 /**

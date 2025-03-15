@@ -7,6 +7,39 @@
 @import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo/index.css');
 @import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/fira-code/index.css');
 
+/* Font face definitions - same as the main site */
+@font-face {
+  font-family: 'LibreCaslonCondensed';
+  src: url('../lib/fonts/LibreCaslonCondensed-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LibreCaslonCondensed';
+  src: url('../lib/fonts/LibreCaslonCondensed-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LibreCaslonCondensed';
+  src: url('../lib/fonts/LibreCaslonCondensed-Medium.woff2') format('woff2');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LibreCaslonCondensed';
+  src: url('../lib/fonts/LibreCaslonCondensed-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Font families */
   --font-archivo: 'Archivo Variable', sans-serif;
@@ -31,13 +64,34 @@
   --shadow-btn-drop-shadow: 0 2px 0 0 #2b2b2b;
 }
 
-/* Typography */
+/* Core layout */
+.reveal-viewport {
+  background-color: var(--color-base-100);
+}
+
 .reveal {
   font-family: var(--font-archivo);
   font-size: 36px;
   color: var(--color-neutral);
+  text-align: left; /* Default align content left */
 }
 
+/* Apply noise texture overlay */
+.reveal .slides::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 245 245' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='8.51' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Typography */
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -50,6 +104,7 @@
   margin-bottom: 0.5em;
   text-transform: none;
   letter-spacing: normal;
+  text-align: left;
 }
 
 .reveal h1 {
@@ -72,30 +127,22 @@
   font-size: 1.2em;
 }
 
-.reveal p {
+.reveal p, 
+.reveal li, 
+.reveal td, 
+.reveal tr {
   font-family: var(--font-archivo);
   line-height: 1.5;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  text-align: left;
 }
 
-/* Background */
-.reveal-viewport {
-  background-color: var(--color-base-100);
-}
-
-/* Add noise texture overlay */
-.reveal .slides::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 245 245' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='8.51' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 1;
+/* Fix slide title centering for title slides */
+.reveal .slides section.title-slide h1,
+.reveal .slides section.title-slide h2,
+.reveal .slides section.title-slide h3,
+.reveal .slides section.title-slide p {
+  text-align: center;
 }
 
 /* Links */
@@ -116,17 +163,22 @@
 .reveal ul {
   list-style-type: disc;
   margin-bottom: 1em;
+  display: block;
+  text-align: left;
 }
 
 .reveal ol {
   list-style-type: decimal;
   margin-bottom: 1em;
+  display: block;
+  text-align: left;
 }
 
 .reveal li {
   font-family: var(--font-archivo);
   margin-bottom: 0.5em;
   line-height: 1.4;
+  display: list-item;
 }
 
 /* Code */
@@ -140,8 +192,9 @@
   box-shadow: var(--shadow-btn-drop-shadow);
   width: 100%;
   max-width: 90%;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
+  text-align: left;
 }
 
 .reveal pre code {
@@ -152,6 +205,7 @@
   font-size: 0.8em;
   line-height: 1.6;
   max-height: 400px;
+  text-align: left;
 }
 
 .reveal code {
@@ -175,7 +229,8 @@
   font-style: italic;
   color: var(--color-neutral);
   width: 85%;
-  margin: 1em auto;
+  margin: 1em 0;
+  text-align: left;
 }
 
 /* Images */
@@ -186,12 +241,39 @@
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: none;
+  display: block;
+  object-fit: contain;
+}
+
+/* Image with captions */
+.reveal figure {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.reveal figure img {
+  max-width: 90%;
+  max-height: 65vh;
+  display: block;
+  margin: 0 auto 0.5em auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.reveal figcaption {
+  font-size: 0.7em;
+  color: var(--color-base-300);
+  font-style: italic;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 /* Tables */
 .reveal table {
   width: 90%;
-  margin: 1em auto;
+  margin: 1em 0;
   border-collapse: collapse;
   border: 2px solid var(--color-neutral);
   box-shadow: var(--shadow-btn-drop-shadow);
@@ -212,6 +294,7 @@
   padding: 0.75em 1em;
   border-bottom: 1px solid var(--color-base-300);
   font-family: var(--font-archivo);
+  text-align: left;
 }
 
 /* Highlight boxes */
@@ -222,13 +305,22 @@
   border-radius: 0.5rem;
   border: 2px solid var(--color-neutral);
   box-shadow: var(--shadow-btn-drop-shadow);
-  margin: 1em auto;
+  margin: 1em 0;
   width: 90%;
+  text-align: left;
 }
 
 .reveal .important {
   background-color: var(--color-blue);
   border-left: 4px solid var(--color-neutral);
+  color: white;
+}
+
+.reveal .important p,
+.reveal .important li,
+.reveal .important h1,
+.reveal .important h2,
+.reveal .important h3 {
   color: white;
 }
 
@@ -264,7 +356,7 @@
   background-color: var(--color-yellow);
 }
 
-/* Utilities */
+/* Buttons */
 .reveal .btn-drop-shadow {
   box-shadow: 0 2px 0 0 #2b2b2b;
 }
@@ -314,80 +406,146 @@
   color: var(--color-blue);
 }
 
+/* Fragments */
+.reveal .fragment {
+  transition: all 0.3s ease;
+}
+
+.reveal .fragment.fade-in.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal .fragment.fade-out.visible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.reveal .fragment.highlight-blue.visible {
+  color: var(--color-blue);
+}
+
+.reveal .fragment.highlight-red.visible {
+  color: var(--color-red);
+}
+
+.reveal .fragment.highlight-green.visible {
+  color: var(--color-green);
+}
+
 /* Special slide backgrounds */
-.reveal .yellow-slide {
+.reveal .slides section.yellow-slide {
   background-color: var(--color-yellow);
 }
 
-.reveal .blue-slide {
+.reveal .slides section.blue-slide {
   background-color: var(--color-blue);
   color: white;
 }
 
-.reveal .blue-slide h1,
-.reveal .blue-slide h2,
-.reveal .blue-slide h3 {
+.reveal .slides section.blue-slide h1,
+.reveal .slides section.blue-slide h2,
+.reveal .slides section.blue-slide h3,
+.reveal .slides section.blue-slide p {
   color: white;
 }
 
-.reveal .green-slide {
+.reveal .slides section.green-slide {
   background-color: var(--color-green);
 }
 
-.reveal .neutral-slide {
+.reveal .slides section.neutral-slide {
   background-color: var(--color-neutral);
   color: white;
 }
 
-.reveal .neutral-slide h1,
-.reveal .neutral-slide h2,
-.reveal .neutral-slide h3 {
+.reveal .slides section.neutral-slide h1,
+.reveal .slides section.neutral-slide h2,
+.reveal .slides section.neutral-slide h3,
+.reveal .slides section.neutral-slide p {
   color: white;
   border-color: white;
 }
 
-/* Font defs - include the fonts directly if custom fonts needed */
-@font-face {
-  font-family: 'LibreCaslonCondensed';
-  src: url('./lib/fonts/LibreCaslonCondensed-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+/* Layout helpers */
+.reveal .r-stack {
+  display: grid !important;
 }
 
-@font-face {
-  font-family: 'LibreCaslonCondensed';
-  src: url('./lib/fonts/LibreCaslonCondensed-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+.reveal .r-stack > * {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-@font-face {
-  font-family: 'LibreCaslonCondensed';
-  src: url('./lib/fonts/LibreCaslonCondensed-BoldItalic.woff2') format('woff2');
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
+.reveal .r-stack > img, 
+.reveal .r-stack > video {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-/* Two-column layout */
-.reveal .columns {
+.reveal .r-stretch {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.reveal .r-hstack {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+}
+
+.reveal .r-vstack {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 1em;
+}
+
+.reveal .two-columns {
   display: flex;
   gap: 2em;
 }
 
-.reveal .column {
-  flex: 1;
+.reveal .two-columns > * {
+  flex: 1 1 50%;
 }
 
-/* Grid layout for content */
-.reveal .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.reveal .three-columns {
+  display: flex;
   gap: 1em;
-  width: 90%;
-  margin: 0 auto;
+}
+
+.reveal .three-columns > * {
+  flex: 1 1 33.3%;
+}
+
+/* Alignment utilities */
+.reveal .text-center, 
+.reveal .text-center h1,
+.reveal .text-center h2,
+.reveal .text-center h3,
+.reveal .text-center p,
+.reveal .text-center ul,
+.reveal .text-center ol {
+  text-align: center !important;
+}
+
+.reveal .text-right, 
+.reveal .text-right h1,
+.reveal .text-right h2,
+.reveal .text-right h3,
+.reveal .text-right p,
+.reveal .text-right ul,
+.reveal .text-right ol {
+  text-align: right !important;
 }
 
 /* Chart and visualization containers */
@@ -397,4 +555,246 @@
   padding: 1em;
   border: 2px solid var(--color-neutral);
   box-shadow: var(--shadow-btn-drop-shadow);
+  margin: 1em 0;
+  width: 90%;
+}
+
+/* Code highlights */
+.reveal .hljs-comment,
+.reveal .hljs-quote {
+  color: #a0a0a0;
+}
+
+.reveal .hljs-variable,
+.reveal .hljs-template-variable,
+.reveal .hljs-attribute,
+.reveal .hljs-tag,
+.reveal .hljs-name,
+.reveal .hljs-regexp,
+.reveal .hljs-link,
+.reveal .hljs-name,
+.reveal .hljs-selector-id,
+.reveal .hljs-selector-class {
+  color: #f98181;
+}
+
+.reveal .hljs-number,
+.reveal .hljs-meta,
+.reveal .hljs-built_in,
+.reveal .hljs-builtin-name,
+.reveal .hljs-literal,
+.reveal .hljs-type,
+.reveal .hljs-params {
+  color: #fbbc88;
+}
+
+.reveal .hljs-string,
+.reveal .hljs-symbol,
+.reveal .hljs-bullet {
+  color: #b9f18d;
+}
+
+.reveal .hljs-title,
+.reveal .hljs-section {
+  color: #ffd479;
+}
+
+.reveal .hljs-keyword,
+.reveal .hljs-selector-tag {
+  color: #7ec9f5;
+}
+
+/* Print PDF */
+@page {
+  size: 1920px 1080px;
+  margin: 0;
+}
+
+/* Print */
+@media print {
+  .reveal pre code {
+    overflow: hidden !important;
+  }
+  
+  .reveal .slides section {
+    height: 100% !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+  
+  .reveal img {
+    box-shadow: none !important;
+  }
+}
+
+/* Fix slide orientation */
+.reveal.center, 
+.reveal.center .slides, 
+.reveal.center .slides section {
+  height: 100% !important;
+}
+
+.reveal .slides > section, 
+.reveal .slides > section > section {
+  text-align: left;
+}
+
+/* Images layout modifiers */
+.reveal .img-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.reveal .img-border {
+  border: 2px solid var(--color-neutral) !important;
+}
+
+.reveal .img-circle {
+  border-radius: 50% !important;
+}
+
+.reveal .img-contain img {
+  object-fit: contain !important;
+}
+
+.reveal .img-cover img {
+  object-fit: cover !important;
+}
+
+.reveal .img-float-left {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+
+.reveal .img-float-right {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* Grid layouts */
+.reveal .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+  width: 100%;
+}
+
+.reveal .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  width: 100%;
+}
+
+.reveal .grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  width: 100%;
+}
+
+.reveal .grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+  width: 100%;
+}
+
+/* Dark mode support */
+.reveal.has-dark-background {
+  color: var(--color-base-100);
+}
+
+.reveal.has-dark-background h1,
+.reveal.has-dark-background h2,
+.reveal.has-dark-background h3,
+.reveal.has-dark-background h4,
+.reveal.has-dark-background h5,
+.reveal.has-dark-background h6,
+.reveal.has-dark-background p,
+.reveal.has-dark-background li {
+  color: var(--color-base-100);
+}
+
+.reveal.has-dark-background a {
+  color: var(--color-blue);
+}
+
+.reveal.has-dark-background .hljs {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Quote styling */
+.reveal blockquote {
+  position: relative;
+  quotes: """ """ "'" "'";
+}
+
+.reveal blockquote::before {
+  content: open-quote;
+  position: absolute;
+  left: -0.5em;
+  top: -0.1em;
+  font-size: 2em;
+  color: var(--color-yellow);
+}
+
+.reveal blockquote p {
+  margin-bottom: 0.5em;
+}
+
+.reveal cite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  margin-top: 0.5em;
+  font-size: 0.8em;
+}
+
+/* Spacing utilities */
+.reveal .mt-0 { margin-top: 0 !important; }
+.reveal .mt-1 { margin-top: 0.25em !important; }
+.reveal .mt-2 { margin-top: 0.5em !important; }
+.reveal .mt-3 { margin-top: 1em !important; }
+.reveal .mt-4 { margin-top: 1.5em !important; }
+
+.reveal .mb-0 { margin-bottom: 0 !important; }
+.reveal .mb-1 { margin-bottom: 0.25em !important; }
+.reveal .mb-2 { margin-bottom: 0.5em !important; }
+.reveal .mb-3 { margin-bottom: 1em !important; }
+.reveal .mb-4 { margin-bottom: 1.5em !important; }
+
+.reveal .ml-0 { margin-left: 0 !important; }
+.reveal .ml-1 { margin-left: 0.25em !important; }
+.reveal .ml-2 { margin-left: 0.5em !important; }
+.reveal .ml-3 { margin-left: 1em !important; }
+.reveal .ml-4 { margin-left: 1.5em !important; }
+
+.reveal .mr-0 { margin-right: 0 !important; }
+.reveal .mr-1 { margin-right: 0.25em !important; }
+.reveal .mr-2 { margin-right: 0.5em !important; }
+.reveal .mr-3 { margin-right: 1em !important; }
+.reveal .mr-4 { margin-right: 1.5em !important; }
+
+/* Width utilities */
+.reveal .w-100 { width: 100% !important; }
+.reveal .w-75 { width: 75% !important; }
+.reveal .w-50 { width: 50% !important; }
+.reveal .w-25 { width: 25% !important; }
+
+/* Height utilities */
+.reveal .h-100 { height: 100% !important; }
+.reveal .h-75 { height: 75% !important; }
+.reveal .h-50 { height: 50% !important; }
+.reveal .h-25 { height: 25% !important; }
+
+/* Fix for Reveal.js default centering */
+.reveal.center .slides {
+  text-align: left !important;
+}
+
+/* Override Reveal's default slide centering */
+.reveal .slides {
+  text-align: left !important;
 }

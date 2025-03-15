@@ -9,3 +9,16 @@
   included_files = ["netlify/functions/**/*.js"]
   external_node_modules = ["google-spreadsheet", "google-auth-library"]
 
+# Redirect API routes to Netlify functions
+[[redirects]]
+  from = "/api/submit"
+  to = "/.netlify/functions/google-spreadsheet-function"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/entries"
+  to = "/.netlify/functions/google-spreadsheet-function"
+  status = 200
+  force = true
+
