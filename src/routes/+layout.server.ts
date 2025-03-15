@@ -3,6 +3,9 @@ import { generateMenuConfig, getAllCourses, resetContentCache } from '$lib/utils
 import type { LayoutServerLoad } from './$types';
 import { dev } from '$app/environment';
 
+// Enable prerendering for the entire site
+export const prerender = true;
+
 /**
  * Get list of available course IDs from menu configuration
  */

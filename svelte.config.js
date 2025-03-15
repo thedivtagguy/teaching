@@ -13,7 +13,20 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			fallback: 'index.html'
+		}),
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// Ignore prerendering errors for API routes
+				if (path.startsWith('/api/')) {
+					return;
+				}
+				
+				// Throw errors for other routes
+				throw new Error(`${message}\n\tPath: ${path}\n\tReferrer: ${referrer}`);
+			}
+		}
 	},
 
 	extensions: ['.svelte', '.svx', '.md']
