@@ -9,12 +9,10 @@
   let username = '';
   let filterByUser = false;
   
-  // Use immediate async function instead of onMount
-  // This will run when the component initializes and when URL parameters change
-  $: {
-    // Immediately fetch entries when component loads
+  // Use onMount to ensure we only run in the browser
+  onMount(() => {
     fetchEntries();
-  }
+  });
   
   // Fetch entries (all or filtered by username)
   async function fetchEntries() {
@@ -22,9 +20,12 @@
     error = null;
     
     try {
+      // Construct full URL to prevent errors during prerendering
+      const apiUrl = new URL('/api/entries', window.location.origin).href;
+      
       if (filterByUser && username) {
         // Fetch entries for a specific user
-        const response = await fetch('/api/entries', {
+        const response = await fetch(apiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username })
@@ -37,7 +38,7 @@
         entries = await response.json();
       } else {
         // Fetch all entries
-        const response = await fetch('/api/entries');
+        const response = await fetch(apiUrl);
         
         if (!response.ok) {
           throw new Error('Failed to fetch entries');
@@ -168,4 +169,4 @@
       </div>
     {/if}
   </main>
-</div> 
+</div>
