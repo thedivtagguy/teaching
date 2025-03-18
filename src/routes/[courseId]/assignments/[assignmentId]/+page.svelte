@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
   import MDLayout from '$lib/components/MDLayout.svelte';
   import { Calendar, ArrowLeft, CheckCircle } from 'lucide-svelte';
+  import { confetti } from '@neoconfetti/svelte';
   
   // Get course ID and assignment ID from URL params
   $: courseId = $page.params.courseId;
@@ -10,6 +11,10 @@
   
   let assignment: any = null;
   let error: string | null = null;
+  
+  // State for confetti
+  let showConfetti = false;
+  let confettiElement: HTMLElement;
   
   // Use a reactive statement to load assignment content
   $: {
@@ -32,18 +37,44 @@
     loadAssignment();
   }
   
-  // Track completion status (this would typically come from a database)
+  // Track completion status with localStorage
   let isCompleted = false;
   let isSubmitted = false;
   
+  // Generate unique storage keys
+  const completedKey = `${courseId}_assignment_${assignmentId}_completed`;
+  const submittedKey = `${courseId}_assignment_${assignmentId}_submitted`;
+  
+  onMount(() => {
+    // Load saved state from localStorage
+    isCompleted = localStorage.getItem(completedKey) === 'true';
+    isSubmitted = localStorage.getItem(submittedKey) === 'true';
+  });
+  
   function markAsCompleted() {
-    isCompleted = true;
-    // In a real app, you'd save this to a database
+    isCompleted = !isCompleted;
+    
+    // Show confetti only when marking as completed (not when unmarking)
+    if (isCompleted) {
+      showConfetti = true;
+      setTimeout(() => showConfetti = false, 3000);
+    }
+    
+    // Save to localStorage
+    localStorage.setItem(completedKey, isCompleted.toString());
   }
   
   function submitAssignment() {
-    isSubmitted = true;
-    // In a real app, this would trigger an assignment submission
+    isSubmitted = !isSubmitted;
+    
+    // Show confetti when submitting (not when retracting)
+    if (isSubmitted) {
+      showConfetti = true;
+      setTimeout(() => showConfetti = false, 3000);
+    }
+    
+    // Save to localStorage
+    localStorage.setItem(submittedKey, isSubmitted.toString());
   }
 </script>
 
@@ -55,7 +86,7 @@
   {/if}
 </svelte:head>
 
-<div class="max-w-3xl mx-auto">
+<div class="max-w-3xl overflow-hidden relative mx-auto">
   <!-- Back to course link -->
   <div class="mb-6">
     <a href="/{courseId}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
@@ -114,33 +145,18 @@
       </div>
       
       <!-- Assignment submission/actions -->
-      <div class="p-6 bg-gray-50 border-t border-gray-100">
-        <div class="flex flex-wrap gap-4 justify-between items-center">
-          <div>
-            {#if !isCompleted}
-              <button 
-                on:click={markAsCompleted}
-                class="bg-sage-600 hover:bg-sage-700 text-white py-2 px-4 rounded font-archivo transition-colors"
-              >
-                Mark as Completed
-              </button>
-            {/if}
-          </div>
+      <div class="py-6 bg-gray-50 border-t border-gray-100">
+        <div class="flex flex-wrap gap-4 justify-end items-center">
+         
           
           <div>
-            {#if !isSubmitted}
-              <button 
-                on:click={submitAssignment}
-                class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-archivo transition-colors"
-              >
-                Submit Assignment
-              </button>
-            {:else}
-              <div class="text-sage-600 font-archivo flex items-center">
-                <CheckCircle class="w-5 h-5 mr-2" />
-                Submitted
-              </div>
-            {/if}
+            <button 
+              on:click={submitAssignment}
+              class={`${isSubmitted ? 'bg-sage text-neutral' : 'bg-blue text-white'} py-2 px-4 rounded font-archivo transition-colors`}
+            >
+              {isSubmitted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
+            </button>
+           
           </div>
         </div>
       </div>
@@ -153,4 +169,19 @@
       </div>
     </div>
   {/if}
-</div> 
+
+  <!-- Confetti container -->
+{#if showConfetti}
+<div 
+  bind:this={confettiElement}
+  use:confetti={{
+    particleCount: 100,
+    force: 0.6,
+    
+    colors: ['#FFD700', '#FFA500', '#FF4500', '#008000', '#4169E1']
+  }}
+  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] pointer-events-none z-50"
+></div>
+{/if} 
+</div>
+

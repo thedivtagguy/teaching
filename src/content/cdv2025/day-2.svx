@@ -1,0 +1,24 @@
+---
+title: "Day 2: Statistical and Visual Thinking"
+date: "2025-03-24"
+description: "Making sense of data and then knowing how to show it"
+published: true
+section: "Collection and Encoding"
+order: 2
+readings:
+  - title: "'Representing Data', from DataPoints"
+    author: "Nathan Yau"
+    pages: "1-44"
+    url: "https://flowingdata.com/data-points/DataPoints-Ch3.pdf "
+    readingTime: 30
+---
+
+# Day 2: Statistical and Visual Thinking
+
+We learnt that there's some basic steps to the dataviz process:
+
+<script>
+import RecipeCard from '$lib/components/dataviz/RecipeCard.svelte';
+</script>
+
+<RecipeCard/>

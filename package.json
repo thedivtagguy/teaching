@@ -55,6 +55,7 @@
 		"@fontsource-variable/archivo": "^5.2.5",
 		"@fontsource-variable/fira-code": "^5.2.5",
 		"@fontsource/roboto-condensed": "^5.2.5",
+		"@neoconfetti/svelte": "^2.2.2",
 		"google-auth-library": "^9.15.1",
 		"google-spreadsheet": "^4.1.4",
 		"js-yaml": "^4.1.0",
