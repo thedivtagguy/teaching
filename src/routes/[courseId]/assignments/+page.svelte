@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { Clipboard, Calendar, ExternalLink } from 'lucide-svelte';
+  import { Clipboard, Calendar, ExternalLink, Check, Clock } from 'lucide-svelte';
+  import { onMount } from 'svelte';
   
   // Define types for clarity
   interface Assignment {
@@ -27,6 +28,34 @@
     if (a === 'No Due Date') return 1;
     if (b === 'No Due Date') return -1;
     return new Date(a).getTime() - new Date(b).getTime();
+  });
+  
+  // Keep track of completed assignments using localStorage (similar to readings)
+  let completedAssignments = new Set<string>();
+  
+  // Generate a unique key for each assignment - make this match the reading key format
+  function getAssignmentKey(assignment: Assignment): string {
+    // Use the READING key format if you want to show the same completion status
+    return `${courseId}_reading_${assignment.title.replace(/\s+/g, '_')}`;
+  }
+  
+  // Check if an assignment is completed
+  function isAssignmentCompleted(assignment: Assignment): boolean {
+    const key = getAssignmentKey(assignment);
+    return completedAssignments.has(key);
+  }
+  
+  // Load saved assignment states on mount
+  onMount(() => {
+    for (const assignment of allAssignments) {
+      const key = getAssignmentKey(assignment);
+      if (localStorage.getItem(key) === 'completed') {
+        completedAssignments.add(key);
+      }
+    }
+    
+    // Trigger reactivity
+    completedAssignments = completedAssignments;
   });
   
   // Group assignments by due date
@@ -56,10 +85,12 @@
         <Clipboard class="w-8 h-8 mr-3 text-sage" />
         Course Assignments
       </h1>
-      <p class="text-lg text-base-300 font-archivo">
-        All assignments for {courseId.toUpperCase()}.
-      </p>
+     
+
+      <p class="text-neutral text-red mt-4 font-archivo">
+       Unless stated otherwise, all assignments are due at 9:00pm on the due date. <br/> After this, your assignment will be considered late and penalties will be applied.
     </div>
+
     
     {#if sortedDueDates.length === 0}
       <div class="bg-base-200 rounded-lg p-8 text-center border-2 border-neutral btn-drop-shadow">
@@ -86,6 +117,7 @@
                   <div>
                     <div class="flex justify-between">
                       <h3 class="font-libre-caslon font-bold text-lg text-neutral">
+                        
                         {assignment.title}
                       </h3>
                     </div>
@@ -94,15 +126,24 @@
                       <p class="text-neutral mt-1 font-archivo">{assignment.description}</p>
                     {/if}
                     
-                    <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex items-center justify-between flex-wrap gap-2">
                       {#if assignment.path}
                         <a 
                           href="{assignment.path}"
-                          class="bg-sage hover:bg-neutral text-white py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-sm uppercase transition-colors flex items-center"
+                          class="bg-blue hover:bg-neutral text-white py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-sm uppercase transition-colors flex items-center"
                         >
                           <span>View Assignment</span>
                           <ExternalLink class="w-3 h-3 ml-2" />
                         </a>
+                      {/if}
+                      {#if !isAssignmentCompleted(assignment)}
+                      <div class="text-neutral">
+                        <Clock class="size-5 mt-2" />
+                      </div>
+                      {:else}
+                      <div class="bg-sage text-white rounded-full p-2">
+                        <Check class="size-5" />
+                      </div>
                       {/if}
                     </div>
                   </div>

@@ -1,7 +1,7 @@
 ---
-title: "Day 1: Introduction to Computer Science"
-date: "2023-09-05"
-description: "First day of class covering course overview and introduction to programming concepts."
+title: "Day 1: Intro to Dataviz"
+date: "2025-03-23"
+description: "First day of class covering course overview and a tour of the landscape"
 published: true
 section: "Fundamentals"
 order: 1
@@ -21,7 +21,7 @@ readings:
 
 ---
 
-# Day 1: Introduction to Computer Science
+# Day 1: Intro to Dataviz
 
 ## Overview
 

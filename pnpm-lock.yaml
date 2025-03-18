@@ -17,6 +17,9 @@ importers:
       '@fontsource/roboto-condensed':
         specifier: ^5.2.5
         version: 5.2.5
+      '@neoconfetti/svelte':
+        specifier: ^2.2.2
+        version: 2.2.2(svelte@5.23.0)
       google-auth-library:
         specifier: ^9.15.1
         version: 9.15.1
@@ -758,6 +761,11 @@ packages:
   '@mapbox/node-pre-gyp@1.0.11':
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
+
+  '@neoconfetti/svelte@2.2.2':
+    resolution: {integrity: sha512-E7xCFVEEm5Ctnj2udTJy1b9oaTvjz1zi1mYdEtE8rB5BVwq6kHisosDS+zdWN5PMfEMjtbsOV9Cl6tsNSAD1sA==}
+    peerDependencies:
+      svelte: ^3.0.0 || ^4.0.0 || ^5.0.0
 
   '@netlify/binary-info@1.0.0':
     resolution: {integrity: sha512-4wMPu9iN3/HL97QblBsBay3E1etIciR84izI3U+4iALY+JHCrI+a2jO0qbAZ/nxKoegypYEaiiqWXylm+/zfrw==}
@@ -6042,6 +6050,10 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  '@neoconfetti/svelte@2.2.2(svelte@5.23.0)':
+    dependencies:
+      svelte: 5.23.0
 
   '@netlify/binary-info@1.0.0': {}
 

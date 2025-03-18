@@ -56,7 +56,7 @@
     </div>
   </div>
   
-  <div class="bg-gray-50 rounded-lg p-6">
+  <div>
     <h2 class="text-xl font-libre-caslon mb-4">Quick Links</h2>
     
     <!-- Dynamically generate module quick links based on metadata sections -->
