@@ -30,11 +30,11 @@
         </div>
         <div class="bg-white p-2.5">
           <div class="text-xs font-bold mb-1">Cook Time</div>
-          <div class="text-xs font-mono">1-2 hours (and/or lifetime)</div>
+          <div class="text-xs font-mono">1-2 hours (and/or a lifetime)</div>
         </div>
         <div class="bg-white p-2.5">
           <div class="text-xs font-bold mb-1">Difficulty</div>
-          <div class="text-xs font-mono">Kabhi kabhi</div>
+          <div class="text-xs font-mono">Sometimes</div>
         </div>
         <div class="bg-white p-2.5">
           <div class="text-xs font-bold mb-1">Serves</div>
@@ -64,8 +64,8 @@
             <ul class="list-none text-xs">
               <li class="mb-1 relative pl-4">Rapidly make different kinds of charts and tables</li>
               <li class="mb-1 relative pl-4">Colour? Large-sized Pieces? Filtering? Tadka?</li>
-              <li class="mb-1 relative pl-4">Copy first, then add your own masalas</li>
-              <li class="mb-1 relative pl-4">Just like onions, some data needs to be fried till transparent</li>
+              <li class="mb-1 relative pl-4">Copy first, then add your own masala</li>
+              <!-- <li class="mb-1 relative pl-4">Just like onions, some data needs to be fried till transparent</li> -->
             </ul>
           </div>
           
@@ -112,13 +112,13 @@
       
       <!-- Notes -->
       <div class="mx-4 mb-8 text-xs leading-relaxed">
-        For best results, follow the steps in order but don't be afraid to go back and adjust previous steps as you learn more about your data. Unless you're a billi, some curiosity is all you need.
+        For best results, follow the steps in order but don't be afraid to go back and adjust previous steps as you learn more about your data. <br/> Unless you're a cat, some curiosity is all you need.
       </div>
       
       <!-- Footer -->
       <div class="p-4 text-xs border-t border-black">
         <div class="flex justify-between text-[10px] mt-2.5">
-          <div>Devised by Arvind Venkatadri, typeset by Aman Bhargava</div>
+          <div>By <a class="underline" href="https://av-quarto.netlify.app/"> Arvind Venkatadri</a></div>
           <div class="bg-green-700 text-white px-1 py-0.5 text-[10px]">[v0.0.1]</div>
         </div>
       </div>

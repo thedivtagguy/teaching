@@ -1,5 +1,5 @@
 ---
-title: "cdv2025: Introduction to Computer Science - Syllabus"
+title: "CDV2025: Introduction to Dataviz"
 date: "Fall 2023"
 description: "Course syllabus for cdv2025: Introduction to Computer Science."
 published: true
@@ -7,16 +7,14 @@ section: "Course Info"
 order: 1
 ---
 
-# cdv2025: Introduction to Computer Science
-## Course Syllabus - Fall 2023
+# CDV2025: Introduction to Computer Science
 
 ### Instructor Information
 - **Name:** Aman Bhargava
-- **Email:** jsmith@university.edu
-- **Office:** Science Building, Room 301
-- **Office Hours:** Monday 2-4pm, Wednesday 1-3pm, or by appointment
+- **Email:** amanbhargava2001+cdv2025@gmail.com
+- **Office Hours:** Monday-Saturday 2-5pm, or by appointment
 
-### Course Description
+### What is this class?
 This course provides a broad introduction to computer science and programming. Topics include basic programming concepts, algorithms, data structures, problem-solving strategies, and an introduction to computer systems. The course is designed for students with little or no prior programming experience.
 
 ### Course Objectives

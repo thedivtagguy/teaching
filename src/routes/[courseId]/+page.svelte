@@ -23,7 +23,7 @@
   <h1 class="text-3xl font-libre-caslon mb-3">{metadata.title}</h1>
   <h2 class="text-xl text-gray-600 font-archivo mb-6">{metadata.term}</h2>
   
-  <div class="bg-white mb-8">
+  <div class=" mb-8">
    
     <!-- <p class="font-archivo mb-4">
       {metadata.description}
@@ -45,13 +45,10 @@
     
     <div class="mt-6 flex flex-col sm:flex-row gap-4">
       <a href="/{courseId}/syllabus" class="inline-block bg-blue text-white py-2 px-4 rounded font-archivo transition-colors hover:bg-purple">
-        View Syllabus
+        Info & Syllabus
       </a>
-      <a href="/{courseId}/schedule" class="inline-block bg-blue text-white py-2 px-4 rounded font-archivo transition-colors hover:bg-purple">
-        View Schedule
-      </a>
-      <a href="/{courseId}/submit" class="inline-block border border-blue text-blue py-2 px-4 rounded font-archivo transition-colors hover:bg-blue hover:text-white">
-        Submit Form
+      <a href="/{courseId}/" class="pointer-events-none opacity-50 inline-block border border-blue text-blue py-2 px-4 rounded font-archivo transition-colors hover:bg-blue hover:text-white">
+        Daily Survey
       </a>
     </div>
   </div>
