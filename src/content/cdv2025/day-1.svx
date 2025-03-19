@@ -1,5 +1,5 @@
 ---
-title: "Day 1: Intro to Dataviz"
+title: "Day 1: Down the Rabbit Hole"
 date: "2025-03-23"
 description: "First day of class covering course overview and a tour of the landscape"
 published: true
@@ -8,7 +8,7 @@ order: 1
 
 ---
 
-# Day 1: Intro to Dataviz
+# Day 1: Down the Rabbit Hole
 
 ## Overview
 
