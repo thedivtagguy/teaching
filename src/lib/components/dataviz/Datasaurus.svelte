@@ -41,6 +41,7 @@
   };
   
   let plotBase64 = "";
+  let webRInitMessage = "Initializing WebR..."; // Message to display during initialization
   
   // Function to change dataset and update visualization
   async function changeDataset(datasetId: string) {
@@ -134,10 +135,12 @@
   
   onMount(async () => {
     try {
+      webRInitMessage = "Initializing WebR...";
       // Initialize webR
       webR = new WebR();
       await webR.init();
       
+      webRInitMessage = "Installing required R packages...";
       // Use webR's package manager to install the required packages
       await webR.evalR(`
         # Use webR's package installation system
@@ -162,6 +165,18 @@
     }
   });
 </script>
+
+<!-- WebR Initialization Loading Overlay -->
+{#if !isWebRReady}
+<div class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
+  <div class="text-center p-6 rounded-lg max-w-md">
+    <div class="spinner mb-4"></div>
+    <h2 class="text-xl font-bold mb-2">Loading R Environment</h2>
+    <p class="text-gray-600">{webRInitMessage}</p>
+    <p class="text-sm text-gray-500 mt-2">This may take a moment on first load...</p>
+  </div>
+</div>
+{/if}
 
 <div class="font-inter bg-gray-100 text-black leading-relaxed p-5">
   <div class="max-w-4xl mx-auto bg-white border border-black p-5">
@@ -280,5 +295,20 @@
   
   .font-mono {
     font-family: 'IBM Plex Mono', monospace;
+  }
+  
+  /* Spinner animation */
+  .spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #4D80E6;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
   }
 </style> 
