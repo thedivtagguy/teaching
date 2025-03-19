@@ -17,9 +17,19 @@ const config = {
 			fallback: 'index.html'
 		}),
 		prerender: {
+			entries: [
+				'*',
+				'/[courseId]/submit'
+			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore prerendering errors for API routes
 				if (path.startsWith('/api/')) {
+					return;
+				}
+				
+				// Ignore the specific route that's causing issues
+				if (path.includes('/[courseId]/submit')) {
+					console.warn(`Warning: Ignoring prerender error for dynamic route: ${path}`);
 					return;
 				}
 				
