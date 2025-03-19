@@ -4,6 +4,8 @@
   import MDLayout from '$lib/components/MDLayout.svelte';
   import { Calendar, ArrowLeft, CheckCircle } from 'lucide-svelte';
   import { confetti } from '@neoconfetti/svelte';
+  import { assignmentStore } from '$lib/stores/assignments';
+  import { browser } from '$app/environment';
   
   // Get course ID and assignment ID from URL params
   $: courseId = $page.params.courseId;
@@ -37,44 +39,27 @@
     loadAssignment();
   }
   
-  // Track completion status with localStorage
-  let isCompleted = false;
-  let isSubmitted = false;
-  
-  // Generate unique storage keys
-  const completedKey = `${courseId}_assignment_${assignmentId}_completed`;
-  const submittedKey = `${courseId}_assignment_${assignmentId}_submitted`;
-  
+  // Initialize store for this course
   onMount(() => {
-    // Load saved state from localStorage
-    isCompleted = localStorage.getItem(completedKey) === 'true';
-    isSubmitted = localStorage.getItem(submittedKey) === 'true';
+    if (browser) {
+      assignmentStore.initCourse(courseId);
+    }
   });
   
-  function markAsCompleted() {
-    isCompleted = !isCompleted;
-    
-    // Show confetti only when marking as completed (not when unmarking)
-    if (isCompleted) {
-      showConfetti = true;
-      setTimeout(() => showConfetti = false, 3000);
-    }
-    
-    // Save to localStorage
-    localStorage.setItem(completedKey, isCompleted.toString());
-  }
+  // Reactive completion status from store
+  $: isCompleted = $assignmentStore[`${courseId}:${assignmentId}`] || false;
   
   function submitAssignment() {
-    isSubmitted = !isSubmitted;
+    if (!browser || !assignmentId) return;
     
-    // Show confetti when submitting (not when retracting)
-    if (isSubmitted) {
+    // Toggle completion state and get the new state
+    const newState = assignmentStore.toggleCompletion(courseId, assignmentId);
+    
+    // Show confetti only when marking as completed (not when unmarking)
+    if (newState) {
       showConfetti = true;
       setTimeout(() => showConfetti = false, 3000);
     }
-    
-    // Save to localStorage
-    localStorage.setItem(submittedKey, isSubmitted.toString());
   }
 </script>
 
@@ -89,9 +74,9 @@
 <div class="max-w-3xl overflow-hidden relative mx-auto">
   <!-- Back to course link -->
   <div class="mb-6">
-    <a href="/{courseId}" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+    <a href="/{courseId}/assignments" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
       <ArrowLeft class="w-4 h-4 mr-2" />
-      <span class="font-archivo">Back to course</span>
+      <span class="font-archivo">Back to assignments</span>
     </a>
   </div>
   
@@ -147,14 +132,13 @@
       <!-- Assignment submission/actions -->
       <div class="py-6 bg-gray-50 border-t border-gray-100">
         <div class="flex flex-wrap gap-4 justify-end items-center">
-         
           
           <div>
             <button 
               on:click={submitAssignment}
-              class={`${isSubmitted ? 'bg-sage text-neutral' : 'bg-blue text-white'} py-2 px-4 rounded font-archivo transition-colors`}
+              class={`${isCompleted ? 'bg-sage text-neutral' : 'bg-blue text-white'} py-2 px-4 rounded font-archivo transition-colors`}
             >
-              {isSubmitted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
+              {isCompleted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
             </button>
            
           </div>
