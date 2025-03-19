@@ -1,9 +1,27 @@
-import { writable } from 'svelte/store';
+import { writable, derived, type Readable } from 'svelte/store';
 import { browser } from '$app/environment';
 
 // Type definitions
 type AssignmentKey = string;
 type CompletionStore = Record<AssignmentKey, boolean>;
+
+// Define Assignment metadata interface
+export interface AssignmentMeta {
+  id: string;
+  title: string;
+  due?: string;
+  description?: string;
+  points?: number;
+  path?: string;
+  source?: string;
+}
+
+export interface AssignmentWithStatus extends AssignmentMeta {
+  completed: boolean;
+}
+
+export type AssignmentMetaStore = Record<string, Record<string, AssignmentMeta>>;
+export type AssignmentsWithStatusStore = Record<string, Record<string, AssignmentWithStatus>>;
 
 // Create a store key for the specific course
 const getStoreKey = (courseId: string) => `${courseId}_assignments`;
@@ -14,10 +32,51 @@ const createAssignmentKey = (courseId: string, assignmentId: string | null) => {
   return `${courseId}:${assignmentId}`;
 };
 
+// Interface for our store
+export interface AssignmentStore {
+  subscribe: Readable<CompletionStore>['subscribe'];
+  assignments: Readable<AssignmentsWithStatusStore>;
+  getAssignmentsForCourse: (courseId: string) => Record<string, AssignmentWithStatus>;
+  getAssignment: (courseId: string, assignmentId: string) => AssignmentWithStatus | null;
+  initCourse: (courseId: string) => void;
+  setAssignments: (courseId: string, assignments: AssignmentMeta[]) => void;
+  toggleCompletion: (courseId: string, assignmentId: string | null) => boolean;
+  isCompleted: (courseId: string, assignmentId: string | null) => boolean;
+}
+
 // Initialize the store with data from localStorage if available
-function createAssignmentStore() {
+function createAssignmentStore(): AssignmentStore {
   // The main store that contains all assignment completion statuses
-  const { subscribe, set, update } = writable<CompletionStore>({});
+  const completionStore = writable<CompletionStore>({});
+  
+  // Store for assignment metadata by course and id
+  const metadataStore = writable<AssignmentMetaStore>({});
+  
+  // Derived store that combines completion status with metadata
+  const assignmentsWithStatus = derived(
+    [completionStore, metadataStore],
+    ([$completions, $metadata]): AssignmentsWithStatusStore => {
+      const result: AssignmentsWithStatusStore = {};
+      
+      // For each course in metadata
+      Object.entries($metadata).forEach(([courseId, assignments]) => {
+        result[courseId] = {};
+        
+        // For each assignment in the course
+        Object.entries(assignments).forEach(([assignmentId, meta]) => {
+          const key = createAssignmentKey(courseId, assignmentId);
+          const completed = key ? !!$completions[key] : false;
+          
+          result[courseId][assignmentId] = {
+            ...meta,
+            completed
+          };
+        });
+      });
+      
+      return result;
+    }
+  );
   
   // Initialize the store for a specific course
   const initCourse = (courseId: string) => {
@@ -31,7 +90,7 @@ function createAssignmentStore() {
       if (storedData) {
         // If we have stored data, merge it with current store
         const parsed = JSON.parse(storedData) as CompletionStore;
-        update(current => ({ ...current, ...parsed }));
+        completionStore.update(current => ({ ...current, ...parsed }));
       }
       
       // Also check for any legacy keys
@@ -57,7 +116,7 @@ function createAssignmentStore() {
             // Mark it as completed in our store
             const assignmentKey = createAssignmentKey(courseId, assignmentId);
             if (assignmentKey) {
-              update(store => ({ ...store, [assignmentKey]: true }));
+              completionStore.update(store => ({ ...store, [assignmentKey]: true }));
             }
             
             // Clean up legacy key
@@ -77,7 +136,7 @@ function createAssignmentStore() {
   const syncToStorage = (courseId: string) => {
     if (!browser) return;
     
-    update(store => {
+    completionStore.update(store => {
       // Filter only the assignments for this course
       const coursePrefix = `${courseId}:`;
       const courseData: CompletionStore = {};
@@ -99,13 +158,59 @@ function createAssignmentStore() {
     });
   };
   
+  // Get all assignments for a course with completion status
+  const getAssignmentsForCourse = (courseId: string): Record<string, AssignmentWithStatus> => {
+    let result: Record<string, AssignmentWithStatus> = {};
+    
+    assignmentsWithStatus.subscribe(data => {
+      result = data[courseId] || {};
+    })();
+    
+    return result;
+  };
+  
+  // Set assignment metadata
+  const setAssignments = (courseId: string, assignments: AssignmentMeta[]) => {
+    metadataStore.update(store => {
+      // Get existing assignments to preserve them
+      const existingAssignments = store[courseId] || {};
+      const courseAssignments: Record<string, AssignmentMeta> = { ...existingAssignments };
+      
+      assignments.forEach(assignment => {
+        if (assignment.id) {
+          // Preserve any existing metadata for this assignment, but update with new data
+          courseAssignments[assignment.id] = {
+            ...existingAssignments[assignment.id],
+            ...assignment
+          };
+        }
+      });
+      
+      return {
+        ...store,
+        [courseId]: courseAssignments
+      };
+    });
+  };
+  
+  // Get a specific assignment by ID with completion status
+  const getAssignment = (courseId: string, assignmentId: string): AssignmentWithStatus | null => {
+    let result: AssignmentWithStatus | null = null;
+    
+    assignmentsWithStatus.subscribe(data => {
+      result = data[courseId]?.[assignmentId] || null;
+    })();
+    
+    return result;
+  };
+  
   // Toggle the completion status of an assignment
   const toggleCompletion = (courseId: string, assignmentId: string | null) => {
     if (!browser || !assignmentId) return false;
     
     let isCompleted = false;
     
-    update(store => {
+    completionStore.update(store => {
       const key = createAssignmentKey(courseId, assignmentId);
       if (!key) return store;
       
@@ -139,13 +244,12 @@ function createAssignmentStore() {
     
     let completed = false;
     
-    update(store => {
+    completionStore.subscribe(store => {
       const key = createAssignmentKey(courseId, assignmentId);
       if (key) {
         completed = !!store[key];
       }
-      return store;
-    });
+    })();
     
     return completed;
   };
@@ -157,7 +261,7 @@ function createAssignmentStore() {
       if (event.key && event.key.endsWith('_assignments') && event.newValue) {
         try {
           const newData = JSON.parse(event.newValue) as CompletionStore;
-          update(current => ({ ...current, ...newData }));
+          completionStore.update(current => ({ ...current, ...newData }));
         } catch (e) {
           console.error('Failed to process storage event:', e);
         }
@@ -166,8 +270,12 @@ function createAssignmentStore() {
   }
   
   return {
-    subscribe,
+    subscribe: completionStore.subscribe,
+    assignments: assignmentsWithStatus,
+    getAssignmentsForCourse,
+    getAssignment,
     initCourse,
+    setAssignments,
     toggleCompletion,
     isCompleted
   };

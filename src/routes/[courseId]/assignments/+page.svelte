@@ -1,68 +1,78 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { Clipboard, Calendar, ExternalLink, Check, Clock } from 'lucide-svelte';
-  import { onMount, onDestroy } from 'svelte';
-  import { assignmentStore } from '$lib/stores/assignments';
+  import { onMount } from 'svelte';
+  import { assignmentStore, type AssignmentMeta, type AssignmentWithStatus } from '$lib/stores/assignments';
   import { browser } from '$app/environment';
-  
-  // Define types for clarity
-  interface Assignment {
-    title: string;
-    due?: string;
-    description?: string;
-    path?: string;
-    source?: string;
-    id?: string; // Assignment ID for matching
-  }
   
   // Get course ID from URL params
   $: courseId = $page.params.courseId;
   
   // Get assignments from the page data
-  // This assumes the +page.server.js or +page.ts load function aggregates assignments
-  // from all content files and provides them in the page data
-  $: allAssignments = ($page.data?.assignments || []) as Assignment[];
+  $: allAssignments = ($page.data?.assignments || []) as AssignmentMeta[];
   
-  onMount(() => {
-    if (browser) {
-      // Initialize the store for this course
-      assignmentStore.initCourse(courseId);
-    }
-  });
-  
-  // Check if an assignment is completed
-  function isAssignmentDone(assignment: Assignment): boolean {
-    // Get the assignment ID - either from the id property or derive from path or title
-    const id = getAssignmentId(assignment);
-    if (!id) return false;
+  // Process assignments to ensure they all have IDs
+  $: processedAssignments = allAssignments.map(assignment => {
+    // If the assignment already has an ID, use it
+    if (assignment.id) return assignment;
     
-    // Check the store
-    return !!$assignmentStore[`${courseId}:${id}`];
-  }
-  
-  // Extract assignment ID from the assignment object
-  function getAssignmentId(assignment: Assignment): string | null {
-    // If we have an explicit ID, use it
-    if (assignment.id) return assignment.id;
+    // Otherwise create an ID from path or title
+    let id = null;
     
-    // Otherwise try to extract from path
+    // Try to extract from path
     if (assignment.path) {
       const pathMatch = assignment.path.match(/\/([^\/]+)$/);
       if (pathMatch && pathMatch[1]) {
-        return pathMatch[1];
+        id = pathMatch[1];
       }
     }
     
     // Fall back to using the title
-    if (assignment.title) {
-      return assignment.title.replace(/\s+/g, '_');
+    if (!id && assignment.title) {
+      id = assignment.title.replace(/\s+/g, '_');
     }
     
-    return null;
+    return {
+      ...assignment,
+      id: id || 'unknown'
+    };
+  });
+  
+  // Initialize the store on mount
+  onMount(() => {
+    if (browser) {
+      // Initialize the store for this course
+      assignmentStore.initCourse(courseId);
+      
+      // Add assignment metadata to the store
+      assignmentStore.setAssignments(courseId, processedAssignments);
+    }
+  });
+  
+  // Track assignments with completion status
+  let assignmentsWithStatus: Record<string, AssignmentWithStatus> = {};
+  
+  // Subscribe to the assignments store to get real-time updates
+  $: {
+    const unsubscribe = assignmentStore.assignments.subscribe(data => {
+      assignmentsWithStatus = data[courseId] || {};
+    });
+  }
+  
+  // Check if an assignment is completed using the store data
+  function isAssignmentDone(assignment: AssignmentMeta): boolean {
+    // Try to get the assignment from the store
+    const storeAssignment = assignmentsWithStatus[assignment.id];
+    if (storeAssignment) {
+      return storeAssignment.completed;
+    }
+    
+    // Fallback to the direct method if not in store yet
+    return browser ? assignmentStore.isCompleted(courseId, assignment.id) : false;
   }
   
   // Group assignments by due date
-  $: assignmentsByDue = groupAssignmentsByDueDate(allAssignments);
+  $: assignmentsByDue = groupAssignmentsByDueDate(processedAssignments);
   
   // Sort the due dates
   $: sortedDueDates = Object.keys(assignmentsByDue).sort((a, b) => {
@@ -72,8 +82,8 @@
   });
   
   // Group assignments by due date
-  function groupAssignmentsByDueDate(assignments: Assignment[]): Record<string, Assignment[]> {
-    return assignments.reduce((groups: Record<string, Assignment[]>, assignment: Assignment) => {
+  function groupAssignmentsByDueDate(assignments: AssignmentMeta[]): Record<string, AssignmentMeta[]> {
+    return assignments.reduce((groups: Record<string, AssignmentMeta[]>, assignment: AssignmentMeta) => {
       const due = assignment.due || 'No Due Date';
       if (!groups[due]) {
         groups[due] = [];
