@@ -1,7 +1,9 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { Clipboard, Calendar, ExternalLink, Check, Clock } from 'lucide-svelte';
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
+  import { assignmentStore } from '$lib/stores/assignments';
+  import { browser } from '$app/environment';
   
   // Define types for clarity
   interface Assignment {
@@ -10,6 +12,7 @@
     description?: string;
     path?: string;
     source?: string;
+    id?: string; // Assignment ID for matching
   }
   
   // Get course ID from URL params
@@ -20,6 +23,44 @@
   // from all content files and provides them in the page data
   $: allAssignments = ($page.data?.assignments || []) as Assignment[];
   
+  onMount(() => {
+    if (browser) {
+      // Initialize the store for this course
+      assignmentStore.initCourse(courseId);
+    }
+  });
+  
+  // Check if an assignment is completed
+  function isAssignmentDone(assignment: Assignment): boolean {
+    // Get the assignment ID - either from the id property or derive from path or title
+    const id = getAssignmentId(assignment);
+    if (!id) return false;
+    
+    // Check the store
+    return !!$assignmentStore[`${courseId}:${id}`];
+  }
+  
+  // Extract assignment ID from the assignment object
+  function getAssignmentId(assignment: Assignment): string | null {
+    // If we have an explicit ID, use it
+    if (assignment.id) return assignment.id;
+    
+    // Otherwise try to extract from path
+    if (assignment.path) {
+      const pathMatch = assignment.path.match(/\/([^\/]+)$/);
+      if (pathMatch && pathMatch[1]) {
+        return pathMatch[1];
+      }
+    }
+    
+    // Fall back to using the title
+    if (assignment.title) {
+      return assignment.title.replace(/\s+/g, '_');
+    }
+    
+    return null;
+  }
+  
   // Group assignments by due date
   $: assignmentsByDue = groupAssignmentsByDueDate(allAssignments);
   
@@ -28,34 +69,6 @@
     if (a === 'No Due Date') return 1;
     if (b === 'No Due Date') return -1;
     return new Date(a).getTime() - new Date(b).getTime();
-  });
-  
-  // Keep track of completed assignments using localStorage (similar to readings)
-  let completedAssignments = new Set<string>();
-  
-  // Generate a unique key for each assignment - make this match the reading key format
-  function getAssignmentKey(assignment: Assignment): string {
-    // Use the READING key format if you want to show the same completion status
-    return `${courseId}_reading_${assignment.title.replace(/\s+/g, '_')}`;
-  }
-  
-  // Check if an assignment is completed
-  function isAssignmentCompleted(assignment: Assignment): boolean {
-    const key = getAssignmentKey(assignment);
-    return completedAssignments.has(key);
-  }
-  
-  // Load saved assignment states on mount
-  onMount(() => {
-    for (const assignment of allAssignments) {
-      const key = getAssignmentKey(assignment);
-      if (localStorage.getItem(key) === 'completed') {
-        completedAssignments.add(key);
-      }
-    }
-    
-    // Trigger reactivity
-    completedAssignments = completedAssignments;
   });
   
   // Group assignments by due date
@@ -136,7 +149,7 @@
                           <ExternalLink class="w-3 h-3 ml-2" />
                         </a>
                       {/if}
-                      {#if !isAssignmentCompleted(assignment)}
+                      {#if !isAssignmentDone(assignment)}
                       <div class="text-neutral">
                         <Clock class="size-5 mt-2" />
                       </div>
