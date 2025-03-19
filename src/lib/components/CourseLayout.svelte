@@ -78,24 +78,14 @@
       {/if}
     </button>
     
-    <!-- Course selector in header on mobile -->
-    <div class="flex items-center ml-4">
-      <button on:click={() => goto('/')} class="bg-base-200 flex items-center text-neutral group justify-center py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-center transition-colors hover:bg-purple">
-        <ArrowLeft class="w-4 h-4 stroke-neutral group-hover:stroke-white" />  <span class="ml-2 font-archivo text-neutral group-hover:text-white">Back</span>
-      </button>
-    </div>
+   
   </div>
 
   <!-- Sidebar - fixed on desktop, slides in on mobile -->
   <aside 
     class={`fixed inset-y-0 left-0 z-20 w-68 transform bg-base-100 p-6 border-r border-base-300 transition-transform duration-300 ${$isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:static md:translate-x-0 md:shadow-none`}
   >
-    <div class="hidden md:block mb-6">
-      <button on:click={() => goto('/')} class="bg-base-200 w-full flex group items-center text-neutral justify-center py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-center transition-colors hover:bg-purple">
-        <ArrowLeft class="w-4 h-4 stroke-neutral group-hover:stroke-white" />  
-        <span class="group-hover:text-white ml-2 font-roboto">Back</span>
-      </button>
-    </div>
+    
     
     <!-- Use our enhanced CourseMenu component with combined data -->
     {#if menuData[$selectedCourse]}

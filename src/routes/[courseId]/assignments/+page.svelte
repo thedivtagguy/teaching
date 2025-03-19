@@ -1,9 +1,10 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { Clipboard, Calendar, ExternalLink, Check, Clock } from 'lucide-svelte';
+  import { Clipboard, Calendar, ExternalLink, Check, Clock, FileText, AlertTriangle } from 'lucide-svelte';
   import { onMount } from 'svelte';
   import { assignmentStore, type AssignmentMeta, type AssignmentWithStatus } from '$lib/stores/assignments';
   import { browser } from '$app/environment';
+  import { fly, fade } from 'svelte/transition';
   
   // Get course ID from URL params
   $: courseId = $page.params.courseId;
@@ -71,6 +72,13 @@
     return browser ? assignmentStore.isCompleted(courseId, assignment.id) : false;
   }
   
+  // Calculate overall progress
+  $: totalAssignments = processedAssignments.length;
+  $: completedCount = processedAssignments.filter(assignment => isAssignmentDone(assignment)).length;
+  $: progressPercentage = totalAssignments > 0 
+    ? Math.round((completedCount / totalAssignments) * 100) 
+    : 0;
+  
   // Group assignments by due date
   $: assignmentsByDue = groupAssignmentsByDueDate(processedAssignments);
   
@@ -92,6 +100,26 @@
       return groups;
     }, {});
   }
+  
+  // Check if assignment is past due
+  function isPastDue(dueDate: string): boolean {
+    if (dueDate === 'No Due Date') return false;
+    const now = new Date();
+    const due = new Date(dueDate);
+    due.setHours(21, 0, 0, 0); // Set to 9:00 PM
+    return now > due;
+  }
+  
+  // Format date for display
+  function formatDate(dateString: string): string {
+    if (dateString === 'No Due Date') return dateString;
+    return new Date(dateString).toLocaleDateString('en-US', { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  }
 </script>
 
 <svelte:head>
@@ -99,95 +127,148 @@
   <meta name="description" content="Course assignments for {courseId.toUpperCase()}">
 </svelte:head>
 
-<div class="max-w-4xl mx-auto relative">
-  <div class="noise-bg absolute top-0 left-0 w-full h-full pointer-events-none"></div>
-  <div class="content-wrapper relative z-10">
-    <!-- Header -->
-    <div class="mb-8 border-b-2 border-neutral pb-4">
-      <h1 class="text-4xl font-libre-caslon mb-2 flex items-center text-neutral">
-        <Clipboard class="w-8 h-8 mr-3 text-sage" />
-        Course Assignments
-      </h1>
-     
-
-      <p class="text-neutral text-red mt-4 font-archivo">
-       Unless stated otherwise, all assignments are due at 9:00pm on the due date. <br/> After this, your assignment will be considered late and penalties will be applied.
-    </div>
-
-    
-    {#if sortedDueDates.length === 0}
-      <div class="bg-base-200 rounded-lg p-8 text-center border-2 border-neutral btn-drop-shadow">
-        <p class="text-neutral font-archivo font-bold">No assignments have been added to this course yet.</p>
-        <a href="/{courseId}" class="inline-block mt-4 bg-sage hover:bg-purple text-white font-roboto font-bold px-4 py-2 rounded-md border-2 border-neutral btn-drop-shadow uppercase transition-colors">
-          Return to Course
-        </a>
+<div class="max-w-4xl mx-auto noise-image px-4 md:px-0 pb-16">
+  <!-- Header with progress indicator -->
+  <div class="mb-8 border-b-2 border-neutral pb-6 pt-4">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <h1 class="text-4xl font-libre-caslon mb-2 flex items-center text-neutral">
+          <Clipboard class="w-8 h-8 mr-3 text-sage" />
+          <span class="relative">
+            Course Assignments
+            <span class="absolute -bottom-1 left-0 w-full h-[3px] bg-yellow"></span>
+          </span>
+        </h1>
+        <p class="text-red mt-2 font-archivo font-medium">
+          Unless stated otherwise, all assignments are due at 9:00pm on the due date.
+          <span class="block mt-1">After this, your assignment will be considered late and penalties will be applied.</span>
+        </p>
       </div>
-    {:else}
-      <!-- Assignment List grouped by due date -->
-      <div class="bg-base-100 rounded-lg overflow-hidden border-2 border-neutral btn-drop-shadow">
-        {#each sortedDueDates as dueDate, index}
-          <div class={`${index > 0 ? 'border-t-2 border-base-300' : ''}`}>
-            <div class="bg-base-200 px-6 py-3 flex items-center">
-              <Calendar class="w-5 h-5 mr-2 text-sage" />
-              <h2 class="font-roboto font-bold text-lg text-neutral uppercase">
-                {dueDate === 'No Due Date' ? dueDate : new Date(dueDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-              </h2>
+      
+      <!-- Progress indicator -->
+      {#if totalAssignments > 0}
+        <div class="bg-base-200 rounded-lg p-3 border-2 border-neutral btn-drop-shadow">
+          <div class="flex items-center gap-3">
+            <div class="text-right">
+              <p class="text-sm font-bold font-archivo uppercase text-neutral">Progress</p>
+              <p class="text-lg font-bold font-roboto text-sage">{completedCount}/{totalAssignments}</p>
             </div>
-            
-            <ul class="divide-y divide-base-300">
-              {#each assignmentsByDue[dueDate] as assignment}
-                <li class="p-6 hover:bg-base-200 transition-colors">
-                  <div>
-                    <div class="flex justify-between">
-                      <h3 class="font-libre-caslon font-bold text-lg text-neutral">
-                        
-                        {assignment.title}
-                      </h3>
-                    </div>
+            <div class="w-24 h-6 bg-base-100 rounded-full overflow-hidden border-2 border-neutral">
+              <div 
+                class="h-full bg-sage transition-all duration-500 ease-out" 
+                style="width: {progressPercentage}%"
+              ></div>
+            </div>
+            <p class="font-bold font-archivo text-neutral">{progressPercentage}%</p>
+          </div>
+        </div>
+      {/if}
+    </div>
+  </div>
+  
+  {#if sortedDueDates.length === 0}
+    <div class="bg-base-200 rounded-lg p-8 text-center border-2 border-neutral btn-drop-shadow">
+      <p class="text-neutral font-archivo font-bold">No assignments have been added to this course yet.</p>
+      <a href="/{courseId}" class="inline-block mt-6 bg-sage hover:bg-purple text-white font-roboto font-bold px-6 py-2 rounded-md border-2 border-neutral btn-drop-shadow uppercase transition-colors">
+        Return to Course
+      </a>
+    </div>
+  {:else}
+    <!-- Assignment List grouped by due date -->
+    <div class="space-y-8">
+      {#each sortedDueDates as dueDate, index}
+        <div 
+          in:fly={{y: 20, duration: 300, delay: index * 100}} 
+          class="bg-base-100 rounded-lg overflow-hidden border-2 border-neutral btn-drop-shadow"
+        >
+          <div class={`bg-base-200 px-6 py-3 flex items-center border-b-2 border-neutral ${isPastDue(dueDate) && dueDate !== 'No Due Date' ? 'bg-red bg-opacity-10' : ''}`}>
+            <Calendar class={`w-5 h-5 mr-2 ${isPastDue(dueDate) && dueDate !== 'No Due Date' ? 'text-red' : 'text-sage'}`} />
+            <div class="flex-1">
+              <h2 class="font-roboto font-bold text-lg text-neutral uppercase tracking-wide">
+                {formatDate(dueDate)}
+              </h2>
+              {#if isPastDue(dueDate) && dueDate !== 'No Due Date'}
+                <p class="text-red text-sm font-archivo font-bold flex items-center gap-1 mt-0.5">
+                  <AlertTriangle class="w-3 h-3" />
+                  <span>Past due</span>
+                </p>
+              {/if}
+            </div>
+          </div>
+          
+          <ul class="divide-y divide-base-300">
+            {#each assignmentsByDue[dueDate] as assignment, assIndex}
+              <li 
+                in:fade={{duration: 300, delay: assIndex * 50}}
+                class={`p-6 transition-all duration-300 relative group ${
+                  isAssignmentDone(assignment) 
+                    ? 'bg-sage bg-opacity-10 border-l-4 border-sage' 
+                    : 'hover:bg-base-200'
+                }`} 
+                style={!isAssignmentDone(assignment) ? "border-left: 4px solid transparent;" : ""}
+              >
+                <div class="flex flex-col md:flex-row justify-between md:items-start gap-4">
+                  <div class="flex-1">
+                    <h3 class={`font-libre-caslon font-bold text-xl ${isAssignmentDone(assignment) ? 'text-sage-800' : 'text-neutral'}`}>
+                      {assignment.title}
+                    </h3>
                     
                     {#if assignment.description}
-                      <p class="text-neutral mt-1 font-archivo">{assignment.description}</p>
+                      <p class="text-neutral mt-2 font-archivo">{assignment.description}</p>
                     {/if}
                     
-                    <div class="mt-4 flex items-center justify-between flex-wrap gap-2">
-                      {#if assignment.path}
-                        <a 
-                          href="{assignment.path}"
-                          class="bg-blue hover:bg-neutral text-white py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-sm uppercase transition-colors flex items-center"
-                        >
-                          <span>View Assignment</span>
-                          <ExternalLink class="w-3 h-3 ml-2" />
-                        </a>
-                      {/if}
-                      {#if !isAssignmentDone(assignment)}
-                      <div class="text-neutral">
-                        <Clock class="size-5 mt-2" />
+                    {#if assignment.points}
+                      <div class="mt-3 flex items-center gap-2">
+                        <FileText class="w-4 h-4 text-neutral" />
+                        <span class="text-sm font-archivo font-bold">{assignment.points} points</span>
                       </div>
+                    {/if}
+                  </div>
+                  
+                  <div class="flex flex-wrap gap-2 mt-1 md:mt-0">
+                    {#if assignment.path}
+                      <a 
+                        href="{assignment.path}"
+                        class="px-4 py-2 rounded-md bg-blue text-white hover:bg-purple transition-all border-2 border-neutral btn-drop-shadow flex items-center gap-2 transform hover:-translate-y-1 active:translate-y-0"
+                        aria-label="View assignment details"
+                      >
+                        <span class="font-archivo text-sm font-bold">View Assignment</span>
+                        <ExternalLink class="w-4 h-4" />
+                      </a>
+                    {/if}
+                    
+                    <div class={`px-4 py-2 rounded-md border-2 border-neutral flex items-center gap-2 font-archivo text-sm font-bold ${
+                      isAssignmentDone(assignment) 
+                        ? 'bg-sage text-white' 
+                        : 'bg-base-200 text-neutral'
+                    }`}>
+                      {#if isAssignmentDone(assignment)}
+                        <Check class="w-4 h-4" />
+                        <span>Completed</span>
                       {:else}
-                      <div class="bg-sage text-white rounded-full p-2">
-                        <Check class="size-5" />
-                      </div>
+                        <Clock class="w-4 h-4" />
+                        <span>Pending</span>
                       {/if}
                     </div>
                   </div>
-                </li>
-              {/each}
-            </ul>
-          </div>
-        {/each}
-      </div>
-    {/if}
+                </div>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/each}
+    </div>
     
-    <!-- Back to course -->
-    <div class="mt-8 flex justify-center">
+    <!-- Back to course - uncomment if needed -->
+    <!-- <div class="mt-8 flex justify-center">
       <a 
         href="/{courseId}" 
-        class="px-6 py-3 bg-base-200 text-neutral font-roboto font-bold rounded-md hover:bg-neutral hover:text-white transition-colors border-2 border-neutral btn-drop-shadow uppercase"
+        class="px-6 py-3 bg-base-200 text-neutral font-roboto font-bold rounded-md hover:bg-neutral hover:text-white transition-colors border-2 border-neutral btn-drop-shadow uppercase transform hover:-translate-y-1 active:translate-y-0"
       >
         Back to Course
       </a>
-    </div>
-  </div>
+    </div> -->
+  {/if}
 </div>
 
 <style>

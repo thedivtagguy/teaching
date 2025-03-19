@@ -94,7 +94,7 @@
           {title}
         </h1>
         
-        <div class="flex flex-wrap gap-4 text-sm">
+        <div class="flex flex-wrap w-full gap-4 text-sm">
           {#if due}
             <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border border-red-100">
               <Calendar class="w-4 h-4 mr-2 text-red-500" />
@@ -114,6 +114,16 @@
               <span class="font-archivo text-sage-700">Completed</span>
             </div>
           {/if}
+
+          <div class="ml-auto">
+            <button 
+              on:click={submitAssignment}
+              class={`${isCompleted ? 'bg-sage text-neutral' : 'bg-blue text-white'} py-2 px-4 rounded font-archivo transition-colors`}
+            >
+              {isCompleted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
+            </button>
+           
+          </div>
         </div>
       </div>
       
@@ -131,21 +141,7 @@
         </MDLayout>
       </div>
       
-      <!-- Assignment submission/actions -->
-      <div class="py-6 bg-gray-50 border-t border-gray-100">
-        <div class="flex flex-wrap gap-4 justify-end items-center">
-          
-          <div>
-            <button 
-              on:click={submitAssignment}
-              class={`${isCompleted ? 'bg-sage text-neutral' : 'bg-blue text-white'} py-2 px-4 rounded font-archivo transition-colors`}
-            >
-              {isCompleted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
-            </button>
-           
-          </div>
-        </div>
-      </div>
+     
     </div>
   {:else}
     <div class="flex justify-center items-center h-64 bg-white rounded-lg shadow-sm">
