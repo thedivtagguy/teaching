@@ -5,7 +5,7 @@
   // Define the type for webR
   let webR: any;
   let isWebRReady = false;
-  let dataInput = "3,5,6,7,7,9,8,7,5,6,4,5,3,1";
+  let dataInput = "1,2,3,4,5,6,7,8,9,10";
   let results: { mean: number | null, median: number | null, mode: number | null } = { mean: null, median: null, mode: null };
   let isLoading = false;
   let error: string | null = null;
@@ -28,28 +28,35 @@
         throw new Error("Please enter valid numbers separated by commas");
       }
       
-      // Calculate mean using webR
-      const meanResult = await webR.evalR(`
+      // Calculate statistics using webR
+      const statsResult = await webR.evalR(`
+        # Create data vector
         data <- c(${dataArray.toString()})
-        mean(data)
-      `);
-      results.mean = await meanResult.toNumber();
-      
-      // Calculate median using webR
-      const medianResult = await webR.evalR(`
-        median(data)
-      `);
-      results.median = await medianResult.toNumber();
-      
-      // Calculate mode using webR
-      const modeResult = await webR.evalR(`
+        
+        # Calculate statistics
+        mean_val <- mean(data)
+        median_val <- median(data)
+        
+        # Calculate mode (R doesn't have a built-in mode function)
         getMode <- function(v) {
           uniqv <- unique(v)
           uniqv[which.max(tabulate(match(v, uniqv)))]
         }
-        getMode(data)
+        mode_val <- getMode(data)
+        
+        # Return as simple numeric values
+        c(mean_val, median_val, mode_val)
       `);
-      results.mode = await modeResult.toNumber();
+      
+      // Get values as a JavaScript array of numbers
+      const values = await statsResult.toArray();
+      
+      // Update results with values
+      results = {
+        mean: Number(values[0]),
+        median: Number(values[1]),
+        mode: Number(values[2])
+      };
       
     } catch (e: unknown) {
       if (e instanceof Error) {
@@ -66,8 +73,10 @@
     try {
       // Initialize webR
       webR = new WebR();
-      
       await webR.init();
+      
+      // No additional packages required for this component
+      
       isWebRReady = true;
       
       // Calculate initial stats with the default data
