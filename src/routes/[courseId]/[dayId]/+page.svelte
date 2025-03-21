@@ -3,6 +3,7 @@
   import { onMount, onDestroy } from 'svelte';
   import MDLayout from '$lib/components/MDLayout.svelte';
   import TableOfContents from '$lib/components/TableOfContents.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import { Calendar, BookOpen, Clipboard, ArrowLeft, ArrowRight } from 'lucide-svelte';
   import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
   
@@ -62,16 +63,21 @@
   }
 </script>
 
-<svelte:head>
-  {#if content?.metadata?.title}
-    <title>{content.metadata.title} | {courseId.toUpperCase()}</title>
-  {:else}
-    <title>{dayId} | {courseId.toUpperCase()}</title>
-  {/if}
-  {#if content?.metadata?.description}
-    <meta name="description" content={content.metadata.description}>
-  {/if}
-</svelte:head>
+{#if content?.metadata}
+  <SEO 
+    title={content.metadata.title || dayId}
+    description={content.metadata.description || ''}
+    courseId={courseId}
+    contentType="day"
+    date={content.metadata.date || ''}
+  />
+{:else}
+  <SEO 
+    title={dayId}
+    courseId={courseId}
+    contentType="day"
+  />
+{/if}
 
 <!-- Two-column layout on desktop, single column on mobile -->
 <div class="max-w-7xl mx-auto">

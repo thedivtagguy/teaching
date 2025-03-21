@@ -2,6 +2,7 @@
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
   import MDLayout from '$lib/components/MDLayout.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import { Calendar, ArrowLeft, CheckCircle } from 'lucide-svelte';
   import { confetti } from '@neoconfetti/svelte';
   import { assignmentStore, type AssignmentWithStatus } from '$lib/stores/assignments';
@@ -69,9 +70,13 @@
   }
 </script>
 
-<svelte:head>
-  <title>{title} | {courseId.toUpperCase()}</title>
-</svelte:head>
+<SEO 
+  title={title}
+  description={description}
+  courseId={courseId}
+  contentType="assignment"
+  date={due}
+/>
 
 <div class="max-w-3xl overflow-hidden relative mx-auto">
   <!-- Back to course link -->

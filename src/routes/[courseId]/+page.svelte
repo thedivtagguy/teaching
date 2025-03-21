@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import SEO from '$lib/components/SEO.svelte';
   import type { MenuSection, CourseMeta, CourseMenu } from '$lib/utils/contentSchema';
   
   // Get course ID from URL parameter
@@ -14,10 +15,13 @@
   $: contentSections = menu?.sections?.filter(section => section.title !== 'Course Info') || [];
 </script>
 
-<svelte:head>
-  <title>{metadata.title || courseId} | Course</title>
-  <meta name="description" content={metadata.description || `Course page for ${courseId}`} />
-</svelte:head>
+<SEO 
+  title={metadata.title || courseId}
+  description={metadata.description || `Course page for ${courseId}`}
+  courseId={courseId}
+  contentType="page"
+  date={metadata.term || ''}
+/>
 
 <div class="max-w-3xl">
   <h1 class="text-3xl font-libre-caslon mb-3">{metadata.title}</h1>
