@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { BookOpen, Book, Calendar, ChevronDown, ChevronUp, FileText, Clipboard } from 'lucide-svelte';
-  import type { CourseMenu, MenuSection, Reading, Assignment } from '$lib/utils/contentSchema';
+  import type { CourseMenu, MenuSection, Reading, Assignment, MenuItem } from '$lib/utils/contentSchema';
   
   export let courseId: string;
   export let menuData: CourseMenu | null = null;
@@ -13,9 +13,19 @@
   // Track expanded sections
   let expandedSections: Record<string, boolean> = {};
   
+  // Compute flat list of all menu items across all sections
+  $: flatMenuItems = menuData?.sections
+    ? menuData.sections.flatMap((section) => section.items)
+      .sort((a, b) => {
+        const orderA = a.order !== undefined ? a.order : 999;
+        const orderB = b.order !== undefined ? b.order : 999;
+        return orderA - orderB;
+      })
+    : [];
+  
   // Initialize expanded state based on current path
   $: {
-    if (menuData) {
+    if (menuData && menuData.collapsibleSections !== false) {
       menuData.sections.forEach((section: MenuSection) => {
         // Auto-expand the section that contains the active item
         const hasActiveItem = section.items.some(item => item.path === currentPath);
@@ -63,44 +73,81 @@
   
   {#if menuData}
     <nav aria-label="Course navigation">
-      <ul class="space-y-4 w-full">
-        <!-- Course Content Sections -->
-        {#each menuData.sections as section}
-          <li >
-            <div class="course-section">
-              <button 
-                class="w-full flex items-center justify-between text-left mb-3 group"
-                on:click={() => toggleSection(section.title)}
-                aria-expanded={expandedSections[section.title] || false}
+      {#if menuData.showSections === false}
+        <!-- Flat Menu (No Sections) -->
+        <ul class="pl-6 space-y-2">
+          {#each flatMenuItems as item}
+            <li>
+              <a
+                href={item.path}
+                class="block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors {currentPath === item.path ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral hover:text-blue hover:border-base-300'}"
               >
-                <h4 class="font-libre-caslon font-bold text-neutral group-hover:text-blue flex items-center">
-                  {section.title}
-                </h4>
-                {#if expandedSections[section.title]}
-                  <ChevronUp class="w-4 h-4 text-neutral" />
+                {item.title}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      {:else}
+        <!-- Sectioned Menu -->
+        <ul class="space-y-4 w-full">
+          {#each menuData.sections as section}
+            <li>
+              <div class="course-section">
+                {#if menuData.collapsibleSections !== false}
+                  <!-- Collapsible Section Header -->
+                  <button 
+                    class="w-full flex items-center justify-between text-left mb-3 group"
+                    on:click={() => toggleSection(section.title)}
+                    aria-expanded={expandedSections[section.title] || false}
+                  >
+                    <h4 class="font-libre-caslon font-bold text-neutral group-hover:text-blue flex items-center">
+                      {section.title}
+                    </h4>
+                    {#if expandedSections[section.title]}
+                      <ChevronUp class="w-4 h-4 text-neutral" />
+                    {:else}
+                      <ChevronDown class="w-4 h-4 text-neutral" />
+                    {/if}
+                  </button>
+                  
+                  {#if expandedSections[section.title]}
+                    <ul class="pl-6 space-y-2">
+                      {#each section.items as item}
+                        <li>
+                          <a
+                            href={item.path}
+                            class="block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors {currentPath === item.path ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral hover:text-blue hover:border-base-300'}"
+                          >
+                            {item.title}
+                          </a>
+                        </li>
+                      {/each}
+                    </ul>
+                  {/if}
                 {:else}
-                  <ChevronDown class="w-4 h-4 text-neutral" />
+                  <!-- Non-Collapsible Section Header -->
+                  <h4 class="font-libre-caslon font-bold text-neutral mb-3">
+                    {section.title}
+                  </h4>
+                  
+                  <ul class="pl-6 space-y-2">
+                    {#each section.items as item}
+                      <li>
+                        <a
+                          href={item.path}
+                          class="block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors {currentPath === item.path ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral hover:text-blue hover:border-base-300'}"
+                        >
+                          {item.title}
+                        </a>
+                      </li>
+                    {/each}
+                  </ul>
                 {/if}
-              </button>
-              
-              {#if expandedSections[section.title]}
-                <ul class="pl-6 space-y-2">
-                  {#each section.items as item}
-                    <li>
-                      <a
-                        href={item.path}
-                        class="block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors {currentPath === item.path ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral hover:text-blue hover:border-base-300'}"
-                      >
-                        {item.title}
-                      </a>
-                    </li>
-                  {/each}
-                </ul>
-              {/if}
-            </div>
-          </li>
-        {/each}
-      </ul>
+              </div>
+            </li>
+          {/each}
+        </ul>
+      {/if}
     </nav>
   {:else}
     <div class="p-4 bg-base-200 rounded-lg border-2 border-neutral btn-drop-shadow">

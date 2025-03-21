@@ -96,6 +96,9 @@ importers:
       rehype-slug:
         specifier: ^5.1.0
         version: 5.1.0
+      remark-footnotes:
+        specifier: ^2.0.0
+        version: 2.0.0
       remark-gfm:
         specifier: ^3.0.1
         version: 3.0.1
@@ -4726,6 +4729,9 @@ packages:
 
   rehype-slug@5.1.0:
     resolution: {integrity: sha512-Gf91dJoXneiorNEnn+Phx97CO7oRMrpi+6r155tTxzGuLtm+QrI4cTwCa9e1rtePdL4i9tSO58PeSS6HWfgsiw==}
+
+  remark-footnotes@2.0.0:
+    resolution: {integrity: sha512-3Clt8ZMH75Ayjp9q4CorNeyjwIxHFcTkaektplKGl2A1jNGEUey8cKL0ZC5vJwfcD5GFGsNLImLG/NGzWIzoMQ==}
 
   remark-gfm@3.0.1:
     resolution: {integrity: sha512-lEFDoi2PICJyNrACFOfDD3JlLkuSbOa5Wd8EPt06HUdptv8Gn0bxYTdbU/XXQ3swAPkEaGxxPN9cbnMHvVu1Ig==}
@@ -10751,6 +10757,8 @@ snapshots:
       hast-util-to-string: 2.0.0
       unified: 10.1.2
       unist-util-visit: 4.1.2
+
+  remark-footnotes@2.0.0: {}
 
   remark-gfm@3.0.1:
     dependencies:

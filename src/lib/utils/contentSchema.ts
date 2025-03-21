@@ -40,6 +40,8 @@ export type CourseMenu = {
   sections: MenuSection[];
   readings?: Reading[];
   assignments?: Assignment[];
+  collapsibleSections?: boolean;
+  showSections?: boolean;
 };
 
 // Menu data for all courses
@@ -60,6 +62,8 @@ export type CourseMeta = {
       title: string;
       order?: number;
     }>;
+    collapsibleSections?: boolean;
+    showSections?: boolean;
   };
   readings?: Reading[];
   assignments?: Assignment[];

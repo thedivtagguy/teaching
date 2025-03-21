@@ -2,9 +2,21 @@
 import { defineMDSveXConfig } from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkGfm from 'remark-gfm';
+import remarkFootnotes from 'remark-footnotes';
 
 const config = defineMDSveXConfig({
   extensions: ['.svx', '.md'],
+  
+  smartypants: {
+    dashes: 'oldschool'
+  },
+  
+  // Add remark plugins for GitHub Flavored Markdown and footnotes
+  remarkPlugins: [
+    remarkGfm,
+    [remarkFootnotes, { inlineNotes: true }]
+  ],
   
   // Add rehype plugins for automatic heading IDs and anchor links
   rehypePlugins: [

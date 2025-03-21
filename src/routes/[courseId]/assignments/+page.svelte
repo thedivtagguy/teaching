@@ -57,7 +57,21 @@
   $: {
     const unsubscribe = assignmentStore.assignments.subscribe(data => {
       assignmentsWithStatus = data[courseId] || {};
+      // Recalculate completion count and percentage when the store updates
+      updateProgressStats();
     });
+  }
+  
+  // Track progress stats
+  let completedCount = 0;
+  let progressPercentage = 0;
+  
+  // Function to update progress stats
+  function updateProgressStats() {
+    if (processedAssignments.length === 0) return;
+    
+    completedCount = processedAssignments.filter(assignment => isAssignmentDone(assignment)).length;
+    progressPercentage = Math.round((completedCount / processedAssignments.length) * 100);
   }
   
   // Check if an assignment is completed using the store data
@@ -72,12 +86,15 @@
     return browser ? assignmentStore.isCompleted(courseId, assignment.id) : false;
   }
   
-  // Calculate overall progress
+  // Make totalAssignments reactive
   $: totalAssignments = processedAssignments.length;
-  $: completedCount = processedAssignments.filter(assignment => isAssignmentDone(assignment)).length;
-  $: progressPercentage = totalAssignments > 0 
-    ? Math.round((completedCount / totalAssignments) * 100) 
-    : 0;
+  
+  // Ensure progress is updated when processedAssignments change
+  $: {
+    if (Object.keys(assignmentsWithStatus).length > 0 && totalAssignments > 0) {
+      updateProgressStats();
+    }
+  }
   
   // Group assignments by due date
   $: assignmentsByDue = groupAssignmentsByDueDate(processedAssignments);
@@ -104,6 +121,14 @@
   // Check if assignment is past due
   function isPastDue(dueDate: string): boolean {
     if (dueDate === 'No Due Date') return false;
+    
+    // If all assignments for this date are completed, don't mark as past due
+    const assignmentsForDate = assignmentsByDue[dueDate] || [];
+    const allCompleted = assignmentsForDate.length > 0 && 
+      assignmentsForDate.every(assignment => isAssignmentDone(assignment));
+    
+    if (allCompleted) return false;
+    
     const now = new Date();
     const due = new Date(dueDate);
     due.setHours(21, 0, 0, 0); // Set to 9:00 PM
@@ -139,8 +164,8 @@
             <span class="absolute -bottom-1 left-0 w-full h-[3px] bg-yellow"></span>
           </span>
         </h1>
-        <p class="text-red mt-2 font-archivo font-medium">
-          Unless stated otherwise, all assignments are due at 9:00pm on the due date.
+        <p class="text-red mt-4 font-archivo font-medium">
+          Unless stated otherwise, all assignments are due at 10:00pm on the due date.
           <span class="block mt-1">After this, your assignment will be considered late and penalties will be applied.</span>
         </p>
       </div>
