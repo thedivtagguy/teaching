@@ -1,11 +1,13 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { ArrowLeft } from 'lucide-svelte';
+  import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<svelte:head>
-  <title>{$page.status} - {$page.error?.message || 'Error'}</title>
-</svelte:head>
+<SEO 
+  title={`${$page.status} - ${$page.error?.message || 'Error'}`}
+  description={$page.status === 404 ? 'Page not found' : $page.error?.message || 'An error occurred'}
+/>
 
 <div class="container mx-auto px-4 py-12">
   <div class="max-w-3xl mx-auto text-center">
