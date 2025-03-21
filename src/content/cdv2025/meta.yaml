@@ -7,6 +7,8 @@ instructor:
   email: "amanbhargava2001+cdv2025@gmail.com"
   hours: "Mon to Sat 2-5pm, or by appointment via email"
 navigation:
+  collapsibleSections: false
+  showSections: false
   sections:
     - title: "Course Info"
       order: 1

@@ -157,3 +157,39 @@ html {
     @apply outline-dashed outline-2 outline-offset-2 outline-neutral; 
 }
 
+/* Footnote styles */
+.footnotes {
+    @apply mt-8 pt-6 border-t border-base-300;
+}
+
+.footnotes ol {
+    @apply pl-6 text-sm font-archivo;
+}
+
+.footnotes li {
+    @apply mb-2;
+}
+
+.footnotes p {
+    @apply inline;
+}
+
+/* Footnote references in the text */
+a.footnote-ref {
+    @apply text-xs align-super font-bold text-blue no-underline;
+    position: relative;
+    top: -0.5em;
+}
+
+/* Back references at the bottom */
+a.footnote-backref {
+    @apply text-blue hover:text-orange transition-colors;
+}
+
+/* Add some styling to the actual superscript */
+sup {
+    @apply text-xs font-bold text-blue;
+    vertical-align: super;
+    line-height: 0;
+}
+

@@ -1,0 +1,9 @@
+- When you design a graphic to explain something, getting the information right comes first. No good infographic or data visualization—we’ll learn the difference between the two soon—can be based on deficient data and analysis. The quality of your graphics depends fundamentally on the quality of your reporting or research, not just on how good a graphic designer you are.
+- Being concise and clear doesn’t imply oversimplifying. Any act of communication involves a controlled reduction of complexity, up to the point when reducing matters further would hurt the integrity of the information. I adapted the message to my audience by getting rid of jargon and equations, but I respected the essence of the facts and my daughter’s intelligence.
+- Good design isn’t about embellishment but about structuring information to enable understanding. That said, aesthetic appeal is a worthy goal, as it can help make our messages more attractive and, as a consequence, more effective. 
+- Graphics that encode information function as cognitive aids. If I had described the process using just words, it’s likely that you’d feel compelled to mentally visualize little balls and arrows. My drawings are intended to do that work for your brain. 
+- If words are sometimes useless by themselves, so are charts, maps, diagrams, and illustrations. It is in the combination of words (spoken or written) and visuals that the magic of understanding often happens.
+
+The purpose of infographics and data visualizations is to enlighten people—not to
+entertain them, not to sell them products, services, or ideas, but to inform
+them. It’s as simple—and as complicated—as that.

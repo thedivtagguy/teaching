@@ -53,10 +53,10 @@
     </div>
   </div>
   
-  <div>
+  <!-- <div>
     <h2 class="text-xl font-libre-caslon mb-4">Quick Links</h2>
     
-    <!-- Dynamically generate module quick links based on metadata sections -->
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       {#each contentSections as section (section.title)}
         <div class="bg-white p-4 rounded border border-gray-100">
@@ -68,13 +68,12 @@
           </ul>
         </div>
       {/each}
-      
-      <!-- If no sections found, show a message -->
+    
       {#if contentSections.length === 0}
         <div class="bg-white p-4 rounded border border-gray-100 col-span-2">
           <p class="text-gray-500">No course content available yet.</p>
         </div>
       {/if}
-    </div>
-  </div>
+    </div> 
+  </div>-->
 </div> 

@@ -1,0 +1,32 @@
+---
+title: "Assignment 1: Longlist and Prosper"
+due: "2025-03-24"
+description: "Go through some excellent dataviz and offer your critiques"
+# points: 10
+published: true
+---
+
+Welcome to 'Intro to Dataviz'! We've just had a whirlwind and _extremely quick_ tour some landmark visualizations and some whos/whats/whys of this field. This is just a tip of the iceberg, though, so today's assignment is meant to be a little exploratory. 
+
+## Requirements
+
+- Go through the works at this year's [Information is Beautiful Awards longlist](https://www.informationisbeautifulawards.com/showcase?award=2024&pcategory=long-list&type=awards) or do some browsing of things at one of the links below (search for a keyword, roam around, click on random tags, roll a dice; do something serendipitious). Pick at least 5 different projects (or a visualization within a project if it has many) that capture your interest.
+- For each visualization, make a list of **2-3 questions** that the visualization can answer. Think of questions that make this visualization more useful than a table. "Useful" is a loaded word and it can mean many things; efficiency, productivity, clarity, brevity, insightfulness and so on. But we don't _have_ to think in those terms all the time, nor do we have to force ourselves to like something that we don't, if we prefer the earlier things. So figure out what makes a visualization useful and appealing _to you_. Think about it!
+- For at least two visualizations, list 3 positive critiques and 3 negative critiques. Try to think a little deeper about what makes this visualization good or bad for you. For example, instead of saying "the colors are bad", why are they bad? What did they make you think?
+
+## Submission 
+
+In a PDF, assemble: 
+
+- Screenshots of each of the 5 visualizations with their source (as a link). 
+- Questions that the visualization made you ask
+- For any of the 2 above, list 3 positive and negative critiques.
+
+## Links for inspiration
+
+Here is a list of links where you can browse some excellent visualizations. **You don't have to go through all of them**, this is just so that you have some place to start.
+
+- [Information is Beautiful Awards longlist](https://www.informationisbeautifulawards.com/showcase?award=2024&pcategory=long-list&type=awards): Please start with this. These are all the projects that have been longlisted for this year's awards, many of them by students like you!
+- [Flowing Data](https://flowingdata.com): A prolific blog by Nathan Yau where he shares visualizations of note that he comes across. Search for a keyword of your interest, or browse the archives!
+- [South China Morning Post Print Archive](https://multimedia.scmp.com/culture/article/SCMP-printed-graphics-memory/): Beautiful infographics by an extremely talented team on various topics.
+- [Datawrapper's List of Lists](https://www.datawrapper.de/blog/data-vis-dispatch-december-31-2024): Datawrapper's blog is an amazing resource for both instruction and inspiration. This was a round-up of the best of 2024.

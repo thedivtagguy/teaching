@@ -1,10 +1,43 @@
 <script lang="ts">
   // Import metadata from the markdown file
-  export let metadata = {};
+  interface Metadata {
+    title?: string;
+    date?: string;
+    description?: string;
+    published?: boolean;
+    section?: string;
+    order?: number;
+    [key: string]: any; // Allow for additional metadata properties
+  }
+  
+  export let metadata: Metadata = {};
+
+  // Format the date for display
+  let formattedDate = '';
+  
+  // Check if metadata has a valid date and format it
+  $: if (metadata && metadata.date) {
+    try {
+      const date = new Date(metadata.date);
+      formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (e) {
+      formattedDate = metadata.date; // Fallback to raw date string if parsing fails
+    }
+  }
 </script>
 
 <div class="md-content prose prose-neutral max-w-none noise-image">
   <slot />
+  
+  {#if formattedDate}
+    <div class="last-updated">
+      <p>Last updated: {formattedDate}</p>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -296,5 +329,20 @@
   :global(.md-content details[open] summary) {
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #e2e8f0;
+  }
+  
+  /* Last updated styling */
+  :global(.last-updated) {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-base-300);
+    font-size: 0.9rem;
+    color: var(--color-base-500);
+    font-style: italic;
+    text-align: right;
+  }
+  
+  :global(.last-updated p) {
+    margin-bottom: 0;
   }
 </style> 
