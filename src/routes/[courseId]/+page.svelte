@@ -44,7 +44,7 @@
     {/if}
     
     <div class="mt-6 flex flex-col sm:flex-row gap-4">
-      <a href="/{courseId}/syllabus" class="inline-block bg-blue text-white py-2 px-4 rounded font-archivo transition-colors hover:bg-purple">
+      <a href="/{courseId}/outline" class="inline-block bg-blue text-white py-2 px-4 rounded font-archivo transition-colors hover:bg-purple">
         Info & Syllabus
       </a>
       <a href="/{courseId}/" class="pointer-events-none opacity-50 inline-block border border-blue text-blue py-2 px-4 rounded font-archivo transition-colors hover:bg-blue hover:text-white">

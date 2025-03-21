@@ -131,8 +131,8 @@ export function getAllCourses(): Array<CourseMeta & { id: string }> {
  */
 function getCourseTitle(courseId: string, files: string[], courseDir: string): string {
   // Try to find syllabus first
-  if (files.includes('syllabus.svx')) {
-    const syllabusPath = path.join(courseDir, 'syllabus.svx');
+  if (files.includes('outline.svx')) {
+    const syllabusPath = path.join(courseDir, 'outline.svx');
     const content = fs.readFileSync(syllabusPath, 'utf8');
     const { data } = grayMatter(content) as { data: ContentFrontmatter };
     if (data.courseTitle) return data.courseTitle;

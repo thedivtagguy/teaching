@@ -24,7 +24,7 @@ Each course has its own directory under `src/content/[courseId]/`. The structure
 src/content/
   └── courseId/
       ├── meta.yaml           # Course metadata
-      ├── syllabus.svx        # Course syllabus
+      ├── outline.svx        # Course syllabus
       ├── day-1.svx           # Content pages
       ├── day-2.svx
       ├── ...
