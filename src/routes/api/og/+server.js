@@ -217,18 +217,25 @@ function generateShareCardHTML(options) {
 }
 
 /** @type {import('./$types').RequestHandler} */
-export const GET = async ({ url }) => {
+export const GET = async ({ url, request }) => {
   try {
-    // Get query parameters
-    const title = url.searchParams.get('title') ?? 'Learning Resources by aman.bh';
-    const date = url.searchParams.get('date') ?? new Date().toLocaleDateString('en-US', { 
+    // Debugging request info
+    console.log('OG Image request:', {
+      url: url.toString(),
+      params: Array.from(url.searchParams.entries()),
+      referrer: request.headers.get('referer') || 'none'
+    });
+    
+    // Get query parameters with fallbacks
+    const title = url.searchParams.get('title') || 'Learning Resources by aman.bh';
+    const date = url.searchParams.get('date') || new Date().toLocaleDateString('en-US', { 
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 
     });
-    const description = url.searchParams.get('description') ?? '';
-    const courseId = url.searchParams.get('courseId') ?? '';
-    const type = url.searchParams.get('type') ?? 'page'; // page, assignment, day
+    const description = url.searchParams.get('description') || '';
+    const courseId = url.searchParams.get('courseId') || '';
+    const type = url.searchParams.get('type') || 'page'; // page, assignment, day
     
     // Generate the HTML using our function
     const htmlContent = generateShareCardHTML({

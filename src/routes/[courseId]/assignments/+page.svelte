@@ -165,7 +165,7 @@
           </span>
         </h1>
         <p class="text-red mt-4 font-archivo font-medium">
-          Unless stated otherwise, all assignments are due at 10:00pm on the due date.
+          Unless stated otherwise, all assignments are due at 9 AM the next day.
           <span class="block mt-1">After this, your assignment will be considered late and penalties will be applied.</span>
         </p>
       </div>

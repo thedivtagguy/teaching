@@ -1,13 +1,13 @@
 ---
-title: "CDV2025: Introduction to Dataviz"
+title: "CDV2025: Information and Data Design"
 date: "Fall 2023"
-description: "Course syllabus for cdv2025: Introduction to Data Visualization"
+description: "Course syllabus for cdv2025: Information and Data Design"
 published: true
 section: "Course Info"
 order: 1
 ---
 
-# CDV2025: Introduction to Data Visualization
+# CDV2025: Information and Data Design
 
 ### Instructor Information
 - **Name:** Aman Bhargava
@@ -29,7 +29,7 @@ Us by the end of this class:
 
 This website serves as a home for all content related to the course. 
 
-We'll have a small "lecture" (god, I hate the term) every day and some in-class activities. I will monologue for some part of the class, but we'll also work within groups of 4 to do exercises and presentations. At most, the classes will end between 12-1 PM, after which you're free to work in class or do whatever you must. There are small assignments due every day, though, so I recommend using the afternoons for that. 
+We'll have a small "lecture" (god, I hate the term) every day and some in-class activities. I will monologue for some part of the class, but we'll also work within groups of 4 to do exercises and presentations. 
 
 Each day there will be some amount of reading (which includes watching videos as well as online resources). I expect you to try to learn as much as possible from this. I will not ask you to write reflections, so you may well not read any of these, but then…what's the point?
 
@@ -44,11 +44,6 @@ I think this is an important and valid question that I used to have in design sc
 In terms of tangible tools, we'll learn to work with [Orange](https://orangedatamining.com), which is a tool for visually exploring data. Our spreadsheet software of choice will be [Google Sheets](https://sheets.google.com), where we can manually explore cleaning data and even explore basic charts. For charting, we'll use [Datawrapper](https://datawrapper.de) and [RAWGraphs](https://rawgraphs.io) and also use [Figma](https://figma.com) or Adobe Illustrator (your choice) for making our visualizations look nicer.
 
 However, we'll **only** be able to get a basic introduction to all of these tools at best. It is not feasible to guide the class through all the nooks and crannies of these tools, and it will be up to you to explore your toolboxes in greater detail. We'd like to focus instead on getting solid, common grounding together, which you can implement with any tool of your choice. Like with anything in design, you must practice learning.
-
-### Grading
-- **Assignments (30%)**: Daily assignments
-- **Final Project (50%)**: Final group project and presentation
-- **Participation (20%)**: In-class activities and discussions
 
 ### House Rules
 - **Attendance**: Regular attendance is expected. Each day includes an essential part of the module which will be required for successfully finishing your final project. Missing any one of these will leave you disadvantaged.
