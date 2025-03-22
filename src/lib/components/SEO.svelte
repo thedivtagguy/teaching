@@ -12,10 +12,14 @@
   export let contentType = 'page'; // page, assignment, day
   export let date = '';
   
+  // Site domain for absolute URLs
+  const domain = 'https://teaching.aman.bh';
+  
   // Computed values
   $: fullTitle = (courseId ? `${title} | ${courseId.toUpperCase()}` : title).split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
-  $: ogImage = image || `/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&type=${contentType}${courseId ? '&courseId=' + encodeURIComponent(courseId) : ''}`;
-  $: currentUrl = $page.url.href;
+  $: ogImagePath = `/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&type=${contentType}${courseId ? '&courseId=' + encodeURIComponent(courseId) : ''}${description ? '&description=' + encodeURIComponent(description) : ''}`;
+  $: ogImage = image || (ogImagePath.startsWith('http') ? ogImagePath : `${domain}${ogImagePath}`);
+  $: currentUrl = $page.url.href.startsWith('http') ? $page.url.href : `${domain}${$page.url.pathname}`;
   $: siteName = 'Learning Resources by aman.bh';
 </script>
 
