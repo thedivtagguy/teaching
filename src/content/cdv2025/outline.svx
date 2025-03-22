@@ -9,7 +9,7 @@ order: 1
 
 # CDV2025: Information and Data Design
 
-### Instructor Information
+### Facilitator Information
 - **Name:** Aman Bhargava
 - **Email:** amanbhargava2001+cdv2025@gmail.com
 - **Office Hours:** Monday-Saturday 2-5pm, or by email

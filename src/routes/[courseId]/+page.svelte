@@ -35,7 +35,7 @@
     
     {#if metadata?.instructor}
       <div class="bg-blue-50 p-4 rounded-md mb-4">
-        <h3 class="!font-archivo font-semibold mb-2">Instructor</h3>
+        <h3 class="!font-archivo font-semibold mb-2">Facilitator</h3>
         <p class="mb-1">{metadata.instructor.name}</p>
         <p class="mb-1">
           <a href="mailto:{metadata.instructor.email}" class="text-blue hover:underline">
