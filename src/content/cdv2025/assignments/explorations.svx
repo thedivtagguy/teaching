@@ -3,7 +3,7 @@ title: "Assignment 1: Longlist and Prosper"
 due: "2025-03-24"
 description: "Go through some excellent dataviz and offer your critiques"
 # points: 10
-published: true
+published: false
 ---
 
 Welcome to 'Intro to Dataviz'! We've just had a whirlwind and _extremely quick_ tour some landmark visualizations and some whos/whats/whys of this field. This is just a tip of the iceberg, though, so today's assignment is meant to be a little exploratory. 
