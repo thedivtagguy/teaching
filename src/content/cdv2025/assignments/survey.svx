@@ -1,0 +1,25 @@
+---
+title: "Activity 1: Lay of the land"
+due: "2025-03-25"
+description: "Learning data collection"
+published: true
+---
+
+In groups of 4, create a survey.  Questions should be specific, measurable, and have something interesting (don't ask people only their height please). 
+
+The only **guideline** is that you need to _end up_ storing data in a Google Sheet. Record however you want initially. 
+
+Please assemble the Google Sheet **before** coming to class on the 25th. This is essential to tomorrow's class, so if you've not done that then you'll be at a disadvantage. 
+
+## FAQs
+
+- **Do they have to be questions on a specific topic?** No, anything
+- **How many questions?"** 5-6
+- **Can I use a google form?** No you can't. Talk to people. 
+
+---
+
+On you've done that: 
+- One insight you expect to find in the data
+- One relationship between variables you're curious about
+- One potential data quality issue you anticipate
