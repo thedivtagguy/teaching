@@ -27,6 +27,8 @@ function openSlides() {
 Open Class Slides
 </button>
 
+**FOR ASSIGNMENTS:** Please go to the 'Assignments' tab in the menu. This is a daily summary.
+
 Welcome to our data visualization course! In this first session, we explored the fundamentals of data visualization, examining its historical context, core principles, and the breadth of applications in our world today.
 
 ## So what's all this then?
