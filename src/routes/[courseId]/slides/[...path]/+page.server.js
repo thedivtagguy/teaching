@@ -3,7 +3,7 @@ export const load = async ({ params }) => {
   // Extract the course ID and path from the params
   const { courseId, path } = params;
   
-  // Special case for cdv2025 which is actually stored as cdv20205 in the static folder
+  // Use the course ID as provided
   const folderName = courseId;
   
   // Construct the URL to the static slide content
@@ -14,4 +14,7 @@ export const load = async ({ params }) => {
     slidePath: path,
     slideUrl
   };
-}; 
+};
+
+// This is needed for proper prerendering
+export const prerender = false; 
