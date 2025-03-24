@@ -22,7 +22,7 @@ OpenRefine is a powerful tool for working with messy data. It helps with cleanin
 
 ## 2. Orange Data Mining
 
-Orange is an open-source data visualization and analysis tool that uses a visual programming interface with components for machine learning, data analytics and visualization.
+Orange is an open-source data visualization and analysis tool that uses a visual programming interface with components for data analytics and visualization.
 
 ### Download Instructions
 1. Visit the Orange Data Mining download page: [https://orangedatamining.com/download/](https://orangedatamining.com/download/)
