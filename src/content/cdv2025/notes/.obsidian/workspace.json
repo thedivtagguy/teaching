@@ -13,22 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 1 - Intro to Dataviz.md",
+                "file": "Assignments List.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 1 - Intro to Dataviz"
+              "title": "Assignments List"
             }
           }
         ]
       },
       {
-        "id": "e602c43aff0f8c92",
+        "id": "787bfba3011dfebc",
         "type": "tabs",
         "children": [
           {
-            "id": "30bdd7f203cea9c0",
+            "id": "749e05ce22b63aaa",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -207,8 +207,10 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "30bdd7f203cea9c0",
+  "active": "4627276a7bd6252e",
   "lastOpenFiles": [
+    "Assignments.md",
+    "Day 1 - Intro to Dataviz.md",
     "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz/IMG-20250324012433448.gif",
     "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321014449504.gif",
     "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321014006012.png",
@@ -219,7 +221,6 @@
     "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz/IMG-20250323193428122.png",
     "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321011236445.png",
     "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321011157955.png",
-    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321012733471.png",
     "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz",
     "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz",
     "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course",
@@ -237,12 +238,10 @@
     "export/Day 1 - Intro to Dataviz/plugin/chart/README.md",
     "export/Day 1 - Intro to Dataviz/plugin/chalkboard/README.md",
     "Assignments List.md",
-    "Day 1 - Intro to Dataviz.md",
     "day-summaries/day-1.md",
     "Day 2 - Statistical and visual thinking.md",
     "Day 6 - Storytelling and You.md",
     "Day 5 - Design considerations, viz marathon.md",
-    "Assignments.md",
     "Dataviz Course/Day 2 - Statistical and visual thinking.md",
     "Dataviz Course/Assignments List.md",
     "Dataviz Course/Assignments.md",
