@@ -2,20 +2,16 @@
 title: "Day 1: Down the rabbit hole"
 date: 2025-03-21
 description: First class covering data visualization fundamentals and historical context
-published: false
+published: true
 section: Fundamentals
 order: 1
 readings:
   - title: "'What we mean when we talk about visualizations', from The Truthful Art"
-  author: "Alberto Cairo"
-  pages: "1-44"
-  url: "https://flowingdata.com/data-points/DataPoints-Ch3.pdf "
-  readingTime: 30
+    author: "Alberto Cairo"
+    pages: "14"
+    url: "https://drive.google.com/file/d/1neI7WRYZtNGior3RKoDkJasjwkEqcNb9/view?usp=sharing"
+    readingTime: 20
 ---
-
-readings: 
-cahpter 1 the tiurth ful art
-https://pages.graphics.cs.wisc.edu/765-22/vis/1-what-is-vis/
 
 # Day 1: Down the rabbit hole
 
@@ -23,7 +19,7 @@ https://pages.graphics.cs.wisc.edu/765-22/vis/1-what-is-vis/
 import { goto } from '$app/navigation';
 
 function openSlides() {
-  goto('/cdv2025/slides/day-1-intro-to-dataviz');
+  goto('https://teaching.aman.bh/slides/cdv2025/day-1-intro-to-dataviz/#/');
 }
 </script>
 
@@ -54,7 +50,9 @@ Each day will cover one or more of these main 'tasks' in the visualization proce
 
 --- 
 
-### Visualization Terminology[^1]
+## Visualization Terminology[^1]
+
+We looked at how Cairo categorizes visualizations and graphics: 
 
 [^1]: Cairo, Alberto. 'The Truthful Art'
 
@@ -78,14 +76,35 @@ Each day will cover one or more of these main 'tasks' in the visualization proce
   <p>In practice, these categories often overlap. A data visualization might be part of an infographic, and both use charts. The distinctions matter less than understanding the purpose of your visual and ensuring it effectively communicates the intended information.</p>
 </details>
  
-## Principles of Effective Visualization
+## Examples in the field 
+We then looked at examples of visualizations ranging from artistic to UIs and dashboards, trying to figure out where we want to place ourselves in this broad landscape. There's a ton to do and we'd like a wider field of view!
 
-What makes a visualization good? We can evaluate visualizations based on four key principles:
+Some of the links that I mentioned in my slides: 
 
-| Principle | Description | Example |
-|---------|-------------|---------|
-| Truthful | Represents data accurately without distortion | Proper scales, appropriate baselines, proportional representations |
-| Functional | Effectively serves its intended purpose | Chart type matches the data relationship being shown |
-| Beautiful | Aesthetically considered | Clean design with intentional color choices |
-| Insightful | Reveals patterns or relationships | Makes visible what would be hidden in tables or text |
 
+
+### Historical
+- [Cholera in Victorian London - Science Museum](https://www.sciencemuseum.org.uk/objects-and-stories/medicine/cholera-victorian-london)
+- [John Snow's Original Documents](https://Johnsnow.Matrix.Msu.Edu/documentUploads/15-78-2D2/15-78-2D2-22-1855-07-CIC-AppendixB.Pdf)
+- [Visual and Statistical Thinking by Edward Tufte](https://web.archive.org/web/20140807145142/http://www.sfu.ca/cmns/courses/2012/801/1-Readings/Tufte%20Visual%20and%20Statistical%20Thinking.pdf)
+- [Florence Nightingale - Lady with the Lamp](https://www.nam.ac.uk/explore/florence-nightingale-lady-lamp)
+- [Florence Nightingale's Public Health Act and COVID-19](https://historyandpolicy.org/policy-papers/papers/florence-nightingales-public-health-act-covid-19-and-the-empowerment-of-local-government/)
+
+### Creative
+- [Warming Stripes Visualization](https://chezvoila.com/blog/warmingstripes/)
+- [How Much Sugar Do You Consume - Physical Data Visualization](https://dataphys.org/list/how-much-sugar-do-you-consume/)
+- [Psychogeographical Mapping with Lego Bricks](https://dataphys.org/list/psychogeographical-mapping-travel-logging-with-lego-bricks/)
+- [Lines Project (57°59′N, 7°16′W) - Light Visualization](https://niittyvirta.com/lines-57-59-n-7-16w/)
+- [Swee Kombucha Packaging Design](https://www.bedow.se/work/swee-kombucha/)
+
+### News
+- [Adolfo Arranz and the SCMP](https://multimedia.scmp.com/culture/article/SCMP-printed-graphics-memory/)
+- [Lionel Messi Statistics - The Economist](https://www.economist.com/graphic-detail/2021/08/14/by-the-numbers-lionel-messi-is-european-footballs-best-scorer-ever)
+- [Visualizing Destruction in Ukraine Project](https://mhinfographics.com/2024/06/22/visualizing-the-destruction-in-ukraine-a-years-long-project-following-satellite-clues/)
+- [My Life with Long COVID - NYT Interactive](https://www.nytimes.com/interactive/2023/12/14/opinion/my-life-with-long-covid.html)
+- [Russian Elections Analysis - The Economist](https://www.economist.com/graphic-detail/2021/10/11/russian-elections-once-again-had-a-suspiciously-neat-result)
+
+
+## Books referred to 
+- Cairo, Alberto. "Graphics Lies, Misleading Visuals: Reflections on the Challenges and Pitfalls of Evidence-Driven Visual Communication" in *New Challenges for Data Design*
+- Cairo, Alberto. "The Truthful Art"
