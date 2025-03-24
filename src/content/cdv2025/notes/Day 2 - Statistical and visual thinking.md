@@ -8,6 +8,29 @@ Or, a modest inquiry into why the mind prefers pictures to sums
 
 ---
 
+## Welcome back! 
+
+Let us start by discussing some things from yesterday's activity. 
+
+- How many of you recorded data digitally vs on paper? What were your challenges? <!--element class="fragment"-->
+- While recording data, what was annoying? What did you have to deal with while collating the Google sheet? <!--element class="fragment"-->
+
+<div class="fragment">
+
+Data collection is a _hard_ activity. Put yourselves in the shoes of John Snow roaming the streets of Soho or Nightingale counting the dead at Scutari.
+
+</div>
+
+---
+
+The data we get to work with are rarely, if ever, in the format we need to do our analyses. It’s often the case that one tool requires data in one format, while another tool requires the data to be in another format. 
+
+To be efficient analysts, we should have good tools for reformatting data for our needs so we can do our actual work like making plots.
+
+We'll come back to our datasets, hang on to them for a bit.  <!--element class="fragment"-->
+
+---
+
 > **"There is a magic in graphs."** <br/>
 > "The proﬁle of a curve **reveals** in a ﬂash a whole situation — the life history of an epidemic, a panic, or an era of prosperity. The curve **informs** the mind, awakens the imagination, **convinces**."
 
@@ -39,6 +62,8 @@ note: - Data Viz includes _shapes_ that carry strong cultural memories; and impr
 
 
 What does this graph tell you? 
+
+Hint: The legend shows the **number of measles cases** in each state for that month.
 
 
 ![[IMG-20250318203429639.png]]
@@ -224,7 +249,7 @@ If you find yourself saying "number of...", thats a discrete value. Here are som
 
 ---
 
-<div class="grid grid-cols-2 gap-4 data-types-grid"> <div class="fragment fade-in-then-semi-out" data-fragment-index="1"> <h3>Nominal</h3> <p>Just categories or names</p> <ul> <li>Like car brands or blood types</li> <li>You can count them but not rank them</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="2"> <h3>Ordinal</h3> <p>Categories with an order</p> <ul> <li>Like rankings (1st, 2nd, 3rd place) or satisfaction levels (unhappy, neutral, happy)</li> <li>The order matters, but the gaps between them might not be equal</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="3"> <h3>Interval</h3> <p>Equal steps, but zero is made up</p> <ul> <li>Like temperature in °F (0°F isn't "no temperature")</li> <li>Equal distances between numbers</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="4"> <h3>Ratio</h3> <p>Equal steps with true zero</p> <ul> <li>Like weight or time (0 seconds means no time)</li> <li>You can say "twice as much" meaningfully</li> </ul> </div> </div>
+<div class="grid grid-cols-2 gap-4 data-types-grid"> <div> <h3>Nominal</h3> <p>Just categories or names</p> <ul> <li>Like car brands or blood types</li> <li>You can count them but not rank them</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="2"> <h3>Ordinal</h3> <p>Categories with an order</p> <ul> <li>Like rankings (1st, 2nd, 3rd place) or satisfaction levels (unhappy, neutral, happy)</li> <li>The order matters, but the gaps between them might not be equal</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="3"> <h3>Interval</h3> <p>Equal steps, but zero is made up</p> <ul> <li>Like temperature in °F (0°F isn't "no temperature")</li> <li>Equal distances between numbers</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="4"> <h3>Ratio</h3> <p>Equal steps with true zero</p> <ul> <li>Like weight or time (0 seconds means no time)</li> <li>You can say "twice as much" meaningfully</li> </ul> </div> </div>
 
 ---
 
@@ -249,21 +274,6 @@ Identify each type of variable in this table
 </div>
 
 ---
-
-## To spot data types, you need to ask questions! 
-
-<div class="compact-table table-full">
-
-| Type         | Question Words                  | Description                                                                                        | Operations           | Examples                                                                  |
-| ------------ | ------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------- | ------------------------------------------------------------------------- |
-| **Ratio**    | How many/much? When? How often? | Quantities with scale & meaningful zero.<br>**Differences and ratios/products are meaningful**     | Correlation          | Length, Weight, Time, Temperature (K),<br>Currency, Counts, Concentration |
-| **Interval** | How many/much? When?            | Quantities with scale but no meaningful zero.<br>**Differences meaningful, but not ratios**        | Mean, SD             | Temperature (°C, °F), Dates,<br>pH, Test scores (SAT, IQ)                 |
-| **Ordinal**  | How? What kind/sort?            | Categories with specific order/ranking.<br>**Items in defined order** (e.g., small, medium, large) | Median<br>Percentile | Education levels, Ratings,<br>Socioeconomic status, Likert scales         |
-| **Nominal**  | What? Who? Where? Which?        | Categories with no inherent order.<br>**Names, places, things**                                    | Count, Mode<br>      | Names, Gender, Colors,<br>Blood types, Countries, Categories              |
-
-</div>
-
-_Selecting the right data type is crucial for proper analysis and visualization_
 
 
 ---
@@ -313,7 +323,24 @@ The **most frequent value**
 
 ---
 
-![[IMG-20250321181827943.png]]
+
+
+
+## To spot data types, you need to ask questions! 
+
+<div class="compact-table table-full">
+
+| Type         | Question Words                  | Description                                                                                        | Operations           | Examples                                                                  |
+| ------------ | ------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------- | ------------------------------------------------------------------------- |
+| **Ratio**    | How many/much? When? How often? | Quantities with scale & meaningful zero.<br>**Differences and ratios/products are meaningful**     | Correlation          | Length, Weight, Time, Temperature (K),<br>Currency, Counts, Concentration |
+| **Interval** | How many/much? When?            | Quantities with scale but no meaningful zero.<br>**Differences meaningful, but not ratios**        | Mean, SD             | Temperature (°C, °F), Dates,<br>pH, Test scores (SAT, IQ)                 |
+| **Ordinal**  | How? What kind/sort?            | Categories with specific order/ranking.<br>**Items in defined order** (e.g., small, medium, large) | Median<br>Percentile | Education levels, Ratings,<br>Socioeconomic status, Likert scales         |
+| **Nominal**  | What? Who? Where? Which?        | Categories with no inherent order.<br>**Names, places, things**                                    | Count, Mode<br>      | Names, Gender, Colors,<br>Blood types, Countries, Categories              |
+
+</div>
+
+_Selecting the right data type is crucial for proper analysis and visualization_
+
 
 ---
 

@@ -34,12 +34,21 @@ export type Assignment = {
   source?: string;
 };
 
+// Announcement item with metadata
+export type Announcement = {
+  title: string;
+  date: string;
+  content: string;
+  slug: string;
+};
+
 // Complete menu structure for a course
 export type CourseMenu = {
   title: string;
   sections: MenuSection[];
   readings?: Reading[];
   assignments?: Assignment[];
+  announcements?: Announcement[];
   collapsibleSections?: boolean;
   showSections?: boolean;
 };
