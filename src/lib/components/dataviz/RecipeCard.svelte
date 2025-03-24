@@ -1,7 +1,5 @@
 <script>
-    // You can add any reactive variables or logic here
-  </script>
-  
+
   <svelte:head>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </svelte:head>
@@ -51,7 +49,7 @@
           <div class="bg-white p-2.5 flex flex-col">
             <div class="font-bold text-sm mb-2 uppercase">Get the Ingredients Together</div>
             <ul class="list-none text-xs">
-              <li class="mb-1 relative pl-4">Learn to shop for data <span class="italic">(bazaar time)</span></li>
+              <li class="mb-1 relative pl-4">Learn to shop for data</li>
               <li class="mb-1 relative pl-4">Appreciate how it was grown in the first place</li>
               <li class="mb-1 relative pl-4">What does data look like and why should we care?</li>
               <li class="mb-1 relative pl-4">How to spot a good <span class="line-through">vegetable</span> variable</li>
@@ -63,7 +61,7 @@
             <div class="font-bold text-sm mb-2 uppercase">Wash, Clean, Peel, Grate, Fry</div>
             <ul class="list-none text-xs">
               <li class="mb-1 relative pl-4">Rapidly make different kinds of charts and tables</li>
-              <li class="mb-1 relative pl-4">Colour? Large-sized Pieces? Filtering? Tadka?</li>
+              <li class="mb-1 relative pl-4">Large pieces? Filtering? Tadka?</li>
               <li class="mb-1 relative pl-4">Copy first, then add your own masala</li>
               <!-- <li class="mb-1 relative pl-4">Just like onions, some data needs to be fried till transparent</li> -->
             </ul>
@@ -73,7 +71,6 @@
           <div class="bg-white p-2.5 flex flex-col">
             <div class="font-bold text-sm mb-2 uppercase">Sample and Taste</div>
             <ul class="list-none text-xs">
-              <li class="mb-1 relative pl-4">Ask Questions: How does your Chart taste?</li>
               <li class="mb-1 relative pl-4">Try to Answer your Questions with Graphs, Tables, or Plain Numbers</li>
               <li class="mb-1 relative pl-4">Does it need more salt, or did you end up with khichdi and want to start over?</li>
             </ul>
@@ -85,7 +82,7 @@
             <ul class="list-none text-xs">
               <li class="mb-1 relative pl-4">Use your Sense of Surprise™. Aha moment? No aha moment? <br/> Is a different chart what you need?</li>
               <li class="mb-1 relative pl-4">Develop intuition that matches data and chart types</li>
-              <li class="mb-1 relative pl-4">Does turmeric really add flavour to something that wanted to be a pizza?</li>
+              <li class="mb-1 relative pl-4">Does <i>haldi</i> really add flavour to something that wanted to be a pizza?</li>
             </ul>
           </div>
           

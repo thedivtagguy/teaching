@@ -1,0 +1,38 @@
+---
+title: "Notice 1: Downloads to keep ready"
+date: 2025-03-21
+description: First class covering data visualization fundamentals and historical context
+published: true
+section: Appendix
+---
+
+# Software Setup for Tomorrow's Class
+
+Hi everyone!
+
+For tomorrow's class, we'll be working with data cleaning and analysis tools. **Please download and install the following software before class**, as the campus Wi-Fi might not be reliable enough for everyone to download these simultaneously during our session.
+
+## 1. OpenRefine
+
+OpenRefine is a powerful tool for working with messy data. It helps with cleaning, transforming, and exploring large datasets.
+
+### Download Instructions
+1. Go to the official OpenRefine download page: [https://openrefine.org/download](https://openrefine.org/download)
+2. Select the version for your operating system.
+
+## 2. Orange Data Mining
+
+Orange is an open-source data visualization and analysis tool that uses a visual programming interface with components for machine learning, data analytics and visualization.
+
+### Download Instructions
+1. Visit the Orange Data Mining download page: [https://orangedatamining.com/download/](https://orangedatamining.com/download/)
+2. Select the version for your operating system.
+
+## Verification
+
+After installing both tools, please verify they run correctly:
+
+- **OpenRefine**: Launch the application and confirm you see the start screen. On Windows, you'll have a `.exe` file. Once you have downloaded the .zip file, extract it into a folder where you wish to store program files (such as D:\Program Files\OpenRefine). On Mac, once you have downloaded the .dmg file, open it and drag the OpenRefine icon onto the Applications folder icon (just like you would normally install Mac applications).
+- **Orange**: Launch the application and verify you can see the canvas and widget toolbar. Same as above. 
+
+Looking forward to our hands-on session tomorrow!
