@@ -1,26 +1,41 @@
 ---
 title: "Day 1: Down the rabbit hole"
-date: "2025-03-21"
-description: "First class covering data visualization fundamentals and historical context"
+date: 2025-03-21
+description: First class covering data visualization fundamentals and historical context
 published: false
-section: "Fundamentals"
+section: Fundamentals
 order: 1
+readings:
+  - title: "'What we mean when we talk about visualizations', from The Truthful Art"
+  author: "Alberto Cairo"
+  pages: "1-44"
+  url: "https://flowingdata.com/data-points/DataPoints-Ch3.pdf "
+  readingTime: 30
 ---
 
+readings: 
+cahpter 1 the tiurth ful art
+https://pages.graphics.cs.wisc.edu/765-22/vis/1-what-is-vis/
 
 # Day 1: Down the rabbit hole
 
+<script>
+import { goto } from '$app/navigation';
 
-<button class='btn-primary bg-blue mb-3'>
+function openSlides() {
+  goto('/cdv2025/slides/day-1-intro-to-dataviz');
+}
+</script>
+
+<button class="btn-primary bg-blue mb-3" on:click={openSlides}>
 Open Class Slides
 </button>
 
 Welcome to our data visualization course! In this first session, we explored the fundamentals of data visualization, examining its historical context, core principles, and the breadth of applications in our world today.
 
-
 ## So what's all this then?
 
-We started off by looking at John Snow's cholera map (I can't think of one course I've seen so far which _didn't_ start with this, so a rite of passage for you all). We also looked at the original _tables_ for the map.
+We started off by looking at John Snow's cholera map (I can't think of one course I've seen so far which _didn't_ start with this, so a rite of passage for you all), looked at some naturally occuring "visualizations" and then Florence Nightingale's legendary work. We also looked at the original _tables_ for the data on John Snow's map and learnt about Nightingale's disdain for such tables and her motivations for making something for the "vulgar public" (us).
 
 After this, we looked at a variety of visualizations around us in daily life. Cricket matches, cameras, kombuchas; what have you. Its alright if your heart isn't immediately into the kind of visualizations that we might make in this course, but look at the possibilities!
 
@@ -39,11 +54,9 @@ Each day will cover one or more of these main 'tasks' in the visualization proce
 
 --- 
 
-
-
 ### Visualization Terminology[^1]
 
-[^1]: Cairo, Alberto. ‘The Truthful Art’
+[^1]: Cairo, Alberto. 'The Truthful Art'
 
 <dl>
   <dt>Visualization</dt>
@@ -64,18 +77,7 @@ Each day will cover one or more of these main 'tasks' in the visualization proce
   <summary>Why are the boundaries between these terms fuzzy?</summary>
   <p>In practice, these categories often overlap. A data visualization might be part of an infographic, and both use charts. The distinctions matter less than understanding the purpose of your visual and ensuring it effectively communicates the intended information.</p>
 </details>
-
-## Historical Context: John Snow's Cholera Map
-
-
-John Snow's 1854 cholera map is one of the earliest and most impactful examples of data visualization. By plotting cholera deaths in London on a map, Snow was able to identify the Broad Street pump as the source of the outbreak.
-
-What made this visualization powerful:
-1. It transformed abstract data into visual evidence
-2. It supported Snow's theory that cholera was waterborne, not airborne
-3. It led to actionable insights (removing the pump handle)
-4. It changed scientific understanding and public health practices
-
+ 
 ## Principles of Effective Visualization
 
 What makes a visualization good? We can evaluate visualizations based on four key principles:
@@ -86,86 +88,4 @@ What makes a visualization good? We can evaluate visualizations based on four ke
 | Functional | Effectively serves its intended purpose | Chart type matches the data relationship being shown |
 | Beautiful | Aesthetically considered | Clean design with intentional color choices |
 | Insightful | Reveals patterns or relationships | Makes visible what would be hidden in tables or text |
-
-<div class="warning">
-  <p><strong>Warning:</strong> Data decoration is not the same as data visualization. Decorative elements should never compromise the integrity or clarity of the data being presented.</p>
-</div>
-
-## Applications of Data Visualization
-
-We explored how visualizations appear in diverse contexts:
-
-- **Scientific discovery** (John Snow's cholera map)
-- **Photography** (histograms)
-- **Sports analysis** (IPL cricket maps)
-- **Fitness tracking** (running apps)
-- **Climate communication** (Ed Hawkins' warming stripes)
-- **Journalism** (Reuters, Financial Times, The Economist)
-- **Product design** (innovative packaging)
-- **Physical data representations** (LEGO city maps, light installations)
-- **Entertainment** (statistical visualizations in TV/film)
-
-### Example: Charles Minard's Napoleon's March
-
-This famous 1869 visualization shows Napoleon's disastrous Russian campaign of 1812:
-
-- Combines six data types on a single graphic
-- Shows army size, location, direction, temperature, and time
-- Often cited as "the best statistical graphic ever drawn" (Edward Tufte)
-
-## Course Structure
-
-Throughout this course, we'll cover:
-
-<ul>
-  <li><strong>Why Visualization?</strong> Understanding how visuals help us understand data</li>
-  <li><strong>Basic Data Analysis</strong> Learning to wrangle, summarize, and prepare data</li>
-  <li><strong>Critique & Redesign</strong> Techniques to analyze and improve existing visualizations</li>
-  <li><strong>Abstraction</strong> Simple frameworks for tasks and data types</li>
-  <li><strong>Visual Encodings</strong> The building blocks of effective visualizations</li>
-  <li><strong>Data Storytelling</strong> Crafting narratives with data and visuals</li>
-</ul>
-
-Each lesson will connect to stages in the dataviz process:
-
-- **Collect & Clean:** Finding and preparing data
-- **Analyze & Summarize:** Understanding key patterns
-- **Visualize:** Choosing the right visual formats
-- **Narrate:** Creating a story with your data
-- **Design:** Making it beautiful and accessible
-
-## Our First Exercise: Poem Word Counts
-
-We practiced visualizing a simple dataset showing the average number of words in poems written by children across different grade levels:
-
-
-
-This exercise demonstrated that there are multiple valid approaches to visualizing the same data, each highlighting different aspects and patterns.
-
-## Resources for Further Study
-
-### Books
-- **The Truthful Art** by Alberto Cairo
-- **Visual and Statistical Thinking** by Edward Tufte
-
-### Websites/Blogs
-- [Junk Charts](https://junkcharts.typepad.com/) - Critical analysis of visualizations
-- [Data Physicalization](https://dataphys.org/list/) - Physical data visualizations
-
-### Class Resources
-- [GitHub Discussion Board](https://github.com/orgs/les-vizerables/discussions/1) - For sharing sketches and projects
-
-## Next Class Preparation
-
-For our next session, please:
-1. Find an interesting visualization (good or bad) to discuss
-2. Review the resources on basic data analysis fundamentals
-3. Consider what kinds of data you might be interested in visualizing for your projects
-
-
----
-
-> "The purpose of infographics and data visualizations is to enlighten people—not to entertain them, not to sell them products, services, or ideas, but to inform them. It's as simple—and as complicated—as that."
-> 
-> — Alberto Cairo, The Truthful Art
 

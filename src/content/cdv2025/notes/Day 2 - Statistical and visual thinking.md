@@ -66,14 +66,16 @@ But not all is nice and dandy in the dataviz world. It is important to be able t
 ---
 
 
-![[IMG-20250319010111978.png|500]]
+![[IMG-20250319010111978.png|600]]
 
 <br/>
-What is wrong here? 
+Notice the "reddest" states, what do you think is wrong here? 
+
+<!--element class="fragment"--> 
 
 ---
 
-![[IMG-20250319010713691.png|500]]
+![[IMG-20250319010713691.png|600]]
 
 ---
 
@@ -85,8 +87,18 @@ Page 228, Accidental Deaths and Suicides in India 2022 https://data.opencity.in/
 
 </cite>
 
+
 ---
-### Data, data, data! <br/>I cannot make bricks without clay
+
+![[IMG-20250322132433871.png|400]]
+
+<br/>
+"Gen Alpha isn't spending anything on alchocol, they're killing the industry!!" <!--element class="fragment"-->
+
+
+---
+
+### Data, data, data! I cannot make bricks without clay
 
 ---
 
@@ -119,12 +131,8 @@ Three Openshaw family members received envelopes with orange seeds
 
 ---
 
-Holmes investigated the matter by:
+![[IMG-20250322142027276.png]]
 
-1. **Recognizing the pattern** (AHA moment)
-2. **Forming a hypothesis** (ship connection)
-3. **Asking key questions** (Which ships were in all ports?)
-4. **Analyzing variables** (schedules, postmarks, timing)
 
 ---
 
@@ -198,6 +206,7 @@ graph TD
     
 ```
 
+---
 
 ## Discrete and Continuous
 
@@ -215,25 +224,7 @@ If you find yourself saying "number of...", thats a discrete value. Here are som
 
 ---
 
-**Nominal**: Just categories or names
-
-- Like car brands or blood types
-- You can count them but not rank them
-
-**Ordinal**: Categories with an order
-
-- Like rankings (1st, 2nd, 3rd place) or satisfaction levels (unhappy, neutral, happy)
-- The order matters, but the gaps between them might not be equal
-
-**Interval**: Equal steps, but zero is made up
-
-- Like temperature in °F (0°F isn't "no temperature")
-- Equal distances between numbers
-
-**Ratio**: Equal steps with true zero
-
-- Like weight or time (0 seconds means no time)
-- You can say "twice as much" meaningfully
+<div class="grid grid-cols-2 gap-4 data-types-grid"> <div class="fragment fade-in-then-semi-out" data-fragment-index="1"> <h3>Nominal</h3> <p>Just categories or names</p> <ul> <li>Like car brands or blood types</li> <li>You can count them but not rank them</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="2"> <h3>Ordinal</h3> <p>Categories with an order</p> <ul> <li>Like rankings (1st, 2nd, 3rd place) or satisfaction levels (unhappy, neutral, happy)</li> <li>The order matters, but the gaps between them might not be equal</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="3"> <h3>Interval</h3> <p>Equal steps, but zero is made up</p> <ul> <li>Like temperature in °F (0°F isn't "no temperature")</li> <li>Equal distances between numbers</li> </ul> </div> <div class="fragment fade-in-then-semi-out" data-fragment-index="4"> <h3>Ratio</h3> <p>Equal steps with true zero</p> <ul> <li>Like weight or time (0 seconds means no time)</li> <li>You can say "twice as much" meaningfully</li> </ul> </div> </div>
 
 ---
 
@@ -273,12 +264,6 @@ Identify each type of variable in this table
 </div>
 
 _Selecting the right data type is crucial for proper analysis and visualization_
-
----
-
-![[Pasted image 20250319221625.png]]
-
-
 
 
 ---

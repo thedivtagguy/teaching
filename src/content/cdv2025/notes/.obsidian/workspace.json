@@ -6,7 +6,6 @@
       {
         "id": "ec55d9c82d9e8187",
         "type": "tabs",
-        "dimension": 50,
         "children": [
           {
             "id": "4627276a7bd6252e",
@@ -14,29 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Assignments.md",
+                "file": "Day 1 - Intro to Dataviz.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Assignments"
+              "title": "Day 1 - Intro to Dataviz"
             }
           }
         ]
       },
       {
-        "id": "194f4aebd9c017b2",
+        "id": "e602c43aff0f8c92",
         "type": "tabs",
-        "dimension": 50,
         "children": [
           {
-            "id": "897253bb58169211",
+            "id": "30bdd7f203cea9c0",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: Assignments.md"
+              "title": "Preview: Day 1 - Intro to Dataviz.md"
             }
           }
         ]
@@ -209,54 +207,54 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "897253bb58169211",
+  "active": "30bdd7f203cea9c0",
   "lastOpenFiles": [
+    "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz/IMG-20250324012433448.gif",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321014449504.gif",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321014006012.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321012623982.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz/IMG-20250324010354842.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz/IMG-20250324010338378.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz/IMG-20250323193550203.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz/IMG-20250323193428122.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321011236445.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321011157955.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321012733471.png",
+    "export/Day 1 - Intro to Dataviz/attachments/Day 1 - Intro to Dataviz",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course/Day 1 - Intro to Dataviz",
+    "export/Day 1 - Intro to Dataviz/attachments/Dataviz Course",
+    "export/Day 1 - Intro to Dataviz/attachments",
+    "export/Day 1 - Intro to Dataviz/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff",
+    "export/Day 1 - Intro to Dataviz/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff",
+    "export/Day 1 - Intro to Dataviz/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff",
+    "export/Day 1 - Intro to Dataviz/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff",
+    "export/Day 1 - Intro to Dataviz/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff",
+    "export/Day 1 - Intro to Dataviz/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff",
+    "export/Day 1 - Intro to Dataviz/dist/css/theme/README.md",
+    "export/Day 1 - Intro to Dataviz/plugin/menu/README.md",
+    "export/Day 1 - Intro to Dataviz/plugin/menu/CONTRIBUTING.md",
+    "export/Day 1 - Intro to Dataviz/plugin/customcontrols/README.md",
+    "export/Day 1 - Intro to Dataviz/plugin/chart/README.md",
+    "export/Day 1 - Intro to Dataviz/plugin/chalkboard/README.md",
+    "Assignments List.md",
     "Day 1 - Intro to Dataviz.md",
-    "attachments/Day 1 - Intro to Dataviz",
-    "attachments/Day 1 - Intro to Dataviz/IMG-20250321221057047.png",
+    "day-summaries/day-1.md",
+    "Day 2 - Statistical and visual thinking.md",
+    "Day 6 - Storytelling and You.md",
+    "Day 5 - Design considerations, viz marathon.md",
+    "Assignments.md",
     "Dataviz Course/Day 2 - Statistical and visual thinking.md",
-    "Dataviz Course/attachments/Dataviz Course/Day 2 - Statistical and visual thinking/IMG-20250321211316737.png",
-    "Dataviz Course/attachments/Dataviz Course/Day 2 - Statistical and visual thinking/IMG-20250321181827943.png",
     "Dataviz Course/Assignments List.md",
     "Dataviz Course/Assignments.md",
     "Dataviz Course/Day 3 - Data wrangling.md",
     "Dataviz Course/Day 1 - Intro to Dataviz.md",
-    "Dataviz Course/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250318122419246.png",
-    "Dataviz Course/attachments/Dataviz Course/Day 1 - Intro to Dataviz/venn-diagram.png",
-    "Dataviz Course/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321014449504.gif",
-    "Dataviz Course/attachments/Dataviz Course/Day 1 - Intro to Dataviz/IMG-20250321014006012.png",
-    "Dataviz Course/attachments/Pasted image 20250321013922.png",
-    "Dataviz Course/attachments/Pasted image 20250319221625.png",
-    "Dataviz Course/attachments/Pasted image 20250319191828.png",
     "Dataviz Course/Day 5 - Design considerations, viz marathon.md",
-    "Dataviz Course/attachments/Dataviz Course/Day 3 - Data wrangling",
     "Dataviz Course/Datasets.md",
     "Dataviz Course/Readings.md",
     "Dataviz Course/Designing Graphics.md",
     "Dataviz Course/Day Plan.md",
     "Dataviz Course/Intro to Dataviz ⟩ Spring 2025.md",
     "Dataviz Course/Day 4 - Exploring Tools.md",
-    "Dataviz Course/Day 6 - Storytelling and You.md",
-    "export/Day 2 - Statistical and visual thinking/Dataviz Course/attachments/Dataviz Course/Day 2 - Statistical and visual thinking",
-    "export/Day 2 - Statistical and visual thinking/Dataviz Course/attachments/Dataviz Course/Day 1 - Intro to Dataviz",
-    "export/Day 2 - Statistical and visual thinking/Dataviz Course/attachments/Dataviz Course",
-    "export/Day 2 - Statistical and visual thinking/Dataviz Course/attachments",
-    "export/Day 2 - Statistical and visual thinking/Dataviz Course",
-    "export/Day 2 - Statistical and visual thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff",
-    "export/Day 2 - Statistical and visual thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff",
-    "export/Day 2 - Statistical and visual thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff",
-    "export/Day 2 - Statistical and visual thinking/plugin/menu/README.md",
-    "export/Day 2 - Statistical and visual thinking/plugin/menu/CONTRIBUTING.md",
-    "export/Day 2 - Statistical and visual thinking/plugin/customcontrols/README.md",
-    "export/Day 2 - Statistical and visual thinking/plugin/chart/README.md",
-    "export/Day 2 - Statistical and visual thinking/plugin/chalkboard/README.md",
-    "export/Day 2 - Statistical and visual thinking/dist/css/theme/README.md",
-    "Dataviz Course/Day 7 - Finales.md",
-    "Dataviz Course/Storytelling.md",
-    "Dataviz Course/Guides Data Visualization Introduction to Data Visualization.md",
-    "Personal/The Jayanagar 7th Block Handbook.md",
-    "Personal/Instagram.md",
-    "Personal/Aman and Rhea NYT Games.md",
     "Untitled.canvas"
   ]
 }
