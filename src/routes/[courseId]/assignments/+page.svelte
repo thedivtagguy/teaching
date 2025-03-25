@@ -103,7 +103,7 @@
   $: sortedDueDates = Object.keys(assignmentsByDue).sort((a, b) => {
     if (a === 'No Due Date') return 1;
     if (b === 'No Due Date') return -1;
-    return new Date(a).getTime() - new Date(b).getTime();
+    return new Date(b).getTime() - new Date(a).getTime();
   });
   
   // Group assignments by due date
@@ -207,17 +207,12 @@
           class="bg-base-100 rounded-lg overflow-hidden border-2 border-neutral btn-drop-shadow"
         >
           <div class={`bg-base-200 px-6 py-3 flex items-center border-b-2 border-neutral ${isPastDue(dueDate) && dueDate !== 'No Due Date' ? 'bg-red bg-opacity-10' : ''}`}>
-            <Calendar class={`w-5 h-5 mr-2 ${isPastDue(dueDate) && dueDate !== 'No Due Date' ? 'text-red' : 'text-sage'}`} />
+            <Calendar class={`w-5 h-5 mr-2 ${isPastDue(dueDate) && dueDate !== 'No Due Date' ? 'text-neutral' : 'text-sage'}`} />
             <div class="flex-1">
               <h2 class="font-roboto font-bold text-lg text-neutral uppercase tracking-wide">
                 {formatDate(dueDate)}
               </h2>
-              {#if isPastDue(dueDate) && dueDate !== 'No Due Date'}
-                <p class="text-red text-sm font-archivo font-bold flex items-center gap-1 mt-0.5">
-                  <AlertTriangle class="w-3 h-3" />
-                  <span>Past due</span>
-                </p>
-              {/if}
+              
             </div>
           </div>
           
