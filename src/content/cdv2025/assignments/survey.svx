@@ -1,6 +1,6 @@
 ---
 title: "Activity 1: Lay of the land"
-due: "2025-03-25"
+due: "2025-03-24"
 description: "Learning data collection"
 published: true
 ---

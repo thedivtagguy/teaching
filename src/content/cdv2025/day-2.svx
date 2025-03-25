@@ -1,27 +1,34 @@
 ---
-title: "Day 2: Visual and Statistical Thinking"
-date: "2025-03-24"
-description: "Making sense of data and then knowing how to show it"
+title: "Day 2: Visual & Statistical Thinking"
+date: 2025-03-25
+description: Second class covering data types, perception, marks and channels, statistical thinking
 published: true
-section: "Collection and Encoding"
+section: Fundamentals
 order: 2
 readings:
-  - title: "'Representing Data', from DataPoints"
+  - title: "Representing Data"
     author: "Nathan Yau"
-    pages: "1-44"
-    url: "https://flowingdata.com/data-points/DataPoints-Ch3.pdf "
-    readingTime: 30
+    url: https://flowingdata.com/data-points/DataPoints-Ch3.pdf
+    readingTime: "30"
+  - title: "Play with Encodings"
+    author: "Erica Gunn"
+    url: http://ericagunn.com/2019/06/22/play-with-encodings/
+    readingTime: "7"
+  - title: "Properties of Encodings"
+    author: "Erica Gunn"
+    url: http://ericagunn.com/2019/10/01/properties-of-encodings/
+    readingTime: "7"
 ---
 
-# Day 2: Statistical and Visual Thinking
+# Day 2: Visual & Statistical Thinking
+
+
 
 <script>
 import { goto } from '$app/navigation';
-import RecipeCard from '$lib/components/dataviz/RecipeCard.svelte';
-
 
 function openSlides() {
-  goto('https://teaching.aman.bh/slides/cdv2025/day-2-visual-and-statistical-thinking/#/');
+  goto('https://teaching.aman.bh/slides/cdv2025/day-2-visual-statistical-thinking/#/');
 }
 </script>
 
@@ -29,8 +36,103 @@ function openSlides() {
 Open Class Slides
 </button>
 
-We learnt that there's some basic steps to the dataviz process:
+<div class="warning mb-2">
 
+We have several required readings for this day. Please have a look at the readings tab
+</div>
 
+**FOR ASSIGNMENTS:** Please go to the 'Assignments' tab in the menu. This is a daily summary.
 
-<RecipeCard/>
+In our second session, we took a look into how our minds process visual information, explored different data types, and began working with real data through Orange.
+
+## The Eyes Have It: Pre-attentive Processing
+
+We explored why data visualization is so powerful - our visual system can process certain attributes almost instantly (in less than 10 milliseconds), before conscious attention. These "pre-attentive" attributes include:
+
+- Position (most effectively perceived)
+- Length
+- Angle
+- Direction
+- Shape
+- Area & Volume
+- Color (usually least effective for encoding quantitative data)
+
+This hierarchy of visual encoding effectiveness explains why position-based charts (like scatter plots) are often more effective than area-based (pie charts) or color-based visualizations for quantitative comparisons.
+
+## Marks & Channels: The Building Blocks
+
+We learned about the fundamental components of visualizations:
+
+- **Marks**: The basic geometric elements that represent our data (points, lines, areas)
+- **Channels**: The visual properties we assign to these marks (position, size, color, etc.)
+
+## Dear Data: Personal Data Art
+
+We explored the "Dear Data" project by Giorgia Lupi and Stefanie Posavec, where they documented aspects of their daily lives through hand-drawn data visualizations on postcards. 
+
+For our in-class activity, we created our own "Dear Data" style visualizations based on the survey responses collected yesterday. This exercise helped us think about:
+- Creative ways to encode multiple dimensions of data
+- How to create clear legends that allow others to decode our visualizations
+- Incorporating qualitative nuances into data representations
+
+## Types of Data: Understanding Our Ingredients
+
+<dl>
+  <dt>Quantitative Data</dt>
+  <dd>
+    <strong>Discrete</strong>: Countable, whole numbers (e.g., number of emails)<br>
+    <strong>Continuous</strong>: Measurable, can take any value (e.g., temperature, time)
+  </dd>
+  
+  <dt>Qualitative Data</dt>
+  <dd>
+    <strong>Nominal</strong>: Categories without order (e.g., colors, gender)<br>
+    <strong>Ordinal</strong>: Categories with order (e.g., satisfaction ratings)
+  </dd>
+</dl>
+
+We also learned about the key distinction between:
+
+- **Interval data**: Equal distances, no true zero (e.g., temperature in °C)
+- **Ratio data**: Equal distances with true zero (e.g., height, weight)
+
+Understanding these types is crucial because they determine what operations and visualizations are appropriate.
+
+## Measures of Central Tendency: Finding the Middle
+
+We explored three ways to find the "middle" of our data:
+
+- **Mean**: The arithmetic average (sum divided by count)
+- **Median**: The middle value when data is arranged in order
+- **Mode**: The most frequently occurring value
+
+Each has strengths and weaknesses depending on your data's distribution. Like Brad Pitt.
+
+## Data Analysis with Orange
+
+We got our hands dirty with Orange, a visual programming tool for data analysis:
+
+1. We explored the Adult Census Income dataset
+2. Learned how to calculate statistics within groups using GROUP BY
+3. Created our first visualizations:
+   - Bar charts for comparing values across categories
+   - Histograms for viewing distributions of continuous data
+   - Mosaic plots for examining relationships between categorical variables
+
+With the Titanic dataset, we investigated survival patterns across different passenger groups, seeing how visualization can quickly reveal patterns that would be difficult to spot in tables.
+
+---
+
+## Links from today
+
+### Dear Data Project  
+- [Dear Data Project Website](https://www.dear-data.com/theproject)
+- [Dear Data Instagram](https://www.instagram.com/deardatapostbox)
+
+### Tools
+- [Orange Data Mining](https://orangedatamining.com/)
+
+### The Datasaurus Dozen
+- [Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics](https://www.autodesk.com/research/publications/same-stats-different-graphs)
+
+Congratulations, aapko analyst hua hai. See you tomorrow!
