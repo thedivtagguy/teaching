@@ -201,14 +201,14 @@
 /* Code */
 .reveal pre {
   background-color: var(--color-neutral);
-  padding: 1em;
+  padding: 0.5em;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin-bottom: 1em;
   border: 2px solid var(--color-neutral);
   box-shadow: var(--shadow-btn-drop-shadow);
-  width: 100%;
-  max-width: 90%;
+  width: auto;
+  max-width: 85%;
   margin-left: 0;
   margin-right: auto;
   text-align: left;
@@ -219,10 +219,13 @@
   color: var(--color-base-100);
   background-color: transparent;
   padding: 0;
-  font-size: 0.8em;
-  line-height: 1.6;
-  max-height: 400px;
+  font-size: 0.6em;
+  line-height: 1.4;
+  max-height: 500px;
   text-align: left;
+  overflow: auto;
+  display: block;
+  white-space: pre !important;
 }
 
 .reveal code {
@@ -230,9 +233,17 @@
   background-color: var(--color-base-200);
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  font-size: 0.9em;
+  font-size: 0.7em;
   color: var(--color-neutral);
   border: 1px solid var(--color-base-300);
+}
+
+.reveal .code-wrapper {
+  white-space: pre !important;
+}
+
+.reveal .code-wrapper code {
+  white-space: pre !important;
 }
 
 /* Blockquotes */
