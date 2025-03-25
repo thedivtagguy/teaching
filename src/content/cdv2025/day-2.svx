@@ -28,7 +28,7 @@ readings:
 import { goto } from '$app/navigation';
 
 function openSlides() {
-  goto('https://teaching.aman.bh/slides/cdv2025/day-2-visual-statistical-thinking/#/');
+  goto('https://teaching.aman.bh/slides/cdv2025/day-2-visual-and-statistical-thinking/#/');
 }
 </script>
 
