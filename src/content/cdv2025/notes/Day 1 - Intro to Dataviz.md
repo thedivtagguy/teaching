@@ -235,7 +235,7 @@ and of course, 'youeyeyouex'. <!-- element class="fragment" -->
 ---
 And regardless of what you might think,
 
-![[IMG-20250318010106097.png|400]]
+![[IMG-20250325005926292.png|400]]
 
 
 
