@@ -193,3 +193,7 @@ sup {
     line-height: 0;
 }
 
+strong {
+    @apply bg-yellow;
+
+}
