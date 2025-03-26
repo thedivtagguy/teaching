@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="css/reveal-theme.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+    <link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+    <link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Bunch of stuff to inspire you to visualize something for your movies
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+SCMP for layout inspiration 
+
+https://multimedia.scmp.com/culture/article/SCMP-printed-graphics-memory/
+
+<img src="attachments/Pasted image 20250326233342.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Between two characters, who sings when in a song? From: https://pudding.cool/2017/03/hamilton/
+
+<img src="attachments/Pasted image 20250326195134.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Perceptions of the characters on a scale
+From: https://pudding.cool/2017/08/the-office/
+
+<img src="attachments/Pasted image 20250326195337.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Or some more accurate numbers that you don't _have_ to do: 
+
+<img src="attachments/Pasted image 20250326195320.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Slightly abstract, but a timeline of how characters move through the movie. Who shows up with each other and at what point in the movie? 
+From: https://xkcd.com/657/
+
+<img src="attachments/Pasted image 20250326195533.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Beautiful abstract timelines of truth vs. false in various movies: 
+From: https://informationisbeautiful.net/visualizations/based-on-a-true-true-story/
+
+<img src="attachments/Pasted image 20250326195813.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Women in Indian cinema and how they're treated, a WONDERFUL zine by Kaashvi Bansal. 
+https://heyzine.com/flip-book/2fc66bbcf7.html#page/33
+
+<img src="attachments/Pasted image 20250326200255.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Who is mentioned where in The Hobbit
+http://lotrproject.com/blog/2013/03/12/character-mentions-in-the-hobbit/
+
+<img src="attachments/Pasted image 20250326200509.png" alt="" style="width: 500px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Gendered descriptions in books. How are men and women described differently?
+
+
+<img src="attachments/Pasted image 20250326200939.png" alt="" style="width: 500px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Maps of movies, where did the characters go?
+https://www.andrewdegraff.com/moviemaps
+
+<img src="attachments/Pasted image 20250326232307.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+[xkcd sectioned the United States by the background in movies](http://xkcd.com/1509/large/).
+
+<img src="attachments/Pasted image 20250326232351.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+When do movies mention their own names? 
+https://www.titledrops.net/
+
+<img src="attachments/Pasted image 20250326232453.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Rocky movie breakdown
+https://fathom.info/rocky/
+<img src="attachments/Pasted image 20250326232751.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20250326233719.png" alt="" style="width: 700px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+https://www.thedataschool.co.uk/eugenia-losada-gamst/dashboard-week-day-3-48/
+
+<img src="attachments/Pasted image 20250326233944.png" alt="" style="width: 500px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+https://public.tableau.com/app/profile/george.koursaros/viz/LordoftheRingsMovies/LOTR
+
+<img src="attachments/Pasted image 20250326234600.png" alt="" style="object-fit: scale-down">
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealPointer,
+                RevealChalkboard,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: true,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        icon: '<i class="fa fa-pen-square"></i>',
+                        title: 'Toggle chalkboard (B)',
+                        action: 'RevealChalkboard.toggleChalkboard();'
+                    },
+                    {
+                        icon: '<i class="fa fa-pen"></i>',
+                        title: 'Toggle notes canvas (C)',
+                        action: 'RevealChalkboard.toggleNotesCanvas();'
+                    },
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":true,"transition":"slide","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+</body>
+
+<!-- created with Slides Extended -->
+</html>

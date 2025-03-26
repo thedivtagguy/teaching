@@ -6,6 +6,7 @@
       {
         "id": "ec55d9c82d9e8187",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "4627276a7bd6252e",
@@ -13,28 +14,69 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 3 - Data wrangling.md",
+                "file": "Movie Inspiration.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 3 - Data wrangling"
+              "title": "Movie Inspiration"
+            }
+          },
+          {
+            "id": "5c548b3478314745",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Movie Inspiration.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Movie Inspiration"
+            }
+          },
+          {
+            "id": "834c8d828f2902bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Movie Inspiration.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Movie Inspiration"
+            }
+          },
+          {
+            "id": "925943797ec8b911",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2025-03-26 09.28.53.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-03-26 09.28.53.excalidraw"
             }
           }
         ]
       },
       {
-        "id": "ba3898f33b7fc2ec",
+        "id": "39fbb9563c23a736",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "69a9317f4730d000",
+            "id": "29d369eeee7e2c65",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: Day 3 - Data wrangling.md"
+              "title": "Preview: Movie Inspiration.md"
             }
           }
         ]
@@ -94,7 +136,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294.51103591918945
+    "width": 200
   },
   "right": {
     "id": "616df4d1f965c3e0",
@@ -207,54 +249,54 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "4627276a7bd6252e",
+  "active": "29d369eeee7e2c65",
   "lastOpenFiles": [
-    "attachments/Day 3 - Data wrangling/orange-scooby.png",
-    "attachments/Day 3 - Data wrangling",
-    "attachments/Day 3 - Data wrangling/IMG-20250326002529197.png",
-    "Day 2 - Visual and Statistical Thinking.md",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff",
+    "export/day-4/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff",
+    "export/day-4/plugin/chalkboard/img/whiteboard.png",
+    "export/day-4/plugin/chalkboard/img/sponge.png",
+    "export/day-4/plugin/chalkboard/img/chalk-yellow.png",
+    "export/day-4/plugin/chalkboard/img/chalk-white.png",
+    "export/day-4/plugin/chalkboard/img/chalk-red.png",
+    "export/day-4/plugin/chalkboard/img/chalk-purple.png",
+    "export/day-4/plugin/chalkboard/img/chalk-orange.png",
+    "export/day-4/plugin/chalkboard/img/chalk-green.png",
+    "export/day-4/plugin/chalkboard/img/chalk-blue.png",
+    "export/day-4/plugin/chalkboard/img/boardmarker-yellow.png",
+    "export/day-4/dist/css/theme/README.md",
+    "export/day-4/plugin/menu/README.md",
+    "export/day-4/plugin/menu/CONTRIBUTING.md",
+    "export/day-4/plugin/customcontrols/README.md",
+    "export/day-4/plugin/chart/README.md",
+    "export/day-4/plugin/chalkboard/README.md",
+    "export/Movie Inspiration/plugin/menu/README.md",
+    "export/Movie Inspiration/plugin/menu/CONTRIBUTING.md",
+    "export/Movie Inspiration/plugin/customcontrols/README.md",
+    "export/Movie Inspiration/plugin/chart/README.md",
+    "export/Movie Inspiration/plugin/chalkboard/README.md",
+    "export/Movie Inspiration/dist/css/theme/README.md",
+    "Day 7 - Finales.md",
+    "Day Plan.md",
+    "Designing Graphics.md",
+    "Day 4 - Viz Day.md",
+    "Movie Inspiration.md",
     "Day 3 - Data wrangling.md",
+    "Excalidraw/Drawing 2025-03-26 14.01.51.excalidraw.md",
+    "Day 2 - Visual and Statistical Thinking.md",
+    "Excalidraw/Drawing 2025-03-26 09.28.53.excalidraw.md",
     "Assignments.md",
     "Assignments List.md",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/whiteboard.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/sponge.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/chalk-yellow.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/chalk-white.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/chalk-red.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/chalk-orange.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/chalk-purple.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/chalk-green.png",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/img/chalk-blue.png",
     "export/day-2-visual-and-statistical-thinking/dist/css/theme/README.md",
     "export/day-2-visual-and-statistical-thinking/plugin/menu/README.md",
-    "export/day-2-visual-and-statistical-thinking/plugin/menu/CONTRIBUTING.md",
-    "export/day-2-visual-and-statistical-thinking/plugin/customcontrols/README.md",
-    "export/day-2-visual-and-statistical-thinking/plugin/chalkboard/README.md",
-    "export/day-2-visual-and-statistical-thinking/plugin/chart/README.md",
-    "export/Day 2 - Visual and Statistical Thinking/plugin/menu/README.md",
-    "export/Day 2 - Visual and Statistical Thinking/plugin/menu/CONTRIBUTING.md",
-    "export/Day 2 - Visual and Statistical Thinking/plugin/customcontrols/README.md",
-    "export/Day 2 - Visual and Statistical Thinking/plugin/chart/README.md",
-    "export/Day 2 - Visual and Statistical Thinking/plugin/chalkboard/README.md",
-    "export/Day 2 - Visual and Statistical Thinking/dist/css/theme/README.md",
-    "Day 5 - Design considerations, viz marathon.md",
-    "Day 1 - Intro to Dataviz.md",
-    "export/Day 1 - Intro to Dataviz/dist/css/theme/README.md",
-    "export/Day 1 - Intro to Dataviz/plugin/menu/README.md",
-    "export/Day 1 - Intro to Dataviz/plugin/menu/CONTRIBUTING.md",
-    "export/Day 1 - Intro to Dataviz/plugin/customcontrols/README.md",
-    "export/Day 1 - Intro to Dataviz/plugin/chart/README.md",
-    "export/Day 1 - Intro to Dataviz/plugin/chalkboard/README.md",
-    "day-summaries/day-1.md",
     "Untitled.canvas"
   ]
 }
