@@ -107,7 +107,7 @@ I'm **not asking you to "make something like this", this is just to your head go
 import { goto } from '$app/navigation';
 
 function openSlides() {
-  goto('https://teaching.aman.bh/slides/cdv2025/day-2-visual-and-statistical-thinking/#/');
+  goto('https://teaching.aman.bh/slides/cdv2025/day-4-inspiration/#/');
 }
 </script>
 
