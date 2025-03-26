@@ -656,7 +656,6 @@ Our second weapon for **quantitative data**:
 ![[IMG-20250325130438366.png|100]]
 
 
-
 |WHAT IT IS|DESCRIPTION|
 |---|---|
 |Basic Idea|Groups data into bins.<br>Bar height shows frequency.|
