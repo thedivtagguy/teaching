@@ -229,7 +229,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
     // If metadata has section definitions, initialize them first to maintain order
     if (metadata?.navigation?.sections && Array.isArray(metadata.navigation.sections)) {
       metadata.navigation.sections.forEach((sectionDef: any) => {
-        if (sectionDef.title) {
+        if (sectionDef.title && sectionDef.title !== 'Assignments') { // Skip Assignments section
           sectionMap[sectionDef.title] = { 
             title: sectionDef.title, 
             items: [],
@@ -312,12 +312,6 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       const assignmentFiles = fs.readdirSync(assignmentsDir)
         .filter(file => file.endsWith('.svx'));
       
-      // Add "Assignments" section if it doesn't exist
-      if (!sectionMap['Assignments']) {
-        sectionMap['Assignments'] = { title: 'Assignments', items: [] };
-        courseMenu.sections.push(sectionMap['Assignments']);
-      }
-      
       // Process each assignment file
       for (const file of assignmentFiles) {
         const filePath = path.join(assignmentsDir, file);
@@ -334,14 +328,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         const title = data.title || basename;
         const order = data.order !== undefined ? data.order : getOrderFromFilename(file) || 999;
         
-        // Add to assignment section
-        sectionMap['Assignments'].items.push({
-          title,
-          path: pagePath,
-          order
-        });
-        
-        // Add to assignments list
+        // Add to assignments list only (not to menu sections)
         if (courseMenu.assignments) {
           courseMenu.assignments.push({
             title,
