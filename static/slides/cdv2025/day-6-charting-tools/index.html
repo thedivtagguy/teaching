@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="css/reveal-theme.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+    <link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+    <link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Making Charts
+
+Exploring visualization with Datawrapper and Rawgraphs
+
+Session 6
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331004955635.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331005008190.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331005258572.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331005323029.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331005506634.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331005516360.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The Dataviz Recipe, Recapped
+
+We've learnt a LOT during this week and opened up our minds to new processes. Let us recap this week a bit.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Step 1: Decide what you want to cook
+
+As far as we are concerned, we're conducting small experiments in our kitchen.
+
+Every experiment begins with a **question**.
+
+<div class="fragment">
+
+- "Are number of deaths correlated to water sources?"
+- "Did the sanitation commission make things better at the hospital in Scutari?"
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Or to take some more _local examples_
+
+## What were your movie questions?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Once we have the question, we want to move on to
+
+## Step 2: Find the sabzis
+
+
+If our data is available to us, in form of a table or a CSV, we want to **check our vegetables!!**
+
+In Orange, we did this through **Feature Statistics** to understand our data's structure.
+
+<div class="fragment">
+
+- Number of observations
+- Number of columns
+- Qualitative vs quantitative variables
+- Range of values, shapes of distributions (histograms). 
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Step 3:  Wash, clean, peel, grate, fry
+
+Having done that, we narrow the **scope of our inquiry** to a smaller subset of **variables** that are related. 
+
+We break the question down to variables that will **help us figure out the answer**. This takes practice. 
+
+We just _explore_ the data at this phase, examine it from this angle and that.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Step 4: Sample & Taste
+
+Take a look at your question again and then **rapidly** summarize, explore with quick charts, find interesting values. How do they look, feel? What helps you answer your question?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330223820600.png" alt="" style="width: 300px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Step 5: Is this an idiot sandwich?
+
+Having now tried to draw your visualization, is there a final AHA moment for you? Does it satisfy your curiosity? Answer your question? What does the person next to you say? 
+
+If the answer is no to any of the above, try again.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Step 6: _Melody itni chocolatey kyun hai?_
+
+Now that you have arrived at a visualization, how can you help it ACTUALLY answer the question? Are you making me guess your conclusion, or are you spelling it out for me? 
+
+The best chart titles quickly tell viewers what they're looking at and why it matters, without making them work to understand the data's significance.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Just write better titles!
+
+| Bad                             | Good                                                        |
+| ------------------------------- | ----------------------------------------------------------- |
+| Temperature Data                | Summer Temperatures Soar 5°C in ______ Since 2000           |
+| Pie Chart of Pet Ownership      | Cats Overtake Dogs in Urban Apartments                      |
+| Analysis of Student Performance | Sleep Matters: Students Who Rest 8+ Hours Score 23% Higher  |
+| Transportation Methods          | Biking Cuts Commute Time in Half                            |
+| Survey Results                  | Gen Z Abandoning Facebook While Boomer Usage Doubles        |
+| Food Consumption                | Indians Eating 30% More Vegetables Than a Decade Ago        |
+| Exercise Comparison             | Morning Workouts Burn More Calories Than Evening Sessions   |
+| Movie Attendance                | Theaters Making Comeback as Streaming Subscriptions Decline |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Litmus Testing Your Viz
+
+Your visualisation is complete not when nothing more can be added, _but when nothing more can be taken away from it_.
+
+<div class="fragment">
+
+1. Capture the casual viewer's attention immediately - someone just glancing should be drawn in. Then keep them engaged long enough that they walk away feeling they truly understand the content and _can confidently explain it to others_.
+2. It should also satisfy subject matter experts, leave as little room as possible for people to tell you "BUT ACKSHUALLY!!!"
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Parts of a Chart 
+
+
+<split even gap='4'>
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330223820635.png" alt="" style="width: 500px; object-fit: fill">
+
+
+1. Title
+2. Subtitle
+3. Axis (with units/labels)
+4. Plot
+5. Labels
+6. Annotations
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Choosing a chart type
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Start with the function
+
+Before you start with a chart type, start by defining the **purpose** of the visualization. This is guided by how you want to answer your question.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Function: Correlation
+
+Show the relationship between two or more variables
+
+<split even gap="2">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330224413152.png" alt="" style="width: 400px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330224430700.png" alt="" style="width: 400px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Function: Ranking
+
+The position of the values in an ordered list are of importance. 
+
+<split even gap="4" style="margin-bottom:20px;">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330224908421.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330224925978.png" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+
+<split even gap="4">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330224941817.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330225029563.png" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Function: Distribution
+
+Show values and how often they occur, reveal a "shape" of the data.
+
+<split even gap="4">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330225317925.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330225333632.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330225400947.png" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Function: Change over time
+
+Showing the change in a variable with over some time
+
+<split even gap="2">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330233628183.png" alt="" style="width: 300px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330233643557.png" alt="" style="width: 300px; object-fit: fill">
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Function: Magnitude
+
+Show size comparison, usually counts. Useful in seeing bigger/smaller differences.
+
+<split even gap="2" >
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330233835841.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330233850126.png" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+
+<split even gap="2" style="margin-top:20px;">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330233920834.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330233936977.png" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Function: Part to Whole
+
+Show how a single element can be broken down into things that make it up. 
+
+<split even gap="2">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330234252503.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330234310353.png" alt="" style="width: 200px; object-fit: fill">
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330234323153.png" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Useful References
+
+- [Financial Times' Visual Vocabulary](https://raw.githubusercontent.com/Financial-Times/chart-doctor/main/visual-vocabulary/poster.png)
+- [The Data Viz Project](https://datavizproject.com)
+- [Data to Viz](https://data-to-viz.com)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-position="top" data-background-image="./attachments/Day 6 - Charting Tools/IMG-20250330234427867.png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-position="top" data-background-image="./attachments/Day 6 - Charting Tools/IMG-20250330234813183.png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Data looks better naked
+
+- Never trust the defaults
+- Use your design brain
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<iframe class="speakerdeck-iframe" style="border: 0px; background: rgba(0, 0, 0, 0.1) padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 420;" frameborder="0" src="https://speakerdeck.com/player/87bb9f00ec1e01308020727faa1f9e72" title="Remove to Improve (the data-ink ratio)" allowfullscreen="true" data-ratio="1.3333333333333333"></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Let us try it ourselves
+
+This is a real "visualization" from ESPN. Let us try to make it better with Datawrapper.
+
+Download it by clicking [here](https://teaching.aman.bh/data/toughest-sports-by-skill.xlsx).
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330233336603.png" alt="" style="width: 600px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Step 1: Import your data
+
+Head over to https://app.datawrapper.de/create/chart and upload this file.
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330235220457.png" alt="" style="width: 900px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Step 2: Verify
+
+Check if everything is looking right. Blue for numbers, green for dates and black for text.
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330235317390.png" alt="" style="width: 900px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Step 3: Choose a Chart
+
+Datawrapper will often try to select a chart on its own, which may be wrong: 
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250330235519957.png" alt="" style="width: 900px; object-fit: fill">
+
+
+Think of your function and choose a chart type.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Activity: Explore the Datawrapper UI
+
+With this dataset uploaded, take a tour of the Datawrapper UI. There is a lot to see. Toggle Chart types, go to the `Refine` tab and play with some settings there to see how they change your chart. 
+
+Time: 25 mins
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331000301331.png" alt="" style="width: 200px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Identify the functions of the following charts
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331000519853.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331000558841.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331000645337.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331000723387.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331000759865.png" alt="" style="width: 700px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Activity 2
+
+Copy data from [here](https://gist.githubusercontent.com/thedivtagguy/3901fe2ba5a00bc5a05b5721cdde4e9d/raw/0867eaa20aefe2e455b70cf385233616ca4cad5e/time_use.csv). Explore it with Datawrapper or Rawgraphs.
+
+Time: 45 mins
+
+Example viz:
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331004533216.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Recap: What are Data Summaries?
+
+Data summaries are ways to make complex or large datasets easier to understand.
+
+<div class="fragment">
+
+Think of it as **minimizing data** to show a clearer picture.
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Why?
+
+- Raw data is often too complex or large to visualize directly
+- Our brains need structure to make sense of information
+- Summaries help identify patterns that would be lost in the noise
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Summarization Methods
+
+<split even gap="4">
+
+Four approaches to summarization:
+
+- **Aggregate**: Group similar data together
+- **Project**: Reduce dimensions
+- **Subsample**: Take a smaller portion
+- **Filter**: Keep only what meets criteria
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Aggregate
+
+Taking multiple data points and combining them
+
+<div class="fragment">
+
+Examples:
+
+- Computing averages
+- Binning into histograms
+- Group summaries
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Filter
+
+Selectively keeping data based on specific rules
+
+<div class="fragment">
+
+Examples:
+
+- Only keeping sales data above ₹10,000
+- Focusing on a specific time period
+- Removing outliers
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## From Summary to Visualization
+
+Once you've summarized your data, you need to consider:
+
+<div class="fragment">
+
+1. **What's your function?** (Showing correlation? Ranking? Distribution?)
+2. **Who's your audience?** (Experts? General public? Decision-makers?)
+3. **What's the story?** (What insights should leap out?)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Visualizing Summaries
+
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331010031795.png" alt="" style="object-fit: scale-down">
+
+
+<cite>
+
+Sarikaya, A., M. Gleicher, and D. A. Szafir. ‘Design Factors for Summary Visualization in Visual Analytics’. _Computer Graphics Forum_ 37, no. 3 (June 2018): 145–56. [https://doi.org/10.1111/cgf.13408](https://doi.org/10.1111/cgf.13408).
+
+</cite>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Let's See This in Action
+
+For the next activity, let's trace the steps:
+
+1. **Choose your question** (What are we curious about?)
+2. **Examine your data** (What variables do we have?)
+3. **Apply summarization** (Aggregate, project, subsample, or filter)
+4. **Select visualization type** (Based on function)
+5. **Refine and iterate** (Is it answering our question?)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Activity: Visualizing a Summary
+
+- Download the dataset here: https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-01-17/artists.csv
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331011841610.png" alt="" style="object-fit: scale-down">
+
+
+- Import it into Orange, calculate a summary
+- Export the summarized dataset from Orange as a CSV
+- Visualize it in Datawrapper
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331012241673.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Here's what I made: 
+
+<img src="attachments/Day 6 - Charting Tools/IMG-20250331012942541.png" alt="" style="width: 500px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### PSTTT!!!: Try converting your summary's shape
+
+Your summary might come in the LONG format (https://teaching.aman.bh/cdv2025/day-3#data-reshaping-cheatsheet) but for visualizing multiple things individually on Datawrapper, you usually need a WIDE table. 
+
+I've made this for you to do this conversions easily:
+
+https://pivotteer.netlify.app/
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealPointer,
+                RevealChalkboard,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: true,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                    {
+                        icon: '<i class="fa fa-pen-square"></i>',
+                        title: 'Toggle chalkboard (B)',
+                        action: 'RevealChalkboard.toggleChalkboard();'
+                    },
+                    {
+                        icon: '<i class="fa fa-pen"></i>',
+                        title: 'Toggle notes canvas (C)',
+                        action: 'RevealChalkboard.toggleNotesCanvas();'
+                    },
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":true,"transition":"slide","transitionSpeed":"default","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+</body>
+
+<!-- created with Slides Extended -->
+</html>

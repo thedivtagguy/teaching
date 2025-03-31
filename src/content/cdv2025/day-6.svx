@@ -1,0 +1,33 @@
+---
+title: "Day 6: Charting Tools"
+date: 2025-03-31
+description: Visualizing Summaries
+published: true
+section: Fundamentals
+order: 5
+---
+
+# Day 6: Visualizing Summaries
+
+<script>
+import { goto } from '$app/navigation';
+
+function openSlides() {
+  goto('https://teaching.aman.bh/slides/cdv2025/day-6-charting-tools/#/');
+}
+</script>
+
+<button class="btn-primary bg-blue mb-3" on:click={openSlides}>
+Open Class Slides
+</button>
+
+## Links mentioned
+
+Important links mentioned in the slides:
+
+1. [Financial Times' Visual Vocabulary](https://raw.githubusercontent.com/Financial-Times/chart-doctor/main/visual-vocabulary/poster.png)
+2. [The Data Viz Project](https://datavizproject.com)
+3. [Data to Viz](https://data-to-viz.com)
+7. [Artists dataset](https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-01-17/artists.csv)
+8. [Data reshaping reference](https://teaching.aman.bh/cdv2025/day-3#data-reshaping-cheatsheet)
+9. [Pivotteer tool](https://pivotteer.netlify.app/)

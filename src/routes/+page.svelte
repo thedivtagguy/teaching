@@ -6,6 +6,7 @@
       link: "/cdv2025",
       color: "bg-orange"
     },
+  
     {
       title: "Introduction to QGIS",
       description: "Gentle introduction to QGIS for beginners, with a focus on using OpenStreetMap data",
