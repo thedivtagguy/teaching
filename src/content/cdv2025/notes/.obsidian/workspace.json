@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "87d171372d0cd50f",
+        "id": "cfcebadb0f5a3bc0",
         "type": "tabs",
         "children": [
           {
-            "id": "b70117211e5c5544",
+            "id": "085f3db02e37adbf",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,22 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "Day 6 - Charting Tools"
-            }
-          }
-        ]
-      },
-      {
-        "id": "cfcebadb0f5a3bc0",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "c32b2e1c468ba991",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {},
-              "icon": "slides",
-              "title": "Preview: Day 6 - Charting Tools.md"
             }
           }
         ]
@@ -94,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280.5
+    "width": 200
   },
   "right": {
     "id": "616df4d1f965c3e0",
@@ -207,8 +191,10 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "c32b2e1c468ba991",
+  "active": "085f3db02e37adbf",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2025-03-31 09.16.29.excalidraw.md",
+    "Day 6 - Charting Tools.md",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331012942541.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331012241673.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331011841610.png",
@@ -219,7 +205,6 @@
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331000645337.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331000558841.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331000519853.png",
-    "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331000301331.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools",
     "export/Day 6 - Charting Tools/attachments",
     "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff",
@@ -236,7 +221,6 @@
     "export/Day 6 - Charting Tools/plugin/customcontrols/README.md",
     "export/Day 6 - Charting Tools/plugin/chart/README.md",
     "export/Day 6 - Charting Tools/plugin/chalkboard/README.md",
-    "Day 6 - Charting Tools.md",
     "Day 1 - Intro to Dataviz.md",
     "Day 4 - Viz Day.md",
     "Day 3 - Data wrangling.md",
