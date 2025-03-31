@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day 6 - Charting Tools.md",
+                "file": "Day 7 - Project Kickoff.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 6 - Charting Tools"
+              "title": "Day 7 - Project Kickoff"
             }
           }
         ]
@@ -193,8 +193,13 @@
   },
   "active": "085f3db02e37adbf",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2025-03-31 09.16.29.excalidraw.md",
+    "Day 6 - Storytelling and You.md",
     "Day 6 - Charting Tools.md",
+    "Day 7 - Project Kickoff.md",
+    "Day 2 - Visual and Statistical Thinking.md",
+    "Datasets.md",
+    "Day 7 - Finales.md",
+    "Excalidraw/Drawing 2025-03-31 09.16.29.excalidraw.md",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331012942541.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331012241673.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331011841610.png",
@@ -225,7 +230,6 @@
     "Day 4 - Viz Day.md",
     "Day 3 - Data wrangling.md",
     "Assignments.md",
-    "Day 6 - Storytelling and You.md",
     "Assignments List.md",
     "Excalidraw/Drawing 2025-03-28 11.03.21.excalidraw.md",
     "Excalidraw/Drawing 2025-03-27 13.51.38.excalidraw.md",
@@ -235,10 +239,6 @@
     "export/day-4/dist/css/theme/README.md",
     "export/day-4/plugin/menu/README.md",
     "export/day-4/plugin/menu/CONTRIBUTING.md",
-    "export/day-4/plugin/customcontrols/README.md",
-    "export/day-4/plugin/chart/README.md",
-    "export/day-4/plugin/chalkboard/README.md",
-    "export/Movie Inspiration/plugin/menu/README.md",
     "Untitled.canvas"
   ]
 }
