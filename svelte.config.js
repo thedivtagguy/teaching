@@ -22,7 +22,8 @@ const config = {
 				'/[courseId]/submit',
 				'/[courseId]/assignments/[assignmentId]',
 				'/[courseId]/assignments',
-				'/[courseId]/slides/[...path]'
+				'/[courseId]/slides/[...path]',
+				'/buzzer'
 			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore prerendering errors for API routes
@@ -35,6 +36,7 @@ const config = {
 					path.includes('/[courseId]/assignments/[assignmentId]') ||
 					path.includes('/[courseId]/assignments') ||
 					path.includes('/slides/') || 
+					path.includes('/buzzer') ||
 					path.includes('/[courseId]/slides/')) {
 					console.warn(`Warning: Ignoring prerender error for dynamic route: ${path}`);
 					return;

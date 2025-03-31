@@ -99,9 +99,9 @@ These are some things that you must try to think about at each stage, whether it
 - Count moments of silence vs. dialogue
 - Track which characters interact with each other and how often
 
-## inspiration
+## Inspiration
 
-I'm **not asking you to "make something like this", this is just to your head going if you need it. 
+I'm **not asking you to "make something like this"**, this is just to your head going if you need it. 
 
 <script>
 import { goto } from '$app/navigation';
@@ -114,3 +114,11 @@ function openSlides() {
 <button class="btn-primary bg-blue mb-3" on:click={openSlides}>
 Small inspiration slide deck
 </button>
+
+
+### Readings
+
+Some interesting readings on infographics and their design: 
+
+- [Art of the Infographic](https://ibit.temple.edu/analytics/files/2015/10/Art-of-infographics-2015.pdf)
+- [Anatomy of an Infographic](https://web.archive.org/web/20110823045702/http://spyrestudios.com/the-anatomy-of-an-infographic-5-steps-to-create-a-powerful-visual/)
