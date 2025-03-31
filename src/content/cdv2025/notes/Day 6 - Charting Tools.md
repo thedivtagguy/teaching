@@ -128,6 +128,34 @@ Just write better titles!
 | Movie Attendance                | Theaters Making Comeback as Streaming Subscriptions Decline |
 
 ---
+
+### Pre-attentive Attributes
+
+![[Pasted image 20250331090138.png]] <!--element class="fragment"-->
+
+note: gestalt's principles, similarity, proximity
+
+---
+
+![[Pasted image 20250331090208.png]]
+
+---
+
+![[Pasted image 20250331090348.png]]
+
+More colors != Better  <!--element class="fragment"-->
+
+---
+
+![[Pasted image 20250331090425.png|500]]
+
+---
+
+Whenever possible, label _on the graph_
+
+![[Pasted image 20250331090507.png|500]]
+
+---
 ## Litmus Testing Your Viz
 
 Your visualisation is complete not when nothing more can be added, _but when nothing more can be taken away from it_.
@@ -481,6 +509,24 @@ Sarikaya, A., M. Gleicher, and D. A. Szafir. ‘Design Factors for Summary Visua
 
 </cite>
 
+---
+
+### A summary can visualize...
+
+- **Trends**: Estimate high-level changes across a dependent di-
+mension
+- **Outliers**: Identify items that do not match the modal distribu-
+tion
+- **Clusters**: Identify groups of similar items
+- **Frequency**: Determine how often items appear
+- **Distribution**: Characterize the extent and frequency of items
+- **Correlation**: Identify patterns between data dimensions
+
+<cite>
+
+Sarikaya, A., M. Gleicher, and D. A. Szafir. ‘Design Factors for Summary Visualization in Visual Analytics’. _Computer Graphics Forum_ 37, no. 3 (June 2018): 145–56. [https://doi.org/10.1111/cgf.13408](https://doi.org/10.1111/cgf.13408).
+
+</cite>
 ---
 
 ## Let's See This in Action
