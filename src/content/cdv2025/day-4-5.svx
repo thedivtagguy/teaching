@@ -1,5 +1,5 @@
 ---
-title: "Day 4:  Qualitative Data Visualization Marathon"
+title: "Day 4 & 5:  Qualitative Data Visualization Marathon"
 date: 2025-03-27
 description: Second class covering data types, perception, marks and channels, statistical thinking
 published: true
