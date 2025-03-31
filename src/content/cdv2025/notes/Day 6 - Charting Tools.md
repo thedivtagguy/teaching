@@ -565,6 +565,12 @@ Here's what I made:
 
 ---
 
+## Wide vs Long
+
+
+
+
+---
 ### PSTTT!!!: Try converting your summary's shape
 
 Your summary might come in the LONG format (https://teaching.aman.bh/cdv2025/day-3#data-reshaping-cheatsheet) but for visualizing multiple things individually on Datawrapper, you usually need a WIDE table. 
