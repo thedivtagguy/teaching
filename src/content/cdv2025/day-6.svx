@@ -31,3 +31,8 @@ Important links mentioned in the slides:
 7. [Artists dataset](https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-01-17/artists.csv)
 8. [Data reshaping reference](https://teaching.aman.bh/cdv2025/day-3#data-reshaping-cheatsheet)
 9. [Pivotteer tool](https://pivotteer.netlify.app/)
+
+
+## Further Readings
+
+- [Data Visualization Principles Workshop](https://www.hks.harvard.edu/sites/default/files/Academic%20Dean's%20Office/communications_program/workshop-materials/PP_Jess%20Cohen-Tanugi%203_6_23%20Design%20Principles%20for%20Data%20Visualization.pdf) 
