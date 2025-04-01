@@ -13,6 +13,9 @@ readings:
 
   - title: Encylopedia Titanica
     url: "https://www.encyclopedia-titanica.org/"
+
+  - title: "The Global Human Day"
+    url: "https://www.pnas.org/doi/epdf/10.1073/pnas.2219564120"
 ---
 
 

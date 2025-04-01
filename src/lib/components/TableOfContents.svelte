@@ -165,7 +165,7 @@
             <li style="margin-left: {(heading.level - 2) * 0.75}rem">
               <a 
                 href="#{heading.id}" 
-                class="block pl-3 py-1 hover:text-blue text-sm font-archivo border-l-2 -ml-px {activeId === heading.id ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral'}"
+                class="block pl-3 py-1 hover:text-blue text-xs font-archivo border-l-2 -ml-px {activeId === heading.id ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral'}"
                 on:click|preventDefault={() => scrollToHeading(heading.id)}
               >
                 {heading.text}

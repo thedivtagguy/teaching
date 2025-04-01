@@ -21,7 +21,7 @@ import WorkLife from './faqs/work_life.png';
 import WorkLife2 from './faqs/work_life_2.png';
 </script>
 
-## Spotify Songs
+## 📦 Spotify Songs
 
 ### How do I convert duration_ms to minutes? 
 
@@ -52,7 +52,7 @@ Click 'Send' (marked **3**) to create this new column.
 Now when you connect a `DATA TABLE` from this `FORMULA` column, you should see a new column called `year` being created. 
 
 
-## Titanic 
+## 📦 Titanic 
 
 ### How can I categorize age based on ranges? 
 
@@ -72,13 +72,8 @@ What we're doing is defining conditions using "IF THIS, THEN THAT" logic by usin
 
 Remember to click `Send` to actually process this. You'll have created a new column with these categories.
 
-## Global Human Day 
+## 📦 Global Human Day
 
-### What do the categories names mean in the global human day dataset? 
-
-The heck is 'Somatic Maintenance'?? Academic papers talk like that sometimes, but if you refer to `Table 2` on this link [here to read more](https://www.pnas.org/doi/10.1073/pnas.2219564120#sec-1) you'll see better descriptions of the categories and even some cool visualizations!
-
-<img src={HumanDay1} />
 
 ### How do we calculate working hours and non-working hours?
 
@@ -94,7 +89,17 @@ Essentially, we filter this dataset into two things, those with "economic catego
 
 <img src={WorkLife2} width="300" />
 
-## Orange
+## 🍊 Orange 
+
+### Should I sum, count or average? 
+
+When to use each:
+
+| Function | Purpose | Example Use Cases |
+|----------|---------|-----------------|
+| SUM | Adds all values together within a group | • Total hours spent on sleep across all regions<br>• Combined fare paid by all first-class Titanic passengers<br>• Total duration of all songs in the Pop genre |
+| COUNT | Tallies the number of instances/rows in each group | • Number of passengers in each Titanic class<br>• Count of countries per region in the Global Human Day dataset<br>• How many songs fall into each playlist genre |
+| MEAN | Calculates the average value within a group | • Average danceability of songs by artist<br>• Average ticket price by class <br>• Mean hours spent on childcare activities by region |
 
 ### How do I save data? 
 
@@ -116,7 +121,7 @@ To unselect, click anywhere on the right pane and press `CTRL+A` to select every
 
 <img src={Orange2} />
 
-## Datawrapper
+## 📊 Datawrapper
 
 ### How do I show two different lines or multiple bars for stuff like male vs female or two comparisons. 
 
