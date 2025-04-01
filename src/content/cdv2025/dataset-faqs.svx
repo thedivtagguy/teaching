@@ -1,0 +1,70 @@
+---
+title: "Final Project FAQs"
+date: 2025-04-01
+description: Commonly asked questions and caveats for each dataset. 
+published: true
+section: Appendix
+---
+
+Common queries you might have about our final project datasets. 
+
+<script>
+
+import NewYear from './faqs/orange_new_date.jpg';
+import Pivot from "./faqs/pivot.png";
+</script>
+
+## Spotify Songs
+
+### Do we have to use the ENTIRE dataset?
+
+No! Focus on something specific you care about, maybe it is an artist, maybe it is a genre. 
+
+### How do I extract year from the album release date? 
+
+Suppose you want to track the evolution of a variable over time. The current dataset provides only album release dates, but maybe we care about the year only. 
+
+<img src={NewYear} />
+
+Open your dataset in Orange and add the `FORMULA` widget. 
+
+Click 'New' and choose `Categorical` as the variable type. In the first field marked **1**, add the new column name we're creating which is `year`. In the field marked **2**, enter this expression: 
+
+```str(track_album_release_date)[:4]```
+
+What this does is convert the `track_album_release_date` to a string (categorical) variable and then extract only the first 4 letters from that string, which in our case is the year!
+
+Click 'Send' (marked **3**) to create this new column. 
+
+Now when you connect a `DATA TABLE` from this `FORMULA` column, you should see a new column called `year` being created. 
+
+## Orange
+
+### How do I select multiple groups in GROUP BY?
+
+Hold down `CTRL` while you select groups to select multiple
+
+## Datawrapper
+
+### How do I show two different lines or multiple bars for stuff like male vs female or two comparisons. 
+
+If your dataset looks like this and you want to plot a line chart with TWO different lines, then Datawrapper will ask you to have to separate columns for each category you want to plot (Rawgraphs does it without need this). 
+
+| year | category | value |
+|------|----------|-------|
+| 2020 | male     | 45    |
+| 2020 | female   | 52    |
+| 2021 | male     | 48    |
+| 2021 | female   | 55    |
+| 2022 | male     | 51    |
+| 2022 | female   | 58    |
+
+In that case, head over to [Pivotteer](https://pivotteer.netlify.app) and upload your CSV there. 
+
+Your data is currently in **long format** but you need to convert it to wide. Select `Wide` in Pivotteer (marked **1**). 
+
+Now, you want to create TWO NEW COLUMNS from the original `category` column (male and female) so that you can plot a comparison. So in the `Names Column` choose `category` (marked by **2**). This will create a new male and female column. But we still need some values, right? In the original dataset the values come from `value` column (marked by **3**). 
+
+In the `Value Column` select `value` and then click `Transform` button. You should see this in the dataset preview (marked by **4**). You can then download this converted file by clicking **5** and take it further.
+
+<img src={Pivot}/>
