@@ -10,6 +10,9 @@ readings:
     author: "Giorgia Lupi"
     url: "https://medium.com/accurat-in-sight/the-architecture-of-a-data-visualization-470b807799b4"
     readingTime: 15
+
+  - title: Encylopedia Titanica
+    url: "https://www.encyclopedia-titanica.org/"
 ---
 
 
