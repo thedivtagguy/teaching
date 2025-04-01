@@ -15,6 +15,20 @@ readings:
 
 Hello! Today we'll begin our final projects, which will end in us making some nice infographics and trying to tell a story about one of these datasets.
 
+## Introduction 
+
+To start with, sit within your groups and discuss which of these datasets you'd like to work with. Each group will work on one dataset (yes, some groups might choose the same one). 
+
+When you're in the process of choosing a dataset, think about what in the dataset **interests you**. Is the topic of interest? Can you **research a little about it** to add something to your story? Are there **interesting visual possibilities that you can think of** (like for our movies data)?
+
+Having chosen a dataset, you will have to: 
+
+- Explore the dataset a little
+- Think of 2-3 questions and use `GROUP BY` or `FILTER` summaries to answer them. 
+- Turn those summaries into beautiful visual representations. This can happen with a tool of your choice (Datawrapper, Rawgraphs, Google Sheets) and even be artistic. 
+- The output will be laid out in an A2-sized infographic with supporting text, visuals, graphics and your visualizations. Think of executing it **like you made your movie visualizations**. 
+
+**Analysis is a small part of this exercise**, and you are free to try exploring interesting questions but also remember that the output is a **well-designed poster telling the story of this dataset, answering some of the questions you raised**. Do not be afraid of Orange or creating summaries, that is a part of this process. Utilize your skillsets to make something beautiful that is driven by some numbers. 
 
 ## Datasets
 
@@ -37,7 +51,6 @@ This dataset contains all sorts of juicy attributes about songs - everything fro
 | track_id                 | Categorical       | A unique code that identifies each song (like a social security number for songs) |
 | track_name               | Categorical       | The title of the song                                                             |
 | track_artist             | Categorical       | Who performed the song                                                            |
-| track_popularity         | Numeric (0-100)   | How popular the song is, with 100 being super popular                             |
 | track_album_id           | Categorical       | A unique code for the album                                                       |
 | track_album_name         | Categorical       | The name of the album the song is on                                              |
 | track_album_release_date | Categorical       | When the album was released                                                       |
