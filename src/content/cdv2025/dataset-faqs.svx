@@ -16,7 +16,9 @@ import Orange1 from "./faqs/orange_1.png";
 import Orange2 from "./faqs/orange_2.png";
 import HumanDay1 from "./faqs/human_day_1.png";
 import Titanic1 from './faqs/titanic_condition.png';
-
+import SaveData from './faqs/save_orange.png';
+import WorkLife from './faqs/work_life.png';
+import WorkLife2 from './faqs/work_life_2.png';
 </script>
 
 ## Spotify Songs
@@ -78,7 +80,27 @@ The heck is 'Somatic Maintenance'?? Academic papers talk like that sometimes, bu
 
 <img src={HumanDay1} />
 
+### How do we calculate working hours and non-working hours?
+
+In this dataset, "work" isn't presented as a single category. Instead, the researchers have categorized activities based on their motivating outcomes rather than whether they're paid or unpaid. One way to figure our how many hours are being spent in both of these (work vs. life) is to **sum the economic activity hours** and the non-economic activity hours separately and compare. 
+
+For instance, have a look at the Orange set-up below:
+
+<img src={WorkLife} />
+
+You can download this Orange workflow here: <a href="/data/work_life.ows" download class="btn-primary inline text-white mb-2 text-sm">Download Workflow</a>
+
+Essentially, we filter this dataset into two things, those with "economic categories" ("Food growth & collection" + "Food processing" + "Materials" + "Energy" and so on) and those without ("Sleep" +  "Meals" + "Social" + "Passive" and so on). Then, we can `sum` these hours using `GROUP BY` for, let us say, countries. We'll get this when we join the two split datasets together: 
+
+<img src={WorkLife2} width="300" />
+
 ## Orange
+
+### How do I save data? 
+
+Make sure the yellow circled checkbox is **unchecked** and the red one is checked. Also remember to set the file name (red underline error indicates file is not being saved). By default Orange will save in `.tab` format, choose `CSV`. 
+
+<img src={SaveData}/>
 
 ### How do I select multiple groups in GROUP BY?
 
