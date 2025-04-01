@@ -12,6 +12,9 @@ Common queries you might have about our final project datasets.
 
 import NewYear from './faqs/orange_new_date.jpg';
 import Pivot from "./faqs/pivot.png";
+import Orange1 from "./faqs/orange_1.png"; 
+import Orange2 from "./faqs/orange_2.png";
+import HumanDay1 from "./faqs/human_day_1.png";
 </script>
 
 ## Spotify Songs
@@ -38,11 +41,30 @@ Click 'Send' (marked **3**) to create this new column.
 
 Now when you connect a `DATA TABLE` from this `FORMULA` column, you should see a new column called `year` being created. 
 
+
+## Global Human Day 
+
+### What do the categories names mean in the global human day dataset? 
+
+The heck is 'Somatic Maintenance'?? Academic papers talk like that sometimes, but if you refer to `Table 2` on this link [here to read more](https://www.pnas.org/doi/10.1073/pnas.2219564120#sec-1) you'll see better descriptions of the categories and even some cool visualizations!
+
+<img src={HumanDay1} />
+
 ## Orange
 
 ### How do I select multiple groups in GROUP BY?
 
 Hold down `CTRL` while you select groups to select multiple
+
+### My GROUP BY has too many columns!!
+
+Make sure you **unselect everything** before you create a summary with the variable you're interested in. By default, when you add a new `GROUP BY` widget in Orange, you'll see various things like `Concatenate` and stuff selected on the right side. 
+
+<img src={Orange1} />
+
+To unselect, click anywhere on the right pane and press `CTRL+A` to select everything. Then, one by one, click on all things that have been ticked in the `Aggregations` column like mean, mode, concatenate etc. You will have to click on these **multiple times to ensure they all go** so make sure everything is unselected (and looks clean like below). 
+
+<img src={Orange2} />
 
 ## Datawrapper
 
