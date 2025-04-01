@@ -15,13 +15,21 @@ import Pivot from "./faqs/pivot.png";
 import Orange1 from "./faqs/orange_1.png"; 
 import Orange2 from "./faqs/orange_2.png";
 import HumanDay1 from "./faqs/human_day_1.png";
+import Titanic1 from './faqs/titanic_condition.png';
+
 </script>
 
 ## Spotify Songs
 
-### Do we have to use the ENTIRE dataset?
+### How do I convert duration_ms to minutes? 
 
-No! Focus on something specific you care about, maybe it is an artist, maybe it is a genre. 
+The Spotify dataset measures duration of a song in milliseconds. If you want to convert this to minutes, the formula is: 
+
+```
+duration_ms / 60000
+```
+
+Dividing duration by 60,000 will give you the same value in minutes. Create a new formula with a NUMBER type (refer to the guides below for using the formula widget) and enter the above expression to create a new column to add this minute information to your dataset.
 
 ### How do I extract year from the album release date? 
 
@@ -41,6 +49,26 @@ Click 'Send' (marked **3**) to create this new column.
 
 Now when you connect a `DATA TABLE` from this `FORMULA` column, you should see a new column called `year` being created. 
 
+
+## Titanic 
+
+### How can I categorize age based on ranges? 
+
+The Titanic dataset contains different ages, but suppose you want to categorize them as child, adult, baby etc. 
+
+Connect your data to the `FORMULA` widget. Click 'New' and choose `Categorical` as the variable type. In the first field marked **1**, add the new column name we're creating which is `age_category`. 
+
+In field 3, enter your condition: 
+
+```
+"Elder" if age >= 60 else "Adult" if age >= 18 else "Teenager" if age >= 13 else "Child" if age >= 0 else "Unknown"
+```
+
+What we're doing is defining conditions using "IF THIS, THEN THAT" logic by using the `age` variable. This is useful for other things too. In simple language, the above code says: "If someone's age is 60 or above, categorize them as 'Elder'. Otherwise, if they're 18 or above, categorize them as 'Adult'. Otherwise, if they're 13 or above, categorize them as 'Teenager'. Otherwise, if they're 0 or above, categorize them as 'Child'. If none of these conditions are met (like if age is missing or negative), categorize them as 'Unknown'."
+
+<img src={Titanic1} />
+
+Remember to click `Send` to actually process this. You'll have created a new column with these categories.
 
 ## Global Human Day 
 
