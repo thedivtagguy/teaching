@@ -132,6 +132,8 @@ This dataset shows how people around the world spend their time each day - captu
 |uncertaintyCombined|Numeric|Statistical measurement of the variance or uncertainty in the time use data|
 
 
+**PLEASE IGNORE THE UNCERTAINTYCOMBINED VARIABLE**, it is not useful in our case.
+
 <button class="btn-primary bg-red mb-3" on:click={() => window.open("https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-09-12/all_countries.csv")}>
     Download Human Day Dataset
   </button>
