@@ -8,7 +8,7 @@ order: 5
 
 The day is here! You've successfully gone through two weeks of looking at numbers, asking questions, analyzing them (and not going crazy) and making visualizations. Today we get to showcase our work and take a look at what others made, as well as call our friends to brag about what we did. 
 
-I think it would be great to showcase our progress from Day 1 to Day 10 and the sheer amount of things we did. A lot of it is locked away in our laptops, so while I hate to waste paper, it would be nice to have physical versions of some of these things. **I request you to bring the following tomorrow**: 
+I think it would be great to showcase our progress and the sheer amount of things we did. A lot of it is locked away in our laptops, so while I hate to waste paper, it would be nice to have physical versions of some of these things. **I request you to bring the following tomorrow**: 
 
 - Your first activity where you visualized poem word counts, just on whatever paper it was made on. 
 - Your dear data postcards
