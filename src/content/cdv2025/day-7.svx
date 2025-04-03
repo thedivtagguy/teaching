@@ -1,5 +1,5 @@
 ---
-title: "Day 7: Final Projects"
+title: "Day 7, 8, 9: Final Projects"
 date: 2025-04-01
 description: Starting the Final Projects
 published: true
@@ -37,6 +37,20 @@ Having chosen a dataset, you will have to:
 **Analysis is a small part of this exercise**, and you are free to try exploring interesting questions but also remember that the output is a **well-designed poster telling the story of this dataset, answering some of the questions you raised**. Do not be afraid of Orange or creating summaries, that is a part of this process. Utilize your skillsets to make something beautiful that is driven by some numbers. 
 
 ## Datasets
+
+<script>
+import { goto } from '$app/navigation';
+
+function openSlides() {
+  goto('/cdv2025/dataset-faqs');
+}
+</script>
+
+Questions? Refer to the FAQs.
+
+<button class="btn-primary bg-blue mb-3" on:click={openSlides}>
+FAQs
+</button>
 
 ### Spotify  Songs
 
