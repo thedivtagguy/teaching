@@ -1,0 +1,202 @@
+/* Advanced Slides Netlify Deployer Styles */
+
+/* Main plugin styling */
+.advanced-slides-netlify-icon {
+  color: var(--interactive-accent);
+}
+
+/* Button styling */
+.netlify-btn {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.netlify-btn:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+.netlify-btn-secondary {
+  background-color: var(--background-secondary-alt);
+  color: var(--text-normal);
+}
+
+.netlify-btn-secondary:hover {
+  background-color: var(--background-modifier-border);
+}
+
+/* Progress bar styling */
+.netlify-progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: var(--background-secondary-alt);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.netlify-progress-bar {
+  height: 100%;
+  background-color: var(--interactive-accent);
+  transition: width 0.3s ease;
+}
+
+/* Status indicators */
+.netlify-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.netlify-status-success {
+  background-color: var(--background-success);
+  color: var(--text-success);
+}
+
+.netlify-status-error {
+  background-color: var(--background-error);
+  color: var(--text-error);
+}
+
+.netlify-status-warning {
+  background-color: var(--background-warning);
+  color: var(--text-warning);
+}
+
+.netlify-status-info {
+  background-color: var(--background-info);
+  color: var(--text-info);
+}
+
+/* Deployment history item */
+.netlify-history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin: 8px 0;
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.netlify-history-item:hover {
+  background-color: var(--background-secondary-alt);
+}
+
+.netlify-history-item-title {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.netlify-history-item-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Modal styling */
+.netlify-modal-content {
+  padding: 24px;
+}
+
+.netlify-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.netlify-modal-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.netlify-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+}
+
+/* Form styling */
+.netlify-form-group {
+  margin-bottom: 16px;
+}
+
+.netlify-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.netlify-form-group input,
+.netlify-form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+.netlify-form-help {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Toggle switch */
+.netlify-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.netlify-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.netlify-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-modifier-border);
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.netlify-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--background-primary);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .netlify-toggle-slider {
+  background-color: var(--interactive-accent);
+}
+
+input:checked + .netlify-toggle-slider:before {
+  transform: translateX(20px);
+}

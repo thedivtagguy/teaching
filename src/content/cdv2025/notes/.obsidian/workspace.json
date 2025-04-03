@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "cfcebadb0f5a3bc0",
+        "id": "34c0d8fbc10dc33e",
         "type": "tabs",
         "children": [
           {
-            "id": "085f3db02e37adbf",
+            "id": "e3f22e7540208d17",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Day 7 - Project Kickoff.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Day 7 - Project Kickoff"
+              "title": "New tab"
             }
           }
         ]
@@ -180,6 +176,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "advanced-slides-netlify-deployer:Deploy presentation to Netlify": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -191,12 +188,23 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "085f3db02e37adbf",
+  "active": "09507088f7fcc4c3",
   "lastOpenFiles": [
+    "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169/manifest.json",
+    "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169/manifest.json",
+    "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169/index.html",
+    "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169/index.html",
+    "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169",
+    "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169",
+    "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/manifest.json",
+    "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/manifest.json",
+    "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/index.html",
+    "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/index.html",
+    "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882",
+    "Day 7 - Project Kickoff.md",
     "Day 6 - Storytelling and You.md",
     "Day 6 - Charting Tools.md",
-    "Day 7 - Project Kickoff.md",
-    "Day 2 - Visual and Statistical Thinking.md",
+    "day-2-statistical-thinking.md",
     "Datasets.md",
     "Day 7 - Finales.md",
     "Excalidraw/Drawing 2025-03-31 09.16.29.excalidraw.md",
@@ -210,16 +218,6 @@
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331000645337.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331000558841.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331000519853.png",
-    "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools",
-    "export/Day 6 - Charting Tools/attachments",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff",
-    "export/Day 6 - Charting Tools/plugin/math/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff",
     "export/Day 6 - Charting Tools/dist/css/theme/README.md",
     "export/Day 6 - Charting Tools/plugin/menu/README.md",
     "export/Day 6 - Charting Tools/plugin/menu/CONTRIBUTING.md",
@@ -238,7 +236,6 @@
     "Movie Inspiration.md",
     "export/day-4/dist/css/theme/README.md",
     "export/day-4/plugin/menu/README.md",
-    "export/day-4/plugin/menu/CONTRIBUTING.md",
     "Untitled.canvas"
   ]
 }
