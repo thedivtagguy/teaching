@@ -45,7 +45,7 @@ We have several required readings for this day. Please have a look at the readin
 
 In our second session, we took a look into how our minds process visual information, explored different data types, and began working with real data through Orange.
 
-## The Eyes Have It: Pre-attentive Processing
+## Pre-attentive Processing
 
 We explored why data visualization is so powerful - our visual system can process certain attributes almost instantly (in less than 10 milliseconds), before conscious attention. These "pre-attentive" attributes include:
 
@@ -59,14 +59,14 @@ We explored why data visualization is so powerful - our visual system can proces
 
 This hierarchy of visual encoding effectiveness explains why position-based charts (like scatter plots) are often more effective than area-based (pie charts) or color-based visualizations for quantitative comparisons.
 
-## Marks & Channels: The Building Blocks
+## Marks & Channels
 
 We learned about the fundamental components of visualizations:
 
 - **Marks**: The basic geometric elements that represent our data (points, lines, areas)
 - **Channels**: The visual properties we assign to these marks (position, size, color, etc.)
 
-## Dear Data: Personal Data Art
+## Dear Data
 
 We explored the "Dear Data" project by Giorgia Lupi and Stefanie Posavec, where they documented aspects of their daily lives through hand-drawn data visualizations on postcards. 
 
@@ -98,7 +98,7 @@ We also learned about the key distinction between:
 
 Understanding these types is crucial because they determine what operations and visualizations are appropriate.
 
-## Measures of Central Tendency: Finding the Middle
+## Measures of Central Tendency
 
 We explored three ways to find the "middle" of our data:
 
