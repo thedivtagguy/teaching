@@ -1,0 +1,53 @@
+---
+title: "Mini tools and resources"
+description: Additional interactive resources for exploring data visualization concepts
+published: true
+section: Appendix
+order: 3
+---
+
+<script>
+import { goto } from '$app/navigation';
+
+function openBuzzer() {
+  goto('/buzzer');
+}
+
+function openDatasaurus() {
+  goto('/iframes/datasaurus');
+}
+
+function openCentralTendency() {
+  goto('/iframes/central-tendency');
+}
+</script>
+
+# Teaching Tools
+
+I've put together a few interactive tools to help me throughout the course. 
+
+## Interactive Timer
+
+<button class="btn-primary bg-red mb-3" on:click={openBuzzer}>
+Open Timer Tool
+</button>
+
+This game-show style buzzer lets you set a countdown and alerts you when time's up. We used it extensively to keep our movie assignment on track! Press 'S' to access the settings panel, space to start/pause, and 'B' to sound the buzzer. 
+
+## Datasaurus Dozen
+
+<button class="btn-primary bg-blue mb-3" on:click={openDatasaurus}>
+Open Datasaurus Tool
+</button>
+
+Run ggplot in the browser to demonstrate why visualization is important! All these datasets have nearly identical summary statistics (mean, standard deviation, correlation), but they look wildly different when plotted.
+
+
+## Measures of Central Tendency
+
+<button class="btn-primary bg-sage mb-3" on:click={openCentralTendency}>
+Open Central Tendency Calculator
+</button>
+
+This simple tool lets you experiment with mean, median, and mode calculations. Try entering a set of values with some extreme outliers, then observe how each measure responds differently. I used it to demonstrate how resilient the median is to extreme values.
+

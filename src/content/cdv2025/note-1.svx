@@ -1,9 +1,10 @@
 ---
-title: "Notice 1: Downloads to keep ready"
+title: "Downloads to keep ready"
 date: 2025-03-21
 description: First class covering data visualization fundamentals and historical context
 published: true
 section: Appendix
+order: 2
 ---
 
 # Software Setup for Tomorrow's Class

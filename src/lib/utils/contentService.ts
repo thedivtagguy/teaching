@@ -260,10 +260,21 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       const section = data.section || 'General';
       const order = data.order !== undefined ? data.order : getOrderFromFilename(file) || 999;
       
+      // Skip adding outline.svx to the menu sections
+      if (basename === 'outline') {
+        continue;
+      }
+      
+      // Force "notices" into the "Appendix" section
+      let effectiveSection = section;
+      if (section.toLowerCase().includes('notice')) {
+        effectiveSection = 'Appendix';
+      }
+      
       // Create or get section (if not already created from metadata)
-      if (!sectionMap[section]) {
-        sectionMap[section] = { title: section, items: [] };
-        courseMenu.sections.push(sectionMap[section]);
+      if (!sectionMap[effectiveSection]) {
+        sectionMap[effectiveSection] = { title: effectiveSection, items: [] };
+        courseMenu.sections.push(sectionMap[effectiveSection]);
       }
       
       // Add menu item to section
@@ -273,7 +284,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         order
       };
       
-      sectionMap[section].items.push(menuItem);
+      sectionMap[effectiveSection].items.push(menuItem);
       
       // Process readings
       if (data.readings && Array.isArray(data.readings)) {

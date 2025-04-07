@@ -77,8 +77,9 @@ We looked at how Cairo categorizes visualizations and graphics:
   <summary>Why are the boundaries between these terms fuzzy?</summary>
   <p>In practice, these categories often overlap. A data visualization might be part of an infographic, and both use charts. The distinctions matter less than understanding the purpose of your visual and ensuring it effectively communicates the intended information.</p>
 </details>
- 
-## Examples in the field 
+ <br/>
+
+
 We then looked at examples of visualizations ranging from artistic to UIs and dashboards, trying to figure out where we want to place ourselves in this broad landscape. There's a ton to do and we'd like a wider field of view!
 
 Some of the links that I mentioned in my slides: 
