@@ -2,7 +2,9 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { writable } from 'svelte/store';
-  import { ArrowLeft, Menu, X, BookOpen, Clipboard } from 'lucide-svelte';
+  import { Menu, X } from 'lucide-svelte';
+  import { Button } from '$lib/components/ui/button/index.js';
+  import { cn } from '$lib/utils/index.js';
   import CourseMenu from './CourseMenu.svelte';
   import type { MenuDataType, CourseMenu as CourseMenuType, Reading, Assignment } from '$lib/utils/contentSchema';
   
@@ -63,12 +65,19 @@
   } as CourseMenuType;
 </script>
 
-<div class="flex min-h-screen flex-col md:flex-row bg-base-100">
+<div class="flex min-h-screen flex-col md:flex-row bg-background">
   <!-- Mobile header with menu toggle -->
-  <div class="sticky top-0 z-10 flex items-center justify-between bg-base-100 p-4 border-b border-base-300 md:hidden">
-    <button 
+  <div class="sticky top-0 z-[var(--z-docked)] flex items-center justify-between bg-background p-4 border-b border-border md:hidden">
+    <Button 
       on:click={toggleMenu} 
-      class="rounded-md border-2 border-neutral btn-drop-shadow p-2 text-neutral font-bold font-roboto"
+      variant="outline"
+      size="icon"
+      class={cn(
+        "border-2 border-foreground",
+        "shadow-[var(--shadow-btn-drop)] transition-all duration-[var(--duration-250)]",
+        "hover:shadow-[var(--shadow-btn-hover)] hover:-translate-y-0.5",
+        "font-roboto font-bold"
+      )}
       aria-label="Toggle menu"
     >
       {#if $isMenuOpen}
@@ -76,14 +85,20 @@
       {:else}
         <Menu class="h-5 w-5" />
       {/if}
-    </button>
+    </Button>
     
    
   </div>
 
   <!-- Sidebar - fixed on desktop, slides in on mobile -->
   <aside 
-    class={`fixed inset-y-0 left-0 z-20 w-68 transform bg-base-100 p-6 border-r border-base-300 transition-transform duration-300 ${$isMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:static md:translate-x-0 md:shadow-none`}
+    class={cn(
+      "fixed inset-y-0 left-0 transform bg-background p-6 border-r border-border transition-transform",
+      "w-[var(--sidebar-default)] z-[var(--z-dropdown)]",
+      "duration-[var(--duration-300)] ease-[var(--ease-in-out)]",
+      $isMenuOpen ? 'translate-x-0' : '-translate-x-full',
+      "md:static md:translate-x-0 md:shadow-none"
+    )}
   >
     
     
@@ -98,14 +113,15 @@
   </aside>
 
   <!-- Main content area -->
-  <main class="flex-1 p-6 md:p-8 noise-image">
+  <main class="flex-1 p-6 md:p-8 noise-image bg-background">
     <slot />
   </main>
   
   <!-- Overlay for mobile menu (shown when menu is open) -->
   {#if $isMenuOpen}
     <div 
-      class="fixed inset-0 z-10 bg-neutral bg-opacity-20 md:hidden" 
+      class="fixed inset-0 bg-foreground/20 backdrop-blur-sm md:hidden" 
+      style="z-index: var(--z-overlay)"
       on:click={() => ($isMenuOpen = false)} 
       aria-hidden="true"
     ></div>

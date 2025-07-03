@@ -4,7 +4,15 @@
 -->
 <script lang="ts">
   import { spreadsheetSchema, type SpreadsheetEntry, formatDate } from '$lib/schema';
-  import { onMount } from 'svelte';
+  import { Button } from '$lib/components/ui/button/index.js';
+  import { Input } from '$lib/components/ui/input/index.js';
+  import { Textarea } from '$lib/components/ui/textarea/index.js';
+  import { Label } from '$lib/components/ui/label/index.js';
+  import { Alert } from '$lib/components/ui/alert/index.js';
+  import { Card } from '$lib/components/ui/card/index.js';
+  import { Separator } from '$lib/components/ui/separator/index.js';
+  import { CheckCircle, AlertCircle } from 'lucide-svelte';
+  import { cn } from '$lib/utils/index.js';
 
   // Initialize with empty values
   let formData: Partial<SpreadsheetEntry> = {
@@ -116,220 +124,199 @@
   }
 </script>
 
-<form on:submit|preventDefault={handleSubmit} class="entry-form">
+<Card.Root class="max-w-2xl mx-auto">
+  <Card.Header>
+    <Card.Title class="font-libre-caslon text-2xl text-foreground">Submit Your Entry</Card.Title>
+    <Card.Description class="font-archivo text-muted-foreground">
+      Fill out the form below to submit your class entry. Required fields are marked with an asterisk.
+    </Card.Description>
+  </Card.Header>
   
-  {#if submitSuccess}
-    <div class="bg-sage p-4 mb-6 rounded-md border-2 border-neutral btn-drop-shadow text-white font-archivo font-bold">
-      Entry submitted successfully!
-    </div>
-  {/if}
+  <Card.Content>
+    <form on:submit|preventDefault={handleSubmit} class="space-y-6">
+      
+      {#if submitSuccess}
+        <Alert.Root class="border-green-200 bg-green-50 text-green-800">
+          <CheckCircle class="h-4 w-4" />
+          <Alert.Title>Success!</Alert.Title>
+          <Alert.Description>Entry submitted successfully!</Alert.Description>
+        </Alert.Root>
+      {/if}
+      
+      {#if submitError}
+        <Alert.Root variant="destructive">
+          <AlertCircle class="h-4 w-4" />
+          <Alert.Title>Error</Alert.Title>
+          <Alert.Description>{submitError}</Alert.Description>
+        </Alert.Root>
+      {/if}
   
-  {#if submitError}
-    <div class="bg-red p-4 mb-6 rounded-md border-2 border-neutral btn-drop-shadow text-white font-archivo font-bold">
-      {submitError}
-    </div>
-  {/if}
+      <!-- Required fields -->
+      <div class="space-y-4">
+        <div class="space-y-2">
+          <Label for="username" class="font-roboto font-bold uppercase text-foreground">
+            Username *
+          </Label>
+          <Input
+            id="username"
+            type="text"
+            bind:value={formData.username}
+            on:blur={() => validateField('username', formData.username)}
+            class={cn(
+              "font-archivo",
+              errors.username && "border-destructive focus-visible:ring-destructive"
+            )}
+            required
+          />
+          {#if errors.username}
+            <p class="text-sm text-destructive font-archivo">{errors.username}</p>
+          {/if}
+        </div>
   
-  <!-- Required fields -->
-  <div class="mb-6">
-    <label for="username" class="block font-bold font-roboto text-neutral uppercase mb-2">Username *</label>
-    <input
-      type="text"
-      id="username"
-      bind:value={formData.username}
-      on:blur={() => validateField('username', formData.username)}
-      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
-      required
-    />
-    {#if errors.username}
-      <span class="text-red font-archivo mt-1 block">{errors.username}</span>
-    {/if}
-  </div>
+        <div class="space-y-2">
+          <Label for="class_confidence" class="font-roboto font-bold uppercase text-foreground">
+            Class Confidence (0-100) *
+          </Label>
+          <Input
+            id="class_confidence"
+            type="number"
+            min="0"
+            max="100"
+            bind:value={formData.class_confidence}
+            on:blur={() => validateField('class_confidence', formData.class_confidence)}
+            class={cn(
+              "font-archivo",
+              errors.class_confidence && "border-destructive focus-visible:ring-destructive"
+            )}
+            required
+          />
+          {#if errors.class_confidence}
+            <p class="text-sm text-destructive font-archivo">{errors.class_confidence}</p>
+          {/if}
+        </div>
   
-  <div class="mb-6">
-    <label for="class_confidence" class="block font-bold font-roboto text-neutral uppercase mb-2">Class Confidence (0-100) *</label>
-    <input
-      type="number"
-      id="class_confidence"
-      min="0"
-      max="100"
-      bind:value={formData.class_confidence}
-      on:blur={() => validateField('class_confidence', formData.class_confidence)}
-      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
-      required
-    />
-    {#if errors.class_confidence}
-      <span class="text-red font-archivo mt-1 block">{errors.class_confidence}</span>
-    {/if}
-  </div>
+        <div class="space-y-2">
+          <Label for="sentence_summary" class="font-roboto font-bold uppercase text-foreground">
+            Sentence Summary *
+          </Label>
+          <Textarea
+            id="sentence_summary"
+            bind:value={formData.sentence_summary}
+            on:blur={() => validateField('sentence_summary', formData.sentence_summary)}
+            class={cn(
+              "font-archivo min-h-[8rem] resize-y",
+              errors.sentence_summary && "border-destructive focus-visible:ring-destructive"
+            )}
+            required
+          />
+          {#if errors.sentence_summary}
+            <p class="text-sm text-destructive font-archivo">{errors.sentence_summary}</p>
+          {/if}
+        </div>
   
-  <div class="mb-6">
-    <label for="sentence_summary" class="block font-bold font-roboto text-neutral uppercase mb-2">Sentence Summary *</label>
-    <textarea
-      id="sentence_summary"
-      bind:value={formData.sentence_summary}
-      on:blur={() => validateField('sentence_summary', formData.sentence_summary)}
-      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue h-32"
-      required
-    ></textarea>
-    {#if errors.sentence_summary}
-      <span class="text-red font-archivo mt-1 block">{errors.sentence_summary}</span>
-    {/if}
-  </div>
+        <div class="space-y-2">
+          <Label for="keywords" class="font-roboto font-bold uppercase text-foreground">
+            Keywords (comma-separated) *
+          </Label>
+          <Input
+            id="keywords"
+            type="text"
+            bind:value={formData.keywords}
+            on:blur={() => validateField('keywords', formData.keywords)}
+            placeholder="e.g. visualization, data, chart"
+            class={cn(
+              "font-archivo",
+              errors.keywords && "border-destructive focus-visible:ring-destructive"
+            )}
+            required
+          />
+          {#if errors.keywords}
+            <p class="text-sm text-destructive font-archivo">{errors.keywords}</p>
+          {/if}
+        </div>
+      </div>
   
-  <div class="mb-6">
-    <label for="keywords" class="block font-bold font-roboto text-neutral uppercase mb-2">Keywords (comma-separated) *</label>
-    <input
-      type="text"
-      id="keywords"
-      bind:value={formData.keywords}
-      on:blur={() => validateField('keywords', formData.keywords)}
-      placeholder="e.g. visualization, data, chart"
-      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
-      required
-    />
-    {#if errors.keywords}
-      <span class="text-red font-archivo mt-1 block">{errors.keywords}</span>
-    {/if}
-  </div>
+      <div class="py-4">
+        <Separator />
+      </div>
+      
+      <div class="space-y-2">
+        <h3 class="text-xl font-bold font-libre-caslon text-foreground">Optional Information</h3>
+        <p class="text-sm text-muted-foreground font-archivo">The following fields are optional but help us understand your experience better.</p>
+      </div>
   
-  <!-- Optional fields -->
-  <h3 class="text-xl font-bold font-libre-caslon text-neutral border-b border-base-300 pb-2 mb-6 mt-10">Optional Information</h3>
+      <div class="space-y-4">
+        <div class="space-y-2">
+          <Label for="sleep_hours" class="font-roboto font-bold uppercase text-foreground">
+            Sleep Hours
+          </Label>
+          <Input
+            id="sleep_hours"
+            type="number"
+            min="0"
+            max="24"
+            step="0.5"
+            bind:value={formData.sleep_hours}
+            on:blur={() => {
+              if (formData.sleep_hours !== undefined) {
+                validateField('sleep_hours', formData.sleep_hours);
+              }
+            }}
+            class={cn(
+              "font-archivo",
+              errors.sleep_hours && "border-destructive focus-visible:ring-destructive"
+            )}
+          />
+          {#if errors.sleep_hours}
+            <p class="text-sm text-destructive font-archivo">{errors.sleep_hours}</p>
+          {/if}
+        </div>
   
-  <div class="mb-6">
-    <label for="sleep_hours" class="block font-bold font-roboto text-neutral uppercase mb-2">Sleep Hours</label>
-    <input
-      type="number"
-      id="sleep_hours"
-      min="0"
-      max="24"
-      step="0.5"
-      bind:value={formData.sleep_hours}
-      on:blur={() => {
-        if (formData.sleep_hours !== undefined) {
-          validateField('sleep_hours', formData.sleep_hours);
-        }
-      }}
-      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
-    />
-    {#if errors.sleep_hours}
-      <span class="text-red font-archivo mt-1 block">{errors.sleep_hours}</span>
-    {/if}
-  </div>
+        <div class="space-y-2">
+          <Label for="skipped_meals" class="font-roboto font-bold uppercase text-foreground">
+            Skipped Meals (comma-separated)
+          </Label>
+          <Input
+            id="skipped_meals"
+            type="text"
+            bind:value={formData.skipped_meals_prev_day}
+            placeholder="e.g. breakfast, lunch"
+            on:blur={() => {
+              if (formData.skipped_meals_prev_day) {
+                validateField('skipped_meals_prev_day', formData.skipped_meals_prev_day);
+              }
+            }}
+            class={cn(
+              "font-archivo",
+              errors.skipped_meals_prev_day && "border-destructive focus-visible:ring-destructive"
+            )}
+          />
+          {#if errors.skipped_meals_prev_day}
+            <p class="text-sm text-destructive font-archivo">{errors.skipped_meals_prev_day}</p>
+          {/if}
+        </div>
+      </div>
   
-  <div class="mb-6">
-    <label for="skipped_meals" class="block font-bold font-roboto text-neutral uppercase mb-2">Skipped Meals (comma-separated)</label>
-    <input
-      type="text"
-      id="skipped_meals"
-      bind:value={formData.skipped_meals_prev_day}
-      placeholder="e.g. breakfast, lunch"
-      on:blur={() => {
-        if (formData.skipped_meals_prev_day) {
-          validateField('skipped_meals_prev_day', formData.skipped_meals_prev_day);
-        }
-      }}
-      class="w-full p-3 bg-base-100 border-2 border-neutral rounded-md font-archivo focus:outline-none focus:ring-2 focus:ring-blue"
-    />
-    {#if errors.skipped_meals_prev_day}
-      <span class="text-red font-archivo mt-1 block">{errors.skipped_meals_prev_day}</span>
-    {/if}
-  </div>
-  
-  <div class="mt-8">
-    <button 
-      type="submit" 
-      disabled={isSubmitting}
-      class="bg-blue hover:bg-purple text-white py-3 px-6 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold uppercase transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-    >
-      {isSubmitting ? 'Submitting...' : 'Submit Entry'}
-    </button>
-  </div>
-</form>
+      <div class="pt-6">
+        <Button 
+          type="submit" 
+          disabled={isSubmitting}
+          class={cn(
+            "w-full font-roboto font-bold uppercase tracking-wide",
+            "bg-primary hover:bg-primary/90 text-primary-foreground",
+            "border-2 border-foreground shadow-[var(--shadow-btn-drop)]",
+            "transition-all duration-[var(--duration-250)]",
+            "hover:shadow-[var(--shadow-btn-hover)] hover:-translate-y-0.5",
+            "active:shadow-[var(--shadow-btn-active)] active:-translate-y-0",
+            "disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          )}
+          size="lg"
+        >
+          {isSubmitting ? 'Submitting...' : 'Submit Entry'}
+        </Button>
+      </div>
+    </form>
+  </Card.Content>
+</Card.Root>
 
-<style>
-  .entry-form {
-    max-width: 600px;
-  
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  h3 {
-    color: #555;
-    margin: 20px 0 10px;
-    font-size: 1.1em;
-  }
-  
  
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-  }
-  
-  input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
-  }
-  
-  textarea {
-    height: 100px;
-    resize: vertical;
-  }
-  
-  .error {
-    color: #e53935;
-    font-size: 0.85em;
-    margin-top: 5px;
-    display: block;
-  }
-  
-  .success-message {
-    background-color: #e8f5e9;
-    color: #388e3c;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-  }
-  
-  .error-message {
-    background-color: #ffebee;
-    color: #c62828;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.2s;
-  }
-  
-  button:hover:not(:disabled) {
-    background-color: #1565c0;
-  }
-  
-  button:disabled {
-    background-color: #90caf9;
-    cursor: not-allowed;
-  }
-  
-  .form-actions {
-    text-align: right;
-    margin-top: 20px;
-  }
-</style> 
