@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "34c0d8fbc10dc33e",
+        "id": "5bb57cb63e4f5843",
         "type": "tabs",
         "children": [
           {
-            "id": "e3f22e7540208d17",
+            "id": "1c6214534c0a5fe1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Intro to Dataviz ⟩ Spring 2025.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Intro to Dataviz ⟩ Spring 2025"
             }
           }
         ]
@@ -176,7 +180,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "advanced-slides-netlify-deployer:Deploy presentation to Netlify": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -185,11 +188,26 @@
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "slides-extended:Show slide preview": false
+      "slides-extended:Show slide preview": false,
+      "advanced-slides-netlify-deployer:Deploy presentation to Netlify": false
     }
   },
-  "active": "09507088f7fcc4c3",
+  "active": "1c6214534c0a5fe1",
   "lastOpenFiles": [
+    "Day 1 - Intro to Dataviz.md",
+    "Day 3 - Data wrangling.md",
+    "Day 4 - Viz Day.md",
+    "Day 6 - Charting Tools.md",
+    "Clippings/👑 Elizabeth Lin Designer & Aspiring Princess!.md",
+    "Clippings",
+    "Day 7 - Project Kickoff.md",
+    "Excalidraw/Drawing 2025-03-31 09.16.29.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-28 11.03.21.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-27 13.51.38.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-27 13.51.33.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-26 14.01.51.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-26 09.28.53.excalidraw.md",
+    "Excalidraw/Drawing 2025-04-11 17.08.56.excalidraw.md",
     "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169/manifest.json",
     "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169/manifest.json",
     "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652829169/index.html",
@@ -199,15 +217,10 @@
     "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/manifest.json",
     "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/manifest.json",
     "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/index.html",
-    "Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882/index.html",
-    "/Users/amnbh/Desktop/Dev Projects/personal/dataviz-course/src/content/cdv2025/notes/export/day-2-statistical-thinking-1743652659882",
-    "Day 7 - Project Kickoff.md",
     "Day 6 - Storytelling and You.md",
-    "Day 6 - Charting Tools.md",
     "day-2-statistical-thinking.md",
     "Datasets.md",
     "Day 7 - Finales.md",
-    "Excalidraw/Drawing 2025-03-31 09.16.29.excalidraw.md",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331012942541.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331012241673.png",
     "export/Day 6 - Charting Tools/attachments/Day 6 - Charting Tools/IMG-20250331011841610.png",
@@ -224,18 +237,9 @@
     "export/Day 6 - Charting Tools/plugin/customcontrols/README.md",
     "export/Day 6 - Charting Tools/plugin/chart/README.md",
     "export/Day 6 - Charting Tools/plugin/chalkboard/README.md",
-    "Day 1 - Intro to Dataviz.md",
-    "Day 4 - Viz Day.md",
-    "Day 3 - Data wrangling.md",
     "Assignments.md",
     "Assignments List.md",
-    "Excalidraw/Drawing 2025-03-28 11.03.21.excalidraw.md",
-    "Excalidraw/Drawing 2025-03-27 13.51.38.excalidraw.md",
-    "Excalidraw/Drawing 2025-03-27 13.51.33.excalidraw.md",
-    "Excalidraw/Drawing 2025-03-26 09.28.53.excalidraw.md",
     "Movie Inspiration.md",
-    "export/day-4/dist/css/theme/README.md",
-    "export/day-4/plugin/menu/README.md",
     "Untitled.canvas"
   ]
 }

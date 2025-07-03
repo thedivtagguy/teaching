@@ -1,6 +1,10 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { BookOpen, Book, Calendar, ChevronDown, ChevronUp, FileText, Clipboard } from 'lucide-svelte';
+  import { BookOpen, ChevronDown, ChevronUp, Clipboard } from 'lucide-svelte';
+  import { Button } from '$lib/components/ui/button/index.js';
+  import { Collapsible } from '$lib/components/ui/collapsible/index.js';
+  import { Separator } from '$lib/components/ui/separator/index.js';
+  import { cn } from '$lib/utils/index.js';
   import type { CourseMenu, MenuSection, Reading, Assignment, MenuItem } from '$lib/utils/contentSchema';
   
   export let courseId: string;
@@ -60,31 +64,47 @@
 </script>
 
 <div class="course-menu sticky top-8 overflow-y-auto overflow-x-hidden pr-4 max-h-[calc(100vh-8rem)]">
-  <header class="mb-6 border-b border-base-300 pb-4">
+  <header class="mb-6 border-b border-border pb-4">
     <a href="/{courseId}" class="inline-block mb-2">
-      <h3 class="text-2xl font-semibold !font-libre-caslon text-neutral hover:text-blue transition-colors">
+      <h3 class="text-2xl font-semibold font-libre-caslon text-foreground hover:text-primary transition-colors">
         {menuData?.title}
       </h3>
     </a>
-    <p class="text-sm text-base-300 font-archivo mb-4">
+    <p class="text-sm text-muted-foreground font-archivo mb-4">
       {courseId.toUpperCase() || 'Course Content'}
     </p>
     {#if selectedCourse}
-    <div class="flex  gap-2 my-4">
-      <a 
+    <div class="flex gap-2 my-4">
+      <Button 
         href="/{selectedCourse}/readings" 
-        class="flex gap-1 items-center justify-center bg-base-200 hover:bg-blue text-neutral hover:text-white py-2 px-3 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-sm transition-colors"
+        variant="outline"
+        size="sm"
+        class={cn(
+          "flex gap-1 items-center justify-center font-roboto font-bold text-sm",
+          "border-2 border-foreground shadow-[var(--shadow-btn-drop)]",
+          "transition-all duration-[var(--duration-250)]",
+          "hover:bg-primary hover:text-primary-foreground",
+          "hover:shadow-[var(--shadow-btn-hover)] hover:-translate-y-0.5"
+        )}
       >
         <BookOpen class="size-3" />
         <span>Readings</span>
-      </a>
-      <a 
+      </Button>
+      <Button 
         href="/{selectedCourse}/assignments" 
-        class="flex gap-1 items-center justify-center bg-base-200 hover:bg-sage text-neutral hover:text-neutral py-2 px-3 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold text-sm transition-colors"
+        variant="outline"
+        size="sm"
+        class={cn(
+          "flex gap-1 items-center justify-center font-roboto font-bold text-sm",
+          "border-2 border-foreground shadow-[var(--shadow-btn-drop)]",
+          "transition-all duration-[var(--duration-250)]",
+          "hover:bg-secondary hover:text-secondary-foreground",
+          "hover:shadow-[var(--shadow-btn-hover)] hover:-translate-y-0.5"
+        )}
       >
         <Clipboard class="size-3" />
         <span>Assignments</span>
-      </a>
+      </Button>
     </div>
   {/if}
   </header>
@@ -99,7 +119,12 @@
             <li>
               <a
                 href={item.path}
-                class="block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors {currentPath === item.path ? 'border-blue text-blue font-bold' : 'border-transparent text-neutral hover:text-blue hover:border-base-300'}"
+                class={cn(
+                  "block py-1 text-sm font-archivo border-l-2 pl-3 -ml-px transition-colors",
+                  currentPath === item.path 
+                    ? 'border-primary text-primary font-bold' 
+                    : 'border-transparent text-foreground hover:text-primary hover:border-muted'
+                )}
               >
                 {item.title}
               </a>
@@ -109,7 +134,9 @@
         
         <!-- Show divider if there are appendix items -->
         {#if flatMenuItems.some(item => isAppendixItem(item))}
-          <div class="border-t border-base-300 my-4"></div>
+          <div class="my-4">
+            <Separator />
+          </div>
           
           <ul class="pl-6 space-y-2">
             <!-- Appendix items -->
@@ -252,8 +279,8 @@
       {/if}
     </nav>
   {:else}
-    <div class="p-4 bg-base-200 rounded-lg border-2 border-neutral btn-drop-shadow">
-      <p class="text-neutral font-archivo">No menu data available</p>
+    <div class="p-4 bg-muted rounded-lg border border-border">
+      <p class="text-muted-foreground font-archivo">No menu data available</p>
     </div>
   {/if}
 </div>

@@ -1,198 +1,370 @@
-@import 'tailwindcss';
-@import './lib/fonts.css';
+@import "tailwindcss";
+@import "./lib/fonts.css";
+@import "tw-animate-css";
 
-body {
-  font-family: 'LibreCaslonCondensed', serif;
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Shadcn-svelte base variables */
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.77 0.15 75.8); /* Course yellow */
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.75 0.12 45.2); /* Course orange */
+  --secondary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.6 0.15 250.4); /* Course blue */
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.77 0.15 75.8); /* Course yellow */
+  --chart-2: oklch(0.6 0.15 250.4); /* Course blue */
+  --chart-3: oklch(0.75 0.12 45.2); /* Course orange */
+  --chart-4: oklch(0.72 0.11 140.3); /* Course green */
+  --chart-5: oklch(0.65 0.08 95.4); /* Course sage */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.77 0.15 75.8); /* Course yellow */
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Course-specific design tokens */
+  --course-yellow: #E8C85A;
+  --course-orange: #E8845A;
+  --course-blue: #4D80E6;
+  --course-green: #92DE86;
+  --course-sage: #949B80;
+  --course-red: #B56666;
+  --course-purple: #4F4E8D;
+  --course-neutral: #2B2B2B;
+  --course-base-100: #F8FBF8;
+  --course-base-200: #EDEDED;
+  --course-base-300: #A3A3A2;
 }
 
-@theme {
-    /* Font families */
-    --font-archivo: 'Archivo Variable', sans-serif;
-    --font-libre-caslon: 'LibreCaslonCondensed', serif;
-    --font-roboto: 'Roboto Condensed', sans-serif;
-    --font-fira: 'Fira Code Variable', monospace;
-    
-    /* Colors */
-    --color-yellow: #E8C85A;
-    --color-orange: #E8845A;
-    --color-blue: #4D80E6;
-    --color-green: #92DE86;
-    --color-sage: #949B80;
-    --color-red: #B56666;
-    --color-purple: #4F4E8D;
-    --color-neutral: #2B2B2B;
-    --color-base-100: #F8FBF8;
-    --color-base-200: #EDEDED;
-    --color-base-300: #A3A3A2;
-    
-    /* Shadows */
-    --shadow-btn-drop-shadow: 0 2px 0 0 #2b2b2b;
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.77 0.15 75.8); /* Course yellow */
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.75 0.12 45.2); /* Course orange */
+  --secondary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.6 0.15 250.4); /* Course blue */
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.77 0.15 75.8); /* Course yellow */
+  --chart-2: oklch(0.6 0.15 250.4); /* Course blue */
+  --chart-3: oklch(0.75 0.12 45.2); /* Course orange */
+  --chart-4: oklch(0.72 0.11 140.3); /* Course green */
+  --chart-5: oklch(0.65 0.08 95.4); /* Course sage */
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.77 0.15 75.8); /* Course yellow */
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer utilities {
-    .btn-drop-shadow {
-      box-shadow: 0 2px 0 0 #2b2b2b; 
-    }
+@theme inline {
+  /* Font families */
+  --font-archivo: 'Archivo Variable', sans-serif;
+  --font-libre-caslon: 'LibreCaslonCondensed', serif;
+  --font-roboto: 'Roboto Condensed', sans-serif;
+  --font-fira: 'Fira Code Variable', monospace;
+  
+  /* Border radius scale */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Shadcn color mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Course color aliases for backward compatibility */
+  --color-yellow: var(--course-yellow);
+  --color-orange: var(--course-orange);
+  --color-blue: var(--course-blue);
+  --color-green: var(--course-green);
+  --color-sage: var(--course-sage);
+  --color-red: var(--course-red);
+  --color-purple: var(--course-purple);
+  --color-neutral: var(--course-neutral);
+  --color-base-100: var(--course-base-100);
+  --color-base-200: var(--course-base-200);
+  --color-base-300: var(--course-base-300);
+  
+  /* Animation tokens */
+  --duration-75: 75ms;
+  --duration-100: 100ms;
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-250: 250ms;
+  --duration-300: 300ms;
+  --duration-500: 500ms;
+  --duration-700: 700ms;
+  --duration-1000: 1000ms;
+  
+  /* Easing functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  
+  /* Shadow tokens */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --shadow-btn-drop: 0 2px 0 0 var(--course-neutral);
+  --shadow-btn-hover: 0 4px 2px 1px rgb(43 43 43 / 0.6);
+  --shadow-btn-active: 0 1px 0 0 var(--course-neutral);
+  
+  /* Z-index scale */
+  --z-hide: -1;
+  --z-auto: auto;
+  --z-base: 0;
+  --z-docked: 10;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-banner: 1200;
+  --z-overlay: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-skiplink: 1600;
+  --z-tooltip: 1700;
+  --z-toast: 1800;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-
-
-
-h1, h2, h3 {
+  body {
+    @apply bg-background text-foreground;
     font-family: 'LibreCaslonCondensed', serif;
+  }
 }
 
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'LibreCaslonCondensed', serif;
+  @apply font-bold text-foreground;
+}
 
 p, li {
-    @apply font-archivo;
+  @apply font-archivo;
 }
 
-
-
-.divide {
-    @apply border-base-300 border-t-[1px] w-full z-0;
-}
-
-h1, h2 {
-    @apply font-bold font-libre-caslon text-neutral;
-}
-
-a:focus {
-    @apply rounded-sm outline-dashed outline-offset-4 outline-zinc-800;
-}
-
-
-html {
-  
-    background-repeat: repeat;
-    background-size: 400px;
-    background-color: #ffffff;
-}
-
-
-
+/* Utilities */
 @layer utilities {
-    .green-glow-100 {
-        text-shadow:
-			0 0 3px #92de8618,
-			0 0 3px #92de8618,
-			0 0 3px #92de8618,
-			0 0 3px #92de8618,
-			0 0 2px #57785218,
-			0 0 2px #92de8618,
-			0 0 2px #465e4218;
-    }
+  .btn-drop-shadow {
+    box-shadow: var(--shadow-btn-drop);
+  }
+  
+  .green-glow-100 {
+    text-shadow:
+      0 0 3px #92de8618,
+      0 0 3px #92de8618,
+      0 0 3px #92de8618,
+      0 0 3px #92de8618,
+      0 0 2px #57785218,
+      0 0 2px #92de8618,
+      0 0 2px #465e4218;
+  }
 
-    .green-glow-200 {
-        text-shadow:
-        0 0 3px #92de8641,
-        0 0 3px #92de8641,
-        0 0 3px #92de8641,
-        0 0 3px #92de8641,
-        0 0 2px #57785241,
-        0 0 2px #92de8641,
-        0 0 2px #465e4241;
-    }
+  .green-glow-200 {
+    text-shadow:
+      0 0 3px #92de8641,
+      0 0 3px #92de8641,
+      0 0 3px #92de8641,
+      0 0 3px #92de8641,
+      0 0 2px #57785241,
+      0 0 2px #92de8641,
+      0 0 2px #465e4241;
+  }
 
-    .black-bento {
-       @apply  px-4 py-1 rounded-2xl bg-neutral; 
-    }
+  .black-bento {
+    @apply px-4 py-1 rounded-2xl;
+    background-color: var(--course-neutral);
+  }
 }
 
+/* Divider */
+.divide {
+  @apply border-border border-t w-full;
+  z-index: var(--z-base);
+}
 
+/* Focus styles */
+a:focus {
+  @apply rounded-sm outline-dashed outline-offset-4 outline-ring;
+}
+
+/* Background noise texture */
 .noise-image {
-    position: relative;
+  position: relative;
 }
 
 .noise-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 245 245' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='8.51' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: soft-light;
-    opacity: 0.4;
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 245 245' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='8.51' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
-
+/* Highlight effect */
 .highlight {
-    position: relative;
-    z-index: 1;
-}
-.highlight::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    transform: translate(-50%, -50%) rotate(-2deg);
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    @apply bg-yellow;
+  position: relative;
+  z-index: 1;
 }
 
+.highlight::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  background-color: var(--course-yellow);
+}
+
+/* Primary button */
 .btn-primary {
-    @apply flex items-center justify-center gap-2 px-4 py-1 text-xl font-bold tracking-normal text-white uppercase border-2 rounded-md w-fit font-roboto border-neutral;
-    box-shadow: 0 2px 0 0 #2b2b2b;
-    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5), box-shadow 250ms ease;
+  @apply flex items-center justify-center gap-2 px-4 py-1 text-xl font-bold tracking-normal text-white uppercase border-2 rounded-md w-fit;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-color: var(--course-neutral);
+  box-shadow: var(--shadow-btn-drop);
+  transition: transform var(--duration-250) var(--ease-bounce), box-shadow var(--duration-250) ease;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    box-shadow: 0 4px 2px 1px #2b2b2b9a;
-    transform: translateY(-6px);
+  box-shadow: var(--shadow-btn-hover);
+  transform: translateY(-6px);
 }
 
 .btn-primary:active {
-    box-shadow: 0 1px 0 0 #2b2b2b;
-    transform: translateY(-2px);
-    transition: transform 34ms;
+  box-shadow: var(--shadow-btn-active);
+  transform: translateY(-2px);
+  transition: transform 34ms;
 }
 
 .btn-primary:focus {
-    @apply outline-dashed outline-2 outline-offset-2 outline-neutral; 
+  @apply outline-dashed outline-2 outline-offset-2;
+  outline-color: var(--course-neutral);
 }
 
 /* Footnote styles */
 .footnotes {
-    @apply mt-8 pt-6 border-t border-base-300;
+  @apply mt-8 pt-6 border-t border-border;
 }
 
 .footnotes ol {
-    @apply pl-6 text-sm font-archivo;
+  @apply pl-6 text-sm;
+  font-family: 'Archivo Variable', sans-serif;
 }
 
 .footnotes li {
-    @apply mb-2;
+  @apply mb-2;
 }
 
 .footnotes p {
-    @apply inline;
+  @apply inline;
 }
 
-/* Footnote references in the text */
+/* Footnote references */
 a.footnote-ref {
-    @apply text-xs align-super font-bold text-blue no-underline;
-    position: relative;
-    top: -0.5em;
+  @apply text-xs align-super font-bold no-underline;
+  color: var(--course-blue);
+  position: relative;
+  top: -0.5em;
 }
 
-/* Back references at the bottom */
+/* Back references */
 a.footnote-backref {
-    @apply text-blue hover:text-orange transition-colors;
+  color: var(--course-blue);
+  @apply transition-colors;
 }
 
-/* Add some styling to the actual superscript */
+a.footnote-backref:hover {
+  color: var(--course-orange);
+}
+
+/* Superscript styling */
 sup {
-    @apply text-xs font-bold text-blue;
-    vertical-align: super;
-    line-height: 0;
+  @apply text-xs font-bold;
+  color: var(--course-blue);
+  vertical-align: super;
+  line-height: 0;
 }
 
+/* Strong emphasis */
 strong {
-    @apply bg-yellow;
-
+  background-color: var(--course-yellow);
 }

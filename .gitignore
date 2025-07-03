@@ -21,6 +21,7 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
+shadcn-svelte-main/
+shadcn-svelte-main.zip
 CLAUDE.md
 /.claude
