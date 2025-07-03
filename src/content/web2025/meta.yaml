@@ -1,0 +1,25 @@
+title: "Introduction to Making for the Web"
+code: "web2025"
+description: "This course provides a broad introduction to making for the web."
+instructor:
+  name: "Aman Bhargava"
+  email: "amanbhargava2001+web2025@gmail.com"
+  hours: "Mon to Sat 2-5pm, or by appointment via email"
+navigation:
+  collapsibleSections: false
+  showSections: false
+  sections:
+    - title: "Course Info"
+      order: 1
+    - title: "Fundamentals" 
+      order: 2
+    - title: "Collection and Encoding"
+      order: 3
+    - title: "Visualization Design"
+      order: 4
+    - title: "Geographic Visualization"
+      order: 5
+    - title: "Final Project"
+      order: 6 
+    - title: "Appendix"
+      order: 7

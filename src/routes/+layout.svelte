@@ -6,10 +6,9 @@
 </script>
 
 <!-- Default SEO for all pages (will be overridden by more specific SEO components) -->
-<SEO 
-	title="Learning Resources by aman.bh"
-	description="Slides, notes, and other resources for courses I teach."
+<SEO
+	title="Teaching Resources by Aman Bhargava"
+	description="Slides, notes, and other resources for the courses I teach."
 />
 
-<!-- Pass data to child routes via the slot -->
 <slot />

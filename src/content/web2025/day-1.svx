@@ -1,0 +1,113 @@
+---
+title: "Day 1: Down the rabbit hole"
+date: 2025-03-21
+description: First class covering data visualization fundamentals and historical context
+published: true
+section: Fundamentals
+order: 1
+readings:
+  - title: "'What we mean when we talk about visualizations', from The Truthful Art"
+    author: "Alberto Cairo"
+    pages: "14"
+    url: "https://drive.google.com/file/d/1neI7WRYZtNGior3RKoDkJasjwkEqcNb9/view?usp=sharing"
+    readingTime: 20
+---
+
+# Day 1: Down the rabbit hole
+
+<script>
+import { goto } from '$app/navigation';
+
+function openSlides() {
+  goto('https://teaching.aman.bh/slides/cdv2025/day-1-intro-to-dataviz/#/');
+}
+</script>
+
+<button class="btn-primary bg-blue mb-3" on:click={openSlides}>
+Open Class Slides
+</button>
+
+**FOR ASSIGNMENTS:** Please go to the 'Assignments' tab in the menu. This is a daily summary.
+
+Welcome to our data visualization course! In this first session, we explored the fundamentals of data visualization, examining its historical context, core principles, and the breadth of applications in our world today.
+
+## So what's all this then?
+
+We started off by looking at John Snow's cholera map (I can't think of one course I've seen so far which _didn't_ start with this, so a rite of passage for you all), looked at some naturally occuring "visualizations" and then Florence Nightingale's legendary work. We also looked at the original _tables_ for the data on John Snow's map and learnt about Nightingale's disdain for such tables and her motivations for making something for the "vulgar public" (us).
+
+After this, we looked at a variety of visualizations around us in daily life. Cricket matches, cameras, kombuchas; what have you. Its alright if your heart isn't immediately into the kind of visualizations that we might make in this course, but look at the possibilities!
+
+There's almost something for everyone in this field, as we saw through our little diagram of overlaps. Whether you want to be a UI/UX designer, researcher, artist, or just a big ol' know it all - you can put your skills to use here and they'll never be wasted. 
+
+I think that one of the biggest parts of getting good at this is looking at the endless amount of fascinating work by 'The Masters' and trying to understand how they make it happen and why their works resonate with us. This will form the crux of our class because we'll spend 
+a lot of time not only looking at inspiration, critiquing but also trying to produce a lot of sketches, ideas, drawings, visualizations to start working both sides of our brain more. 
+
+Each day will cover one or more of these main 'tasks' in the visualization process: 
+
+- **Collect & Clean:** Finding and preparing data
+- **Analyze & Summarize:** Understanding key patterns  
+- **Visualize:** Choosing the right visual formats
+- **Narrate:** Creating a story with your data
+- **Design:** Making it beautiful and accessible
+
+--- 
+
+## Visualization Terminology[^1]
+
+We looked at how Cairo categorizes visualizations and graphics: 
+
+[^1]: Cairo, Alberto. 'The Truthful Art'
+
+<dl>
+  <dt>Visualization</dt>
+  <dd>A picture that informs.</dd>
+  
+  <dt>Chart</dt>
+  <dd>A visualization in which data are encoded with symbols.</dd>
+  
+  <dt>Infographic</dt>
+  <dd>A multi-part visual representation of information intended to communicate specific messages, combining charts, maps, illustrations, and explanatory text.</dd>
+  
+  <dt>Data Visualization</dt>
+  <dd>A display of data designed to enable analysis, exploration, and discovery.</dd>
+</dl>
+
+
+<details>
+  <summary>Why are the boundaries between these terms fuzzy?</summary>
+  <p>In practice, these categories often overlap. A data visualization might be part of an infographic, and both use charts. The distinctions matter less than understanding the purpose of your visual and ensuring it effectively communicates the intended information.</p>
+</details>
+ <br/>
+
+
+We then looked at examples of visualizations ranging from artistic to UIs and dashboards, trying to figure out where we want to place ourselves in this broad landscape. There's a ton to do and we'd like a wider field of view!
+
+Some of the links that I mentioned in my slides: 
+
+
+
+### Historical
+- [Cholera in Victorian London - Science Museum](https://www.sciencemuseum.org.uk/objects-and-stories/medicine/cholera-victorian-london)
+- [John Snow's Original Documents](https://Johnsnow.Matrix.Msu.Edu/documentUploads/15-78-2D2/15-78-2D2-22-1855-07-CIC-AppendixB.Pdf)
+- [Visual and Statistical Thinking by Edward Tufte](https://web.archive.org/web/20140807145142/http://www.sfu.ca/cmns/courses/2012/801/1-Readings/Tufte%20Visual%20and%20Statistical%20Thinking.pdf)
+- [Florence Nightingale - Lady with the Lamp](https://www.nam.ac.uk/explore/florence-nightingale-lady-lamp)
+- [Florence Nightingale's Public Health Act and COVID-19](https://historyandpolicy.org/policy-papers/papers/florence-nightingales-public-health-act-covid-19-and-the-empowerment-of-local-government/)
+
+### Creative
+- [Warming Stripes Visualization](https://chezvoila.com/blog/warmingstripes/)
+- [How Much Sugar Do You Consume - Physical Data Visualization](https://dataphys.org/list/how-much-sugar-do-you-consume/)
+- [Psychogeographical Mapping with Lego Bricks](https://dataphys.org/list/psychogeographical-mapping-travel-logging-with-lego-bricks/)
+- [Lines Project (57°59′N, 7°16′W) - Light Visualization](https://niittyvirta.com/lines-57-59-n-7-16w/)
+- [Swee Kombucha Packaging Design](https://www.bedow.se/work/swee-kombucha/)
+
+### News
+- [Adolfo Arranz and the SCMP](https://multimedia.scmp.com/culture/article/SCMP-printed-graphics-memory/)
+- [Lionel Messi Statistics - The Economist](https://www.economist.com/graphic-detail/2021/08/14/by-the-numbers-lionel-messi-is-european-footballs-best-scorer-ever)
+- [Visualizing Destruction in Ukraine Project](https://mhinfographics.com/2024/06/22/visualizing-the-destruction-in-ukraine-a-years-long-project-following-satellite-clues/)
+- [My Life with Long COVID - NYT Interactive](https://www.nytimes.com/interactive/2023/12/14/opinion/my-life-with-long-covid.html)
+- [Russian Elections Analysis - The Economist](https://www.economist.com/graphic-detail/2021/10/11/russian-elections-once-again-had-a-suspiciously-neat-result)
+
+
+## Books referred to 
+- Cairo, Alberto. "Graphics Lies, Misleading Visuals: Reflections on the Challenges and Pitfalls of Evidence-Driven Visual Communication" in *New Challenges for Data Design*
+- Cairo, Alberto. "The Truthful Art"
