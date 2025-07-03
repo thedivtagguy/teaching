@@ -82,10 +82,10 @@
 <!-- Two-column layout on desktop, single column on mobile -->
 <div class="max-w-7xl mx-auto">
   {#if error}
-    <div class="bg-red-50 border border-red-200 text-red-800 rounded-lg p-6 mb-6 shadow-sm">
+    <div class="bg-destructive/10 border border-destructive/20 text-destructive rounded-lg p-6 mb-6 shadow-sm">
       <p class="font-archivo text-lg mb-4">{error}</p>
       <p class="mt-2">
-        <a href="/{courseId}" class="bg-red-100 text-red-800 hover:bg-red-200 py-2 px-4 rounded inline-flex items-center font-archivo transition-colors">
+        <a href="/{courseId}" class="bg-destructive/10 text-destructive hover:bg-destructive/20 py-2 px-4 rounded inline-flex items-center font-archivo transition-colors">
           <ArrowLeft class="w-4 h-4 mr-2" />
           Return to course page
         </a>
@@ -100,28 +100,28 @@
           <TableOfContents />
          </div>
         
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+        <div class="bg-card rounded-lg shadow-sm p-6 mb-8">
           <!-- Content header with title, date & description -->
           <div >
             <!-- <h1 class="text-3xl font-libre-caslon mb-2">{content.metadata?.title || `${dayId.charAt(0).toUpperCase() + dayId.slice(1)}`}</h1> -->
             
-            <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+            <div class="flex flex-wrap gap-4 text-sm text-muted-foreground">
               {#if content.metadata?.date}
                 <div class="flex items-center">
-                  <Calendar class="w-4 h-4 mr-1 text-blue-500" />
+                  <Calendar class="w-4 h-4 mr-1 text-primary" />
                   <span class="font-archivo">{content.metadata.date}</span>
                 </div>
               {/if}
               {#if content.metadata?.section}
                 <div class="flex items-center">
-                  <BookOpen class="w-4 h-4 mr-1 text-blue-500" />
+                  <BookOpen class="w-4 h-4 mr-1 text-primary" />
                   <span class="font-archivo">{content.metadata.section}</span>
                 </div>
               {/if}
             </div>
             
             {#if content.metadata?.description}
-              <p class="text-lg mt-4 font-archivo text-gray-700">{content.metadata.description}</p>
+              <p class="text-lg mt-4 font-archivo text-muted-foreground">{content.metadata.description}</p>
             {/if}
           </div>
 
@@ -131,9 +131,9 @@
           </MDLayout>
           
           <!-- Content navigation (previous/next) -->
-          <div class="flex justify-between items-center border-t border-gray-100 pt-6 mt-8">
+          <div class="flex justify-between items-center border-t border-border pt-6 mt-8">
             {#if previousPage}
-              <a href={previousPage.path} class="inline-flex items-center p-2 pr-4 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition-colors">
+              <a href={previousPage.path} class="inline-flex items-center p-2 pr-4 text-primary hover:text-primary hover:bg-primary/10 rounded transition-colors">
                 <ArrowLeft class="w-4 h-4 mr-2" />
                 <span class="font-archivo text-sm">{previousPage.title}</span>
               </a>
@@ -141,12 +141,12 @@
               <div></div>
             {/if}
             
-            <a href="/{courseId}" class="inline-flex items-center p-2 px-4 text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded transition-colors">
+            <a href="/{courseId}" class="inline-flex items-center p-2 px-4 text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
               <span class="font-archivo text-sm">Course Home</span>
             </a>
             
             {#if nextPage}
-              <a href={nextPage.path} class="inline-flex items-center p-2 pl-4 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition-colors">
+              <a href={nextPage.path} class="inline-flex items-center p-2 pl-4 text-primary hover:text-primary hover:bg-primary/10 rounded transition-colors">
                 <span class="font-archivo text-sm">{nextPage.title}</span>
                 <ArrowRight class="w-4 h-4 ml-2" />
               </a>
@@ -160,20 +160,20 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <!-- Readings section -->
           {#if content.metadata?.readings && content.metadata.readings.length > 0}
-            <div class="bg-blue-50 rounded-lg p-6 shadow-sm">
+            <div class="bg-primary/10 rounded-lg p-6 shadow-sm">
               <h2 class="text-xl font-libre-caslon mb-4 flex items-center">
-                <BookOpen class="w-5 h-5 mr-2 text-blue-700" />
+                <BookOpen class="w-5 h-5 mr-2 text-primary" />
                 <span>Readings</span>
               </h2>
               <ul class="space-y-3">
                 {#each content.metadata.readings as reading}
-                  <li class="font-archivo bg-white p-3 rounded shadow-sm border border-blue-100">
-                    <div class="font-semibold text-blue-800">{reading.title}</div> 
+                  <li class="font-archivo bg-card p-3 rounded shadow-sm border border-primary/20">
+                    <div class="font-semibold text-primary">{reading.title}</div> 
                     {#if reading.author}
-                      <div class="text-sm text-gray-600">by {reading.author}</div>
+                      <div class="text-sm text-muted-foreground">by {reading.author}</div>
                     {/if}
                     {#if reading.pages}
-                      <div class="text-sm text-gray-500 mt-1">Pages: {reading.pages}</div>
+                      <div class="text-sm text-muted-foreground mt-1">Pages: {reading.pages}</div>
                     {/if}
                   </li>
                 {/each}
@@ -183,20 +183,20 @@
 
           <!-- Assignments section -->
           {#if content.metadata?.assignments && content.metadata.assignments.length > 0}
-            <div class="bg-sage-50 rounded-lg p-6 shadow-sm">
+            <div class="bg-secondary/10 rounded-lg p-6 shadow-sm">
               <h2 class="text-xl font-libre-caslon mb-4 flex items-center">
-                <Clipboard class="w-5 h-5 mr-2 text-sage-700" />
+                <Clipboard class="w-5 h-5 mr-2 text-secondary" />
                 <span>Assignments</span>
               </h2>
               <ul class="space-y-4">
                 {#each content.metadata.assignments as assignment}
-                  <li class="font-archivo bg-white p-3 rounded shadow-sm border border-sage-100">
-                    <div class="font-semibold text-sage-800">{assignment.title}</div>
+                  <li class="font-archivo bg-card p-3 rounded shadow-sm border border-secondary/20">
+                    <div class="font-semibold text-secondary">{assignment.title}</div>
                     {#if assignment.due}
-                      <div class="text-sm text-red-600 mt-1 font-medium">Due: {assignment.due}</div>
+                      <div class="text-sm text-destructive mt-1 font-medium">Due: {assignment.due}</div>
                     {/if}
                     {#if assignment.description}
-                      <div class="mt-2 text-gray-700">{assignment.description}</div>
+                      <div class="mt-2 text-muted-foreground">{assignment.description}</div>
                     {/if}
                   </li>
                 {/each}
@@ -212,9 +212,9 @@
       </div>
     </div>
   {:else}
-    <div class="flex justify-center items-center h-64 bg-white rounded-lg shadow-sm">
-      <div class="animate-pulse text-gray-400 font-archivo flex flex-col items-center">
-        <div class="w-8 h-8 border-4 border-t-blue-500 border-blue-200 rounded-full animate-spin mb-4"></div>
+    <div class="flex justify-center items-center h-64 bg-card rounded-lg shadow-sm">
+      <div class="animate-pulse text-muted-foreground font-archivo flex flex-col items-center">
+        <div class="w-8 h-8 border-4 border-t-primary border-primary/20 rounded-full animate-spin mb-4"></div>
         <div>Loading content...</div>
       </div>
     </div>

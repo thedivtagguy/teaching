@@ -351,8 +351,8 @@
   
   .timer-display {
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: #111111;
-    color: #ff8800;
+    background-color: var(--course-neutral);
+    color: var(--course-orange);
     padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
@@ -430,7 +430,7 @@
       background-color: var(--color-red, #B56666);
     }
     50% {
-      background-color: #ff0000;
+      background-color: var(--course-red);
     }
   }
   

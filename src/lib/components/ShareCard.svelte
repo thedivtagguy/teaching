@@ -10,16 +10,16 @@
   export let type = 'page'; // 'page', 'assignment', 'day'
   
   // Color theme based on the theme variables in app.css
-  $: bgColor = type === 'assignment' ? '#4D80E6' : // blue
-              type === 'day' ? '#92DE86' : // green
-              '#F8FBF8'; // default light
+  $: bgColor = type === 'assignment' ? 'var(--course-blue)' : // blue
+              type === 'day' ? 'var(--course-green)' : // green
+              'var(--course-base-100)'; // default light
   
   $: textColor = (type === 'assignment' || type === 'day') ? 
-                 '#FFFFFF' : '#2B2B2B'; // white or dark
+                 'var(--course-base-100)' : 'var(--course-neutral)'; // white or dark
   
-  $: accentColor = type === 'assignment' ? '#E8C85A' : // yellow
-                  type === 'day' ? '#E8845A' : // orange
-                  '#949B80'; // sage
+  $: accentColor = type === 'assignment' ? 'var(--course-yellow)' : // yellow
+                  type === 'day' ? 'var(--course-orange)' : // orange
+                  'var(--course-sage)'; // sage
 </script>
 
 <div 
@@ -82,8 +82,8 @@
       style:display="inline-block"
       style:padding="8px 16px"
       style:margin-bottom="30px"
-      style:background-color="#2B2B2B"
-      style:color="#FFFFFF"
+      style:background-color="var(--course-neutral)"
+      style:color="var(--course-base-100)"
       style:border-radius="1rem"
       style:letter-spacing="0.5px"
       style:font-family="'Roboto Condensed', sans-serif"
@@ -141,7 +141,7 @@
     style:align-items="center"
     style:margin-top="60px"
     style:padding-top="20px"
-    style:border-top="1px solid {textColor === '#FFFFFF' ? 'rgba(255,255,255,0.2)' : 'rgba(43,43,43,0.2)'}"
+    style:border-top="1px solid {textColor === 'var(--course-base-100)' ? 'rgba(255,255,255,0.2)' : 'rgba(43,43,43,0.2)'}"
   >
     <div
       style:font-size="24px"
@@ -157,7 +157,7 @@
       style:border-radius="6px"
       style:box-shadow="0 2px 0 0 rgba(43, 43, 43, 0.6)"
       style:background-color={accentColor}
-      style:color="#2B2B2B"
+      style:color="var(--course-neutral)"
     >
      teaching.aman.bh
     </div>

@@ -40,6 +40,6 @@
 
 <style>
   :global(body) {
-    background-color: #f8f9fa;
+    background-color: var(--color-base-100);
   }
 </style> 

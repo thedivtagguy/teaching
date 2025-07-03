@@ -312,7 +312,7 @@
     margin: 1.5rem auto;
     border-radius: 0.5rem;
     display: block;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
   }
   
   /* Horizontal rule */
@@ -320,14 +320,14 @@
     margin: 2rem 0;
     border: 0;
     height: 1px;
-    background-color: #e2e8f0;
+    background-color: var(--color-border);
   }
   
   /* Special elements for educational content */
   :global(.md-content details) {
     margin-bottom: 1.5rem;
     border-radius: 0.5rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-border);
     padding: 0.5rem 1rem;
   }
   
@@ -335,12 +335,12 @@
     font-weight: 600;
     cursor: pointer;
     padding: 0.5rem 0;
-    color: #3182ce;
+    color: var(--color-blue);
   }
   
   :global(.md-content details[open] summary) {
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--color-border);
   }
   
   /* Last updated styling */

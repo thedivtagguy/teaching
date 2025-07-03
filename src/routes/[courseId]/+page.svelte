@@ -52,15 +52,15 @@
       </div>
 
       <h1 class="text-3xl font-libre-caslon mb-3">{metadata.title}</h1>
-      <h2 class="text-xl text-gray-600 font-archivo mb-6">{metadata.term}</h2>
+      <h2 class="text-xl text-muted-foreground font-archivo mb-6">{metadata.term}</h2>
       
       <div class="mb-8">
         {#if metadata?.instructor}
-          <div class="bg-blue-50 p-4 rounded-md mb-4">
+          <div class="bg-primary/10 p-4 rounded-md mb-4">
             <h3 class="!font-archivo font-semibold mb-2">Facilitator</h3>
             <p class="mb-1">{metadata.instructor.name}</p>
             <p class="mb-1">
-              <a href="mailto:{metadata.instructor.email}" class="text-blue hover:underline">
+              <a href="mailto:{metadata.instructor.email}" class="text-primary hover:underline">
                 {metadata.instructor.email}
               </a>
             </p>
@@ -70,25 +70,25 @@
         {/if}
         
         <!-- <div class="mt-6 flex flex-col sm:flex-row gap-4">
-          <a href="/{courseId}/" class="pointer-events-none opacity-50 inline-block border border-blue text-blue py-2 px-4 rounded font-archivo transition-colors hover:bg-blue hover:text-white">
+          <a href="/{courseId}/" class="pointer-events-none opacity-50 inline-block border border-primary text-primary py-2 px-4 rounded font-archivo transition-colors hover:bg-primary hover:text-white">
             Daily Survey
           </a>
         </div> -->
       </div>
       
       {#if outlineContent}
-        <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+        <div class="bg-card p-6 rounded-lg shadow-sm mb-8">
           <MDLayout metadata={outlineContent.metadata || {}}>
             <svelte:component this={outlineContent} />
           </MDLayout>
         </div>
       {:else if error}
-        <div class="bg-red-50 border border-red-200 text-red-800 rounded-lg p-6 mb-6">
+        <div class="bg-destructive/10 border border-destructive/20 text-destructive rounded-lg p-6 mb-6">
           <p>{error}</p>
         </div>
       {:else}
-        <div class="flex justify-center items-center h-32 bg-white rounded-lg mb-6">
-          <div class="animate-pulse text-gray-400 font-archivo">
+        <div class="flex justify-center items-center h-32 bg-card rounded-lg mb-6">
+          <div class="animate-pulse text-muted-foreground font-archivo">
             Loading syllabus...
           </div>
         </div>
