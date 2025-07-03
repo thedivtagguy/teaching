@@ -1,301 +1,394 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { Clipboard, Calendar, ExternalLink, Check, Clock, FileText, AlertTriangle } from 'lucide-svelte';
-  import { onMount } from 'svelte';
-  import { assignmentStore, type AssignmentMeta, type AssignmentWithStatus } from '$lib/stores/assignments';
-  import { browser } from '$app/environment';
-  import { fly, fade } from 'svelte/transition';
-  
-  // Get course ID from URL params
-  $: courseId = $page.params.courseId;
-  
-  // Get assignments from the page data
-  $: allAssignments = ($page.data?.assignments || []) as AssignmentMeta[];
-  
-  // Process assignments to ensure they all have IDs
-  $: processedAssignments = allAssignments.map(assignment => {
-    // If the assignment already has an ID, use it
-    if (assignment.id) return assignment;
-    
-    // Otherwise create an ID from path or title
-    let id = null;
-    
-    // Try to extract from path
-    if (assignment.path) {
-      const pathMatch = assignment.path.match(/\/([^\/]+)$/);
-      if (pathMatch && pathMatch[1]) {
-        id = pathMatch[1];
-      }
-    }
-    
-    // Fall back to using the title
-    if (!id && assignment.title) {
-      id = assignment.title.replace(/\s+/g, '_');
-    }
-    
-    return {
-      ...assignment,
-      id: id || 'unknown'
-    };
-  });
-  
-  // Initialize the store on mount
-  onMount(() => {
-    if (browser) {
-      // Initialize the store for this course
-      assignmentStore.initCourse(courseId);
-      
-      // Add assignment metadata to the store
-      assignmentStore.setAssignments(courseId, processedAssignments);
-    }
-  });
-  
-  // Track assignments with completion status
-  let assignmentsWithStatus: Record<string, AssignmentWithStatus> = {};
-  
-  // Subscribe to the assignments store to get real-time updates
-  $: {
-    const unsubscribe = assignmentStore.assignments.subscribe(data => {
-      assignmentsWithStatus = data[courseId] || {};
-      // Recalculate completion count and percentage when the store updates
-      updateProgressStats();
-    });
-  }
-  
-  // Track progress stats
-  let completedCount = 0;
-  let progressPercentage = 0;
-  
-  // Function to update progress stats
-  function updateProgressStats() {
-    if (processedAssignments.length === 0) return;
-    
-    completedCount = processedAssignments.filter(assignment => isAssignmentDone(assignment)).length;
-    progressPercentage = Math.round((completedCount / processedAssignments.length) * 100);
-  }
-  
-  // Check if an assignment is completed using the store data
-  function isAssignmentDone(assignment: AssignmentMeta): boolean {
-    // Try to get the assignment from the store
-    const storeAssignment = assignmentsWithStatus[assignment.id];
-    if (storeAssignment) {
-      return storeAssignment.completed;
-    }
-    
-    // Fallback to the direct method if not in store yet
-    return browser ? assignmentStore.isCompleted(courseId, assignment.id) : false;
-  }
-  
-  // Make totalAssignments reactive
-  $: totalAssignments = processedAssignments.length;
-  
-  // Ensure progress is updated when processedAssignments change
-  $: {
-    if (Object.keys(assignmentsWithStatus).length > 0 && totalAssignments > 0) {
-      updateProgressStats();
-    }
-  }
-  
-  // Group assignments by due date
-  $: assignmentsByDue = groupAssignmentsByDueDate(processedAssignments);
-  
-  // Sort the due dates
-  $: sortedDueDates = Object.keys(assignmentsByDue).sort((a, b) => {
-    if (a === 'No Due Date') return 1;
-    if (b === 'No Due Date') return -1;
-    return new Date(b).getTime() - new Date(a).getTime();
-  });
-  
-  // Group assignments by due date
-  function groupAssignmentsByDueDate(assignments: AssignmentMeta[]): Record<string, AssignmentMeta[]> {
-    return assignments.reduce((groups: Record<string, AssignmentMeta[]>, assignment: AssignmentMeta) => {
-      const due = assignment.due || 'No Due Date';
-      if (!groups[due]) {
-        groups[due] = [];
-      }
-      groups[due].push(assignment);
-      return groups;
-    }, {});
-  }
-  
-  // Check if assignment is past due
-  function isPastDue(dueDate: string): boolean {
-    if (dueDate === 'No Due Date') return false;
-    
-    // If all assignments for this date are completed, don't mark as past due
-    const assignmentsForDate = assignmentsByDue[dueDate] || [];
-    const allCompleted = assignmentsForDate.length > 0 && 
-      assignmentsForDate.every(assignment => isAssignmentDone(assignment));
-    
-    if (allCompleted) return false;
-    
-    const now = new Date();
-    const due = new Date(dueDate);
-    due.setHours(21, 0, 0, 0); // Set to 9:00 PM
-    return now > due;
-  }
-  
-  // Format date for display
-  function formatDate(dateString: string): string {
-    if (dateString === 'No Due Date') return dateString;
-    return new Date(dateString).toLocaleDateString('en-US', { 
-      weekday: 'long', 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  }
+	import { page } from '$app/stores';
+	import {
+		Clipboard,
+		Calendar,
+		ExternalLink,
+		Check,
+		Clock,
+		FileText,
+		AlertTriangle
+	} from 'lucide-svelte';
+	import { onMount } from 'svelte';
+	import {
+		assignmentStore,
+		type AssignmentMeta,
+		type AssignmentWithStatus
+	} from '$lib/stores/assignments';
+	import { browser } from '$app/environment';
+	import { fly, fade } from 'svelte/transition';
+	import { confetti } from '@neoconfetti/svelte';
+
+	// Get course ID from URL params
+	$: courseId = $page.params.courseId;
+
+	// Get assignments from the page data
+	$: allAssignments = ($page.data?.assignments || []) as AssignmentMeta[];
+
+	// Process assignments to ensure they all have IDs
+	$: processedAssignments = allAssignments.map((assignment) => {
+		// If the assignment already has an ID, use it
+		if (assignment.id) return assignment;
+
+		// Otherwise create an ID from path or title
+		let id = null;
+
+		// Try to extract from path
+		if (assignment.path) {
+			const pathMatch = assignment.path.match(/\/([^\/]+)$/);
+			if (pathMatch && pathMatch[1]) {
+				id = pathMatch[1];
+			}
+		}
+
+		// Fall back to using the title
+		if (!id && assignment.title) {
+			id = assignment.title.replace(/\s+/g, '_');
+		}
+
+		return {
+			...assignment,
+			id: id || 'unknown'
+		};
+	});
+
+	// Initialize the store on mount
+	onMount(() => {
+		if (browser) {
+			// Initialize the store for this course
+			assignmentStore.initCourse(courseId);
+
+			// Add assignment metadata to the store
+			assignmentStore.setAssignments(courseId, processedAssignments);
+		}
+	});
+
+	// Track assignments with completion status
+	let assignmentsWithStatus: Record<string, AssignmentWithStatus> = {};
+
+	// Subscribe to the assignments store to get real-time updates
+	$: {
+		const unsubscribe = assignmentStore.assignments.subscribe((data) => {
+			assignmentsWithStatus = data[courseId] || {};
+			// Recalculate completion count and percentage when the store updates
+			updateProgressStats();
+		});
+	}
+
+	// Track progress stats
+	let completedCount = 0;
+	let progressPercentage = 0;
+
+	// Confetti state
+	let confettiForAssignment: AssignmentMeta | null = null;
+
+	// Function to update progress stats
+	function updateProgressStats() {
+		if (processedAssignments.length === 0) return;
+
+		completedCount = processedAssignments.filter((assignment) =>
+			isAssignmentDone(assignment)
+		).length;
+		progressPercentage = Math.round((completedCount / processedAssignments.length) * 100);
+	}
+
+	// Check if an assignment is completed using the store data
+	function isAssignmentDone(assignment: AssignmentMeta): boolean {
+		// Try to get the assignment from the store
+		const storeAssignment = assignmentsWithStatus[assignment.id];
+		if (storeAssignment) {
+			return storeAssignment.completed;
+		}
+
+		// Fallback to the direct method if not in store yet
+		return browser ? assignmentStore.isCompleted(courseId, assignment.id) : false;
+	}
+
+	// Toggle assignment completion status
+	function toggleAssignmentCompletion(assignment: AssignmentMeta) {
+		if (!browser) return;
+
+		const wasCompleted = isAssignmentDone(assignment);
+
+		if (wasCompleted) {
+			assignmentStore.markIncomplete(courseId, assignment.id);
+		} else {
+			assignmentStore.markComplete(courseId, assignment.id);
+
+			// Show confetti for this specific assignment
+			confettiForAssignment = assignment;
+			setTimeout(() => (confettiForAssignment = null), 3000);
+		}
+	}
+
+	// Make totalAssignments reactive
+	$: totalAssignments = processedAssignments.length;
+
+	// Ensure progress is updated when processedAssignments change
+	$: {
+		if (Object.keys(assignmentsWithStatus).length > 0 && totalAssignments > 0) {
+			updateProgressStats();
+		}
+	}
+
+	// Group assignments by due date
+	$: assignmentsByDue = groupAssignmentsByDueDate(processedAssignments);
+
+	// Sort the due dates
+	$: sortedDueDates = Object.keys(assignmentsByDue).sort((a, b) => {
+		if (a === 'No Due Date') return 1;
+		if (b === 'No Due Date') return -1;
+		return new Date(b).getTime() - new Date(a).getTime();
+	});
+
+	// Group assignments by due date
+	function groupAssignmentsByDueDate(
+		assignments: AssignmentMeta[]
+	): Record<string, AssignmentMeta[]> {
+		return assignments.reduce(
+			(groups: Record<string, AssignmentMeta[]>, assignment: AssignmentMeta) => {
+				const due = assignment.due || 'No Due Date';
+				if (!groups[due]) {
+					groups[due] = [];
+				}
+				groups[due].push(assignment);
+				return groups;
+			},
+			{}
+		);
+	}
+
+	// Check if assignment is past due
+	function isPastDue(dueDate: string): boolean {
+		if (dueDate === 'No Due Date') return false;
+
+		// If all assignments for this date are completed, don't mark as past due
+		const assignmentsForDate = assignmentsByDue[dueDate] || [];
+		const allCompleted =
+			assignmentsForDate.length > 0 &&
+			assignmentsForDate.every((assignment) => isAssignmentDone(assignment));
+
+		if (allCompleted) return false;
+
+		const now = new Date();
+		const due = new Date(dueDate);
+		due.setHours(21, 0, 0, 0); // Set to 9:00 PM
+		return now > due;
+	}
+
+	// Format date for display
+	function formatDate(dateString: string): string {
+		if (dateString === 'No Due Date') return dateString;
+		return new Date(dateString).toLocaleDateString('en-US', {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		});
+	}
 </script>
 
 <svelte:head>
-  <title>Assignments | {courseId.toUpperCase()}</title>
-  <meta name="description" content="Course assignments for {courseId.toUpperCase()}">
+	<title>Assignments | {courseId.toUpperCase()}</title>
+	<meta name="description" content="Course assignments for {courseId.toUpperCase()}" />
 </svelte:head>
 
-<div class="max-w-4xl mx-auto noise-image px-4 md:px-0 pb-16">
-  <!-- Header with progress indicator -->
-  <div class="mb-8 border-b-2 border-neutral pb-6 pt-4">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div>
-        <h1 class="text-4xl font-libre-caslon mb-2 flex items-center text-neutral">
-          <Clipboard class="w-8 h-8 mr-3 text-sage" />
-          <span class="relative">
-            Course Assignments
-            <span class="absolute -bottom-1 left-0 w-full h-[3px] bg-yellow"></span>
-          </span>
-        </h1>
-        <p class="text-red mt-4 font-archivo font-medium">
-          Unless stated otherwise, all assignments are due at 9 AM the next day.
-          <span class="block mt-1">After this, your assignment will be considered late and penalties will be applied.</span>
-        </p>
-      </div>
-      
-      <!-- Progress indicator -->
-      {#if totalAssignments > 0}
-        <div class="bg-base-200 rounded-lg p-3 border-2 border-neutral btn-drop-shadow">
-          <div class="flex items-center gap-3">
-            <div class="text-right">
-              <p class="text-sm font-bold font-archivo uppercase text-neutral">Progress</p>
-              <p class="text-lg font-bold font-roboto text-sage">{completedCount}/{totalAssignments}</p>
-            </div>
-            <div class="w-24 h-6 bg-base-100 rounded-full overflow-hidden border-2 border-neutral">
-              <div 
-                class="h-full bg-sage transition-all duration-500 ease-out" 
-                style="width: {progressPercentage}%"
-              ></div>
-            </div>
-            <p class="font-bold font-archivo text-neutral">{progressPercentage}%</p>
-          </div>
-        </div>
-      {/if}
-    </div>
-  </div>
-  
-  {#if sortedDueDates.length === 0}
-    <div class="bg-base-200 rounded-lg p-8 text-center border-2 border-neutral btn-drop-shadow">
-      <p class="text-neutral font-archivo font-bold">No assignments have been added to this course yet.</p>
-      <a href="/{courseId}" class="inline-block mt-6 bg-sage hover:bg-purple text-white font-roboto font-bold px-6 py-2 rounded-md border-2 border-neutral btn-drop-shadow uppercase transition-colors">
-        Return to Course
-      </a>
-    </div>
-  {:else}
-    <!-- Assignment List grouped by due date -->
-    <div class="space-y-8">
-      {#each sortedDueDates as dueDate, index}
-        <div 
-          in:fly={{y: 20, duration: 300, delay: index * 100}} 
-          class="bg-base-100 rounded-lg overflow-hidden border-2 border-neutral btn-drop-shadow"
-        >
-          <div class={`bg-base-200 px-6 py-3 flex items-center border-b-2 border-neutral ${isPastDue(dueDate) && dueDate !== 'No Due Date' ? 'bg-red bg-opacity-10' : ''}`}>
-            <Calendar class={`w-5 h-5 mr-2 ${isPastDue(dueDate) && dueDate !== 'No Due Date' ? 'text-neutral' : 'text-sage'}`} />
-            <div class="flex-1">
-              <h2 class="font-roboto font-bold text-lg text-neutral uppercase tracking-wide">
-                {formatDate(dueDate)}
-              </h2>
-              
-            </div>
-          </div>
-          
-          <ul class="divide-y divide-base-300">
-            {#each assignmentsByDue[dueDate] as assignment, assIndex}
-              <li 
-                in:fade={{duration: 300, delay: assIndex * 50}}
-                class={`p-6 transition-all duration-300 relative group ${
-                  isAssignmentDone(assignment) 
-                    ? 'bg-sage bg-opacity-10 border-l-4 border-sage' 
-                    : 'hover:bg-base-200'
-                }`} 
-                style={!isAssignmentDone(assignment) ? "border-left: 4px solid transparent;" : ""}
-              >
-                <div class="flex flex-col md:flex-row justify-between md:items-start gap-4">
-                  <div class="flex-1">
-                    <h3 class={`font-libre-caslon font-bold text-xl ${isAssignmentDone(assignment) ? 'text-sage-800' : 'text-neutral'}`}>
-                      {assignment.title}
-                    </h3>
-                    
-                    {#if assignment.description}
-                      <p class="text-neutral mt-2 font-archivo">{assignment.description}</p>
-                    {/if}
-                    
-                    {#if assignment.points}
-                      <div class="mt-3 flex items-center gap-2">
-                        <FileText class="w-4 h-4 text-neutral" />
-                        <span class="text-sm font-archivo font-bold">{assignment.points} points</span>
-                      </div>
-                    {/if}
-                  </div>
-                  
-                  <div class="flex flex-wrap gap-2 mt-1 md:mt-0">
-                    {#if assignment.path}
-                      <a 
-                        href="{assignment.path}"
-                        class="px-4 py-2 rounded-md bg-blue text-white hover:bg-purple transition-all border-2 border-neutral btn-drop-shadow flex items-center gap-2 transform hover:-translate-y-1 active:translate-y-0"
-                        aria-label="View assignment details"
-                      >
-                        <span class="font-archivo text-sm font-bold">View Assignment</span>
-                        <ExternalLink class="w-4 h-4" />
-                      </a>
-                    {/if}
-                    
-                    <div class={`px-4 py-2 rounded-md border-2 border-neutral flex items-center gap-2 font-archivo text-sm font-bold ${
-                      isAssignmentDone(assignment) 
-                        ? 'bg-sage text-white' 
-                        : 'bg-base-200 text-neutral'
-                    }`}>
-                      {#if isAssignmentDone(assignment)}
-                        <Check class="w-4 h-4" />
-                        <span>Completed</span>
-                      {:else}
-                        <Clock class="w-4 h-4" />
-                        <span>Pending</span>
-                      {/if}
-                    </div>
-                  </div>
-                </div>
-              </li>
-            {/each}
-          </ul>
-        </div>
-      {/each}
-    </div>
-    
-    <!-- Back to course - uncomment if needed -->
-    <!-- <div class="mt-8 flex justify-center">
-      <a 
-        href="/{courseId}" 
-        class="px-6 py-3 bg-base-200 text-neutral font-roboto font-bold rounded-md hover:bg-neutral hover:text-white transition-colors border-2 border-neutral btn-drop-shadow uppercase transform hover:-translate-y-1 active:translate-y-0"
-      >
-        Back to Course
-      </a>
-    </div> -->
-  {/if}
+<div class="noise-image mx-auto max-w-4xl px-4 pb-16 md:px-0">
+	<!-- Header with progress indicator -->
+	<div class="border-neutral mb-8 border-b-2 pb-6">
+		<div class="flex flex-col justify-between gap-2 md:flex-row md:items-end">
+			<div class="flex flex-col">
+				<h1 class="font-libre-caslon text-neutral m-0 flex items-center p-0 text-4xl">
+					Assignments
+				</h1>
+				<p class="text-base-300 font-archivo m-0 p-0 text-lg">
+					All assignments for {courseId.toUpperCase()}.
+				</p>
+			</div>
+
+			<!-- Progress indicator -->
+			{#if totalAssignments > 0}
+				<div
+					class="bg-base-200 border-neutral btn-drop-shadow w-full max-w-sm rounded-lg border-2 p-3"
+				>
+					<div class="flex items-center justify-between gap-1">
+						<div class="flex-1 text-right">
+							<p class="font-archivo text-neutral text-sm font-bold uppercase">
+								Progress ({completedCount}/{totalAssignments})
+							</p>
+						</div>
+						<div
+							class="bg-base-100 border-neutral flex h-16 w-full items-center justify-start overflow-hidden rounded-sm border-2"
+						>
+							<div
+								class="bg-sage h-full transition-all duration-500 ease-out"
+								style="width: {progressPercentage}%"
+							></div>
+							<p
+								class="font-archivo absolute {completedCount === totalAssignments
+									? 'text-sage-700'
+									: 'text-neutral'} mt-4 ml-2 text-right font-bold"
+								style="color: {completedCount === totalAssignments
+									? 'var(--sage)'
+									: 'var(--neutral)'}"
+							>
+								{progressPercentage}%
+							</p>
+						</div>
+					</div>
+				</div>
+			{/if}
+		</div>
+	</div>
+
+	{#if sortedDueDates.length === 0}
+		<div class="bg-base-200 border-neutral btn-drop-shadow rounded-lg border-2 p-8 text-center">
+			<p class="text-neutral font-archivo font-bold">
+				No assignments have been added to this course yet.
+			</p>
+			<a
+				href="/{courseId}"
+				class="bg-blue hover:bg-purple font-roboto border-neutral btn-drop-shadow mt-6 inline-block rounded-md border-2 px-6 py-2 font-bold text-white uppercase transition-colors"
+			>
+				Return to Course
+			</a>
+		</div>
+	{:else}
+		<!-- Assignment List grouped by due date -->
+		<div class="space-y-8">
+			{#each sortedDueDates as dueDate, index}
+				<div
+					in:fly={{ y: 20, duration: 300, delay: index * 100 }}
+					class="bg-base-100 border-neutral btn-drop-shadow overflow-hidden rounded-lg border-2"
+				>
+					<div class=" border-neutral border-b-2 px-6">
+						<h2 class="font-roboto text-neutral py-4 text-xl font-bold tracking-wide">
+							{formatDate(dueDate)}
+						</h2>
+					</div>
+
+					<ul class="divide-base-300 divide-y">
+						{#each assignmentsByDue[dueDate] as assignment, assIndex}
+							<!-- Apply a subtle background when assignment is completed -->
+							<li
+								in:fade={{ duration: 300, delay: assIndex * 50 }}
+								class={`group relative p-6 transition-all duration-300 ${
+									isAssignmentDone(assignment)
+										? 'bg-sage bg-opacity-10  border-y border-black'
+										: 'hover:bg-base-200'
+								}`}
+							>
+								<div class="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+									<div class="flex-1">
+										<h3
+											class="font-roboto text-neutral text-md mb-1 flex items-center gap-2 font-bold"
+										>
+											<span class={isAssignmentDone(assignment) ? 'text-sage-800' : 'text-neutral'}>
+												{assignment.title}
+											</span>
+										</h3>
+
+										{#if assignment.description}
+											<span
+												class="text-neutral font-archivo mt-1 block text-sm font-normal italic opacity-75"
+												>{assignment.description}</span
+											>
+										{/if}
+
+										<div
+											class="font-archivo mt-3 flex flex-wrap items-center gap-4 text-sm"
+											class:text-sage-700={isAssignmentDone(assignment)}
+											class:text-neutral={!isAssignmentDone(assignment)}
+										>
+											{#if assignment.points}
+												<span class="flex items-center gap-1">
+													<FileText class="h-4 w-4" />
+													<span>{assignment.points} points</span>
+												</span>
+											{/if}
+
+											{#if assignment.due && assignment.due !== 'No Due Date'}
+												<span class="flex items-center gap-1">
+													<Clock class="h-4 w-4" />
+													<span>Due {formatDate(assignment.due)}</span>
+												</span>
+											{/if}
+
+											{#if assignment.path}
+												<a
+													href={assignment.path}
+													class="{isAssignmentDone(assignment)
+														? 'text-neutral'
+														: 'text-blue'} hover:text-purple flex items-center font-bold underline underline-offset-2 hover:no-underline"
+												>
+													<span>View Details</span>
+												</a>
+											{/if}
+										</div>
+									</div>
+
+									<div class="mt-1 flex flex-wrap gap-2 md:mt-0">
+										<button
+											onclick={() => toggleAssignmentCompletion(assignment)}
+											class={`flex transform items-center gap-2 rounded-md px-4 py-2 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 ${
+												isAssignmentDone(assignment)
+													? 'bg-sage border-neutral border-2 text-white shadow-inner'
+													: 'bg-base-200 text-neutral hover:bg-sage border-neutral border-2 hover:text-white'
+											}`}
+											aria-label={isAssignmentDone(assignment)
+												? 'Mark as incomplete'
+												: 'Mark as complete'}
+										>
+											{#if isAssignmentDone(assignment)}
+												<Check class="h-5 w-5" />
+											{/if}
+											<span class="font-archivo text-sm font-bold"
+												>{isAssignmentDone(assignment) ? 'Completed' : 'Mark complete'}</span
+											>
+										</button>
+
+										{#if assignment.path}
+											<a
+												href={assignment.path}
+												class="bg-blue hover:bg-purple border-neutral btn-drop-shadow flex transform items-center gap-2 rounded-md border-2 px-4 py-2 text-white transition-all hover:-translate-y-1 active:translate-y-0"
+												aria-label="View assignment details"
+											>
+												<ExternalLink class="h-5 w-5" />
+												<span class="font-archivo text-sm font-bold">View</span>
+											</a>
+										{/if}
+									</div>
+								</div>
+
+								<!-- Assignment-specific confetti -->
+								{#if confettiForAssignment && confettiForAssignment.id === assignment.id}
+									<div
+										use:confetti={{
+											particleCount: 75,
+											force: 0.7,
+											stageWidth: 800,
+											stageHeight: 400,
+											colors: ['#E8C85A', '#E8845A', '#4D80E6', '#92DE86', '#949B80']
+										}}
+										class="pointer-events-none absolute inset-0 z-10"
+									></div>
+								{/if}
+							</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</div>
+	{/if}
 </div>
 
 <style>
-  .noise-bg {
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 245 245' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='8.51' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
-    opacity: 1;
-    z-index: 1;
-  }
-</style> 
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		margin: 0;
+	}
+</style>

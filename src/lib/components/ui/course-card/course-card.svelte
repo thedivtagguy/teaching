@@ -26,26 +26,30 @@
 		// Base course card styling
 		"relative",
 		
-		// Variant-specific styling
+		// Variant-specific styling - flat retro style
 		variant === "lesson" && [
-			"border-2 border-border bg-card/80 backdrop-blur-sm",
-			"shadow-lg hover:shadow-xl transition-shadow duration-300"
+			"card-flat",
+			"bg-card"
 		],
 		
 		variant === "assignment" && [
-			"border-2 border-primary/50 bg-gradient-to-br from-primary/5 to-secondary/5",
-			"shadow-md hover:shadow-lg transition-all duration-300 hover:border-primary"
+			"border-2 border-primary bg-primary/5",
+			"shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)]",
+			"transition-all duration-200"
 		],
 		
 		variant === "highlight" && [
-			"border-2 border-accent bg-accent/10",
-			"shadow-[var(--shadow-btn-drop)] relative",
-			"before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-accent/5 before:to-transparent before:rounded-lg"
+			"card-elevated",
+			"bg-accent/10 border-accent"
 		],
 		
 		variant === "bordered" && [
-			"border-2 border-muted-foreground/20 bg-card",
-			"hover:border-muted-foreground/40 transition-colors duration-200"
+			"border-2 border-muted bg-card",
+			"hover:border-foreground/40 transition-colors duration-200"
+		],
+		
+		variant === "default" && [
+			"card-flat"
 		],
 		
 		// Add noise texture

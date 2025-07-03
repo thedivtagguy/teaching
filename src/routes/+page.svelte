@@ -1,57 +1,74 @@
 <script>
-  const resources = [
-    {
-      title: "CDV2025 - Introduction to Data Visualization",
-      description: "Introduction to data visualization for design students taught at Chitkara University, 2025",
-      link: "/cdv2025",
-      color: "bg-orange"
-    },
-  
-    {
-      title: "Introduction to QGIS",
-      description: "Gentle introduction to QGIS for beginners, with a focus on using OpenStreetMap data",
-      link: "https://aman.bh/qgis",
-      color: "bg-blue"
-    },
-    {
-      title: "R with Penguins",
-      description: "A gentle introduction to R and summary statistics with the penguins dataset",
-      link: "https://rwithpenguins.netlify.app/",
-      color: "bg-sage"
-    }
-  ]
+	const resources = [
+		{
+			title: 'WEB2025 - Introduction to Making for the Web',
+			description:
+				'Websites! Designing them, building them and (almost) everything in between. Taught at DA-IICT, 2025',
+			link: '/web2025',
+			color: 'bg-sage'
+		},
+		{
+			title: 'CDV2025 - Introduction to Data Visualization',
+			description:
+				'Introduction to data visualization for design students taught at Chitkara University, 2025',
+			link: '/cdv2025',
+			color: 'bg-orange'
+		},
+
+		{
+			title: 'Introduction to QGIS',
+			description:
+				'Gentle introduction to QGIS for beginners, with a focus on using OpenStreetMap data',
+			link: 'https://aman.bh/qgis',
+			color: 'bg-blue'
+		},
+		{
+			title: 'R with Penguins',
+			description: 'A gentle introduction to R and summary statistics with the penguins dataset',
+			link: 'https://rwithpenguins.netlify.app/',
+			color: 'bg-sage'
+		}
+	];
 </script>
 
-<svelte:head>
-  <title>Learning Resources</title>
-</svelte:head>
+<div class="noise-image mx-auto max-w-[1000px] p-8">
+	<header class="border-neutral mb-6 border-b-2 pb-2 text-center">
+		<h1 class="text-neutral font-libre-caslon mx-auto mb-1 max-w-2xl text-5xl uppercase">
+			AMAN'S GENERAL MISHMASH OF LEARNING RESOURCES
+		</h1>
+	</header>
 
-<div class="max-w-[1000px] mx-auto p-8 noise-image">
-  <header class="mb-6 pb-2 border-b-2 border-neutral text-center">
-    <h1 class="text-5xl text-neutral mb-1 font-libre-caslon uppercase ">AMAN'S GENERAL MISHMASH OF</h1>
-    <h1 class="text-5xl text-neutral mb-4 font-libre-caslon uppercase ">LEARNING RESOURCES</h1>
-  </header>
-  
-  <main class="min-h-[70svh]">
-    <div class="grid grid-cols-1  gap-6 mb-12">
-      
-      
-      {#each resources as resource, i}
-      <div class="bg-base-100 rounded-lg border-2 border-neutral overflow-hidden">
-        <div class="p-6 {resource.color}">
-          <h2 class="text-2xl font-bold text-neutral font-libre-caslon">{resource.title}</h2>
-          <p class="mt-2 font-archivo text-neutral">{resource.description}</p>
-          <a href={resource.link} class="mt-4 inline-block bg-base-200 text-neutral py-2 px-4 rounded-md border-2 border-neutral btn-drop-shadow font-roboto font-bold uppercase transition-colors hover:bg-neutral hover:text-white">View</a>
-        </div>
-      </div>
-      {/each}
-    </div>
-    
-  
-    
-  </main>
-  
-  <footer class="mt-12 border-t border-base-300 pt-4 text-base-300">
-    <p class="font-archivo">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" class="text-blue">CC BY-NC-SA 4.0<img class="inline-block w-16 ml-2 h-auto" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" alt="CC BY-NC-SA 4.0"></a></p>
-  </footer>
+	<main class="min-h-[50svh]">
+		<div class=" grid grid-cols-1 gap-6">
+			{#each resources as resource, i}
+				<div class="bg-base-100 border-neutral m-0 overflow-hidden rounded-lg border-2 p-0">
+					<div class="p-6 {resource.color}">
+						<h2 class="text-neutral font-libre-caslon m-0 text-2xl font-bold">{resource.title}</h2>
+						<p class="font-archivo text-neutral mt-2">{resource.description}</p>
+						<a
+							href={resource.link}
+							class="bg-base-200 text-neutral border-neutral btn-drop-shadow font-roboto hover:bg-neutral inline-block rounded-md border-2 px-4 py-2 font-bold uppercase transition-colors hover:text-white"
+							>View</a
+						>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</main>
+
+	<footer class="border-base-300 text-base-300 mt-12 border-t pt-4">
+		<p class="font-archivo">
+			Licensed under <a
+				href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+				target="_blank"
+				rel="license noopener noreferrer"
+				class="text-blue"
+				>CC BY-NC-SA 4.0<img
+					class="ml-2 inline-block h-auto w-16"
+					src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png"
+					alt="CC BY-NC-SA 4.0"
+				/></a
+			>
+		</p>
+	</footer>
 </div>
