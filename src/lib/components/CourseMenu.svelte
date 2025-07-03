@@ -81,10 +81,10 @@
 			'font-archivo -ml-px block border-l-2 py-1 pl-3 text-sm transition-colors',
 			currentPath === item.path
 				? isAppendix
-					? 'border-blue text-blue font-bold'
+					? 'border-primary text-primary font-bold'
 					: 'border-primary font-bold'
 				: isAppendix
-					? 'text-neutral hover:text-blue hover:border-base-300 border-transparent'
+					? 'text-foreground hover:text-primary hover:border-muted border-transparent'
 					: 'text-foreground hover:text-primary hover:border-muted border-transparent'
 		)}
 	>
@@ -110,13 +110,13 @@
 			on:click={() => toggleSection(section.title)}
 			aria-expanded={expandedSections[section.title] || false}
 		>
-			<h4 class="font-libre-caslon text-neutral group-hover:text-blue flex items-center font-bold">
+			<h4 class="font-libre-caslon text-foreground group-hover:text-primary flex items-center font-bold">
 				{section.title}
 			</h4>
 			{#if expandedSections[section.title]}
-				<ChevronUp class="text-neutral h-4 w-4" />
+				<ChevronUp class="text-foreground h-4 w-4" />
 			{:else}
-				<ChevronDown class="text-neutral h-4 w-4" />
+				<ChevronDown class="text-foreground h-4 w-4" />
 			{/if}
 		</button>
 
@@ -125,7 +125,7 @@
 		{/if}
 	{:else}
 		<!-- Non-Collapsible Section Header -->
-		<h4 class="font-libre-caslon text-neutral mb-3 font-bold">
+		<h4 class="font-libre-caslon text-foreground mb-3 font-bold">
 			{section.title}
 		</h4>
 
@@ -197,7 +197,7 @@
 
 				<!-- Appendix sections with divider -->
 				{#if menuData.sections.some((s) => isAppendixSection(s.title))}
-					<div class="border-base-300 my-4 border-t"></div>
+					<div class="border-border my-4 border-t"></div>
 
 					<ul class="w-full space-y-4">
 						{#each menuData.sections.filter((s) => isAppendixSection(s.title)) as section}

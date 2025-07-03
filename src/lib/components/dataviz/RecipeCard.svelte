@@ -139,23 +139,23 @@
     
     /* Color classes matching the original */
     :global(.bg-red-600) {
-      background-color: #f03;
+      background-color: var(--course-red);
     }
     
     :global(.bg-green-700) {
-      background-color: #090;
+      background-color: var(--course-green);
     }
     
     :global(.bg-blue-600) {
-      background-color: #03f;
+      background-color: var(--course-blue);
     }
     
     :global(.bg-yellow-500) {
-      background-color: #fc0;
+      background-color: var(--course-yellow);
     }
     
     :global(.bg-pink-600) {
-      background-color: #f09;
+      background-color: var(--course-purple);
     }
     
     /* Exact spacing matching */

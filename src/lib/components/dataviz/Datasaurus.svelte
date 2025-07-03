@@ -168,12 +168,12 @@
 
 <!-- WebR Initialization Loading Overlay -->
 {#if !isWebRReady}
-<div class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
+<div class="fixed inset-0 flex items-center justify-center bg-background/90 z-50">
   <div class="text-center p-6 rounded-lg max-w-md">
     <div class="spinner mb-4"></div>
     <h2 class="text-xl font-bold mb-2">Loading R Environment</h2>
-    <p class="text-gray-600">{webRInitMessage}</p>
-    <p class="text-sm text-gray-500 mt-2">This may take a moment on first load...</p>
+    <p class="text-muted-foreground">{webRInitMessage}</p>
+    <p class="text-sm text-muted-foreground mt-2">This may take a moment on first load...</p>
   </div>
 </div>
 {/if}
@@ -304,7 +304,7 @@
     margin: 0 auto;
     border: 3px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    border-top-color: #4D80E6;
+    border-top-color: var(--course-blue);
     animation: spin 1s ease-in-out infinite;
   }
   

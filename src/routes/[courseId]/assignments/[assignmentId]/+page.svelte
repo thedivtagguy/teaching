@@ -81,49 +81,49 @@
 <div class="max-w-3xl overflow-hidden relative mx-auto">
   <!-- Back to course link -->
   <div class="mb-6">
-    <a href="/{courseId}/assignments" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+    <a href="/{courseId}/assignments" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
       <ArrowLeft class="w-4 h-4 mr-2" />
       <span class="font-archivo">Back to assignments</span>
     </a>
   </div>
   
   {#if loadError}
-    <div class="bg-red-50 border border-red-200 text-red-800 rounded-lg p-6 mb-6 shadow-sm">
+    <div class="bg-destructive/10 border border-destructive/20 text-destructive rounded-lg p-6 mb-6 shadow-sm">
       <p class="font-archivo text-lg">{loadError}</p>
     </div>
   {:else if assignment}
-    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+    <div class="bg-card rounded-lg shadow-sm overflow-hidden">
       <!-- Assignment header -->
-      <div class="border-b border-gray-100 bg-gradient-to-r from-blue-50 to-sage-50 p-6">
+      <div class="border-b border-muted bg-gradient-to-r from-primary/10 to-secondary/10 p-6">
         <h1 class="text-2xl font-libre-caslon mb-3">
           {title}
         </h1>
         
         <div class="flex flex-wrap w-full gap-4 text-sm">
           {#if due}
-            <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border border-red-100">
-              <Calendar class="w-4 h-4 mr-2 text-red-500" />
-              <span class="font-archivo text-red-600">Due: {due}</span>
+            <div class="flex items-center bg-card px-3 py-1 rounded-full shadow-sm border border-destructive/20">
+              <Calendar class="w-4 h-4 mr-2 text-destructive" />
+              <span class="font-archivo text-destructive">Due: {due}</span>
             </div>
           {/if}
           
           {#if points}
-            <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border border-blue-100">
-              <span class="font-archivo text-blue-600">Points: {points}</span>
+            <div class="flex items-center bg-card px-3 py-1 rounded-full shadow-sm border border-primary/20">
+              <span class="font-archivo text-primary">Points: {points}</span>
             </div>
           {/if}
           
           {#if isCompleted}
-            <div class="flex items-center bg-sage-100 px-3 py-1 rounded-full shadow-sm border border-sage-200">
-              <CheckCircle class="w-4 h-4 mr-1 text-sage-600" />
-              <span class="font-archivo text-sage-700">Completed</span>
+            <div class="flex items-center bg-secondary/20 px-3 py-1 rounded-full shadow-sm border border-secondary/30">
+              <CheckCircle class="w-4 h-4 mr-1 text-secondary-foreground" />
+              <span class="font-archivo text-secondary-foreground">Completed</span>
             </div>
           {/if}
 
           <div class="ml-auto">
             <button 
               on:click={submitAssignment}
-              class={`${isCompleted ? 'bg-sage text-neutral' : 'bg-blue text-white'} py-2 px-4 rounded font-archivo transition-colors`}
+              class={`${isCompleted ? 'bg-secondary text-secondary-foreground' : 'bg-primary text-primary-foreground'} py-2 px-4 rounded font-archivo transition-colors`}
             >
               {isCompleted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
             </button>
@@ -135,7 +135,7 @@
       <!-- Assignment description -->
       <div class="p-6">
         {#if description}
-          <div class="mb-6 font-archivo text-gray-700 text-lg border-l-4 border-blue-200 pl-4 py-2 bg-blue-50 rounded-r-md">
+          <div class="mb-6 font-archivo text-muted-foreground text-lg border-l-4 border-primary/20 pl-4 py-2 bg-primary/10 rounded-r-md">
             {description}
           </div>
         {/if}
@@ -149,9 +149,9 @@
      
     </div>
   {:else}
-    <div class="flex justify-center items-center h-64 bg-white rounded-lg shadow-sm">
-      <div class="animate-pulse text-gray-400 font-archivo flex flex-col items-center">
-        <div class="w-8 h-8 border-4 border-t-blue-500 border-blue-200 rounded-full animate-spin mb-4"></div>
+    <div class="flex justify-center items-center h-64 bg-card rounded-lg shadow-sm">
+      <div class="animate-pulse text-muted-foreground font-archivo flex flex-col items-center">
+        <div class="w-8 h-8 border-4 border-t-primary border-primary/20 rounded-full animate-spin mb-4"></div>
         <div>Loading assignment...</div>
       </div>
     </div>
@@ -164,7 +164,7 @@
   use:confetti={{
     particleCount: 100,
     force: 0.6,
-    colors: ['#FFD700', '#FFA500', '#FF4500', '#008000', '#4169E1']
+    colors: ['hsl(var(--primary))', 'hsl(var(--secondary))', 'hsl(var(--accent))', 'hsl(var(--primary) / 0.8)', 'hsl(var(--secondary) / 0.8)']
   }}
   class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] pointer-events-none z-50"
 ></div>

@@ -136,7 +136,7 @@
     <form on:submit|preventDefault={handleSubmit} class="space-y-6">
       
       {#if submitSuccess}
-        <Alert.Root class="border-green-200 bg-green-50 text-green-800">
+        <Alert.Root class="border-primary/20 bg-primary/5 text-primary">
           <CheckCircle class="h-4 w-4" />
           <Alert.Title>Success!</Alert.Title>
           <Alert.Description>Entry submitted successfully!</Alert.Description>
