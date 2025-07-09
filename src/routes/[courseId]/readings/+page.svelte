@@ -34,11 +34,7 @@
 		totalReadings > 0 ? Math.round((completedCount / totalReadings) * 100) : 0;
 
 	// Confetti state
-	let showConfetti = false;
-	let confettiElement: HTMLElement;
-
-	// Reading to show confetti for
-	let confettiForReading: Reading | null = null;
+	let confettiForReading: string | null = null;
 
 	// Function to group readings by source
 	function groupReadingsBySource(readings: Reading[]): Record<string, Reading[]> {
@@ -72,8 +68,8 @@
 			completedReadings.add(key);
 			localStorage.setItem(key, 'completed');
 
-			// Show confetti for this specific reading
-			confettiForReading = reading;
+			// Trigger confetti for this specific reading
+			confettiForReading = reading.title;
 			setTimeout(() => (confettiForReading = null), 3000);
 		}
 
@@ -271,20 +267,21 @@
 									</div>
 								</div>
 
-								<!-- Reading-specific confetti -->
-								{#if confettiForReading && confettiForReading.title === reading.title}
+								<!-- Confetti -->
+								{#if confettiForReading === reading.title}
 									<div
 										use:confetti={{
 											particleCount: 75,
 											force: 0.7,
 											stageWidth: 800,
 											stageHeight: 400,
+											duration: 3000,
 											colors: [
-												'hsl(var(--primary))',
-												'hsl(var(--secondary))',
-												'hsl(var(--accent))',
-												'hsl(var(--muted))',
-												'hsl(var(--foreground))'
+												'#FFC700',
+												'#FF0000', 
+												'#2E3191',
+												'#41BBC7',
+												'#00FF00'
 											]
 										}}
 										class="pointer-events-none absolute inset-0 z-10"
