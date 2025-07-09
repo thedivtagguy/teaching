@@ -16,9 +16,4 @@
   status = 200
   force = true
 
-[[redirects]]
-  from = "/api/entries"
-  to = "/.netlify/functions/google-spreadsheet-function"
-  status = 200
-  force = true
 

@@ -5,6 +5,7 @@
   import TableOfContents from '$lib/components/TableOfContents.svelte';
   import SEO from '$lib/components/SEO.svelte';
   import { Calendar, BookOpen, Clipboard, ArrowLeft, ArrowRight } from 'lucide-svelte';
+  import { getContentFile } from '$lib/utils/contentService';
   import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
   
   // Get course ID and day ID from URL params
@@ -43,33 +44,23 @@
   // Use a reactive statement instead of onMount to load content
   // This will re-run whenever courseId or dayId changes
   $: {
-    const loadContent = async () => {
-      // Reset content and error when parameters change
-      content = null;
-      error = null;
-      
-      // Try loading with different extensions
-      const extensions = ['.svx', '.md'];
-      
-      for (const ext of extensions) {
-        try {
-          // Dynamically import the content based on course and day
-          const module = await import(`../../../content/${courseId}/${dayId}${ext}`);
-          content = module.default;
-          return; // Exit early if successful
-        } catch (err) {
-          // Continue to next extension if this one fails
-          continue;
-        }
-      }
-      
-      // If we get here, none of the extensions worked
-      error = `Could not load content for ${courseId}/${dayId}`;
-      console.error(`No supported file found for ${courseId}/${dayId}`);
-    };
+    // Reset content and error when parameters change
+    content = null;
+    error = null;
     
-    // Call the function to load content
-    loadContent();
+    try {
+      // Use content service to get the content
+      const module = getContentFile(courseId, dayId);
+      if (module) {
+        content = module.default;
+      } else {
+        error = `Could not load content for ${courseId}/${dayId}`;
+        console.error(`No supported file found for ${courseId}/${dayId}`);
+      }
+    } catch (err) {
+      error = `Could not load content for ${courseId}/${dayId}`;
+      console.error(`Error loading content for ${courseId}/${dayId}:`, err);
+    }
   }
 </script>
 

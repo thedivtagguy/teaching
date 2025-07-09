@@ -1,23 +1,30 @@
-import fs from 'fs';
-import path from 'path';
 import * as yaml from 'js-yaml';
-import grayMatter from 'gray-matter';
+import type { 
+  MenuDataType, 
+  CourseMenu, 
+  MenuSection, 
+  MenuItem, 
+  CourseMeta,
+  ContentFrontmatter,
+  CourseData
+} from './contentSchema';
+
+// Import all content files using Vite's import.meta.glob, excluding notes folders
+const contentFiles = import.meta.glob([
+  '/src/content/**/*.svx',
+  '/src/content/**/*.md',
+  '!/src/content/**/notes/**'
+], { 
+  eager: true 
+});
+
+const yamlFiles = import.meta.glob('/src/content/**/meta.yaml', { 
+  as: 'raw', 
+  eager: true 
+});
 
 // Supported content file extensions
 const SUPPORTED_EXTENSIONS = ['.svx', '.md'];
-
-/**
- * Find a content file with any supported extension
- */
-function findContentFile(basePath: string, filename: string): string | null {
-  for (const ext of SUPPORTED_EXTENSIONS) {
-    const fullPath = path.join(basePath, `${filename}${ext}`);
-    if (fs.existsSync(fullPath)) {
-      return fullPath;
-    }
-  }
-  return null;
-}
 
 /**
  * Check if a file has a supported content extension
@@ -33,99 +40,74 @@ function getContentFileExtension(filename: string): string {
   const ext = SUPPORTED_EXTENSIONS.find(ext => filename.endsWith(ext));
   return ext || '.svx'; // Default to .svx for backwards compatibility
 }
-import type { 
-  MenuDataType, 
-  CourseMenu, 
-  MenuSection, 
-  MenuItem, 
-  CourseMeta,
-  ContentFrontmatter,
-  CourseData
-} from './contentSchema';
-
-// Get the project root directory
-const rootDir = process.cwd();
-const contentDir = path.join(rootDir, 'src/content');
 
 // Cache for course content to improve performance
 interface ContentCache {
   menus: Map<string, CourseMenu>;
   metadata: Map<string, CourseMeta>;
-  lastUpdated: Map<string, number>;
 }
 
 const contentCache: ContentCache = {
   menus: new Map(),
-  metadata: new Map(),
-  lastUpdated: new Map()
+  metadata: new Map()
 };
 
 /**
- * Read and parse a YAML file
+ * Parse a YAML string
  */
-function readYamlFile(filePath: string): any {
+function parseYaml(content: string): any {
   try {
-    if (!fs.existsSync(filePath)) return null;
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    return yaml.load(fileContents);
+    return yaml.load(content);
   } catch (error) {
-    console.error(`Error reading YAML file ${filePath}:`, error);
+    console.error('Error parsing YAML:', error);
     return null;
   }
 }
 
 /**
- * Check if a file has been modified since last cache update
+ * Get course directories from available content
  */
-function hasContentChanged(courseId: string): boolean {
-  const lastUpdated = contentCache.lastUpdated.get(courseId) || 0;
-  const courseDir = path.join(contentDir, courseId);
+function getCourseDirectories(): string[] {
+  const courses = new Set<string>();
   
-  if (!fs.existsSync(courseDir)) return false;
-  
-  // Check if meta.yaml has changed
-  const metaPath = path.join(courseDir, 'meta.yaml');
-  if (fs.existsSync(metaPath)) {
-    const metaStat = fs.statSync(metaPath);
-    if (metaStat.mtimeMs > lastUpdated) return true;
-  }
-  
-  // Check if any content file has changed
-  const files = fs.readdirSync(courseDir, { withFileTypes: true });
-  for (const file of files) {
-    if (file.isFile() && isSupportedContentFile(file.name)) {
-      const filePath = path.join(courseDir, file.name);
-      const fileStat = fs.statSync(filePath);
-      if (fileStat.mtimeMs > lastUpdated) return true;
-    } else if (file.isDirectory()) {
-      // Check subdirectories like assignments/
-      const subDir = path.join(courseDir, file.name);
-      const subFiles = fs.readdirSync(subDir, { withFileTypes: true });
-      for (const subFile of subFiles) {
-        if (subFile.isFile() && isSupportedContentFile(subFile.name)) {
-          const subFilePath = path.join(subDir, subFile.name);
-          const subFileStat = fs.statSync(subFilePath);
-          if (subFileStat.mtimeMs > lastUpdated) return true;
-        }
-      }
+  // Extract course IDs from content file paths
+  Object.keys(contentFiles).forEach(filePath => {
+    const match = filePath.match(/^\/src\/content\/([^\/]+)/);
+    if (match) {
+      courses.add(match[1]);
     }
-  }
+  });
   
-  return false;
+  // Also check yaml files
+  Object.keys(yamlFiles).forEach(filePath => {
+    const match = filePath.match(/^\/src\/content\/([^\/]+)/);
+    if (match) {
+      courses.add(match[1]);
+    }
+  });
+  
+  return Array.from(courses);
 }
 
 /**
  * Get course metadata from meta.yaml
  */
 export function getCourseMetadata(courseId: string): CourseMeta | null {
-  // Check cache first if content hasn't changed
-  if (contentCache.metadata.has(courseId) && !hasContentChanged(courseId)) {
+  // Check cache first
+  if (contentCache.metadata.has(courseId)) {
     return contentCache.metadata.get(courseId) || null;
   }
   
-  // Read from file
-  const metaPath = path.join(contentDir, courseId, 'meta.yaml');
-  const metadata = readYamlFile(metaPath) as CourseMeta | null;
+  // Look for meta.yaml file
+  const metaPath = `/src/content/${courseId}/meta.yaml`;
+  const metaContent = yamlFiles[metaPath];
+  
+  if (!metaContent) {
+    console.log(`No meta.yaml found for course ${courseId}`);
+    return null;
+  }
+  
+  const metadata = parseYaml(metaContent) as CourseMeta | null;
   
   // Cache the result
   if (metadata) {
@@ -140,9 +122,7 @@ export function getCourseMetadata(courseId: string): CourseMeta | null {
  */
 export function getAllCourses(): Array<CourseMeta & { id: string }> {
   try {
-    const courseDirs = fs.readdirSync(contentDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name);
+    const courseDirs = getCourseDirectories();
     
     return courseDirs.map(courseId => {
       const metadata = getCourseMetadata(courseId);
@@ -160,21 +140,29 @@ export function getAllCourses(): Array<CourseMeta & { id: string }> {
 /**
  * Gets the course title from the syllabus or first available file
  */
-function getCourseTitle(courseId: string, files: string[], courseDir: string): string {
-  // Try to find syllabus first
-  const outlineFile = findContentFile(courseDir, 'outline');
-  if (outlineFile) {
-    const content = fs.readFileSync(outlineFile, 'utf8');
-    const { data } = grayMatter(content) as { data: ContentFrontmatter };
-    if (data.courseTitle) return data.courseTitle;
+function getCourseTitle(courseId: string, files: string[]): string {
+  // Try to find outline file first
+  const outlineFiles = [
+    `/src/content/${courseId}/outline.svx`,
+    `/src/content/${courseId}/outline.md`
+  ];
+  
+  for (const outlineFile of outlineFiles) {
+    const module = contentFiles[outlineFile] as any;
+    if (module && module.metadata) {
+      const data = module.metadata as ContentFrontmatter;
+      if (data.courseTitle) return data.courseTitle;
+    }
   }
   
   // Fall back to first file
   if (files.length > 0) {
-    const firstFilePath = path.join(courseDir, files[0]);
-    const content = fs.readFileSync(firstFilePath, 'utf8');
-    const { data } = grayMatter(content) as { data: ContentFrontmatter };
-    if (data.courseTitle) return data.courseTitle;
+    const firstFilePath = files[0];
+    const module = contentFiles[firstFilePath] as any;
+    if (module && module.metadata) {
+      const data = module.metadata as ContentFrontmatter;
+      if (data.courseTitle) return data.courseTitle;
+    }
   }
   
   // Default to course ID if no title found
@@ -196,23 +184,28 @@ function getOrderFromFilename(filename: string): number | null {
 /**
  * Extracts the order field from a file frontmatter
  */
-function getOrderFromContent(courseDir: string, fileName: string): number {
+function getOrderFromContent(courseId: string, fileName: string): number {
   try {
-    const filePath = findContentFile(courseDir, fileName);
+    const possiblePaths = [
+      `/src/content/${courseId}/${fileName}.svx`,
+      `/src/content/${courseId}/${fileName}.md`
+    ];
     
-    if (filePath) {
-      const content = fs.readFileSync(filePath, 'utf8');
-      const { data } = grayMatter(content) as { data: ContentFrontmatter };
-      
-      // Try to get order from frontmatter
-      if (typeof data.order === 'number') {
-        return data.order;
-      }
-      
-      // Try to get order from filename pattern
-      const filenameOrder = getOrderFromFilename(fileName);
-      if (filenameOrder !== null) {
-        return filenameOrder;
+    for (const filePath of possiblePaths) {
+      const module = contentFiles[filePath] as any;
+      if (module && module.metadata) {
+        const data = module.metadata as ContentFrontmatter;
+        
+        // Try to get order from frontmatter
+        if (typeof data.order === 'number') {
+          return data.order;
+        }
+        
+        // Try to get order from filename pattern
+        const filenameOrder = getOrderFromFilename(fileName);
+        if (filenameOrder !== null) {
+          return filenameOrder;
+        }
       }
     }
     return 999; // Default high value for unordered items
@@ -226,27 +219,30 @@ function getOrderFromContent(courseDir: string, fileName: string): number {
  * Generate menu structure for a specific course
  */
 export function generateCourseMenu(courseId: string): CourseMenu | null {
-  // Check cache first if content hasn't changed
-  if (contentCache.menus.has(courseId) && !hasContentChanged(courseId)) {
+  // Check cache first
+  if (contentCache.menus.has(courseId)) {
     return contentCache.menus.get(courseId) || null;
   }
   
   try {
-    const courseDir = path.join(contentDir, courseId);
-    if (!fs.existsSync(courseDir)) return null;
+    // Get course content files from imported files
+    const courseContentFiles = Object.keys(contentFiles).filter(filePath => 
+      filePath.startsWith(`/src/content/${courseId}/`) && 
+      !filePath.includes('/assignments/') &&
+      isSupportedContentFile(filePath)
+    );
     
-    // Get course content files
-    const entries = fs.readdirSync(courseDir, { withFileTypes: true });
-    const contentFiles = entries
-      .filter(entry => entry.isFile() && isSupportedContentFile(entry.name))
-      .map(entry => entry.name);
+    if (courseContentFiles.length === 0) {
+      console.log(`No supported file found for ${courseId}`);
+      return null;
+    }
     
     // Get course metadata
     const metadata = getCourseMetadata(courseId);
     
     // Create course menu structure
     const courseMenu: CourseMenu = {
-      title: metadata?.title || getCourseTitle(courseId, contentFiles, courseDir),
+      title: metadata?.title || getCourseTitle(courseId, courseContentFiles),
       sections: [],
       readings: [],
       assignments: [],
@@ -272,10 +268,14 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
     }
     
     // Process each content file
-    for (const file of contentFiles) {
-      const filePath = path.join(courseDir, file);
-      const content = fs.readFileSync(filePath, 'utf8');
-      const { data } = grayMatter(content) as { data: ContentFrontmatter };
+    for (const filePath of courseContentFiles) {
+      const module = contentFiles[filePath] as any;
+      if (!module || !module.metadata) {
+        console.log(`No metadata found for ${filePath}`);
+        continue;
+      }
+      
+      const data = module.metadata as ContentFrontmatter;
       
       // Skip if not published
       if (data.published === false) {
@@ -283,14 +283,15 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       }
       
       // Get file basename without extension (e.g., 'day1' from 'day1.svx' or 'day1.md')
-      const extension = getContentFileExtension(file);
-      const basename = path.basename(file, extension);
+      const fileName = filePath.split('/').pop() || '';
+      const extension = getContentFileExtension(fileName);
+      const basename = fileName.replace(extension, '');
       const pagePath = `/${courseId}/${basename}`;
       
       // Extract metadata
       const title = data.title || basename;
       const section = data.section || 'General';
-      const order = data.order !== undefined ? data.order : getOrderFromFilename(file) || 999;
+      const order = data.order !== undefined ? data.order : getOrderFromFilename(fileName) || 999;
       
       // Skip adding outline.svx to the menu sections
       if (basename === 'outline') {
@@ -350,38 +351,42 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
     }
     
     // Process assignments directory if it exists
-    const assignmentsDir = path.join(courseDir, 'assignments');
-    if (fs.existsSync(assignmentsDir) && fs.statSync(assignmentsDir).isDirectory()) {
-      const assignmentFiles = fs.readdirSync(assignmentsDir)
-        .filter(file => isSupportedContentFile(file));
+    const assignmentFiles = Object.keys(contentFiles).filter(filePath => 
+      filePath.startsWith(`/src/content/${courseId}/assignments/`) &&
+      isSupportedContentFile(filePath)
+    );
+    
+    // Process each assignment file
+    for (const filePath of assignmentFiles) {
+      const module = contentFiles[filePath] as any;
+      if (!module || !module.metadata) {
+        console.log(`Error loading assignment ${filePath.split('/').pop()?.replace(/\.(svx|md)$/, '')}: No metadata found`);
+        continue;
+      }
       
-      // Process each assignment file
-      for (const file of assignmentFiles) {
-        const filePath = path.join(assignmentsDir, file);
-        const content = fs.readFileSync(filePath, 'utf8');
-        const { data } = grayMatter(content) as { data: ContentFrontmatter };
-        
-        // Skip if not published
-        if (data.published === false) {
-          continue;
-        }
-        
-        const extension = getContentFileExtension(file);
-        const basename = path.basename(file, extension);
-        const pagePath = `/${courseId}/assignments/${basename}`;
-        const title = data.title || basename;
-        const order = data.order !== undefined ? data.order : getOrderFromFilename(file) || 999;
-        
-        // Add to assignments list only (not to menu sections)
-        if (courseMenu.assignments) {
-          courseMenu.assignments.push({
-            title,
-            path: pagePath,
-            due: data.due,
-            description: data.description,
-            source: basename
-          });
-        }
+      const data = module.metadata as ContentFrontmatter;
+      
+      // Skip if not published
+      if (data.published === false) {
+        continue;
+      }
+      
+      const fileName = filePath.split('/').pop() || '';
+      const extension = getContentFileExtension(fileName);
+      const basename = fileName.replace(extension, '');
+      const pagePath = `/${courseId}/assignments/${basename}`;
+      const title = data.title || basename;
+      const order = data.order !== undefined ? data.order : getOrderFromFilename(fileName) || 999;
+      
+      // Add to assignments list only (not to menu sections)
+      if (courseMenu.assignments) {
+        courseMenu.assignments.push({
+          title,
+          path: pagePath,
+          due: data.due,
+          description: data.description,
+          source: basename
+        });
       }
     }
     
@@ -426,9 +431,8 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       });
     }
     
-    // Update cache and cache timestamp
+    // Update cache
     contentCache.menus.set(courseId, courseMenu);
-    contentCache.lastUpdated.set(courseId, Date.now());
     
     return courseMenu;
   } catch (error) {
@@ -445,9 +449,7 @@ export function generateMenuConfig(): MenuDataType {
   
   try {
     // Get course directories
-    const courseDirs = fs.readdirSync(contentDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name);
+    const courseDirs = getCourseDirectories();
     
     // Process each course
     for (const courseId of courseDirs) {
@@ -481,10 +483,47 @@ export function getCourseData(courseId: string): CourseData | null {
 }
 
 /**
+ * Get content file by course and filename
+ */
+export function getContentFile(courseId: string, fileName: string): any | null {
+  const possiblePaths = [
+    `/src/content/${courseId}/${fileName}.svx`,
+    `/src/content/${courseId}/${fileName}.md`
+  ];
+  
+  for (const filePath of possiblePaths) {
+    const module = contentFiles[filePath] as any;
+    if (module) {
+      return module;
+    }
+  }
+  
+  return null;
+}
+
+/**
+ * Get assignment content file by course and assignment ID
+ */
+export function getAssignmentContent(courseId: string, assignmentId: string): any | null {
+  const possiblePaths = [
+    `/src/content/${courseId}/assignments/${assignmentId}.svx`,
+    `/src/content/${courseId}/assignments/${assignmentId}.md`
+  ];
+  
+  for (const filePath of possiblePaths) {
+    const module = contentFiles[filePath] as any;
+    if (module) {
+      return module;
+    }
+  }
+  
+  return null;
+}
+
+/**
  * Reset content cache (useful for development/testing)
  */
 export function resetContentCache(): void {
   contentCache.menus.clear();
   contentCache.metadata.clear();
-  contentCache.lastUpdated.clear();
 }

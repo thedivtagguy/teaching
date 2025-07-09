@@ -1,28 +1,28 @@
+import { getAssignmentContent } from '$lib/utils/contentService';
+
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
   const { courseId, assignmentId } = params;
   
-  // Try loading with different extensions
-  const extensions = ['.svx', '.md'];
-  
-  for (const ext of extensions) {
-    try {
-      // Dynamically import the assignment content
-      const module = await import(`../../../../content/${courseId}/assignments/${assignmentId}${ext}`);
-      
+  try {
+    // Use content service to get the assignment content
+    const module = getAssignmentContent(courseId, assignmentId);
+    
+    if (module) {
       return {
         assignment: module.default,
         meta: module.metadata || {}
       };
-    } catch (error) {
-      // Continue to next extension if this one fails
-      continue;
+    } else {
+      console.error(`Error loading assignment ${assignmentId}: No supported file found`);
+      return {
+        error: `Could not load assignment: ${assignmentId}`
+      };
     }
+  } catch (error) {
+    console.error(`Error loading assignment ${assignmentId}:`, error);
+    return {
+      error: `Could not load assignment: ${assignmentId}`
+    };
   }
-  
-  // If we get here, none of the extensions worked
-  console.error(`Error loading assignment ${assignmentId}: No supported file found`);
-  return {
-    error: `Could not load assignment: ${assignmentId}`
-  };
 } 
