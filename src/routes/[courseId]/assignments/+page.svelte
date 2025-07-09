@@ -78,8 +78,8 @@
 			completedAssignments.add(key);
 			localStorage.setItem(key, 'completed');
 
-			// Show confetti for this specific assignment
-			confettiForAssignment = assignment;
+			// Trigger confetti for this specific assignment
+			confettiForAssignment = assignment.id;
 			setTimeout(() => (confettiForAssignment = null), 3000);
 		}
 
@@ -106,7 +106,7 @@
 	$: progressPercentage = totalAssignments > 0 ? Math.round((completedCount / totalAssignments) * 100) : 0;
 
 	// Confetti state
-	let confettiForAssignment: AssignmentMeta | null = null;
+	let confettiForAssignment: string | null = null;
 
 	// Make totalAssignments reactive
 	$: totalAssignments = processedAssignments.length;
@@ -188,17 +188,15 @@
 
 			<!-- Progress indicator -->
 			{#if totalAssignments > 0}
-				<div
-					class="bg-muted border-foreground btn-drop-shadow w-full max-w-sm rounded-lg border-2 p-3"
-				>
-					<div class="flex items-center justify-between gap-1">
-						<div class="flex-1 text-right">
+				<div class="bg-muted border-foreground btn-drop-shadow rounded-lg border-2 p-3">
+					<div class="flex flex-col items-center gap-1">
+						<div class="text-right">
 							<p class="font-archivo text-foreground text-sm font-bold uppercase">
 								Progress ({completedCount}/{totalAssignments})
 							</p>
 						</div>
 						<div
-							class="bg-card border-foreground flex h-16 w-full items-center justify-start overflow-hidden rounded-sm border-2"
+							class="bg-card border-foreground flex h-8 w-full items-center justify-start overflow-hidden rounded-full border-2"
 						>
 							<div
 								class="bg-green h-full transition-all duration-500 ease-out"
@@ -208,9 +206,6 @@
 								class="font-archivo absolute {completedCount === totalAssignments
 									? 'text-secondary-foreground'
 									: 'text-foreground'} mt-4 ml-2 text-right font-bold"
-								style="color: {completedCount === totalAssignments
-									? 'hsl(var(--secondary-foreground))'
-									: 'hsl(var(--foreground))'}"
 							>
 								{progressPercentage}%
 							</p>
@@ -344,20 +339,21 @@
 									</div>
 								</div>
 
-								<!-- Assignment-specific confetti -->
-								{#if confettiForAssignment && confettiForAssignment.id === assignment.id}
+								<!-- Confetti -->
+								{#if confettiForAssignment === assignment.id}
 									<div
 										use:confetti={{
 											particleCount: 75,
 											force: 0.7,
 											stageWidth: 800,
 											stageHeight: 400,
+											duration: 3000,
 											colors: [
-												'hsl(var(--primary))',
-												'hsl(var(--secondary))',
-												'hsl(var(--accent))',
-												'hsl(var(--primary) / 0.8)',
-												'hsl(var(--secondary) / 0.8)'
+												'#FFC700',
+												'#FF0000', 
+												'#2E3191',
+												'#41BBC7',
+												'#00FF00'
 											]
 										}}
 										class="pointer-events-none absolute inset-0 z-10"
