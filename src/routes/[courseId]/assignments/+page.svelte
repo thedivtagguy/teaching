@@ -58,70 +58,55 @@
 		};
 	});
 
-	// Simple completion state - just track which assignments are completed
+	// Keep track of completed assignments using localStorage - EXACT copy from readings
 	let completedAssignments = new Set<string>();
 
-	// Load completion state from localStorage
-	function loadCompletionState() {
-		if (!browser) return;
-		try {
-			const stored = localStorage.getItem(`${courseId}_completed_assignments`);
-			if (stored) {
-				completedAssignments = new Set(JSON.parse(stored));
-			}
-		} catch (e) {
-			console.error('Failed to load completion state:', e);
-		}
+	// Generate a unique key for each assignment - EXACT copy from readings
+	function getAssignmentKey(assignment: AssignmentMeta): string {
+		return `${courseId}_assignment_${assignment.title.replace(/\s+/g, '_')}`;
 	}
 
-	// Save completion state to localStorage
-	function saveCompletionState() {
-		if (!browser) return;
-		try {
-			localStorage.setItem(`${courseId}_completed_assignments`, JSON.stringify([...completedAssignments]));
-		} catch (e) {
-			console.error('Failed to save completion state:', e);
-		}
-	}
-
-	// Check if an assignment is completed
-	function isAssignmentDone(assignment: AssignmentMeta): boolean {
-		return completedAssignments.has(assignment.id);
-	}
-
-	// Toggle assignment completion status
+	// Toggle assignment completion status - EXACT copy from readings
 	function toggleAssignmentCompletion(assignment: AssignmentMeta) {
-		if (!browser) return;
+		const key = getAssignmentKey(assignment);
 
-		const wasCompleted = isAssignmentDone(assignment);
-
-		if (wasCompleted) {
-			completedAssignments.delete(assignment.id);
+		if (completedAssignments.has(key)) {
+			completedAssignments.delete(key);
+			localStorage.setItem(key, '');
+			localStorage.removeItem(key);
 		} else {
-			completedAssignments.add(assignment.id);
+			completedAssignments.add(key);
+			localStorage.setItem(key, 'completed');
+
 			// Show confetti for this specific assignment
 			confettiForAssignment = assignment;
 			setTimeout(() => (confettiForAssignment = null), 3000);
 		}
 
-		// Trigger reactivity
+		// Use simpler approach to trigger reactivity - just assign to itself
 		completedAssignments = completedAssignments;
-		
-		// Save to localStorage
-		saveCompletionState();
 	}
 
+	// Load saved assignment states on mount - EXACT copy from readings
+	onMount(() => {
+		// Batch localStorage operations
+		for (const assignment of processedAssignments) {
+			const key = getAssignmentKey(assignment);
+			if (localStorage.getItem(key) === 'completed') {
+				completedAssignments.add(key);
+			}
+		}
+
+		// Trigger reactivity once
+		completedAssignments = completedAssignments;
+	});
+
 	// Track progress stats reactively
-	$: completedCount = processedAssignments.filter(assignment => isAssignmentDone(assignment)).length;
+	$: completedCount = processedAssignments.filter(assignment => completedAssignments.has(getAssignmentKey(assignment))).length;
 	$: progressPercentage = totalAssignments > 0 ? Math.round((completedCount / totalAssignments) * 100) : 0;
 
 	// Confetti state
 	let confettiForAssignment: AssignmentMeta | null = null;
-
-	// Load completion state on mount
-	onMount(() => {
-		loadCompletionState();
-	});
 
 	// Make totalAssignments reactive
 	$: totalAssignments = processedAssignments.length;
@@ -161,7 +146,7 @@
 		const assignmentsForDate = assignmentsByDue[dueDate] || [];
 		const allCompleted =
 			assignmentsForDate.length > 0 &&
-			assignmentsForDate.every((assignment) => isAssignmentDone(assignment));
+			assignmentsForDate.every((assignment) => completedAssignments.has(getAssignmentKey(assignment)));
 
 		if (allCompleted) return false;
 
@@ -268,7 +253,7 @@
 							<li
 								in:fade={{ duration: 300, delay: assIndex * 50 }}
 								class={`group relative p-6 transition-all duration-300 ${
-									isAssignmentDone(assignment)
+									completedAssignments.has(getAssignmentKey(assignment))
 										? 'bg-green bg-opacity-10  border-foreground border-y'
 										: 'hover:bg-muted'
 								}`}
@@ -279,7 +264,7 @@
 											class="font-roboto text-foreground text-md mb-1 flex items-center gap-2 font-bold"
 										>
 											<span
-												class={isAssignmentDone(assignment)
+												class={completedAssignments.has(getAssignmentKey(assignment))
 													? 'text-secondary-foreground'
 													: 'text-foreground'}
 											>
@@ -296,8 +281,8 @@
 
 										<div
 											class="font-archivo mt-3 flex flex-wrap items-center gap-4 text-sm"
-											class:text-secondary-foreground={isAssignmentDone(assignment)}
-											class:text-foreground={!isAssignmentDone(assignment)}
+											class:text-secondary-foreground={completedAssignments.has(getAssignmentKey(assignment))}
+											class:text-foreground={!completedAssignments.has(getAssignmentKey(assignment))}
 										>
 											{#if assignment.points}
 												<span class="flex items-center gap-1">
@@ -316,7 +301,7 @@
 											{#if assignment.path}
 												<a
 													href={assignment.path}
-													class="{isAssignmentDone(assignment)
+													class="{completedAssignments.has(getAssignmentKey(assignment))
 														? 'text-foreground'
 														: 'text-primary'} hover:text-primary/80 flex items-center font-bold underline underline-offset-2 hover:no-underline"
 												>
@@ -328,21 +313,21 @@
 
 									<div class="mt-1 flex flex-wrap gap-2 md:mt-0">
 										<button
-											onclick={() => toggleAssignmentCompletion(assignment)}
+											on:click={() => toggleAssignmentCompletion(assignment)}
 											class={`flex transform items-center gap-2 rounded-sm px-4 py-2 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 ${
-												isAssignmentDone(assignment)
+												completedAssignments.has(getAssignmentKey(assignment))
 													? 'border-foreground text-secondary-foreground border-2 bg-green-800/30 shadow-inner'
 													: 'bg-muted text-foreground hover:bg-green border-foreground hover:text-secondary-foreground border-2'
 											}`}
-											aria-label={isAssignmentDone(assignment)
+											aria-label={completedAssignments.has(getAssignmentKey(assignment))
 												? 'Mark as incomplete'
 												: 'Mark as complete'}
 										>
-											{#if isAssignmentDone(assignment)}
+											{#if completedAssignments.has(getAssignmentKey(assignment))}
 												<Check class="h-5 w-5" />
 											{/if}
 											<span class="font-archivo text-sm font-bold"
-												>{isAssignmentDone(assignment) ? 'Completed' : 'Mark complete'}</span
+												>{completedAssignments.has(getAssignmentKey(assignment)) ? 'Completed' : 'Mark complete'}</span
 											>
 										</button>
 
