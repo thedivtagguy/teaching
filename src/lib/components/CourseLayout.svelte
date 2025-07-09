@@ -5,6 +5,14 @@
 	import { Menu, X } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { cn } from '$lib/utils/index.js';
+	import {
+		Drawer,
+		DrawerContent,
+		DrawerHeader,
+		DrawerTitle,
+		DrawerTrigger,
+		DrawerOverlay
+	} from '$lib/components/ui/drawer/index.js';
 	import CourseMenu from './CourseMenu.svelte';
 	import type {
 		MenuDataType,
@@ -26,16 +34,11 @@
 	$: currentDayContent = $page.data?.content?.metadata || null;
 
 	// Track if menu is open (for mobile)
-	const isMenuOpen = writable<boolean>(false);
-
-	// Toggle menu in mobile view
-	function toggleMenu(): void {
-		$isMenuOpen = !$isMenuOpen;
-	}
+	let isMenuOpen = false;
 
 	// Close menu when changing pages (for mobile)
 	$: if ($page.url) {
-		$isMenuOpen = false;
+		isMenuOpen = false;
 	}
 
 	// Handle course selection change
@@ -73,34 +76,51 @@
 	<div
 		class="bg-background border-border sticky top-0 z-[var(--z-docked)] flex items-center justify-between border-b p-4 md:hidden"
 	>
-		<Button
-			on:click={toggleMenu}
-			variant="outline"
-			size="icon"
-			class={cn(
-				'border-foreground border-2',
-				'shadow-[var(--shadow-btn-drop)] transition-all duration-[var(--duration-250)]',
-				'hover:-translate-y-0.5 hover:shadow-[var(--shadow-btn-hover)]',
-				'font-roboto font-bold'
-			)}
-			aria-label="Toggle menu"
-		>
-			{#if $isMenuOpen}
-				<X class="h-5 w-5" />
-			{:else}
-				<Menu class="h-5 w-5" />
-			{/if}
-		</Button>
+		<Drawer bind:open={isMenuOpen}>
+			<DrawerTrigger asChild let:builder>
+				{#snippet children(builder)}
+					<Button
+						builders={[builder]}
+						variant="outline"
+						size="icon"
+						class={cn(
+							'border-foreground border-2',
+							'shadow-[var(--shadow-btn-drop)] transition-all duration-[var(--duration-250)]',
+							'hover:-translate-y-0.5 hover:shadow-[var(--shadow-btn-hover)]',
+							'font-roboto font-bold'
+						)}
+						aria-label="Toggle menu"
+					>
+						{#if isMenuOpen}
+							<X class="h-5 w-5" />
+						{:else}
+							<Menu class="h-5 w-5" />
+						{/if}
+					</Button>
+				{/snippet}
+			</DrawerTrigger>
+			<DrawerContent class="max-h-[80vh]">
+				<DrawerHeader>
+					<DrawerTitle>Course Menu</DrawerTitle>
+				</DrawerHeader>
+				<div class="overflow-y-auto p-4">
+					{#if menuData[$selectedCourse]}
+						<CourseMenu
+							courseId={$selectedCourse}
+							menuData={combinedMenuData}
+							selectedCourse={$selectedCourse}
+						/>
+					{/if}
+				</div>
+			</DrawerContent>
+		</Drawer>
 	</div>
 
-	<!-- Sidebar - fixed on desktop, slides in on mobile -->
+	<!-- Sidebar - fixed on desktop, hidden on mobile -->
 	<aside
 		class={cn(
-			'bg-background border-border fixed inset-y-0 left-0 transform border-r p-6 transition-transform',
-			'z-[var(--z-dropdown)] w-1/5',
-			'duration-[var(--duration-300)] ease-[var(--ease-in-out)]',
-			$isMenuOpen ? 'translate-x-0' : '-translate-x-full',
-			'md:static md:translate-x-0 md:shadow-none'
+			'bg-background border-border border-r p-6',
+			'hidden md:block md:w-1/5'
 		)}
 	>
 		<!-- Use our enhanced CourseMenu component with combined data -->
@@ -117,14 +137,4 @@
 	<main class="noise-image bg-background flex-1 p-6 md:p-8">
 		<slot />
 	</main>
-
-	<!-- Overlay for mobile menu (shown when menu is open) -->
-	{#if $isMenuOpen}
-		<div
-			class="bg-foreground/20 fixed inset-0 backdrop-blur-sm md:hidden"
-			style="z-index: var(--z-overlay)"
-			on:click={() => ($isMenuOpen = false)}
-			aria-hidden="true"
-		></div>
-	{/if}
 </div>
