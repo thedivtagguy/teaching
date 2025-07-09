@@ -48,14 +48,24 @@
       content = null;
       error = null;
       
-      try {
-        // Dynamically import the content based on course and day
-        const module = await import(`../../../content/${courseId}/${dayId}.svx`);
-        content = module.default;
-      } catch (err) {
-        error = `Could not load content for ${courseId}/${dayId}`;
-        console.error(err);
+      // Try loading with different extensions
+      const extensions = ['.svx', '.md'];
+      
+      for (const ext of extensions) {
+        try {
+          // Dynamically import the content based on course and day
+          const module = await import(`../../../content/${courseId}/${dayId}${ext}`);
+          content = module.default;
+          return; // Exit early if successful
+        } catch (err) {
+          // Continue to next extension if this one fails
+          continue;
+        }
       }
+      
+      // If we get here, none of the extensions worked
+      error = `Could not load content for ${courseId}/${dayId}`;
+      console.error(`No supported file found for ${courseId}/${dayId}`);
     };
     
     // Call the function to load content

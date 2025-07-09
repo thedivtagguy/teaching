@@ -106,7 +106,9 @@
 	<div class="border-foreground mb-8 border-b-2 pb-6">
 		<div class="flex flex-col justify-between gap-2 md:flex-row md:items-end">
 			<div class="flex flex-col">
-				<h1 class="font-libre-caslon text-foreground m-0 flex items-center p-0 text-4xl">Readings</h1>
+				<h1 class="font-libre-caslon text-foreground m-0 flex items-center p-0 text-4xl">
+					Readings
+				</h1>
 				<p class="text-muted-foreground font-archivo m-0 p-0 text-lg">
 					All required and recommended readings for {courseId.toUpperCase()}.
 				</p>
@@ -125,7 +127,7 @@
 							class="bg-card border-foreground flex h-8 w-full items-center justify-start overflow-hidden rounded-full border-2"
 						>
 							<div
-								class="bg-secondary h-full transition-all duration-500 ease-out"
+								class="bg-green h-full transition-all duration-500 ease-out"
 								style="width: {progressPercentage}%"
 							></div>
 							<p
@@ -149,7 +151,7 @@
 			</p>
 			<a
 				href="/{courseId}"
-				class="bg-primary hover:bg-primary/80 font-roboto border-foreground btn-drop-shadow mt-6 inline-block rounded-md border-2 px-6 py-2 font-bold text-primary-foreground uppercase transition-colors"
+				class="bg-primary hover:bg-primary/80 font-roboto border-foreground btn-drop-shadow text-primary-foreground mt-6 inline-block rounded-md border-2 px-6 py-2 font-bold uppercase transition-colors"
 			>
 				Return to Course
 			</a>
@@ -162,7 +164,7 @@
 					in:fly={{ y: 20, duration: 300, delay: index * 100 }}
 					class="bg-card border-foreground btn-drop-shadow overflow-hidden rounded-lg border-2"
 				>
-					<div class=" border-foreground border-b-2 px-6">
+					<div class=" border-foreground border-b-2 px-6 py-4">
 						<h2 class="font-roboto text-foreground text-lg font-bold tracking-wide uppercase">
 							{source}
 						</h2>
@@ -175,7 +177,7 @@
 								in:fade={{ duration: 300, delay: readingIndex * 50 }}
 								class={`group relative p-6 transition-all duration-300 ${
 									completedReadings.has(getReadingKey(reading))
-										? 'bg-secondary bg-opacity-10  border-y border-foreground'
+										? 'bg-green bg-opacity-10  border-foreground border-y'
 										: 'hover:bg-muted'
 								}`}
 							>
@@ -200,7 +202,9 @@
 
 										<div
 											class="font-archivo mt-3 flex flex-wrap items-center gap-4 text-sm"
-											class:text-secondary-foreground={completedReadings.has(getReadingKey(reading))}
+											class:text-secondary-foreground={completedReadings.has(
+												getReadingKey(reading)
+											)}
 											class:text-foreground={!completedReadings.has(getReadingKey(reading))}
 										>
 											{#if reading.pages}
@@ -233,10 +237,10 @@
 									<div class="mt-1 flex flex-wrap gap-2 md:mt-0">
 										<button
 											on:click={() => toggleReadingCompletion(reading)}
-											class={`flex transform items-center gap-2 rounded-md px-4 py-2 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 ${
+											class={`flex transform items-center gap-2 rounded-sm px-4 py-2 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 ${
 												completedReadings.has(getReadingKey(reading))
-													? 'bg-secondary border-foreground border-2 text-secondary-foreground shadow-inner'
-													: 'bg-muted text-foreground hover:bg-secondary border-foreground border-2 hover:text-secondary-foreground'
+													? 'border-foreground text-secondary-foreground border-2 bg-green-800/30 shadow-inner'
+													: 'bg-muted text-foreground hover:bg-green border-foreground hover:text-secondary-foreground border-2'
 											}`}
 											aria-label={completedReadings.has(getReadingKey(reading))
 												? 'Mark as unread'
@@ -257,7 +261,7 @@
 												href={reading.url}
 												target="_blank"
 												rel="noopener noreferrer"
-												class="bg-primary hover:bg-primary/80 border-foreground btn-drop-shadow flex transform items-center gap-2 rounded-md border-2 px-4 py-2 text-primary-foreground transition-all hover:-translate-y-1 active:translate-y-0"
+												class="bg-primary hover:bg-primary/80 border-foreground text-primary-foreground flex transform items-center gap-2 rounded-xs border-2 px-4 py-2 transition-all hover:-translate-y-1 active:translate-y-0"
 												aria-label="Open reading resource"
 											>
 												<ExternalLink class="h-5 w-5" />

@@ -10,14 +10,20 @@
 		AlertTriangle
 	} from 'lucide-svelte';
 	import { onMount } from 'svelte';
-	import {
-		assignmentStore,
-		type AssignmentMeta,
-		type AssignmentWithStatus
-	} from '$lib/stores/assignments';
 	import { browser } from '$app/environment';
 	import { fly, fade } from 'svelte/transition';
 	import { confetti } from '@neoconfetti/svelte';
+
+	// Type definitions
+	interface AssignmentMeta {
+		id: string;
+		title: string;
+		due?: string;
+		description?: string;
+		points?: number;
+		path?: string;
+		source?: string;
+	}
 
 	// Get course ID from URL params
 	$: courseId = $page.params.courseId;
@@ -52,56 +58,35 @@
 		};
 	});
 
-	// Initialize the store on mount
-	onMount(() => {
-		if (browser) {
-			// Initialize the store for this course
-			assignmentStore.initCourse(courseId);
+	// Simple completion state - just track which assignments are completed
+	let completedAssignments = new Set<string>();
 
-			// Add assignment metadata to the store
-			assignmentStore.setAssignments(courseId, processedAssignments);
+	// Load completion state from localStorage
+	function loadCompletionState() {
+		if (!browser) return;
+		try {
+			const stored = localStorage.getItem(`${courseId}_completed_assignments`);
+			if (stored) {
+				completedAssignments = new Set(JSON.parse(stored));
+			}
+		} catch (e) {
+			console.error('Failed to load completion state:', e);
 		}
-	});
-
-	// Track assignments with completion status
-	let assignmentsWithStatus: Record<string, AssignmentWithStatus> = {};
-
-	// Subscribe to the assignments store to get real-time updates
-	$: {
-		const unsubscribe = assignmentStore.assignments.subscribe((data) => {
-			assignmentsWithStatus = data[courseId] || {};
-			// Recalculate completion count and percentage when the store updates
-			updateProgressStats();
-		});
 	}
 
-	// Track progress stats
-	let completedCount = 0;
-	let progressPercentage = 0;
-
-	// Confetti state
-	let confettiForAssignment: AssignmentMeta | null = null;
-
-	// Function to update progress stats
-	function updateProgressStats() {
-		if (processedAssignments.length === 0) return;
-
-		completedCount = processedAssignments.filter((assignment) =>
-			isAssignmentDone(assignment)
-		).length;
-		progressPercentage = Math.round((completedCount / processedAssignments.length) * 100);
+	// Save completion state to localStorage
+	function saveCompletionState() {
+		if (!browser) return;
+		try {
+			localStorage.setItem(`${courseId}_completed_assignments`, JSON.stringify([...completedAssignments]));
+		} catch (e) {
+			console.error('Failed to save completion state:', e);
+		}
 	}
 
-	// Check if an assignment is completed using the store data
+	// Check if an assignment is completed
 	function isAssignmentDone(assignment: AssignmentMeta): boolean {
-		// Try to get the assignment from the store
-		const storeAssignment = assignmentsWithStatus[assignment.id];
-		if (storeAssignment) {
-			return storeAssignment.completed;
-		}
-
-		// Fallback to the direct method if not in store yet
-		return browser ? assignmentStore.isCompleted(courseId, assignment.id) : false;
+		return completedAssignments.has(assignment.id);
 	}
 
 	// Toggle assignment completion status
@@ -111,25 +96,35 @@
 		const wasCompleted = isAssignmentDone(assignment);
 
 		if (wasCompleted) {
-			assignmentStore.markIncomplete(courseId, assignment.id);
+			completedAssignments.delete(assignment.id);
 		} else {
-			assignmentStore.markComplete(courseId, assignment.id);
-
+			completedAssignments.add(assignment.id);
 			// Show confetti for this specific assignment
 			confettiForAssignment = assignment;
 			setTimeout(() => (confettiForAssignment = null), 3000);
 		}
+
+		// Trigger reactivity
+		completedAssignments = completedAssignments;
+		
+		// Save to localStorage
+		saveCompletionState();
 	}
+
+	// Track progress stats reactively
+	$: completedCount = processedAssignments.filter(assignment => isAssignmentDone(assignment)).length;
+	$: progressPercentage = totalAssignments > 0 ? Math.round((completedCount / totalAssignments) * 100) : 0;
+
+	// Confetti state
+	let confettiForAssignment: AssignmentMeta | null = null;
+
+	// Load completion state on mount
+	onMount(() => {
+		loadCompletionState();
+	});
 
 	// Make totalAssignments reactive
 	$: totalAssignments = processedAssignments.length;
-
-	// Ensure progress is updated when processedAssignments change
-	$: {
-		if (Object.keys(assignmentsWithStatus).length > 0 && totalAssignments > 0) {
-			updateProgressStats();
-		}
-	}
 
 	// Group assignments by due date
 	$: assignmentsByDue = groupAssignmentsByDueDate(processedAssignments);
@@ -221,7 +216,7 @@
 							class="bg-card border-foreground flex h-16 w-full items-center justify-start overflow-hidden rounded-sm border-2"
 						>
 							<div
-								class="bg-secondary h-full transition-all duration-500 ease-out"
+								class="bg-green h-full transition-all duration-500 ease-out"
 								style="width: {progressPercentage}%"
 							></div>
 							<p
@@ -248,7 +243,7 @@
 			</p>
 			<a
 				href="/{courseId}"
-				class="bg-primary hover:bg-primary/80 font-roboto border-foreground btn-drop-shadow mt-6 inline-block rounded-md border-2 px-6 py-2 font-bold text-primary-foreground uppercase transition-colors"
+				class="bg-primary hover:bg-primary/80 font-roboto border-foreground btn-drop-shadow text-primary-foreground mt-6 inline-block rounded-md border-2 px-6 py-2 font-bold uppercase transition-colors"
 			>
 				Return to Course
 			</a>
@@ -274,7 +269,7 @@
 								in:fade={{ duration: 300, delay: assIndex * 50 }}
 								class={`group relative p-6 transition-all duration-300 ${
 									isAssignmentDone(assignment)
-										? 'bg-secondary bg-opacity-10  border-y border-foreground'
+										? 'bg-green bg-opacity-10  border-foreground border-y'
 										: 'hover:bg-muted'
 								}`}
 							>
@@ -283,7 +278,11 @@
 										<h3
 											class="font-roboto text-foreground text-md mb-1 flex items-center gap-2 font-bold"
 										>
-											<span class={isAssignmentDone(assignment) ? 'text-secondary-foreground' : 'text-foreground'}>
+											<span
+												class={isAssignmentDone(assignment)
+													? 'text-secondary-foreground'
+													: 'text-foreground'}
+											>
 												{assignment.title}
 											</span>
 										</h3>
@@ -330,10 +329,10 @@
 									<div class="mt-1 flex flex-wrap gap-2 md:mt-0">
 										<button
 											onclick={() => toggleAssignmentCompletion(assignment)}
-											class={`flex transform items-center gap-2 rounded-md px-4 py-2 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 ${
+											class={`flex transform items-center gap-2 rounded-sm px-4 py-2 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 ${
 												isAssignmentDone(assignment)
-													? 'bg-secondary border-foreground border-2 text-secondary-foreground shadow-inner'
-													: 'bg-muted text-foreground hover:bg-secondary border-foreground border-2 hover:text-secondary-foreground'
+													? 'border-foreground text-secondary-foreground border-2 bg-green-800/30 shadow-inner'
+													: 'bg-muted text-foreground hover:bg-green border-foreground hover:text-secondary-foreground border-2'
 											}`}
 											aria-label={isAssignmentDone(assignment)
 												? 'Mark as incomplete'
@@ -350,7 +349,7 @@
 										{#if assignment.path}
 											<a
 												href={assignment.path}
-												class="bg-primary hover:bg-primary/80 border-foreground btn-drop-shadow flex transform items-center gap-2 rounded-md border-2 px-4 py-2 text-primary-foreground transition-all hover:-translate-y-1 active:translate-y-0"
+												class="bg-primary hover:bg-primary/80 border-foreground btn-drop-shadow text-primary-foreground flex transform items-center gap-2 rounded-xs border-2 px-4 py-2 transition-all hover:-translate-y-1 active:translate-y-0"
 												aria-label="View assignment details"
 											>
 												<ExternalLink class="h-5 w-5" />
@@ -368,7 +367,13 @@
 											force: 0.7,
 											stageWidth: 800,
 											stageHeight: 400,
-											colors: ['hsl(var(--primary))', 'hsl(var(--secondary))', 'hsl(var(--accent))', 'hsl(var(--primary) / 0.8)', 'hsl(var(--secondary) / 0.8)']
+											colors: [
+												'hsl(var(--primary))',
+												'hsl(var(--secondary))',
+												'hsl(var(--accent))',
+												'hsl(var(--primary) / 0.8)',
+												'hsl(var(--secondary) / 0.8)'
+											]
 										}}
 										class="pointer-events-none absolute inset-0 z-10"
 									></div>

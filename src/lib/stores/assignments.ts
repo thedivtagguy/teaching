@@ -42,6 +42,8 @@ export interface AssignmentStore {
   setAssignments: (courseId: string, assignments: AssignmentMeta[]) => void;
   toggleCompletion: (courseId: string, assignmentId: string | null) => boolean;
   isCompleted: (courseId: string, assignmentId: string | null) => boolean;
+  markComplete: (courseId: string, assignmentId: string | null) => void;
+  markIncomplete: (courseId: string, assignmentId: string | null) => void;
 }
 
 // Initialize the store with data from localStorage if available
@@ -253,6 +255,66 @@ function createAssignmentStore(): AssignmentStore {
     
     return completed;
   };
+
+  // Mark an assignment as complete
+  const markComplete = (courseId: string, assignmentId: string | null) => {
+    if (!browser || !assignmentId) return;
+    
+    completionStore.update(store => {
+      const key = createAssignmentKey(courseId, assignmentId);
+      if (!key) return store;
+      
+      const updated = { ...store, [key]: true };
+      
+      // Save to localStorage immediately
+      try {
+        const coursePrefix = `${courseId}:`;
+        const courseData: CompletionStore = {};
+        
+        Object.entries(updated).forEach(([storeKey, value]) => {
+          if (storeKey.startsWith(coursePrefix)) {
+            courseData[storeKey] = value;
+          }
+        });
+        
+        localStorage.setItem(getStoreKey(courseId), JSON.stringify(courseData));
+      } catch (e) {
+        console.error('Failed to save assignment completion data:', e);
+      }
+      
+      return updated;
+    });
+  };
+
+  // Mark an assignment as incomplete
+  const markIncomplete = (courseId: string, assignmentId: string | null) => {
+    if (!browser || !assignmentId) return;
+    
+    completionStore.update(store => {
+      const key = createAssignmentKey(courseId, assignmentId);
+      if (!key) return store;
+      
+      const updated = { ...store, [key]: false };
+      
+      // Save to localStorage immediately
+      try {
+        const coursePrefix = `${courseId}:`;
+        const courseData: CompletionStore = {};
+        
+        Object.entries(updated).forEach(([storeKey, value]) => {
+          if (storeKey.startsWith(coursePrefix)) {
+            courseData[storeKey] = value;
+          }
+        });
+        
+        localStorage.setItem(getStoreKey(courseId), JSON.stringify(courseData));
+      } catch (e) {
+        console.error('Failed to save assignment completion data:', e);
+      }
+      
+      return updated;
+    });
+  };
   
   // Listen for storage events from other tabs/windows
   if (browser) {
@@ -277,7 +339,9 @@ function createAssignmentStore(): AssignmentStore {
     initCourse,
     setAssignments,
     toggleCompletion,
-    isCompleted
+    isCompleted,
+    markComplete,
+    markIncomplete
   };
 }
 

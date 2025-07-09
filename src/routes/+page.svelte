@@ -5,14 +5,14 @@
 			description:
 				'Websites! Designing them, building them and (almost) everything in between. Taught at DA-IICT, 2025',
 			link: '/web2025',
-			color: 'bg-secondary'
+			color: 'bg-yellow'
 		},
 		{
 			title: 'CDV2025 - Introduction to Data Visualization',
 			description:
 				'Introduction to data visualization for design students taught at Chitkara University, 2025',
 			link: '/cdv2025',
-			color: 'bg-secondary'
+			color: 'bg-orange'
 		},
 
 		{
@@ -20,13 +20,13 @@
 			description:
 				'Gentle introduction to QGIS for beginners, with a focus on using OpenStreetMap data',
 			link: 'https://aman.bh/qgis',
-			color: 'bg-primary'
+			color: 'bg-green'
 		},
 		{
 			title: 'R with Penguins',
 			description: 'A gentle introduction to R and summary statistics with the penguins dataset',
 			link: 'https://rwithpenguins.netlify.app/',
-			color: 'bg-secondary'
+			color: 'bg-blue'
 		}
 	];
 </script>
@@ -43,7 +43,9 @@
 			{#each resources as resource, i}
 				<div class="bg-card border-foreground m-0 overflow-hidden rounded-lg border-2 p-0">
 					<div class="p-6 {resource.color}">
-						<h2 class="text-foreground font-libre-caslon m-0 text-2xl font-bold">{resource.title}</h2>
+						<h2 class="text-foreground font-libre-caslon m-0 text-2xl font-bold">
+							{resource.title}
+						</h2>
 						<p class="font-archivo text-foreground mt-2">{resource.description}</p>
 						<a
 							href={resource.link}

@@ -1,2 +1,0 @@
-- https://store.steampowered.com/charts/topselling/global
-- 
