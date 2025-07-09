@@ -1,4 +1,4 @@
-/** @type {import('./$types').PageServerLoad} */
+/** @type {import('./$types').PageLoad} */
 export const load = async ({ params }) => {
   // Extract the course ID and path from the params
   const { courseId, path } = params;
@@ -14,7 +14,4 @@ export const load = async ({ params }) => {
     slidePath: path,
     slideUrl
   };
-};
-
-// This is needed for proper prerendering
-export const prerender = false; 
+}; 

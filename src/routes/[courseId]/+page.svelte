@@ -4,6 +4,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import MDLayout from '$lib/components/MDLayout.svelte';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
+	import { getContentFile } from '$lib/utils/contentService';
 	import type { MenuSection, CourseMeta, CourseMenu } from '$lib/utils/contentSchema';
 
 	// Get course ID from URL parameter
@@ -23,24 +24,19 @@
 
 	// Load the outline content when component mounts
 	onMount(async () => {
-		// Try loading with different extensions
-		const extensions = ['.svx', '.md'];
-		
-		for (const ext of extensions) {
-			try {
-				// Dynamically import the outline content
-				const module = await import(`../../content/${courseId}/outline${ext}`);
+		try {
+			// Use content service to get the outline content
+			const module = getContentFile(courseId, 'outline');
+			if (module) {
 				outlineContent = module.default;
-				return; // Exit early if successful
-			} catch (err) {
-				// Continue to next extension if this one fails
-				continue;
+			} else {
+				error = `Could not load outline content for ${courseId}`;
+				console.error(`No supported outline file found for ${courseId}`);
 			}
+		} catch (err) {
+			error = `Could not load outline content for ${courseId}`;
+			console.error(`Error loading outline for ${courseId}:`, err);
 		}
-		
-		// If we get here, none of the extensions worked
-		error = `Could not load outline content for ${courseId}`;
-		console.error(`No supported outline file found for ${courseId}`);
 	});
 </script>
 

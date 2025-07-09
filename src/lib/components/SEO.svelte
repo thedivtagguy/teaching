@@ -17,8 +17,7 @@
   
   // Computed values
   $: fullTitle = (courseId ? `${title} | ${courseId.toUpperCase()}` : title).split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
-  $: ogImagePath = `/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&type=${contentType}${courseId ? '&courseId=' + encodeURIComponent(courseId) : ''}${description ? '&description=' + encodeURIComponent(description) : ''}`;
-  $: ogImage = image || (ogImagePath.startsWith('http') ? ogImagePath : `${domain}${ogImagePath}`);
+  $: ogImage = image || `${domain}/og-default.png`;
   $: currentUrl = $page.url.href.startsWith('http') ? $page.url.href : `${domain}${$page.url.pathname}`;
   $: siteName = 'Learning Resources by aman.bh';
 </script>

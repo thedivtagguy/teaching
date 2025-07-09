@@ -6,7 +6,7 @@ import { watch } from 'fs';
 
 export default defineConfig({
 	plugins: [
-		// Custom plugin to watch content files
+		// Custom plugin to watch content files (development only)
 		{
 			name: 'content-hmr',
 			configureServer(server) {
@@ -41,5 +41,11 @@ export default defineConfig({
 		},
 		tailwindcss(),
 		sveltekit()
-	]
+	],
+	define: {
+		global: 'globalThis',
+	},
+	optimizeDeps: {
+		include: ['gray-matter', 'js-yaml']
+	}
 });
