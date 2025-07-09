@@ -2,6 +2,37 @@ import fs from 'fs';
 import path from 'path';
 import * as yaml from 'js-yaml';
 import grayMatter from 'gray-matter';
+
+// Supported content file extensions
+const SUPPORTED_EXTENSIONS = ['.svx', '.md'];
+
+/**
+ * Find a content file with any supported extension
+ */
+function findContentFile(basePath: string, filename: string): string | null {
+  for (const ext of SUPPORTED_EXTENSIONS) {
+    const fullPath = path.join(basePath, `${filename}${ext}`);
+    if (fs.existsSync(fullPath)) {
+      return fullPath;
+    }
+  }
+  return null;
+}
+
+/**
+ * Check if a file has a supported content extension
+ */
+function isSupportedContentFile(filename: string): boolean {
+  return SUPPORTED_EXTENSIONS.some(ext => filename.endsWith(ext));
+}
+
+/**
+ * Get the extension of a content file
+ */
+function getContentFileExtension(filename: string): string {
+  const ext = SUPPORTED_EXTENSIONS.find(ext => filename.endsWith(ext));
+  return ext || '.svx'; // Default to .svx for backwards compatibility
+}
 import type { 
   MenuDataType, 
   CourseMenu, 
@@ -62,7 +93,7 @@ function hasContentChanged(courseId: string): boolean {
   // Check if any content file has changed
   const files = fs.readdirSync(courseDir, { withFileTypes: true });
   for (const file of files) {
-    if (file.isFile() && file.name.endsWith('.svx')) {
+    if (file.isFile() && isSupportedContentFile(file.name)) {
       const filePath = path.join(courseDir, file.name);
       const fileStat = fs.statSync(filePath);
       if (fileStat.mtimeMs > lastUpdated) return true;
@@ -71,7 +102,7 @@ function hasContentChanged(courseId: string): boolean {
       const subDir = path.join(courseDir, file.name);
       const subFiles = fs.readdirSync(subDir, { withFileTypes: true });
       for (const subFile of subFiles) {
-        if (subFile.isFile() && subFile.name.endsWith('.svx')) {
+        if (subFile.isFile() && isSupportedContentFile(subFile.name)) {
           const subFilePath = path.join(subDir, subFile.name);
           const subFileStat = fs.statSync(subFilePath);
           if (subFileStat.mtimeMs > lastUpdated) return true;
@@ -131,9 +162,9 @@ export function getAllCourses(): Array<CourseMeta & { id: string }> {
  */
 function getCourseTitle(courseId: string, files: string[], courseDir: string): string {
   // Try to find syllabus first
-  if (files.includes('outline.svx')) {
-    const syllabusPath = path.join(courseDir, 'outline.svx');
-    const content = fs.readFileSync(syllabusPath, 'utf8');
+  const outlineFile = findContentFile(courseDir, 'outline');
+  if (outlineFile) {
+    const content = fs.readFileSync(outlineFile, 'utf8');
     const { data } = grayMatter(content) as { data: ContentFrontmatter };
     if (data.courseTitle) return data.courseTitle;
   }
@@ -167,9 +198,9 @@ function getOrderFromFilename(filename: string): number | null {
  */
 function getOrderFromContent(courseDir: string, fileName: string): number {
   try {
-    const filePath = path.join(courseDir, `${fileName}.svx`);
+    const filePath = findContentFile(courseDir, fileName);
     
-    if (fs.existsSync(filePath)) {
+    if (filePath) {
       const content = fs.readFileSync(filePath, 'utf8');
       const { data } = grayMatter(content) as { data: ContentFrontmatter };
       
@@ -207,7 +238,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
     // Get course content files
     const entries = fs.readdirSync(courseDir, { withFileTypes: true });
     const contentFiles = entries
-      .filter(entry => entry.isFile() && entry.name.endsWith('.svx'))
+      .filter(entry => entry.isFile() && isSupportedContentFile(entry.name))
       .map(entry => entry.name);
     
     // Get course metadata
@@ -251,8 +282,9 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         continue;
       }
       
-      // Get file basename without extension (e.g., 'day1' from 'day1.svx')
-      const basename = path.basename(file, '.svx');
+      // Get file basename without extension (e.g., 'day1' from 'day1.svx' or 'day1.md')
+      const extension = getContentFileExtension(file);
+      const basename = path.basename(file, extension);
       const pagePath = `/${courseId}/${basename}`;
       
       // Extract metadata
@@ -321,7 +353,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
     const assignmentsDir = path.join(courseDir, 'assignments');
     if (fs.existsSync(assignmentsDir) && fs.statSync(assignmentsDir).isDirectory()) {
       const assignmentFiles = fs.readdirSync(assignmentsDir)
-        .filter(file => file.endsWith('.svx'));
+        .filter(file => isSupportedContentFile(file));
       
       // Process each assignment file
       for (const file of assignmentFiles) {
@@ -334,7 +366,8 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
           continue;
         }
         
-        const basename = path.basename(file, '.svx');
+        const extension = getContentFileExtension(file);
+        const basename = path.basename(file, extension);
         const pagePath = `/${courseId}/assignments/${basename}`;
         const title = data.title || basename;
         const order = data.order !== undefined ? data.order : getOrderFromFilename(file) || 999;
