@@ -75,7 +75,7 @@
     buzzerInterval = setInterval(() => {
       audio.currentTime = 0;
       audio.play().catch(e => console.error('Error playing audio:', e));
-    }, 400); // Repeat every 400ms while held
+    }, 400);
   }
   
   // Stop buzzer sound when released
