@@ -15,7 +15,7 @@
 </script>
 
 <div
-	style="display: flex; width: 1200px; height: 830px; color: {textColor}; font-family: 'Libre Caslon Condensed', serif; position: relative;"
+	style="display: flex; width: 1200px; height: 627px; color: {textColor}; font-family: 'Libre Caslon Condensed', serif; position: relative;"
 >
 	<!-- Background image (bottom layer) -->
 	<img
@@ -31,7 +31,7 @@
 
 	<!-- Content wrapper (top layer) -->
 	<div
-		style="display: flex; flex-direction: column; flex: 1; width: 100%; height: 100%; position: relative; padding: 60px;"
+		style="display: flex; flex-direction: column; flex: 1; width: 100%; height: 100%; position: relative; padding: 40px 205px;"
 	>
 		<!-- Header with course ID if available -->
 		<div style="display: flex; justify-content: space-between; align-items: flex-start;">
