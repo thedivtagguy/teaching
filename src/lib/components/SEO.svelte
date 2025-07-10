@@ -29,7 +29,7 @@
   $: fullOgImageUrl = image && image.startsWith('/')
     ? `https://teaching.aman.bh${image}`
     : ogImage
-    ? `https://wsrv.nl/?url=${new URL(ogImage, 'https://teaching.aman.bh/').toString()}&output=jpg`
+    ? `https://wsrv.nl/?url=${encodeURIComponent(new URL(ogImage, 'https://teaching.aman.bh/').toString())}&output=jpg`
     : '';
   $: currentUrl = canonical || ($page.url.href.startsWith('http') ? $page.url.href : `${domain}${$page.url.pathname}`);
   $: finalAuthor = author || defaultAuthor;

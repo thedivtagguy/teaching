@@ -24,17 +24,14 @@ export function extractSEOData(
 ): SEOData {
   const { courseId, contentType = 'page', fallbackTitle, fallbackDescription } = options;
   
-  // Get SEO data from frontmatter.seo or fall back to main frontmatter fields
-  const seoData = frontmatter.seo || {};
-  
   return {
-    title: seoData.title || frontmatter.title || fallbackTitle || 'Learning Resources',
-    description: seoData.description || frontmatter.description || fallbackDescription || `${contentType === 'assignment' ? 'Assignment' : contentType === 'day' ? 'Course material' : 'Course page'} for ${courseId || 'Learning Resources'}`,
-    keywords: seoData.keywords,
-    image: seoData.image,
-    author: seoData.author,
-    canonical: seoData.canonical,
-    type: seoData.type,
+    title: frontmatter.seo_title || frontmatter.title || fallbackTitle || 'Learning Resources',
+    description: frontmatter.seo_description || frontmatter.description || fallbackDescription || `${contentType === 'assignment' ? 'Assignment' : contentType === 'day' ? 'Course material' : 'Course page'} for ${courseId || 'Learning Resources'}`,
+    keywords: frontmatter.seo_keywords,
+    image: frontmatter.seo_image,
+    author: frontmatter.seo_author,
+    canonical: frontmatter.seo_canonical,
+    type: frontmatter.seo_type,
     date: frontmatter.date,
     courseId,
     contentType
