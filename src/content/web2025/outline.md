@@ -1,6 +1,6 @@
 ---
 title: "WEB2025: Introduction to Making for the Web"
-date: Summer 2025
+date: "2025-01-15"
 description: "Course syllabus for web2025: Introduction to Making for the Web"
 published: true
 section: Course Info

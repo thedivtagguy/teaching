@@ -1,5 +1,6 @@
 ---
 title: AI Policy
+date: "2025-01-10"
 section: Appendix
 ---
 

@@ -25,7 +25,12 @@
     ? `${title} | ${courseId.toUpperCase()}` 
     : title || 'Learning Resources by aman.bh';
   
-  $: ogImage = image || `${domain}/og-default.png`;
+  $: ogImage = image || `${domain}/og-image?title=${encodeURIComponent(title)}&courseId=${encodeURIComponent(courseId)}&type=${encodeURIComponent(contentType)}&date=${encodeURIComponent(date || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))}`;
+  $: fullOgImageUrl = image && image.startsWith('/')
+    ? `https://teaching.aman.bh${image}`
+    : ogImage
+    ? `https://wsrv.nl/?url=${new URL(ogImage, 'https://teaching.aman.bh/').toString()}&output=jpg`
+    : '';
   $: currentUrl = canonical || ($page.url.href.startsWith('http') ? $page.url.href : `${domain}${$page.url.pathname}`);
   $: finalAuthor = author || defaultAuthor;
   $: articleType = contentType === 'assignment' || contentType === 'day' ? 'article' : type;
@@ -47,7 +52,7 @@
   <meta property="og:url" content={currentUrl} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={finalDescription} />
-  <meta property="og:image" content={ogImage} />
+  <meta property="og:image" content={fullOgImageUrl} />
   <meta property="og:site_name" content={siteName} />
   
   <!-- Twitter -->
@@ -55,7 +60,7 @@
   <meta name="twitter:url" content={currentUrl} />
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={finalDescription} />
-  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image" content={fullOgImageUrl} />
   <meta name="twitter:creator" content="@amanbhargava" />
   
   <!-- Article metadata (for assignments, days, etc.) -->
@@ -84,7 +89,7 @@
       },
       "url": currentUrl,
       "datePublished": date ? new Date(date).toISOString() : undefined,
-      "image": ogImage
+      "image": fullOgImageUrl
     })}</script>`}
   {/if}
   
