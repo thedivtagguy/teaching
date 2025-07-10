@@ -185,10 +185,11 @@
   },
   "active": "b15908bf5123e0c3",
   "lastOpenFiles": [
-    "plan.md",
-    "requirements.md",
-    "ai-policy.md.tmp.97233.1752167205801",
+    "ai-policy.md",
     "outline.md",
+    "requirements.md",
+    "plan.md",
+    "ai-policy.md.tmp.97233.1752167205801",
     "Untitled",
     "day-1.svx",
     "faqs/titanic_condition.png",
@@ -205,7 +206,6 @@
     "assignments/export_dw.jpeg",
     "assignments/explorations.svx",
     "assignments/dear-data.svx",
-    "meta.yaml",
-    "ai-policy.md"
+    "meta.yaml"
   ]
 }
