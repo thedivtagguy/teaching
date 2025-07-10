@@ -5,6 +5,7 @@
 	import MDLayout from '$lib/components/MDLayout.svelte';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 	import { getContentFile } from '$lib/utils/contentService';
+	import { extractSEOData } from '$lib/utils/seo';
 	import type { MenuSection, CourseMeta, CourseMenu } from '$lib/utils/contentSchema';
 
 	// Get course ID from URL parameter
@@ -29,6 +30,7 @@
 			const module = getContentFile(courseId, 'outline');
 			if (module) {
 				outlineContent = module.default;
+				outlineContent.metadata = module.metadata; // Fix: attach metadata to content
 			} else {
 				error = `Could not load outline content for ${courseId}`;
 				console.error(`No supported outline file found for ${courseId}`);
@@ -38,14 +40,29 @@
 			console.error(`Error loading outline for ${courseId}:`, err);
 		}
 	});
+
+	// Extract SEO data from outline content
+	$: seoData = outlineContent?.metadata 
+		? extractSEOData(outlineContent.metadata, {
+				courseId,
+				contentType: 'page',
+				fallbackTitle: metadata?.title || `${courseId} Course`,
+				fallbackDescription: metadata?.description || `Course page for ${courseId}`
+			})
+		: null;
 </script>
 
 <SEO
-	title={metadata.title || courseId}
-	description={metadata.description || `Course page for ${courseId}`}
+	title={seoData?.title || metadata?.title || courseId}
+	description={seoData?.description || metadata?.description || `Course page for ${courseId}`}
+	keywords={seoData?.keywords || ''}
+	image={seoData?.image || ''}
+	author={seoData?.author || ''}
+	canonical={seoData?.canonical || ''}
+	type={seoData?.type || 'website'}
 	{courseId}
 	contentType="page"
-	date={metadata.term || ''}
+	date={seoData?.date || metadata?.term || ''}
 />
 
 <!-- Two-column layout on desktop, single column on mobile -->

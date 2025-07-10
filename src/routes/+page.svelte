@@ -1,4 +1,6 @@
 <script>
+	import SEO from '$lib/components/SEO.svelte';
+	
 	const resources = [
 		{
 			title: 'WEB2025 - Introduction to Making for the Web',
@@ -30,6 +32,13 @@
 		}
 	];
 </script>
+
+<SEO
+	title="Teaching Resources by Aman Bhargava"
+	description="Slides, notes, and other resources for the courses I teach at DA-IICT, Chitkara University, and other institutions."
+	keywords="teaching resources, web design, data visualization, QGIS, R programming, course materials"
+	type="website"
+/>
 
 <div class="noise-image mx-auto max-w-[1000px] p-8">
 	<header class="border-foreground mb-6 border-b-2 pb-2 text-center">

@@ -6,6 +6,7 @@
   import SEO from '$lib/components/SEO.svelte';
   import { Calendar, BookOpen, Clipboard, ArrowLeft, ArrowRight } from 'lucide-svelte';
   import { getContentFile } from '$lib/utils/contentService';
+  import { extractSEOData } from '$lib/utils/seo';
   import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
   
   // Get course ID and day ID from URL params
@@ -51,8 +52,10 @@
     try {
       // Use content service to get the content
       const module = getContentFile(courseId, dayId);
+      
       if (module) {
         content = module.default;
+        content.metadata = module.metadata; // Fix: attach metadata to content
       } else {
         error = `Could not load content for ${courseId}/${dayId}`;
         console.error(`No supported file found for ${courseId}/${dayId}`);
@@ -62,23 +65,31 @@
       console.error(`Error loading content for ${courseId}/${dayId}:`, err);
     }
   }
+
+  // Extract SEO data from content metadata
+  $: seoData = content?.metadata 
+    ? extractSEOData(content.metadata, {
+        courseId,
+        contentType: 'day',
+        fallbackTitle: content.metadata.title || dayId,
+        fallbackDescription: content.metadata.description || `Course material for ${courseId}`
+      })
+    : null;
+
 </script>
 
-{#if content?.metadata}
-  <SEO 
-    title={content.metadata.title || dayId}
-    description={content.metadata.description || ''}
-    courseId={courseId}
-    contentType="day"
-    date={content.metadata.date || ''}
-  />
-{:else}
-  <SEO 
-    title={dayId}
-    courseId={courseId}
-    contentType="day"
-  />
-{/if}
+<SEO 
+  title={seoData?.title || dayId}
+  description={seoData?.description || `Course material for ${courseId}`}
+  keywords={seoData?.keywords || ''}
+  image={seoData?.image || ''}
+  author={seoData?.author || ''}
+  canonical={seoData?.canonical || ''}
+  type={seoData?.type || 'article'}
+  {courseId}
+  contentType="day"
+  date={seoData?.date || ''}
+/>
 
 <!-- Two-column layout on desktop, single column on mobile -->
 <div class="max-w-7xl mx-auto">
