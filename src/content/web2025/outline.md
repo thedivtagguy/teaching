@@ -46,6 +46,10 @@ This could be us by the end of this class:
 
 - **Prerequisites:** No prior coding experience required.
 - **Attendance is mandatory**. The time we have is barely enough, and each day adds something that will help drive your final projects. Missing any day will leave you at a disadvantage. Please try to make it every day. If you cannot, please inform me a day before. 
-- **AI Policy**: Please go through this [AI Policy Document](web2025/ai-policy). All submitted **written** work must be your own. If you’re using any sort of LLM for Q/A about a _technical_ part of the process and not the written output itself, that is acceptable as long as it is **clearly declared to what extent an LLM was used**. Again, go through the document.
+- **AI Policy**: Please go through this [AI Policy Document](/web2025/ai-policy). All submitted **written** work must be your own. If you’re using any sort of LLM for Q/A about a _technical_ part of the process and not the written output itself, that is acceptable as long as it is **clearly declared to what extent an LLM was used**. Again, go through the document.
 - **Equipment:** You'll need a laptop. All software we use is free.
 - Have fun. 
+
+## Next Steps
+
+Thanks for reading this all the way through. Please proceed to the [requirements](/web2025/requirements) page to know what you need to have before class starts.
