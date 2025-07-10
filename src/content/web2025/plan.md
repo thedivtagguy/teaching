@@ -109,13 +109,6 @@
 - Animation as communication: loading states, transitions, and focus
 - Accessibility in interaction design
 
-**Afternoon (2 hours):**
-
-- **Figma Workshop**: Interaction prototyping and animation planning
-- CSS transitions and transforms for portfolio interactions
-- JavaScript fundamentals: enhancing static sites with behavior
-- Progressive enhancement and graceful degradation
-
 **Homework:** Implement interaction design and test accessibility
 
 ---

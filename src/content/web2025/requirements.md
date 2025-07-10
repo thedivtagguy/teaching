@@ -1,5 +1,5 @@
 ---
-title: "Before Class: Ready for it?"
+title: Things to keep ready before class
 sec: Course Info
 ---
 ## About This Site
@@ -16,7 +16,7 @@ This is a web-design + dev class so, you guessed it, you'll be needing your lapt
 
 - **VSCode**: Download it from [here](https://code.visualstudio.com/download). This will be our integrated development environment (IDE) of choice, it is where we will write our code.
 - **Git**: Download it from [here](https://git-scm.com/downloads). This is what is called a 'version control' system, it helps us in saving our progress as we work on things. More on this later, take my word for it now. There are different ways to install it. If you are on Mac, refer to [this guide here]. Windows folks have a straight-forward installer. 
-- **Obsidian**: Download it from [here](https://obsidian.md). It is a markdown (we will learn what that is), but you can think of it as a Notion that runs completely on your laptop and you fully own. It has a lot of useful things that are possible with it. The content I'm writing on this site was written in Obsidian and transformed into what you see now. 
+- **Obsidian**: Download it from [here](https://obsidian.md). It is a markdown editor (we will learn what that is), but you can think of it as a Notion that runs completely on your laptop and you fully own. It has a lot of useful things that are possible with it. The content I'm writing on this site was written in Obsidian and transformed into what you see now. 
 ### Platforms
 
 - [Github](https://github.com): This is how we will be submitting our exercises and putting our projects live on the web. More on this later, but for the moment please sign up and create an account. 
