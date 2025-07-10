@@ -3,7 +3,7 @@ import { Resvg } from '@resvg/resvg-js';
 import { html as toReactNode } from 'satori-html';
 import Card from '$lib/components/ShareCard.svelte';
 import { render } from 'svelte/server';
-const height = 830;
+const height = 800;
 const width = 1200;
 
 const fontFile = await fetch(
