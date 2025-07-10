@@ -89,6 +89,16 @@ export type ContentFrontmatter = {
   readings?: Reading[];
   assignments?: Assignment[];
   courseTitle?: string;
+  // SEO-specific fields
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    image?: string;
+    author?: string;
+    canonical?: string;
+    type?: 'website' | 'article';
+  };
 };
 
 // Complete course data including metadata and content

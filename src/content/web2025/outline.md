@@ -1,10 +1,16 @@
 ---
-title: "CDV2025: Introduction to Making for the Web"
+title: "WEB2025: Introduction to Making for the Web"
 date: Summer 2025
 description: "Course syllabus for web2025: Introduction to Making for the Web"
 published: true
 section: Course Info
 order: 1
+seo:
+  title: "Introduction to Making for the Web"
+  description: "Learn web design fundamentals, HTML/CSS, and responsive design. Build your own website from scratch in this hands-on course at Parsons School of Design."
+  keywords: "web design, HTML, CSS, responsive design, web development course, portfolio website"
+  type: "article"
+  author: "Aman Bhargava"
 ---
 # What is this class and why?
 
