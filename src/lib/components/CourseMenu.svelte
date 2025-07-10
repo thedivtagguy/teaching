@@ -110,7 +110,9 @@
 			on:click={() => toggleSection(section.title)}
 			aria-expanded={expandedSections[section.title] || false}
 		>
-			<h4 class="font-libre-caslon text-foreground group-hover:text-primary flex items-center font-bold">
+			<h4
+				class="font-libre-caslon text-foreground group-hover:text-primary flex items-center font-bold"
+			>
 				{section.title}
 			</h4>
 			{#if expandedSections[section.title]}
@@ -158,11 +160,11 @@
 
 		{#if selectedCourse}
 			<div class="my-4 flex gap-2">
-				<Button href="/{selectedCourse}/readings" size="lg">
+				<Button href="/{selectedCourse}/readings">
 					<BookOpen class="size-3" />
 					<span>Readings</span>
 				</Button>
-				<Button href="/{selectedCourse}/assignments" size="lg">
+				<Button href="/{selectedCourse}/assignments">
 					<Clipboard class="size-3" />
 					<span>Assignments</span>
 				</Button>

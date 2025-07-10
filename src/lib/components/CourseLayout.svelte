@@ -100,9 +100,6 @@
 				{/snippet}
 			</DrawerTrigger>
 			<DrawerContent class="max-h-[80vh]">
-				<DrawerHeader>
-					<DrawerTitle>Course Menu</DrawerTitle>
-				</DrawerHeader>
 				<div class="overflow-y-auto p-4">
 					{#if menuData[$selectedCourse]}
 						<CourseMenu
@@ -117,12 +114,7 @@
 	</div>
 
 	<!-- Sidebar - fixed on desktop, hidden on mobile -->
-	<aside
-		class={cn(
-			'bg-background border-border border-r p-6',
-			'hidden md:block md:w-1/5'
-		)}
-	>
+	<aside class={cn('bg-background border-border border-r p-6', 'hidden md:block md:w-1/5')}>
 		<!-- Use our enhanced CourseMenu component with combined data -->
 		{#if menuData[$selectedCourse]}
 			<CourseMenu
