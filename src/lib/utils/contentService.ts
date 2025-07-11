@@ -9,11 +9,12 @@ import type {
   CourseData
 } from './contentSchema';
 
-// Import all content files using Vite's import.meta.glob, excluding notes folders
+// Import all content files using Vite's import.meta.glob, excluding notes and templates folders
 const contentFiles = import.meta.glob([
   '/src/content/**/*.svx',
   '/src/content/**/*.md',
-  '!/src/content/**/notes/**'
+  '!/src/content/**/notes/**',
+  '!/src/content/**/templates/**'
 ], { 
   eager: true 
 });

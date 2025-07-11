@@ -5,6 +5,7 @@
 	import { Collapsible } from '$lib/components/ui/collapsible/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import { cn } from '$lib/utils/index.js';
+	import { Home } from 'lucide-svelte';
 	import type {
 		CourseMenu,
 		MenuSection,
@@ -70,15 +71,13 @@
 	function isAppendixItem(item: any): boolean {
 		return item.sectionTitle && isAppendixSection(item.sectionTitle);
 	}
-
-	$: console.log(menuData);
 </script>
 
 {#snippet menuItemLink(item: any, isAppendix: boolean = false)}
 	<a
 		href={item.path}
 		class={cn(
-			'font-archivo -ml-px block border-l-2 py-1 pl-3 text-sm transition-colors',
+			'font-archivo -ml-6 block border-l-2 py-1 pl-3 text-sm transition-colors',
 			currentPath === item.path
 				? isAppendix
 					? 'border-primary text-primary font-bold'
@@ -93,9 +92,9 @@
 {/snippet}
 
 {#snippet menuItemsList(items: any[], isAppendix: boolean = false)}
-	<ul class="space-y-2">
+	<ul class="m-0 space-y-2 p-0">
 		{#each items as item}
-			<li>
+			<li class="m-0 p-0">
 				{@render menuItemLink(item, isAppendix)}
 			</li>
 		{/each}
@@ -106,7 +105,7 @@
 	{#if menuData?.collapsibleSections !== false}
 		<!-- Collapsible Section Header -->
 		<button
-			class="group mb-3 flex w-full items-center justify-between text-left"
+			class="group font-archivo mb-3 flex w-full flex-wrap items-center justify-between text-left"
 			on:click={() => toggleSection(section.title)}
 			aria-expanded={expandedSections[section.title] || false}
 		>
@@ -149,7 +148,7 @@
 	<header class="border-border mb-6 border-b pb-4">
 		<a href="/{courseId}">
 			<h3
-				class="font-libre-caslon text-foreground hover:text-primary text-2xl font-semibold transition-colors"
+				class="font-libre-caslon text-foreground hover:text-primary text-xl font-semibold transition-colors"
 			>
 				{menuData?.title}
 			</h3>
@@ -159,23 +158,30 @@
 		</a>
 
 		{#if selectedCourse}
-			<div class="my-4 flex gap-2">
-				<Button href="/{selectedCourse}/readings">
+			<div class="my-4 flex flex-wrap gap-2">
+				<Button size="sm" href="/{selectedCourse}/readings">
 					<BookOpen class="size-3" />
 					<span>Readings</span>
 				</Button>
-				<Button href="/{selectedCourse}/assignments">
+				<Button size="sm" href="/{selectedCourse}/assignments">
 					<Clipboard class="size-3" />
 					<span>Assignments</span>
 				</Button>
 			</div>
 		{/if}
+		<a href="/{courseId}">
+			<Button size="xs" variant="outline" class="rounded-xs px-2" href="/{courseId}">
+				<Home class="size-3" />
+				<span class="font-archivo text-sm">Home</span>
+			</Button>
+		</a>
 	</header>
 
 	{#if menuData}
 		<nav aria-label="Course navigation">
 			{#if menuData.showSections === false}
 				<!-- Flat Menu (No Sections) -->
+
 				{@render menuItemsList(flatMenuItems.filter((item) => !isAppendixItem(item)))}
 
 				<!-- Show divider if there are appendix items -->

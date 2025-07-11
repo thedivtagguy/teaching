@@ -1,9 +1,10 @@
 ---
 title: AI Policy
-date: 2025-01-10
+date: 2025-07-10
 section: Appendix
-updated: 2025-07-11T09:47
+updated: 2025-07-11T10:16
 ---
+
 
 ## What's cool and what's not 
 

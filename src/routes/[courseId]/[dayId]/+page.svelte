@@ -1,234 +1,260 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { onMount, onDestroy } from 'svelte';
-  import MDLayout from '$lib/components/MDLayout.svelte';
-  import TableOfContents from '$lib/components/TableOfContents.svelte';
-  import SEO from '$lib/components/SEO.svelte';
-  import { Calendar, BookOpen, Clipboard, ArrowLeft, ArrowRight } from 'lucide-svelte';
-  import { getContentFile } from '$lib/utils/contentService';
-  import { extractSEOData } from '$lib/utils/seo';
-  import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
-  
-  // Get course ID and day ID from URL params
-  $: courseId = $page.params.courseId;
-  $: dayId = $page.params.dayId;
-  
-  let content: any = null;
-  let error: string | null = null;
-  
-  // Get menu data for navigation between days
-  $: menuData = $page.data.menuData?.[courseId] as CourseMenu || { sections: [], title: '', readings: [], assignments: [] };
-  $: currentDayPath = `/${courseId}/${dayId}`;
-  
-  // Find next and previous pages for navigation
-  $: {
-    let allItems: MenuItem[] = [];
-    menuData.sections.forEach((section: MenuSection) => {
-      allItems = [...allItems, ...section.items];
-    });
-    
-    // Sort all items by their order property
-    allItems.sort((a, b) => {
-      const orderA = a.order !== undefined ? a.order : 999;
-      const orderB = b.order !== undefined ? b.order : 999;
-      return orderA - orderB;
-    });
-    
-    const currentIndex = allItems.findIndex(item => item.path === currentDayPath);
-    previousPage = currentIndex > 0 ? allItems[currentIndex - 1] : null;
-    nextPage = currentIndex < allItems.length - 1 ? allItems[currentIndex + 1] : null;
-  }
-  
-  let previousPage: MenuItem | null = null;
-  let nextPage: MenuItem | null = null;
-  
-  // Use a reactive statement instead of onMount to load content
-  // This will re-run whenever courseId or dayId changes
-  $: {
-    // Reset content and error when parameters change
-    content = null;
-    error = null;
-    
-    try {
-      // Use content service to get the content
-      const module = getContentFile(courseId, dayId);
-      
-      if (module) {
-        content = module.default;
-        content.metadata = module.metadata; // Fix: attach metadata to content
-      } else {
-        error = `Could not load content for ${courseId}/${dayId}`;
-        console.error(`No supported file found for ${courseId}/${dayId}`);
-      }
-    } catch (err) {
-      error = `Could not load content for ${courseId}/${dayId}`;
-      console.error(`Error loading content for ${courseId}/${dayId}:`, err);
-    }
-  }
+	import { page } from '$app/stores';
+	import { onMount, onDestroy } from 'svelte';
+	import MDLayout from '$lib/components/MDLayout.svelte';
+	import TableOfContents from '$lib/components/TableOfContents.svelte';
+	import SEO from '$lib/components/SEO.svelte';
+	import { Calendar, BookOpen, Clipboard, ArrowLeft, ArrowRight } from 'lucide-svelte';
+	import { getContentFile } from '$lib/utils/contentService';
+	import { extractSEOData } from '$lib/utils/seo';
+	import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
 
-  // Extract SEO data from content metadata
-  $: seoData = content?.metadata 
-    ? extractSEOData(content.metadata, {
-        courseId,
-        contentType: 'day',
-        fallbackTitle: content.metadata.title || dayId,
-        fallbackDescription: content.metadata.description || `Course material for ${courseId}`
-      })
-    : null;
+	// Get course ID and day ID from URL params
+	$: courseId = $page.params.courseId;
+	$: dayId = $page.params.dayId;
 
+	let content: any = null;
+	let error: string | null = null;
+
+	// Get menu data for navigation between days
+	$: menuData = ($page.data.menuData?.[courseId] as CourseMenu) || {
+		sections: [],
+		title: '',
+		readings: [],
+		assignments: []
+	};
+	$: currentDayPath = `/${courseId}/${dayId}`;
+
+	// Find next and previous pages for navigation
+	$: {
+		let allItems: MenuItem[] = [];
+		menuData.sections.forEach((section: MenuSection) => {
+			allItems = [...allItems, ...section.items];
+		});
+
+		// Sort all items by their order property
+		allItems.sort((a, b) => {
+			const orderA = a.order !== undefined ? a.order : 999;
+			const orderB = b.order !== undefined ? b.order : 999;
+			return orderA - orderB;
+		});
+
+		const currentIndex = allItems.findIndex((item) => item.path === currentDayPath);
+		previousPage = currentIndex > 0 ? allItems[currentIndex - 1] : null;
+		nextPage = currentIndex < allItems.length - 1 ? allItems[currentIndex + 1] : null;
+	}
+
+	let previousPage: MenuItem | null = null;
+	let nextPage: MenuItem | null = null;
+
+	// Use a reactive statement instead of onMount to load content
+	// This will re-run whenever courseId or dayId changes
+	$: {
+		// Reset content and error when parameters change
+		content = null;
+		error = null;
+
+		try {
+			// Use content service to get the content
+			const module = getContentFile(courseId, dayId);
+
+			if (module) {
+				content = module.default;
+				content.metadata = module.metadata; // Fix: attach metadata to content
+			} else {
+				error = `Could not load content for ${courseId}/${dayId}`;
+				console.error(`No supported file found for ${courseId}/${dayId}`);
+			}
+		} catch (err) {
+			error = `Could not load content for ${courseId}/${dayId}`;
+			console.error(`Error loading content for ${courseId}/${dayId}:`, err);
+		}
+	}
+
+	// Extract SEO data from content metadata
+	$: seoData = content?.metadata
+		? extractSEOData(content.metadata, {
+				courseId,
+				contentType: 'day',
+				fallbackTitle: content.metadata.title || dayId,
+				fallbackDescription: content.metadata.description || `Course material for ${courseId}`
+			})
+		: null;
 </script>
 
-<SEO 
-  title={seoData?.title || dayId}
-  description={seoData?.description || `Course material for ${courseId}`}
-  keywords={seoData?.keywords || ''}
-  image={seoData?.image || ''}
-  author={seoData?.author || ''}
-  canonical={seoData?.canonical || ''}
-  type={seoData?.type || 'article'}
-  {courseId}
-  contentType="day"
-  date={seoData?.date || ''}
+<SEO
+	title={seoData?.title || dayId}
+	description={seoData?.description || `Course material for ${courseId}`}
+	keywords={seoData?.keywords || ''}
+	image={seoData?.image || ''}
+	author={seoData?.author || ''}
+	canonical={seoData?.canonical || ''}
+	type={seoData?.type || 'article'}
+	{courseId}
+	contentType="day"
+	date={seoData?.date || ''}
 />
 
 <!-- Two-column layout on desktop, single column on mobile -->
-<div class="max-w-7xl mx-auto">
-  {#if error}
-    <div class="bg-destructive/10 border border-destructive/20 text-destructive rounded-lg p-6 mb-6 shadow-sm">
-      <p class="font-archivo text-lg mb-4">{error}</p>
-      <p class="mt-2">
-        <a href="/{courseId}" class="bg-destructive/10 text-destructive hover:bg-destructive/20 py-2 px-4 rounded inline-flex items-center font-archivo transition-colors">
-          <ArrowLeft class="w-4 h-4 mr-2" />
-          Return to course page
-        </a>
-      </p>
-    </div>
-  {:else if content}
-    <div class="flex flex-col md:flex-row">
-      <!-- Main content area -->
-      <div class="md:flex-1 md:max-w-3xl">
-        <!-- Mobile Table of Contents at the top -->
-         <div class="md:hidden">
-          <TableOfContents />
-         </div>
-        
-        <div class="bg-card rounded-lg shadow-sm p-6 mb-8">
-          <!-- Content header with title, date & description -->
-          <div >
-            <!-- <h1 class="text-3xl font-libre-caslon mb-2">{content.metadata?.title || `${dayId.charAt(0).toUpperCase() + dayId.slice(1)}`}</h1> -->
-            
-            <div class="flex flex-wrap gap-4 text-sm text-muted-foreground">
-              {#if content.metadata?.date}
-                <div class="flex items-center">
-                  <Calendar class="w-4 h-4 mr-1 text-primary" />
-                  <span class="font-archivo">{content.metadata.date}</span>
-                </div>
-              {/if}
-              {#if content.metadata?.section}
-                <div class="flex items-center">
-                  <BookOpen class="w-4 h-4 mr-1 text-primary" />
-                  <span class="font-archivo">{content.metadata.section}</span>
-                </div>
-              {/if}
-            </div>
-            
-            {#if content.metadata?.description}
-              <p class="text-lg mt-4 font-archivo text-muted-foreground">{content.metadata.description}</p>
-            {/if}
-          </div>
+<div class="mx-auto max-w-7xl">
+	{#if error}
+		<div
+			class="bg-destructive/10 border-destructive/20 text-destructive mb-6 rounded-lg border p-6 shadow-sm"
+		>
+			<p class="font-archivo mb-4 text-lg">{error}</p>
+			<p class="mt-2">
+				<a
+					href="/{courseId}"
+					class="bg-destructive/10 text-destructive hover:bg-destructive/20 font-archivo inline-flex items-center rounded px-4 py-2 transition-colors"
+				>
+					<ArrowLeft class="mr-2 h-4 w-4" />
+					Return to course page
+				</a>
+			</p>
+		</div>
+	{:else if content}
+		<div class="flex flex-col md:flex-row">
+			<!-- Main content area -->
+			<div class="md:max-w-3xl md:flex-1">
+				<!-- Mobile Table of Contents at the top -->
+				<div class="md:hidden">
+					<TableOfContents />
+				</div>
 
-          <!-- Main content area with improved MDLayout -->
-          <MDLayout metadata={content.metadata}>
-            <svelte:component this={content} />
-          </MDLayout>
-          
-          <!-- Content navigation (previous/next) -->
-          <div class="flex justify-between items-center border-t border-border pt-6 mt-8">
-            {#if previousPage}
-              <a href={previousPage.path} class="inline-flex items-center p-2 pr-4 text-primary hover:text-primary hover:bg-primary/10 rounded transition-colors">
-                <ArrowLeft class="w-4 h-4 mr-2" />
-                <span class="font-archivo text-sm">{previousPage.title}</span>
-              </a>
-            {:else}
-              <div></div>
-            {/if}
-            
-            <a href="/{courseId}" class="inline-flex items-center p-2 px-4 text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-              <span class="font-archivo text-sm">Course Home</span>
-            </a>
-            
-            {#if nextPage}
-              <a href={nextPage.path} class="inline-flex items-center p-2 pl-4 text-primary hover:text-primary hover:bg-primary/10 rounded transition-colors">
-                <span class="font-archivo text-sm">{nextPage.title}</span>
-                <ArrowRight class="w-4 h-4 ml-2" />
-              </a>
-            {:else}
-              <div></div>
-            {/if}
-          </div>
-        </div>
+				<div class="bg-card mb-8 rounded-md p-4 shadow-sm">
+					<!-- Content header with title, date & description -->
+					<div class="mb-4">
+						<!-- <h1 class="text-3xl font-libre-caslon mb-2">{content.metadata?.title || `${dayId.charAt(0).toUpperCase() + dayId.slice(1)}`}</h1> -->
 
-        <!-- Supplemental materials sections -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <!-- Readings section -->
-          {#if content.metadata?.readings && content.metadata.readings.length > 0}
-            <div class="bg-primary/10 rounded-lg p-6 shadow-sm">
-              <h2 class="text-xl font-libre-caslon mb-4 flex items-center">
-                <BookOpen class="w-5 h-5 mr-2 text-primary" />
-                <span>Readings</span>
-              </h2>
-              <ul class="space-y-3">
-                {#each content.metadata.readings as reading}
-                  <li class="font-archivo bg-card p-3 rounded shadow-sm border border-primary/20">
-                    <div class="font-semibold text-primary">{reading.title}</div> 
-                    {#if reading.author}
-                      <div class="text-sm text-muted-foreground">by {reading.author}</div>
-                    {/if}
-                    {#if reading.pages}
-                      <div class="text-sm text-muted-foreground mt-1">Pages: {reading.pages}</div>
-                    {/if}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
+						<div class="text-muted-foreground flex flex-wrap gap-4 text-sm">
+							{#if content.metadata?.date}
+								<div class="flex items-center">
+									<Calendar class="text-primary mr-1 h-4 w-4" />
+									<span class="font-archivo"
+										>{new Date(content.metadata.date).toLocaleDateString('en-US', {
+											year: 'numeric',
+											month: 'long',
+											day: 'numeric'
+										})}</span
+									>
+								</div>
+							{/if}
+							{#if content.metadata?.section}
+								<div class="flex items-center">
+									<BookOpen class="text-primary mr-1 h-4 w-4" />
+									<span class="font-archivo">{content.metadata.section}</span>
+								</div>
+							{/if}
+						</div>
+					</div>
 
-          <!-- Assignments section -->
-          {#if content.metadata?.assignments && content.metadata.assignments.length > 0}
-            <div class="bg-secondary/10 rounded-lg p-6 shadow-sm">
-              <h2 class="text-xl font-libre-caslon mb-4 flex items-center">
-                <Clipboard class="w-5 h-5 mr-2 text-secondary" />
-                <span>Assignments</span>
-              </h2>
-              <ul class="space-y-4">
-                {#each content.metadata.assignments as assignment}
-                  <li class="font-archivo bg-card p-3 rounded shadow-sm border border-secondary/20">
-                    <div class="font-semibold text-secondary">{assignment.title}</div>
-                    {#if assignment.due}
-                      <div class="text-sm text-destructive mt-1 font-medium">Due: {assignment.due}</div>
-                    {/if}
-                    {#if assignment.description}
-                      <div class="mt-2 text-muted-foreground">{assignment.description}</div>
-                    {/if}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-        </div>
-      </div>
-      
-      <!-- Right sidebar with Table of Contents (desktop only) -->
-      <div class="hidden md:block md:w-64 md:pl-8 md:sticky md:top-8 md:self-start md:max-h-screen md:overflow-y-auto">
-        <TableOfContents />
-      </div>
-    </div>
-  {:else}
-    <div class="flex justify-center items-center h-64 bg-card rounded-lg shadow-sm">
-      <div class="animate-pulse text-muted-foreground font-archivo flex flex-col items-center">
-        <div class="w-8 h-8 border-4 border-t-primary border-primary/20 rounded-full animate-spin mb-4"></div>
-        <div>Loading content...</div>
-      </div>
-    </div>
-  {/if}
-</div> 
+					<!-- Main content area with improved MDLayout -->
+					<MDLayout metadata={content.metadata}>
+						<svelte:component this={content} />
+					</MDLayout>
+
+					<!-- Content navigation (previous/next) -->
+					<div class="border-border mt-8 flex items-center justify-between border-t pt-6">
+						{#if previousPage}
+							<a
+								href={previousPage.path}
+								class="text-primary hover:text-primary hover:bg-primary/10 inline-flex items-center rounded p-2 pr-4 transition-colors"
+							>
+								<ArrowLeft class="mr-2 h-4 w-4" />
+								<span class="font-archivo text-sm">{previousPage.title}</span>
+							</a>
+						{:else}
+							<div></div>
+						{/if}
+
+						<a
+							href="/{courseId}"
+							class="text-muted-foreground hover:text-foreground hover:bg-muted inline-flex items-center rounded p-2 px-4 transition-colors"
+						>
+							<span class="font-archivo text-sm">Course Home</span>
+						</a>
+
+						{#if nextPage}
+							<a
+								href={nextPage.path}
+								class="text-primary hover:text-primary hover:bg-primary/10 inline-flex items-center rounded p-2 pl-4 transition-colors"
+							>
+								<span class="font-archivo text-sm">{nextPage.title}</span>
+								<ArrowRight class="ml-2 h-4 w-4" />
+							</a>
+						{:else}
+							<div></div>
+						{/if}
+					</div>
+				</div>
+
+				<!-- Supplemental materials sections -->
+				<div class="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+					<!-- Readings section -->
+					{#if content.metadata?.readings && content.metadata.readings.length > 0}
+						<div class="bg-primary/10 rounded-lg p-6 shadow-sm">
+							<h2 class="font-libre-caslon mb-4 flex items-center text-xl">
+								<BookOpen class="text-primary mr-2 h-5 w-5" />
+								<span>Readings</span>
+							</h2>
+							<ul class="space-y-3">
+								{#each content.metadata.readings as reading}
+									<li class="font-archivo bg-card border-primary/20 rounded border p-3 shadow-sm">
+										<div class="text-primary font-semibold">{reading.title}</div>
+										{#if reading.author}
+											<div class="text-muted-foreground text-sm">by {reading.author}</div>
+										{/if}
+										{#if reading.pages}
+											<div class="text-muted-foreground mt-1 text-sm">Pages: {reading.pages}</div>
+										{/if}
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/if}
+
+					<!-- Assignments section -->
+					{#if content.metadata?.assignments && content.metadata.assignments.length > 0}
+						<div class="bg-secondary/10 rounded-lg p-6 shadow-sm">
+							<h2 class="font-libre-caslon mb-4 flex items-center text-xl">
+								<Clipboard class="text-secondary mr-2 h-5 w-5" />
+								<span>Assignments</span>
+							</h2>
+							<ul class="space-y-4">
+								{#each content.metadata.assignments as assignment}
+									<li class="font-archivo bg-card border-secondary/20 rounded border p-3 shadow-sm">
+										<div class="text-secondary font-semibold">{assignment.title}</div>
+										{#if assignment.due}
+											<div class="text-destructive mt-1 text-sm font-medium">
+												Due: {assignment.due}
+											</div>
+										{/if}
+										{#if assignment.description}
+											<div class="text-muted-foreground mt-2">{assignment.description}</div>
+										{/if}
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/if}
+				</div>
+			</div>
+
+			<!-- Right sidebar with Table of Contents (desktop only) -->
+			<div
+				class="hidden md:sticky md:top-8 md:block md:max-h-screen md:w-64 md:self-start md:overflow-y-auto md:pl-8"
+			>
+				<TableOfContents />
+			</div>
+		</div>
+	{:else}
+		<div class="bg-card flex h-64 items-center justify-center rounded-lg shadow-sm">
+			<div class="text-muted-foreground font-archivo flex animate-pulse flex-col items-center">
+				<div
+					class="border-t-primary border-primary/20 mb-4 h-8 w-8 animate-spin rounded-full border-4"
+				></div>
+				<div>Loading content...</div>
+			</div>
+		</div>
+	{/if}
+</div>
