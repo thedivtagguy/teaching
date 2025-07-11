@@ -31,6 +31,29 @@
   "ribbonIcons": {},
   "fileRules": [
     {
+      "id": "KFJYv",
+      "name": "Publish Status",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "property:published",
+          "operator": "!isTrue"
+        },
+        {
+          "source": "extension",
+          "operator": "matches",
+          "value": "md|svx"
+        },
+        {
+          "source": "path",
+          "operator": "!contains",
+          "value": "templates"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-upload"
+    },
+    {
       "id": "UQEm8",
       "name": "Appendix",
       "match": "all",

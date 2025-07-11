@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "outline.md",
+                "file": "install-guides.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "outline"
+              "title": "install-guides"
             }
           },
           {
@@ -202,11 +202,11 @@
   },
   "active": "fbb39983472b124b",
   "lastOpenFiles": [
-    "outline.md",
     "slides/Geocities.md",
+    "install-guides.md",
+    "outline.md",
     "requirements.md",
     "slides",
-    "install-guides.md",
     "assets/install-guides",
     "assets/install-guides/IMG-20250711134543072.png",
     "assets/install-guides/IMG-20250711134358057.png",
