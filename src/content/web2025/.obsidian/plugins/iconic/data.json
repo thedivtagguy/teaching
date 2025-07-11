@@ -1,0 +1,80 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": true,
+  "showAllFolderIcons": true,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showMenuActions": true,
+  "showQuickSwitcherIcons": true,
+  "showItemName": "desktop",
+  "biggerSearchResults": "mobile",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "rememberDeletedItems": false,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": false,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {},
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [
+    {
+      "id": "UQEm8",
+      "name": "Appendix",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "property:section",
+          "operator": "contains",
+          "value": "Appendix"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-book-a",
+      "color": "orange"
+    },
+    {
+      "id": "LCF57",
+      "name": "Day",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "filename",
+          "operator": "contains",
+          "value": "day"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-calendar-days",
+      "color": "green"
+    },
+    {
+      "id": "ncNfg",
+      "name": "Course Info",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "property:section",
+          "operator": "contains",
+          "value": "course info"
+        }
+      ],
+      "enabled": true,
+      "icon": "lucide-info",
+      "color": "blue"
+    }
+  ],
+  "folderRules": []
+}

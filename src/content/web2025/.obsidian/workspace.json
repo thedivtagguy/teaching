@@ -195,15 +195,24 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "iconic:Open rulebook": false,
+      "terminal:Open terminal": false
     }
   },
   "active": "fbb39983472b124b",
   "lastOpenFiles": [
+    "outline.md",
+    "slides/Geocities.md",
     "requirements.md",
+    "slides",
+    "install-guides.md",
+    "assets/install-guides",
+    "assets/install-guides/IMG-20250711134543072.png",
+    "assets/install-guides/IMG-20250711134358057.png",
+    "assets",
     "ai-policy.md",
     "day-1-html-css-and-you.md",
-    "outline.md",
     "Day 1 - HTML, CSS and You.md",
     "templates/day-template.md",
     "templates/plan.md",
@@ -219,12 +228,8 @@
     "faqs/pivot.png",
     "faqs/orange_1.png",
     "faqs/orange_2.png",
-    "faqs/human_day_1.png",
     "assignments/summaries.svx",
     "assignments/survey.svx",
-    "assignments/export_dw.jpeg",
-    "assignments/explorations.svx",
-    "assignments/dear-data.svx",
-    "meta.yaml"
+    "assignments/explorations.svx"
   ]
 }
