@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { ExternalLink } from 'lucide-svelte';
+
 	// Import metadata from the markdown file
 	interface Metadata {
 		title?: string;
@@ -11,6 +13,9 @@
 	}
 
 	export let metadata: Metadata = {};
+	export let courseId: string = '';
+	export let fileName: string = '';
+	export let fileType: 'page' | 'assignment' | 'day' = 'page';
 
 	// Format the date for display
 	let formattedDate = '';
@@ -28,14 +33,71 @@
 			formattedDate = metadata.updated; // Fallback to raw date string if parsing fails
 		}
 	}
+
+	// Generate GitHub edit URL
+	$: githubEditUrl = generateGitHubEditUrl(courseId, fileName, fileType);
+
+	/**
+	 * Generate GitHub edit URL for the content file
+	 */
+	function generateGitHubEditUrl(
+		courseId: string,
+		fileName: string,
+		fileType: 'page' | 'assignment' | 'day'
+	): string {
+		if (!courseId || !fileName) return '';
+
+		const baseUrl = 'https://github.com/thedivtagguy/teaching/blob/main/src/content';
+
+		// Determine the path based on file type
+		let filePath = '';
+		if (fileType === 'assignment') {
+			filePath = `${courseId}/assignments/${fileName}`;
+		} else {
+			filePath = `${courseId}/${fileName}`;
+		}
+
+		// Check which file extension actually exists by trying to access the imported files
+		const possiblePaths = [`/src/content/${filePath}.svx`, `/src/content/${filePath}.md`];
+
+		// Use the same import.meta.glob pattern as contentService to check which file exists
+		const contentFiles = import.meta.glob(
+			[
+				'/src/content/**/*.svx',
+				'/src/content/**/*.md',
+				'!/src/content/**/notes/**',
+				'!/src/content/**/templates/**'
+			],
+			{ eager: true }
+		);
+
+		// Find the actual file that exists
+		for (const path of possiblePaths) {
+			if (contentFiles[path]) {
+				const extension = path.endsWith('.svx') ? '.svx' : '.md';
+				return `${baseUrl}/${filePath}${extension}`;
+			}
+		}
+
+		// Fallback to .svx if we can't determine (shouldn't happen in practice)
+		return `${baseUrl}/${filePath}.svx`;
+	}
 </script>
 
 <div class="md-content prose prose-neutral noise-image max-w-none">
 	<slot />
 
-	{#if formattedDate}
-		<div class="last-updated">
-			<p>Last updated: {formattedDate}</p>
+	{#if formattedDate || githubEditUrl}
+		<div class="page-footer">
+			{#if formattedDate}
+				<p class="last-updated-text">Last updated: {formattedDate}</p>
+			{/if}
+			{#if githubEditUrl}
+				<p class="github-edit-link flex items-center gap-1">
+					<a href={githubEditUrl} target="_blank" rel="noopener noreferrer"> View on GitHub </a>
+					<!-- <ExternalLink class="text-blue size-3" /> -->
+				</p>
+			{/if}
 		</div>
 	{/if}
 </div>
@@ -344,24 +406,63 @@
 		border-bottom: 1px solid var(--color-border);
 	}
 
-	/* Last updated styling */
-	:global(.last-updated) {
+	/* Page footer styling */
+	:global(.page-footer) {
 		margin-top: 1rem;
 		padding-top: 1rem;
 		border-top: 1px solid var(--color-base-300);
 		font-size: 0.8rem;
 		color: var(--color-base-500);
 		font-style: italic;
-		text-align: right;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
 	}
 
-	:global(.last-updated p) {
+	:global(.page-footer p) {
 		margin-bottom: 0;
-		width: 100%;
-		text-align: right;
 		font-family: var(--font-archivo);
 		color: var(--color-base-500);
-		font-size: 0.8rem;
+		font-size: 0.6rem;
+	}
+
+	:global(.last-updated-text) {
+		text-align: left;
+	}
+
+	:global(.github-edit-link) {
+		text-align: right;
 		margin-left: auto;
+	}
+
+	:global(.github-edit-link a) {
+		color: var(--color-blue) !important;
+		text-decoration: none !important;
+		border-bottom: 1px solid var(--color-blue) !important;
+		font-style: normal;
+		transition:
+			color 0.2s,
+			border-bottom-color 0.2s;
+	}
+
+	:global(.github-edit-link a:hover) {
+		color: var(--color-purple) !important;
+		border-bottom-color: var(--color-purple) !important;
+	}
+
+	/* Responsive styling */
+	@media (max-width: 640px) {
+		:global(.page-footer) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		:global(.last-updated-text),
+		:global(.github-edit-link) {
+			text-align: left;
+			margin-left: 0;
+		}
 	}
 </style>

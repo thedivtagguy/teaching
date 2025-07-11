@@ -1,173 +1,216 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { onMount } from 'svelte';
-  import MDLayout from '$lib/components/MDLayout.svelte';
-  import SEO from '$lib/components/SEO.svelte';
-  import { Calendar, ArrowLeft, CheckCircle } from 'lucide-svelte';
-  import { confetti } from '@neoconfetti/svelte';
-  import { assignmentStore, type AssignmentWithStatus } from '$lib/stores/assignments';
-  import { browser } from '$app/environment';
-  
-  // Get course ID and assignment ID from URL params
-  $: courseId = $page.params.courseId;
-  $: assignmentId = $page.params.assignmentId;
-  
-  // Get the assignment content from the page data
-  $: assignment = $page.data?.assignment;
-  $: loadError = $page.data?.error;
-  $: loadedMeta = $page.data?.meta || {};
-  
-  // State for confetti
-  let showConfetti = false;
-  let confettiElement: HTMLElement;
-  
-  onMount(() => {
-    if (browser) {
-      // Initialize the store for this course
-      assignmentStore.initCourse(courseId);
-      
-      // If we have loaded metadata, add it to the store
-      if (loadedMeta) {
-        assignmentStore.setAssignments(courseId, [{
-          id: assignmentId,
-          title: loadedMeta?.title || 'Assignment',
-          due: loadedMeta?.due,
-          description: loadedMeta?.description,
-          points: loadedMeta?.points
-        }]);
-      }
-    }
-  });
-  
-  // Track our assignment data with status
-  let assignmentWithStatus: AssignmentWithStatus | undefined;
-  
-  // Subscribe to the assignments store to get real-time updates
-  $: {
-    const unsubscribe = assignmentStore.assignments.subscribe(data => {
-      assignmentWithStatus = data[courseId]?.[assignmentId];
-    });
-  }
-  
-  // Use the store data or fallback to loaded data
-  $: title = assignmentWithStatus?.title || loadedMeta?.title || 'Assignment';
-  $: due = assignmentWithStatus?.due || loadedMeta?.due;
-  $: description = assignmentWithStatus?.description || loadedMeta?.description;
-  $: points = assignmentWithStatus?.points || loadedMeta?.points;
-  $: isCompleted = assignmentWithStatus?.completed || false;
-  
-  function submitAssignment() {
-    if (!browser || !assignmentId) return;
-    
-    // Toggle completion state and get the new state
-    const newState = assignmentStore.toggleCompletion(courseId, assignmentId);
-    
-    // Show confetti only when marking as completed (not when unmarking)
-    if (newState) {
-      showConfetti = true;
-      setTimeout(() => showConfetti = false, 3000);
-    }
-  }
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+	import MDLayout from '$lib/components/MDLayout.svelte';
+	import SEO from '$lib/components/SEO.svelte';
+	import { Calendar, ArrowLeft, CheckCircle } from 'lucide-svelte';
+	import { confetti } from '@neoconfetti/svelte';
+	import { browser } from '$app/environment';
+
+	// Get course ID and assignment ID from URL params
+	$: courseId = $page.params.courseId;
+	$: assignmentId = $page.params.assignmentId;
+
+	// Get the assignment content from the page data
+	$: assignment = $page.data?.assignment;
+	$: loadError = $page.data?.error;
+	$: loadedMeta = $page.data?.meta || {};
+
+	// State for confetti
+	let showConfetti = false;
+
+	// Use the same approach as the listings page
+	$: title = loadedMeta?.title || 'Assignment';
+	$: due = loadedMeta?.due;
+	$: description = loadedMeta?.description;
+	$: points = loadedMeta?.points;
+
+	// Track completion status using localStorage (same pattern as listings page)
+	let isCompleted = false;
+
+	// Generate assignment key (same pattern as listings page)
+	function getAssignmentKey(): string {
+		return `${courseId}_assignment_${title.replace(/\s+/g, '_')}`;
+	}
+
+	// Load completion status on mount
+	onMount(() => {
+		if (browser) {
+			const key = getAssignmentKey();
+			isCompleted = localStorage.getItem(key) === 'completed';
+		}
+	});
+
+	// Update completion status when title changes
+	$: if (browser && title) {
+		const key = getAssignmentKey();
+		isCompleted = localStorage.getItem(key) === 'completed';
+	}
+
+	function submitAssignment() {
+		if (!browser) return;
+
+		const key = getAssignmentKey();
+
+		if (isCompleted) {
+			// Mark as incomplete
+			localStorage.removeItem(key);
+			isCompleted = false;
+		} else {
+			// Mark as complete
+			localStorage.setItem(key, 'completed');
+			isCompleted = true;
+
+			// Show confetti
+			showConfetti = true;
+			setTimeout(() => {
+				showConfetti = false;
+			}, 3000);
+		}
+	}
 </script>
 
-<SEO 
-  title={title}
-  description={description}
-  courseId={courseId}
-  contentType="assignment"
-  date={due}
-/>
+<SEO {title} {description} {courseId} contentType="assignment" date={due} />
 
-<div class="max-w-3xl overflow-hidden relative mx-auto">
-  <!-- Back to course link -->
-  <div class="mb-6">
-    <a href="/{courseId}/assignments" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
-      <ArrowLeft class="w-4 h-4 mr-2" />
-      <span class="font-archivo">Back to assignments</span>
-    </a>
-  </div>
-  
-  {#if loadError}
-    <div class="bg-destructive/10 border border-destructive/20 text-destructive rounded-lg p-6 mb-6 shadow-sm">
-      <p class="font-archivo text-lg">{loadError}</p>
-    </div>
-  {:else if assignment}
-    <div class="bg-card rounded-lg shadow-sm overflow-hidden">
-      <!-- Assignment header -->
-      <div class="border-b border-muted bg-gradient-to-r from-primary/10 to-secondary/10 p-6">
-        <h1 class="text-2xl font-libre-caslon mb-3">
-          {title}
-        </h1>
-        
-        <div class="flex flex-wrap w-full gap-4 text-sm">
-          {#if due}
-            <div class="flex items-center bg-card px-3 py-1 rounded-full shadow-sm border border-destructive/20">
-              <Calendar class="w-4 h-4 mr-2 text-destructive" />
-              <span class="font-archivo text-destructive">Due: {due}</span>
-            </div>
-          {/if}
-          
-          {#if points}
-            <div class="flex items-center bg-card px-3 py-1 rounded-full shadow-sm border border-primary/20">
-              <span class="font-archivo text-primary">Points: {points}</span>
-            </div>
-          {/if}
-          
-          {#if isCompleted}
-            <div class="flex items-center bg-secondary/20 px-3 py-1 rounded-full shadow-sm border border-secondary/30">
-              <CheckCircle class="w-4 h-4 mr-1 text-secondary-foreground" />
-              <span class="font-archivo text-secondary-foreground">Completed</span>
-            </div>
-          {/if}
+<div class="mx-auto max-w-7xl">
+	<!-- Back to course link -->
+	<div class="mb-6">
+		<a
+			href="/{courseId}/assignments"
+			class="text-primary hover:text-primary/80 inline-flex items-center transition-colors"
+		>
+			<ArrowLeft class="mr-2 h-4 w-4" />
+			<span class="font-archivo">Back to assignments</span>
+		</a>
+	</div>
 
-          <div class="ml-auto">
-            <button 
-              on:click={submitAssignment}
-              class={`${isCompleted ? 'bg-secondary text-secondary-foreground' : 'bg-primary text-primary-foreground'} py-2 px-4 rounded font-archivo transition-colors`}
-            >
-              {isCompleted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
-            </button>
-           
-          </div>
-        </div>
-      </div>
-      
-      <!-- Assignment description -->
-      <div class="p-6">
-        {#if description}
-          <div class="mb-6 font-archivo text-muted-foreground text-lg border-l-4 border-primary/20 pl-4 py-2 bg-primary/10 rounded-r-md">
-            {description}
-          </div>
-        {/if}
-        
-        <!-- Main assignment content -->
-        <MDLayout>
-          <svelte:component this={assignment} />
-        </MDLayout>
-      </div>
-      
-     
-    </div>
-  {:else}
-    <div class="flex justify-center items-center h-64 bg-card rounded-lg shadow-sm">
-      <div class="animate-pulse text-muted-foreground font-archivo flex flex-col items-center">
-        <div class="w-8 h-8 border-4 border-t-primary border-primary/20 rounded-full animate-spin mb-4"></div>
-        <div>Loading assignment...</div>
-      </div>
-    </div>
-  {/if}
+	{#if loadError}
+		<div
+			class="bg-destructive/10 border-destructive/20 text-destructive mb-6 rounded-lg border p-6"
+		>
+			<p class="font-archivo text-lg">{loadError}</p>
+		</div>
+	{:else if assignment}
+		<div class="flex flex-col lg:flex-row">
+			<!-- Main content area -->
+			<div class="lg:max-w-3xl lg:flex-1">
+				<!-- Assignment header -->
+				<div class="mb-6">
+					<h1 class="font-libre-caslon mb-3 text-3xl">{title}</h1>
 
-  <!-- Confetti container -->
-{#if showConfetti}
-<div 
-  bind:this={confettiElement}
-  use:confetti={{
-    particleCount: 100,
-    force: 0.6,
-    colors: ['hsl(var(--primary))', 'hsl(var(--secondary))', 'hsl(var(--accent))', 'hsl(var(--primary) / 0.8)', 'hsl(var(--secondary) / 0.8)']
-  }}
-  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] pointer-events-none z-50"
-></div>
-{/if} 
+					<div class="text-muted-foreground flex flex-wrap gap-4 text-sm">
+						{#if due}
+							<div class="flex items-center">
+								<Calendar class="text-primary mr-1 h-4 w-4" />
+								<span class="font-archivo">Due: {due}</span>
+							</div>
+						{/if}
+
+						{#if points}
+							<div class="flex items-center">
+								<span class="font-archivo">Points: {points}</span>
+							</div>
+						{/if}
+
+						{#if isCompleted}
+							<div class="flex items-center">
+								<CheckCircle class="text-secondary mr-1 h-4 w-4" />
+								<span class="font-archivo">Completed</span>
+							</div>
+						{/if}
+					</div>
+				</div>
+
+				<!-- Assignment description -->
+				{#if description}
+					<div class="bg-primary/10 mb-6 rounded-md p-4">
+						<p class="font-archivo text-muted-foreground">{description}</p>
+					</div>
+				{/if}
+
+				<!-- Main assignment content -->
+				<MDLayout
+					metadata={assignment.metadata || {}}
+					{courseId}
+					fileName={assignmentId}
+					fileType="assignment"
+				>
+					<svelte:component this={assignment} />
+				</MDLayout>
+			</div>
+
+			<!-- Right sidebar with submission status -->
+			<div class="lg:w-64 lg:self-start lg:pl-8">
+				<div class="bg-card border-border relative overflow-hidden rounded-sm border-1 shadow-xs">
+					<!-- Header -->
+					<div class="bg-primary/10 border-border border-b px-4 py-3">
+						<h3 class="font-libre-caslon text-lg font-semibold">Assignment Status</h3>
+					</div>
+
+					<!-- Status content -->
+					<div class="space-y-4 p-4">
+						<!-- Current Status -->
+						<div class="flex items-center justify-between">
+							<span class="font-archivo text-muted-foreground text-sm font-medium">Status</span>
+							<div class="flex items-center gap-2">
+								{#if isCompleted}
+									<div class="flex items-center gap-2 rounded-md bg-green-500/10 p-1">
+										<CheckCircle class="size-4 text-green-500" />
+										<span class="font-archivo !text-sm font-semibold text-green-500">
+											Completed
+										</span>
+									</div>
+								{:else}
+									<div class="border-muted-foreground h-4 w-4 rounded-full border-2"></div>
+									<span class="font-archivo text-muted-foreground text-sm font-medium"
+										>Not Started</span
+									>
+								{/if}
+							</div>
+						</div>
+
+						<!-- Due Date -->
+						{#if due}
+							<div class="flex items-center justify-between">
+								<span class="font-archivo text-muted-foreground text-sm font-medium">Due Date</span>
+								<div class="flex items-center gap-2">
+									<Calendar class="text-primary h-4 w-4" />
+									<span class="font-archivo text-sm font-semibold">{due}</span>
+								</div>
+							</div>
+						{/if}
+					</div>
+
+					<!-- Action button -->
+					<div class="border-border border-t p-4">
+						<button
+							on:click={submitAssignment}
+							class="bg-primary text-primary-foreground hover:bg-primary/90 border-primary font-archivo relative w-full transform rounded border-2 px-4 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 active:translate-y-0"
+						>
+							{isCompleted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
+						</button>
+					</div>
+
+					<!-- Confetti for sidebar -->
+					{#if showConfetti}
+						<div
+							use:confetti={{
+								particleCount: 75,
+								force: 0.7,
+								stageWidth: 400,
+								stageHeight: 300,
+								duration: 3000,
+								colors: ['#FFC700', '#FF0000', '#2E3191', '#41BBC7', '#00FF00']
+							}}
+							class="pointer-events-none absolute inset-0 z-50"
+						></div>
+					{/if}
+				</div>
+			</div>
+		</div>
+	{:else}
+		<div class="bg-card flex h-32 items-center justify-center rounded-lg">
+			<div class="text-muted-foreground font-archivo animate-pulse">Loading assignment...</div>
+		</div>
+	{/if}
 </div>
-

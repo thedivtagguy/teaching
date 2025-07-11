@@ -121,7 +121,7 @@
 					<TableOfContents />
 				</div>
 
-				<div class="bg-card mb-8 rounded-md p-4 shadow-sm">
+				<div>
 					<!-- Content header with title, date & description -->
 					<div class="mb-4">
 						<!-- <h1 class="text-3xl font-libre-caslon mb-2">{content.metadata?.title || `${dayId.charAt(0).toUpperCase() + dayId.slice(1)}`}</h1> -->
@@ -149,7 +149,7 @@
 					</div>
 
 					<!-- Main content area with improved MDLayout -->
-					<MDLayout metadata={content.metadata}>
+					<MDLayout metadata={content.metadata} {courseId} fileName={dayId} fileType="day">
 						<svelte:component this={content} />
 					</MDLayout>
 

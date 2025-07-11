@@ -71,10 +71,10 @@
 	} as CourseMenuType;
 </script>
 
-<div class="bg-background flex min-h-screen flex-col md:flex-row">
+<div class="bg-background flex min-h-screen flex-col lg:flex-row">
 	<!-- Mobile header with menu toggle -->
 	<div
-		class="fixed right-5 bottom-5 z-[var(--z-docked)] flex items-center justify-between p-4 md:hidden"
+		class="fixed right-5 bottom-5 z-[var(--z-docked)] flex items-center justify-between p-4 lg:hidden"
 	>
 		<Drawer bind:open={isMenuOpen}>
 			<DrawerTrigger asChild let:builder class="ml-auto">
@@ -103,7 +103,7 @@
 	</div>
 
 	<!-- Sidebar - fixed on desktop, hidden on mobile -->
-	<aside class={cn('bg-background border-border border-r p-6', 'hidden md:block md:w-1/6')}>
+	<aside class={cn('bg-background border-border border-r p-6', 'hidden lg:block lg:w-1/5')}>
 		<!-- Use our enhanced CourseMenu component with combined data -->
 		{#if menuData[$selectedCourse]}
 			<CourseMenu
@@ -115,7 +115,7 @@
 	</aside>
 
 	<!-- Main content area -->
-	<main class="noise-image bg-background flex-1 p-6 md:p-8">
+	<main class="noise-image bg-background flex-1 p-6 lg:p-8">
 		<slot />
 	</main>
 </div>

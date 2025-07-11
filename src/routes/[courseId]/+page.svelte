@@ -42,7 +42,7 @@
 	});
 
 	// Extract SEO data from outline content
-	$: seoData = outlineContent?.metadata 
+	$: seoData = outlineContent?.metadata
 		? extractSEOData(outlineContent.metadata, {
 				courseId,
 				contentType: 'page',
@@ -79,16 +79,27 @@
 
 			<div class="mb-8">
 				{#if metadata?.instructor}
-					<div class="bg-primary/10 mb-4 rounded-md p-4">
-						<h3 class="!font-archivo = mb-2 !text-lg font-semibold">Facilitator</h3>
-						<p class="mb-1">{metadata.instructor.name}</p>
-						<p class="mb-1">
-							<a href="mailto:{metadata.instructor.email}" class="text-primary hover:underline">
-								{metadata.instructor.email}
-							</a>
-						</p>
-						<p class="mb-1">{metadata.instructor.office}</p>
-						<p>Office Hours: {metadata.instructor.hours}</p>
+					<div class="bg-primary/10 !font-archivo rounded-md p-4">
+						<div class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+							<div>
+								<span class="!text-sm font-medium">Facilitator:</span>
+								<span class="ml-2">{metadata.instructor.name}</span>
+							</div>
+
+							<div class="col-span-2">
+								<span class="font-medium">Email:</span>
+								<a
+									href="mailto:{metadata.instructor.email}"
+									class="text-primary ml-2 hover:underline"
+								>
+									{metadata.instructor.email}
+								</a>
+							</div>
+							<div class="col-span-2">
+								<span class="font-medium">Office Hours:</span>
+								<span class="ml-2">{metadata.instructor.hours}</span>
+							</div>
+						</div>
 					</div>
 				{/if}
 
@@ -100,8 +111,13 @@
 			</div>
 
 			{#if outlineContent}
-				<div class="bg-card mb-8 rounded-lg p-6 shadow-sm">
-					<MDLayout metadata={outlineContent.metadata || {}}>
+				<div class="bg-card mb-8">
+					<MDLayout
+						metadata={outlineContent.metadata || {}}
+						{courseId}
+						fileName="outline"
+						fileType="page"
+					>
 						<svelte:component this={outlineContent} />
 					</MDLayout>
 				</div>
