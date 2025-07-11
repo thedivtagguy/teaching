@@ -4,12 +4,16 @@
   "headerUpdated": "updated",
   "headerCreated": "date",
   "minMinutesBetweenSaves": 1,
-  "ignoreGlobalFolder": [],
+  "ignoreGlobalFolder": [
+    "templates"
+  ],
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
   "fileHashMap": {
     "outline.md": "7df4543d3e812ae4d458b9cdfa9997f94ede503148407277dc3a3d8b535f67c5",
-    "ai-policy.md": "b1fc653c575ceeeef15988a31f5e43365efaa6be1d9ad9562f7a147f57a075ed",
-    "Day 1 - HTML, CSS and You.md": "c89b42e65f004615fe2a4cc0f0ed27111164bd965ebd8d05187fa7a0a2d513af"
+    "ai-policy.md": "c40b66d04f5be76041e8521dac67e19df72d16f5321c346f6e277e42c8a52588",
+    "templates/day-template.md": "6ce8a82db7ae4c775e8976d21dd90156c0b3e5adc551a42842a55240a7046203",
+    "requirements.md": "2845a8399c6db3244670788bfa063f385c9312d76cb9ae9feb5eebba38974955",
+    "day-1-html-css-and-you.md": "b05ae9496769a0d6aa3df7643f3299b6d1e0eefc8cc7aa7d9328896b89d9458d"
   }
 }

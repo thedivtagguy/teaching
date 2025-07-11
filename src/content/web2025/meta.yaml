@@ -13,13 +13,7 @@ navigation:
       order: 1
     - title: "Fundamentals" 
       order: 2
-    - title: "Collection and Encoding"
-      order: 3
-    - title: "Visualization Design"
-      order: 4
-    - title: "Geographic Visualization"
-      order: 5
     - title: "Final Project"
-      order: 6 
+      order: 3
     - title: "Appendix"
-      order: 7
+      order: 4

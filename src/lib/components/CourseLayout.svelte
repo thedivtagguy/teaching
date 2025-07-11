@@ -114,7 +114,7 @@
 	</div>
 
 	<!-- Sidebar - fixed on desktop, hidden on mobile -->
-	<aside class={cn('bg-background border-border border-r p-6', 'hidden md:block md:w-1/5')}>
+	<aside class={cn('bg-background border-border border-r p-6', 'hidden md:block md:w-1/6')}>
 		<!-- Use our enhanced CourseMenu component with combined data -->
 		{#if menuData[$selectedCourse]}
 			<CourseMenu

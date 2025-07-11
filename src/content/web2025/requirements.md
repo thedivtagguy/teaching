@@ -1,11 +1,15 @@
 ---
 title: Things to keep ready before class
 sec: Course Info
-seo_title: "Course Requirements"
-seo_description: "Things to keep ready before class"
-seo_keywords: "web design, HTML, CSS, responsive design, web development course, Parsons, portfolio website"
-seo_type: "article"
-seo_author: "Aman Bhargava"
+seo_title: Course Requirements
+seo_description: Things to keep ready before class
+seo_keywords: web design, HTML, CSS, responsive design, web development course, Parsons, portfolio website
+seo_type: article
+seo_author: Aman Bhargava
+date: 2025-07-10T22:51
+updated: 2025-07-11T10:17
+section: Course Info
+order: 1
 ---
 ## About This Site
 
