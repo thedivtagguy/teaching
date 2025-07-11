@@ -74,27 +74,16 @@
 <div class="bg-background flex min-h-screen flex-col md:flex-row">
 	<!-- Mobile header with menu toggle -->
 	<div
-		class="bg-background border-border sticky top-0 z-[var(--z-docked)] flex items-center justify-between border-b p-4 md:hidden"
+		class="fixed right-5 bottom-5 z-[var(--z-docked)] flex items-center justify-between p-4 md:hidden"
 	>
 		<Drawer bind:open={isMenuOpen}>
-			<DrawerTrigger asChild let:builder>
+			<DrawerTrigger asChild let:builder class="ml-auto">
 				{#snippet children(builder)}
-					<Button
-						builders={[builder]}
-						variant="outline"
-						size="icon"
-						class={cn(
-							'border-foreground border-2',
-							'shadow-[var(--shadow-btn-drop)] transition-all duration-[var(--duration-250)]',
-							'hover:-translate-y-0.5 hover:shadow-[var(--shadow-btn-hover)]',
-							'font-roboto font-bold'
-						)}
-						aria-label="Toggle menu"
-					>
+					<Button builders={[builder]} variant="default" size="lg" aria-label="Toggle menu">
 						{#if isMenuOpen}
-							<X class="h-5 w-5" />
+							<X class="size-5" />
 						{:else}
-							<Menu class="h-5 w-5" />
+							<Menu class="size-5" />
 						{/if}
 					</Button>
 				{/snippet}
