@@ -4,6 +4,8 @@
 	import { onMount } from 'svelte';
 	import { confetti } from '@neoconfetti/svelte';
 	import { fly, fade } from 'svelte/transition';
+	import { browser } from '$app/environment';
+	import { goto } from '$app/navigation';
 
 	// Interface definitions
 	interface Reading {
@@ -35,6 +37,9 @@
 
 	// Confetti state
 	let confettiForReading: string | null = null;
+
+	// Highlight state for anchor navigation
+	let highlightedSection: string | null = null;
 
 	// Function to group readings by source
 	function groupReadingsBySource(readings: Reading[]): Record<string, Reading[]> {
@@ -77,6 +82,47 @@
 		completedReadings = completedReadings;
 	}
 
+	// Generate anchor ID from source name
+	function generateAnchorId(source: string): string {
+		return source.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+	}
+
+	// Handle day link clicks
+	function handleDayClick(source: string) {
+		if (!browser) return;
+		const anchorId = generateAnchorId(source);
+		const url = new URL(window.location.href);
+		url.searchParams.set('day', anchorId);
+		goto(url.toString(), { replaceState: true });
+		// Highlight the section
+		highlightedSection = anchorId;
+		// Remove highlight after 2 seconds
+		setTimeout(() => {
+			highlightedSection = null;
+		}, 2000);
+	}
+
+	// Scroll to anchor on page load
+	function scrollToAnchor() {
+		if (!browser) return;
+		const urlParams = new URLSearchParams(window.location.search);
+		const dayParam = urlParams.get('day');
+		if (dayParam) {
+			setTimeout(() => {
+				const element = document.getElementById(dayParam);
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					// Highlight the section
+					highlightedSection = dayParam;
+					// Remove highlight after 2 seconds
+					setTimeout(() => {
+						highlightedSection = null;
+					}, 2000);
+				}
+			}, 100);
+		}
+	}
+
 	// Load saved reading states on mount - optimize localStorage checks
 	onMount(() => {
 		// Batch localStorage operations
@@ -89,6 +135,9 @@
 
 		// Trigger reactivity once
 		completedReadings = completedReadings;
+
+		// Scroll to anchor if present in URL
+		scrollToAnchor();
 	});
 </script>
 
@@ -159,11 +208,16 @@
 				<div
 					in:fly={{ y: 20, duration: 300, delay: index * 100 }}
 					class="bg-card border-foreground btn-drop-shadow overflow-hidden rounded-lg border-2"
+					id={generateAnchorId(source)}
 				>
-					<div class=" border-foreground border-b-2 px-6 py-4">
-						<h2 class="font-roboto text-foreground text-lg font-bold tracking-wide uppercase">
+					<div class=" border-foreground border-b-2 px-6 py-4 transition-all duration-500 {highlightedSection === generateAnchorId(source) ? 'bg-yellow-300' : ''}">
+						<button
+							on:click={() => handleDayClick(source)}
+							class="font-roboto text-foreground text-lg font-bold tracking-wide uppercase hover:text-primary transition-colors cursor-pointer text-left w-full"
+							aria-label="Link to {source}"
+						>
 							{source}
-						</h2>
+						</button>
 					</div>
 
 					<ul class="divide-muted-foreground divide-y">

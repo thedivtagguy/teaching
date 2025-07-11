@@ -13,6 +13,7 @@
 	import { browser } from '$app/environment';
 	import { fly, fade } from 'svelte/transition';
 	import { confetti } from '@neoconfetti/svelte';
+	import { goto } from '$app/navigation';
 
 	// Type definitions
 	interface AssignmentMeta {
@@ -87,6 +88,48 @@
 		completedAssignments = completedAssignments;
 	}
 
+	// Generate anchor ID from due date
+	function generateAnchorId(dueDate: string): string {
+		if (dueDate === 'No Due Date') return 'no-due-date';
+		return dueDate.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+	}
+
+	// Handle day link clicks
+	function handleDayClick(dueDate: string) {
+		if (!browser) return;
+		const anchorId = generateAnchorId(dueDate);
+		const url = new URL(window.location.href);
+		url.searchParams.set('day', anchorId);
+		goto(url.toString(), { replaceState: true });
+		// Highlight the section
+		highlightedSection = anchorId;
+		// Remove highlight after 2 seconds
+		setTimeout(() => {
+			highlightedSection = null;
+		}, 2000);
+	}
+
+	// Scroll to anchor on page load
+	function scrollToAnchor() {
+		if (!browser) return;
+		const urlParams = new URLSearchParams(window.location.search);
+		const dayParam = urlParams.get('day');
+		if (dayParam) {
+			setTimeout(() => {
+				const element = document.getElementById(dayParam);
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					// Highlight the section
+					highlightedSection = dayParam;
+					// Remove highlight after 2 seconds
+					setTimeout(() => {
+						highlightedSection = null;
+					}, 2000);
+				}
+			}, 100);
+		}
+	}
+
 	// Load saved assignment states on mount - EXACT copy from readings
 	onMount(() => {
 		// Batch localStorage operations
@@ -99,6 +142,9 @@
 
 		// Trigger reactivity once
 		completedAssignments = completedAssignments;
+
+		// Scroll to anchor if present in URL
+		scrollToAnchor();
 	});
 
 	// Track progress stats reactively
@@ -107,6 +153,9 @@
 
 	// Confetti state
 	let confettiForAssignment: string | null = null;
+
+	// Highlight state for anchor navigation
+	let highlightedSection: string | null = null;
 
 	// Make totalAssignments reactive
 	$: totalAssignments = processedAssignments.length;
@@ -235,11 +284,16 @@
 				<div
 					in:fly={{ y: 20, duration: 300, delay: index * 100 }}
 					class="bg-card border-foreground btn-drop-shadow overflow-hidden rounded-lg border-2"
+					id={generateAnchorId(dueDate)}
 				>
-					<div class=" border-foreground border-b-2 px-6">
-						<h2 class="font-roboto text-foreground py-4 text-xl font-bold tracking-wide">
+					<div class=" border-foreground border-b-2 px-6 transition-all duration-500 {highlightedSection === generateAnchorId(dueDate) ? 'bg-yellow-300' : ''}">
+						<button
+							on:click={() => handleDayClick(dueDate)}
+							class="font-roboto text-foreground py-4 text-xl font-bold tracking-wide hover:text-primary transition-colors cursor-pointer text-left w-full"
+							aria-label="Link to {formatDate(dueDate)}"
+						>
 							{formatDate(dueDate)}
-						</h2>
+						</button>
 					</div>
 
 					<ul class="divide-muted-foreground divide-y">
