@@ -1,10 +1,12 @@
 ---
 title: AI Policy
-date: "2025-01-10"
+date: 2025-01-10
 section: Appendix
+updated: 2025-07-11T09:47
 ---
 
 ## What's cool and what's not 
+
 I get it. AI tools are everywhere, and honestly, they're pretty useful for certain things. But here's the thing, this class is about you learning to think like a web designer and actually understanding what you're building, not just generating stuff. Otherwise why bother, am I right? 
 
 So here's my take on where AI fits in this class:

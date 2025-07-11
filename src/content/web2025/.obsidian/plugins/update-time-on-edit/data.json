@@ -1,0 +1,15 @@
+{
+  "dateFormat": "yyyy-MM-dd'T'HH:mm",
+  "enableCreateTime": true,
+  "headerUpdated": "updated",
+  "headerCreated": "date",
+  "minMinutesBetweenSaves": 1,
+  "ignoreGlobalFolder": [],
+  "ignoreCreatedFolder": [],
+  "enableExperimentalHash": false,
+  "fileHashMap": {
+    "outline.md": "7df4543d3e812ae4d458b9cdfa9997f94ede503148407277dc3a3d8b535f67c5",
+    "ai-policy.md": "b1fc653c575ceeeef15988a31f5e43365efaa6be1d9ad9562f7a147f57a075ed",
+    "Day 1 - HTML, CSS and You.md": "c89b42e65f004615fe2a4cc0f0ed27111164bd965ebd8d05187fa7a0a2d513af"
+  }
+}
