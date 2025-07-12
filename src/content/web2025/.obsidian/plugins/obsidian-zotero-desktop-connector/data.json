@@ -1,0 +1,23 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [
+    {
+      "name": "HTML Citation",
+      "format": "template",
+      "template": "<div class=\"compact-cite\">\n  {% if creators.length > 0 %}{{creators[0].lastName}}, {{creators[0].firstName[0]}}.{% endif %}{% if date %} ({{date | format(\"YYYY\")}}).{% endif %} \n  {% if url %}<a href=\"{{url}}\" target=\"_blank\">{{title}}</a>{% else %}{{title}}{% endif %}.\n  {% if publicationTitle %} <em>{{publicationTitle}}</em>.{% endif %}\n<div class=\"publisher\">\n  {% if publisher %} {{publisher}}.{% endif %}\n</div>\n</div>"
+    },
+    {
+      "name": "Cite",
+      "format": "formatted-bibliography",
+      "cslStyle": "apa"
+    }
+  ],
+  "exportFormats": [],
+  "citeSuggestTemplate": "[[{{citekey}}]]",
+  "openNoteAfterImport": false,
+  "whichNotesToOpenAfterImport": "first-imported-note"
+}
