@@ -6,6 +6,7 @@
       {
         "id": "579155fb37ea29bf",
         "type": "tabs",
+        "dimension": 26.14213197969543,
         "children": [
           {
             "id": "1aa0c67d1794c80a",
@@ -27,12 +28,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "install-guides.md",
+                "file": "outline.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "install-guides"
+              "title": "outline"
             }
           },
           {
@@ -51,6 +52,23 @@
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "eb2eecf5392cc2f1",
+        "type": "tabs",
+        "dimension": 73.85786802030458,
+        "children": [
+          {
+            "id": "d623b2c68eb1989c",
+            "type": "leaf",
+            "state": {
+              "type": "reveal-preview-view",
+              "state": {},
+              "icon": "slides",
+              "title": "Preview: HTML, CSS, and YOU.md"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -197,12 +215,16 @@
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
       "iconic:Open rulebook": false,
-      "terminal:Open terminal": false
+      "terminal:Open terminal": false,
+      "slides-extended:Show slide preview": false
     }
   },
   "active": "fbb39983472b124b",
   "lastOpenFiles": [
-    "slides/Geocities.md",
+    "slides/HTML, CSS, and YOU.md",
+    "assets/slides/HTML, CSS, and YOU",
+    "assets/slides",
+    "assets/slides/HTML, CSS, and YOU/IMG-20250711180744533.png",
     "install-guides.md",
     "outline.md",
     "requirements.md",
@@ -227,9 +249,6 @@
     "faqs/orange_new_date.jpg",
     "faqs/pivot.png",
     "faqs/orange_1.png",
-    "faqs/orange_2.png",
-    "assignments/summaries.svx",
-    "assignments/survey.svx",
-    "assignments/explorations.svx"
+    "assignments/summaries.svx"
   ]
 }
