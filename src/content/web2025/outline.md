@@ -10,7 +10,7 @@ seo_description: Learn web design fundamentals, HTML/CSS, and responsive design.
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-14T14:11
+updated: 2025-07-14T14:33
 ---
 # What is this class and why?
 
@@ -76,4 +76,4 @@ This could be us by the end of this class:
 
 ## Next Steps
 
-Thanks for reading this all the way through. Please proceed to the requirements page to know what you need to have before class starts.
+Thanks for reading this all the way through. Please proceed to the [requirements](/web2025/requirements) page to know what you need to have before class starts.
