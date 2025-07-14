@@ -80,7 +80,7 @@
 			<div class="mb-8">
 				{#if metadata?.instructor}
 					<div class="bg-primary/10 !font-archivo rounded-md p-4">
-						<div class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+						<div class="grid grid-cols-1 gap-x-6 gap-y-2 text-sm md:grid-cols-2">
 							<div>
 								<span class="!text-sm font-medium">Facilitator:</span>
 								<span class="ml-2">{metadata.instructor.name}</span>
