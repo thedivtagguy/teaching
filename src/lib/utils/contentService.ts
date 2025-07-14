@@ -1,9 +1,9 @@
 import * as yaml from 'js-yaml';
-import type { 
-  MenuDataType, 
-  CourseMenu, 
-  MenuSection, 
-  MenuItem, 
+import type {
+  MenuDataType,
+  CourseMenu,
+  MenuSection,
+  MenuItem,
   CourseMeta,
   ContentFrontmatter,
   CourseData
@@ -14,14 +14,15 @@ const contentFiles = import.meta.glob([
   '/src/content/**/*.svx',
   '/src/content/**/*.md',
   '!/src/content/**/notes/**',
-  '!/src/content/**/templates/**'
-], { 
-  eager: true 
+  '!/src/content/**/templates/**',
+  '!/src/content/**/slides/**'
+], {
+  eager: true
 });
 
-const yamlFiles = import.meta.glob('/src/content/**/meta.yaml', { 
-  as: 'raw', 
-  eager: true 
+const yamlFiles = import.meta.glob('/src/content/**/meta.yaml', {
+  as: 'raw',
+  eager: true
 });
 
 // Supported content file extensions
@@ -70,7 +71,7 @@ function parseYaml(content: string): any {
  */
 function getCourseDirectories(): string[] {
   const courses = new Set<string>();
-  
+
   // Extract course IDs from content file paths
   Object.keys(contentFiles).forEach(filePath => {
     const match = filePath.match(/^\/src\/content\/([^\/]+)/);
@@ -78,7 +79,7 @@ function getCourseDirectories(): string[] {
       courses.add(match[1]);
     }
   });
-  
+
   // Also check yaml files
   Object.keys(yamlFiles).forEach(filePath => {
     const match = filePath.match(/^\/src\/content\/([^\/]+)/);
@@ -86,7 +87,7 @@ function getCourseDirectories(): string[] {
       courses.add(match[1]);
     }
   });
-  
+
   return Array.from(courses);
 }
 
@@ -98,23 +99,23 @@ export function getCourseMetadata(courseId: string): CourseMeta | null {
   if (contentCache.metadata.has(courseId)) {
     return contentCache.metadata.get(courseId) || null;
   }
-  
+
   // Look for meta.yaml file
   const metaPath = `/src/content/${courseId}/meta.yaml`;
   const metaContent = yamlFiles[metaPath];
-  
+
   if (!metaContent) {
     console.log(`No meta.yaml found for course ${courseId}`);
     return null;
   }
-  
+
   const metadata = parseYaml(metaContent) as CourseMeta | null;
-  
+
   // Cache the result
   if (metadata) {
     contentCache.metadata.set(courseId, metadata);
   }
-  
+
   return metadata;
 }
 
@@ -124,7 +125,7 @@ export function getCourseMetadata(courseId: string): CourseMeta | null {
 export function getAllCourses(): Array<CourseMeta & { id: string }> {
   try {
     const courseDirs = getCourseDirectories();
-    
+
     return courseDirs.map(courseId => {
       const metadata = getCourseMetadata(courseId);
       return {
@@ -147,7 +148,7 @@ function getCourseTitle(courseId: string, files: string[]): string {
     `/src/content/${courseId}/outline.svx`,
     `/src/content/${courseId}/outline.md`
   ];
-  
+
   for (const outlineFile of outlineFiles) {
     const module = contentFiles[outlineFile] as any;
     if (module && module.metadata) {
@@ -155,7 +156,7 @@ function getCourseTitle(courseId: string, files: string[]): string {
       if (data.courseTitle) return data.courseTitle;
     }
   }
-  
+
   // Fall back to first file
   if (files.length > 0) {
     const firstFilePath = files[0];
@@ -165,7 +166,7 @@ function getCourseTitle(courseId: string, files: string[]): string {
       if (data.courseTitle) return data.courseTitle;
     }
   }
-  
+
   // Default to course ID if no title found
   return `Course: ${courseId}`;
 }
@@ -191,17 +192,17 @@ function getOrderFromContent(courseId: string, fileName: string): number {
       `/src/content/${courseId}/${fileName}.svx`,
       `/src/content/${courseId}/${fileName}.md`
     ];
-    
+
     for (const filePath of possiblePaths) {
       const module = contentFiles[filePath] as any;
       if (module && module.metadata) {
         const data = module.metadata as ContentFrontmatter;
-        
+
         // Try to get order from frontmatter
         if (typeof data.order === 'number') {
           return data.order;
         }
-        
+
         // Try to get order from filename pattern
         const filenameOrder = getOrderFromFilename(fileName);
         if (filenameOrder !== null) {
@@ -224,23 +225,23 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
   if (contentCache.menus.has(courseId)) {
     return contentCache.menus.get(courseId) || null;
   }
-  
+
   try {
     // Get course content files from imported files
-    const courseContentFiles = Object.keys(contentFiles).filter(filePath => 
-      filePath.startsWith(`/src/content/${courseId}/`) && 
+    const courseContentFiles = Object.keys(contentFiles).filter(filePath =>
+      filePath.startsWith(`/src/content/${courseId}/`) &&
       !filePath.includes('/assignments/') &&
       isSupportedContentFile(filePath)
     );
-    
+
     if (courseContentFiles.length === 0) {
       console.log(`No supported file found for ${courseId}`);
       return null;
     }
-    
+
     // Get course metadata
     const metadata = getCourseMetadata(courseId);
-    
+
     // Create course menu structure
     const courseMenu: CourseMenu = {
       title: metadata?.title || getCourseTitle(courseId, courseContentFiles),
@@ -250,24 +251,24 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       collapsibleSections: metadata?.navigation?.collapsibleSections,
       showSections: metadata?.navigation?.showSections !== false // Default to true unless explicitly set to false
     };
-    
+
     // Track sections to avoid duplicates
     const sectionMap: Record<string, MenuSection> = {};
-    
+
     // If metadata has section definitions, initialize them first to maintain order
     if (metadata?.navigation?.sections && Array.isArray(metadata.navigation.sections)) {
       metadata.navigation.sections.forEach((sectionDef: any) => {
         if (sectionDef.title && sectionDef.title !== 'Assignments') { // Skip Assignments section
-          sectionMap[sectionDef.title] = { 
-            title: sectionDef.title, 
+          sectionMap[sectionDef.title] = {
+            title: sectionDef.title,
             items: [],
-            order: sectionDef.order 
+            order: sectionDef.order
           };
           courseMenu.sections.push(sectionMap[sectionDef.title]);
         }
       });
     }
-    
+
     // Process each content file
     for (const filePath of courseContentFiles) {
       const module = contentFiles[filePath] as any;
@@ -275,51 +276,51 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         console.log(`No metadata found for ${filePath}`);
         continue;
       }
-      
+
       const data = module.metadata as ContentFrontmatter;
-      
+
       // Skip if not published
       if (data.published === false) {
         continue;
       }
-      
+
       // Get file basename without extension (e.g., 'day1' from 'day1.svx' or 'day1.md')
       const fileName = filePath.split('/').pop() || '';
       const extension = getContentFileExtension(fileName);
       const basename = fileName.replace(extension, '');
       const pagePath = `/${courseId}/${basename}`;
-      
+
       // Extract metadata
       const title = data.title || basename;
       const section = data.section || 'General';
       const order = data.order !== undefined ? data.order : getOrderFromFilename(fileName) || 999;
-      
+
       // Skip adding outline.svx to the menu sections
       if (basename === 'outline') {
         continue;
       }
-      
+
       // Force "notices" into the "Appendix" section
       let effectiveSection = section;
       if (section.toLowerCase().includes('notice')) {
         effectiveSection = 'Appendix';
       }
-      
+
       // Create or get section (if not already created from metadata)
       if (!sectionMap[effectiveSection]) {
         sectionMap[effectiveSection] = { title: effectiveSection, items: [] };
         courseMenu.sections.push(sectionMap[effectiveSection]);
       }
-      
+
       // Add menu item to section
       const menuItem: MenuItem = {
         title,
         path: pagePath,
         order
       };
-      
+
       sectionMap[effectiveSection].items.push(menuItem);
-      
+
       // Process readings
       if (data.readings && Array.isArray(data.readings)) {
         for (const reading of data.readings) {
@@ -334,7 +335,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
           }
         }
       }
-      
+
       // Process assignments
       if (data.assignments && Array.isArray(data.assignments)) {
         for (const assignment of data.assignments) {
@@ -350,13 +351,13 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         }
       }
     }
-    
+
     // Process assignments directory if it exists
-    const assignmentFiles = Object.keys(contentFiles).filter(filePath => 
+    const assignmentFiles = Object.keys(contentFiles).filter(filePath =>
       filePath.startsWith(`/src/content/${courseId}/assignments/`) &&
       isSupportedContentFile(filePath)
     );
-    
+
     // Process each assignment file
     for (const filePath of assignmentFiles) {
       const module = contentFiles[filePath] as any;
@@ -364,21 +365,21 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         console.log(`Error loading assignment ${filePath.split('/').pop()?.replace(/\.(svx|md)$/, '')}: No metadata found`);
         continue;
       }
-      
+
       const data = module.metadata as ContentFrontmatter;
-      
+
       // Skip if not published
       if (data.published === false) {
         continue;
       }
-      
+
       const fileName = filePath.split('/').pop() || '';
       const extension = getContentFileExtension(fileName);
       const basename = fileName.replace(extension, '');
       const pagePath = `/${courseId}/assignments/${basename}`;
       const title = data.title || basename;
       const order = data.order !== undefined ? data.order : getOrderFromFilename(fileName) || 999;
-      
+
       // Add to assignments list only (not to menu sections)
       if (courseMenu.assignments) {
         courseMenu.assignments.push({
@@ -390,7 +391,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         });
       }
     }
-    
+
     // Sort sections
     courseMenu.sections.sort((a, b) => {
       // Use explicit order if available
@@ -398,7 +399,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       const orderB = b.order !== undefined ? b.order : 999;
       return orderA - orderB;
     });
-    
+
     // Sort items within sections
     courseMenu.sections.forEach(section => {
       section.items.sort((a, b) => {
@@ -407,21 +408,21 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         return orderA - orderB;
       });
     });
-    
+
     // Include course-level readings and assignments from metadata if available
     if (metadata?.readings && Array.isArray(metadata.readings) && courseMenu.readings) {
       courseMenu.readings.push(...metadata.readings);
     }
-    
+
     if (metadata?.assignments && Array.isArray(metadata.assignments) && courseMenu.assignments) {
       courseMenu.assignments.push(...metadata.assignments);
     }
-    
+
     // Sort readings and assignments by title
     if (courseMenu.readings) {
       courseMenu.readings.sort((a, b) => a.title.localeCompare(b.title));
     }
-    
+
     if (courseMenu.assignments) {
       courseMenu.assignments.sort((a, b) => {
         // Sort by due date if available
@@ -431,10 +432,10 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
         return a.title.localeCompare(b.title);
       });
     }
-    
+
     // Update cache
     contentCache.menus.set(courseId, courseMenu);
-    
+
     return courseMenu;
   } catch (error) {
     console.error(`Error generating menu for course ${courseId}:`, error);
@@ -447,15 +448,15 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
  */
 export function generateMenuConfig(): MenuDataType {
   const menuData: MenuDataType = {};
-  
+
   try {
     // Get course directories
     const courseDirs = getCourseDirectories();
-    
+
     // Process each course
     for (const courseId of courseDirs) {
       const courseMenu = generateCourseMenu(courseId);
-      
+
       // Add course to menu data if menu was generated successfully
       if (courseMenu && courseMenu.sections.length > 0) {
         menuData[courseId] = courseMenu;
@@ -464,7 +465,7 @@ export function generateMenuConfig(): MenuDataType {
   } catch (error) {
     console.error('Error generating menu configuration:', error);
   }
-  
+
   return menuData;
 }
 
@@ -474,9 +475,9 @@ export function generateMenuConfig(): MenuDataType {
 export function getCourseData(courseId: string): CourseData | null {
   const metadata = getCourseMetadata(courseId);
   const menu = generateCourseMenu(courseId);
-  
+
   if (!metadata || !menu) return null;
-  
+
   return {
     metadata,
     menu
@@ -491,14 +492,14 @@ export function getContentFile(courseId: string, fileName: string): any | null {
     `/src/content/${courseId}/${fileName}.svx`,
     `/src/content/${courseId}/${fileName}.md`
   ];
-  
+
   for (const filePath of possiblePaths) {
     const module = contentFiles[filePath] as any;
     if (module) {
       return module;
     }
   }
-  
+
   return null;
 }
 
@@ -510,14 +511,14 @@ export function getAssignmentContent(courseId: string, assignmentId: string): an
     `/src/content/${courseId}/assignments/${assignmentId}.svx`,
     `/src/content/${courseId}/assignments/${assignmentId}.md`
   ];
-  
+
   for (const filePath of possiblePaths) {
     const module = contentFiles[filePath] as any;
     if (module) {
       return module;
     }
   }
-  
+
   return null;
 }
 

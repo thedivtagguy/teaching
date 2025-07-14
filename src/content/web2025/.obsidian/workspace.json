@@ -6,24 +6,9 @@
       {
         "id": "579155fb37ea29bf",
         "type": "tabs",
-        "dimension": 26.14213197969543,
         "children": [
           {
             "id": "1aa0c67d1794c80a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ai-policy.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ai-policy"
-            }
-          },
-          {
-            "id": "fbb39983472b124b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -50,22 +35,20 @@
               "title": "requirements"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "eb2eecf5392cc2f1",
+        "id": "4dcbafd16c6c6d6e",
         "type": "tabs",
-        "dimension": 73.85786802030458,
         "children": [
           {
-            "id": "d623b2c68eb1989c",
+            "id": "28f51accd5ef2d31",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: HTML, CSS, and YOU.md"
+              "title": "Preview: day-1-the-old-web.md"
             }
           }
         ]
@@ -125,7 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 355.5
   },
   "right": {
     "id": "621093cc52bcaf44",
@@ -215,40 +198,41 @@
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
       "iconic:Open rulebook": false,
-      "terminal:Open terminal": false,
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "fbb39983472b124b",
+  "active": "1aa0c67d1794c80a",
   "lastOpenFiles": [
-    "slides/HTML, CSS, and YOU.md",
+    "requirements.md",
+    "install-guides.md",
+    "slides/day-1-the-old-web.md",
+    "outline.md",
+    "slides/day-2-html-css-and-you.md",
+    "ai-policy.md",
+    "assets/slides/day-1-the-old-web/IMG-20250712214614953.png",
+    "assets/slides/day-1-the-old-web/IMG-20250712214523962.png",
+    "assets/slides/day-1-the-old-web",
+    "assets/slides/day-1-the-old-web/IMG-20250712210849185.png",
+    "html-tags.md",
+    "html-tags.md.tmp.70792.1752311414242",
+    "assets/slides/day-1-the-old-web/IMG-20250712210849204.png",
+    "assets/slides/day-1-the-old-web/IMG-20250712210849141.png",
+    "assets/slides/day-1-the-old-web/IMG-20250712210849007.png",
+    "assets/slides/day-1-the-old-web/IMG-20250712210848938.png",
+    "assets/slides/day-1-the-old-web/IMG-20250712210848865.png",
+    "assets/slides/Indiana Jones and the Raiders of the Old Web",
+    "assets/slides/Indiana Jonesing",
+    "assets/slides/The Old Web",
     "assets/slides/HTML, CSS, and YOU",
     "assets/slides",
-    "assets/slides/HTML, CSS, and YOU/IMG-20250711180744533.png",
-    "install-guides.md",
-    "outline.md",
-    "requirements.md",
     "slides",
     "assets/install-guides",
     "assets/install-guides/IMG-20250711134543072.png",
     "assets/install-guides/IMG-20250711134358057.png",
     "assets",
-    "ai-policy.md",
     "day-1-html-css-and-you.md",
     "Day 1 - HTML, CSS and You.md",
     "templates/day-template.md",
-    "templates/plan.md",
-    "templates/plan.mdx",
-    "templates",
-    "ai-policy.md.tmp.97233.1752167205801",
-    "day-1.svx",
-    "faqs/titanic_condition.png",
-    "faqs/work_life.png",
-    "faqs/work_life_2.png",
-    "faqs/save_orange.png",
-    "faqs/orange_new_date.jpg",
-    "faqs/pivot.png",
-    "faqs/orange_1.png",
-    "assignments/summaries.svx"
+    "templates/plan.md"
   ]
 }
