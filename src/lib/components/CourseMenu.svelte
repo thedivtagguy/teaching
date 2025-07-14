@@ -156,7 +156,12 @@
 				{courseId.toUpperCase() || 'Course Content'}
 			</p>
 		</a>
-
+		<a href="/{courseId}" class="block">
+			<Button size="sm" variant="outline" class="rounded-xs px-2" href="/{courseId}">
+				<Home class="size-3" />
+				<span class="font-archivo text-sm">Home</span>
+			</Button>
+		</a>
 		{#if selectedCourse}
 			<div class="my-4 flex flex-wrap gap-2">
 				<Button size="sm" href="/{selectedCourse}/readings">
@@ -169,12 +174,6 @@
 				</Button>
 			</div>
 		{/if}
-		<a href="/{courseId}">
-			<Button size="xs" variant="outline" class="rounded-xs px-2" href="/{courseId}">
-				<Home class="size-3" />
-				<span class="font-archivo text-sm">Home</span>
-			</Button>
-		</a>
 	</header>
 
 	{#if menuData}

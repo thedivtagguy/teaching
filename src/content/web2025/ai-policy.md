@@ -2,7 +2,8 @@
 title: AI Policy
 date: 2025-07-10
 section: Appendix
-updated: 2025-07-11T10:16
+updated: 2025-07-12T14:24
+published: true
 ---
 
 

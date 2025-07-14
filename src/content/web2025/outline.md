@@ -10,7 +10,7 @@ seo_description: Learn web design fundamentals, HTML/CSS, and responsive design.
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-11T15:15
+updated: 2025-07-14T14:11
 ---
 # What is this class and why?
 
@@ -54,11 +54,11 @@ I believe the best way to learn web design is to actually build something you ca
 
 Broadly, this will be our structure:
 
-- **Week 1:** Design and basic HTML/CSS foundations and setup - typography, color, layout principles while customizing a starter template
-- **Week 2:** Responsive design thinking - creating flexible layouts, content strategy, and visual hierarchy across devices
-- **Week 3:** Design systems and polish - refining your visual identity, performance optimization, and portfolio presentation
+- **Week 1:** Getting comfortable with tools, exploring what makes websites feel human, learning HTML/CSS through customization rather than from scratch
+- **Week 2:** Working with Astro, our static site generator, components, and basics of responsive design
+- **Week 3:** Design systems and polish, refining your visual identity, performance optimization, and portfolio presentation
 
-Each of us will "fork" (which means to create a copy) and customize a starter template, learning to work within an existing codebase while making it completely our own. Almost every class session combines design with hands-on implementation so that we don't silo ourselves as designers, or developers, but a fun mix of people who are at least _familiar_ with both. This means we'll move quickly, but you'll leave with immediately applicable skills and the confidence to continue learning independently.
+Each of us will "fork" (which means to create a copy) and customize a starter template, learning to work within an existing codebase while making it completely our own. Almost every class session combines design with hands-on implementation so that **we don't silo ourselves as designers, or developers**, but a fun mix of people who are at least _familiar_ with both. This means we'll move quickly, but you'll leave with immediately applicable skills and the confidence to continue learning independently.
 
 Welcome aboard! I'm excited to see what we'll build.
 
@@ -70,7 +70,7 @@ This could be us by the end of this class:
 
 - **Prerequisites:** No prior coding experience required.
 - **Attendance is mandatory**. The time we have is barely enough, and each day adds something that will help drive your final projects. Missing any day will leave you at a disadvantage. Please try to make it every day. If you cannot, please inform me a day before.
-- **AI Policy**: Please go through this AI Policy Document. All submitted **written** work must be your own. If you're using any sort of LLM for Q/A about a _technical_ part of the process and not the written output itself, that is acceptable as long as it is **clearly declared to what extent an LLM was used**. Again, go through the document.
+- **AI Policy**: Please go through this [AI Policy Document](/web2025/ai-policy). I encourage the use of LLMs for coding this class, but all submitted **written work must be your own**. If you're using any sort of LLM for Q/A about a _technical_ part of the process and not the written output itself, that is acceptable as long as it is **clearly declared to what extent an LLM was used**. Again, go through the document.
 - **Equipment:** You'll need a laptop. All software we use is free.
 - Have fun.
 
