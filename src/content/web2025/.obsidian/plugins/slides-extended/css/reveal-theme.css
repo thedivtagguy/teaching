@@ -82,7 +82,7 @@
   font-family: var(--font-archivo);
   font-size: 36px;
   color: var(--color-neutral);
-  text-align: left;
+  /* text-align: left; */
   /* Default align content left */
 }
 
@@ -154,7 +154,6 @@
   font-family: var(--font-archivo);
   line-height: 1.5;
   margin-bottom: 0.5em;
-  text-align: left;
   font-size: 20px;
 }
 
@@ -164,6 +163,11 @@
 .reveal .slides section.title-slide h3,
 .reveal .slides section.title-slide p {
   text-align: center;
+}
+
+.reveal .center,
+.reveal .center * {
+  text-align: center !important;
 }
 
 /* Links */
@@ -987,6 +991,12 @@ section div {
 
 .reveal strong {
   font-weight: bold;
+  background-color: var(--color-yellow);
+  padding: 0.1em 0.2em;
+  margin: 0 0.1em 0.1em 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4 !important;
 }
 
 .reveal cite {
@@ -1127,4 +1137,48 @@ section div {
   font-family: inherit;
   text-align: left;
   display: block;
+}
+
+.reveal p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+
+.blue-highlight {
+  background-color: var(--color-blue);
+  padding: 0.1em 0.2em;
+  margin: 0 0.1em;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4 !important;
+  color: white;
+}
+
+.purple-highlight {
+  background-color: var(--color-purple);
+  color: white;
+  padding: 0.1em 0.2em;
+  margin: 0 0.1em;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4 !important;
+}
+
+.yellow-highlight {
+  background-color: var(--color-yellow);
+  color: var(--color-neutral);
+  padding: 0.1em 0.2em;
+  margin: 0 0.1em;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4 !important;
 }
