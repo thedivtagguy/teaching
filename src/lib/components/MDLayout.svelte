@@ -92,12 +92,11 @@
 			{#if formattedDate}
 				<p class="last-updated-text">Last updated: {formattedDate}</p>
 			{/if}
-			{#if githubEditUrl}
+			<!-- {#if githubEditUrl}
 				<p class="github-edit-link flex items-center gap-1">
 					<a href={githubEditUrl} target="_blank" rel="noopener noreferrer"> View on GitHub </a>
-					<!-- <ExternalLink class="text-blue size-3" /> -->
 				</p>
-			{/if}
+			{/if} -->
 		</div>
 	{/if}
 </div>
