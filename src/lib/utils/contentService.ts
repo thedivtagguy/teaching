@@ -15,7 +15,8 @@ const contentFiles = import.meta.glob([
   '/src/content/**/*.md',
   '!/src/content/**/notes/**',
   '!/src/content/**/templates/**',
-  '!/src/content/**/slides/**'
+  '!/src/content/**/slides/**',
+  '!/src/content/**/dump/**'
 ], {
   eager: true
 });
