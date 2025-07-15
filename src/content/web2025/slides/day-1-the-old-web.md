@@ -1,6 +1,6 @@
 ---
 date: 2025-07-11T13:57
-updated: 2025-07-15T00:19
+updated: 2025-07-16T00:38
 transition: none
 ---
 
@@ -33,15 +33,15 @@ transition: none
 
 # What Is This Class? 
 
-Before we answer that, I would like to situate my context for you. 
+Before we can properly answer that question, I would like to situate my context for you, and to do that, we need to address the biggest shift in our field in a generation.
 
 ---
 
-## Who here thinks AI is a good thing? 
+## Who here thinks AI is a good thing for creatives?
 
 ---
 
-## Who here thinks AI is a bad thing? 
+## Who here thinks AI is a bad thing for creatives?
 
 
 ---
@@ -50,11 +50,15 @@ Before we answer that, I would like to situate my context for you.
 
 I promise you I am not an AI salesman/LinkedIn Lunatic; but they certainly have.
 
+notes: The reason I start with this is that the rapid emergence of AI has thrown a wrench into our old assumptions about what it means to be a designer, a developer, or a creator of any kind. It's forcing us, whether we like it or not, to re-evaluate our roles, our skills, and our value.
+
 ---
 
-When you think of making websites, you might have been taught about this general process.
+When you think of making websites, you might have been taught a process that looks something like this.
 
 ![](IMG-20250714170945787.png)
+
+
 <div class="compact-cite">
   David Hodder
   <a href="https://www.davidhodder.com/websitedesigndevelopmentstages/" target="_blank">Website design and development stages</a>.
@@ -63,6 +67,11 @@ When you think of making websites, you might have been taught about this general
   
 </div>
 </div>
+
+
+---
+
+This is the traditional waterfall model: a linear, sequential process where each stage is completed before the next one begins.
 
 ---
 
@@ -73,7 +82,7 @@ When you think of making websites, you might have been taught about this general
 
 ---
 
-The problem with it is that as designers, we're often told to care about "our side" of the process. 
+The problem with it is that as designers, we're often told to care about "our side" of the process. This model almost encourages us to be siloed. 
 
 - Conduct user research.
 - Create low-fidelity wireframes.
@@ -82,20 +91,23 @@ The problem with it is that as designers, we're often told to care about "our si
 - Oversee developer implementation.
 - "Stay in your lane."
 
+ It positions the designer as someone who creates a static blueprint, which is then handed over to a developer to be "executed."<!--element class='fragment'-->
+ 
+notes: This "stay in your lane" mentality creates a gap. A gap in understanding, a gap in communication, and most importantly, a gap in creative potential. 
+
 ---
 
 ### But what if you want more?
 
-- Understand what's possible before you design
-- Communicate better with developers
-- Making your own weird experimental thing
+- Understand what's possible with the technology _before_ you start designing?
+- Communicate more effectively with developers because you speak a bit of their language?
+- Making your own weird experimental thing because _you_ want to?
 
 ---
 
 ### Staying in your lane is alright
 
 But sometimes you might want to cross the street.
-
 
 ---
 
@@ -107,13 +119,18 @@ But sometimes you might want to cross the street.
 
 No one needs to do everything! But being a little T-shaped is a huge advantage. 
 </div>
+
 ![IMG|500](IMG-20250714211142163.png)
 
 
 </split>
+
+notes: You have your expertise in your core discipline, that's the vertical bar of the T. But you also cultivate a broad-enough understanding of adjacent fields, the horizontal bar, to collaborate effectively, to prototype your own ideas, and to have a direct, hands-on conversation with the materials you're working with.
+
 ---
 
 <split even gap="1">
+
 <div>
 
 Because when computers can talk and write code for us, make entire products from scratch, where does that leave us? What are the lanes?
@@ -167,10 +184,13 @@ I resonate with this [blogpost](https://www.robinsloan.com/lab/is-it-okay/) by R
 
 ---
 
+This brings us to the perennial, and frankly, boring question.
 ## So should designers code? 
 
 
 Maybe that is the wrong question...<!--element class='fragment'-->
+
+notes: It frames coding as a simple vocational skill to be acquired, like learning to use a new piece of software. The real question is about the nature of the medium itself and our relationship to it.
 
 ---
 
@@ -206,6 +226,9 @@ Maybe that is the wrong question...<!--element class='fragment'-->
   
 </div>
 </div>
+
+notes: The point is that code isn't just an implementation detail; it's the _material_ of the web. It's the clay. You can't truly understand what's possible with clay, its texture, its weight, its limitations, and its surprising possibilities, until you get your hands dirty. You need to have that direct conversation with the medium.
+
 ---
 ## That is the point of this class
 
@@ -213,6 +236,7 @@ We want to focus on learning a bit on **how to make The Thing for our purposes**
 <br/>
 Code is the means to an end. 
 
+notes: We're learning to code not to become professional developers, but to become better designers, thinkers, and makers. We're learning just enough to be creatively independent, to build our own prototypes, and to express our own ideas directly in the native language of the web.
 
 ---
 #### Because AI doesn't mean you "don't need to learn anything". 
@@ -235,21 +259,21 @@ Understanding what code is, how to get what you want, and how to be in control i
 
 ---
 
+## How do we do this? 
 
-<split even>
+---
+
 
 ### The Just-Enough Rule
 
-<div>
 
-The amount you _could_ learn is endless and overwhelming.
+The amount **you _could_ learn** is endless and overwhelming. 
 
-The amount you _can_ learn just enough to get started is manageable and more meaningful.
+The amount **you _can_ learn** just enough to get started is manageable and more meaningful.
 
-</div>
-</split>
 
-<img src="../assets/slides/day-1-the-old-web/IMG-20250714164309143.png" height="400px">
+
+<img src="../assets/slides/day-1-the-old-web/IMG-20250714164309143.png" height="300px">
 
 It seems we all agree!
 
@@ -318,6 +342,11 @@ In the last, we'll work on <span class="yellow-highlight"> refining our content,
 </split>
 
 
+---
+
+> I will consider this successful if I can witness a growth in my thinking process and at the end of the course, **have the urge to learn more rather than end up despising it is something that will make it successful for me**
+
+~ Student in Pre-Class Survey (Thank you)
 
 ---
 
@@ -355,6 +384,24 @@ In the last, we'll work on <span class="yellow-highlight"> refining our content,
     </div>
 </div>
 
+notes: We don't mean VR headsets, we mean getting involved in the process from concept to creation. Not the massive, corporate web, but the _small, personal, living_ web.Not just pushing pixels in Figma. 
+
+---
+
+## Welcome aboard!
+
+---
+
+
+<split even gap="2">
+
+### A quick round of introductions? 
+
+
+![IMG|500](IMG-20250715212719762.png)
+
+</split>
+
 ---
 
 # Indiana Jones and the Raiders of the Lost Web
@@ -362,7 +409,7 @@ In the last, we'll work on <span class="yellow-highlight"> refining our content,
 
 ---
 
-## Who am I?
+## A little about me
 
 I am a developer who designs. I specialize in data visualization and public-interest technology.
 
@@ -384,6 +431,11 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 <!-- slide bg="[[IMG-20250712210848865.png]]" -->
 
+
+---
+
+![](IMG-20250715213136132.png)
+
 ---
 <section data-background-size="cover" data-background-video="[votes-2](output.mp4)">
 </section>
@@ -393,11 +445,12 @@ I have an interest in maps, history, urbanism, and open-source software.
 </section>
 
 ---
-![](IMG-20250715001259582.png)
+<!-- slide bg="[[IMG-20250715001259582.png]]" -->
+
 
 ---
+<!-- slide bg="[[IMG-20250715001407412.png]]" -->
 
-![](IMG-20250715001407412.png)
 
 
 
@@ -409,29 +462,38 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
-## From 10 years ago
+## It all started 10 years ago
 
 ---
+
+A website where I wrote "issues" of the newspaper from Harry Potter.
 
 ![](IMG-20250715001513050.png)
 
 
 ---
 
+I also made websites for Hogwarts. Very legit, as you can see.
 
 ![](IMG-20250715001553896.png)
 
 ---
+
+I had a form on the site where if you filled it, you got your own Hogwarts ticket...
+
 ![](IMG-20250715001605803.png)
 
 
 ---
 
-![](IMG-20250715001630783.png)
+...and to this day I get emails from little kids thinking it is real. I made a website for that too.
+
+![IMG|650](IMG-20250715001630783.png)
 
 
 
 ---
+
 
 ![](IMG-20250715001653840.png)
 
@@ -453,6 +515,7 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
+You get the idea. Websites.
 ![IMG|500](IMG-20250715001950815.png)
 
 
@@ -490,12 +553,6 @@ _Voltaire commenting on Canada_
 # The first websites
 ---
 
-![](IMG-20250712210849007.png)
-
----
-![](IMG-20250712210849141.png)
-
----
 
 
 Personal websites soon comprised most of the public sites on the early Internet and essentially became the public face of the Internet.
@@ -518,24 +575,39 @@ notes: Back in the early 1990's, the spirit of the Internet was the pursuit of k
 
 ---
 
+![](IMG-20250712210849007.png)
+
+---
+![](IMG-20250712210849141.png)
+
+
+
+---
+
 ## Enter the era of Geocities
 
 ---
 
 <split even gap="1">
 
-Geocities was divided into "neighborhoods", like area and street names, where users could "claim" their web site. The neighborhoods where intended to cover different topics, [here is an incomplete list](http://www.bladesplace.id.au/geocities-neighborhoods-suburbs.html).
+<div>
+
+Geocities was divided into "neighborhoods", like area and street names, where users could "claim" their web site. 
 
 
-</split>
+
+The neighborhoods where intended to cover different topics, but you could also just host your own website there.
+
+</div>
+
+<div>
 
 > "We all have something to share with each other, which enriches both their lives and ours as well."
 
-
-
-
  ~ David Bohnett, Creator of Geocities
+</div>
 
+</split>
 ---
 <!-- slide bg="https://i.imgur.com/m2oi0bw.jpeg" -->
 
@@ -555,8 +627,99 @@ easy to move in."
 </div>
 
 
+---
+
+![](IMG-20250715214113912.png)
 
 ---
+
+
+
+ Geocities was important because it provided Digital Natives with a system for creative expression that worked for everyone: coding space for those with HTML skills and simple navigation tools for beginners to build pages
+
+<br/>
+It was not the only place where people did this, but it was by far the most popular.
+
+<div class="compact-cite">
+   
+  <a href="https://archive.blogs.harvard.edu/digitalnatives/2009/04/26/living-and-dying-on-geocities/" target="_blank">Digital Natives » Blog Archive » Living and Dying on Geocities</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+---
+
+## The Vernacular of the Old, Personal Web
+
+Animated GIFs, page hit counters, scrolling marquee text, "under construction" signs, and wild tiled backgrounds. It's easy to look back now from our minimalist, professionally designed present and call it "bad design."...
+
+---
+<section data-background-size="cover" data-background-video="[votes-2](uc.mp4)">
+</section>
+---
+
+![](Pasted%20image%2020250715220711.png)
+
+---
+
+ ..but it was the visual language that emerged when ordinary people, not professional designers, were in charge of their own little corner of the web. 
+ 
+ **It was expressive, personal, and delightfully chaotic.**
+ 
+---
+
+![](IMG-20250714202618375.png)
+
+---
+
+![](IMG-20250714202625706.png)
+
+---
+
+![](IMG-20250714202630312.png)
+
+---
+
+![](IMG-20250714202634979.png)
+ 
+ 
+---
+
+![](IMG-20250714202639562.png)
+
+---
+
+
+Geocities was a centralized platform, and not the only way to get online, but the metaphor of a physical, connected (but your own) space perhaps made it one of the most popular. 
+
+
+
+---
+## Yahoo bought Geocites in 1999 and it was freefall from there
+
+
+---
+
+## 25 years on, we make the same mistakes
+
+"One day, Twitter and other publishing platforms like Facebook, Instagram, or Medium will indeed die, like so many sites before them. And every time this happens, we lose most of the content we created and with it a fair amount of our collective cultural history."
+
+<div class="compact-cite">
+  Ott, M. (2019). 
+  <a href="https://matthiasott.com/articles/into-the-personal-website-verse" target="_blank">Into the Personal-Website-Verse · Matthias Ott</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+
+---
+
+![](Pasted%20image%2020250715230641.png)
+
+---
+
 
 ![](IMG-20250712210849185.png)
 
@@ -569,4 +732,232 @@ easy to move in."
 </div>
 </div>
 
+---
 
+The web has from being a vast, messy, decentralized collection of individual sites to an ecosystem dominated by a few massive, centralized platforms like Facebook, Google, and Twitter.
+
+
+---
+
+## And that's bad!
+
+The new corporate web is built on convincing you that making a website is hard, complicated, and something you can't do yourself.
+
+
+---
+### A business model built on telling you that you can't
+
+notes: Website builders lure you in with "free" tiers that are intentionally and severely limited. They hold your content, your design, and your audience hostage, preventing you from using your own domain name and constantly upselling you to the next subscription tier. Their goal is to make you a perpetual renter, not an owner.
+
+---
+<!-- slide bg="[[pricing.png]]" -->
+
+---
+
+
+
+They love to limit you:
+
+- Up to 10 pages
+    
+- Up to 2GB storage
+    
+- Upgrade for a custom domain or keep using `baburao.myportfolio.com`
+    
+- Upgrade to remove their branding
+    
+- Upgrade to see analytics
+    
+
+They love to make you feel dumb, to convince you that this is a magical, complex process that only their proprietary, closed-source tools can handle. But it's not.
+
+---
+
+## And the other culprit is conformity
+
+Or rather, the expectation to conform. The instinct to crush creativity. 
+
+---
+
+![](Pasted%20image%2020250715234219.png)
+
+
+---
+
+## Remember, I'm talking about the small web
+
+This isn't about websites for huge companies, digital services or e-commerce or any of that. That might still benefit from the Sameness. 
+
+<br/>
+
+But the small, personal web is a chance to shed all you've been taught.
+
+
+---
+
+> _Don't use too many colours. Write short, catchy headlines. Don't let content be too long. Optimise for SEO. Produce video content, attention span is decreasing. Have a an obvious call to action. Push your newsletter. Keep important information above the fold. Don't make users think. Follow conventions._
+
+<div class="compact-cite">
+  Satyal, P. 
+  <a href="https://neustadt.fr/essays/the-small-web/" target="_blank">Rediscovering the Small Web - Neustadt.fr</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+
+
+---
+
+## Do you...
+
+- Paint for optimizing engagement?
+- Tend a garden to maximize ROI?
+- Cook for friends to improve your conversion rate?
+-
+---
+
+## The Small Web doesn't have to be user-centric
+
+*gasps* 
+
+What did he just say...
+
+
+---
+
+Yes! The Small Web can be "author-centric". It can be you-centric. It’s the difference between product and art.
+
+---
+
+
+> If the commercial web is "industrial", you could say that the small web is "artisanal". One is not better than the other. They serve different needs and both can co-exist in an open web. It would nevertheless be a shame if we only spent time on the commercial web and never got the opportunity to experience the creativity, passion and quirkiness of the small web.
+
+
+---
+
+![](Pasted%20image%2020250715232902.png)
+
+---
+![](Pasted%20image%2020250715232935.png)
+
+---
+![](Pasted%20image%2020250716003533.png)
+
+---
+
+![](Pasted%20image%2020250715233000.png)
+
+---
+
+
+![](Pasted%20image%2020250715233130.png)
+
+
+---
+
+![](Pasted%20image%2020250716001035.png)
+
+---
+
+## Before looking forward, let us look back
+
+To really grasp what's special about making your own things on the web today, we may benefit from doing a dive into a bit of history.
+
+---
+
+We're going on an expedition, a bit of **Internet Archaeology**, to dig through the digital ruins of the late 90s and early 2000s.
+
+---
+### The Internet Archive's Wayback Machine
+
+[The most important tool](https://web.archive.org/) for any internet archaeologist. It has saved snapshots of billions of web pages over time.
+
+---
+<split even gap="2">
+
+Enter a URL, select a year from the timeline, then click on a specific date in the calendar to see a snapshot of the site from that day.
+
+![IMG|700](Pasted%20image%2020250716003127.png)
+
+</split>
+
+
+notes: The goal is to move beyond simple aesthetic judgment ("this looks ugly") and toward historical analysis ("_why_ does it look this way?")
+
+
+---
+
+### The GeoCities Archives
+
+Since GeoCities was shut down by Yahoo in 2009, volunteer groups like the Archive Team have rescued and archived terabytes of its data. 
+
+---
+
+<split even gap="2">
+
+<div>
+
+
+- https://geocities.restorativland.org/ Direct mirrors of old GeoCities sites, neatly sorted by their original "neighborhood". A bit like wandering through the ruins themselves.
+- [One Terabyte of Kilobyte Age](https://oneterabyteofkilobyteage.tumblr.com/): An art project by Olia Lialina and Dragan Espenschied that posts random, automated screenshots from the archive. 
+
+</div>
+
+![IMG|500](Pasted%20image%2020250716003003.png)
+
+</split>
+
+
+---
+
+### The Web Design Museum
+
+<split even gap="2">
+
+<div>
+
+[A gallery of screenshots and videos of websites through the years.](https://www.webdesignmuseum.org/all-websites)
+
+Almost the same as the Internet Archive, but organized in a browsable way.
+</div>
+
+
+![IMG|600](Pasted%20image%2020250716002853.png)
+
+</split>
+
+
+---
+
+## Activity Brief
+
+1. Dive into each of these archives. Get lost. Follow links. See what you can find. Maybe look for a website you're interested in if you're using the Internet Archive.
+    
+2. Find and document at least **7 different types of "artifacts"** that you find interesting. Weird buttons, unconventional menus, graphics, illustrations, these can be anything.
+    
+3. For each artifact, ask: What does this tell me about the person who made it? What does it say about the technology of the time? Why don't we see this anymore? What need did it serve?
+    
+
+
+---
+
+
+## What did you find in the ruins?
+
+
+---
+
+Your main takeaway for today should be
+## There is no one right way to design or make. 
+
+
+---
+
+<split even gap="2">
+
+We'll start some making tomorrow!!
+
+![IMG|500](tom-hanks-forrest-gumps.gif)
+
+</split>
