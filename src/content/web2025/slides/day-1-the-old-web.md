@@ -1,6 +1,6 @@
 ---
 date: 2025-07-11T13:57
-updated: 2025-07-16T13:24
+updated: 2025-07-17T16:45
 transition: none
 ---
 
@@ -180,7 +180,7 @@ I resonate with this [blogpost](https://www.robinsloan.com/lab/is-it-okay/) by R
 
 </split>
 
-![](IMG-20250714162541322.png)
+![](IMG-20250717164558563.png)
 
 ---
 
@@ -673,24 +673,24 @@ Animated GIFs, page hit counters, scrolling marquee text, "under construction" s
  
 ---
 
-![](IMG-20250714202618375.png)
+![](IMG-20250717164558502.png)
 
 ---
 
-![](IMG-20250714202625706.png)
+![](IMG-20250717164558509.png)
 
 ---
 
-![](IMG-20250714202630312.png)
+![](IMG-20250717164558512.png)
 
 ---
 
-![](IMG-20250714202634979.png)
+![](IMG-20250717164558525.png)
  
  
 ---
 
-![](IMG-20250714202639562.png)
+![](IMG-20250717164558528.png)
 
 ---
 

@@ -10,14 +10,14 @@
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
   "fileHashMap": {
-    "outline.md": "580582b8a7f082bbdbe5d4b5b43c9e4e999e15f60f08dacd3d4562b26c7af860",
+    "outline.md": "c3a086b3019b6983ceb75c2dad5a6554f85072f05db4d00bf9cba0e7d2e29bb8",
     "ai-policy.md": "12a6ef7cf53bab6c9b203572a82ac61e5cf84316913f813a3aa7d477bc261b07",
     "templates/day-template.md": "6ce8a82db7ae4c775e8976d21dd90156c0b3e5adc551a42842a55240a7046203",
-    "requirements.md": "c598052d03d460d547cafcd505b4cfc55ff65ca10dfa6d3b4edf2f5d77601772",
+    "requirements.md": "18a76ef2786a6ebe3da758c41105c81ce9c33e043c0a6c806c1f909cfa14a584",
     "install-guides.md": "011dfeac49bf7c89f2f68b28ec7bb33c41dc8944a78304ecc3458c4475a90e34",
-    "slides/day-1-the-old-web.md": "3734e63c3a7c01229f486f3eb6c1d7452e46872aa23a36638c65b323dd53636f",
-    "slides/day-2-html-css-and-you.md": "6729ca4057ee68ad63c8098545f3ea97a4b198634260ab9596a46e24f8cde811",
-    "dump/snippet-dump.md": "bcc038727c22a99a0b001b505d79d384b034fe0816656d683a455fb280a5c761",
-    "day-1-the-lost-web.md": "84082fb54444b1092fdbf5239a91846161a99da9116d09277b02a7985c0e1228"
+    "slides/day-1-the-old-web.md": "53548f9bb3c101073b19544c9370bd6dea5a62e0d61142ad0969251d94d67e15",
+    "slides/day-2-html-css-and-you.md": "adb8656e50034a3680fbcfc3dfe798ed508ac8d640831eb1a6aa96ac26078e9b",
+    "dump/snippet-dump.md": "f660ae91b305c9364357e9200d79f3e9f5231ee73e8f3f29f8b0453839057ffd",
+    "slides/appendix-node-and-npm.md": "f89f09175d71a4e022b8e5de55e6b9b2b73ae0a3fd523de8e227b386d3c33e6f"
   }
 }

@@ -1,6 +1,6 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-17T10:06
+updated: 2025-07-17T19:44
 transition: none
 ---
 
@@ -226,17 +226,21 @@ The CSS above creates a div with:
 }
 
 .menu a:hover {
-  background: red !important;
+  background: green;
 }
 
 .menu a.active {
-  background: green;
+  background: red;
 }
 ```
 
 ---
 
-<nav class="isolated" style="background: gray; padding: 10px;"> <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background='gray'" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">Home</a> <a href="#" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px;">About</a> <a href="#" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px;">Contact</a> </nav>
+<nav class="isolated" style="background: gray; padding: 10px;">
+  <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background='red'" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: red;">Home</a>
+  <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background=''" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">About</a>
+  <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background=''" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">Contact</a>
+</nav>
 
 
 
@@ -253,13 +257,15 @@ The CSS above creates a div with:
 
 # Pick me pick me
 
-![CSS Selectors](https://aman.bh/web-dev/1/images/selectors.png)
+![MOG|600](https://mellifluous-crumble-4fde67.netlify.app/images/selectors.png)
 
 So you have your HTML and you want to write some CSS for it. The first hurdle is learning how to **select** the element you want to style.
 
 CSS has *many* different ways of allowing you to select objects using **selectors**. It is important to get an understanding of this before we move further.
 
-Head over to [CSS Feast](https://flukeout.github.io/) and get started.
+---
+
+Head over to [CSS Diner](https://flukeout.github.io/) and get started.
 
 **There are 32 levels, but you only need to get till level 10-12.**
 
@@ -271,21 +277,15 @@ Head over to [CSS Feast](https://flukeout.github.io/) and get started.
 
 ---
 
-# Setting up your IDE
+# Setting Up Your Lab 👩‍🔬
 
 Preflight Checklist:
 
-#### 1. [Install VS Code](https://code.visualstudio.com/download)
-
-#### 2. [Install Git](https://git-scm.com/downloads)
-
-#### 3. [Install Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-
-This create a local server that will reload every time you save your file, so you can see what you're coding easily.
-
-#### 4. [Create an account on Github](https://github.com)
-
-#### 5. [Setup Git and Github in VSCode](https://www.jcchouinard.com/install-git-in-vscode/)
+1. You've installed VSCode
+2. You've installed Git
+3. You've installed [Node](https://nodejs.org/en/download).
+4. You've installed [pnpm](https://pnpm.io/installation#using-npm)
+5. You have an account on Github.
 
 ---
 

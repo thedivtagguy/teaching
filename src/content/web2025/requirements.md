@@ -7,7 +7,7 @@ seo_keywords: web design, HTML, CSS, responsive design, web development course, 
 seo_type: article
 seo_author: Aman Bhargava
 date: 2025-07-10T22:51
-updated: 2025-07-15T00:30
+updated: 2025-07-17T16:45
 section: Course Info
 order: 1
 ---
