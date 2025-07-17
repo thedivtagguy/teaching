@@ -10,13 +10,13 @@
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
   "fileHashMap": {
-    "outline.md": "9f2e927282b757b70e16dd3411e7b9f98ef946caebb8c8796b32eac79dbe2b17",
+    "outline.md": "559dcb99ab760c774697c220f5dac8cd71c1c49c1420e059d0b8ceb9b03788f1",
     "ai-policy.md": "12a6ef7cf53bab6c9b203572a82ac61e5cf84316913f813a3aa7d477bc261b07",
     "templates/day-template.md": "6ce8a82db7ae4c775e8976d21dd90156c0b3e5adc551a42842a55240a7046203",
-    "requirements.md": "b13da9c7b92d61a9a1c0ffd20e0c72d1c3d463be5b5d6cea30b6fff20591d32e",
+    "requirements.md": "8b36fd854ff8569ab7ef82956ea1c429fbdf9c8684707fda7cd87fd54f2ea1cc",
     "install-guides.md": "011dfeac49bf7c89f2f68b28ec7bb33c41dc8944a78304ecc3458c4475a90e34",
-    "slides/day-1-the-old-web.md": "7d16143920114f9ba0a4161b439b1ce7e976c79f5ff0dbf595423169e3e7369b",
-    "slides/day-2-html-css-and-you.md": "a5393c947d9e744202ca574346e05f855aaa34a0a91f7bc79a134b55f869390c",
-    "dump/snippet-dump.md": "bcc038727c22a99a0b001b505d79d384b034fe0816656d683a455fb280a5c761"
+    "slides/day-1-the-old-web.md": "b1288c2119c5d397176b9a2bdd0a558c9c6ca5cae86218b8b3c4ccb1afccec83",
+    "slides/day-2-html-css-and-you.md": "79eff0fc3b56a576f06f77c9dc97b8bc654de8b418962998a26765e09f74e1fb",
+    "dump/snippet-dump.md": "f660ae91b305c9364357e9200d79f3e9f5231ee73e8f3f29f8b0453839057ffd"
   }
 }
