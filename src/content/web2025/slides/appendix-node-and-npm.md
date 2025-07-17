@@ -1,6 +1,6 @@
 ---
 date: 2025-07-17T19:50
-updated: 2025-07-17T21:35
+updated: 2025-07-17T21:45
 transition: none
 ---
 # Node.js, npm, and pnpm
@@ -61,6 +61,7 @@ This is called a **package**.
 
 
 </split>
+
 ---
 
 ## What is a package?

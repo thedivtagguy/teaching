@@ -1,6 +1,6 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-17T19:44
+updated: 2025-07-17T21:46
 transition: none
 ---
 
@@ -237,9 +237,9 @@ The CSS above creates a div with:
 ---
 
 <nav class="isolated" style="background: gray; padding: 10px;">
-  <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background='red'" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: red;">Home</a>
-  <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background=''" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">About</a>
-  <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background=''" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">Contact</a>
+  <a href="#" on:mouseover={(e) => e.target.style.background='green'} on:mouseout={(e) => e.target.style.background='red'} style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: red;">Home</a>
+  <a href="#" on:mouseover={(e) => e.target.style.background='green'} on:mouseout={(e) => e.target.style.background=''} style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">About</a>
+  <a href="#" on:mouseover={(e) => e.target.style.background='green'} on:mouseout={(e) => e.target.style.background=''} style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">Contact</a>
 </nav>
 
 
