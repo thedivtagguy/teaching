@@ -20,7 +20,6 @@ const config = {
 
 				'/[courseId]/assignments/[assignmentId]',
 				'/[courseId]/assignments',
-				'/[courseId]/slides/[...path]',
 				'/buzzer'
 			],
 			handleHttpError: ({ path, referrer, message }) => {

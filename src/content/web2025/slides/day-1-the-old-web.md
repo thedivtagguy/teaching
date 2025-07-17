@@ -1,6 +1,6 @@
 ---
 date: 2025-07-11T13:57
-updated: 2025-07-16T00:38
+updated: 2025-07-16T13:24
 transition: none
 ---
 
@@ -429,7 +429,7 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
-<!-- slide bg="[[IMG-20250712210848865.png]]" -->
+<!-- slide bg="../assets/slides/day-1-the-old-web/IMG-20250712210848865.png" -->
 
 
 ---
@@ -445,11 +445,11 @@ I have an interest in maps, history, urbanism, and open-source software.
 </section>
 
 ---
-<!-- slide bg="[[IMG-20250715001259582.png]]" -->
+<!-- slide bg="../assets/slides/day-1-the-old-web/IMG-20250715001259582.png" -->
 
 
 ---
-<!-- slide bg="[[IMG-20250715001407412.png]]" -->
+<!-- slide bg="../assets/slides/day-1-the-old-web/IMG-20250715001407412.png" -->
 
 
 
@@ -503,7 +503,7 @@ I had a form on the site where if you filled it, you got your own Hogwarts ticke
 
 
 <video autoplay loop muted preload="none"
-       src="[[eth.mp4]]"
+       src="../assets/slides/day-1-the-old-web/eth.mp4"
        style="max-width: 960px; display: flex; justify-content:center;">
 </video>
 
@@ -602,13 +602,16 @@ The neighborhoods where intended to cover different topics, but you could also j
 
 <div>
 
-> "We all have something to share with each other, which enriches both their lives and ours as well."
+>"We all have something to share with each other, which enriches both their lives and ours as well."
 
  ~ David Bohnett, Creator of Geocities
+ 
 </div>
 
 </split>
+
 ---
+
 <!-- slide bg="https://i.imgur.com/m2oi0bw.jpeg" -->
 
 ---
@@ -648,6 +651,7 @@ It was not the only place where people did this, but it was by far the most popu
   
 </div>
 </div>
+
 ---
 
 ## The Vernacular of the Old, Personal Web
@@ -750,7 +754,7 @@ The new corporate web is built on convincing you that making a website is hard, 
 notes: Website builders lure you in with "free" tiers that are intentionally and severely limited. They hold your content, your design, and your audience hostage, preventing you from using your own domain name and constantly upselling you to the next subscription tier. Their goal is to make you a perpetual renter, not an owner.
 
 ---
-<!-- slide bg="[[pricing.png]]" -->
+<!-- slide bg="../assets/slides/day-1-the-old-web/pricing.png" -->
 
 ---
 
@@ -795,7 +799,20 @@ But the small, personal web is a chance to shed all you've been taught.
 
 ---
 
-> _Don't use too many colours. Write short, catchy headlines. Don't let content be too long. Optimise for SEO. Produce video content, attention span is decreasing. Have a an obvious call to action. Push your newsletter. Keep important information above the fold. Don't make users think. Follow conventions._
+> Don't use too many colours. 
+> 
+> Write short, catchy headlines. 
+> 
+> Don't let content be too long. Optimise for SEO. 
+> 
+> Produce video content, attention span is decreasing. Have a an obvious call to action. Push your newsletter. 
+> 
+> 
+> Keep important information above the fold. 
+> 
+> 
+> Don't make users think. Follow conventions.
+> 
 
 <div class="compact-cite">
   Satyal, P. 
@@ -831,7 +848,19 @@ Yes! The Small Web can be "author-centric". It can be you-centric. It’s the di
 ---
 
 
-> If the commercial web is "industrial", you could say that the small web is "artisanal". One is not better than the other. They serve different needs and both can co-exist in an open web. It would nevertheless be a shame if we only spent time on the commercial web and never got the opportunity to experience the creativity, passion and quirkiness of the small web.
+> If the commercial web is "industrial", you could say that the small web is "artisanal".
+
+notes:  One is not better than the other. They serve different needs and both can co-exist in an open web. It would nevertheless be a shame if we only spent time on the commercial web and never got the opportunity to experience the creativity, passion and quirkiness of the small web.
+
+
+---
+
+## The Web is a Material
+
+You can mould that material any way you want
+
+---
+## Does it have to be ugly and unusable?
 
 
 ---

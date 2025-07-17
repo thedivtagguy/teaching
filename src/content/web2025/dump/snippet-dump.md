@@ -1,6 +1,6 @@
 ---
 date: 2025-07-14T15:26
-updated: 2025-07-14T20:27
+updated: 2025-07-16T11:45
 ---
 ![](IMG-20250714155619429.png)
 https://web.archive.org/web/20090109091327id_/http://www.cs.usna.edu/~augustin/Courses/IT460/Article%2003a%20-%20Website%20Design%20Patterns.pdf
@@ -22,3 +22,8 @@ https://oneterabyteofkilobyteage.tumblr.com/
 
 ![](IMG-20250714202639562.png)
 https://blog.geocities.institute/wp-content/uploads/popularity-2019-03-29.html
+
+
+
+wtf is npm run dev
+why npm

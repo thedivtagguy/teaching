@@ -5,6 +5,11 @@ import { resolve } from 'path';
 import { watch } from 'fs';
 
 export default defineConfig({
+	server: {
+		fs: {
+			allow: ['..']
+		}
+	},
 	plugins: [
 		// Custom plugin to watch content files (development only)
 		{

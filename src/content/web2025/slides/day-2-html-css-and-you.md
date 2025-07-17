@@ -1,28 +1,37 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-14T14:01
-transition: fade
+updated: 2025-07-17T10:06
+transition: none
 ---
 
 # HTML, CSS and You
 
-*Aman Bhargava*  
-*2022/04/24*
+#### _WEB2025 - Day 2_
 
 ---
 
-## We Will vs We Won't
 
-### We Will
-- Learn **frontend** development and workflows
-- Help each other solve problems
-- Share resources and create a space to learn
-- Rock you
+## Welcome back!
 
-### We Won't
-- Learn _everything_ about CSS/HTML/JS.
+Let's do a recap.
 
-That's not realistic.
+---
+
+## HTML is the material of the web
+
+If you think of a website as a house, then **HTML is the the bricks and the steel**. It provides the fundamental structure and content for everything you see online.
+
+---
+
+## On the Menu
+**We Will**
+- Learn how to get started with HTML and CSS
+- Learn some basic development workflows
+- Help each other solve problems and get unstuck.
+- Rock you. 🤘
+
+ **We Won't**
+- Learn _everything_ about CSS/HTML/JS (That's not realistic).
 
 ---
 
@@ -30,7 +39,7 @@ That's not realistic.
 
 ---
 
-# Tags Tags Tags Tags
+# Tag, you're it
 
 An HTML element is defined by a start tag, some content, and an end tag.
 
@@ -41,7 +50,15 @@ An HTML element is defined by a start tag, some content, and an end tag.
 <audio> is for (lol take a guess)
 ```
 
-![HTML Skeleton](https://aman.bh/web-dev/1/images/html-skeleton.png)
+---
+
+Tags always come in pairs.
+
+```html
+<h1> <!-- If you start with an h1, end with an h1 -->
+	My name is Aman
+</h1>
+```
 
 ---
 
@@ -55,25 +72,92 @@ Since we don't want to care about all the 132 tags today, here's what you want t
 
 ---
 
-# HTML Attributes
+```html
+<div class="container">
+    <section>
+        <h1>Main Title</h1>
+        <h2>Subtitle</h2>
+        <p>This is a paragraph with <span>highlighted text</span> inside.</p>
+    </section>
+</div>
+```
 
-Each tag has certain _attributes_, which provide information about that element. Look at the example below.
+---
 
-#### `<h1 id="title" class="page-heading"> Hello World </h1>`
+## There are divs and sections  everywhere for those with the eyes to see
+
+
+---
+
+![](IMG-20250716222043779.png)
+
+---
+
+## Mini-Activity: Your First Webpage
+
+---
+
+Let's make something! No fancy tools yet, just a plain text editor. 
+
+
+- Open a simple text editor (like Notepad on Windows or TextEdit on Mac).
+    
+- Type out the HTML skeleton below. Make the content your own, tweak a bit.
+    
+- Save the file as `index.html`. **Make sure the extension is `.html`, not `.txt`.**
+    
+- Find the file on your computer and double-click to open it in a browser.
+  
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Page</title>
+  </head>
+  <body>
+    <h1>[Your Name]'s Website</h1>
+    <p>I am learning to code and this is my very first webpage!</p>
+    <ul>
+      <li>One thing I want to learn</li>
+      <li>Another thing I want to build</li>
+    </ul>
+  </body>
+</html>
+```
+---
+# HTML Attributes 
+
+Attributes provide extra information about an element and are always included in the **start tag**. The two most important ones for styling are `id` and `class`.
+
+```html
+<h1 id="title" class="page-heading"> 
+		Hello World 
+</h1>
+
+```
+
 
 The attributes are:
 
-- `<h1>` The tag itself.
-- `id` A unique name for this element. It cannot be repeated.
-- `class` A name for this class of elements. Multiple elements can share a class name and will be assigned the same properties defined in that class.
+<span>`h1` The tag itself. </span> <!--element class="fragment"-->
+
+<span>`id` A unique name for this element. It cannot be repeated.</span><!--element class="fragment"-->
+
+<span>`class` A name for this class of elements. Multiple elements can share a class name and will be assigned the same properties defined in that class.</span><!--element class="fragment"-->
+
+We'll use to grab these elements with CSS and style them.<!--element class="fragment"-->
 
 ---
 
 # Tell me more
 
+I will! 
+
+But first, go back to that file and put an `id` in your heading and give all of your `<li>` elements the same class. Whatever you want.
+
 ---
 
-# CSSssssssss
+### CSS
 
 CSS is all about targeting HTML elements that we write and styling them. It is pretty simple to understand most of the time. See if you can understand what this does:
 
@@ -102,11 +186,62 @@ CSS is all about targeting HTML elements that we write and styling them. It is p
 
 ---
 
-# Result
+<div id="george" class="isolated" style="background: #e3e3e3 !important; border-style: dotted !important; border-color: red !important; width:100%;">
+   <p> My paragraph here. </p>
+   <ul>
+      <li> List Item 1</li>
+      <li> List Item 2</li>
+   </ul>
+   <ul>
+      <li> List Item 3</li>
+      <li> List Item 4</li>
+   </ul>   
+</div>
 
+<br/>
 The CSS above creates a div with:
 - Light gray background (#e3e3e3)
 - Red dotted border
+---
+
+```html
+<nav class="menu">
+   <a href="#" class="active">Home</a>
+   <a href="#">About</a>
+   <a href="#">Contact</a>
+</nav>
+```
+
+```css
+.menu {
+  background: gray;
+  padding: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+}
+
+.menu a:hover {
+  background: red !important;
+}
+
+.menu a.active {
+  background: green;
+}
+```
+
+---
+
+<nav class="isolated" style="background: gray; padding: 10px;"> <a href="#" onMouseOver="this.style.background='green'" onMouseOut="this.style.background='gray'" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">Home</a> <a href="#" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px;">About</a> <a href="#" style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px;">Contact</a> </nav>
+
+
+
+
+---
 
 ![Breaking Bad Yeah Science](https://c.tenor.com/vr7gSfuJjQYAAAAd/breaking-bad-yeah-science.gif)
 
