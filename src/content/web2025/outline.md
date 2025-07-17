@@ -10,7 +10,7 @@ seo_description: Learn web design fundamentals, HTML/CSS, and responsive design.
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-14T14:33
+updated: 2025-07-17T13:02
 ---
 # What is this class and why?
 
@@ -52,11 +52,13 @@ In the class survey, the highest voted reason for wanting to take this course wa
 
 I believe the best way to learn web design is to actually build something you care about. So for this class, we'll be focussing our energies on creating a website (a portfolio, a blog, a little corner for you on the internet) for each of us. While you'll learn HTML, CSS, and work with things like static site generators, **the code is always in service of design and creative expression**. If you're already comfortable with code, great—you'll have more time to focus on the design and content aspects. If you've never written a line of code, that's great too. We'll start from the beginning and build up together.
 
+We'll also read a lot of excellent blogs and essays to understand perspectives of creatives, artists, and writers in how they perceive and create such spaces, with the aim of trying to incorporate that in our own practice.
+
 Broadly, this will be our structure:
 
-- **Week 1:** Getting comfortable with tools, exploring what makes websites feel human, learning HTML/CSS through customization rather than from scratch
-- **Week 2:** Working with Astro, our static site generator, components, and basics of responsive design
-- **Week 3:** Design systems and polish, refining your visual identity, performance optimization, and portfolio presentation
+- **Week 1:** Getting comfortable with tools, exploring what makes websites feel human, curating our content, learning HTML/CSS through customization rather than all from scratch
+- **Week 2:** Working with Astro, our static site generator, components, and basics of how these setups work, adding our content, and customizing this to represent us and our tastes.
+- **Week 3:** Design systems and polish, refining our identities, finishing touches, optimization, and presentation
 
 Each of us will "fork" (which means to create a copy) and customize a starter template, learning to work within an existing codebase while making it completely our own. Almost every class session combines design with hands-on implementation so that **we don't silo ourselves as designers, or developers**, but a fun mix of people who are at least _familiar_ with both. This means we'll move quickly, but you'll leave with immediately applicable skills and the confidence to continue learning independently.
 
