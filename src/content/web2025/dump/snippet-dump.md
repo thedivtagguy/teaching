@@ -1,6 +1,6 @@
 ---
 date: 2025-07-14T15:26
-updated: 2025-07-17T16:45
+updated: 2025-07-19T09:58
 ---
 ![](IMG-20250717164558430.png)
 https://web.archive.org/web/20090109091327id_/http://www.cs.usna.edu/~augustin/Courses/IT460/Article%2003a%20-%20Website%20Design%20Patterns.pdf
