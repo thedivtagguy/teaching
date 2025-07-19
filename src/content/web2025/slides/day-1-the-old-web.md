@@ -10,30 +10,37 @@ transition: none
 
 ---
 
-<split even gap=2>
-
-## Today's Plan 
-
-
-|   Thing   |   Time for Thing   |
-| --- | --- |
-|   Class overview  |  20 min   |
-|   Introduce yourself!  |  25 min   |
-| **Lecture** | ~50 min |
-| Break | 10 min |
-| Internet Archaeology: Part 1 | 45 min |
-| Lunch |  |
-| Internet Archaeology: Part 2 | 45 min |
-| Discussions | 45 min |
-| Assignment Setup | 20 min |
-
-</split>
-
----
-
 # What Is This Class? 
 
 Before we can properly answer that question, I would like to situate my context for you, and to do that, we need to address the biggest shift in our field in a generation.
+
+---
+
+
+# What do you think of when you think of websites? 
+
+---
+
+![](IMG-20250718223011753.png)
+
+---
+
+![](IMG-20250718223051253.png)
+
+---
+
+![](IMG-20250719095232748.png)
+
+---
+
+![](IMG-20250719095500027.png)
+
+---
+
+![](IMG-20250719095511251.png)
+
+---
+![](IMG-20250719095754788.gif)
 
 ---
 
