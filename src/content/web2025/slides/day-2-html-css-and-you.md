@@ -1,6 +1,6 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-17T21:46
+updated: 2025-07-17T22:53
 transition: none
 ---
 
@@ -236,11 +236,11 @@ The CSS above creates a div with:
 
 ---
 
-<nav class="isolated" style="background: gray; padding: 10px;">
-  <a href="#" on:mouseover={(e) => e.target.style.background='green'} on:mouseout={(e) => e.target.style.background='red'} style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: red;">Home</a>
-  <a href="#" on:mouseover={(e) => e.target.style.background='green'} on:mouseout={(e) => e.target.style.background=''} style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">About</a>
-  <a href="#" on:mouseover={(e) => e.target.style.background='green'} on:mouseout={(e) => e.target.style.background=''} style="color: white; text-decoration: none; padding: 8px 16px; margin-right: 10px; background: none;">Contact</a>
-</nav>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/bakerstreetirregular/embed/xbwwzwJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/bakerstreetirregular/pen/xbwwzwJ">
+  Untitled</a> by bakerstreetirregular (<a href="https://codepen.io/bakerstreetirregular">@bakerstreetirregular</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 
 
@@ -297,17 +297,12 @@ Preflight Checklist:
 
 By the end of this short exercise, you will have a crappy website on the internet. Lets go.
 
-I made this page:
 
-![Unstyled Page](https://aman.bh/web-dev/1/images/act1un.png)
-
-Can we make it look worse?
+I have a barebones HTML page. Your job is to give it some styles. BUT, it has to be messy, ugly, a complete Dada-ist masterpiece.
 
 ---
 
 Maybe this?
-
-![Styled Page](https://aman.bh/web-dev/1/images/act1.png)
 
 ---
 
@@ -319,12 +314,15 @@ Maybe this?
 
 Git is a version control system. What this means is that it basically lets multiple people access a central source of what is usually code, and make alterations to it without messing it up for other people.
 
+---
+
+
 In development, its used to collaborate between teams. This works in the following way:
 
-1. There is a central code 'repository'.
-2. Each member can then copy this **master copy** and create their own **fork**.
-3. If me and you are working on the same fork, it is better to create two copies of what we're working on and develop on things separately. Each copy here is called a **branch**.
-4. Because we're able to save versions of our progress, if you screw up your branch, I can just tell Git 'Hey could you go back to the time before this monkey touched the code?' and continue working from there.
+1. There is a central code 'repository'. <!--element class='fragment'-->
+2. Each member can then copy this master copy and create their own fork, a duplicate copy. <!--element class='fragment'-->
+3. If me and you are working on the same fork, it is better to create two copies of what we're working on and develop on things separately. Each copy here is called a **branch** (it is literally what you imagine in your head when you think branch). <!--element class='fragment'-->
+4. Because we're able to save versions of our progress, if you screw up your branch, I can just tell Git 'Hey could you go back to the time before this monkey touched the code?' and continue working from there.<!--element class='fragment'-->
 
 ---
 
@@ -334,11 +332,12 @@ For now, we'll just use some simple commands
 
 ---
 
-![Dolly the Sheep](https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg)
+![Dolly the Sheep|200](https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg)
+
 
 1. First, copy this link below:
 ```
-https://github.com/thedivtagguy/activity1
+https://github.com/open-making/web2025-hey-jude
 ```
 
 2. Now open VSCode and press **Ctrl + Shift + P** and search for `Clone`.
@@ -349,11 +348,10 @@ https://github.com/thedivtagguy/activity1
 
 You just used Git to fetch from a remote source to your local machine!
 
-*This slide is dedicated to Dolly the sheep, who was also a clone*
+*This slide is dedicated to Dolly the sheep, who was also a clone* <!--element class="fragment"-->
 
 ---
 
-In the next part, we will launch this crap into space. First add some ( styles to the files.(
 
 ### Time: 10 Minutes
 
@@ -361,24 +359,13 @@ In the next part, we will launch this crap into space. First add some ( styles t
 
 1. Enable a [split editor](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing) so you can edit two files side by side.
 
-2. Fire up your live server.
+2. `npm run dev` to fire up a live server which reloads as you work.
 
 ---
 
 ## Here are some sample properties to try
 
-**Left Column:**
-- `padding: 10px;`
-- `font-size: 15px;`
-- `font-weight: bold;`
-- `background-color: #c7980b;`
-- `border: solid`
-
-**Right Column:**
-- `border-width: 3px;`
-- `color: #423e34;`
-- `margin-top: 40px;`
-- `font-family: sans-serif`
+https://github.com/open-making/web2025-hey-jude/blob/main/css-properties.md
 
 ---
 
@@ -395,13 +382,15 @@ git init  # This initializes a new git repository on your machine
 
 git add -A  # Every time you want to save a new version, you have to add all files to this version
 
-git commit -m "My First Commit"  # The commit command saves the version with a message to help you keep track of things
+git commit -m "My First Ugly Website"  # The commit command saves the version with a message to help you keep track of things
 ```
+
+---
 
 Now go to Github and create a new repo. After you give it a name, copy the line that looks like this and paste it in your terminal:
 
 ```bash
-git remote set-url origin github.com/thedivtagguy/activity1.git  # This is connecting your local copy to this Github repository
+# Connect your local folder to your new empty GitHub repo # Make sure to use the URL you copied! git remote add origin https://github.com/YourUsername/YourRepoName.git
 ```
 
 Finally, write this and press Enter:
@@ -413,7 +402,7 @@ git push -u -f origin master
 
 # Netlify and Chill
 
-To host our website, we'll use a service called Netlify. It is a static site hosting service, which means as long as our website doesn't have a database, we can host it for free.
+To host our website, we'll use a service called [Netlify](https://netlify.app). It is a static site hosting service, which means as long as our website doesn't have a database, we can host it for free.
 
 1. Go to [Netlify.com](https://netlify.com) and login with your Github account
 2. Add a new site. In the options, choose 'Import Existing Project'
@@ -421,6 +410,8 @@ To host our website, we'll use a service called Netlify. It is a static site hos
 4. Click deploy
 
 In a few minutes, your website will be online with a silly looking URL.
+
+---
 
 But see, here's the cool part. Go back to VS Code and make some changes to the text. After you're done, create a new commit like so:
 
@@ -440,29 +431,32 @@ git push
 
 ---
 
-# Git-based deployment
+# Whaaat? It updated automatically!
 
-Since your Netlify site is connected to your Github repository, every time you push a new commit to your repository, Netlify will rebuild your website and put the new version up online.
+This is **Continuous Deployment (CI/CD)**, a core part of the modern web development workflow.
 
-This is very useful and as we go deeper into using modern web-development frameworks, you'll see why this is one of the best ways of working on a project.
-
-![Excited Hazmat](https://c.tenor.com/Ue9Qugpw7h4AAAAC/hazmat-excited.gif)
+Your Netlify site is linked to your GitHub repo. Every time you `push` a new commit, Netlify automatically grabs the new code, rebuilds your site, and deploys the new version. No more manually uploading files!
 
 ---
 
-# But can we make this look prettier?
+This is very useful and as we go deeper into using modern web-development frameworks, you'll see why this is one of the best ways of working on a project.
+
+![Excited Hazmat|300](https://c.tenor.com/Ue9Qugpw7h4AAAAC/hazmat-excited.gif) <!--element class="fragment"-->
+
+---
+
+# But can we make things look... actually good?
 
 ---
 
 # Weird flex but okay
 
-Most of the websites we made right now, a few moments ago, are just elements stacked on top of each other. What if we learn how to arrange stuff on the page so that it looks better?
+So far, our elements are in the "normal document flow"—they just stack on top of each other. To create complex, modern layouts (sidebars, galleries, navigation bars), we need more control.
 
-Maybe like this:
+![IMG|400](https://mellifluous-crumble-4fde67.netlify.app/images/flex.png)<!--element class="fragment"-->
 
-![Flexbox Example](https://aman.bh/web-dev/1/images/flex.png)
+Flexboxis a CSS layout model designed to make arranging, aligning, and distributing space among items a breeze. <!--element class="fragment"-->
 
-This is where *flexbox* comes in.
 
 ---
 
@@ -474,7 +468,7 @@ To understand how flexbox works, we'll play a game called Flexbox Froggy. It sou
 
 Its got frogs. Lets play.
 
-![Flexbox Froggy](https://aman.bh/web-dev/1/images/frog.png)
+![Flexbox Froggy|500](https://mellifluous-crumble-4fde67.netlify.app/images/frog.png)
 
 ```
 flexboxfroggy.com
@@ -484,20 +478,24 @@ flexboxfroggy.com
 
 ---
 
-# Yeah you're so done now, I can see it.
+## Yeah, you're done. I can see it in your eyes.
+
+Let's wrap up.
 
 ---
 
-# Quick Recap
+## Quick Recap
 
-You're now armed with the knowledge of:
+You are now armed with the knowledge of:
 
-1. Tags
-2. CSS Selectors
-3. CSS Flexbox
-4. Developing in VS Code
-5. Pushing and pulling from remote and local repositories with Git
-6. Deploying to Netlify
+1. HTML Tags & Attributes<!--element class="fragment"-->
+2. CSS Selectors for targeting elements<!--element class="fragment"-->
+3. CSS Flexbox for layout<!--element class="fragment"-->
+4. Developing locally in VS Code with a Vite<!--element class="fragment"-->
+5. Using Git to version control and push to GitHub<!--element class="fragment"-->
+6. Deploying a site to Netlify with continuous deployment<!--element class="fragment"-->
+
+That's a massive amount for one day!<!--element class="fragment"-->
 
 ---
 
@@ -505,9 +503,12 @@ You're now armed with the knowledge of:
 
 You'll never be asked to design the abomination you made in the earlier activity. However, being asked to code a UI screen is extremely likely. If you're interested in developing the earlier skills further, here's a challenge.
 
-## I've designed a product page in Figma and coded the bare, unstyled HTML for it. Can you apply CSS so that the HTML looks like the design file?
+---
+
+I've designed a product page in Figma and coded the bare, unstyled HTML for it. Can you apply CSS so that the HTML looks like the design file?
 
 #### Files are at
+
 ```
 https://github.com/thedivtagguy/activity2
 ```

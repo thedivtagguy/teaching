@@ -13,28 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-2-html-css-and-you.md",
+                "file": "slides/day-1-the-old-web.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-2-html-css-and-you"
+              "title": "day-1-the-old-web"
             }
           }
         ]
       },
       {
-        "id": "29b2052bf67df4c4",
+        "id": "55fffb21880417ec",
         "type": "tabs",
         "children": [
           {
-            "id": "8cbbb48a5cfa0726",
+            "id": "1452e8b0e8aa797e",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: appendix-node-and-npm.md"
+              "title": "Preview: day-1-the-old-web.md"
             }
           }
         ]
@@ -189,6 +189,15 @@
   },
   "active": "b15908bf5123e0c3",
   "lastOpenFiles": [
+    "assets/slides/day-1-the-old-web/IMG-20250719095754788.gif",
+    "assets/slides/day-1-the-old-web/IMG-20250719095724877.png",
+    "assets/slides/day-1-the-old-web/IMG-20250719095511251.png",
+    "assets/slides/day-1-the-old-web/IMG-20250719095500027.png",
+    "assets/slides/day-1-the-old-web/IMG-20250719095232748.png",
+    "assets/slides/day-1-the-old-web/IMG-20250718223051253.png",
+    "assets/slides/day-1-the-old-web/IMG-20250718223011753.png",
+    "dump/snippet-dump.md",
+    "slides/day-2-html-css-and-you.md",
     "quizzes.md",
     "quiz-node-and-npm.md",
     "slides/appendix-node-and-npm.md",
@@ -205,19 +214,11 @@
     "assets/slides/day-1-the-old-web/output.mp4",
     "assets/slides/day-1-the-old-web/eth.mp4",
     "assets/slides/day-1-the-old-web/Pasted image 20250716003533.png",
-    "assets/slides/day-1-the-old-web/Pasted image 20250716003127.png",
-    "assets/slides/day-1-the-old-web/Pasted image 20250716003003.png",
-    "assets/slides/day-1-the-old-web/Pasted image 20250716002853.png",
-    "assets/slides/day-1-the-old-web/Pasted image 20250716001035.png",
-    "assets/slides/day-1-the-old-web/Pasted image 20250715234219.png",
-    "assets/slides/day-1-the-old-web/Pasted image 20250715233130.png",
     "assets/slides/appendix-node-and-npm",
     "assets/dump/snippet-dump",
     "assets/dump",
     "install-guides.md",
-    "slides/day-2-html-css-and-you.md",
     "outline.md",
-    "dump/snippet-dump.md",
     "requirements.md",
     "templates/day-template.md",
     "assets/slides/day-1-the-old-web/output 1.mp4",
