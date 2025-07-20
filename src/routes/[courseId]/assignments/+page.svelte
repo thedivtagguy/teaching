@@ -91,7 +91,9 @@
 	// Generate anchor ID from due date
 	function generateAnchorId(dueDate: string): string {
 		if (dueDate === 'No Due Date') return 'no-due-date';
-		return dueDate
+		// Handle ISO date strings by extracting just the date part
+		const dateOnly = dueDate.includes('T') ? dueDate.split('T')[0] : dueDate;
+		return dateOnly
 			.toLowerCase()
 			.replace(/[^a-z0-9]/g, '-')
 			.replace(/-+/g, '-')
@@ -209,15 +211,18 @@
 		if (allCompleted) return false;
 
 		const now = new Date();
-		const due = new Date(dueDate);
-		due.setHours(21, 0, 0, 0); // Set to 9:00 PM
+		// Handle ISO date strings by extracting just the date part
+		const dateOnly = dueDate.includes('T') ? dueDate.split('T')[0] : dueDate;
+		const due = new Date(dateOnly + 'T21:00:00.000Z'); // Set to 9:00 PM
 		return now > due;
 	}
 
 	// Format date for display
 	function formatDate(dateString: string): string {
 		if (dateString === 'No Due Date') return dateString;
-		return new Date(dateString).toLocaleDateString('en-US', {
+		// Handle ISO date strings by extracting just the date part
+		const dateOnly = dateString.includes('T') ? dateString.split('T')[0] : dateString;
+		return new Date(dateOnly + 'T12:00:00.000Z').toLocaleDateString('en-US', {
 			weekday: 'long',
 			year: 'numeric',
 			month: 'long',

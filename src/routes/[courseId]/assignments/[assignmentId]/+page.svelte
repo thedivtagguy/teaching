@@ -102,7 +102,16 @@
 						{#if due}
 							<div class="flex items-center">
 								<Calendar class="text-primary mr-1 h-4 w-4" />
-								<span class="font-archivo">Due: {due}</span>
+								<span class="font-archivo"
+									>Due: {due.includes('T')
+										? new Date(due.split('T')[0] + 'T12:00:00.000Z').toLocaleDateString('en-US', {
+												weekday: 'long',
+												year: 'numeric',
+												month: 'long',
+												day: 'numeric'
+											})
+										: due}</span
+								>
 							</div>
 						{/if}
 
@@ -123,8 +132,8 @@
 
 				<!-- Assignment description -->
 				{#if description}
-					<div class="bg-primary/10 mb-6 rounded-md p-4">
-						<p class="font-archivo text-muted-foreground">{description}</p>
+					<div class="bg-primary/50 mb-4 flex w-fit items-center rounded-md p-2">
+						<p class="font-archivo text-muted-foreground !mb-0">{description}</p>
 					</div>
 				{/if}
 
@@ -175,7 +184,16 @@
 								<span class="font-archivo text-muted-foreground text-sm font-medium">Due Date</span>
 								<div class="flex items-center gap-2">
 									<Calendar class="text-primary h-4 w-4" />
-									<span class="font-archivo text-sm font-semibold">{due}</span>
+									<span class="font-archivo text-sm font-semibold"
+										>{due.includes('T')
+											? new Date(due.split('T')[0] + 'T12:00:00.000Z').toLocaleDateString('en-US', {
+													weekday: 'long',
+													year: 'numeric',
+													month: 'long',
+													day: 'numeric'
+												})
+											: due}</span
+									>
 								</div>
 							</div>
 						{/if}

@@ -8,6 +8,7 @@
 	import { getContentFile } from '$lib/utils/contentService';
 	import { extractSEOData } from '$lib/utils/seo';
 	import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
+	import Button from '$lib/components/ui/button/button.svelte';
 
 	// Get course ID and day ID from URL params
 	$: courseId = $page.params.courseId;
@@ -165,25 +166,17 @@
 									</div>
 								{/if}
 								{#if content.metadata?.slides}
-									<a
-										href={content.metadata.slides}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="bg-primary/10 hover:bg-primary/20 border-primary/20 text-primary inline-flex items-center rounded border px-3 py-2 transition-colors"
-									>
+									<Button href={content.metadata.slides} target="_blank" rel="noopener noreferrer">
 										<BookOpen class="mr-2 h-4 w-4" />
 										<span class="font-archivo text-sm font-medium">Today's Slides</span>
-									</a>
+									</Button>
 								{/if}
 
 								{#if menuData.assignments && menuData.assignments.length > 0}
-									<a
-										href="/{courseId}/assignments"
-										class="bg-secondary/10 hover:bg-secondary/20 border-secondary/20 text-secondary inline-flex items-center rounded border px-3 py-2 transition-colors"
-									>
+									<Button href="/{courseId}/assignments" variant="secondary">
 										<Clipboard class="mr-2 h-4 w-4" />
 										<span class="font-archivo text-sm font-medium">Assignments</span>
-									</a>
+									</Button>
 								{/if}
 
 								{#if menuData.readings && menuData.readings.length > 0}
