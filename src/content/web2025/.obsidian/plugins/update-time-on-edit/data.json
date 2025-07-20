@@ -10,13 +10,12 @@
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
   "fileHashMap": {
-    "outline.md": "559dcb99ab760c774697c220f5dac8cd71c1c49c1420e059d0b8ceb9b03788f1",
+    "outline.md": "33d3a54dee5980b5d84f30c69e94b1cba1fe099b5db021ea459c1f2d89c28bd6",
     "ai-policy.md": "12a6ef7cf53bab6c9b203572a82ac61e5cf84316913f813a3aa7d477bc261b07",
     "templates/day-template.md": "6ce8a82db7ae4c775e8976d21dd90156c0b3e5adc551a42842a55240a7046203",
-    "requirements.md": "8b36fd854ff8569ab7ef82956ea1c429fbdf9c8684707fda7cd87fd54f2ea1cc",
+    "requirements.md": "94a6ac7bf23a0926c976b5f71c2e00227ce267609837fbde63ac1f16a15d5641",
     "install-guides.md": "011dfeac49bf7c89f2f68b28ec7bb33c41dc8944a78304ecc3458c4475a90e34",
-    "slides/day-1-the-old-web.md": "b1288c2119c5d397176b9a2bdd0a558c9c6ca5cae86218b8b3c4ccb1afccec83",
-    "slides/day-2-html-css-and-you.md": "79eff0fc3b56a576f06f77c9dc97b8bc654de8b418962998a26765e09f74e1fb",
-    "dump/snippet-dump.md": "f660ae91b305c9364357e9200d79f3e9f5231ee73e8f3f29f8b0453839057ffd"
+    "slides/day-2-html-css-and-you.md": "c9f557cf9b4298167cf8695df0e3300944ff6ae573dba97f0cc267844aadf833",
+    "dump/snippet-dump.md": "8d729a8908beac2efe3ca4ed1a42ff584ef4e509df926ab83af1894d3b9adae2"
   }
 }
