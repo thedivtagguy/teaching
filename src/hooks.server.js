@@ -24,11 +24,11 @@ export async function handle({ event, resolve }) {
 	if (event.url.pathname.startsWith('/slides/')) {
 		const urlPath = event.url.pathname.slice(1); // Remove leading slash
 		console.log('Slides request:', urlPath);
-		
+
 		// First try to serve the file directly
 		let staticFilePath = resolvePath(process.cwd(), 'static', urlPath);
 		console.log('Trying direct path:', staticFilePath);
-		
+
 		// Check if the path exists and if it's a directory
 		if (existsSync(staticFilePath)) {
 			const stats = statSync(staticFilePath);
@@ -48,29 +48,29 @@ export async function handle({ event, resolve }) {
 			if (pathParts.length >= 3 && pathParts[0] === 'slides' && pathParts[1] === 'web2025') {
 				// Try to find the asset in the day-1-the-old-web folder
 				const assetPath = pathParts.slice(2).join('/'); // e.g., "dist/reveal.css"
-				const slidesFolderPath = resolvePath(process.cwd(), 'static', 'slides', 'web2025', 'day-1-the-old-web', assetPath);
+				const slidesFolderPath = resolvePath(process.cwd(), 'static', 'slides', 'web2025', 'day-1-the-small-web', assetPath);
 				console.log('Trying asset in slides folder:', slidesFolderPath);
-				
+
 				if (existsSync(slidesFolderPath) && statSync(slidesFolderPath).isFile()) {
 					staticFilePath = slidesFolderPath;
 				}
 			}
 		}
-		
+
 		// Check if the final static file exists and is a file
 		if (existsSync(staticFilePath) && statSync(staticFilePath).isFile()) {
 			try {
 				const contentType = getContentType(staticFilePath);
-				
+
 				// Read binary files as buffer for fonts, images, etc.
-				const isBinary = contentType.startsWith('font/') || 
-								contentType.startsWith('image/') || 
-								contentType === 'application/octet-stream';
-				
-				const fileContent = isBinary ? 
-					readFileSync(staticFilePath) : 
+				const isBinary = contentType.startsWith('font/') ||
+					contentType.startsWith('image/') ||
+					contentType === 'application/octet-stream';
+
+				const fileContent = isBinary ?
+					readFileSync(staticFilePath) :
 					readFileSync(staticFilePath, 'utf-8');
-				
+
 				console.log('Serving file:', staticFilePath);
 				return new Response(fileContent, {
 					headers: {

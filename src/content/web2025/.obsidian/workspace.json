@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7639ff0aabe68c14",
+            "id": "39b878950993290e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-1-the-small-web.md",
+                "file": "slides/day-1-the-small-web.md",
                 "mode": "source",
                 "source": false
               },
@@ -22,27 +22,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "63958e1c1a6cbd11",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "39b878950993290e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "assignments/day-1-web-archaeology.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "day-1-web-archaeology"
-            }
-          }
-        ],
-        "currentTab": 1
       },
       {
         "id": "63958e1c1a6cbd11",
@@ -210,35 +189,36 @@
   },
   "active": "39b878950993290e",
   "lastOpenFiles": [
+    "slides/day-2-html-css-and-you.md",
+    "slides/day-1-the-small-web.md",
+    "slides/appendix-node-and-npm.md",
+    "quizzes.md",
+    "quiz-node-and-npm.md",
     "day-1-the-small-web.md",
     "assignments/day-1-web-archaeology.md",
     "assignments",
-    "slides/day-1-the-small-web.md",
-    "assets/slides/day-1-the-small-web/vid-7.mp4",
+    "assets/slides/day-2-html-css-and-you/IMG-20250716222043779.png",
+    "assets/slides/day-2-html-css-and-you",
     "assets/slides/day-1-the-small-web/votes-2.mp4",
-    "assets/slides/day-1-the-small-web/uc.mp4",
-    "Pasted image 20250719135537.png",
-    "slides/appendix-node-and-npm.md",
-    "assets/slides/day-1-the-small-web/eth.mp4",
-    "assets/slides/day-1-the-small-web",
-    "outline.md",
-    "assets/slides/day-1-the-small-web/vid-3.mp4",
+    "assets/slides/day-1-the-small-web/vid-7.mp4",
     "assets/slides/day-1-the-small-web/vid-6.mp4",
     "assets/slides/day-1-the-small-web/vid-5.mp4",
     "assets/slides/day-1-the-small-web/vid-4.mp4",
-    "assets/slides/day-1-the-small-web/IMG-20250720232117801.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720225444215.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720232117687.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720232117671.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720232117631.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720232117741.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720215829609.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720232117705.png",
-    "assets/slides/day-1-the-small-web/IMG-20250720232117575.png",
+    "assets/slides/day-1-the-small-web/vid-3.mp4",
+    "assets/slides/day-1-the-small-web/vid-2.mp4",
+    "assets/slides/day-1-the-small-web/vid-1.mp4",
+    "assets/slides/day-1-the-small-web/pricing.png",
+    "assets/slides/day-1-the-small-web/Pasted image 20250719134745.png",
+    "assets/slides/day-1-the-small-web/Pasted image 20250715234219.png",
+    "assets/slides/day-1-the-small-web/Pasted image 20250715231404.png",
+    "assets/slides/day-1-the-small-web/IMG-20250720232118269.gif",
+    "assets/slides/day-1-the-small-web/IMG-20250720232118232.png",
+    "assets/slides/day-1-the-small-web/IMG-20250720232118199.png",
+    "assets/slides/day-1-the-small-web/IMG-20250720232118177.png",
+    "assets/slides/day-1-the-small-web/IMG-20250720232118155.png",
+    "slides/day-1-the-old-web.md",
+    "outline.md",
     "dump/snippet-dump.md",
-    "quizzes.md",
-    "quiz-node-and-npm.md",
-    "slides/day-2-html-css-and-you.md",
     "node-npm-quiz.md",
     "install-guides.md",
     "requirements.md",

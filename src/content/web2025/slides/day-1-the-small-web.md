@@ -1,6 +1,6 @@
 ---
 date: 2025-07-11T13:57
-updated: 2025-07-20T23:44
+updated: 2025-07-21T00:35
 transition: none
 ---
 
@@ -1285,24 +1285,7 @@ Almost the same as the Internet Archive, but organized in a browsable way.
 
 ## Activity Brief
 
-1. Dive into each of these archives. Get lost. Follow links. See what you can find. Maybe look for a website you're interested in if you're using the Internet Archive.
-    
-2. Find and document at least **7 different types of "artifacts"** that you find interesting. Weird buttons, unconventional menus, graphics, illustrations, these can be anything.
-    
-3. For each artifact, ask: What does this tell me about the person who made it? What does it say about the technology of the time? Why don't we see this anymore? What need did it serve?
-    
-
-
----
-
-
-## What did you find in the ruins?
-
-
----
-
-Your main takeaway for today should be
-## There is no one right way to design or make. 
+Head over to the 'Assignments' page [here](https://teaching.aman.bh/web2025/assignments/) for more.
 
 
 ---

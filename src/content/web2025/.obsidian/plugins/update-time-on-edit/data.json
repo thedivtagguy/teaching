@@ -10,16 +10,13 @@
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
   "fileHashMap": {
-    "outline.md": "022bf2af888081f9d85f0a3a81bf174b4f3c3645b0d7712fcddb78be6e9b21b5",
+    "outline.md": "e56b8a61207c82b1a550fa602252266200b6014d50f9b6d0db6f2f8be2b66830",
     "ai-policy.md": "12a6ef7cf53bab6c9b203572a82ac61e5cf84316913f813a3aa7d477bc261b07",
     "templates/day-template.md": "6ce8a82db7ae4c775e8976d21dd90156c0b3e5adc551a42842a55240a7046203",
-    "requirements.md": "dab1f7d5991699618e9710e8404aa5767377ded14fe07cabb0292c74b94d17ee",
+    "requirements.md": "01bd3dc6a8df4f27732bd7530b1c7b500c34dc34694004f1ee5b78d90de50ae4",
     "install-guides.md": "011dfeac49bf7c89f2f68b28ec7bb33c41dc8944a78304ecc3458c4475a90e34",
-    "slides/day-2-html-css-and-you.md": "cf3ca27261dc228553e9a2b8da08e477a77f51eac346dab3336967c5e10fe311",
-    "dump/snippet-dump.md": "8d729a8908beac2efe3ca4ed1a42ff584ef4e509df926ab83af1894d3b9adae2",
-    "slides/appendix-node-and-npm.md": "fe1b38f8d2b317b3f6d141a62e58bfdcada5b1546c9cadec8954cb952f7322de",
-    "slides/day-1-the-small-web.md": "55c3eb250c548afae2b49d8bd4a405308e1052423fc4c747202f1c15824efd92",
-    "day-1-the-small-web.md": "1c57f15de8671c17d22c6f41cb1ca39a6c5e7f78062e7fba1eaa1b7dfa9ed170",
-    "assignments/day-1-web-archaeology.md": "1a4d7e2f6481a1564fb9e63640159e62b16ed466baadd0976e3a6556799a6be6"
+    "slides/day-2-html-css-and-you.md": "27a579014b7b835f2bfc7533019f2b5d15fb66324441ef7c59597732a79ba8d5",
+    "dump/snippet-dump.md": "43a83b7fec9e34d535e6af710b7a746a80f8342ddebeb411a4c1a6742622c46c",
+    "slides/day-1-the-small-web.md": "062e1e39b56b80f5dedc7ae3b4c4315a232df90aa71d01d8eedc863ce3255e2d"
   }
 }
