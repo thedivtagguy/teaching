@@ -232,6 +232,7 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
     const courseContentFiles = Object.keys(contentFiles).filter(filePath =>
       filePath.startsWith(`/src/content/${courseId}/`) &&
       !filePath.includes('/assignments/') &&
+      !filePath.includes('/quiz-') &&
       isSupportedContentFile(filePath)
     );
 

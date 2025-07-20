@@ -8,6 +8,7 @@
 	import { getContentFile } from '$lib/utils/contentService';
 	import { extractSEOData } from '$lib/utils/seo';
 	import type { MenuSection, MenuItem, CourseMenu } from '$lib/utils/contentSchema';
+	import Button from '$lib/components/ui/button/button.svelte';
 
 	// Get course ID and day ID from URL params
 	$: courseId = $page.params.courseId;
@@ -127,7 +128,7 @@
 						<!-- <h1 class="text-3xl font-libre-caslon mb-2">{content.metadata?.title || `${dayId.charAt(0).toUpperCase() + dayId.slice(1)}`}</h1> -->
 
 						<div class="text-muted-foreground flex flex-wrap gap-4 text-sm">
-							{#if content.metadata?.date}
+							{#if content.metadata?.date && content.metadata?.show_metadata_card !== true}
 								<div class="flex items-center">
 									<Calendar class="text-primary mr-1 h-4 w-4" />
 									<span class="font-archivo"
@@ -139,7 +140,7 @@
 									>
 								</div>
 							{/if}
-							{#if content.metadata?.section}
+							{#if content.metadata?.section === 'Appendix'}
 								<div class="flex items-center">
 									<BookOpen class="text-primary mr-1 h-4 w-4" />
 									<span class="font-archivo">{content.metadata.section}</span>
@@ -147,6 +148,49 @@
 							{/if}
 						</div>
 					</div>
+
+					<!-- Quick Access card -->
+					{#if content.metadata?.show_metadata_card}
+						<div class="bg-muted/30 border-border mb-6 rounded-xs border p-4">
+							<div class="flex flex-wrap items-center gap-4">
+								{#if content.metadata?.date}
+									<div class="flex items-center">
+										<Calendar class="text-primary mr-1 h-4 w-4" />
+										<span class="font-archivo text-muted-foreground text-sm font-medium"
+											>{new Date(content.metadata.date).toLocaleDateString('en-US', {
+												year: 'numeric',
+												month: 'long',
+												day: 'numeric'
+											})}</span
+										>
+									</div>
+								{/if}
+								{#if content.metadata?.slides}
+									<Button href={content.metadata.slides} target="_blank" rel="noopener noreferrer">
+										<BookOpen class="mr-2 h-4 w-4" />
+										<span class="font-archivo text-sm font-medium">Today's Slides</span>
+									</Button>
+								{/if}
+
+								{#if menuData.assignments && menuData.assignments.length > 0}
+									<Button href="/{courseId}/assignments" variant="secondary">
+										<Clipboard class="mr-2 h-4 w-4" />
+										<span class="font-archivo text-sm font-medium">Assignments</span>
+									</Button>
+								{/if}
+
+								{#if menuData.readings && menuData.readings.length > 0}
+									<a
+										href="/{courseId}/readings"
+										class="bg-primary/10 hover:bg-primary/20 border-primary/20 text-primary inline-flex items-center rounded border px-3 py-2 transition-colors"
+									>
+										<BookOpen class="mr-2 h-4 w-4" />
+										<span class="font-archivo text-sm font-medium">Readings</span>
+									</a>
+								{/if}
+							</div>
+						</div>
+					{/if}
 
 					<!-- Main content area with improved MDLayout -->
 					<MDLayout metadata={content.metadata} {courseId} fileName={dayId} fileType="day">

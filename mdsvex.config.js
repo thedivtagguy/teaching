@@ -7,17 +7,26 @@ import remarkFootnotes from 'remark-footnotes';
 
 const config = defineMDSveXConfig({
   extensions: ['.svx', '.md'],
-  
+
+  // Custom filename function to exclude slides and dump folders
+  filename: (filename) => {
+    // Exclude files in slides or dump folders
+    if (filename.includes('/slides/') || filename.includes('/dump/')) {
+      return null;
+    }
+    return filename;
+  },
+
   smartypants: {
     dashes: 'oldschool'
   },
-  
+
   // Add remark plugins for GitHub Flavored Markdown and footnotes
   remarkPlugins: [
     remarkGfm,
     [remarkFootnotes, { inlineNotes: true }]
   ],
-  
+
   // Add rehype plugins for automatic heading IDs and anchor links
   rehypePlugins: [
     // Add IDs to headings
@@ -65,7 +74,7 @@ const config = defineMDSveXConfig({
       }
     }]
   ],
-  
+
   // Layout for our Markdown files
   layout: {
     _: './src/lib/components/MDLayout.svelte'

@@ -22,6 +22,8 @@ seo_keywords: web design, HTML, CSS, responsive design, web development course, 
 seo_type: article
 seo_author: Aman Bhargava
 updated: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+show_metadata_card: false
+slides:
 slug: <% slug %>
 ---
 

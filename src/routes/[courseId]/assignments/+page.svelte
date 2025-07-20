@@ -91,7 +91,13 @@
 	// Generate anchor ID from due date
 	function generateAnchorId(dueDate: string): string {
 		if (dueDate === 'No Due Date') return 'no-due-date';
-		return dueDate.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+		// Handle ISO date strings by extracting just the date part
+		const dateOnly = dueDate.includes('T') ? dueDate.split('T')[0] : dueDate;
+		return dateOnly
+			.toLowerCase()
+			.replace(/[^a-z0-9]/g, '-')
+			.replace(/-+/g, '-')
+			.replace(/^-|-$/g, '');
 	}
 
 	// Handle day link clicks
@@ -148,8 +154,11 @@
 	});
 
 	// Track progress stats reactively
-	$: completedCount = processedAssignments.filter(assignment => completedAssignments.has(getAssignmentKey(assignment))).length;
-	$: progressPercentage = totalAssignments > 0 ? Math.round((completedCount / totalAssignments) * 100) : 0;
+	$: completedCount = processedAssignments.filter((assignment) =>
+		completedAssignments.has(getAssignmentKey(assignment))
+	).length;
+	$: progressPercentage =
+		totalAssignments > 0 ? Math.round((completedCount / totalAssignments) * 100) : 0;
 
 	// Confetti state
 	let confettiForAssignment: string | null = null;
@@ -195,20 +204,25 @@
 		const assignmentsForDate = assignmentsByDue[dueDate] || [];
 		const allCompleted =
 			assignmentsForDate.length > 0 &&
-			assignmentsForDate.every((assignment) => completedAssignments.has(getAssignmentKey(assignment)));
+			assignmentsForDate.every((assignment) =>
+				completedAssignments.has(getAssignmentKey(assignment))
+			);
 
 		if (allCompleted) return false;
 
 		const now = new Date();
-		const due = new Date(dueDate);
-		due.setHours(21, 0, 0, 0); // Set to 9:00 PM
+		// Handle ISO date strings by extracting just the date part
+		const dateOnly = dueDate.includes('T') ? dueDate.split('T')[0] : dueDate;
+		const due = new Date(dateOnly + 'T21:00:00.000Z'); // Set to 9:00 PM
 		return now > due;
 	}
 
 	// Format date for display
 	function formatDate(dateString: string): string {
 		if (dateString === 'No Due Date') return dateString;
-		return new Date(dateString).toLocaleDateString('en-US', {
+		// Handle ISO date strings by extracting just the date part
+		const dateOnly = dateString.includes('T') ? dateString.split('T')[0] : dateString;
+		return new Date(dateOnly + 'T12:00:00.000Z').toLocaleDateString('en-US', {
 			weekday: 'long',
 			year: 'numeric',
 			month: 'long',
@@ -286,13 +300,18 @@
 					class="bg-card border-foreground btn-drop-shadow overflow-hidden rounded-lg border-2"
 					id={generateAnchorId(dueDate)}
 				>
-					<div class=" border-foreground border-b-2 px-6 transition-all duration-500 {highlightedSection === generateAnchorId(dueDate) ? 'bg-yellow-300' : ''}">
+					<div
+						class=" border-foreground border-b-2 px-6 transition-all duration-500 {highlightedSection ===
+						generateAnchorId(dueDate)
+							? 'bg-yellow-300'
+							: ''}"
+					>
 						<button
 							on:click={() => handleDayClick(dueDate)}
-							class="font-roboto text-foreground py-4 text-xl font-bold tracking-wide hover:text-primary transition-colors cursor-pointer text-left w-full"
+							class="font-roboto text-foreground hover:text-primary w-full cursor-pointer py-4 text-left text-xl font-bold tracking-wide transition-colors"
 							aria-label="Link to {formatDate(dueDate)}"
 						>
-							{formatDate(dueDate)}
+							Due: {formatDate(dueDate)}
 						</button>
 					</div>
 
@@ -330,8 +349,12 @@
 
 										<div
 											class="font-archivo mt-3 flex flex-wrap items-center gap-4 text-sm"
-											class:text-secondary-foreground={completedAssignments.has(getAssignmentKey(assignment))}
-											class:text-foreground={!completedAssignments.has(getAssignmentKey(assignment))}
+											class:text-secondary-foreground={completedAssignments.has(
+												getAssignmentKey(assignment)
+											)}
+											class:text-foreground={!completedAssignments.has(
+												getAssignmentKey(assignment)
+											)}
 										>
 											{#if assignment.points}
 												<span class="flex items-center gap-1">
@@ -376,7 +399,9 @@
 												<Check class="h-5 w-5" />
 											{/if}
 											<span class="font-archivo text-sm font-bold"
-												>{completedAssignments.has(getAssignmentKey(assignment)) ? 'Completed' : 'Mark complete'}</span
+												>{completedAssignments.has(getAssignmentKey(assignment))
+													? 'Completed'
+													: 'Mark complete'}</span
 											>
 										</button>
 
@@ -402,13 +427,7 @@
 											stageWidth: 800,
 											stageHeight: 400,
 											duration: 3000,
-											colors: [
-												'#FFC700',
-												'#FF0000', 
-												'#2E3191',
-												'#41BBC7',
-												'#00FF00'
-											]
+											colors: ['#FFC700', '#FF0000', '#2E3191', '#41BBC7', '#00FF00']
 										}}
 										class="pointer-events-none absolute inset-0 z-10"
 									></div>

@@ -1,28 +1,37 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-21T00:17
-transition: fade
+updated: 2025-07-19T09:59
+transition: none
 ---
 
 # HTML, CSS and You
 
-*Aman Bhargava*  
-*2022/04/24*
+#### _WEB2025 - Day 2_
 
 ---
 
-## We Will vs We Won't
 
-### We Will
-- Learn **frontend** development and workflows
-- Help each other solve problems
-- Share resources and create a space to learn
-- Rock you
+## Welcome back!
 
-### We Won't
-- Learn _everything_ about CSS/HTML/JS.
+Let's do a recap.
 
-That's not realistic.
+---
+
+## HTML is the material of the web
+
+If you think of a website as a house, then **HTML is the the bricks and the steel**. It provides the fundamental structure and content for everything you see online.
+
+---
+
+## On the Menu
+**We Will**
+- Learn how to get started with HTML and CSS
+- Learn some basic development workflows
+- Help each other solve problems and get unstuck.
+- Rock you. 🤘
+
+ **We Won't**
+- Learn _everything_ about CSS/HTML/JS (That's not realistic).
 
 ---
 
@@ -30,7 +39,7 @@ That's not realistic.
 
 ---
 
-# Tags Tags Tags Tags
+# Tag, you're it
 
 An HTML element is defined by a start tag, some content, and an end tag.
 
@@ -41,7 +50,15 @@ An HTML element is defined by a start tag, some content, and an end tag.
 <audio> is for (lol take a guess)
 ```
 
-![HTML Skeleton](https://aman.bh/web-dev/1/images/html-skeleton.png)
+---
+
+Tags always come in pairs.
+
+```html
+<h1> <!-- If you start with an h1, end with an h1 -->
+	My name is Aman
+</h1>
+```
 
 ---
 
@@ -55,25 +72,92 @@ Since we don't want to care about all the 132 tags today, here's what you want t
 
 ---
 
-# HTML Attributes
+```html
+<div class="container">
+    <section>
+        <h1>Main Title</h1>
+        <h2>Subtitle</h2>
+        <p>This is a paragraph with <span>highlighted text</span> inside.</p>
+    </section>
+</div>
+```
 
-Each tag has certain _attributes_, which provide information about that element. Look at the example below.
+---
 
-#### `<h1 id="title" class="page-heading"> Hello World </h1>`
+## There are divs and sections  everywhere for those with the eyes to see
+
+
+---
+
+![](IMG-20250716222043779.png)
+
+---
+
+## Mini-Activity: Your First Webpage
+
+---
+
+Let's make something! No fancy tools yet, just a plain text editor. 
+
+
+- Open a simple text editor (like Notepad on Windows or TextEdit on Mac).
+    
+- Type out the HTML skeleton below. Make the content your own, tweak a bit.
+    
+- Save the file as `index.html`. **Make sure the extension is `.html`, not `.txt`.**
+    
+- Find the file on your computer and double-click to open it in a browser.
+  
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Page</title>
+  </head>
+  <body>
+    <h1>[Your Name]'s Website</h1>
+    <p>I am learning to code and this is my very first webpage!</p>
+    <ul>
+      <li>One thing I want to learn</li>
+      <li>Another thing I want to build</li>
+    </ul>
+  </body>
+</html>
+```
+---
+# HTML Attributes 
+
+Attributes provide extra information about an element and are always included in the **start tag**. The two most important ones for styling are `id` and `class`.
+
+```html
+<h1 id="title" class="page-heading"> 
+		Hello World 
+</h1>
+
+```
+
 
 The attributes are:
 
-- `<h1>` The tag itself.
-- `id` A unique name for this element. It cannot be repeated.
-- `class` A name for this class of elements. Multiple elements can share a class name and will be assigned the same properties defined in that class.
+<span>`h1` The tag itself. </span> <!--element class="fragment"-->
+
+<span>`id` A unique name for this element. It cannot be repeated.</span><!--element class="fragment"-->
+
+<span>`class` A name for this class of elements. Multiple elements can share a class name and will be assigned the same properties defined in that class.</span><!--element class="fragment"-->
+
+We'll use to grab these elements with CSS and style them.<!--element class="fragment"-->
 
 ---
 
 # Tell me more
 
+I will! 
+
+But first, go back to that file and put an `id` in your heading and give all of your `<li>` elements the same class. Whatever you want.
+
 ---
 
-# CSSssssssss
+### CSS
 
 CSS is all about targeting HTML elements that we write and styling them. It is pretty simple to understand most of the time. See if you can understand what this does:
 
@@ -102,11 +186,66 @@ CSS is all about targeting HTML elements that we write and styling them. It is p
 
 ---
 
-# Result
+<div id="george" class="isolated" style="background: #e3e3e3 !important; border-style: dotted !important; border-color: red !important; width:100%;">
+   <p> My paragraph here. </p>
+   <ul>
+      <li> List Item 1</li>
+      <li> List Item 2</li>
+   </ul>
+   <ul>
+      <li> List Item 3</li>
+      <li> List Item 4</li>
+   </ul>   
+</div>
 
+<br/>
 The CSS above creates a div with:
 - Light gray background (#e3e3e3)
 - Red dotted border
+---
+
+```html
+<nav class="menu">
+   <a href="#" class="active">Home</a>
+   <a href="#">About</a>
+   <a href="#">Contact</a>
+</nav>
+```
+
+```css
+.menu {
+  background: gray;
+  padding: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+}
+
+.menu a:hover {
+  background: green;
+}
+
+.menu a.active {
+  background: red;
+}
+```
+
+---
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/bakerstreetirregular/embed/xbwwzwJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/bakerstreetirregular/pen/xbwwzwJ">
+  Untitled</a> by bakerstreetirregular (<a href="https://codepen.io/bakerstreetirregular">@bakerstreetirregular</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+
+
+
+---
 
 ![Breaking Bad Yeah Science](https://c.tenor.com/vr7gSfuJjQYAAAAd/breaking-bad-yeah-science.gif)
 
@@ -118,13 +257,15 @@ The CSS above creates a div with:
 
 # Pick me pick me
 
-![CSS Selectors](https://aman.bh/web-dev/1/images/selectors.png)
+![MOG|600](https://mellifluous-crumble-4fde67.netlify.app/images/selectors.png)
 
 So you have your HTML and you want to write some CSS for it. The first hurdle is learning how to **select** the element you want to style.
 
 CSS has *many* different ways of allowing you to select objects using **selectors**. It is important to get an understanding of this before we move further.
 
-Head over to [CSS Feast](https://flukeout.github.io/) and get started.
+---
+
+Head over to [CSS Diner](https://flukeout.github.io/) and get started.
 
 **There are 32 levels, but you only need to get till level 10-12.**
 
@@ -136,21 +277,15 @@ Head over to [CSS Feast](https://flukeout.github.io/) and get started.
 
 ---
 
-# Setting up your IDE
+# Setting Up Your Lab 👩‍🔬
 
 Preflight Checklist:
 
-#### 1. [Install VS Code](https://code.visualstudio.com/download)
-
-#### 2. [Install Git](https://git-scm.com/downloads)
-
-#### 3. [Install Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-
-This create a local server that will reload every time you save your file, so you can see what you're coding easily.
-
-#### 4. [Create an account on Github](https://github.com)
-
-#### 5. [Setup Git and Github in VSCode](https://www.jcchouinard.com/install-git-in-vscode/)
+1. You've installed VSCode
+2. You've installed Git
+3. You've installed [Node](https://nodejs.org/en/download).
+4. You've installed [pnpm](https://pnpm.io/installation#using-npm)
+5. You have an account on Github.
 
 ---
 
@@ -162,17 +297,12 @@ This create a local server that will reload every time you save your file, so yo
 
 By the end of this short exercise, you will have a crappy website on the internet. Lets go.
 
-I made this page:
 
-![Unstyled Page](https://aman.bh/web-dev/1/images/act1un.png)
-
-Can we make it look worse?
+I have a barebones HTML page. Your job is to give it some styles. BUT, it has to be messy, ugly, a complete Dada-ist masterpiece.
 
 ---
 
 Maybe this?
-
-![Styled Page](https://aman.bh/web-dev/1/images/act1.png)
 
 ---
 
@@ -184,12 +314,15 @@ Maybe this?
 
 Git is a version control system. What this means is that it basically lets multiple people access a central source of what is usually code, and make alterations to it without messing it up for other people.
 
+---
+
+
 In development, its used to collaborate between teams. This works in the following way:
 
-1. There is a central code 'repository'.
-2. Each member can then copy this **master copy** and create their own **fork**.
-3. If me and you are working on the same fork, it is better to create two copies of what we're working on and develop on things separately. Each copy here is called a **branch**.
-4. Because we're able to save versions of our progress, if you screw up your branch, I can just tell Git 'Hey could you go back to the time before this monkey touched the code?' and continue working from there.
+1. There is a central code 'repository'. <!--element class='fragment'-->
+2. Each member can then copy this master copy and create their own fork, a duplicate copy. <!--element class='fragment'-->
+3. If me and you are working on the same fork, it is better to create two copies of what we're working on and develop on things separately. Each copy here is called a **branch** (it is literally what you imagine in your head when you think branch). <!--element class='fragment'-->
+4. Because we're able to save versions of our progress, if you screw up your branch, I can just tell Git 'Hey could you go back to the time before this monkey touched the code?' and continue working from there.<!--element class='fragment'-->
 
 ---
 
@@ -199,11 +332,12 @@ For now, we'll just use some simple commands
 
 ---
 
-![Dolly the Sheep](https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg)
+![Dolly the Sheep|200](https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg)
+
 
 1. First, copy this link below:
 ```
-https://github.com/thedivtagguy/activity1
+https://github.com/open-making/web2025-hey-jude
 ```
 
 2. Now open VSCode and press **Ctrl + Shift + P** and search for `Clone`.
@@ -214,11 +348,10 @@ https://github.com/thedivtagguy/activity1
 
 You just used Git to fetch from a remote source to your local machine!
 
-*This slide is dedicated to Dolly the sheep, who was also a clone*
+*This slide is dedicated to Dolly the sheep, who was also a clone* <!--element class="fragment"-->
 
 ---
 
-In the next part, we will launch this crap into space. First add some ( styles to the files.(
 
 ### Time: 10 Minutes
 
@@ -226,24 +359,13 @@ In the next part, we will launch this crap into space. First add some ( styles t
 
 1. Enable a [split editor](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing) so you can edit two files side by side.
 
-2. Fire up your live server.
+2. `npm run dev` to fire up a live server which reloads as you work.
 
 ---
 
 ## Here are some sample properties to try
 
-**Left Column:**
-- `padding: 10px;`
-- `font-size: 15px;`
-- `font-weight: bold;`
-- `background-color: #c7980b;`
-- `border: solid`
-
-**Right Column:**
-- `border-width: 3px;`
-- `color: #423e34;`
-- `margin-top: 40px;`
-- `font-family: sans-serif`
+https://github.com/open-making/web2025-hey-jude/blob/main/css-properties.md
 
 ---
 
@@ -260,13 +382,15 @@ git init  # This initializes a new git repository on your machine
 
 git add -A  # Every time you want to save a new version, you have to add all files to this version
 
-git commit -m "My First Commit"  # The commit command saves the version with a message to help you keep track of things
+git commit -m "My First Ugly Website"  # The commit command saves the version with a message to help you keep track of things
 ```
+
+---
 
 Now go to Github and create a new repo. After you give it a name, copy the line that looks like this and paste it in your terminal:
 
 ```bash
-git remote set-url origin github.com/thedivtagguy/activity1.git  # This is connecting your local copy to this Github repository
+# Connect your local folder to your new empty GitHub repo # Make sure to use the URL you copied! git remote add origin https://github.com/YourUsername/YourRepoName.git
 ```
 
 Finally, write this and press Enter:
@@ -278,7 +402,7 @@ git push -u -f origin master
 
 # Netlify and Chill
 
-To host our website, we'll use a service called Netlify. It is a static site hosting service, which means as long as our website doesn't have a database, we can host it for free.
+To host our website, we'll use a service called [Netlify](https://netlify.app). It is a static site hosting service, which means as long as our website doesn't have a database, we can host it for free.
 
 1. Go to [Netlify.com](https://netlify.com) and login with your Github account
 2. Add a new site. In the options, choose 'Import Existing Project'
@@ -286,6 +410,8 @@ To host our website, we'll use a service called Netlify. It is a static site hos
 4. Click deploy
 
 In a few minutes, your website will be online with a silly looking URL.
+
+---
 
 But see, here's the cool part. Go back to VS Code and make some changes to the text. After you're done, create a new commit like so:
 
@@ -305,29 +431,32 @@ git push
 
 ---
 
-# Git-based deployment
+# Whaaat? It updated automatically!
 
-Since your Netlify site is connected to your Github repository, every time you push a new commit to your repository, Netlify will rebuild your website and put the new version up online.
+This is **Continuous Deployment (CI/CD)**, a core part of the modern web development workflow.
 
-This is very useful and as we go deeper into using modern web-development frameworks, you'll see why this is one of the best ways of working on a project.
-
-![Excited Hazmat](https://c.tenor.com/Ue9Qugpw7h4AAAAC/hazmat-excited.gif)
+Your Netlify site is linked to your GitHub repo. Every time you `push` a new commit, Netlify automatically grabs the new code, rebuilds your site, and deploys the new version. No more manually uploading files!
 
 ---
 
-# But can we make this look prettier?
+This is very useful and as we go deeper into using modern web-development frameworks, you'll see why this is one of the best ways of working on a project.
+
+![Excited Hazmat|300](https://c.tenor.com/Ue9Qugpw7h4AAAAC/hazmat-excited.gif) <!--element class="fragment"-->
+
+---
+
+# But can we make things look... actually good?
 
 ---
 
 # Weird flex but okay
 
-Most of the websites we made right now, a few moments ago, are just elements stacked on top of each other. What if we learn how to arrange stuff on the page so that it looks better?
+So far, our elements are in the "normal document flow"—they just stack on top of each other. To create complex, modern layouts (sidebars, galleries, navigation bars), we need more control.
 
-Maybe like this:
+![IMG|400](https://mellifluous-crumble-4fde67.netlify.app/images/flex.png)<!--element class="fragment"-->
 
-![Flexbox Example](https://aman.bh/web-dev/1/images/flex.png)
+Flexboxis a CSS layout model designed to make arranging, aligning, and distributing space among items a breeze. <!--element class="fragment"-->
 
-This is where *flexbox* comes in.
 
 ---
 
@@ -339,7 +468,7 @@ To understand how flexbox works, we'll play a game called Flexbox Froggy. It sou
 
 Its got frogs. Lets play.
 
-![Flexbox Froggy](https://aman.bh/web-dev/1/images/frog.png)
+![Flexbox Froggy|500](https://mellifluous-crumble-4fde67.netlify.app/images/frog.png)
 
 ```
 flexboxfroggy.com
@@ -349,20 +478,24 @@ flexboxfroggy.com
 
 ---
 
-# Yeah you're so done now, I can see it.
+## Yeah, you're done. I can see it in your eyes.
+
+Let's wrap up.
 
 ---
 
-# Quick Recap
+## Quick Recap
 
-You're now armed with the knowledge of:
+You are now armed with the knowledge of:
 
-1. Tags
-2. CSS Selectors
-3. CSS Flexbox
-4. Developing in VS Code
-5. Pushing and pulling from remote and local repositories with Git
-6. Deploying to Netlify
+1. HTML Tags & Attributes<!--element class="fragment"-->
+2. CSS Selectors for targeting elements<!--element class="fragment"-->
+3. CSS Flexbox for layout<!--element class="fragment"-->
+4. Developing locally in VS Code with a Vite<!--element class="fragment"-->
+5. Using Git to version control and push to GitHub<!--element class="fragment"-->
+6. Deploying a site to Netlify with continuous deployment<!--element class="fragment"-->
+
+That's a massive amount for one day!<!--element class="fragment"-->
 
 ---
 
@@ -370,9 +503,12 @@ You're now armed with the knowledge of:
 
 You'll never be asked to design the abomination you made in the earlier activity. However, being asked to code a UI screen is extremely likely. If you're interested in developing the earlier skills further, here's a challenge.
 
-## I've designed a product page in Figma and coded the bare, unstyled HTML for it. Can you apply CSS so that the HTML looks like the design file?
+---
+
+I've designed a product page in Figma and coded the bare, unstyled HTML for it. Can you apply CSS so that the HTML looks like the design file?
 
 #### Files are at
+
 ```
 https://github.com/thedivtagguy/activity2
 ```
