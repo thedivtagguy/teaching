@@ -1,6 +1,6 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-19T09:59
+updated: 2025-07-21T22:50
 transition: none
 ---
 
@@ -17,28 +17,178 @@ Let's do a recap.
 
 ---
 
-## HTML is the material of the web
 
-If you think of a website as a house, then **HTML is the the bricks and the steel**. It provides the fundamental structure and content for everything you see online.
-
----
-
-## On the Menu
-**We Will**
-- Learn how to get started with HTML and CSS
-- Learn some basic development workflows
-- Help each other solve problems and get unstuck.
-- Rock you. 🤘
-
- **We Won't**
-- Learn _everything_ about CSS/HTML/JS (That's not realistic).
-
----
 
 # Introduction to HTML
 
+
 ---
 
+
+
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-2-html-css-and-you/youtube.mp4"
+       style="max-width: 660px; display: flex; justify-content:center;">
+</video>
+
+
+---
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/CkzbI1Tv_rQ?si=BYMe8b1FHbngjXl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+# HTML
+
+---
+
+# Hyper
+# Text
+# Markup
+# Language
+
+
+---
+
+## HTML is the material of the web
+
+If you think of a website as a house, then **HTML is the bricks**. It provides the fundamental structure and content for everything you see online.
+
+<br/>
+
+**It organizes your page for the browser to understand.**
+
+
+---
+
+
+## Markup
+
+- Human-readable, so it contains words rather than "programming" syntax
+- Uses tags
+
+---
+
+### Every webpage is an html document
+
+### Every website is a collection of linked documents <!--element class="fragment"-->
+
+---
+
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hello, it's me</title>
+   </head>
+   <body>
+      <h1>I was wondering if after all these years</h1>
+      <p>You'd still like to meet</p>
+      <br/>
+      <p>Probably not.</p>
+   </body>
+</html>
+```
+
+
+---
+
+```html
+<!DOCTYPE html>
+<html>
+  ┌─────────────────────────────────────┐
+  │             METADATA                │
+  │ <head>                              │
+  │    <title>Hello, it's me</title>    │
+  │ </head>                             │
+  └─────────────────────────────────────┘
+  <body>
+     <h1>I was wondering if after all these years</h1>
+     <p>You'd still like to meet</p>
+     <br/>
+     <p>Probably not.</p>
+  </body>
+</html>
+```
+
+---
+
+```html
+<!DOCTYPE html>
+<html>
+  ┌─────────────────────────────────────┐
+  │             METADATA                │
+  │ <head>                              │
+  │    <title>Hello, it's me</title>    │
+  │ </head>                             │
+  └─────────────────────────────────────┘
+  ┌─────────────────────────────────────┐
+  │             CONTENT                 │
+  │ <body>                              │
+  │    <h1>I was wondering if after     │
+  │        all these years</h1>         │
+  │    <p>You'd still like to meet</p>  │
+  │    <br/>                        │
+  │    <p>Probably not.</p>             │
+  │ </body>                             │
+  └─────────────────────────────────────┘
+</html>
+```
+
+
+---
+
+```html
+┌─────────────────────────────────────────┐
+│            HTML DOCUMENT                │
+│ ┌─────────────────────────────────────┐ │
+│ │         <!DOCTYPE html>             │ │
+│ └─────────────────────────────────────┘ │
+│ ┌─────────────────────────────────────┐ │
+│ │              <html>                 │ │
+│ │    ┌─────────────────────────────┐  │ │
+│ │    │             METADATA        │  │ │
+│ │    │ ┌─────────────────────────┐ │  │ │
+│ │    │ │        <head>           │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │      <title>        │ │ │  │ │
+│ │    │ │ │ Hello, it's me      │ │ │  │ │
+│ │    │ │ │     </title>        │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │       </head>           │ │  │ │
+│ │    │ └─────────────────────────┘ │  │ │
+│ │    └─────────────────────────────┘  │ │
+│ │    ┌─────────────────────────────┐  │ │
+│ │    │             CONTENT         │  │ │
+│ │    │ ┌─────────────────────────┐ │  │ │
+│ │    │ │        <body>           │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │        <h1>         │ │ │  │ │
+│ │    │ │ │ I was wondering if  │ │ │  │ │
+│ │    │ │ │ after all these yrs │ │ │  │ │
+│ │    │ │ │       </h1>         │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │         <p>         │ │ │  │ │
+│ │    │ │ │ You'd still like    │ │ │  │ │
+│ │    │ │ │    to meet          │ │ │  │ │
+│ │    │ │ │        </p>         │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │         <p>         │ │ │  │ │
+│ │    │ │ │   Probably not.     │ │ │  │ │
+│ │    │ │ │        </p>         │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │       </body>           │ │  │ │
+│ │    │ └─────────────────────────┘ │  │ │
+│ │    └─────────────────────────────┘  │ │
+│ │              </html>                │ │
+│ └─────────────────────────────────────┘ │
+└─────────────────────────────────────────┘
+```
+
+---
 # Tag, you're it
 
 An HTML element is defined by a start tag, some content, and an end tag.
@@ -55,9 +205,9 @@ An HTML element is defined by a start tag, some content, and an end tag.
 Tags always come in pairs.
 
 ```html
-<h1> <!-- If you start with an h1, end with an h1 -->
-	My name is Aman
-</h1>
+[tag] ────── content ────────── [tag]
+<p>       some text...          </p>
+└────────── element ──────────────┘
 ```
 
 ---
@@ -66,9 +216,17 @@ Tags always come in pairs.
 
 Since we don't want to care about all the 132 tags today, here's what you want to read up on:
 
-- `<div>` Defines a division or section within HTML document.
-- `<section>` Defines a generic section.
-- `<h1>, <h2>..., <p>, <span>` Used to render text.
+
+```html
+<h1>......Main Heading
+<p>.......Text Paragraph
+<a>.......Hypertext Link
+<img>.....Embedded Image
+<div>.....Content Division
+<ul>......Unordered List
+<li>......List Item
+<span>....Inline Container
+```
 
 ---
 
@@ -91,6 +249,20 @@ Since we don't want to care about all the 132 tags today, here's what you want t
 
 ![](IMG-20250716222043779.png)
 
+
+---
+
+```html
+<!-- This sparks joy -->
+
+[tag] ─────── content ─────────── [tag] 
+<h1>         Page Title           </h1> 
+  └────────── element ──────────────┘
+
+<!-- This does not spark joy -->
+[tag] ────── content 
+<h1>        Page Title        
+```
 ---
 
 ## Mini-Activity: Your First Webpage
@@ -149,14 +321,6 @@ We'll use to grab these elements with CSS and style them.<!--element class="frag
 
 ---
 
-# Tell me more
-
-I will! 
-
-But first, go back to that file and put an `id` in your heading and give all of your `<li>` elements the same class. Whatever you want.
-
----
-
 ### CSS
 
 CSS is all about targeting HTML elements that we write and styling them. It is pretty simple to understand most of the time. See if you can understand what this does:
@@ -202,6 +366,21 @@ CSS is all about targeting HTML elements that we write and styling them. It is p
 The CSS above creates a div with:
 - Light gray background (#e3e3e3)
 - Red dotted border
+
+
+
+---
+
+# Tell me more
+
+I will! 
+
+But let's circle back to Laurel for a bit. 
+
+---
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BUZIaTHm_oE?si=MeYrYVMOZPGyVJM9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ```html
@@ -302,10 +481,6 @@ I have a barebones HTML page. Your job is to give it some styles. BUT, it has to
 
 ---
 
-Maybe this?
-
----
-
 # But how would I share this file for you to get started?
 
 ---
@@ -314,15 +489,6 @@ Maybe this?
 
 Git is a version control system. What this means is that it basically lets multiple people access a central source of what is usually code, and make alterations to it without messing it up for other people.
 
----
-
-
-In development, its used to collaborate between teams. This works in the following way:
-
-1. There is a central code 'repository'. <!--element class='fragment'-->
-2. Each member can then copy this master copy and create their own fork, a duplicate copy. <!--element class='fragment'-->
-3. If me and you are working on the same fork, it is better to create two copies of what we're working on and develop on things separately. Each copy here is called a **branch** (it is literally what you imagine in your head when you think branch). <!--element class='fragment'-->
-4. Because we're able to save versions of our progress, if you screw up your branch, I can just tell Git 'Hey could you go back to the time before this monkey touched the code?' and continue working from there.<!--element class='fragment'-->
 
 ---
 
@@ -331,13 +497,16 @@ In development, its used to collaborate between teams. This works in the followi
 For now, we'll just use some simple commands
 
 ---
+<split left="2" right="1">
 
-![Dolly the Sheep|200](https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg)
 
+<div>
 
-1. First, copy this link below:
-```
+Copy this link
+
+```bash
 https://github.com/open-making/web2025-hey-jude
+
 ```
 
 2. Now open VSCode and press **Ctrl + Shift + P** and search for `Clone`.
@@ -348,18 +517,24 @@ https://github.com/open-making/web2025-hey-jude
 
 You just used Git to fetch from a remote source to your local machine!
 
+</div>
+
+![Dolly the Sheep|200](https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg)
+
+</split>
+
 *This slide is dedicated to Dolly the sheep, who was also a clone* <!--element class="fragment"-->
 
 ---
 
 
-### Time: 10 Minutes
+### Time: 20 Minutes
 
 #### Tips to make your life easier
 
 1. Enable a [split editor](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing) so you can edit two files side by side.
 
-2. `npm run dev` to fire up a live server which reloads as you work.
+2. Use `Live Server` described in the README to fire up a server which reloads as you work.
 
 ---
 
@@ -369,7 +544,7 @@ https://github.com/open-making/web2025-hey-jude/blob/main/css-properties.md
 
 ---
 
-# Cool cool cool stop now
+<iframe src="https://teaching.aman.bh/buzzer" width="100%" height="100%"/>
 
 ---
 
@@ -390,7 +565,10 @@ git commit -m "My First Ugly Website"  # The commit command saves the version wi
 Now go to Github and create a new repo. After you give it a name, copy the line that looks like this and paste it in your terminal:
 
 ```bash
-# Connect your local folder to your new empty GitHub repo # Make sure to use the URL you copied! git remote add origin https://github.com/YourUsername/YourRepoName.git
+# Connect your local folder to your new empty GitHub repo 
+# Make sure to use the URL you copied! git remote add origin 
+
+https://github.com/YourUsername/YourRepoName.git
 ```
 
 Finally, write this and press Enter:
@@ -443,38 +621,7 @@ This is very useful and as we go deeper into using modern web-development framew
 
 ![Excited Hazmat|300](https://c.tenor.com/Ue9Qugpw7h4AAAAC/hazmat-excited.gif) <!--element class="fragment"-->
 
----
 
-# But can we make things look... actually good?
-
----
-
-# Weird flex but okay
-
-So far, our elements are in the "normal document flow"—they just stack on top of each other. To create complex, modern layouts (sidebars, galleries, navigation bars), we need more control.
-
-![IMG|400](https://mellifluous-crumble-4fde67.netlify.app/images/flex.png)<!--element class="fragment"-->
-
-Flexboxis a CSS layout model designed to make arranging, aligning, and distributing space among items a breeze. <!--element class="fragment"-->
-
-
----
-
-# Game time #2
-
----
-
-To understand how flexbox works, we'll play a game called Flexbox Froggy. It sounds lame but hear me out:
-
-Its got frogs. Lets play.
-
-![Flexbox Froggy|500](https://mellifluous-crumble-4fde67.netlify.app/images/frog.png)
-
-```
-flexboxfroggy.com
-```
-
-#### Time: 20-25 Minutes
 
 ---
 
@@ -490,10 +637,9 @@ You are now armed with the knowledge of:
 
 1. HTML Tags & Attributes<!--element class="fragment"-->
 2. CSS Selectors for targeting elements<!--element class="fragment"-->
-3. CSS Flexbox for layout<!--element class="fragment"-->
-4. Developing locally in VS Code with a Vite<!--element class="fragment"-->
-5. Using Git to version control and push to GitHub<!--element class="fragment"-->
-6. Deploying a site to Netlify with continuous deployment<!--element class="fragment"-->
+3. Developing locally in VS Code<!--element class="fragment"-->
+4. Using Git to version control and push to GitHub<!--element class="fragment"-->
+5. Deploying a site to Netlify with continuous deployment<!--element class="fragment"-->
 
 That's a massive amount for one day!<!--element class="fragment"-->
 
@@ -501,34 +647,20 @@ That's a massive amount for one day!<!--element class="fragment"-->
 
 # Activity 2
 
-You'll never be asked to design the abomination you made in the earlier activity. However, being asked to code a UI screen is extremely likely. If you're interested in developing the earlier skills further, here's a challenge.
+You'll never be asked to design the abomination you made in the earlier activity. For this next exercise, can you do the whole game yourself? Choose a song that you like, an essay, an interview, some piece of text and try to structure it with HTML and then style it in CSS yourself?
+
 
 ---
 
-I've designed a product page in Figma and coded the bare, unstyled HTML for it. Can you apply CSS so that the HTML looks like the design file?
+### To summarize the summary
 
-#### Files are at
+1. Create a fork of my original Hey Jude repo
+2. Clone it on your machine
+3. Remove almost all of the HTML and figure out how you'd want it to look yourself
+4. Style your structure with CSS.
+5. Push your files to Github
+6. Deploy this new repository to Netlify.
 
-```
-https://github.com/thedivtagguy/activity2
-```
+**FYI:** You will still have to Google what other CSS properties you need to use. Ask questions like 'How do I make the buttons rounded?' or 'How do I change the font?' and Google them. Lather, rinse, repeat.
 
----
 
-![Design File](https://aman.bh/web-dev/1/images/design.png)
-
----
-
-# To summarize the summary
-
-1. Clone the repo on your machine
-2. Look at the design and try to use your knowledge of CSS selectors and flexbox to recreate it
-
-**Note:** You will still have to Google what other CSS properties you need to use. Ask questions like 'How do I make the buttons rounded?' or 'How do I change the font?' and Google them. Lather, rinse, repeat.
-
-3. Push your files to Github
-4. Deploy this new repository to Netlify.
-
----
-
-![Final Image](https://aman.bh/web-dev/1/images/all.jpg)

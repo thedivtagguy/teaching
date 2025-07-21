@@ -15,11 +15,12 @@
     "templates/day-template.md": "6ce8a82db7ae4c775e8976d21dd90156c0b3e5adc551a42842a55240a7046203",
     "requirements.md": "01bd3dc6a8df4f27732bd7530b1c7b500c34dc34694004f1ee5b78d90de50ae4",
     "install-guides.md": "011dfeac49bf7c89f2f68b28ec7bb33c41dc8944a78304ecc3458c4475a90e34",
-    "slides/day-2-html-css-and-you.md": "27a579014b7b835f2bfc7533019f2b5d15fb66324441ef7c59597732a79ba8d5",
+    "slides/day-2-html-css-and-you.md": "70141a1d395899dd960889d5b630d1cf38a107b1fd1ae7d4cf8a6610b37c6109",
     "dump/snippet-dump.md": "43a83b7fec9e34d535e6af710b7a746a80f8342ddebeb411a4c1a6742622c46c",
     "slides/day-1-the-small-web.md": "63631f8bf59e9edf5f11af9feb8b3b7528c6c4856a54dfde88505ce932bb3dc6",
     "assignments/day-1-web-archaeology.md": "db800a3696f9c29881dd77c5738992d67e20f7157e036b42c004206830e22660",
     "day-1-the-small-web.md": "61167e9afa7a12ccc201361b8a139e0f8ff1ed92a71421ec0d2d172bfd6ae8da",
-    "dev-notes.md": "c42c86ad69eaacfb15af43b26f17f28f70ac7ec044db46fc4383fe58d4c1c1d8"
+    "dev-notes.md": "c42c86ad69eaacfb15af43b26f17f28f70ac7ec044db46fc4383fe58d4c1c1d8",
+    "day-2-html-css-and-you.md": "c3fb91e94a02a82542e39b23ce4966ce231c4334f489a40f9b26ad82e9e65a57"
   }
 }

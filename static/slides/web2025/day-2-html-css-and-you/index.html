@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="css/reveal-theme.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# HTML, CSS and You
+
+#### _WEB2025 - Day 2_
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Welcome back!
+
+Let's do a recap.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Introduction to HTML
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-2-html-css-and-you/youtube.mp4"
+       style="max-width: 660px; display: flex; justify-content:center;">
+</video>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/CkzbI1Tv_rQ?si=BYMe8b1FHbngjXl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# HTML
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Hyper
+# Text
+# Markup
+# Language
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## HTML is the material of the web
+
+If you think of a website as a house, then **HTML is the bricks**. It provides the fundamental structure and content for everything you see online.
+
+<br></br>
+
+**It organizes your page for the browser to understand.**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Markup
+
+- Human-readable, so it contains words rather than "programming" syntax
+- Uses tags
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Every webpage is an html document
+
+### Every website is a collection of linked documents <!-- .element: class="fragment" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hello, it's me</title>
+   </head>
+   <body>
+      <h1>I was wondering if after all these years</h1>
+      <p>You'd still like to meet</p>
+      <br></br>
+      <p>Probably not.</p>
+   </body>
+</html>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+<!DOCTYPE html>
+<html>
+  ┌─────────────────────────────────────┐
+  │             METADATA                │
+  │ <head>                              │
+  │    <title>Hello, it's me</title>    │
+  │ </head>                             │
+  └─────────────────────────────────────┘
+  <body>
+     <h1>I was wondering if after all these years</h1>
+     <p>You'd still like to meet</p>
+     <br></br>
+     <p>Probably not.</p>
+  </body>
+</html>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+<!DOCTYPE html>
+<html>
+  ┌─────────────────────────────────────┐
+  │             METADATA                │
+  │ <head>                              │
+  │    <title>Hello, it's me</title>    │
+  │ </head>                             │
+  └─────────────────────────────────────┘
+  ┌─────────────────────────────────────┐
+  │             CONTENT                 │
+  │ <body>                              │
+  │    <h1>I was wondering if after     │
+  │        all these years</h1>         │
+  │    <p>You'd still like to meet</p>  │
+  │    <br></br>                        │
+  │    <p>Probably not.</p>             │
+  │ </body>                             │
+  └─────────────────────────────────────┘
+</html>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+┌─────────────────────────────────────────┐
+│            HTML DOCUMENT                │
+│ ┌─────────────────────────────────────┐ │
+│ │         <!DOCTYPE html>             │ │
+│ └─────────────────────────────────────┘ │
+│ ┌─────────────────────────────────────┐ │
+│ │              <html>                 │ │
+│ │    ┌─────────────────────────────┐  │ │
+│ │    │             METADATA        │  │ │
+│ │    │ ┌─────────────────────────┐ │  │ │
+│ │    │ │        <head>           │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │      <title>        │ │ │  │ │
+│ │    │ │ │ Hello, it's me      │ │ │  │ │
+│ │    │ │ │     </title>        │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │       </head>           │ │  │ │
+│ │    │ └─────────────────────────┘ │  │ │
+│ │    └─────────────────────────────┘  │ │
+│ │    ┌─────────────────────────────┐  │ │
+│ │    │             CONTENT         │  │ │
+│ │    │ ┌─────────────────────────┐ │  │ │
+│ │    │ │        <body>           │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │        <h1>         │ │ │  │ │
+│ │    │ │ │ I was wondering if  │ │ │  │ │
+│ │    │ │ │ after all these yrs │ │ │  │ │
+│ │    │ │ │       </h1>         │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │         <p>         │ │ │  │ │
+│ │    │ │ │ You'd still like    │ │ │  │ │
+│ │    │ │ │    to meet          │ │ │  │ │
+│ │    │ │ │        </p>         │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │ ┌─────────────────────┐ │ │  │ │
+│ │    │ │ │         <p>         │ │ │  │ │
+│ │    │ │ │   Probably not.     │ │ │  │ │
+│ │    │ │ │        </p>         │ │ │  │ │
+│ │    │ │ └─────────────────────┘ │ │  │ │
+│ │    │ │       </body>           │ │  │ │
+│ │    │ └─────────────────────────┘ │  │ │
+│ │    └─────────────────────────────┘  │ │
+│ │              </html>                │ │
+│ └─────────────────────────────────────┘ │
+└─────────────────────────────────────────┘
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Tag, you're it
+
+An HTML element is defined by a start tag, some content, and an end tag.
+
+```html
+<html> is for the root document
+<head> is for meta information
+<p> is for paragraphs
+<audio> is for (lol take a guess)
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Tags always come in pairs.
+
+```html
+[tag] ────── content ────────── [tag]
+<p>       some text...          </p>
+└────────── element ──────────────┘
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Today's Special
+
+Since we don't want to care about all the 132 tags today, here's what you want to read up on:
+
+
+```html
+<h1>......Main Heading
+<p>.......Text Paragraph
+<a>.......Hypertext Link
+<img>.....Embedded Image
+<div>.....Content Division
+<ul>......Unordered List
+<li>......List Item
+<span>....Inline Container
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+<div class="container">
+    <section>
+        <h1>Main Title</h1>
+        <h2>Subtitle</h2>
+        <p>This is a paragraph with <span>highlighted text</span> inside.</p>
+    </section>
+</div>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## There are divs and sections  everywhere for those with the eyes to see
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-2-html-css-and-you/IMG-20250716222043779.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+<!-- This sparks joy -->
+
+[tag] ─────── content ─────────── [tag] 
+<h1>         Page Title           </h1> 
+  └────────── element ──────────────┘
+
+<!-- This does not spark joy -->
+[tag] ────── content 
+<h1>        Page Title        
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Mini-Activity: Your First Webpage
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Let's make something! No fancy tools yet, just a plain text editor. 
+
+
+- Open a simple text editor (like Notepad on Windows or TextEdit on Mac).
+    
+- Type out the HTML skeleton below. Make the content your own, tweak a bit.
+    
+- Save the file as `index.html`. **Make sure the extension is `.html`, not `.txt`.**
+    
+- Find the file on your computer and double-click to open it in a browser.
+  
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Page</title>
+  </head>
+  <body>
+    <h1>[Your Name]'s Website</h1>
+    <p>I am learning to code and this is my very first webpage!</p>
+    <ul>
+      <li>One thing I want to learn</li>
+      <li>Another thing I want to build</li>
+    </ul>
+  </body>
+</html>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# HTML Attributes 
+
+Attributes provide extra information about an element and are always included in the **start tag**. The two most important ones for styling are `id` and `class`.
+
+```html
+<h1 id="title" class="page-heading"> 
+		Hello World 
+</h1>
+
+```
+
+
+The attributes are:
+
+<span>`h1` The tag itself. </span> <!-- .element: class="fragment" -->
+
+<span>`id` A unique name for this element. It cannot be repeated.</span><!-- .element: class="fragment" -->
+
+<span>`class` A name for this class of elements. Multiple elements can share a class name and will be assigned the same properties defined in that class.</span><!-- .element: class="fragment" -->
+
+We'll use to grab these elements with CSS and style them.<!-- .element: class="fragment" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### CSS
+
+CSS is all about targeting HTML elements that we write and styling them. It is pretty simple to understand most of the time. See if you can understand what this does:
+
+```html
+<div id="george">
+   <p> My paragraph here. </p>
+   <ul>
+      <li> List Item 1</li>
+      <li> List Item 2</li>
+   </ul>
+
+   <ul>
+      <li> List Item 3</li>
+      <li> List Item 4</li>
+   </ul>   
+</div>
+```
+
+```css
+#george {
+  background: #e3e3e3;
+  border-style: dotted;
+  border-color: red;
+}
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div id="george" class="isolated" style="background: #e3e3e3 !important; border-style: dotted !important; border-color: red !important; width:100%;">
+   <p> My paragraph here. </p>
+   <ul>
+      <li> List Item 1</li>
+      <li> List Item 2</li>
+   </ul>
+   <ul>
+      <li> List Item 3</li>
+      <li> List Item 4</li>
+   </ul>   
+</div>
+
+<br></br>
+The CSS above creates a div with:
+- Light gray background (#e3e3e3)
+- Red dotted border
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Tell me more
+
+I will! 
+
+But let's circle back to Laurel for a bit.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BUZIaTHm_oE?si=MeYrYVMOZPGyVJM9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+<nav class="menu">
+   <a href="#" class="active">Home</a>
+   <a href="#">About</a>
+   <a href="#">Contact</a>
+</nav>
+```
+
+```css
+.menu {
+  background: gray;
+  padding: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+}
+
+.menu a:hover {
+  background: green;
+}
+
+.menu a.active {
+  background: red;
+}
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/bakerstreetirregular/embed/xbwwzwJ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/bakerstreetirregular/pen/xbwwzwJ">
+  Untitled</a> by bakerstreetirregular (<a href="https://codepen.io/bakerstreetirregular">@bakerstreetirregular</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="https://c.tenor.com/vr7gSfuJjQYAAAAd/breaking-bad-yeah-science.gif" alt="Breaking Bad Yeah Science" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Game time #1
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Pick me pick me
+
+<img src="https://mellifluous-crumble-4fde67.netlify.app/images/selectors.png" alt="" style="width: 600px; object-fit: fill">
+
+
+So you have your HTML and you want to write some CSS for it. The first hurdle is learning how to **select** the element you want to style.
+
+CSS has *many* different ways of allowing you to select objects using **selectors**. It is important to get an understanding of this before we move further.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Head over to [CSS Diner](https://flukeout.github.io/) and get started.
+
+**There are 32 levels, but you only need to get till level 10-12.**
+
+#### Time: 20 Minutes
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Lets get codinggggg!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Setting Up Your Lab 👩‍🔬
+
+Preflight Checklist:
+
+1. You've installed VSCode
+2. You've installed Git
+3. You've installed [Node](https://nodejs.org/en/download).
+4. You've installed [pnpm](https://pnpm.io/installation#using-npm)
+5. You have an account on Github.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Take a sad site and make it sadder
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Hey Jude
+
+By the end of this short exercise, you will have a crappy website on the internet. Lets go.
+
+
+I have a barebones HTML page. Your job is to give it some styles. BUT, it has to be messy, ugly, a complete Dada-ist masterpiece.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# But how would I share this file for you to get started?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## I'm glad you asked. Let's Git to it.
+
+Git is a version control system. What this means is that it basically lets multiple people access a central source of what is usually code, and make alterations to it without messing it up for other people.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# We'll be learning Git thoroughly in a later session.
+
+For now, we'll just use some simple commands
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split left="2" right="1">
+
+
+<div>
+
+Copy this link
+
+```bash
+https://github.com/open-making/web2025-hey-jude
+
+```
+
+2. Now open VSCode and press **Ctrl + Shift + P** and search for `Clone`.
+
+3. Paste in the URL and press **Enter**. You will be prompted to select a location.
+
+4. Open the cloned files.
+
+You just used Git to fetch from a remote source to your local machine!
+
+</div>
+
+<img src="https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+
+*This slide is dedicated to Dolly the sheep, who was also a clone* <!-- .element: class="fragment" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Time: 20 Minutes
+
+#### Tips to make your life easier
+
+1. Enable a [split editor](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing) so you can edit two files side by side.
+
+2. Use `Live Server` described in the README to fire up a server which reloads as you work.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Here are some sample properties to try
+
+https://github.com/open-making/web2025-hey-jude/blob/main/css-properties.md
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<iframe src="https://teaching.aman.bh/buzzer" width="100%" height="100%"></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Houston, we're ready for takeoff.
+
+Open up a new terminal in VS Code. Type in the following code:
+
+```bash
+git init  # This initializes a new git repository on your machine
+
+git add -A  # Every time you want to save a new version, you have to add all files to this version
+
+git commit -m "My First Ugly Website"  # The commit command saves the version with a message to help you keep track of things
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Now go to Github and create a new repo. After you give it a name, copy the line that looks like this and paste it in your terminal:
+
+```bash
+# Connect your local folder to your new empty GitHub repo 
+# Make sure to use the URL you copied! git remote add origin 
+
+https://github.com/YourUsername/YourRepoName.git
+```
+
+Finally, write this and press Enter:
+```bash
+git push -u -f origin master
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Netlify and Chill
+
+To host our website, we'll use a service called [Netlify](https://netlify.app). It is a static site hosting service, which means as long as our website doesn't have a database, we can host it for free.
+
+1. Go to [Netlify.com](https://netlify.com) and login with your Github account
+2. Add a new site. In the options, choose 'Import Existing Project'
+3. Select Github and search for the repository you just created
+4. Click deploy
+
+In a few minutes, your website will be online with a silly looking URL.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+But see, here's the cool part. Go back to VS Code and make some changes to the text. After you're done, create a new commit like so:
+
+```bash
+git add -A
+git commit -m "Change of text"
+git push
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Wait for it, wait for it
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Cool, now go back to your URL
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Whaaat? It updated automatically!
+
+This is **Continuous Deployment (CI/CD)**, a core part of the modern web development workflow.
+
+Your Netlify site is linked to your GitHub repo. Every time you `push` a new commit, Netlify automatically grabs the new code, rebuilds your site, and deploys the new version. No more manually uploading files!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+This is very useful and as we go deeper into using modern web-development frameworks, you'll see why this is one of the best ways of working on a project.
+
+<img src="https://c.tenor.com/Ue9Qugpw7h4AAAAC/hazmat-excited.gif" alt="" style="width: 300px; object-fit: fill" class="fragment">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Yeah, you're done. I can see it in your eyes.
+
+Let's wrap up.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Quick Recap
+
+You are now armed with the knowledge of:
+
+1. HTML Tags & Attributes<!-- .element: class="fragment" -->
+2. CSS Selectors for targeting elements<!-- .element: class="fragment" -->
+3. Developing locally in VS Code<!-- .element: class="fragment" -->
+4. Using Git to version control and push to GitHub<!-- .element: class="fragment" -->
+5. Deploying a site to Netlify with continuous deployment<!-- .element: class="fragment" -->
+
+That's a massive amount for one day!<!-- .element: class="fragment" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Activity 2
+
+You'll never be asked to design the abomination you made in the earlier activity. For this next exercise, can you do the whole game yourself? Choose a song that you like, an essay, an interview, some piece of text and try to structure it with HTML and then style it in CSS yourself?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### To summarize the summary
+
+1. Create a fork of my original Hey Jude repo
+2. Clone it on your machine
+3. Remove almost all of the HTML and figure out how you'd want it to look yourself
+4. Style your structure with CSS.
+5. Push your files to Github
+6. Deploy this new repository to Netlify.
+
+**FYI:** You will still have to Google what other CSS properties you need to use. Ask questions like 'How do I make the buttons rounded?' or 'How do I change the font?' and Google them. Lather, rinse, repeat.
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":true,"transition":"none","transitionSpeed":"fast","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
