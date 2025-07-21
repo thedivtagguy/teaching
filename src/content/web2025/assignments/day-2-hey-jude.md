@@ -1,11 +1,11 @@
 ---
-title: "Assignment 1: Build Your First Websites"
+title: "Assignment 2: Build Your First Websites"
 due: 2025-07-23
-description: Exploring the ruins and fringes of the web
+description: Learning how to make basic pages with HTML and CSS
 published: true
 date: 2025-07-20T23:48
-updated: 2025-07-21T23:52
-submissionUrl: https://github.com/open-making/web2025-devnotes/issues/3
+updated: 2025-07-21T23:55
+submissionUrl: https://github.com/open-making/web2025-hey-jude/issues/1
 ---
 We're going to put today's learning into practice with two projects. One will be deliberately terrible, the other will be your own creative vision.
 
@@ -29,7 +29,7 @@ Choose a piece of content that matters to you—any text that you want to give p
 - An interview with someone interesting
 - Poetry or spoken word pieces
 
-**Your task:**
+Once you have chosen your piece of text:
 
 1. **Structure it with HTML**: Think about hierarchy—what are the main sections? What needs to be emphasized? How would you break this content into logical pieces using headings, paragraphs, lists, and other HTML elements?
     
