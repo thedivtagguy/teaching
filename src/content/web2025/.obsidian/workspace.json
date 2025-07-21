@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev-notes.md",
+                "file": "slides/day-1-the-small-web.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "dev-notes"
+              "title": "day-1-the-small-web"
             }
           }
         ]
@@ -189,10 +189,10 @@
   },
   "active": "39b878950993290e",
   "lastOpenFiles": [
+    "dev-notes.md",
     "assignments/day-1-web-archaeology.md",
     "templates/day-template.md",
     "day-1-the-small-web.md",
-    "dev-notes.md",
     "install-guides.md",
     "slides/day-1-the-small-web.md",
     "assets/slides/day-1-the-small-web/eji.png",

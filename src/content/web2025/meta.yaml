@@ -5,6 +5,8 @@ instructor:
   name: "Aman Bhargava"
   email: "amanbhargava2001+web2025@gmail.com"
   hours: "Mon to Sat 2-5pm, or by appointment via email"
+githubPrefix: web2025
+classStrength: 18
 navigation:
   collapsibleSections: false
   showSections: false
