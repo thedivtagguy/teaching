@@ -1,11 +1,132 @@
 ---
 date: 2025-07-11T13:57
-updated: 2025-07-21T00:35
+updated: 2025-07-21T08:33
 transition: none
 ---
 
 # Introduction To Making For the Web
 #### _WEB2025 - Day 1_
+
+
+
+---
+
+## A little about me
+
+I am a developer who designs. I specialize in data visualization and public-interest technology.
+
+<br/>
+
+I have an interest in maps, history, urbanism, and open-source software.
+
+
+---
+
+<split left="1" right="3" gap="2">
+
+#### I've worked for these people
+
+![IMG|800](IMG-20250720232116912.png)
+
+</split>
+
+---
+
+<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20250712210848865.png" -->
+
+<div class="full-screen-link">
+
+[aman.bh](https://aman.bh)
+
+</div>
+
+---
+
+![](IMG-20250720232116931.png)
+
+---
+
+<section data-background-size="cover" data-background-video="../assets/slides/day-1-the-small-web/output.mp4">
+</section>
+
+
+---
+
+
+<section data-background-size="cover" data-background-video="../assets/slides/day-1-the-small-web/jor.mp4">
+</section>
+
+
+<div class="full-screen-link">
+
+[Journeys of Resilience](https://dtm.iom.int/data-stories/journeys-of-resilience-ukraine/index.html)
+
+</div>
+
+---
+
+
+![](IMG-20250721081005947.png)
+
+
+---
+
+<div class="full-screen-link">
+
+[Votes in a name](https://diagramchasing.fun/2024/votes-in-a-name)
+
+</div>
+
+<section data-background-size="contain" data-background-video="../assets/slides/day-1-the-small-web/votes-2.mp4">
+</section>
+
+
+
+---
+
+<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20250715001259582.png" -->
+
+
+<div class="full-screen-link">
+
+[BLR Water Log](https://diagramchasing.fun/2024/blr-water-log)
+
+</div>
+
+
+
+---
+
+
+![](IMG-20250720232116947.png)
+
+<div class="full-screen-link">
+
+[Who is my Neta](https://whoismyneta.com)
+
+</div>
+
+
+---
+
+<!-- slide bg="../assets/slides/day-1-the-small-web/map.png" -->
+
+
+
+
+
+---
+
+<!-- slide bg="../assets/slides/day-1-the-small-web/eji.png" -->
+
+
+
+---
+
+<!-- slide bg="../assets/slides/day-1-the-small-web/fotus.jpg" -->
+
+
+
 
 
 ---
@@ -171,7 +292,7 @@ But when we think about "web design"...
 
 ---
 
-...you might have been taught a process that looks something like this.
+...you might usually be taught a process that looks something like this.
 
 ![](IMG-20250720232116728.png)
 
@@ -192,14 +313,14 @@ This is the traditional waterfall model: a linear, sequential process where each
 
 ---
 
-## This model is not invalid. It’s still how many websites are built.
+## This model is not invalid. It’s how many websites are built.
 
-### And for many projects, this works great. <!--element class='fragment'-->
+### And for many projects, this works great. 
 
 
 ---
 
-The problem with it is that as designers, we're often told to care about "our side" of the process. This model almost encourages us to be siloed. 
+The problem with it is that as designers, **we're often told to care about "our side" of the process.** This model almost encourages us to be siloed. 
 
 - Conduct user research.<!--element class='fragment'-->
 - Create low-fidelity wireframes.<!--element class='fragment'-->
@@ -500,88 +621,9 @@ notes: We don't mean VR headsets, we mean getting involved in the process from c
 
 # Indiana Jones and the Raiders of the Lost Webs
 
-
 ---
 
-## A little about me
-
-I am a developer who designs. I specialize in data visualization and public-interest technology.
-
-<br/>
-
-I have an interest in maps, history, urbanism, and open-source software.
-
-
----
-
-<split left="1" right="3" gap="2">
-
-#### I've worked for these people
-
-![IMG|800](IMG-20250720232116912.png)
-
-</split>
-
----
-
-<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20250712210848865.png" -->
-
-<div class="full-screen-link">
-
-[aman.bh](https://aman.bh)
-
-</div>
-
----
-
-![](IMG-20250720232116931.png)
-
----
-
-<section data-background-size="cover" data-background-video="../assets/slides/day-1-the-small-web/output.mp4">
-</section>
-
-
----
-
-<div class="full-screen-link">
-
-[Votes in a name](https://diagramchasing.fun/2024/votes-in-a-name)
-
-</div>
-
-<section data-background-size="contain" data-background-video="../assets/slides/day-1-the-small-web/votes-2.mp4">
-</section>
-
-
-
----
-
-<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20250715001259582.png" -->
-
-
-<div class="full-screen-link">
-
-[BLR Water Log](https://diagramchasing.fun/2024/blr-water-log)
-
-</div>
-
-
-
----
-
-
-![](IMG-20250720232116947.png)
-
-<div class="full-screen-link">
-
-[Who is my Neta](https://whoismyneta.com)
-
-</div>
-
----
-
-## It all started 10 years ago
+## For me, it started 10 years ago
 
 ---
 
@@ -894,7 +936,7 @@ Flash enabled designers to break free from HTML limitations, creating experience
 
 ### Shifting to Mobile
 
-The early 2010s brought an aesthetic shift because we started having smaller screens. It was all about making for the efficiency now. 
+The early 2010s brought an aesthetic shift because we started having smaller screens. It was all about making for efficiency now. 
 
 ---
 

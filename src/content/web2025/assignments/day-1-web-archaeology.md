@@ -1,10 +1,10 @@
 ---
 title: "Assignment 1: Web archaeology"
-due: 2025-07-23
+due: 2025-07-22
 description: Exploring the ruins and fringes of the web
 published: true
 date: 2025-07-20T23:48
-updated: 2025-07-21T00:11
+updated: 2025-07-21T08:08
 ---
 We're going to spend some time exploring different corners of the internet, then make something with what we find. The web of today, the one that is mainstream, is a little boring, do we'll explore the ruins and the fringes instead.
 
