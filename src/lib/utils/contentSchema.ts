@@ -89,6 +89,7 @@ export type ContentFrontmatter = {
   readings?: Reading[];
   assignments?: Assignment[];
   courseTitle?: string;
+  devnotes?: string;
   // SEO-specific fields (flat structure)
   seo_title?: string;
   seo_description?: string;

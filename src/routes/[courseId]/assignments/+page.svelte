@@ -23,6 +23,7 @@
 		description?: string;
 		points?: number;
 		path?: string;
+		submissionUrl?: string;
 		source?: string;
 	}
 

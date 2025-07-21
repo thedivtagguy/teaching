@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-1-the-small-web.md",
+                "file": "dev-notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-1-the-small-web"
+              "title": "dev-notes"
             }
           }
         ]
@@ -189,6 +189,11 @@
   },
   "active": "39b878950993290e",
   "lastOpenFiles": [
+    "assignments/day-1-web-archaeology.md",
+    "templates/day-template.md",
+    "day-1-the-small-web.md",
+    "dev-notes.md",
+    "install-guides.md",
     "slides/day-1-the-small-web.md",
     "assets/slides/day-1-the-small-web/eji.png",
     "assets/slides/day-1-the-small-web/map.4W_3vjTw.png.part",
@@ -198,13 +203,11 @@
     "assets/slides/day-1-the-small-web/IMG-20250721081751498.png",
     "Pasted image 20250721080942.png",
     "assets/slides/day-1-the-small-web/IMG-20250721081005947.png",
-    "assignments/day-1-web-archaeology.md",
     "assets/slides/day-1-the-small-web/jor.mp4",
     "slides/day-2-html-css-and-you.md",
     "slides/appendix-node-and-npm.md",
     "quizzes.md",
     "quiz-node-and-npm.md",
-    "day-1-the-small-web.md",
     "assignments",
     "assets/slides/day-2-html-css-and-you/IMG-20250716222043779.png",
     "assets/slides/day-2-html-css-and-you",
@@ -220,9 +223,7 @@
     "outline.md",
     "dump/snippet-dump.md",
     "node-npm-quiz.md",
-    "install-guides.md",
     "requirements.md",
-    "templates/day-template.md",
     "ai-policy.md",
     "html-tags.md",
     "day-1-html-css-and-you.md",

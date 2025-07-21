@@ -3,14 +3,14 @@
 	import { onMount } from 'svelte';
 	import MDLayout from '$lib/components/MDLayout.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-	import { Calendar, ArrowLeft, CheckCircle } from 'lucide-svelte';
+	import { Calendar, ArrowLeft, CheckCircle, ExternalLink } from 'lucide-svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
 	import { confetti } from '@neoconfetti/svelte';
 	import { browser } from '$app/environment';
 
 	// Get course ID and assignment ID from URL params
 	$: courseId = $page.params.courseId;
 	$: assignmentId = $page.params.assignmentId;
-
 	// Get the assignment content from the page data
 	$: assignment = $page.data?.assignment;
 	$: loadError = $page.data?.error;
@@ -24,6 +24,7 @@
 	$: due = loadedMeta?.due;
 	$: description = loadedMeta?.description;
 	$: points = loadedMeta?.points;
+	$: submissionUrl = loadedMeta?.submissionUrl;
 
 	// Track completion status using localStorage (same pattern as listings page)
 	let isCompleted = false;
@@ -163,9 +164,9 @@
 							<span class="font-archivo text-muted-foreground text-sm font-medium">Status</span>
 							<div class="flex items-center gap-2">
 								{#if isCompleted}
-									<div class="flex items-center gap-2 rounded-md bg-green-500/10 p-1">
-										<CheckCircle class="size-4 text-green-500" />
-										<span class="font-archivo !text-sm font-semibold text-green-500">
+									<div class="bg-green flex items-center gap-2 rounded-md p-1">
+										<CheckCircle class="size-4 text-black/50" />
+										<span class="font-archivo !text-sm font-semibold text-black/50">
 											Completed
 										</span>
 									</div>
@@ -199,14 +200,17 @@
 						{/if}
 					</div>
 
-					<!-- Action button -->
-					<div class="border-border border-t p-4">
-						<button
-							on:click={submitAssignment}
-							class="bg-primary text-primary-foreground hover:bg-primary/90 border-primary font-archivo relative w-full transform rounded border-2 px-4 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 active:translate-y-0"
-						>
+					<!-- Action buttons -->
+					<div class="border-border space-y-2 border-t p-4">
+						{#if submissionUrl}
+							<Button href={submissionUrl} target="_blank" rel="noopener noreferrer" class="w-full">
+								<ExternalLink class="mr-2 h-4 w-4" />
+								<span class="font-archivo text-sm font-medium">Submit Assignment</span>
+							</Button>
+						{/if}
+						<Button onclick={submitAssignment} variant="secondary" class="w-full rounded-xs">
 							{isCompleted ? 'Mark as Unsubmitted' : 'Mark as Submitted'}
-						</button>
+						</Button>
 					</div>
 
 					<!-- Confetti for sidebar -->

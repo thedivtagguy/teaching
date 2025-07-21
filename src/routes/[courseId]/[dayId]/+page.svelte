@@ -22,7 +22,8 @@
 		sections: [],
 		title: '',
 		readings: [],
-		assignments: []
+		assignments: [],
+		devNotes: ''
 	};
 	$: currentDayPath = `/${courseId}/${dayId}`;
 
@@ -171,7 +172,17 @@
 										<span class="font-archivo text-sm font-medium">Today's Slides</span>
 									</Button>
 								{/if}
-
+								{#if content.metadata?.devNotes}
+									<Button
+										href={content.metadata.devNotes}
+										target="_blank"
+										rel="noopener noreferrer"
+										variant="blue"
+									>
+										<Clipboard class="mr-2 h-4 w-4" />
+										<span class="font-archivo text-sm font-medium">Dev Notes</span>
+									</Button>
+								{/if}
 								{#if menuData.assignments && menuData.assignments.length > 0}
 									<Button href="/{courseId}/assignments" variant="secondary">
 										<Clipboard class="mr-2 h-4 w-4" />
@@ -180,13 +191,10 @@
 								{/if}
 
 								{#if menuData.readings && menuData.readings.length > 0}
-									<a
-										href="/{courseId}/readings"
-										class="bg-primary/10 hover:bg-primary/20 border-primary/20 text-primary inline-flex items-center rounded border px-3 py-2 transition-colors"
-									>
+									<Button href="/{courseId}/readings" variant="secondary">
 										<BookOpen class="mr-2 h-4 w-4" />
 										<span class="font-archivo text-sm font-medium">Readings</span>
-									</a>
+									</Button>
 								{/if}
 							</div>
 						</div>
@@ -230,57 +238,6 @@
 							<div></div>
 						{/if}
 					</div>
-				</div>
-
-				<!-- Supplemental materials sections -->
-				<div class="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-					<!-- Readings section -->
-					{#if content.metadata?.readings && content.metadata.readings.length > 0}
-						<div class="bg-primary/10 rounded-lg p-6 shadow-sm">
-							<h2 class="font-libre-caslon mb-4 flex items-center text-xl">
-								<BookOpen class="text-primary mr-2 h-5 w-5" />
-								<span>Readings</span>
-							</h2>
-							<ul class="space-y-3">
-								{#each content.metadata.readings as reading}
-									<li class="font-archivo bg-card border-primary/20 rounded border p-3 shadow-sm">
-										<div class="text-primary font-semibold">{reading.title}</div>
-										{#if reading.author}
-											<div class="text-muted-foreground text-sm">by {reading.author}</div>
-										{/if}
-										{#if reading.pages}
-											<div class="text-muted-foreground mt-1 text-sm">Pages: {reading.pages}</div>
-										{/if}
-									</li>
-								{/each}
-							</ul>
-						</div>
-					{/if}
-
-					<!-- Assignments section -->
-					{#if content.metadata?.assignments && content.metadata.assignments.length > 0}
-						<div class="bg-secondary/10 rounded-lg p-6 shadow-sm">
-							<h2 class="font-libre-caslon mb-4 flex items-center text-xl">
-								<Clipboard class="text-secondary mr-2 h-5 w-5" />
-								<span>Assignments</span>
-							</h2>
-							<ul class="space-y-4">
-								{#each content.metadata.assignments as assignment}
-									<li class="font-archivo bg-card border-secondary/20 rounded border p-3 shadow-sm">
-										<div class="text-secondary font-semibold">{assignment.title}</div>
-										{#if assignment.due}
-											<div class="text-destructive mt-1 text-sm font-medium">
-												Due: {assignment.due}
-											</div>
-										{/if}
-										{#if assignment.description}
-											<div class="text-muted-foreground mt-2">{assignment.description}</div>
-										{/if}
-									</li>
-								{/each}
-							</ul>
-						</div>
-					{/if}
 				</div>
 			</div>
 

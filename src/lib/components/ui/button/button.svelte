@@ -12,7 +12,7 @@
 				orange:
 					'bg-orange text-neutral shadow-sm border border-orange/20 hover:bg-orange/90 hover:shadow-md',
 
-				blue: 'bg-blue text-white shadow-sm border border-blue/20 hover:bg-blue/90 hover:shadow-md',
+				blue: 'bg-blue text-white shadow-sm border border-black hover:bg-blue/90 hover:shadow-md',
 
 				green:
 					'bg-green text-neutral shadow-sm border border-green/20 hover:bg-green/90 hover:shadow-md',

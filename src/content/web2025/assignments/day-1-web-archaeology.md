@@ -4,8 +4,10 @@ due: 2025-07-22
 description: Exploring the ruins and fringes of the web
 published: true
 date: 2025-07-20T23:48
-updated: 2025-07-21T08:08
+updated: 2025-07-21T14:51
+submissionUrl: https://github.com/open-making/web2025-devnotes/issues/1
 ---
+
 We're going to spend some time exploring different corners of the internet, then make something with what we find. The web of today, the one that is mainstream, is a little boring, do we'll explore the ruins and the fringes instead.
 
 Start with the ruins. The [Internet Archive Wayback Machine](https://web.archive.org/) lets you see old versions of websites. Pick a year that interests you and search for random things. Maybe it is websites you already know of right now. What did Apple.com look like 20 years ago? How did your current favorite websites evolve in their visual aesthetic over time? 

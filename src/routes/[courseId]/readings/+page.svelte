@@ -84,7 +84,11 @@
 
 	// Generate anchor ID from source name
 	function generateAnchorId(source: string): string {
-		return source.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+		return source
+			.toLowerCase()
+			.replace(/[^a-z0-9]/g, '-')
+			.replace(/-+/g, '-')
+			.replace(/^-|-$/g, '');
 	}
 
 	// Handle day link clicks
@@ -210,10 +214,15 @@
 					class="bg-card border-foreground btn-drop-shadow overflow-hidden rounded-lg border-2"
 					id={generateAnchorId(source)}
 				>
-					<div class=" border-foreground border-b-2 px-6 py-4 transition-all duration-500 {highlightedSection === generateAnchorId(source) ? 'bg-yellow-300' : ''}">
+					<div
+						class=" border-foreground border-b-2 px-6 py-4 transition-all duration-500 {highlightedSection ===
+						generateAnchorId(source)
+							? 'bg-yellow-300'
+							: ''}"
+					>
 						<button
 							on:click={() => handleDayClick(source)}
-							class="font-roboto text-foreground text-lg font-bold tracking-wide uppercase hover:text-primary transition-colors cursor-pointer text-left w-full"
+							class="font-roboto text-foreground hover:text-primary w-full cursor-pointer text-left text-lg font-bold tracking-wide uppercase transition-colors"
 							aria-label="Link to {source}"
 						>
 							{source}
@@ -330,13 +339,7 @@
 											stageWidth: 800,
 											stageHeight: 400,
 											duration: 3000,
-											colors: [
-												'#FFC700',
-												'#FF0000', 
-												'#2E3191',
-												'#41BBC7',
-												'#00FF00'
-											]
+											colors: ['#FFC700', '#FF0000', '#2E3191', '#41BBC7', '#00FF00']
 										}}
 										class="pointer-events-none absolute inset-0 z-10"
 									></div>

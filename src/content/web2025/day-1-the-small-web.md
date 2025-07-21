@@ -10,7 +10,7 @@ seo_description: Context for the class, internet archaeology, Geocities and nost
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-21T12:21
+updated: 2025-07-21T14:40
 slug: day-1-the-small-web
 slides: https://teaching.aman.bh/slides/web2025/day-1-the-small-web#/4
 show_metadata_card: true
@@ -23,6 +23,7 @@ readings:
     author: Laurel Schwulst
     url: https://handmade-web.net/assets/schwulst_website-is-a-shifting-house.pdf
     readingTime: 15
+devNotes: https://github.com/open-making/web2025-devnotes/issues/1
 ---
 
 ## Day 1 — The Small Web
