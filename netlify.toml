@@ -5,4 +5,9 @@
 
 
 [functions]
-  node_bundler = "esbuild"
+  included_files = ["!static/**"]
+
+[[redirects]]
+  from = "/static/*"
+  to = "/static/:splat"
+  status = 200

@@ -14,7 +14,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			split: true
+			split: true,
+			edge: false
 		}),
 		prerender: {
 			entries: [
