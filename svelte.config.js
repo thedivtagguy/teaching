@@ -19,7 +19,8 @@ const config = {
 		}),
 		prerender: {
 			entries: [
-				'*'
+				'*',
+				
 			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore prerendering errors for API routes
