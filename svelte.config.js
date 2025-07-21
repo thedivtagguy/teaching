@@ -32,6 +32,7 @@ const config = {
 					path.includes('/[courseId]/assignments/[assignmentId]') ||
 					path.includes('/[courseId]/assignments') ||
 					path.includes('/slides/') ||
+					path.includes('/[courseId]/admin') ||
 					path.includes('/buzzer') ||
 					path.includes('/[courseId]/slides/')) {
 					console.warn(`Warning: Ignoring prerender error for dynamic route: ${path}`);
