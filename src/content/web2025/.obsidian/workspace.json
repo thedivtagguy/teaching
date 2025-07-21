@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-2-html-css-and-you.md",
+                "file": "assignments/day-2-hey-jude.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-2-html-css-and-you"
+              "title": "day-2-hey-jude"
             }
           }
         ]
@@ -189,13 +189,14 @@
   },
   "active": "39b878950993290e",
   "lastOpenFiles": [
-    "day-1-the-small-web.md",
+    "assignments/day-1-web-archaeology.md",
+    "assignments/day-2-hey-jude.md",
     "day-2-html-css-and-you.md",
+    "day-1-the-small-web.md",
     "slides/day-2-html-css-and-you.md",
     "slides/day-1-the-small-web.md",
     "assets/slides/day-2-html-css-and-you/youtube.mp4",
     "dev-notes.md",
-    "assignments/day-1-web-archaeology.md",
     "templates/day-template.md",
     "install-guides.md",
     "assets/slides/day-1-the-small-web/eji.png",
