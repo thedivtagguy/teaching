@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-1-the-small-web.md",
+                "file": "day-1-the-small-web.md",
                 "mode": "source",
                 "source": false
               },
@@ -189,6 +189,7 @@
   },
   "active": "39b878950993290e",
   "lastOpenFiles": [
+    "slides/day-1-the-small-web.md",
     "assets/slides/day-1-the-small-web/eji.png",
     "assets/slides/day-1-the-small-web/map.4W_3vjTw.png.part",
     "assets/slides/day-1-the-small-web/map.png",
@@ -196,7 +197,6 @@
     "assets/slides/day-1-the-small-web/fotus.jpg",
     "assets/slides/day-1-the-small-web/IMG-20250721081751498.png",
     "Pasted image 20250721080942.png",
-    "slides/day-1-the-small-web.md",
     "assets/slides/day-1-the-small-web/IMG-20250721081005947.png",
     "assignments/day-1-web-archaeology.md",
     "assets/slides/day-1-the-small-web/jor.mp4",
@@ -216,7 +216,6 @@
     "assets/slides/day-1-the-small-web/vid-3.mp4",
     "assets/slides/day-1-the-small-web/pricing.png",
     "assets/slides/day-1-the-small-web/Pasted image 20250719134745.png",
-    "assets/slides/day-1-the-small-web/Pasted image 20250715234219.png",
     "slides/day-1-the-old-web.md",
     "outline.md",
     "dump/snippet-dump.md",
