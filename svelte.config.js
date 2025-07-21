@@ -16,11 +16,7 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			entries: [
-				'*',
-
-				'/[courseId]/assignments/[assignmentId]',
-				'/[courseId]/assignments',
-				'/buzzer'
+				'*'
 			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore prerendering errors for API routes

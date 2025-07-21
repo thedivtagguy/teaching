@@ -1,3 +1,5 @@
+export const prerender = false;
+
 /** @type {import('./$types').PageLoad} */
 export const load = async ({ params }) => {
   // Extract the course ID and path from the params
