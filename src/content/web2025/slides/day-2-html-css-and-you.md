@@ -1,6 +1,6 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-22T09:39
+updated: 2025-07-22T13:10
 transition: none
 ---
 
@@ -490,331 +490,25 @@ I have a barebones HTML page. Your job is to give it some styles. BUT, it has to
 
 ---
 
-## I'm glad you asked. Let's Git to it.
+## I'm glad you asked. Let's get that code!
 
 ---
 
-## Imagine you're writing a book with friends
+## GitHub makes sharing code easy
 
-You're all working on different chapters.
-
----
-
-## How would you share your work?
+We can "fork" a repository to make our own copy.
 
 ---
 
-## Option 1: Email
+## What's a "fork"?
 
-"Here's Chapter 3 v2.docx"
-
-"Wait, I also edited Chapter 3, here's my version!"
-
-"Which one do we use??"
+It's like making a photocopy of someone's project that you can edit.
 
 ---
 
-## Option 2: Shared Google Doc
+## Then we download it as a ZIP file
 
-Everyone types at the same time. Some one "accidentally" deletes a section you were working on. Sus.
-
----
-
-## Option 3: USB drives
-
-"Hey, can you give me the latest version?"
-
-"Oh no, I forgot to save my changes!"
-
----
-
-## None of these work well for code
-
-Code is way more fragile than text documents.
-
----
-
-## Enter: Version Control
-
-A system that tracks every change to your files.
-
----
-
-## Version control is your code's time machine
-
-- You can see what your code looked like yesterday
-- Or last week
-- Or last month
-- And go back to any of those versions
-
----
-
-## Git is a version control system
-
-The most popular one in the world.
-
----
-
-## What does Git track?
-
-- Who changed what
-- When they changed it
-- What exactly they changed
-- Why they changed it (if they write a good message)
-
----
-
-## Let's see this in action
-
-```
-Version 1: "This parrot is dead"
-Version 2: "This parrot has ceased to be" 
-Version 3: "This is an ex-parrot"
-```
-
-Git remembers all three versions.
-
----
-
-## But Git lives on your computer
-
-What if your computer breaks?
-
-What if you want to collaborate with others?
-
----
-
-## Enter: GitHub
-
----
-
-## GitHub is where your code lives online
-
-Think Google Drive, but built specifically for code.
-
----
-
-## GitHub stores your Git repositories
-
-A repository (or "repo") is just a fancy word for "a folder full of code that Git is tracking."
-
----
-
-## Here's how it works:
-
-1. You work on code on your computer
-2. Git tracks your changes
-3. You "push" your changes to GitHub
-4. Your friends can "pull" your changes to their computers
-
----
-
-## GitHub becomes your central hub
-
-Where all the code lives and everyone can access it.
-
----
-
-## Before we dive into commands
-
-Let's talk about the **terminal**.
-
----
-
-## What is the terminal?
-
-A way to talk to your computer using text instead of clicking buttons.
-
----
-
-## Why use text instead of clicking?
-
----
-
-## Because clicking is slow
-
-To create a new folder, you'd:
-
-1. Right-click
-2. Find "New Folder"
-3. Click it
-4. Type the name
-5. Press enter
-
----
-
-## In terminal:
-
-```bash
-mkdir my-new-folder
-```
-
-Done. One line.
-
----
-
-## The terminal might look intimidating
-
-But it's just another way to do things you already know how to do.
-
----
-
-## Common terminal commands:
-
-```bash
-ls          # List files (like opening a folder)
-cd          # Change directory (like double-clicking a folder)  
-mkdir       # Make directory (like creating a new folder)
-pwd         # Print working directory (where am I?)
-```
-
-On Windows, some commands are different in regular Command Prompt:
-
-```bash
-dir         # Windows version of ls (list files)
-cd          # Same on both
-mkdir       # Same on both  
-cd          # Shows current directory (Windows version of pwd)
-```
-
----
-
-## Let's practice
-
-Open your terminal:
-
-- **Windows:** Press `Win + R`, type `cmd`, press Enter _OR_ use Git Bash (recommended)
-- **Mac:** Press `Cmd + Space`, type `terminal`, press Enter
-
-**Note for Windows users:** If you have Git installed, you can use "Git Bash" which lets you use the Mac/Linux commands. Right-click in any folder and select "Git Bash Here".
-
----
-
-## Try these commands:
-
-**Mac/Linux/Git Bash:**
-
-```bash
-pwd         # See where you are
-ls          # See what's in this folder
-cd Desktop  # Go to your Desktop
-ls          # See what's on your Desktop
-mkdir test  # Create a folder called "test"
-ls          # See your new folder
-```
-
-**Windows Command Prompt:**
-
-```bash
-cd          # See where you are  
-dir         # See what's in this folder
-cd Desktop  # Go to your Desktop
-dir         # See what's on your Desktop
-mkdir test  # Create a folder called "test"
-dir         # See your new folder
-```
-
----
-
-## See? Pretty straightforward
-
-You just navigated your computer using text commands.
-
----
-
-## Now back to Git
-
----
-
-## Git commands you need to know:
-
----
-
-### `git init`
-
-"Hey Git, start tracking changes in this folder"
-
----
-
-### `git add filename`
-
-"Hey Git, I want to save this file in the next version"
-
----
-
-### `git add -A`
-
-"Hey Git, I want to save ALL my changes in the next version"
-
----
-
-### `git commit -m "message"`
-
-"Hey Git, create a new version with this message"
-
-The message should describe what you changed.
-
----
-
-### Good commit messages:
-
-```bash
-git commit -m "Add navigation menu"
-git commit -m "Fix broken link on about page"  
-git commit -m "Change background color to blue"
-```
-
----
-
-### Bad commit messages:
-
-```bash
-git commit -m "stuff"
-git commit -m "changes"
-git commit -m "idk"
-```
-
-Future you will hate present you.
-
----
-
-### `git push`
-
-"Hey Git, send my changes to GitHub"
-
----
-
-### `git pull`
-
-"Hey Git, get the latest changes from GitHub"
-
----
-
-## The typical workflow:
-
-1. Make changes to your files
-2. `git add -A` (stage all changes)
-3. `git commit -m "describe what you did"` (save version)
-4. `git push` (send to GitHub)
-
----
-
-## Let's see this in action
-
-We're about to clone a repository.
-
-"Clone" means "download a copy of code from GitHub to my computer"
-
----
-
-## We'll be learning Git thoroughly in a later session.
-
-For now, we'll just use some simple commands
-
----
-## We'll be learning Git more and more in later sessions.
-
-For now, we'll just use some simple commands
+No complicated commands needed - just click and download!
 
 
 
@@ -822,36 +516,34 @@ For now, we'll just use some simple commands
 ---
 <split left="2" right="1">
 
-
 <div>
 
-Copy this link
+1. Go to this link:
 
 ```bash
 https://github.com/open-making/web2025-hey-jude
-
 ```
 
-2. Now open VSCode and press **Ctrl + Shift + P** and search for `Clone`.
+2. Click the **Fork** button in the top right
 
-3. Paste in the URL and press **Enter**. You will be prompted to select a location.
+3. Once forked, click the green **Code** button
 
-4. Open the cloned files.
+4. Select **Download ZIP**
 
-You just used Git to fetch from a remote source to your local machine!
+5. Extract the ZIP file and open in VS Code
+
+You now have your own copy to work with!
 
 </div>
 
-![Dolly the Sheep|200](https://www.statnews.com/wp-content/uploads/2016/07/DOLLY_BDAY_03-645x645.jpg)
+![Fork Icon|200](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
 </split>
-
-*This slide is dedicated to Dolly the sheep, who was also a clone* <!--element class="fragment"-->
 
 ---
 
 
-### Time: 20 Minutes
+### Time: 40 Minutes
 
 #### Tips to make your life easier
 
@@ -873,31 +565,7 @@ https://github.com/open-making/web2025-hey-jude/blob/main/css-properties.md
 
 # Houston, we're ready for takeoff.
 
-Open up a new terminal in VS Code. Type in the following code:
-
-```bash
-git init  # This initializes a new git repository on your machine
-
-git add -A  # Every time you want to save a new version, you have to add all files to this version
-
-git commit -m "My First Ugly Website"  # The commit command saves the version with a message to help you keep track of things
-```
-
----
-
-Now go to Github and create a new repo. After you give it a name, copy the line that looks like this and paste it in your terminal:
-
-```bash
-# Connect your local folder to your new empty GitHub repo 
-# Make sure to use the URL you copied! git remote add origin 
-
-https://github.com/YourUsername/YourRepoName.git
-```
-
-Finally, write this and press Enter:
-```bash
-git push -u -f origin master
-```
+We'll learn Git commands in our next session. For now, we'll deploy directly to Netlify.
 
 ---
 
@@ -914,33 +582,13 @@ In a few minutes, your website will be online with a silly looking URL.
 
 ---
 
-But see, here's the cool part. Go back to VS Code and make some changes to the text. After you're done, create a new commit like so:
+# Your changes are live!
 
-```bash
-git add -A
-git commit -m "Change of text"
-git push
-```
+This is how we can quickly iterate and test our designs online.
 
 ---
 
-# Wait for it, wait for it
-
----
-
-# Cool, now go back to your URL
-
----
-
-# Whaaat? It updated automatically!
-
-This is **Continuous Deployment (CI/CD)**, a core part of the modern web development workflow.
-
-Your Netlify site is linked to your GitHub repo. Every time you `push` a new commit, Netlify automatically grabs the new code, rebuilds your site, and deploys the new version. No more manually uploading files!
-
----
-
-This is very useful and as we go deeper into using modern web-development frameworks, you'll see why this is one of the best ways of working on a project.
+This is very useful and as we go deeper into using modern web-development frameworks, you'll see how some small "magic" can be added to this to make it one of the best ways of working on a project.
 
 ![Excited Hazmat|300](https://c.tenor.com/Ue9Qugpw7h4AAAAC/hazmat-excited.gif) <!--element class="fragment"-->
 
@@ -961,8 +609,8 @@ You are now armed with the knowledge of:
 1. HTML Tags & Attributes<!--element class="fragment"-->
 2. CSS Selectors for targeting elements<!--element class="fragment"-->
 3. Developing locally in VS Code<!--element class="fragment"-->
-4. Using Git to version control and push to GitHub<!--element class="fragment"-->
-5. Deploying a site to Netlify with continuous deployment<!--element class="fragment"-->
+4. Forking repositories and downloading code<!--element class="fragment"-->
+5. Deploying a site to Netlify<!--element class="fragment"-->
 
 That's a massive amount for one day!<!--element class="fragment"-->
 
@@ -978,11 +626,10 @@ You'll never be asked to design the abomination you made in the earlier activity
 ### To summarize the summary
 
 1. Create a fork of my original Hey Jude repo
-2. Clone it on your machine
+2. Download it as a ZIP file to your machine
 3. Remove almost all of the HTML and figure out how you'd want it to look yourself
 4. Style your structure with CSS.
-5. Push your files to Github
-6. Deploy this new repository to Netlify.
+5. Deploy your updated folder to Netlify by dragging and dropping.
 
 **FYI:** You will still have to Google what other CSS properties you need to use. Ask questions like 'How do I make the buttons rounded?' or 'How do I change the font?' and Google them. Lather, rinse, repeat.
 

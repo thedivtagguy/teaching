@@ -187,14 +187,17 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "39b878950993290e",
+  "active": "7f8aee061df56f04",
   "lastOpenFiles": [
-    "slides/day-1-the-small-web.md",
     "slides/day-2-html-css-and-you.md",
+    "day-2-html-css-and-you.md",
+    "slides/day-3-git-and-version-control.md",
+    "slides/day-2-html-css-and-you.md.tmp.80215.1753169746189",
+    "day-3-git-and-version-control.md",
+    "slides/day-1-the-small-web.md",
     "assets/slides/day-2-html-css-and-you/IMG-20250722093859529.png",
     "day-1-the-small-web.md",
     "slides/appendix-node-and-npm.md",
-    "day-2-html-css-and-you.md",
     "assignments/day-2-hey-jude.md",
     "assignments/day-1-web-archaeology.md",
     "assets/slides/day-2-html-css-and-you/youtube.mp4",
@@ -219,7 +222,6 @@
     "assets/slides/day-1-the-small-web/vid-7.mp4",
     "assets/slides/day-1-the-small-web/vid-6.mp4",
     "assets/slides/day-1-the-small-web/vid-5.mp4",
-    "assets/slides/day-1-the-small-web/vid-4.mp4",
     "assets/slides/day-1-the-small-web/pricing.png",
     "slides/day-1-the-old-web.md",
     "outline.md",

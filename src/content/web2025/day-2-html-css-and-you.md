@@ -10,7 +10,7 @@ seo_description: Making a simple page, pushing it to the web
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-22T12:44
+updated: 2025-07-22T13:03
 slug: day-2-html-css-and-you
 slides: https://teaching.aman.bh/slides/web2025/day-2-html-css-and-you
 show_metadata_card: true
@@ -35,9 +35,7 @@ Not only this, but we also learnt about tools and workflows which are used in pr
 
 - VS Code: Our IDE of choice. We fired up a local server to help us preview our work.
     
-- Git basics: We learned `git add`, `git commit`, and `git push`.
-    
-- GitHub integration: How to push our code to the cloud, to our "remote" repository.
+- GitHub: How to fork repositories and download them as zip files to get started with existing projects.
     
 - And finally, how to deploy this into the ocean with Netlify for everyone to see.
     
@@ -48,4 +46,4 @@ Not only this, but we also learnt about tools and workflows which are used in pr
 - [CSS Properties List](https://github.com/open-making/web2025-hey-jude/blob/main/css-properties.md) - Reference for styling experiments
 - [MDN HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) - Complete HTML documentation
 - [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) - Complete CSS documentation
-- [Git Handbook](https://guides.github.com/introduction/git-handbook/) - Git basics beyond what we covered
+- [GitHub Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo) - Guide to forking repositories
