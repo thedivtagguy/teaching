@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-2-html-css-and-you.md",
+                "file": "day-2-html-css-and-you.md",
                 "mode": "source",
                 "source": false
               },
@@ -187,7 +187,7 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "e5896341b2c16a34",
+  "active": "39b878950993290e",
   "lastOpenFiles": [
     "slides/day-1-the-small-web.md",
     "slides/day-2-html-css-and-you.md",
