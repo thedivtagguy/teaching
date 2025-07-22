@@ -10,7 +10,7 @@ seo_description: Making a simple page, pushing it to the web
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-22T13:03
+updated: 2025-07-22T13:22
 slug: day-2-html-css-and-you
 slides: https://teaching.aman.bh/slides/web2025/day-2-html-css-and-you
 show_metadata_card: true
