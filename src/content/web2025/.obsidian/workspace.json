@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-2-html-css-and-you.md",
+                "file": "day-3-git-and-version-control.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-2-html-css-and-you"
+              "title": "day-3-git-and-version-control"
             }
           }
         ]
@@ -187,12 +187,12 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "7f8aee061df56f04",
+  "active": "39b878950993290e",
   "lastOpenFiles": [
+    "day-2-html-css-and-you.md",
     "slides/day-3-git-and-version-control.md",
     "day-3-git-and-version-control.md",
     "slides/day-2-html-css-and-you.md",
-    "day-2-html-css-and-you.md",
     "slides/day-2-html-css-and-you.md.tmp.80215.1753169746189",
     "slides/day-1-the-small-web.md",
     "assets/slides/day-2-html-css-and-you/IMG-20250722093859529.png",
