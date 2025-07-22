@@ -1,6 +1,6 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-22T08:43
+updated: 2025-07-22T09:39
 transition: none
 ---
 
@@ -376,6 +376,10 @@ The CSS above creates a div with:
 I will! 
 
 But let's circle back to Laurel for a bit. 
+
+---
+
+![](IMG-20250722093859529.png)
 
 ---
 
