@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="css/reveal-theme.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Introduction To Making For the Web
+#### _WEB2025 - Day 1_
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## A little about me
+
+I am a developer who designs. I specialize in data visualization and public-interest technology.
+
+<br></br>
+
+I have an interest in maps, history, urbanism, and open-source software.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split left="1" right="3" gap="2">
+
+#### I've worked for these people
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116912.png" alt="" style="width: 800px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="../assets/slides/day-1-the-small-web/IMG-20250712210848865.png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="full-screen-link">
+
+[aman.bh](https://aman.bh)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116931.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<section data-background-size="cover" data-background-video="../assets/slides/day-1-the-small-web/output.mp4">
+</section>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<section data-background-size="cover" data-background-video="../assets/slides/day-1-the-small-web/jor.mp4">
+</section>
+
+
+<div class="full-screen-link">
+
+[Journeys of Resilience](https://dtm.iom.int/data-stories/journeys-of-resilience-ukraine/index.html)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250721081005947.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="full-screen-link">
+
+[Votes in a name](https://diagramchasing.fun/2024/votes-in-a-name)
+
+</div>
+
+<section data-background-size="contain" data-background-video="../assets/slides/day-1-the-small-web/votes-2.mp4">
+</section>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="../assets/slides/day-1-the-small-web/IMG-20250715001259582.png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="full-screen-link">
+
+[BLR Water Log](https://diagramchasing.fun/2024/blr-water-log)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116947.png" alt="" style="object-fit: scale-down">
+
+
+<div class="full-screen-link">
+
+[Who is my Neta](https://whoismyneta.com)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="../assets/slides/day-1-the-small-web/map.png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="../assets/slides/day-1-the-small-web/eji.png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="../assets/slides/day-1-the-small-web/fotus.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: template="" -->
+
+# What Is This Class?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# What do you think of when you think of websites?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116171.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116194.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116248.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116292.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116308.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+A lot of stuff on the web looks like other stuff on the web...
+
+<div class="fragment">
+
+```bash
+BAR WITH SPECIAL MESSAGE 
+
+LOGO    PLATFORM↓     SOLUTIONS↓   PRICING 
+
+BOLD STATEMENT 
+
+CALL TO ACTION 
+
+GRID OF LITTLE ILLUSTRATIONS 
+
+LARGE BOLD FOOTER 
+
+© 2025
+```
+
+
+<div class="compact-cite">
+   (2018). 
+  <a href="https://css-tricks.com/website-sameness/" target="_blank">Website Sameness™</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116332.png" alt="" style="width: 500px; object-fit: fill">
+
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116355.gif" alt="" style="width: 500px; object-fit: fill" class="fragment">
+
+
+
+
+
+
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Does the web have to be this way?
+
+Depends on what you think of the web as.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The web is a city
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116399.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116477.png" alt="" style="object-fit: scale-down">
+
+
+notes: I believe that the principles behind good urban form and community are very similar to the principles of an ideal internet; and that the modern american city shares many similar qualities and shortcomings as does the structure of the internet, simply through a different spatial medium.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The web is a garden
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116559.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116622.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116664.jpg" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> “[the web today is]...five giant websites filled with screenshots of text from the other four.”
+
+
+<div class="compact-cite">
+  Cebalo, A. (2024). 
+  <a href="https://novum.substack.com/p/the-internet-is-like-a-city" target="_blank">The Internet Is Like a City (But Not in the Way You'd Think)</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The web is a pile of books
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116680.jpg" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116704.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The web is many things
+
+But when we think about "web design"...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+...you might usually be taught a process that looks something like this.
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116728.png" alt="" style="object-fit: scale-down">
+
+
+
+<div class="compact-cite">
+  David Hodder
+  <a href="https://www.davidhodder.com/websitedesigndevelopmentstages/" target="_blank">Website design and development stages</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+This is the traditional waterfall model: a linear, sequential process where each stage is completed before the next one begins.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## This model is not invalid. It’s how many websites are built.
+
+### And for many projects, this works great.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+The problem with it is that as designers, **we're often told to care about "our side" of the process.** This model almost encourages us to be siloed. 
+
+- Conduct user research.<!-- .element: class="fragment" -->
+- Create low-fidelity wireframes.<!-- .element: class="fragment" -->
+- Develop high-fidelity wireframes.<!-- .element: class="fragment" -->
+- Establish visual identities.<!-- .element: class="fragment" -->
+- Oversee developer implementation.<!-- .element: class="fragment" -->
+- "Stay in your lane."<!-- .element: class="fragment" -->
+
+ It positions the designer as someone who creates a static blueprint, which is then handed over to a developer to be "executed."<!-- .element: class="fragment" -->
+ 
+notes: This "stay in your lane" mentality creates a gap. A gap in understanding, a gap in communication, and most importantly, a gap in creative potential.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Also, I can't say this enough, it makes it **boring**.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="1">
+
+<div>
+
+Because when computers can talk and write code for us, make entire products from scratch, where does that leave us? **What are the lanes?**
+
+- Do we need designers who just design?<!-- .element: class="fragment" -->
+- Do we need coders who just code?<!-- .element: class="fragment" -->
+- Do we need mockups and wireframes, or is all just vibes?<!-- .element: class="fragment" -->
+- Does everyone become a manager?<!-- .element: class="fragment" -->
+
+**Are there any lanes?** <!-- .element: class="fragment" -->
+
+</div>
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116755.png" alt="" style="object-fit: scale-down">
+
+
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## I don't know, it is too early to tell
+
+But to me, one thing is clear; there is no disadvantage in: 
+
+- Learning a little more about all parts of the process.<!-- .element: class="fragment" -->
+- Being able to prototype and iterate quickly without depending on others.<!-- .element: class="fragment" -->
+- Having direct conversations with the medium you're designing for.<!-- .element: class="fragment" -->
+
+I think LLM's make this easier than ever before, especially for people who might be "afraid" of code.<!-- .element: class="fragment" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+This brings us to the perennial, and frankly, boring question.
+## So should designers code? 
+
+
+Maybe that is the wrong question...<!-- .element: class="fragment" -->
+
+notes: It frames coding as a simple vocational skill to be acquired, like learning to use a new piece of software. The real question is about the nature of the medium itself and our relationship to it.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116768.png" alt="" style="object-fit: scale-down">
+
+<div class="compact-cite">
+  Weaver, J. (2020). 
+  <a href="https://hairyelefante.medium.com/we-dont-need-more-designers-who-can-code-b81483d2a0e6" target="_blank">We Don’t Need More Designers Who Can Code</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+<div>
+
+> A design is never “ready for dev”, because a lot of what we consider to be design decisions – interaction, animation, loading of data – can really only be prototyped in code. 
+> 
+> “Ready for dev” implies that the creation is done and that the developer is merely there to execute the designer’s vision
+
+</div>
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116787.png" alt="" style="width: 200px; object-fit: fill">
+
+
+</split>
+
+<div class="compact-cite">
+  Madsen, R. (2025). 
+  <a href="https://designsystems.international/ideas/when-figma-starts-designing-us/" target="_blank">When Figma Starts Designing Us / Design Systems International</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+
+notes: The point is that code isn't just an implementation detail; it's the _material_ of the web. It's the clay. You can't truly understand what's possible with clay, its texture, its weight, its limitations, and its surprising possibilities, until you get your hands dirty. You need to have that direct conversation with the medium.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split left='1' right='2'>
+
+<div>
+
+### This isn't about asking you to become "coders"
+
+No one needs to do everything! But being a little T-shaped is a huge advantage. 
+</div>
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116801.png" alt="" style="width: 500px; object-fit: fill">
+
+
+
+</split>
+
+notes: You have your expertise in your core discipline, that's the vertical bar of the T. But you also cultivate a broad-enough understanding of adjacent fields, the horizontal bar, to collaborate effectively, to prototype your own ideas, and to have a direct, hands-on conversation with the materials you're working with.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## That is the point of this class
+
+We want to focus on learning **how to make "The Thing" for our purposes**, not become expert developers.
+<br></br>
+Code is the means to an end. 
+
+notes: We're learning to code not to become professional developers, but to become better designers, thinkers, and makers. We're learning just enough to be creatively independent, to build our own prototypes, and to express our own ideas directly in the native language of the web.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## It will be the web, on our own terms
+
+Hand-made, professional, playful, weird, personal, rough-edged, polished; no option is more valid than the other.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## How do we do this?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### The Just-Enough Rule
+
+
+The amount **you _could_ learn** is endless and overwhelming. 
+
+The amount **you _can_ learn just enough** to get started is manageable and more meaningful.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### I'm not looking for the "perfect" outputs.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Instead I would like you to think:
+## What do you care about? 
+
+Because you said it yourself...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250714164309143.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## To grow, designers must be
+
+- hands-on
+- experimental
+- ambitious
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## This class is
+
+- hands-on
+- experimental
+- ambitious
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+We have three weeks together.
+
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116820.png" alt="" style="width: 800px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+In the first, we'll learn <span class="blue-highlight"> how to get comfortable with our tools </span>  and make basic HTML sites.
+
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116834.png" alt="" style="width: 800px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+In the second, we'll learn how to use that to <span class="purple-highlight">understand how modern frameworks work</span>  and supercharge our HTML.
+
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116866.png" alt="" style="width: 800px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+In the last, we'll work on <span class="yellow-highlight"> refining our content, identities and sites </span>  and make our websites live.
+
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116881.png" alt="" style="width: 800px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> I will consider this successful if I can witness a growth in my thinking process and at the end of the course, **have the urge to learn more rather than end up despising it is something that will make it successful for me**
+
+~ One of you, in the pre-class survey (Thank you)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: template="" -->
+
+# What Is This Class?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<style> .slide-container { display: flex; margin: 0; padding: 0;} .left-column { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 8%; gap: 2rem; } .right-column { flex: 1; display: flex; justify-content: center; align-items: center; padding: 0 8%; position: relative; } .main-word {font-family: inherit;font-size: 6rem;font-weight: 700;letter-spacing: -0.03em;margin: 0;line-height: 0.9;transition: all 0.3s ease;opacity: 1; /* Default state - all visible */color: white;cursor: pointer;}/* Fragment behavior - only apply when there are visible fragments */.main-word.fragment.visible:not(.current-fragment) {opacity: 0.1 !important;}/* When no fragments are visible, show all at full opacity */.main-word.fragment:not(.visible) {opacity: 1 !important;}/* Highlight the current fragment */.main-word.highlight-current-blue.current-fragment {opacity: 1 !important;color: var(--color-orange) !important;transform: scale(1.05);} .interpretation-container { position: relative; width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; } .interpretation-group { font-family: 'Archivo Variable'; position: absolute; text-align: left; width: 100%; display: flex; flex-direction: column; gap: 4.5rem; } .interpretation-word { font-size: 4.5rem; font-weight: 400; line-height: 1.1; color: var(--color-neutral); margin: 0; letter-spacing: -0.02em; position: relative; padding-left: 2rem; }</style>
+
+
+<div class="slide-container"><div class="left-column">
+        <h2 class="main-word fragment highlight-current-blue" data-fragment-index="0">Immersive</h2>
+        <h2 class="main-word fragment highlight-current-blue" data-fragment-index="1">Web</h2>
+        <h2 class="main-word fragment highlight-current-blue" data-fragment-index="2">Design</h2>
+    </div><div class="right-column">
+        <div class="interpretation-container">
+            <div class="interpretation-group fragment fade-in-then-out" data-fragment-index="0">
+                <div class="interpretation-word">Thoughtful</div>
+                <div class="interpretation-word">Complete</div>
+                <div class="interpretation-word">Enriching</div>
+            </div>
+            <div class="interpretation-group fragment fade-in-then-out" data-fragment-index="1">
+                <div class="interpretation-word">Small</div>
+                <div class="interpretation-word">Personal</div>
+                <div class="interpretation-word">Living</div>
+            </div>
+            <div class="interpretation-group fragment fade-in" data-fragment-index="2">
+                <div class="interpretation-word">Intentional</div>
+                <div class="interpretation-word">Crafted</div>
+                <div class="interpretation-word">Human</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+notes: We don't mean VR headsets, we mean getting involved in the process from concept to creation. Not the massive, corporate web, but the _small, personal, living_ web.Not just pushing pixels in Figma.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Welcome aboard!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+### A quick round of introductions? 
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116898.png" alt="" style="width: 500px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Indiana Jones and the Raiders of the Lost Webs
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## For me, it started 10 years ago
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+A website where I wrote "issues" of the newspaper from Harry Potter.
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116964.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+I also made websites for Hogwarts. Very legit, as you can see.
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232116997.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+I had a form on the site where if you filled it, you got your own Hogwarts ticket...
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117031.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+...and to this day I get emails from little kids thinking it is real. I made a website for that too.
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117049.png" alt="" style="width: 650px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117078.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-1-the-small-web/eth.mp4"
+       style="max-width: 960px; display: flex; justify-content:center;">
+</video>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117125.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+You get the idea. Websites.
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117153.png" alt="" style="width: 500px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# [it is just]...a few acres of snow
+
+_Voltaire commenting on Canada_
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117192.png" alt="" style="object-fit: scale-down">
+
+<div class="compact-cite">
+   
+  <a href="https://neal.fun/internet-artifacts/" target="_blank">Internet Artifacts</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117234.png" alt="" style="object-fit: scale-down">
+
+
+<div class="compact-cite">
+  Tait, A. (2016). 
+  <a href="https://www.newstatesman.com/science-tech/2016/08/25-years-here-are-worst-ever-predictions-about-internet" target="_blank">25 years on, here are the worst ever predictions about the internet</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# The first websites
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+The first website _ever_ was just a bunch of text and links, created in 1992.
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117252.png" alt="" style="object-fit: scale-down">
+
+
+notes: This period was defined by technical limitations rather than aesthetic choices, with websites serving purely functional purposes for information sharing among researchers.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### But the real explosion was to happen in the mid-90s
+
+Personal websites soon comprised most of the public sites on the early Internet and essentially became the public face of the Internet.
+
+Other than a few blank placeholder websites, corporations and governments had not even established their presences on the Internet. 
+
+
+**Most were not even convinced that they should be there.**
+
+<div class="compact-cite">
+   (2022). 
+  <a href="https://cheapskatesguide.org/articles/old-internet-coming-back.html" target="_blank">The Old Internet Shows Signs of Quietly Coming Back</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+
+notes: Back in the early 1990's, the spirit of the Internet was the pursuit of knowledge, exploration, innovation, fun, and community. Immediately after going public, it began to swell with websites created by tech nerds who enjoyed playing and experimenting with the new technology. Individuals created their own websites mostly for fun and for the learning experiences that they afforded. Most discussed little more than computer gaming, technical interests, and geeky hobbies.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117292.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117361.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Enter the era of Geocities
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="1">
+
+<div>
+
+Geocities was divided into "neighborhoods", like area and street names, where users could "claim" their web site. 
+
+
+
+The neighborhoods where intended to cover different topics, but you could also just host your own website there.
+
+</div>
+
+<div>
+
+>"We all have something to share with each other, which enriches both their lives and ours as well."
+
+ ~ David Bohnett, Creator of Geocities
+ 
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://i.imgur.com/m2oi0bw.jpeg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> "The web was no longer something understood by the public as being a passive area of consumption; it was presented as something that you could live in. Most importantly, it was
+easy to move in."
+
+
+<div class="compact-cite">
+  Milligan, I. (2017). 
+  <a href="http://www.jstor.org/stable/10.2307/j.ctt1mtz55k.13" target="_blank">Welcome to the web: The online community of GeoCities during the early years of the World Wide Web</a>.
+  
+<div class="publisher">
+   UCL Press.
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117404.png" alt="" style="width: 800px; object-fit: fill">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Geocities was important because it provided **a system for creative expression that worked for everyone**: coding space for those with HTML skills and simple navigation tools for beginners to build pages
+
+<br></br>
+It was not the only place where people did this, but it was by far the most popular.
+
+<div class="compact-cite">
+   
+  <a href="https://archive.blogs.harvard.edu/digitalnatives/2009/04/26/living-and-dying-on-geocities/" target="_blank">Living and Dying on Geocities</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The Vernacular of the Old, Personal Web
+
+Animated GIFs, page hit counters, scrolling marquee text, "under construction" signs, and wild tiled backgrounds. It's easy to look back now from our minimalist, professionally designed present and call it "bad design."...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<section data-background-size="cover" data-background-video="assets/slides/day-1-the-small-web/uc.mp4">
+</section>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117421.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+..but it was the visual language that emerged when ordinary people, not professional designers, were in charge of their own little corner of the web. 
+ 
+ **It was expressive, personal, and delightfully chaotic.**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117452.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117468.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117488.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117511.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117531.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117552.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Yahoo bought Geocites in 1999
+And a few years later the platform, with all of its "homes", was wiped out from the Internet.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split left="1" right="2" gap="2">
+
+<span>
+
+
+
+### The Flash Renaissance
+
+Flash enabled designers to break free from HTML limitations, creating experiences that resembled multimedia art installations more than traditional websites
+
+</span>
+
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117575.png" alt="" style="width: 800px; object-fit: fill">
+
+
+</split>
+</div>
+
+<aside class="notes"><p>Designers could control every pixel, create custom typography, and integrate multimedia elements seamlessly. This led to websites that functioned as digital brand experiences, with elaborate visual narratives and sophisticated interaction design</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117595.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117614.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117631.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117652.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117671.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117687.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Shifting to Mobile
+
+The early 2010s brought an aesthetic shift because we started having smaller screens. It was all about making for efficiency now.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117705.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>Skeuomorphic web design incorporated realistic textures, drop shadows, beveled edges, and metaphorical elements that referenced physical objects. Buttons looked like physical buttons with depth and shadow. File systems used folder icons that resembled real manila folders. Trash cans looked like actual waste baskets</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117741.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>Flat design philosophy prioritize efficiency and cross-platform consistency The aesthetic featured bright, saturated colors, simple geometric shapes, minimal use of shadows or gradients, and generous white space</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117801.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split left="1" right="2">
+
+## It will happen again
+
+"One day, Twitter and other publishing platforms like Facebook, Instagram, or Medium will indeed die, like so many sites before them. And every time this happens, we lose most of the content we created and with it a fair amount of our collective cultural history."
+
+</split>
+
+<div class="compact-cite">
+  Ott, M. (2019). 
+  <a href="https://matthiasott.com/articles/into-the-personal-website-verse" target="_blank">Into the Personal-Website-Verse · Matthias Ott</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117844.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117857.png" alt="" style="object-fit: scale-down">
+
+
+<div class="compact-cite">
+   
+  <a href="https://qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet" target="_blank">Millions of Facebook users have no idea they’re using the internet</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The Platform Web
+
+The new corporate web is built on convincing you that making a website is hard, complicated.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### A business model built on telling you that you can't
+
+notes: Website builders lure you in with "free" tiers that are intentionally and severely limited. They hold your content, your design, and your audience hostage, preventing you from using your own domain name and constantly upselling you to the next subscription tier. Their goal is to make you a perpetual renter, not an owner.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="../assets/slides/day-1-the-small-web/pricing.png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- Up to 10 pages
+    
+- Up to 2GB storage
+    
+- Upgrade for a custom domain or keep using `baburao.myportfolio.com`
+    
+- Upgrade to remove branding
+    
+- Upgrade to see analytics
+    
+
+
+
+**But not the small web!**<!-- .element: class="fragment" -->
+
+notes: They love to make you feel dumb, to convince you that this is a magical, complex process that only their proprietary, closed-source tools can handle. But it's not.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Artisanal, not industrial
+
+Do you
+
+- Paint for optimizing engagement?
+- Tend a garden to maximize ROI?
+- Cook for friends to improve your conversion rate?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> Don't use too many colours. 
+> 
+> Write short, catchy headlines. 
+> 
+> Don't let content be too long. Optimise for SEO. 
+> 
+> Produce video content, attention span is decreasing. Have a an obvious call to action. Push your newsletter. 
+> 
+> 
+> Keep important information above the fold. 
+> 
+> 
+> Don't make users think. Follow conventions.
+> 
+
+<div class="compact-cite">
+  Satyal, P. 
+  <a href="https://neustadt.fr/essays/the-small-web/" target="_blank">Rediscovering the Small Web - Neustadt.fr</a>.
+  
+<div class="publisher">
+  
+</div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Not always user-centric
+
+<split even gap="1">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117873.png" alt="" style="object-fit: scale-down" class="fragment">
+
+
+
+<span class="fragment">
+
+Yes! **The Small Web can be "author-centric".** It can be you-centric. It’s the difference between product and art.
+
+
+</span>
+
+
+</split>
+
+notes:  One is not better than the other. They serve different needs and both can co-exist in an open web. It would nevertheless be a shame if we only spent time on the commercial web and never got the opportunity to experience the creativity, passion and quirkiness of the small web.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The Web is a Material
+
+You can mould that material any way you want
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Glimpses of the Small Web
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117887.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117917.png" alt="" style="object-fit: scale-down">
+
+
+<div class="full-screen-link">
+
+[https://nelson.co/](https://nelson.co/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117942.png" alt="" style="object-fit: scale-down">
+
+
+<div class="full-screen-link">
+
+[https://momsmags.mmm.page/hi](https://momsmags.mmm.page/hi)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232117987.png" alt="" style="object-fit: scale-down">
+
+
+<div class="full-screen-link">
+
+[https://amandayeh.com/](https://amandayeh.com/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118043.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118086.png" alt="" style="object-fit: scale-down">
+
+
+<div class="full-screen-link">
+
+[https://philippparzer.com/](https://philippparzer.com/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-1-the-small-web/vid-1.mp4"
+       style="max-width: 960px; display: flex; justify-content:center;">
+</video>
+
+<div class="full-screen-link">
+
+[https://surya.website/](https://surya.website/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-1-the-small-web/vid-2.mp4"
+       style="max-width: 960px; display: flex; justify-content:center;">
+</video>
+
+<div class="full-screen-link">
+
+[https://ribo.zone/](https://ribo.zone/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-1-the-small-web/vid-3.mp4"
+       style="max-width: 960px; display: flex; justify-content:center;">
+</video>
+
+<div class="full-screen-link">
+
+[https://paulcalver.cc/](https://paulcalver.cc/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-1-the-small-web/vid-4.mp4"
+       style="max-width: 960px; display: flex; justify-content:center;">
+</video>
+
+
+<div class="full-screen-link">
+
+[https://nicochilla.com/stuff/](https://nicochilla.com/stuff/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-1-the-small-web/vid-6.mp4"
+       style="max-width: 960px; display: flex; justify-content:center;">
+</video>
+
+<div class="full-screen-link">
+
+[https://alantrotter.com/](https://alantrotter.com/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<video autoplay loop muted preload="none"
+       src="../assets/slides/day-1-the-small-web/vid-7.mp4"
+       style="max-width: 960px; display: flex; justify-content:center;">
+</video>
+
+<div class="full-screen-link">
+
+[https://keningzhu.com/](https://keningzhu.com/)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Before looking forward, let us look back
+
+To really grasp what's special about making your own things on the web today, we may benefit from doing a dive into a bit of history.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+We're going on an expedition, a bit of **Internet Archaeology**, to dig through the digital histories of the late 90s and early 2000s.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### The Internet Archive's Wayback Machine
+
+[The most important tool](https://web.archive.org/) for any internet archaeologist. It has saved snapshots of billions of web pages over time.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+Enter a URL, select a year from the timeline, then click on a specific date in the calendar to see a snapshot of the site from that day.
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118105.png" alt="" style="width: 700px; object-fit: fill">
+
+
+</split>
+
+
+notes: The goal is to move beyond simple aesthetic judgment ("this looks ugly") and toward historical analysis ("_why_ does it look this way?")
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118122.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118138.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118155.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118177.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### The GeoCities Archives
+
+Since GeoCities was shut down by Yahoo in 2009, volunteer groups like the Archive Team have rescued and archived terabytes of its data.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+<div>
+
+
+- https://geocities.restorativland.org/ Direct mirrors of old GeoCities sites, neatly sorted by their original "neighborhood". A bit like wandering through the ruins themselves.
+- [One Terabyte of Kilobyte Age](https://oneterabyteofkilobyteage.tumblr.com/): An art project by Olia Lialina and Dragan Espenschied that posts random, automated screenshots from the archive. 
+
+</div>
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118199.png" alt="" style="width: 500px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### The Web Design Museum
+
+<split even gap="2">
+
+<div>
+
+[A gallery of screenshots and videos of websites through the years.](https://www.webdesignmuseum.org/all-websites)
+
+Almost the same as the Internet Archive, but organized in a browsable way.
+
+</div>
+
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118232.png" alt="" style="width: 600px; object-fit: fill">
+
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Activity Brief
+
+Head over to the 'Assignments' page [here](https://teaching.aman.bh/web2025/assignments/) for more.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even gap="2">
+
+We'll start some making tomorrow!!
+
+<img src="assets/slides/day-1-the-small-web/IMG-20250720232118269.gif" alt="" style="width: 500px; object-fit: fill">
+
+
+</split>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":true,"transition":"none","transitionSpeed":"fast","width":960,"height":700,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

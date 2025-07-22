@@ -13,28 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-2-html-css-and-you.md",
+                "file": "day-1-the-small-web.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-2-html-css-and-you"
+              "title": "day-1-the-small-web"
             }
           }
         ]
       },
       {
-        "id": "067a9f232d0f2f07",
+        "id": "85d5923249015558",
         "type": "tabs",
         "children": [
           {
-            "id": "1cc8737f2ae83413",
+            "id": "ca7d85d5016f0ffe",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: day-2-html-css-and-you.md"
+              "title": "Preview: day-1-the-small-web.md"
             }
           }
         ]
@@ -187,7 +187,7 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "1cc8737f2ae83413",
+  "active": "39b878950993290e",
   "lastOpenFiles": [
     "slides/day-1-the-small-web.md",
     "slides/day-2-html-css-and-you.md",
