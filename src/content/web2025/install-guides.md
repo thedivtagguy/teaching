@@ -2,9 +2,11 @@
 title: Install Guides
 date: 2025-07-10
 section: Appendix
-updated: 2025-07-14T14:04
+updated: 2025-07-22T15:10
 published: true
 ---
+
+
 ## Git & GitHub Setup Guide
 
 Before we start building websites, we need to set up Git and GitHub. Think of Git as a way to track changes in your code (like a super-powered "undo" button), and GitHub as a place to store and share your projects online. We'll learn this properly in class, don't worry too much about it for now. Once it's set up, you'll barely think about it. The payoff of being able to track your work, collaborate with others, and deploy your sites—is totally worth the initial setup.
@@ -96,3 +98,40 @@ git config --global user.email "your.email@example.com"
 
 
 After this, you're all set! We'll be using these tools throughout the class, but don't worry about memorizing all the commands, we'll learn the Git workflow gradually as we build our websites.
+
+## Pretty Formatting Your Code
+
+While you're writing code in VSCode, things can get messy and hard for you to keep track of. VSCode gives you nice color highlighting but we can also install a **formatter** to help keep us organized. 
+
+Open up your extensions panel and search for 'Prettier'. It is the first result which has the most downloads.
+
+![](/assets/install-guides/IMG-20250722145507551.png)
+
+Click `Install`. 
+
+After it installs, you have to edit your VSCode settings in a way that tells it to use this formatter **every time you hit save**. 
+
+Open up the command palette in VSCode using `CTRL` + `SHIFT` + `P`. Search for 'Settings'.
+
+![](/assets/install-guides/IMG-20250722145705571.png)
+
+Select the one that says 'Preferences: Open Settings (UI)'. 
+
+It will open up something that looks like this: 
+
+![](/assets/install-guides/IMG-20250722145758024.png)
+
+In the search field, search and configure the following things. 
+
+-  **Default Formatter**: Search for `Default Formatter` and the listings should filter. In the dropdown for that setting, locate `Prettier` and select it.
+
+![](/assets/install-guides/IMG-20250722150013159.png)
+
+- **Format on save**: Now that the default formatter has been set, we can tell VSCode to correct our code every time we hit save. Search for `Format on Save` and enable the checkbox. 
+
+![](/assets/install-guides/IMG-20250722150138282.png)
+
+You're done! Now no matter how you type your code, all your files will be kept nicely formatted whenever you hit save. It's a small quality-of-life improvement. 
+
+![](/assets/install-guides/IMG-20250722150636812.gif)
+
