@@ -20,6 +20,10 @@ readings:
     author: Orit Gat
     url: https://web.archive.org/web/20250215172659/https://www.thewhitereview.org/feature/scroll-skim-stare/
     readingTime: 20
+  - title: Taking an internet walk
+    author: Spencer Chang & Kristoffer Tjalve
+    url: https://syllabusproject.org/syllabus-for-taking-an-internet-walk/
+    readingTime: 20
 ---
 ## Day 2 — HTML, CSS, and You
 
