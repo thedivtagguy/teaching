@@ -1,6 +1,6 @@
 ---
 date: 2025-07-12T21:50
-updated: 2025-07-21T22:50
+updated: 2025-07-22T08:43
 transition: none
 ---
 
@@ -479,22 +479,341 @@ By the end of this short exercise, you will have a crappy website on the interne
 
 I have a barebones HTML page. Your job is to give it some styles. BUT, it has to be messy, ugly, a complete Dada-ist masterpiece.
 
+
 ---
 
-# But how would I share this file for you to get started?
+## But how would I share this file for you to get started?
 
 ---
 
 ## I'm glad you asked. Let's Git to it.
 
-Git is a version control system. What this means is that it basically lets multiple people access a central source of what is usually code, and make alterations to it without messing it up for other people.
+---
 
+## Imagine you're writing a book with friends
+
+You're all working on different chapters.
 
 ---
 
-# We'll be learning Git thoroughly in a later session.
+## How would you share your work?
+
+---
+
+## Option 1: Email
+
+"Here's Chapter 3 v2.docx"
+
+"Wait, I also edited Chapter 3, here's my version!"
+
+"Which one do we use??"
+
+---
+
+## Option 2: Shared Google Doc
+
+Everyone types at the same time. Some one "accidentally" deletes a section you were working on. Sus.
+
+---
+
+## Option 3: USB drives
+
+"Hey, can you give me the latest version?"
+
+"Oh no, I forgot to save my changes!"
+
+---
+
+## None of these work well for code
+
+Code is way more fragile than text documents.
+
+---
+
+## Enter: Version Control
+
+A system that tracks every change to your files.
+
+---
+
+## Version control is your code's time machine
+
+- You can see what your code looked like yesterday
+- Or last week
+- Or last month
+- And go back to any of those versions
+
+---
+
+## Git is a version control system
+
+The most popular one in the world.
+
+---
+
+## What does Git track?
+
+- Who changed what
+- When they changed it
+- What exactly they changed
+- Why they changed it (if they write a good message)
+
+---
+
+## Let's see this in action
+
+```
+Version 1: "This parrot is dead"
+Version 2: "This parrot has ceased to be" 
+Version 3: "This is an ex-parrot"
+```
+
+Git remembers all three versions.
+
+---
+
+## But Git lives on your computer
+
+What if your computer breaks?
+
+What if you want to collaborate with others?
+
+---
+
+## Enter: GitHub
+
+---
+
+## GitHub is where your code lives online
+
+Think Google Drive, but built specifically for code.
+
+---
+
+## GitHub stores your Git repositories
+
+A repository (or "repo") is just a fancy word for "a folder full of code that Git is tracking."
+
+---
+
+## Here's how it works:
+
+1. You work on code on your computer
+2. Git tracks your changes
+3. You "push" your changes to GitHub
+4. Your friends can "pull" your changes to their computers
+
+---
+
+## GitHub becomes your central hub
+
+Where all the code lives and everyone can access it.
+
+---
+
+## Before we dive into commands
+
+Let's talk about the **terminal**.
+
+---
+
+## What is the terminal?
+
+A way to talk to your computer using text instead of clicking buttons.
+
+---
+
+## Why use text instead of clicking?
+
+---
+
+## Because clicking is slow
+
+To create a new folder, you'd:
+
+1. Right-click
+2. Find "New Folder"
+3. Click it
+4. Type the name
+5. Press enter
+
+---
+
+## In terminal:
+
+```bash
+mkdir my-new-folder
+```
+
+Done. One line.
+
+---
+
+## The terminal might look intimidating
+
+But it's just another way to do things you already know how to do.
+
+---
+
+## Common terminal commands:
+
+```bash
+ls          # List files (like opening a folder)
+cd          # Change directory (like double-clicking a folder)  
+mkdir       # Make directory (like creating a new folder)
+pwd         # Print working directory (where am I?)
+```
+
+On Windows, some commands are different in regular Command Prompt:
+
+```bash
+dir         # Windows version of ls (list files)
+cd          # Same on both
+mkdir       # Same on both  
+cd          # Shows current directory (Windows version of pwd)
+```
+
+---
+
+## Let's practice
+
+Open your terminal:
+
+- **Windows:** Press `Win + R`, type `cmd`, press Enter _OR_ use Git Bash (recommended)
+- **Mac:** Press `Cmd + Space`, type `terminal`, press Enter
+
+**Note for Windows users:** If you have Git installed, you can use "Git Bash" which lets you use the Mac/Linux commands. Right-click in any folder and select "Git Bash Here".
+
+---
+
+## Try these commands:
+
+**Mac/Linux/Git Bash:**
+
+```bash
+pwd         # See where you are
+ls          # See what's in this folder
+cd Desktop  # Go to your Desktop
+ls          # See what's on your Desktop
+mkdir test  # Create a folder called "test"
+ls          # See your new folder
+```
+
+**Windows Command Prompt:**
+
+```bash
+cd          # See where you are  
+dir         # See what's in this folder
+cd Desktop  # Go to your Desktop
+dir         # See what's on your Desktop
+mkdir test  # Create a folder called "test"
+dir         # See your new folder
+```
+
+---
+
+## See? Pretty straightforward
+
+You just navigated your computer using text commands.
+
+---
+
+## Now back to Git
+
+---
+
+## Git commands you need to know:
+
+---
+
+### `git init`
+
+"Hey Git, start tracking changes in this folder"
+
+---
+
+### `git add filename`
+
+"Hey Git, I want to save this file in the next version"
+
+---
+
+### `git add -A`
+
+"Hey Git, I want to save ALL my changes in the next version"
+
+---
+
+### `git commit -m "message"`
+
+"Hey Git, create a new version with this message"
+
+The message should describe what you changed.
+
+---
+
+### Good commit messages:
+
+```bash
+git commit -m "Add navigation menu"
+git commit -m "Fix broken link on about page"  
+git commit -m "Change background color to blue"
+```
+
+---
+
+### Bad commit messages:
+
+```bash
+git commit -m "stuff"
+git commit -m "changes"
+git commit -m "idk"
+```
+
+Future you will hate present you.
+
+---
+
+### `git push`
+
+"Hey Git, send my changes to GitHub"
+
+---
+
+### `git pull`
+
+"Hey Git, get the latest changes from GitHub"
+
+---
+
+## The typical workflow:
+
+1. Make changes to your files
+2. `git add -A` (stage all changes)
+3. `git commit -m "describe what you did"` (save version)
+4. `git push` (send to GitHub)
+
+---
+
+## Let's see this in action
+
+We're about to clone a repository.
+
+"Clone" means "download a copy of code from GitHub to my computer"
+
+---
+
+## We'll be learning Git thoroughly in a later session.
 
 For now, we'll just use some simple commands
+
+---
+## We'll be learning Git more and more in later sessions.
+
+For now, we'll just use some simple commands
+
+
+
 
 ---
 <split left="2" right="1">

@@ -13,22 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assignments/day-2-hey-jude.md",
+                "file": "slides/day-2-html-css-and-you.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-2-hey-jude"
+              "title": "day-2-html-css-and-you"
             }
           }
         ]
       },
       {
-        "id": "77974f44313cdf01",
+        "id": "067a9f232d0f2f07",
         "type": "tabs",
         "children": [
           {
-            "id": "45083696f3f834fe",
+            "id": "1cc8737f2ae83413",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -187,14 +187,15 @@
       "slides-extended:Show slide preview": false
     }
   },
-  "active": "39b878950993290e",
+  "active": "1cc8737f2ae83413",
   "lastOpenFiles": [
-    "day-2-html-css-and-you.md",
+    "slides/day-1-the-small-web.md",
     "slides/day-2-html-css-and-you.md",
+    "slides/appendix-node-and-npm.md",
+    "day-2-html-css-and-you.md",
     "assignments/day-2-hey-jude.md",
     "assignments/day-1-web-archaeology.md",
     "day-1-the-small-web.md",
-    "slides/day-1-the-small-web.md",
     "assets/slides/day-2-html-css-and-you/youtube.mp4",
     "dev-notes.md",
     "templates/day-template.md",
@@ -208,7 +209,6 @@
     "Pasted image 20250721080942.png",
     "assets/slides/day-1-the-small-web/IMG-20250721081005947.png",
     "assets/slides/day-1-the-small-web/jor.mp4",
-    "slides/appendix-node-and-npm.md",
     "quizzes.md",
     "quiz-node-and-npm.md",
     "assignments",
