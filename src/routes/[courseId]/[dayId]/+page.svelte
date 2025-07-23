@@ -183,14 +183,14 @@
 										<span class="font-archivo text-sm font-medium">Dev Notes</span>
 									</Button>
 								{/if}
-								{#if menuData.assignments && menuData.assignments.length > 0}
+								{#if content.metadata?.assignments}
 									<Button href="/{courseId}/assignments" variant="secondary">
 										<Clipboard class="mr-2 h-4 w-4" />
 										<span class="font-archivo text-sm font-medium">Assignments</span>
 									</Button>
 								{/if}
 
-								{#if menuData.readings && menuData.readings.length > 0}
+								{#if content.metadata?.readings && content.metadata?.readings.length > 0}
 									<Button href="/{courseId}/readings" variant="secondary">
 										<BookOpen class="mr-2 h-4 w-4" />
 										<span class="font-archivo text-sm font-medium">Readings</span>
