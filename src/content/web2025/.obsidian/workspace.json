@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-3-seeing-and-searching.md",
+                "file": "day-4-typesetting-a-page.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-3-seeing-and-searching"
+              "title": "day-4-typesetting-a-page"
             }
           }
         ]
@@ -190,9 +190,16 @@
   },
   "active": "1d100702f432d70d",
   "lastOpenFiles": [
+    "assets/day-4-typesetting-a-page/IMG-20250723233308860.png",
+    "assets/day-4-typesetting-a-page/IMG-20250723233149070.png",
+    "assets/day-4-typesetting-a-page/IMG-20250723233133316.png",
+    "assets/day-4-typesetting-a-page",
+    "assets/day-4-typesetting-a-page/IMG-20250723233033329.png",
+    "labs.jensimmons.com.md",
+    "day-4-typesetting-a-page.md",
     "slides/day-3-seeing-and-searching.md",
-    "slides/day-1-the-small-web.md",
     "day-3-seeing-and-searching.md",
+    "slides/day-1-the-small-web.md",
     "day-2-html-css-and-you.md",
     "Excalidraw/Drawing 2025-07-23 09.32.53.excalidraw.md",
     "Excalidraw",
@@ -206,16 +213,12 @@
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122861.png",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122851.png",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122841.png",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png",
     "assets/slides/day-3-fairy-tales",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png",
     "slides/day-5-flexbox.md",
     "slides/day-4-git-and-version-control.md",
     "assignments/day-3-form-and-visuals.md",
-    "Untitled.md",
     "assignments/day-2-hey-jude.md",
     "install-guides.md",
-    "assets/install-guides/IMG-20250722150636812.gif",
     "assets/install-guides",
     "dev-notes.md",
     "prettier.md",
@@ -230,11 +233,8 @@
     "assets/slides/day-1-the-small-web/jor.mp4",
     "quiz-node-and-npm.md",
     "assignments",
-    "assets/slides/day-2-html-css-and-you",
     "slides/day-1-the-old-web.md",
     "outline.md",
-    "dump/snippet-dump.md",
-    "node-npm-quiz.md",
-    "requirements.md"
+    "dump/snippet-dump.md"
   ]
 }
