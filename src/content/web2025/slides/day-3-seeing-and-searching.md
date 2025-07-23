@@ -1,6 +1,6 @@
 ---
 date: 2025-07-22T13:05
-updated: 2025-07-23T08:45
+updated: 2025-07-23T13:29
 transition: none
 ---
 # Seeing and Searching
@@ -240,11 +240,11 @@ We'll be working with [Hans Christen Andersen's stories](https://www.gutenberg.o
 
 ## Step 1: Read and Visualize
 
-**1 hour**
+**2 hours**
 
 1. Read your chosen text
 2. Imagine how it should look on screen
-3. Sketch it on paper (rough is fine!) or on Figma. 
+3. Sketch the layout on paper or on Figma. Remember that this should be doable with the skills you have learnt today (floats, flexboxes). 
 
 Think about:
 
@@ -255,7 +255,19 @@ Think about:
 
 ---
 
-## Step 2: Identify Your Building Blocks
+
+## Step 2: Ready your assets
+
+Look at your sketch and identify:
+
+- What fonts you'd like. 
+- Keep your images ready. Find them, process them in Photoshop (or PhotoPea) which could mean cropping them to the sizes you want, removing background images, and anything else you'd like. Look at CSS Zen Garden websites for inspiration. How are they using images? 
+- What does your page's color palette look like? 
+- Any other design decisions that you'd like to make. 
+
+---
+
+## Step 3: Identify Your Building Blocks
 
 Look at your sketch and identify:
 
@@ -268,7 +280,7 @@ Look at your sketch and identify:
 
 ---
 
-## Step 3: Plan Your Searches
+## Step 4: Plan Your Searches
 
 Before you start coding, write down:
 
@@ -321,7 +333,6 @@ Before you start coding, write down:
 - "CSS text align" - center, left, right alignment
 - "CSS background gradient" - colorful backgrounds
 - "CSS max width center" - limit content width and center it
-
 
 ---
 
