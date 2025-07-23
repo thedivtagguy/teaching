@@ -91,7 +91,7 @@
         <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-# The PrinCSS and the <\p> 🫛
+# Seeing and Searching
 ### _Day 3 - WEB2025_
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -250,7 +250,7 @@ But what made it a **good search**?
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-## The Browser Inspector is your X-ray vision 🦴
+## The Browser Inspector 🦴
 
 **Right-click → Inspect Element** on any website!
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
@@ -263,6 +263,10 @@ But what made it a **good search**?
 3. Click "Inspect" or "Inspect Element"
 4. Look at the HTML structure
 5. Look at the CSS styles on the right
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="assets/slides/day-3-seeing-and-searching/IMG-20250723075655721.png" alt="" style="object-fit: scale-down">
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -280,7 +284,41 @@ But what made it a **good search**?
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-# Fairy Tales
+## Code-Along Session
+
+First, copy the contents of [this settings file](https://gist.github.com/thedivtagguy/e0b41977d0c7da61d53e100bcd238db8) and keep it ready. 
+
+1. Open VSCode
+2. Type `CTRL + SHIFT + P`
+3. Search for `Open User Settings JSON`
+4. In the editor that opens, paste this content in and save.
+
+Now we will have a nice, same-looking editor to work with. Please also look through the [Install Guide on How to Install Prettier](https://teaching.aman.bh/web2025/install-guides#pretty-formatting-your-code).
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## To start off with, copy paste this into an HTML file
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Text Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Your content goes here -->
+</body>
+</html>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# The PrinCSS and the  p 🫛
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 You're going to take a piece of text and turn it into a beautifully designed webpage.
 
@@ -288,9 +326,7 @@ You're going to take a piece of text and turn it into a beautifully designed web
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Choose your story
-
-We'll be working with [Hans Christen Andersen's stories](https://www.gutenberg.org/cache/epub/27200/pg27200-images.html). 
+We'll be working with [Hans Christen Andersen's stories](https://www.gutenberg.org/cache/epub/27200/pg27200-images.html). Choose any one of these stories.
 
 <img src="assets/slides/day-3-seeing-and-searching/IMG-20250723001122882.png" alt="" style="object-fit: scale-down">
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->

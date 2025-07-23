@@ -1,6 +1,6 @@
 ---
 date: 2025-07-22T13:05
-updated: 2025-07-23T00:16
+updated: 2025-07-23T08:45
 transition: none
 ---
 # Seeing and Searching
@@ -154,7 +154,7 @@ But what made it a **good search**?
 
 ---
 
-## The Browser Inspector is your X-ray vision 🦴
+## The Browser Inspector 🦴
 
 **Right-click → Inspect Element** on any website!
 
@@ -167,6 +167,10 @@ But what made it a **good search**?
 3. Click "Inspect" or "Inspect Element"
 4. Look at the HTML structure
 5. Look at the CSS styles on the right
+
+---
+
+![](IMG-20250723075655721.png)
 
 
 ---
@@ -185,6 +189,38 @@ But what made it a **good search**?
 
 ---
 
+## Code-Along Session
+
+First, copy the contents of [this settings file](https://gist.github.com/thedivtagguy/e0b41977d0c7da61d53e100bcd238db8) and keep it ready. 
+
+1. Open VSCode
+2. Type `CTRL + SHIFT + P`
+3. Search for `Open User Settings JSON`
+4. In the editor that opens, paste this content in and save.
+
+Now we will have a nice, same-looking editor to work with. Please also look through the [Install Guide on How to Install Prettier](https://teaching.aman.bh/web2025/install-guides#pretty-formatting-your-code).
+
+---
+
+## To start off with, copy paste this into an HTML file
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Text Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Your content goes here -->
+</body>
+</html>
+```
+
+
+---
 # The PrinCSS and the  p 🫛
 
 ---
