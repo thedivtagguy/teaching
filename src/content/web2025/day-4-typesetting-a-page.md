@@ -10,12 +10,12 @@ seo_description: Our first mini project on creating a nice webpage for a Hans Ch
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-23T23:42
+updated: 2025-07-23T23:48
 show_metadata_card: true
 slides: 
 slug: day-4-typesetting-a-page
 ---
-# The Princess and the p 🫛
+# The prinCSS and the p (tag) 🫛
 
 We're each going to take one of Hans Christian Andersen's fairy tales and turn it into a nice webpage that tells the story through our newly learnt layout-ing and styling skills. I encourage you to think of this as your first real web design portfolio piece, something you'd actually want to show someone. Spend time on it to refine your ideas and visual language, typography and colors and images you're working on.
 
