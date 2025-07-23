@@ -13,12 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-3-seeing-and-searching.md",
+                "file": "day-3-seeing-and-searching.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "day-3-seeing-and-searching"
+            }
+          }
+        ]
+      },
+      {
+        "id": "deff10cbcf44b241",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f0d1a3574b63e35",
+            "type": "leaf",
+            "state": {
+              "type": "reveal-preview-view",
+              "state": {},
+              "icon": "slides",
+              "title": "Preview: day-3-seeing-and-searching.md"
             }
           }
         ]
@@ -174,8 +190,9 @@
   },
   "active": "1d100702f432d70d",
   "lastOpenFiles": [
-    "day-3-seeing-and-searching.md",
     "slides/day-3-seeing-and-searching.md",
+    "slides/day-1-the-small-web.md",
+    "day-3-seeing-and-searching.md",
     "day-2-html-css-and-you.md",
     "Excalidraw/Drawing 2025-07-23 09.32.53.excalidraw.md",
     "Excalidraw",
@@ -204,7 +221,6 @@
     "prettier.md",
     "quizzes.md",
     "slides/day-2-html-css-and-you.md.tmp.80215.1753169746189",
-    "slides/day-1-the-small-web.md",
     "day-1-the-small-web.md",
     "slides/appendix-node-and-npm.md",
     "assignments/day-1-web-archaeology.md",
