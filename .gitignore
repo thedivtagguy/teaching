@@ -26,5 +26,6 @@ shadcn-svelte-main.zip
 CLAUDE.md
 /.claude
 
-.excalidraw
-/Excalidraw
+*.excalidraw*
+**/Excalidraw/
+**/.excalidraw/
