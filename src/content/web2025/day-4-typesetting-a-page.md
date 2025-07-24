@@ -10,7 +10,7 @@ seo_description: Our first mini project on creating a nice webpage for a Hans Ch
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-23T23:48
+updated: 2025-07-24T13:19
 show_metadata_card: true
 slides: 
 slug: day-4-typesetting-a-page
@@ -60,3 +60,14 @@ If you're stuck for more than 15 minutes, ask for help. Don't suffer in silence 
 Also, remember that simple and well-executed beats complex and broken every time. If something isn't working, try a simpler approach first. [Even whitespace can look good](https://labs.jensimmons.com/2017/01-021.html).
 
 Make it something that you think is worth looking at.
+
+## Checkpoints
+
+Ensure that Aman has seen your design and general direction at least once. No coding before that has been discussed a little bit. 
+
+At the end of Thursday (Jul 24), you should have at least started on coding some of your page. At the bare minimum, I would want you to have your `index.html` and some styles written. Feel free to copy the starter `index.html` we used from yesterday. You will be expected to write about what progress you've made in your dev notes for the day.
+
+**For today's dev notes, mention any thing that you absolutely could not understand and would want more help with.** This will help me help you tomorrow and compile an FAQ for your reference. 
+
+We'll be continuing working on these tomorrow (Friday, Jul 25). 
+
