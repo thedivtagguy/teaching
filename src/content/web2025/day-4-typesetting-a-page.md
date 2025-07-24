@@ -10,7 +10,7 @@ seo_description: Our first mini project on creating a nice webpage for a Hans Ch
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-24T14:56
+updated: 2025-07-24T15:06
 show_metadata_card: true
 slides: 
 slug: day-4-typesetting-a-page
@@ -19,6 +19,8 @@ devNotes: https://github.com/open-making/web2025-dev-notes/issues/5
 # The prinCSS and the p (tag) 🫛
 
 We're each going to take one of Hans Christian Andersen's fairy tales and turn it into a nice webpage that tells the story through our newly learnt layout-ing and styling skills. I encourage you to think of this as your first real web design portfolio piece, something you'd actually want to show someone. Spend time on it to refine your ideas and visual language, typography and colors and images you're working on.
+
+## Expectations
 
 This project needs to demonstrate that you can handle the fundamentals we've covered, plus push yourself to try some new things. Here's what I would say needs to be in there:
 
@@ -40,7 +42,7 @@ This project needs to demonstrate that you can handle the fundamentals we've cov
 ![](/assets/day-4-typesetting-a-page/IMG-20250723233308860.png)
 [Overlap Explorations by Jen Simmons](https://labs.jensimmons.com/#studyofoverlap)
 
----
+## Timelines
 
 **Day 1 - Planning and Prep**
 
@@ -61,6 +63,9 @@ If you're stuck for more than 15 minutes, ask for help. Don't suffer in silence 
 Also, remember that simple and well-executed beats complex and broken every time. If something isn't working, try a simpler approach first. [Even whitespace can look good](https://labs.jensimmons.com/2017/01-021.html).
 
 Make it something that you think is worth looking at.
+
+
+**We will review everyone's sites tomorrow afternoon**. 
 
 ## Checkpoints
 
