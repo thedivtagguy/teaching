@@ -10,7 +10,7 @@ seo_description: We created our designs, can we code them into existence?
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-25T14:03
+updated: 2025-07-25T17:59
 show_metadata_card: true
 slides: 
 slug: day-5-short-stories
@@ -60,7 +60,7 @@ A great week, in my opinion.
 I have compiled all your great work into a single webpage, so we can go through each other's work. You can also send this to people and tell them _"HEY, I MADE THAT"_.
 
 
-<Button size="lg" variant="purple" class="!text-white mb-4 py-6" href="https://teaching.aman.bh/web2025/short-stories"> Short Stories »</Button>
+<Button size="lg" target="_blank" variant="purple" class="!text-white mb-4 py-6" href="https://teaching.aman.bh/web2025/short-stories"> Short Stories »</Button>
 </div>
 
 ![](/assets/day-5-short-stories/IMG-20250725123956347.png)
