@@ -41,9 +41,9 @@
 	// Highlight state for anchor navigation
 	let highlightedSection: string | null = null;
 
-	// Function to group readings by source
+	// Function to group readings by source and sort by date
 	function groupReadingsBySource(readings: Reading[]): Record<string, Reading[]> {
-		return readings.reduce((groups: Record<string, Reading[]>, reading: Reading) => {
+		const groups = readings.reduce((groups: Record<string, Reading[]>, reading: Reading) => {
 			const source = reading.source || 'General';
 			if (!groups[source]) {
 				groups[source] = [];
@@ -51,6 +51,43 @@
 			groups[source].push(reading);
 			return groups;
 		}, {});
+
+		// Sort groups by date (most recent first)
+		const sortedGroups: Record<string, Reading[]> = {};
+		const groupEntries = Object.entries(groups);
+		
+		// Get page data to extract dates
+		const pageData = $page.data;
+		const getSourceDate = (source: string): Date => {
+			// Try to find the date from page data
+			if (pageData?.pages) {
+				const sourcePage = pageData.pages.find((p: any) => p.slug === source || p.path?.includes(source));
+				if (sourcePage?.date) {
+					return new Date(sourcePage.date);
+				}
+			}
+			// Fallback: try to extract date from source name if it follows day-N pattern
+			const dayMatch = source.match(/day-(\d+)/);
+			if (dayMatch) {
+				// Use a base date and add days
+				const baseDate = new Date('2025-01-01');
+				baseDate.setDate(baseDate.getDate() + parseInt(dayMatch[1]));
+				return baseDate;
+			}
+			return new Date(0); // Very old date for fallback
+		};
+
+		groupEntries
+			.sort(([sourceA], [sourceB]) => {
+				const dateA = getSourceDate(sourceA);
+				const dateB = getSourceDate(sourceB);
+				return dateB.getTime() - dateA.getTime(); // Most recent first
+			})
+			.forEach(([source, readings]) => {
+				sortedGroups[source] = readings;
+			});
+
+		return sortedGroups;
 	}
 
 	// Keep track of completed readings using localStorage

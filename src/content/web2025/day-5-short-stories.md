@@ -10,11 +10,16 @@ seo_description: We created our designs, can we code them into existence?
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-25T13:22
+updated: 2025-07-25T13:32
 show_metadata_card: true
 slides: 
 slug: day-4-typesetting-a-page
 assignments: true
+readings:
+  - title: Revolutionize Your Page
+    author: Jen Simmons
+    url: https://www.youtube.com/watch?v=aYgMExb-mlo
+    readingTime: 60
 ---
 
 <script>
