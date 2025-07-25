@@ -191,7 +191,7 @@
 								{/if}
 
 								{#if content.metadata?.readings && content.metadata?.readings.length > 0}
-									<Button href="/{courseId}/readings" variant="secondary">
+									<Button href="/{courseId}/readings?day={content.metadata.slug}" variant="secondary">
 										<BookOpen class="mr-2 h-4 w-4" />
 										<span class="font-archivo text-sm font-medium">Readings</span>
 									</Button>
