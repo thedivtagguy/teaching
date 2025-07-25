@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assignments/day-5-short-stories.md",
+                "file": "day-5-short-stories.md",
                 "mode": "source",
                 "source": false
               },
@@ -190,6 +190,11 @@
   },
   "active": "1d100702f432d70d",
   "lastOpenFiles": [
+    "assets/day-5-short-stories/IMG-20250725130243293.png",
+    "assets/day-5-short-stories/IMG-20250725123956347.png",
+    "assets/day-5-short-stories",
+    "assignments/day-5-short-stories.md",
+    "day-5-short-stories.md",
     "assets/assignments/day-5-short-stories",
     "assets/assignments/day-3-form-and-visuals",
     "assets/assignments",
@@ -199,11 +204,11 @@
     "day-1-the-small-web.md",
     "day-3-seeing-and-searching.md",
     "install-guides.md",
-    "assets/day-4-typesetting-a-page/IMG-20250723233308860.png",
-    "assets/day-4-typesetting-a-page/IMG-20250723233149070.png",
-    "assets/day-4-typesetting-a-page/IMG-20250723233133316.png",
+    "assets/day-5-short-stories/IMG-20250725123715461.png",
+    "assets/day-5-short-stories/IMG-20250725123715428.png",
+    "assets/day-5-short-stories/IMG-20250725123715393.png",
     "assets/day-4-typesetting-a-page",
-    "assets/day-4-typesetting-a-page/IMG-20250723233033329.png",
+    "assets/day-5-short-stories/IMG-20250725123715366.png",
     "labs.jensimmons.com.md",
     "slides/day-3-seeing-and-searching.md",
     "slides/day-1-the-small-web.md",
@@ -216,11 +221,9 @@
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122873.png",
     "slides/day-2-html-css-and-you.md",
     "assets/slides/day-3-seeing-and-searching/IMG-20250722233845870.png",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723001122861.png",
     "assets/slides/day-3-fairy-tales",
     "slides/day-5-flexbox.md",
     "slides/day-4-git-and-version-control.md",
-    "assignments/day-5-short-stories.md",
     "assignments/day-2-hey-jude.md",
     "assets/install-guides",
     "dev-notes.md",
@@ -229,12 +232,9 @@
     "slides/day-2-html-css-and-you.md.tmp.80215.1753169746189",
     "slides/appendix-node-and-npm.md",
     "assignments/day-1-web-archaeology.md",
-    "assets/slides/day-2-html-css-and-you/youtube.mp4",
     "templates/day-template.md",
-    "assets/slides/day-1-the-small-web/map.4W_3vjTw.png.part",
     "quiz-node-and-npm.md",
     "slides/day-1-the-old-web.md",
-    "outline.md",
-    "dump/snippet-dump.md"
+    "outline.md"
   ]
 }

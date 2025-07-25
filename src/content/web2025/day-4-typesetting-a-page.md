@@ -10,7 +10,7 @@ seo_description: Our first mini project on creating a nice webpage for a Hans Ch
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-24T15:06
+updated: 2025-07-25T12:37
 show_metadata_card: true
 slides: 
 slug: day-4-typesetting-a-page
@@ -30,16 +30,16 @@ This project needs to demonstrate that you can handle the fundamentals we've cov
 - Find idea from CSS Zen Garden that inspires you and figure out how to steal... I mean, be inspired by their approach and adapt that concept to your story.
 - Pick one technique from Jen Simmons' labs that you haven't tried before. Maybe it's just making the [first letter nice and big like a dropcap](https://labs.jensimmons.com/#initialletter), maybe a float layout, maybe text wrapping around an image. Here's some of her cool stuff that you can just use browser tools to see the CSS for.
 
-![](/assets/day-4-typesetting-a-page/IMG-20250723233033329.png)
+![](IMG-20250725123715366.png)
 [Initial Letter Explorations by Jen Simmons](https://labs.jensimmons.com/#initialletter)
 
-![](/assets/day-4-typesetting-a-page/IMG-20250723233133316.png)
+![](IMG-20250725123715393.png)
 [Multicolumn Explorations by Jen Simmons](https://labs.jensimmons.com/#multicolumn)
 
-![](/assets/day-4-typesetting-a-page/IMG-20250723233149070.png)
+![](IMG-20250725123715428.png)
 [CSS Shapes Explorations by Jen Simmons](https://labs.jensimmons.com/#cssshapes)
 
-![](/assets/day-4-typesetting-a-page/IMG-20250723233308860.png)
+![](IMG-20250725123715461.png)
 [Overlap Explorations by Jen Simmons](https://labs.jensimmons.com/#studyofoverlap)
 
 ## Timelines
