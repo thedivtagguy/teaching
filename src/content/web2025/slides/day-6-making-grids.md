@@ -1,6 +1,6 @@
 ---
 date: 2025-07-26T22:19
-updated: 2025-07-28T14:10
+updated: 2025-07-28T14:19
 transition: none
 ---
 
@@ -620,7 +620,7 @@ Laptops open please.
 ---
 
 
-This is a snippet from a section on [The New York Times](https://nytimes. com) that we'll try to recreate.
+This is a snippet from a section on [The New York Times](https://nytimes.com) that we'll try to recreate.
 
 ![](IMG-20250728093826270.png)
 
