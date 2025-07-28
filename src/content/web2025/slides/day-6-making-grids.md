@@ -1,8 +1,10 @@
 ---
 date: 2025-07-26T22:19
-updated: 2025-07-28T09:40
+updated: 2025-07-28T14:10
 transition: none
 ---
+
+
 # Making Grids
 
 _Day 6: WEB2025_
@@ -659,6 +661,131 @@ Always start with proper HTML boilerplate!
 
 ---
 
+## Time Machine Time
+
+`CTRL` + `SHIFT` + `P` to bring up the command prompt in VSCode. 
+
+Search for 'Initialize Git Repository'
+
+![](IMG-20250728134935743.png)
+
+Press `Enter` to enable your time machine.
+
+
+---
+
+1. Log into Github. 
+2. Go to https://github.com/new to create a new "repository". This means a new folder where you'll upload your code to. 
+3. Select your repository name. 
+![IMG|500](IMG-20250728135149188.png)
+
+
+---
+
+Copy the URL/Email looking thing from this screen. This is the **address of where you want to send stuff to**. 
+
+![](IMG-20250728135336647.png)
+
+---
+
+Open the command prompt again, search for `Git: Add remote`. Press Enter.
+
+![](IMG-20250728135459335.png)
+
+
+---
+
+Paste in your address and press `Enter`. 
+
+![](IMG-20250728135555240.png)
+
+---
+
+When prompted for the `remote name`, write `origin`. Then press `Enter`. 
+
+![](IMG-20250728135658852.png)
+
+Now this folder is linked to the folder on Github. 
+
+---
+
+Head over to the `Source Control` tab on the left. You'll see this new UI. 
+
+![IMG|500](IMG-20250728135929881.png)
+
+---
+
+As you keep adding more and more files, and making any changes, your files will show up in the `Changes` tab. 
+Hover on the `index.html` to `Stage Changes`.
+
+
+![](IMG-20250728140133270.png)
+
+
+---
+
+This tells git, "Hey Git, I want to save my changes in the next version". 
+
+---
+
+Your changes are currently **staged** but not committed (just like my ex wasn't). 
+
+`Commit` means to take a version of your code at any stage and save a **snapshot**. 
+
+---
+
+Type in a good commit message. A commit message helps you summarize what changes you made to this code. 
+
+![](IMG-20250728140505798.png)
+
+In your head, you can say it as "This commit `adds index.html`".
+
+---
+
+
+### Good commit messages:
+
+```bash
+git commit -m "Add navigation menu"
+git commit -m "Fix broken link on about page"  
+git commit -m "Change background color to blue"
+```
+
+---
+
+### Bad commit messages:
+
+```bash
+git commit -m "stuff"
+git commit -m "changes"
+git commit -m "someone please take Aman out of my life I was so happy before"
+```
+
+Future you will hate present you.
+
+---
+
+Done! Snapshot is taken, now no matter what you mess up you can always go back to this point in time. 
+
+![IMG|500](IMG-20250728140647967.png)
+
+---
+
+Once you've committed changes, the `Publish Branch` button lets you send it to Github. 
+
+Click it and see what happens. Give it a few seconds and reload your Github repository.
+
+
+---
+
+## The typical workflow:
+
+1. Make changes to your files
+2. Stage all changes
+3. Write commit message and create a snapshot (save version)
+4. Publish branch (send to GitHub)
+
+---
 ## Step 2: Article Structure
 
 Each article needs semantic HTML structure.
