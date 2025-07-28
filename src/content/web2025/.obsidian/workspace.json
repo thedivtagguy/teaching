@@ -13,12 +13,43 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-3-seeing-and-searching.md",
+                "file": "slides/git-and-version-control.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-3-seeing-and-searching"
+              "title": "git-and-version-control"
+            }
+          },
+          {
+            "id": "12b6727cdc0c7c0d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "slides/day-6-making-grids.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "day-6-making-grids"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "275c3bd185bebf65",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "439c1be923cf2075",
+            "type": "leaf",
+            "state": {
+              "type": "reveal-preview-view",
+              "state": {},
+              "icon": "slides",
+              "title": "Preview: day-6-making-grids.md"
             }
           }
         ]
@@ -78,7 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 355.5
+    "width": 433.5
   },
   "right": {
     "id": "621093cc52bcaf44",
@@ -94,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "slides/day-3-seeing-and-searching.md",
+                "file": "slides/day-6-making-grids.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +135,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for day-3-seeing-and-searching"
+              "title": "Backlinks for day-6-making-grids"
             }
           },
           {
@@ -155,7 +186,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,52 +203,53 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1d100702f432d70d",
+  "active": "439c1be923cf2075",
   "lastOpenFiles": [
+    "day-6-making-grids.md",
+    "day-3-seeing-and-searching.md",
+    "assets/slides/day-6-making-grids/IMG-20250727183222217.png",
+    "slides/day-6-making-grids.md",
+    "assets/slides/day-6-making-grids",
+    "assets/slides/day-6-making-grids/IMG-20250728093826079.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826068.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826054.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826039.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826024.png",
+    "Pasted image 20250728002519.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826294.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826257.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826363.png",
+    "slides/day-5-flexbox.md",
+    "slides/day-1-the-small-web.md",
+    "dump/snippet-dump.md",
+    "assets/slides/day-6-grid",
+    "slides/git-and-version-control.md",
+    "slides/day-3-seeing-and-searching.md",
     "install-guides.md",
     "day-5-short-stories.md",
-    "assets/day-5-short-stories/IMG-20250725130243293.png",
-    "assets/day-5-short-stories/IMG-20250725123956347.png",
     "assets/day-5-short-stories",
     "assignments/day-5-short-stories.md",
     "assets/assignments/day-5-short-stories",
     "assets/assignments/day-3-form-and-visuals",
     "assets/assignments",
-    "assets/assignments/day-5-short-stories/IMG-20250725092219021.png",
     "day-4-typesetting-a-page.md",
     "day-2-html-css-and-you.md",
     "day-1-the-small-web.md",
-    "day-3-seeing-and-searching.md",
-    "assets/day-5-short-stories/IMG-20250725123715461.png",
-    "assets/day-5-short-stories/IMG-20250725123715428.png",
-    "assets/day-5-short-stories/IMG-20250725123715393.png",
     "assets/day-4-typesetting-a-page",
-    "assets/day-5-short-stories/IMG-20250725123715366.png",
     "labs.jensimmons.com.md",
-    "slides/day-3-seeing-and-searching.md",
-    "slides/day-1-the-small-web.md",
     "Excalidraw/Drawing 2025-07-23 09.32.53.excalidraw.md",
     "Excalidraw",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723075655721.png",
     "assets/slides/day-3-seeing-and-searching",
     "day-3-git-and-version-control.md",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723001122882.png",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723001122873.png",
     "slides/day-2-html-css-and-you.md",
     "assets/slides/day-3-fairy-tales",
-    "slides/day-5-flexbox.md",
-    "slides/day-4-git-and-version-control.md",
     "assignments/day-2-hey-jude.md",
-    "assets/install-guides",
     "dev-notes.md",
     "prettier.md",
     "quizzes.md",
-    "slides/day-2-html-css-and-you.md.tmp.80215.1753169746189",
     "slides/appendix-node-and-npm.md",
     "assignments/day-1-web-archaeology.md",
     "templates/day-template.md",
-    "quiz-node-and-npm.md",
-    "slides/day-1-the-old-web.md",
-    "outline.md"
+    "quiz-node-and-npm.md"
   ]
 }
