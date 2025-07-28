@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-6-making-grids.md",
+                "file": "day-6-making-grids.md",
                 "mode": "source",
                 "source": false
               },
@@ -188,21 +188,25 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "3acdae706503e335",
+  "active": "e409ba64e67ed6dd",
   "lastOpenFiles": [
+    "day-5-short-stories.md",
+    "assignments/day-6-making-grids.md",
     "slides/git-and-version-control.md",
-    "slides/day-6-making-grids.md",
+    "day-6-making-grids.md",
+    "assignments/day-5-short-stories.md",
+    "assets/slides/day-6-making-grids/IMG-20250728134935743.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826363.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826317.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826305.png",
     "assets/slides/day-6-making-grids/IMG-20250728140647967.png",
     "assets/slides/day-6-making-grids/IMG-20250728140505798.png",
-    "assets/slides/day-6-making-grids/IMG-20250728140133270.png",
-    "assets/slides/day-6-making-grids/IMG-20250728135929881.png",
-    "assets/slides/day-6-making-grids/IMG-20250728135658852.png",
-    "assets/slides/day-6-making-grids/IMG-20250728135555240.png",
-    "assets/slides/day-6-making-grids/IMG-20250728135459335.png",
-    "assets/slides/day-6-making-grids/IMG-20250728135336647.png",
     "assets/slides/day-6-making-grids/IMG-20250728135149188.png",
-    "assets/slides/day-6-making-grids/IMG-20250728134935743.png",
-    "day-6-making-grids.md",
+    "assets/slides/day-6-making-grids/IMG-20250728093826350.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826339.png",
+    "assignments/day-2-hey-jude.md",
+    "slides/day-6-making-grids.md",
+    "assets/slides/day-6-making-grids/IMG-20250728140133270.png",
     "day-3-seeing-and-searching.md",
     "assets/slides/day-6-making-grids",
     "slides/day-5-flexbox.md",
@@ -211,9 +215,7 @@
     "assets/slides/day-6-grid",
     "slides/day-3-seeing-and-searching.md",
     "install-guides.md",
-    "day-5-short-stories.md",
     "assets/day-5-short-stories",
-    "assignments/day-5-short-stories.md",
     "assets/assignments/day-5-short-stories",
     "assets/assignments/day-3-form-and-visuals",
     "assets/assignments",
@@ -228,12 +230,10 @@
     "day-3-git-and-version-control.md",
     "slides/day-2-html-css-and-you.md",
     "assets/slides/day-3-fairy-tales",
-    "assignments/day-2-hey-jude.md",
     "dev-notes.md",
     "prettier.md",
     "quizzes.md",
     "slides/appendix-node-and-npm.md",
-    "assignments/day-1-web-archaeology.md",
-    "templates/day-template.md"
+    "assignments/day-1-web-archaeology.md"
   ]
 }
