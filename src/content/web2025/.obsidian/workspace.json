@@ -24,11 +24,11 @@
         ]
       },
       {
-        "id": "27de1f6a25434bca",
+        "id": "1ea4329681f39851",
         "type": "tabs",
         "children": [
           {
-            "id": "3acdae706503e335",
+            "id": "2f8eb2adf404f76e",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -191,9 +191,14 @@
   "active": "e409ba64e67ed6dd",
   "lastOpenFiles": [
     "day-5-short-stories.md",
+    "day-4-typesetting-a-page.md",
+    "day-3-seeing-and-searching.md",
+    "day-6-making-grids.md",
+    "day-1-the-small-web.md",
+    "day-2-html-css-and-you.md",
+    "slides/day-6-making-grids.md",
     "assignments/day-6-making-grids.md",
     "slides/git-and-version-control.md",
-    "day-6-making-grids.md",
     "assignments/day-5-short-stories.md",
     "assets/slides/day-6-making-grids/IMG-20250728134935743.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826363.png",
@@ -205,9 +210,7 @@
     "assets/slides/day-6-making-grids/IMG-20250728093826350.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826339.png",
     "assignments/day-2-hey-jude.md",
-    "slides/day-6-making-grids.md",
     "assets/slides/day-6-making-grids/IMG-20250728140133270.png",
-    "day-3-seeing-and-searching.md",
     "assets/slides/day-6-making-grids",
     "slides/day-5-flexbox.md",
     "slides/day-1-the-small-web.md",
@@ -219,9 +222,6 @@
     "assets/assignments/day-5-short-stories",
     "assets/assignments/day-3-form-and-visuals",
     "assets/assignments",
-    "day-4-typesetting-a-page.md",
-    "day-2-html-css-and-you.md",
-    "day-1-the-small-web.md",
     "assets/day-4-typesetting-a-page",
     "labs.jensimmons.com.md",
     "Excalidraw/Drawing 2025-07-23 09.32.53.excalidraw.md",
