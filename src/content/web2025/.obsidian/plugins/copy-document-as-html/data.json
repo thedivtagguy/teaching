@@ -1,7 +1,7 @@
 {
   "removeFrontMatter": true,
   "convertSvgToBitmap": true,
-  "useCustomStylesheet": false,
+  "useCustomStylesheet": true,
   "useCustomHtmlTemplate": false,
   "embedExternalLinks": false,
   "removeDataviewMetadataLines": false,
