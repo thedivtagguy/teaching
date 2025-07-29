@@ -16,7 +16,7 @@
     "requirements.md": "01bd3dc6a8df4f27732bd7530b1c7b500c34dc34694004f1ee5b78d90de50ae4",
     "install-guides.md": "f104453907af2697bd5de5a215611a2707075d491eba175fb59f91fb53c9b899",
     "slides/day-2-html-css-and-you.md": "a4c20bf647254398497dcf351a0efe538eb08dc87c6f3570dbdd862923d88ab2",
-    "dump/snippet-dump.md": "9cb4b811b7f9a0ee9860393c9acccdf16076f7cfc6a5262cd2c4a95c77b430fd",
+    "dump/snippet-dump.md": "ba8b4cf0111df93dd1daafec54e38f7bfe2ff5908b1f5cad3a99e6260cb8d28f",
     "slides/day-1-the-small-web.md": "63631f8bf59e9edf5f11af9feb8b3b7528c6c4856a54dfde88505ce932bb3dc6",
     "assignments/day-1-web-archaeology.md": "db800a3696f9c29881dd77c5738992d67e20f7157e036b42c004206830e22660",
     "day-1-the-small-web.md": "be003a3d57dfae65f0e3b8eeaf2ee533459bc302d9a6b6ccd74df2d68168b763",
@@ -30,7 +30,9 @@
     "assignments/day-5-short-stories.md": "73855c23a24d5fe7f54d5b07aeef1a6e9db17cfc5a9c895c185efc801ac63242",
     "day-5-short-stories.md": "161a987ea69e02082ffb31e9db9928c3747a8e5a4bdf5f208c5449b7b56e72de",
     "slides/day-6-making-grids.md": "6df2b3dea33c0893d233f56ece14e03ebc85c3951b8aeed68b0f27fca516ebf3",
-    "day-6-making-grids.md": "8b3dd97eca0a34f17b0f42cf50ee65a9300d43afed2e250dd6756d2401f63cac",
-    "assignments/day-6-making-grids.md": "67239e6ce52e2e0821fee1b5aaf17a0cf37dd1115aac009fb3023984eefd80f8"
+    "day-6-making-grids.md": "44e23ad83226f54967a09cdee357f787bfa13b9e04fae3ed550a1ca26f109780",
+    "assignments/day-6-making-grids.md": "67239e6ce52e2e0821fee1b5aaf17a0cf37dd1115aac009fb3023984eefd80f8",
+    "slides/day-7-the-indieweb.md": "251aceeb49abdcb720474ddf0f454e4e9b1efd829f0a6dc0d919f79afca86c4e",
+    "day-7-the-indieweb.md": "ed2e350c491166284891ac743d11c9593f3821fc3a124a0f2e63781dbec372c0"
   }
 }

@@ -10,23 +10,23 @@ seo_description: How to work with CSS grid
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-28T20:27
+updated: 2025-07-29T10:00
 slug: day-6-making-grids
-slides: https://github.com/open-making/web2025-dev-notes/issues/6
+slides: https://teaching.aman.bh/slides/web2025/day-6-making-grids
 show_metadata_card: true
 assignments: true
 devNotes: https://github.com/open-making/web2025-dev-notes/issues/6
 ---
 ## Day 6 - Making Grids
 
-Today was about leveling up from last week's layout chaos and learning a tool that helps use build sturdy pages; CSS Grid. 
+Today was about leveling up from last week's layout chaos and learning a tool that helps use build sturdy pages; CSS Grid.
 
 **Things we talked about:**
 
 - While everyone wrote impressive amounts of code and experimented with colors and fonts, there were some fundamental issues we needed to address such as invalid HTML tags, CSS issues and general good-practices. Maintainable code won't make future-you hate present-you.
-    
+
 - Inspired by Jen Simmons' work, we discussed how web layout needs to evolve beyond templated, single-column designs. The web can learn from art direction principles of print and use that to communicate ideas through intentional organization of words and visuals. This also led us into a meta-discussion of who we are designing for, what our intent here is.
-    
+
 - Flexbox taught us one-dimensional layouts (rows or columns), CSS Grid lets us work in both dimensions simultaneously.  Grid gives you editorial control over space that web designers have been dreaming about for decades. We explored implicit vs. explicit grids, the magical `fr` unit (fractions of remaining space), and learnt how to use the various grid properties through CSS grid garden.
 
 To cap off the day, we recreated a section from The New York Times website, building a layout from scratch. This involved writing semantic HTML structure, and using CSS Grid properties like `grid-template-columns`, `grid-column`, and introducing basic responsive design with media queries.

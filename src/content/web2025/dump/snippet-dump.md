@@ -1,6 +1,6 @@
 ---
 date: 2025-07-14T15:26
-updated: 2025-07-27T17:27
+updated: 2025-07-28T21:42
 ---
 ![](IMG-20250717164558430.png)
 https://web.archive.org/web/20090109091327id_/http://www.cs.usna.edu/~augustin/Courses/IT460/Article%2003a%20-%20Website%20Design%20Patterns.pdf
@@ -38,3 +38,6 @@ Limited bandwidth encouraged small, tiled images and animated GIFs. Basic HTML k
 ![](IMG-20250727121420831.png)
 
 ![](IMG-20250727172744083.png)
+
+
+![](IMG-20250728214203960.png)
