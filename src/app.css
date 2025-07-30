@@ -760,3 +760,129 @@ html {
         transform: none;
     }
 }
+
+/* Prism.js syntax highlighting theme */
+/* Based on VS Code Dark+ theme */
+pre[class*="language-"] {
+    background: var(--course-neutral) !important;
+    color: #d4d4d4;
+    border: 2px solid var(--course-neutral);
+    box-shadow: var(--shadow-btn-drop-shadow);
+}
+
+code[class*="language-"] {
+    color: #d4d4d4;
+    background: none;
+    text-shadow: none;
+    font-family: 'Fira Code Variable', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 4;
+    hyphens: none;
+}
+
+/* Token colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6a9955;
+}
+
+.token.punctuation {
+    color: #cccccc;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+    color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+    color: #dcdcaa;
+}
+
+.token.keyword {
+    color: #569cd6;
+}
+
+.token.regex,
+.token.important {
+    color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+/* Line highlighting */
+.line-highlight {
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--course-yellow);
+}
+
+/* Line numbers */
+.line-numbers .line-numbers-rows {
+    border-right: 1px solid #333;
+    background: rgba(0, 0, 0, 0.2);
+    color: #666;
+    font-size: 100%;
+    line-height: inherit;
+    margin: 0 8px 0 0;
+    padding: 0;
+    position: absolute;
+    left: -3.8em;
+    width: 3em;
+    pointer-events: none;
+}
+
+.line-numbers-rows > span:before {
+    color: #666;
+    content: counter(linenumber);
+    counter-increment: linenumber;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}

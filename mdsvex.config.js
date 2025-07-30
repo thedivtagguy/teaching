@@ -2,6 +2,7 @@
 import { defineMDSveXConfig } from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrismPlus from 'rehype-prism-plus';
 import remarkGfm from 'remark-gfm';
 import remarkFootnotes from 'remark-footnotes';
 
@@ -31,6 +32,8 @@ const config = defineMDSveXConfig({
   rehypePlugins: [
     // Add IDs to headings
     rehypeSlug,
+    // Add syntax highlighting
+    rehypePrismPlus,
     // Add anchor links to headings
     [rehypeAutolinkHeadings, {
       behavior: 'append',
