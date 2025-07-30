@@ -10,14 +10,13 @@ seo_description: What do your spaces feel like? What is the IndieWeb?
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-30T11:44
+updated: 2025-07-30T16:30
 slug: day-7-the-indieweb
 slides: https://teaching.aman.bh/slides/web2025/day-7-the-indieweb
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2025-dev-notes/issues/7
 ---
 ## Day 7 - The IndieWeb
-
 
 What, this class isn't about flexbox or CSS grid? Have you been scammed? Well, not really.
 

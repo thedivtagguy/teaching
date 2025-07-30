@@ -10,7 +10,7 @@ seo_description: Getting started on laying out our pages
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-30T11:44
+updated: 2025-07-30T22:07
 slug: day-8-visual-hierarchies
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2025-dev-notes/issues/8
@@ -25,10 +25,10 @@ Things we focused on:
 - Working with low-fidelity mockups, stripping away text, images, fonts, and colors to focus purely on layout hierarchy using simple boxes and outlines. The goal is identifying which elements deserve priority in our code and visual presentation.
 
 
-![](/assets/day-8-visual-hierarchies/Pasted%20image%2020250730093024.png)
+![](IMG-20250730220731875.png)
 
 
-![](/assets/day-8-visual-hierarchies/Pasted%20image%2020250730093052.png)
+![](IMG-20250730220731916.png)
 
 ## Today's Readings
 
