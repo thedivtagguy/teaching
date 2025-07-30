@@ -10,7 +10,7 @@ seo_description: What do your spaces feel like? What is the IndieWeb?
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-30T11:07
+updated: 2025-07-30T11:44
 slug: day-7-the-indieweb
 slides: https://teaching.aman.bh/slides/web2025/day-7-the-indieweb
 show_metadata_card: true
@@ -26,3 +26,7 @@ After a full week of coding we took a break to step back and reflect on what we 
 Websites need not be what we think of them traditionally as. There can be conventional spaces on our websites, but also highly personal and individual patches of personality that you can't box into one thing. The ideas of the 'digital garden' helped us visualize what this might be and we spent the afternoon brainstorming the possibilities of material we could put online and most importantly, keep tending to.
 
 Along with the potential 'plots' for our garden, we came up with personal manifestos for what this space is to be. I recommend going through today's dev notes to see the wonderful things we have decided to dedicate our efforts to.
+
+## The Library
+
+I introduced our course library page today, which you can access at [/web2025/library](/web2025/library). These are readings, blogs and material that I might not share in class but have been used to prepare slides or are just generally interesting.

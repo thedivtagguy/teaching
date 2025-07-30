@@ -10,30 +10,30 @@ seo_description: Getting started on laying out our pages
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-30T09:33
-slug: day-7-the-indieweb
-slides: https://teaching.aman.bh/slides/web2025/day-7-the-indieweb
+updated: 2025-07-30T11:44
+slug: day-8-visual-hierarchies
 show_metadata_card: true
+devNotes: https://github.com/open-making/web2025-dev-notes/issues/8
 ---
-## Day 8 - Visual Hierarchies
+# Day 8 - Visual Hierarchies
 
-[ DETAILED SUMMARY TO BE ADDED ]
+Today was about stepping back from implementation and focusing on the planning phase, which involves us transforming our content ideas into clear visual roadmaps for the work ahead.
 
----
+Things we focused on:
 
-## Readings for today:
+- Moving from content gathering (yesterday's work) to visual organization. Just like we've done in previous modules with typography and layouts, we're applying systematic thinking to prioritize and structure our design decisions.
+- Working with low-fidelity mockups, stripping away text, images, fonts, and colors to focus purely on layout hierarchy using simple boxes and outlines. The goal is identifying which elements deserve priority in our code and visual presentation.
 
-Please go through all the links mentioned in this blogpost: https://www.hackdesign.org/lessons/19-achieving-visual-hierarchy/
-
-I want us to think about our sites today not as fully-designed pieces but boxes and outlines (what designers call "low-fidelity mockups"). This means taking our homepage and imaging what it would look like at its bare minimum layout, without text, without images or fonts or colors but just boxes.
 
 ![](/assets/day-8-visual-hierarchies/Pasted%20image%2020250730093024.png)
 
 
 ![](/assets/day-8-visual-hierarchies/Pasted%20image%2020250730093052.png)
 
+## Today's Readings
 
 
-Please go through this reading as well: https://vanseodesign.com/web-design/web-design-balance/. At the bottom of this post are links to "The 7 components of design", go through each of those as well.
+- [Achieving Visual Hierarchy](https://www.hackdesign.org/lessons/19-achieving-visual-hierarchy/) - Read this blogpost and explore all linked resources
 
-This is also helpful: https://www.uxmatters.com/mt/archives/2024/02/visual-hierarchy-making-user-experiences-easier-to-understand.php
+- [Web Design Balance](https://vanseodesign.com/web-design/web-design-balance/) - Read the main article, then work through the linked "7 Components of Design" series at the bottom
+- [Visual Hierarchy: Making User Experiences Easier to Understand](https://www.uxmatters.com/mt/archives/2024/02/visual-hierarchy-making-user-experiences-easier-to-understand.php)
