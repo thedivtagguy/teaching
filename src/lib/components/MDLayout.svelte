@@ -199,7 +199,7 @@
 		margin-bottom: 1.5rem;
 	}
 
-	:global(.md-content ul) {
+	:global(.md-content ul:not(.contains-task-list)) {
 		list-style-type: disc;
 	}
 
@@ -210,7 +210,8 @@
 	:global(.md-content li) {
 		font-family: var(--font-archivo);
 		margin-bottom: 0.5rem;
-		padding-left: 0.25rem;
+		margin-right: 0.65rem;
+
 	}
 
 	:global(.md-content li:last-child) {

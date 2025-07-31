@@ -254,6 +254,9 @@
   text-align: left;
 }
 
+.reveal li .contains-task-list {
+  list-style: none;
+}
 .reveal code {
   font-family: var(--font-fira);
   background-color: var(--color-base-200);

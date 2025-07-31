@@ -10,7 +10,7 @@ seo_description: Frameworks come in different forms, we'll look at some ways to 
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-31T09:52
+updated: 2025-07-31T17:33
 slug: day-9-thinking-in-frameworks
 show_metadata_card: false
 devNotes: https://github.com/open-making/web2025-dev-notes/issues/8
@@ -78,6 +78,8 @@ Once you've decided on everything, lay these details out in a tool of your choic
 Essentially, the idea is to give yourself a reference for the repeated things you imagine using. For example, in the above example I have created a card 'component' and I know that when I start coding it, it should look like that. I don't have to think about what the buttons are supposed to look like, what the cards are supposed to look like **when I am building**.
 
 Do not go overboard here. It is alright if you leave some things out, this is for the things you **know you will keep using**.
+
+
 
 ## Step 3: Implement with CSS Variables
 
@@ -197,3 +199,31 @@ h1 {
   font-size: var(--text-normal);
 }
 ```
+
+## Set-up for next week
+
+From tomorrow (Friday, Aug 1) till the end of class you will be engaged in bringing your designs to life. This means taking steps to ensure that you remain on track and the things you prioritise are completed on time, so that you feel good about the output by the end of class. 
+
+One way to do this is to outline what your checkpoints and major tasks are for the job ahead. Looking at your high fidelity designs, you can break the project into smaller chunks such as: 
+
+- [ ] Make a menu
+- [ ] Make the homepage top section
+- [ ] Make the card components
+- [ ] Make the about me section
+- [ ] Make the two column word grid section
+
+And so on. As you go through the next 13 days, you can either keep adding to these list of tasks or keep ticking them off (the dopamine hit is important!). One way to do this in a way I can see your progress and help guide you if needed is to create Github issues on your repo. 
+
+Head over to [Github](https://github.com/new) and create a new repository with the name `web2025-YOURNAME-site`. Once you create it, go to the `Issues` tab on the repository and click `New` to start adding issues to your repo.
+
+Each issue is one task. It can be something as simple as:
+
+```html
+Add menu
+
+<!-- IMAGE OF MENU FROM YOUR DESIGN -->
+```
+
+To start with, you should have at least 10-12 issues. Remember that these are **small units**. An issue for `Add About Page` is not useful because the _About page_ itself will have smaller things you want to tackle one at a time.
+
+As you go along, you can keep checking these off and 'Closing' them, helping you maintain a roadmap to the end of the project.

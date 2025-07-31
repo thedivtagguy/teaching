@@ -6,7 +6,7 @@
       {
         "id": "c6650bab0b48fb07",
         "type": "tabs",
-        "dimension": 74.32614555256065,
+        "dimension": 50,
         "children": [
           {
             "id": "e409ba64e67ed6dd",
@@ -52,18 +52,18 @@
         "currentTab": 1
       },
       {
-        "id": "725b479a43bb7ce6",
+        "id": "90638c0eb655032f",
         "type": "tabs",
-        "dimension": 25.673854447439354,
+        "dimension": 50,
         "children": [
           {
-            "id": "d5ae22ca9b2794c8",
+            "id": "164cbbd49c0657e0",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: day-9-intro-to-astro.md"
+              "title": "Preview: Drawing 2025-07-31 14.41.15.excalidraw.md"
             }
           }
         ]
@@ -219,18 +219,19 @@
   },
   "active": "409398f70eab9477",
   "lastOpenFiles": [
+    "slides/day-9-intro-to-astro.md",
+    "Excalidraw/Drawing 2025-07-31 14.41.15.excalidraw.md",
+    "day-9-thinking-in-frameworks.md",
+    "Excalidraw",
     "moodboard.png",
     "Pasted image 20250731094809.png",
     "day-8-visual-hierarchies.md",
-    "day-9-thinking-in-frameworks.md",
     "Excalidraw/Drawing 2025-07-31 09.37.19.excalidraw.md",
-    "Excalidraw",
     "day-5-short-stories.md",
     "day-6-making-grids.md",
     "day-3-seeing-and-searching.md",
     "day-4-typesetting-a-page.md",
     "assets/day-9-thinking-in-frameworks",
-    "slides/day-9-intro-to-astro.md",
     "slides/git-and-version-control.md",
     "slides/day-2-html-css-and-you.md",
     "slides/day-1-the-small-web.md",
@@ -254,7 +255,6 @@
     "assets/slides/day-7-the-indieweb/IMG-20250729002330237.png",
     "assets/slides/day-7-the-indieweb/IMG-20250729002223107.png",
     "assets/slides/day-7-the-indieweb/IMG-20250729002157341.png",
-    "assets/slides/day-7-the-indieweb/IMG-20250729001846131.png",
     "dump/snippet-dump.md",
     "assets/slides/day-7-the-indieweb",
     "assignments/day-5-short-stories.md",
