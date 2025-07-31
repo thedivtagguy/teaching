@@ -1,6 +1,6 @@
 ---
 title: Day 9 - Thinking in Frameworks
-date: 2025-07-29
+date: 2025-07-31
 description: Frameworks come in different forms, we'll look at some ways to design and code
 published: true
 section: Fundamentals
@@ -10,7 +10,7 @@ seo_description: Frameworks come in different forms, we'll look at some ways to 
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-30T22:54
+updated: 2025-07-31T09:33
 slug: day-9-thinking-in-frameworks
 show_metadata_card: false
 devNotes: https://github.com/open-making/web2025-dev-notes/issues/8
@@ -49,6 +49,14 @@ I would recommend starting simple:
 
 That's it. Resist the urge to add more right off the bat, you can always add more "non-system" things if you need to. These are just colors or fonts that you will be reaching out for a lot. Exceptions and one-off usecases are always there.
 
+### Name them by purpose
+
+Call them what they do. No hex codes or abstract names (no `color-1`, for example) in your head:
+
+- Colors → `--color-primary`, `--color-secondary`, `--color-bg`
+    
+- Fonts → `--font-normal`, `--font-large`
+
 ## Step 2: Plan Your Typography
 
 **Choose up to two font families** and define 3-4 sizes that work well together. Most websites need:
@@ -62,11 +70,13 @@ Test these sizes together to make sure they create a good visual hierarchy.
 
 ## Step 3: Implement with CSS Variables
 
-This is for when you start coding. 
+This is for when you start coding. **Come back to this when you're done with your planning**. 
+
+---
 
 Now that you've planned everything out, implementing becomes straightforward. Instead of scattered color codes throughout your CSS, define your colors once at the top:
 
-**Before:**
+You might have written stuff like this before:
 
 ```css
 .button { background: #2563eb; }
@@ -75,7 +85,17 @@ Now that you've planned everything out, implementing becomes straightforward. In
 /* confusing! */
 ```
 
-**After:**
+CSS has a new superpower you can put to use called **variables**. They are names that *you define* which can be used in place of these hardcoded values. 
+
+For example, writing this in your CSS would mean that you have defined a color called `--heading-color` and are asking the browser to use that. 
+
+```css
+h1 {
+	color: var(--heading-color)
+}
+```
+
+A variable always needs to start with `--` but you can name it whatever you want. `--heading-color`, `--font-serif`, `--text-color` are all valid names. Having done this, you can define these variables in the `:root` tag on **top of your CSS file** and use it like so:
 
 ```css
 :root {
