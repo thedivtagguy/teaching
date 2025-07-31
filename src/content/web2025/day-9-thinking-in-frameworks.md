@@ -10,10 +10,10 @@ seo_description: Frameworks come in different forms, we'll look at some ways to 
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-31T17:33
+updated: 2025-07-31T18:07
 slug: day-9-thinking-in-frameworks
-show_metadata_card: false
-devNotes: https://github.com/open-making/web2025-dev-notes/issues/8
+show_metadata_card: true
+devNotes: https://github.com/open-making/web2025-dev-notes/issues/9
 ---
 # Day 9 - Thinking in Frameworks
 
