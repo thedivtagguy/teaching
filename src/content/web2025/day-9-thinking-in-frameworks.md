@@ -10,7 +10,7 @@ seo_description: Frameworks come in different forms, we'll look at some ways to 
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-31T09:33
+updated: 2025-07-31T09:52
 slug: day-9-thinking-in-frameworks
 show_metadata_card: false
 devNotes: https://github.com/open-making/web2025-dev-notes/issues/8
@@ -54,7 +54,7 @@ That's it. Resist the urge to add more right off the bat, you can always add mor
 Call them what they do. No hex codes or abstract names (no `color-1`, for example) in your head:
 
 - Colors → `--color-primary`, `--color-secondary`, `--color-bg`
-    
+
 - Fonts → `--font-normal`, `--font-large`
 
 ## Step 2: Plan Your Typography
@@ -68,9 +68,20 @@ Call them what they do. No hex codes or abstract names (no `color-1`, for exampl
 
 Test these sizes together to make sure they create a good visual hierarchy.
 
+
+## Example Moodboard
+
+Once you've decided on everything, lay these details out in a tool of your choice (Figma, whatever). It can look something like this:
+
+![](/assets/day-8-visual-hierarchies/moodboard.png)
+
+Essentially, the idea is to give yourself a reference for the repeated things you imagine using. For example, in the above example I have created a card 'component' and I know that when I start coding it, it should look like that. I don't have to think about what the buttons are supposed to look like, what the cards are supposed to look like **when I am building**.
+
+Do not go overboard here. It is alright if you leave some things out, this is for the things you **know you will keep using**.
+
 ## Step 3: Implement with CSS Variables
 
-This is for when you start coding. **Come back to this when you're done with your planning**. 
+This is for when you start coding. **Come back to this when you're done with your planning**.
 
 ---
 
@@ -85,9 +96,9 @@ You might have written stuff like this before:
 /* confusing! */
 ```
 
-CSS has a new superpower you can put to use called **variables**. They are names that *you define* which can be used in place of these hardcoded values. 
+CSS has a new superpower you can put to use called **variables**. They are names that *you define* which can be used in place of these hardcoded values.
 
-For example, writing this in your CSS would mean that you have defined a color called `--heading-color` and are asking the browser to use that. 
+For example, writing this in your CSS would mean that you have defined a color called `--heading-color` and are asking the browser to use that.
 
 ```css
 h1 {
@@ -104,14 +115,14 @@ A variable always needs to start with `--` but you can name it whatever you want
   --text-dark: #1f2937;
 }
 
-.button { 
-  background: var(--color-primary); 
+.button {
+  background: var(--color-primary);
 }
-.link { 
-  color: var(--color-primary); 
+.link {
+  color: var(--color-primary);
 }
-.nav-item { 
-  background: var(--color-secondary); 
+.nav-item {
+  background: var(--color-secondary);
 }
 ```
 
@@ -126,10 +137,10 @@ Same thing with our typography added in:
   --text-dark: #1f2937;
 
    /* Adding typography too */
-  --text-small: 14px; 
-  --text-normal: 16px;    
-  --text-large: 20px;  
-  --text-huge: 32px;    
+  --text-small: 14px;
+  --text-normal: 16px;
+  --text-large: 20px;
+  --text-huge: 32px;
 }
 
 h1 { font-size: var(--text-huge); }
@@ -154,13 +165,13 @@ Here's what a basic `:root` setup might look like for your website:
   --text-dark: #1f2937;        /* Main text color */
   --text-light: #6b7280;       /* Secondary text */
   --background: #ffffff;       /* Page background */
-  
+
   /* Typography */
   --text-small: 0.875rem;      /* 14px - captions */
   --text-normal: 1rem;         /* 16px - body text */
   --text-large: 1.5rem;        /* 24px - section headings */
   --text-huge: 2.5rem;         /* 40px - page title */
-  
+
   /* Fonts */
   --font-main: 'Inter', sans-serif;
   --font-heading: 'Georgia', serif;
