@@ -10,9 +10,10 @@ seo_description: Project week is here! Let's bring our sites to the finish line
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-08-04T10:03
+updated: 2025-08-04T14:28
 show_metadata_card: true
 slug: day-11-to-17-project-week
+devNotes: https://github.com/open-making/web2025-dev-notes/issues?q=sort%3Aupdated-desc%20is%3Aissue%20is%3Aopen%20label%3A%22Project%20Week%22
 ---
 # Project Week
 

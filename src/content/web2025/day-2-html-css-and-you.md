@@ -1,7 +1,7 @@
 ---
 title: Day 2 - HTML, CSS, and You
 date: 2025-07-22
-description: Context for the class, internet archaeology, Geocities and nostalgia
+description: Making a simple page, pushing it to the web
 published: true
 section: Fundamentals
 order: 2
@@ -10,7 +10,7 @@ seo_description: Making a simple page, pushing it to the web
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-07-23T23:54
+updated: 2025-08-04T11:31
 slug: day-2-html-css-and-you
 slides: https://teaching.aman.bh/slides/web2025/day-2-html-css-and-you
 show_metadata_card: true
