@@ -4,13 +4,13 @@ date: 2025-07-31
 description: Exploring Astro to see if we like it
 published: true
 section: Fundamentals
-order: 2
+order: 11
 seo_title: Day 10 - Introducing Astro
 seo_description: Exploring Astro to see if we like it
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-08-04T00:33
+updated: 2025-08-04T09:24
 slug: day-10-introducing-astro
 show_metadata_card: false
 devNotes: https://github.com/open-making/web2025-dev-notes/issues/9

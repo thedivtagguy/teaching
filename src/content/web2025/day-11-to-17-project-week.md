@@ -10,7 +10,7 @@ seo_description: Project week is here! Let's bring our sites to the finish line
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-08-04T00:25
+updated: 2025-08-04T09:35
 show_metadata_card: true
 slug: day-11-to-17-project-week
 ---
@@ -61,3 +61,11 @@ Broadly my suggestions for this week would be:
 If you’re ever in doubt about what to do next, just ask: “Would I show this to someone next week and feel at least a little bit proud?” and "Is this a priority for me now, if I stop working on my website after this class is it enough that I made this at least?" If yes, ship it. If not, defer for later. Small, steady wins build up.
 
 Whenever possible, document everything!! Problems, discoveries, any other revelations (“here’s the thing about Astro layouts I wish I’d known on Monday...”). These notes are for you, but they also help me help you and will be gold the next time you build something.
+
+<details>
+  <summary>Bonus meme</summary>
+
+![IMG](https://vc-tinkering.netlify.app/Personal/attachments/Personal/talk/IMG-20250627002822238.png)
+
+_Everyone's in this together!_
+</details>
