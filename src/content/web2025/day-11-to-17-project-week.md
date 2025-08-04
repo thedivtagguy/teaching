@@ -10,7 +10,7 @@ seo_description: Project week is here! Let's bring our sites to the finish line
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-08-04T09:35
+updated: 2025-08-04T10:03
 show_metadata_card: true
 slug: day-11-to-17-project-week
 ---
@@ -61,6 +61,12 @@ Broadly my suggestions for this week would be:
 If you’re ever in doubt about what to do next, just ask: “Would I show this to someone next week and feel at least a little bit proud?” and "Is this a priority for me now, if I stop working on my website after this class is it enough that I made this at least?" If yes, ship it. If not, defer for later. Small, steady wins build up.
 
 Whenever possible, document everything!! Problems, discoveries, any other revelations (“here’s the thing about Astro layouts I wish I’d known on Monday...”). These notes are for you, but they also help me help you and will be gold the next time you build something.
+
+## Forum and help
+
+- I have created a new [Discord server which we can use to do Q/As](https://discord.gg/dnd3zxu5). Join in and post your questions in the `#help` channel.
+
+- Reminder that the [layout library](https://github.com/open-making/web2025-layout-library/tree/main/library) has a bunch of layouts in both Astro and vanilla HTML formats that you can use to start off with.
 
 <details>
   <summary>Bonus meme</summary>
