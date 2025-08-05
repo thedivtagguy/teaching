@@ -23,7 +23,6 @@
     "dev-notes.md": "c42c86ad69eaacfb15af43b26f17f28f70ac7ec044db46fc4383fe58d4c1c1d8",
     "day-2-html-css-and-you.md": "c710c1dee036dafab8895c0daae0b8be5aa1c46dd5a6d0a21f4019bb1e979060",
     "assignments/day-2-hey-jude.md": "73c8a2bd5767b563f523bfbe68cda4f71f7c7f4c2f74aab7e70121c077e5c6a2",
-    "slides/day-5-flexbox.md": "68d3fcaa3cc1b844fa3bd90fbf7f7108ba1bf013f2ea4ecc0a078210486e18f5",
     "slides/day-3-seeing-and-searching.md": "64673021ddc8a82f2b9738135dea6e4a0d7ee684dc09c9751ca84ccf1df3c7c8",
     "day-3-seeing-and-searching.md": "595fc9ae72d90e25fbc95668b3cb4f36bf7e4b180909f5442907c6d92f460d19",
     "day-4-typesetting-a-page.md": "62664acc2d9fea95dbfbba38fb3dac0c2af3b232843eaeb7983bf78a37b7757d",
@@ -36,7 +35,6 @@
     "day-7-the-indieweb.md": "b87892aa5c5a6920fbeab5ed5d42bc4142d84c0e14004ba8d501b2b85ea9219c",
     "library.md": "25268062b9a61ba28c7d923da1650f4df22f97f731b2ed8b91996ba287b98432",
     "day-8-visual-hierarchies.md": "b47e3ec65fc4e5e5b37b227a790fb32248565cb1b7fa0b57ac1af670f95b106d",
-    "slides/day-9-intro-to-astro.md": "eac07dff4ce9db5a126f0425c8814873333c9f6cc96bfafbbb3bedc626906f2a",
     "day-10-introducing-astro.md": "08299527396cbad9bb07ad36efbd59ae0a26f0b250c0bc3e644a0386c820ce0b",
     "day-11-to-17-project-week.md": "96510ad94e85de5abbcdb68ba4bb78b730a2d66abe50ff2cdc3a7adcb787bf55"
   }
