@@ -51,6 +51,7 @@ export type CourseMenu = {
   announcements?: Announcement[];
   collapsibleSections?: boolean;
   showSections?: boolean;
+  showcase?: string;
 };
 
 // Menu data for all courses
@@ -76,6 +77,7 @@ export type CourseMeta = {
   };
   readings?: Reading[];
   assignments?: Assignment[];
+  showcase?: string;
 };
 
 // Content file frontmatter structure

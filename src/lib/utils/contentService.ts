@@ -251,7 +251,8 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       readings: [],
       assignments: [],
       collapsibleSections: metadata?.navigation?.collapsibleSections,
-      showSections: metadata?.navigation?.showSections !== false // Default to true unless explicitly set to false
+      showSections: metadata?.navigation?.showSections !== false, // Default to true unless explicitly set to false
+      showcase: metadata?.showcase
     };
 
     // Track sections to avoid duplicates

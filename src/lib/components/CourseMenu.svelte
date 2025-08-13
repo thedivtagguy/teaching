@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { BookOpen, ChevronDown, ChevronUp, Clipboard } from 'lucide-svelte';
+	import { BookOpen, ChevronDown, ChevronUp, Clipboard, ExternalLink } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Collapsible } from '$lib/components/ui/collapsible/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
@@ -156,12 +156,26 @@
 				{courseId.toUpperCase() || 'Course Content'}
 			</p>
 		</a>
-		<a href="/{courseId}" class="block">
-			<Button size="sm" variant="outline" class="rounded-xs px-2" href="/{courseId}">
-				<Home class="size-3" />
-				<span class="font-archivo text-sm">Home</span>
-			</Button>
-		</a>
+		<div class="flex gap-1">
+			<a href="/{courseId}" class="block">
+				<Button size="sm" variant="outline" class="rounded-xs px-2" href="/{courseId}">
+					<Home class="size-3" />
+					<span class="font-archivo text-sm">Home</span>
+				</Button>
+			</a>
+			{#if menuData?.showcase}
+				<Button
+					size="sm"
+					variant="blue"
+					href={menuData.showcase}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<ExternalLink class="size-3" />
+					<span>Showcase</span>
+				</Button>
+			{/if}
+		</div>
 		{#if selectedCourse}
 			<div class="my-4 flex flex-wrap gap-2">
 				<Button size="sm" href="/{selectedCourse}/readings">

@@ -6,6 +6,7 @@ instructor:
   email: "amanbhargava2001+web2025@gmail.com"
   hours: "Mon to Sat 2-5pm, or by appointment via email"
 githubPrefix: web2025
+showcase: https://web2025-gallery.netlify.app/
 classStrength: 18
 navigation:
   collapsibleSections: false
@@ -13,7 +14,7 @@ navigation:
   sections:
     - title: "Course Info"
       order: 1
-    - title: "Fundamentals" 
+    - title: "Fundamentals"
       order: 2
     - title: "Final Project"
       order: 3
