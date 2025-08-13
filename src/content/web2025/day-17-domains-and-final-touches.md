@@ -2,7 +2,7 @@
 title: "Day 17: Domains and Final Touches"
 date: 2025-08-12
 description: Getting an address for yourself on the internet
-published: true
+published: false
 section: Fundamentals
 order: 2
 seo_title: "Day 17: Domains and Final Touches"
@@ -10,7 +10,7 @@ seo_description: Getting an address for yourself on the internet
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2025-08-12T18:36
+updated: 2025-08-13T07:47
 show_metadata_card: false
 slides: 
 slug: day-17-domains-and-final-touches
@@ -36,4 +36,12 @@ To do this effectively, we needed to draw ourselves out of Behance, Dribbble, Pi
 Right away on Day 2, we jumped into getting introduced to HTML and CSS! Before we even <em>thought</em> about designing things that looked "nice" and worthy of being made by designers, it felt like a better idea to get our hands and brains a little messy. This exercise was similar to splashing paint on walls or doodling on the back of notebooks; except we needed to get our sites to look as ugly as possible with any new CSS properties we could discover. Starting with a plain, unstyled HTML document, we proceeded to making the biggest mess we could manage in an afternoon. Our sites were up on the internet from the second day too! 
 
 
-Next up was learning how to take a piece of free-flowing text and design a layout for it. The twist here, of course, was to think about how to structure it in HTML _and_
+Next up was learning how to take a piece of free-flowing text and design a layout for it. The twist here, of course, was to think about how to structure it in HTML _and_ figure out what CSS would bring it to life. That meant every step, or misstep, would very much be our own. Each of us was to transform one of Hans Christian Andersen's fairy tales into a webpage that demonstrated the use of flexbox and floats, typography choices with fonts, incorporated images, and drew inspiration from CSS Zen Garden while experimenting with techniques from Jen Simmons' works. This project became an initiation into the rich tradition of developers wrestling with CSS, losing hours to tweaking margin and padding, and joining the ranks of those searching "how to center a div," and discovering that the most valuable skills weren't memorizing CSS properties but learning to search for answers effectively, debug systematically, and know when to ask for help.
+
+
+After proving to ourselves that we could wrestle code into submission and make something that looked intentional, it was time to think bigger. This meant moving beyond the technical stuff and getting philosophical about it. Why make a personal website at all? What's the point of having your own space when social media exists? We spent time reading manifestos from people who'd carved out weird, wonderful places on the web, thinking about digital gardens versus blogs, and doing what we called "personal archaeology"; digging through our own interests and obsessions to figure out what we thought would occupy this corner we'd be making. The goal wasn't to build the perfect website right away (we had, like, 10 days), but to plant seeds for something that could grow over time, something that felt ours rather than another template-driven platform presence online.
+
+Retry
+
+[Claude can make mistakes.  
+Please double-check responses.](https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
