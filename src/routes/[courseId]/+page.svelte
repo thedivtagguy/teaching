@@ -1,45 +1,22 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import MDLayout from '$lib/components/MDLayout.svelte';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
-	import { getContentFile } from '$lib/utils/contentService';
 	import { extractSEOData } from '$lib/utils/seo';
 	import type { MenuSection, CourseMeta, CourseMenu } from '$lib/utils/contentSchema';
 
 	// Get course ID from URL parameter
 	const courseId = $page.params.courseId;
 
-	// Get course data from page data (loaded by +page.server.ts)
+	// Get data from page load function
 	$: courseData = $page.data.courseData;
+	$: outlineContent = $page.data.outlineContent;
 	$: metadata = courseData?.metadata as CourseMeta;
 	$: menu = courseData?.menu as CourseMenu;
 
 	// Filter sections to exclude Course Info
 	$: contentSections = menu?.sections?.filter((section) => section.title !== 'Course Info') || [];
-
-	// For the outline content
-	let outlineContent: any = null;
-	let error: string | null = null;
-
-	// Load the outline content when component mounts
-	onMount(async () => {
-		try {
-			// Use content service to get the outline content
-			const module = getContentFile(courseId, 'outline');
-			if (module) {
-				outlineContent = module.default;
-				outlineContent.metadata = module.metadata; // Fix: attach metadata to content
-			} else {
-				error = `Could not load outline content for ${courseId}`;
-				console.error(`No supported outline file found for ${courseId}`);
-			}
-		} catch (err) {
-			error = `Could not load outline content for ${courseId}`;
-			console.error(`Error loading outline for ${courseId}:`, err);
-		}
-	});
 
 	// Extract SEO data from outline content
 	$: seoData = outlineContent?.metadata
@@ -121,15 +98,11 @@
 						<svelte:component this={outlineContent} />
 					</MDLayout>
 				</div>
-			{:else if error}
+			{:else}
 				<div
 					class="bg-destructive/10 border-destructive/20 text-destructive mb-6 rounded-lg border p-6"
 				>
-					<p>{error}</p>
-				</div>
-			{:else}
-				<div class="bg-card mb-6 flex h-32 items-center justify-center rounded-lg">
-					<div class="text-muted-foreground font-archivo animate-pulse">Loading syllabus...</div>
+					<p>Could not load outline content for {courseId}</p>
 				</div>
 			{/if}
 		</div>

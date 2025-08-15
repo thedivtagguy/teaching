@@ -1,6 +1,6 @@
 ---
 date: 2025-07-14T15:26
-updated: 2025-07-28T21:42
+updated: 2025-08-13T13:02
 ---
 ![](IMG-20250717164558430.png)
 https://web.archive.org/web/20090109091327id_/http://www.cs.usna.edu/~augustin/Courses/IT460/Article%2003a%20-%20Website%20Design%20Patterns.pdf
@@ -12,15 +12,15 @@ https://vision.soic.indiana.edu/papers/webevolution2017chi.pdf
 ![](IMG-20250717164558494.png)
 https://oneterabyteofkilobyteage.tumblr.com/
 
-![](IMG-20250720232117468.png)
+![](IMG-20250813130228249.png)
 
-![](IMG-20250720232117488.png)
+![](IMG-20250813130228278.png)
 
-![](IMG-20250720232117511.png)
+![](IMG-20250813130228308.png)
 
-![](IMG-20250720232117531.png)
+![](IMG-20250813130228333.png)
 
-![](IMG-20250720232117552.png)
+![](IMG-20250813130228358.png)
 https://blog.geocities.institute/wp-content/uploads/popularity-2019-03-29.html
 
 

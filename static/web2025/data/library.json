@@ -1120,6 +1120,76 @@
       "select": "zotero://select/library/items/VLRINPAU"
     },
     {
+      "key": "48TPD3IB",
+      "version": 281,
+      "itemType": "blogPost",
+      "title": "What Happened When I Tried to Replace Myself with ChatGPT in My English Classroom",
+      "abstractNote": "My students call it “Chat,” a cute nickname they all seem to have agreed on at some point. They use it to make study guides, interpret essay prompts, and register for classes, turning it loose on t…",
+      "date": "2025-07-28T08:59:18+00:00",
+      "url": "https://lithub.com/what-happened-when-i-tried-to-replace-myself-with-chatgpt-in-my-english-classroom/",
+      "accessDate": "2025-08-05T01:32:41Z",
+      "creators": [
+        {
+          "firstName": "Piers",
+          "lastName": "Gelly",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "A Black Story May Contain Sensitive Content",
+          "type": 1
+        },
+        {
+          "tag": "AI",
+          "type": 1
+        },
+        {
+          "tag": "ChatGPT",
+          "type": 1
+        },
+        {
+          "tag": "creative writing",
+          "type": 1
+        },
+        {
+          "tag": "English",
+          "type": 1
+        },
+        {
+          "tag": "Lilian-Yvonne Bertram",
+          "type": 1
+        },
+        {
+          "tag": "Piers Gelly",
+          "type": 1
+        },
+        {
+          "tag": "Searches: Selfhood in the Digital Age",
+          "type": 1
+        },
+        {
+          "tag": "teaching",
+          "type": 1
+        },
+        {
+          "tag": "Vauhini Vara",
+          "type": 1
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2025-08-05T01:32:41Z",
+      "dateModified": "2025-08-05T01:32:41Z",
+      "uri": "http://zotero.org/users/11632693/items/48TPD3IB",
+      "itemID": 538,
+      "attachments": [],
+      "notes": [],
+      "citationKey": "gellyWhatHappenedWhen2025",
+      "itemKey": "48TPD3IB",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/48TPD3IB"
+    },
+    {
       "key": "SKTQIRMW",
       "version": 133,
       "itemType": "blogPost",
