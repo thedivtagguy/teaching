@@ -1,0 +1,24 @@
+title: "Introduction to Making for the Web"
+code: "web2026"
+description: "A crash course in HTML, CSS, Astro, and the why and how of making websites."
+instructor:
+  name: "Aman Bhargava"
+  email: "amanbhargava2001+web2026@gmail.com"
+  hours: "Mon to Sat 2-5pm, or by appointment via email"
+githubPrefix: web2026
+showcase: https://web2026-gallery.netlify.app/
+classStrength: 18
+navigation:
+  collapsibleSections: false
+  showSections: false
+  sections:
+    - title: "Course Info"
+      order: 1
+    - title: "Foundations"
+      order: 2
+    - title: "Building with Astro"
+      order: 3
+    - title: "Final Project"
+      order: 4
+    - title: "Appendix"
+      order: 5

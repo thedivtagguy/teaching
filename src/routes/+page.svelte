@@ -1,14 +1,14 @@
 <script>
 	import SEO from '$lib/components/SEO.svelte';
-	
+
 	const resources = [
-		{
-			title: 'WEB2025 - Introduction to Making for the Web',
-			description:
-				'Websites! Designing them, building them and (almost) everything in between. Taught at DA-IICT, 2025',
-			link: '/web2025',
-			color: 'bg-yellow'
-		},
+		// {
+		// 	title: 'WEB2025 - Introduction to Making for the Web',
+		// 	description:
+		// 		'Websites! Designing them, building them and (almost) everything in between. Taught at DA-IICT, 2025',
+		// 	link: '/web2025',
+		// 	color: 'bg-yellow'
+		// },
 		{
 			title: 'CDV2025 - Introduction to Data Visualization',
 			description:

@@ -24,20 +24,15 @@
 	// Track expanded sections
 	let expandedSections: Record<string, boolean> = {};
 
-	// Compute flat list of all menu items across all sections
+	// Compute flat list of all menu items across all sections.
+	// Sections and items are already sorted by contentService — preserve that order.
 	$: flatMenuItems = menuData?.sections
-		? menuData.sections
-				.flatMap((section) =>
-					section.items.map((item) => ({
-						...item,
-						sectionTitle: section.title
-					}))
-				)
-				.sort((a, b) => {
-					const orderA = a.order !== undefined ? a.order : 999;
-					const orderB = b.order !== undefined ? b.order : 999;
-					return orderA - orderB;
-				})
+		? menuData.sections.flatMap((section) =>
+				section.items.map((item) => ({
+					...item,
+					sectionTitle: section.title
+				}))
+			)
 		: [];
 
 	// Initialize expanded state based on current path
