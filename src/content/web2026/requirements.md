@@ -7,7 +7,7 @@ seo_keywords: web design, HTML, CSS, responsive design, web development course, 
 seo_type: article
 seo_author: Aman Bhargava
 date: 2026-07-13T10:00
-updated: 2026-07-19T17:43
+updated: 2026-07-19T17:59
 published: true
 section: Course Info
 order: 2
@@ -33,15 +33,15 @@ This is a web-design + dev class so, you guessed it, you'll be needing your lapt
 ### Software
 
 - **VSCode**: Download it from [here](https://code.visualstudio.com/download). This will be our integrated development environment (IDE) of choice, it is where we will write our code.
-- **GitHub Desktop**: Download it from [here](https://desktop.github.com/). This is a friendly app for saving versions of your work, think of it as a "save game" button for your projects. We'll start using it on Day 2. (If terminals excite you, you can graduate to the command line later; the app is not training wheels, it's a perfectly good bicycle.)
-- **Obsidian**: Download it from [here](https://obsidian.md). It is a markdown editor (we will learn what that is), but you can think of it as a Notion that runs completely on your laptop and you fully own. The content I'm writing on this site was written in Obsidian and transformed into what you see now.
+- **GitHub Desktop**: Download it from [here](https://desktop.github.com/). This is a friendly app for saving versions of your work, think of it as a "save game" button for your projects. We'll start using it on Day 2.
+- **Obsidian**: Download it from [here](https://obsidian.md). It is a markdown editor (we will learn what that is), but you can think of it as a Notion that runs completely on your laptop and you fully own. 
 
 If you're done with everything and still feeling a little adventurous, you can **optionally** install Git (the command-line version) using [this guide](/web2026/install-guides). You don't have to do this before class, we'll do it together on Day 6.
 
 ### Platforms
 
-- [GitHub](https://github.com): This is how we will be submitting our exercises and putting our projects live on the web. Please sign up and create an account. Choose your username with a little care; it'll be part of your project URLs for the next three weeks.
+- [GitHub](https://github.com): This is how we will be submitting our exercises and putting our projects live on the web. Please sign up and create an account. Choose your username with a little care because it'll be part of your project URLs for the next three weeks.
 - [Netlify](https://netlify.com): This is what takes our code and puts it on a URL anyone, anywhere can access. For free! Create an account here please (sign up *with* your GitHub account, it makes everything smoother later).
-- [Figma](https://figma.com): Designs, presentations, mockups, wireframes and more. Sign up! We'll have a guest lecture on Figma in Week 2.
+- [Figma](https://figma.com): Designs, presentations, mockups, wireframes and more. Sign up if you haven't already! We'll have a guest lecture on Figma in Week 2.
 
 Non-essential, but if you've signed up for a GitHub account, you're eligible for a _ton_ of free goodies because you're a student. Applying for the [student developer pack](https://education.github.com/pack#offers) gives you access to a lot of stuff, including a free domain name for one year, Notion Pro and a bunch of other things. It's good stuff, get some! Ask me if you need help.

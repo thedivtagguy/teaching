@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dump/web2025-retrospective.md",
+                "file": "requirements.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "web2025-retrospective"
+              "title": "requirements"
             }
           }
         ]
@@ -209,8 +209,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "7bea5cb3e29ece90",
+  "active": "1172adac87189acd",
   "lastOpenFiles": [
+    "dump/web2025-retrospective.md",
     "day-1-the-small-web.md",
     "control-panel.md",
     "ai-policy.md",
@@ -255,7 +256,6 @@
     "day-11-to-15-project-week.md",
     "day-10-design-systems-and-liftoff.md",
     "day-9-visual-hierarchies.md",
-    "day-8-thinking-in-components.md",
-    "day-7-the-indieweb.md"
+    "day-8-thinking-in-components.md"
   ]
 }
