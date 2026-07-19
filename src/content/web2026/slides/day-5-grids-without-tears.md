@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T16:19
 transition: none
 ---
 
@@ -224,13 +224,13 @@ Laptops open please.
 
 This is a snippet from a section on [The New York Times](https://nytimes.com) that we'll recreate.
 
-![](IMG-20250728093826270.png)
+![](/assets/slides/day-6-making-grids/IMG-20250728093826270.png)
 
 ---
 
 What does this look like as a grid?
 
-![](IMG-20250728093826282.png)
+![](/assets/slides/day-6-making-grids/IMG-20250728093826282.png)
 
 One featured story across the top. Two columns of stories. A newsletter box across the bottom.
 
@@ -386,7 +386,7 @@ See more at [Learn CSS Grid](https://learncssgrid.com/)
 
 Get comfortable; the later levels are optional flexing.
 
-![](IMG-20250728093826294.png)
+![](/assets/slides/day-6-making-grids/IMG-20250728093826294.png)
 
 ---
 

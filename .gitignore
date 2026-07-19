@@ -12,6 +12,11 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Slide deck source assets: heavy (videos) working files for local Obsidian
+# preview/export only. The deployed decks are the exported static/slides/<edition>
+# bundles; these are duplicates of the archived per-edition vault assets.
+/static/assets/slides/
+
 # Env
 .env
 .env.*

@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T16:19
 transition: none
 ---
 
@@ -31,7 +31,7 @@ As we go around, notice how many of us pick something small and personal.<!--ele
 
 ---
 
-![](IMG-20250728213127876.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728213127876.png)
 
 
 ---
@@ -56,7 +56,7 @@ https://darkmiryam.neocities.org/manifesto
 
 </div>
 
-![](IMG-20250728213638617.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728213638617.png)
 
 
 </split>
@@ -73,7 +73,7 @@ https://bl-world.neocities.org/writings/blog1
 
 </div>
 
-![](IMG-20250728213901529.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728213901529.png)
 
 
 
@@ -81,13 +81,13 @@ https://bl-world.neocities.org/writings/blog1
 
 ---
 
-![](IMG-20250728213957608.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728213957608.png)
 
 https://itsevergreen.rip/manifesto/
 
 ---
 
-![](IMG-20250728214332191.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728214332191.png)
 
 
 ---
@@ -114,29 +114,29 @@ Could I not have my own space in an easier way?
 
 ---
 
-![](IMG-20250728211256290.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728211256290.png)
 
 
 ---
 
-![](IMG-20250728211321163.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728211321163.png)
 
 ---
 
-![](IMG-20250728211344113.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728211344113.png)
 
 ---
 
 
-![](IMG-20250728211609506.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728211609506.png)
 
 ---
 
-![](IMG-20250728214847716.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728214847716.png)
 
 ---
 
-![](IMG-20250728221309582.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728221309582.png)
 
 ---
 
@@ -150,32 +150,32 @@ As we grow, our spaces grow with us.
 
 ---
 
-![](IMG-20250728212625573.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728212625573.png)
 
 ---
 
-![](IMG-20250728212700918.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728212700918.png)
 
 ---
 
 
-![](IMG-20250728221659325.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728221659325.png)
 
 ---
 ## Some hand-made student websites
 
 ---
 
-![](IMG-20250728221926949.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728221926949.png)
 
 ---
 
 
-![](IMG-20250728222235683.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728222235683.png)
 
 ---
 
-![](IMG-20250728222325555.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728222325555.png)
 
 ---
 
@@ -203,7 +203,7 @@ It can be as simple, and as complex as we like.
 
 #### "... what branches grow out of this stony rubbish?"
 
-![](IMG-20250728224623705.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728224623705.png)
 
 
 ---
@@ -262,7 +262,7 @@ If you design for some hypothetical user, they may not actually exist; if you ma
 ---
 
 
-![](IMG-20250728230735720.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728230735720.png)
 
 <div class="compact-cite">
    
@@ -315,7 +315,7 @@ Help others benefit from your journey, including your future self!
 ---
 
 
-![](IMG-20250728231107968.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728231107968.png)
 
 https://aman.bh/links
 
@@ -372,13 +372,13 @@ Gardens are organised around **contextual relationships and associative links**;
 
 Instead of just a timeline, posts are connected to other by posts through related themes, topics, and shared context.
 
-![](IMG-20250729001417463.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729001417463.png)
 
 </split>
 
 ---
 
-![](IMG-20250728233733521.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728233733521.png)
 
 <div class="compact-cite">
    (2022). 
@@ -391,17 +391,17 @@ Instead of just a timeline, posts are connected to other by posts through relate
 
 ---
 
-![](IMG-20250728233813579.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250728233813579.png)
 
 ---
 
-![](IMG-20250729001547072.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729001547072.png)
 https://tomcritchlow.com/wiki/
 
 
 ---
 
-![](IMG-20250729001612179.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729001612179.png)
 
 https://busterbenson.com/piles
 
@@ -413,7 +413,7 @@ Gardens are never finished, they’re **constantly growing, evolving, and changi
 
 ---
 
-![](IMG-20250729001846131.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729001846131.png)
 
  note: You’re freed from the pressure to get everything right immediately. You can test ideas, get feedback, and revise your opinions like a good internet citizen. It’s _low friction_. Gardening your thoughts becomes a daily ritual that only takes a small amount of effort. Over time, big things grow. It gives readers an insight into your writing and thinking process. They come to realise you are not a magical idea machine banging out perfectly formed thoughts, but instead an equally mediocre human doing The Work of trying to understand the world and make sense of it alongside you.
 
@@ -435,13 +435,13 @@ note: Digital gardening is the [Domestic Cozy](https://www.ribbonfarm.com/series
 
 ---
 
-![](IMG-20250729002157341.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729002157341.png)
 
 
 ---
 
 
-![](IMG-20250729002223107.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729002223107.png)
 
 
 ---
@@ -452,7 +452,7 @@ The point of a garden is that it’s a personal playspace. You organise the gard
 
 ---
 
-![](IMG-20250729002330237.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729002330237.png)
 
 
 ---
@@ -464,7 +464,7 @@ Is it all just words? Text? Of course not.
 
 ---
 
-![](IMG-20250729002435970.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729002435970.png)
 
 ---
 
@@ -475,7 +475,7 @@ This patch should not live on the servers of Facebook, LinkedIn, Twitter, Instag
 
 ---
 
-![](IMG-20250729002519120.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729002519120.png)
 
 ---
 
@@ -522,7 +522,7 @@ Which of these resonates with you? What _about_ it resonates with you? Is it an 
 
 ---
 
-![](IMG-20250729094917170.png)
+![](/assets/slides/day-7-the-indieweb/IMG-20250729094917170.png)
 
 ---
 

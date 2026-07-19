@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T16:19
 transition: none
 ---
 
@@ -45,25 +45,25 @@ If you can box it, you can build it.<!--element class="fragment"-->
 
 ---
 
-![](IMG-20250723001122784.png)
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot **paragraph elements?**
 
-![](IMG-20250723001122784.png)
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot **heading elements?**
 
-![](IMG-20250723001122784.png)
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot the use of `background-color`?
 
-![](IMG-20250723001122784.png)
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
@@ -91,7 +91,7 @@ Once you see the boxes, you can't unsee them.
 
 What is that **space on the sides called?**
 
-![](IMG-20250723001122827.png)
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
 
 ---
 
@@ -101,13 +101,13 @@ Okay, I searched, and got an answer. But what does this mean?
 margin: 0px 10px;
 ```
 
-![](IMG-20250723001122851.png)
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122851.png)
 
 ---
 
 I went to MDN, and in the page was written...
 
-![](IMG-20250723001122861.png)
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122861.png)
 
 ---
 

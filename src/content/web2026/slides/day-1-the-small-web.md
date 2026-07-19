@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T16:18
 transition: none
 ---
 
@@ -36,7 +36,7 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 #### I've worked for these people
 
-![IMG|800](IMG-20250813130226473.png)
+![IMG|800](/assets/slides/that's-all-folks/IMG-20250813130226473.png)
 
 </split>
 
@@ -52,7 +52,7 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
-![](IMG-20250813130226527.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226527.png)
 
 ---
 
@@ -76,7 +76,7 @@ I have an interest in maps, history, urbanism, and open-source software.
 ---
 
 
-![](IMG-20250813130226637.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226637.png)
 
 
 ---
@@ -108,7 +108,7 @@ I have an interest in maps, history, urbanism, and open-source software.
 ---
 
 
-![](IMG-20250813130226697.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226697.png)
 
 <div class="full-screen-link">
 
@@ -150,23 +150,23 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
-![](IMG-20250813130226746.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226746.png)
 
 ---
 
-![](IMG-20250813130226775.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226775.png)
 
 ---
 
-![](IMG-20250813130226825.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226825.png)
 
 ---
 
-![](IMG-20250813130226886.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226886.png)
 
 ---
 
-![](IMG-20250813130226912.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130226912.png)
 
 ---
 
@@ -207,10 +207,10 @@ LARGE BOLD FOOTER
 <split even gap="2">
 
 
-![IMG|500](IMG-20250813130226937.png)
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130226937.png)
 
 
-![IMG|500](IMG-20250813130226966.gif)<!--element class="fragment"-->
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130226966.gif)<!--element class="fragment"-->
 
 
 
@@ -235,13 +235,13 @@ Depends on what you think of the web as.
 ---
 
 
-![](IMG-20250813130227022.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227022.png)
 
 
 
 ---
 
-![](IMG-20250813130227100.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227100.png)
 
 notes: I believe that the principles behind good urban form and community are very similar to the principles of an ideal internet; and that the modern american city shares many similar qualities and shortcomings as does the structure of the internet, simply through a different spatial medium.
 
@@ -252,16 +252,16 @@ notes: I believe that the principles behind good urban form and community are ve
 
 ---
 
-![](IMG-20250813130227176.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227176.png)
 
 ---
 
-![](IMG-20250813130227247.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227247.png)
 
 
 ---
 
-![](IMG-20250813130227287.jpg)
+![](/assets/slides/that's-all-folks/IMG-20250813130227287.jpg)
 
 
 ---
@@ -286,11 +286,11 @@ notes: I believe that the principles behind good urban form and community are ve
 
 ---
 
-![](IMG-20250813130227311.jpg)
+![](/assets/slides/that's-all-folks/IMG-20250813130227311.jpg)
 
 ---
 
-![](IMG-20250813130227340.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227340.png)
 
 
 
@@ -304,7 +304,7 @@ But when we think about "web design"...
 
 ...you might usually be taught a process that looks something like this.
 
-![](IMG-20250813130227380.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227380.png)
 
 
 <div class="compact-cite">
@@ -364,7 +364,7 @@ Because when computers can talk and write code for us, make entire products from
 
 </div>
 
-![](IMG-20250813130227409.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227409.png)
 
 
 
@@ -395,7 +395,7 @@ notes: It frames coding as a simple vocational skill to be acquired, like learni
 
 ---
 
-![](IMG-20250813130227435.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227435.png)
 <div class="compact-cite">
   Weaver, J. (2020). 
   <a href="https://hairyelefante.medium.com/we-dont-need-more-designers-who-can-code-b81483d2a0e6" target="_blank">We Don’t Need More Designers Who Can Code</a>.
@@ -417,7 +417,7 @@ notes: It frames coding as a simple vocational skill to be acquired, like learni
 
 </div>
 
-![IMG|200](IMG-20250813130227459.png)
+![IMG|200](/assets/slides/that's-all-folks/IMG-20250813130227459.png)
 
 </split>
 
@@ -443,7 +443,7 @@ notes: The point is that code isn't just an implementation detail; it's the _mat
 No one needs to do everything! But being a little T-shaped is a huge advantage. 
 </div>
 
-![IMG|500](IMG-20250813130227482.png)
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130227482.png)
 
 
 </split>
@@ -500,7 +500,7 @@ Because you said it yourself...
 ---
 
 
-![](IMG-20250813130227508.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227508.png)
 
 
 ---
@@ -526,7 +526,7 @@ We have three weeks together.
 
 
 
-![IMG|800](IMG-20250813130227530.png)
+![IMG|800](/assets/slides/that's-all-folks/IMG-20250813130227530.png)
 
 </split>
 
@@ -538,7 +538,7 @@ In the first, we'll learn <span class="blue-highlight"> how to get comfortable w
 
 
 
-![IMG|800](IMG-20250813130227553.png)
+![IMG|800](/assets/slides/that's-all-folks/IMG-20250813130227553.png)
 
 </split>
 
@@ -551,7 +551,7 @@ In the second, we'll learn how to use that to <span class="purple-highlight">und
 
 
 
-![IMG|800](IMG-20250813130227572.png)
+![IMG|800](/assets/slides/that's-all-folks/IMG-20250813130227572.png)
 
 </split>
 
@@ -563,7 +563,7 @@ In the last, we'll work on <span class="yellow-highlight"> refining our content,
 
 
 
-![IMG|800](IMG-20250813130227600.png)
+![IMG|800](/assets/slides/that's-all-folks/IMG-20250813130227600.png)
 
 </split>
 
@@ -623,7 +623,7 @@ notes: We don't mean VR headsets, we mean getting involved in the process from c
 ### A quick round of introductions? 
 
 
-![IMG|500](IMG-20250813130227629.png)
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130227629.png)
 
 </split>
 
@@ -639,34 +639,34 @@ notes: We don't mean VR headsets, we mean getting involved in the process from c
 
 A website where I wrote "issues" of the newspaper from Harry Potter.
 
-![](IMG-20250813130227653.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227653.png)
 
 
 ---
 
 I also made websites for Hogwarts. Very legit, as you can see.
 
-![](IMG-20250813130227690.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227690.png)
 
 ---
 
 I had a form on the site where if you filled it, you got your own Hogwarts ticket...
 
-![](IMG-20250813130227728.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227728.png)
 
 
 ---
 
 ...and to this day I get emails from little kids thinking it is real. I made a website for that too.
 
-![IMG|650](IMG-20250813130227757.png)
+![IMG|650](/assets/slides/that's-all-folks/IMG-20250813130227757.png)
 
 
 
 ---
 
 
-![](IMG-20250813130227793.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227793.png)
 
 
 
@@ -681,13 +681,13 @@ I had a form on the site where if you filled it, you got your own Hogwarts ticke
 
 ---
 
-![](IMG-20250813130227839.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227839.png)
 
 
 ---
 
 You get the idea. Websites.
-![IMG|500](IMG-20250813130227878.png)
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130227878.png)
 
 
 
@@ -699,7 +699,7 @@ _Voltaire commenting on Canada_
 
 ---
 
-![](IMG-20250813130227926.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227926.png)
 <div class="compact-cite">
    
   <a href="https://neal.fun/internet-artifacts/" target="_blank">Internet Artifacts</a>.
@@ -711,7 +711,7 @@ _Voltaire commenting on Canada_
 
 ---
 
-![](IMG-20250813130227970.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227970.png)
 
 <div class="compact-cite">
   Tait, A. (2016). 
@@ -730,7 +730,7 @@ _Voltaire commenting on Canada_
 
 The first website _ever_ was just a bunch of text and links, created in 1992.
 
-![](IMG-20250813130227997.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130227997.png)
 
 notes: This period was defined by technical limitations rather than aesthetic choices, with websites serving purely functional purposes for information sharing among researchers.
 
@@ -759,10 +759,10 @@ notes: Back in the early 1990's, the spirit of the Internet was the pursuit of k
 
 ---
 
-![](IMG-20250813130228048.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228048.png)
 
 ---
-![](IMG-20250813130228116.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228116.png)
 
 
 
@@ -815,7 +815,7 @@ easy to move in."
 
 ---
 
-![IMG|800](IMG-20250813130228166.png)
+![IMG|800](/assets/slides/that's-all-folks/IMG-20250813130228166.png)
 
 
 
@@ -851,7 +851,7 @@ Animated GIFs, page hit counters, scrolling marquee text, "under construction" s
 
 ---
 
-![](IMG-20250813130228194.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228194.png)
 
 ---
 
@@ -861,28 +861,28 @@ Animated GIFs, page hit counters, scrolling marquee text, "under construction" s
  
 ---
 
-![](IMG-20250813130228224.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228224.png)
 
 ---
 
-![](IMG-20250813130228249.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228249.png)
 
 ---
 
-![](IMG-20250813130228278.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228278.png)
 
 ---
 
-![](IMG-20250813130228308.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228308.png)
 
 ---
 
-![](IMG-20250813130228333.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228333.png)
  
  
 ---
 
-![](IMG-20250813130228358.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228358.png)
 
 
 ---
@@ -907,7 +907,7 @@ Flash enabled designers to break free from HTML limitations, creating experience
 
 
 
-![IMG|800](IMG-20250813130228400.png)
+![IMG|800](/assets/slides/that's-all-folks/IMG-20250813130228400.png)
 
 </split>
 
@@ -918,28 +918,28 @@ Flash enabled designers to break free from HTML limitations, creating experience
  
 ---
 
-![](IMG-20250813130228430.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228430.png)
 
 
 ---
 
-![](IMG-20250813130228457.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228457.png)
 
 ---
 
-![](IMG-20250813130228482.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228482.png)
 
 ---
 
-![](IMG-20250813130228505.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228505.png)
 
 ---
 
-![](IMG-20250813130228528.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228528.png)
 
 ---
 
-![](IMG-20250813130228551.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228551.png)
 
 
 ---
@@ -950,21 +950,21 @@ The early 2010s brought an aesthetic shift because we started having smaller scr
 
 ---
 
-![](IMG-20250813130228579.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228579.png)
 
 note: Skeuomorphic web design incorporated realistic textures, drop shadows, beveled edges, and metaphorical elements that referenced physical objects. Buttons looked like physical buttons with depth and shadow. File systems used folder icons that resembled real manila folders. Trash cans looked like actual waste baskets
 
 
 ---
 
-![](IMG-20250813130228623.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228623.png)
 
 note: Flat design philosophy prioritize efficiency and cross-platform consistency The aesthetic featured bright, saturated colors, simple geometric shapes, minimal use of shadows or gradients, and generous white space
 
 
 ---
 
-![](IMG-20250813130228674.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228674.png)
 
 
 ---
@@ -988,12 +988,12 @@ note: Flat design philosophy prioritize efficiency and cross-platform consistenc
 
 ---
 
-![](IMG-20250813130228714.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228714.png)
 
 ---
 
 
-![](IMG-20250813130228738.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228738.png)
 
 <div class="compact-cite">
    
@@ -1088,7 +1088,7 @@ Do you
 
 <split even gap="1">
 
-![](IMG-20250813130228759.png)<!--element class="fragment"-->
+![](/assets/slides/that's-all-folks/IMG-20250813130228759.png)<!--element class="fragment"-->
 
 
 <span class="fragment">
@@ -1117,11 +1117,11 @@ You can mould that material any way you want
 
 ---
 
-![](IMG-20250813130228779.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228779.png)
 
 ---
 
-![](IMG-20250813130228799.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228799.png)
 
 <div class="full-screen-link">
 
@@ -1131,7 +1131,7 @@ You can mould that material any way you want
 
 ---
 
-![](IMG-20250813130228824.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228824.png)
 
 <div class="full-screen-link">
 
@@ -1141,7 +1141,7 @@ You can mould that material any way you want
 
 ---
 
-![](IMG-20250813130228873.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228873.png)
 
 <div class="full-screen-link">
 
@@ -1152,12 +1152,12 @@ You can mould that material any way you want
 ---
 
 
-![](IMG-20250813130228922.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228922.png)
 
 
 ---
 
-![](IMG-20250813130228964.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130228964.png)
 
 <div class="full-screen-link">
 
@@ -1267,7 +1267,7 @@ We're going on an expedition, a bit of **Internet Archaeology**, to dig through 
 
 Enter a URL, select a year from the timeline, then click on a specific date in the calendar to see a snapshot of the site from that day.
 
-![IMG|700](IMG-20250813130228988.png)
+![IMG|700](/assets/slides/that's-all-folks/IMG-20250813130228988.png)
 
 </split>
 
@@ -1276,19 +1276,19 @@ notes: The goal is to move beyond simple aesthetic judgment ("this looks ugly") 
 
 ---
 
-![](IMG-20250813130229011.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130229011.png)
 
 ---
 
-![](IMG-20250813130229039.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130229039.png)
 
 ---
 
-![](IMG-20250813130229060.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130229060.png)
 
 ---
 
-![](IMG-20250813130229084.png)
+![](/assets/slides/that's-all-folks/IMG-20250813130229084.png)
 
 ---
 
@@ -1308,7 +1308,7 @@ Since GeoCities was shut down by Yahoo in 2009, volunteer groups like the Archiv
 
 </div>
 
-![IMG|500](IMG-20250813130229126.png)
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130229126.png)
 
 </split>
 
@@ -1328,7 +1328,7 @@ Almost the same as the Internet Archive, but organized in a browsable way.
 </div>
 
 
-![IMG|600](IMG-20250813130229156.png)
+![IMG|600](/assets/slides/that's-all-folks/IMG-20250813130229156.png)
 
 </split>
 
@@ -1388,6 +1388,6 @@ Two things tonight:
 
 We'll start some making tomorrow!!
 
-![IMG|500](IMG-20250813130229190.gif)
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130229190.gif)
 
 </split>

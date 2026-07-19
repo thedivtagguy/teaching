@@ -9,5 +9,10 @@
   ],
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
-  "fileHashMap": {}
+  "fileHashMap": {
+    "slides/day-1-the-small-web.md": "5ea724ffc28454a2fd7c4c59fe127e51d5d1522e2ca9eaedb7bcbdc4ee7f9a5d",
+    "slides/day-3-seeing-like-a-browser.md": "de8e011fd9a9e3acde095c229a87a92f4c508310342e2ba33fa6c2a7a33e84f8",
+    "slides/day-5-grids-without-tears.md": "c02ecfba936888afb61e78dc11c0ead53046814d41ad9874aa40469494490080",
+    "slides/day-7-the-indieweb.md": "285d667d305da67eca03251a5062edd4ca9f1df559752635b103505b91cbd4f4"
+  }
 }
