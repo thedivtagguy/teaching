@@ -6,5 +6,8 @@
   "slides-extended",
   "obsidian-zotero-desktop-connector",
   "obsidian-excalidraw-plugin",
-  "copy-document-as-html"
+  "copy-document-as-html",
+  "obsidian-git",
+  "obsidian-shellcommands",
+  "obsidian-meta-bind-plugin"
 ]
