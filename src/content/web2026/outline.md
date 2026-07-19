@@ -6,11 +6,11 @@ published: true
 section: Course Info
 order: 1
 seo_title: Introduction to Making for the Web
-seo_description: Learn web design fundamentals, HTML/CSS, and Astro. Build your own website from scratch in this hands-on course.
+seo_description: Learning how to think about websites, making with HTML/CSS, and building spaces on the internet.
 seo_keywords: web design, HTML, CSS, Astro, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-15T12:00
+updated: 2026-07-19T17:58
 slug: outline
 ---
 # What is this class and why?
