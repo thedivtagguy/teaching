@@ -1,6 +1,10 @@
 title: "Introduction to Making for the Web"
 code: "web2025"
 description: "A crash course in HTML, CSS, and the why and how of making websites."
+year: 2025
+institution: "DA-IICT"
+listed: false
+color: "bg-yellow"
 instructor:
   name: "Aman Bhargava"
   email: "amanbhargava2001+web2025@gmail.com"

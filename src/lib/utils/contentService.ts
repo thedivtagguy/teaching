@@ -89,7 +89,8 @@ function getCourseDirectories(): string[] {
     }
   });
 
-  return Array.from(courses);
+  // Skip underscore-prefixed dirs (e.g. _template used by the scaffold script)
+  return Array.from(courses).filter(id => !id.startsWith('_'));
 }
 
 /**

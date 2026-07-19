@@ -2,6 +2,10 @@
 title: "Information and Data Design"
 code: "cdv2025"
 description: "This course provides a broad introduction to data visualization."
+year: 2025
+institution: "Chitkara University"
+listed: true
+color: "bg-orange"
 instructor:
   name: "Aman Bhargava"
   email: "amanbhargava2001+cdv2025@gmail.com"

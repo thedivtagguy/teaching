@@ -22,7 +22,9 @@
 	} from '$lib/utils/contentSchema';
 
 	export let menuData: MenuDataType = {};
-	export let availableCourses: string[] = ['cdv2025', 'cs201'];
+	// Real list always arrives as a prop from the root layout (+layout.ts, derived
+	// from discovered meta.yaml files). The empty default is just a safe fallback.
+	export let availableCourses: string[] = [];
 
 	// Get current course from URL or default to first available
 	const courseIdFromUrl = $page.params.courseId || '';

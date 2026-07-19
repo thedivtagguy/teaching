@@ -1,16 +1,16 @@
 title: "Introduction to Making for the Web"
-code: "web2026"
+code: "__EDITION_ID__"
 description: "A crash course in HTML, CSS, Astro, and the why and how of making websites."
-year: 2026
+year: __YEAR__
 institution: "DA-IICT"
 listed: true
 color: "bg-yellow"
 instructor:
   name: "Aman Bhargava"
-  email: "amanbhargava2001+web2026@gmail.com"
+  email: "amanbhargava2001+__EDITION_ID__@gmail.com"
   hours: "Mon to Sat 2-5pm, or by appointment via email"
-githubPrefix: web2026
-showcase: https://web2026-gallery.netlify.app/
+githubPrefix: __EDITION_ID__
+showcase: https://__EDITION_ID__-gallery.netlify.app/
 classStrength: 18
 navigation:
   collapsibleSections: false

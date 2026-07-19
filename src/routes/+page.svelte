@@ -1,22 +1,25 @@
 <script>
 	import SEO from '$lib/components/SEO.svelte';
 
-	const resources = [
-		// {
-		// 	title: 'WEB2025 - Introduction to Making for the Web',
-		// 	description:
-		// 		'Websites! Designing them, building them and (almost) everything in between. Taught at DA-IICT, 2025',
-		// 	link: '/web2025',
-		// 	color: 'bg-yellow'
-		// },
-		{
-			title: 'CDV2025 - Introduction to Data Visualization',
-			description:
-				'Introduction to data visualization for design students taught at Chitkara University, 2025',
-			link: '/cdv2025',
-			color: 'bg-orange'
-		},
+	/** @type {import('./$types').PageData} */
+	export let data;
 
+	// Course cards are derived from each edition's meta.yaml (via the root layout).
+	// Add a new edition by dropping in src/content/<id>/meta.yaml with `listed: true`.
+	$: courseResources = (data?.coursesWithMetadata ?? [])
+		.filter((c) => c.listed)
+		.sort((a, b) => (b.year ?? 0) - (a.year ?? 0))
+		.map((c) => ({
+			title: `${(c.code ?? c.id).toUpperCase()} - ${c.title}`,
+			description: c.description
+				? `${c.description}${c.institution ? ` Taught at ${c.institution}${c.year ? `, ${c.year}` : ''}.` : ''}`
+				: '',
+			link: `/${c.id}`,
+			color: c.color ?? 'bg-yellow'
+		}));
+
+	// Non-course, external resources that aren't editions in this repo.
+	const extraResources = [
 		{
 			title: 'Introduction to QGIS',
 			description:
@@ -31,6 +34,8 @@
 			color: 'bg-blue'
 		}
 	];
+
+	$: resources = [...courseResources, ...extraResources];
 </script>
 
 <SEO

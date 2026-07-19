@@ -69,8 +69,13 @@
 			// Fallback: try to extract date from source name if it follows day-N pattern
 			const dayMatch = source.match(/day-(\d+)/);
 			if (dayMatch) {
-				// Use a base date and add days
-				const baseDate = new Date('2025-01-01');
+				// Anchor to the edition's year so ordering stays correct across editions.
+				// Prefer the year from course metadata, else parse it from the courseId
+				// (e.g. "web2026" -> 2026), else default to the current year.
+				const metaYear = pageData?.metadata?.year;
+				const idYear = $page.params.courseId?.match(/\d{4}/)?.[0];
+				const year = metaYear ?? (idYear ? parseInt(idYear) : new Date().getFullYear());
+				const baseDate = new Date(`${year}-01-01`);
 				baseDate.setDate(baseDate.getDate() + parseInt(dayMatch[1]));
 				return baseDate;
 			}

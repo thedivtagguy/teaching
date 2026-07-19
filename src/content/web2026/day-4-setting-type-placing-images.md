@@ -49,6 +49,18 @@ Images have a way of quietly eating hours if nobody shows you the basics, so tod
 
 What we're deliberately **not** doing today: floats (they're a historical curiosity now; we'll wave at them from a distance) and `position: absolute` (the rule for this course is *ask before you absolute*, because nine times out of ten flexbox or grid does it better with less pain).
 
+#### Image pools
+
+When a project needs images and you don't have your own, pull from public-domain and openly-licensed collections rather than a generic image search (and never AI imagery). Good pools to start from:
+
+- [Wikimedia Commons](https://commons.wikimedia.org/) - vast, well-labelled, check the licence on each file.
+- [The Met Open Access](https://www.metmuseum.org/art/collection/search?showOnly=openAccess) - public-domain artworks in high resolution.
+- [Rawpixel Public Domain](https://www.rawpixel.com/public-domain) - vintage art, illustrations, and photography.
+- [The Public Domain Review](https://publicdomainreview.org/) - curated historical images with clear provenance.
+- [Unsplash](https://unsplash.com/) and [Openverse](https://openverse.org/) - free-to-use photography (still credit the maker).
+
+Or, best of all, your own drawings and scans.
+
 ### Part 3: Letters to a Young Designer 💌
 
 Our first real project launches today. You'll pick one **public-domain letter from a great artist, designer, or thinker** (Rilke writing to a young poet, Van Gogh writing to his brother Theo, Ada Lovelace, Seneca, Keats) and typeset it into a webpage so beautiful that the writer would forgive the medium.

@@ -62,6 +62,13 @@ export type CourseMeta = {
   title: string;
   code: string;
   description?: string;
+  // Edition metadata used by the homepage index and tooling
+  year?: number;
+  institution?: string;
+  listed?: boolean; // whether to surface this edition on the homepage
+  color?: string; // homepage card accent class (e.g. "bg-yellow")
+  githubPrefix?: string;
+  classStrength?: number;
   instructor?: {
     name: string;
     email?: string;

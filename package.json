@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
+		"new-edition": "node scripts/new-edition.mjs",
 		"dev:watch": "nodemon --watch src/content -e svx,yaml --exec 'npm run dev'",
 		"build": "vite build",
 		"preview": "vite preview",

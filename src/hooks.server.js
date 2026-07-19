@@ -1,5 +1,5 @@
 import { resolve as resolvePath } from 'path';
-import { readFileSync, existsSync, statSync } from 'fs';
+import { readFileSync, existsSync, statSync, readdirSync } from 'fs';
 
 function getContentType(filePath) {
 	const ext = filePath.split('.').pop();
@@ -42,17 +42,27 @@ export async function handle({ event, resolve }) {
 			staticFilePath = resolvePath(process.cwd(), 'static', urlPath, 'index.html');
 			console.log('Trying index.html path:', staticFilePath);
 		} else {
-			// For asset requests like /slides/web2025/dist/reveal.css, 
-			// try to find them in the day-1-the-old-web folder
+			// For asset requests like /slides/<edition>/dist/reveal.css that don't resolve
+			// directly, search each day-folder under the edition for the asset. This is
+			// edition-agnostic: no year or day folder is hardcoded.
 			const pathParts = urlPath.split('/');
-			if (pathParts.length >= 3 && pathParts[0] === 'slides' && pathParts[1] === 'web2025') {
-				// Try to find the asset in the day-1-the-old-web folder
-				const assetPath = pathParts.slice(2).join('/'); // e.g., "dist/reveal.css"
-				const slidesFolderPath = resolvePath(process.cwd(), 'static', 'slides', 'web2025', 'day-1-the-small-web', assetPath);
-				console.log('Trying asset in slides folder:', slidesFolderPath);
+			if (pathParts.length >= 3 && pathParts[0] === 'slides') {
+				const edition = pathParts[1]; // e.g. "web2026"
+				const assetPath = pathParts.slice(2).join('/'); // e.g. "dist/reveal.css"
+				const editionDir = resolvePath(process.cwd(), 'static', 'slides', edition);
 
-				if (existsSync(slidesFolderPath) && statSync(slidesFolderPath).isFile()) {
-					staticFilePath = slidesFolderPath;
+				if (existsSync(editionDir) && statSync(editionDir).isDirectory()) {
+					const dayFolders = readdirSync(editionDir).filter((name) =>
+						statSync(resolvePath(editionDir, name)).isDirectory()
+					);
+					for (const dayFolder of dayFolders) {
+						const candidate = resolvePath(editionDir, dayFolder, assetPath);
+						if (existsSync(candidate) && statSync(candidate).isFile()) {
+							console.log('Found asset in slides folder:', candidate);
+							staticFilePath = candidate;
+							break;
+						}
+					}
 				}
 			}
 		}
