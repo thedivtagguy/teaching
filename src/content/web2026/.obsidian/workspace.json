@@ -22,6 +22,22 @@
             }
           }
         ]
+      },
+      {
+        "id": "b47cd3261aee43ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a69ae2a20d63bb45",
+            "type": "leaf",
+            "state": {
+              "type": "reveal-preview-view",
+              "state": {},
+              "icon": "slides",
+              "title": "Preview: day-1-the-small-web.md"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -146,8 +162,8 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-archive",
-              "title": "All properties"
+              "icon": "lucide-ghost",
+              "title": "all-properties"
             }
           },
           {
@@ -180,10 +196,14 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "iconic:Open rulebook": false,
+      "slides-extended:Show slide preview": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "60c85ced99653311",
+  "active": "a69ae2a20d63bb45",
   "lastOpenFiles": [
     "assets/reveal-theme.css",
     "assets",
