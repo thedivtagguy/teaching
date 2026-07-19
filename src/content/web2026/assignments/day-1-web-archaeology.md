@@ -4,13 +4,15 @@ due: 2026-07-22
 description: Exploring the ruins and fringes of the web
 published: false
 date: 2026-07-20T18:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T17:30
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/1
 ---
 
 We're going to spend some time exploring different corners of the internet, then make something with what we find. The web of today, the one that is mainstream, is a little boring, so we'll explore the ruins and the fringes instead.
 
-**Due at the start of Day 3's class. Time-box: 90 minutes of surfing + 30 minutes of moodboarding.** (If you fall down a webring rabbit hole and spend three happy hours, that's between you and your browser history, but you don't have to.)
+**This assignment is at the start of Day 3's class. Let's keep it limited (or at minimum) 90 minutes of surfing + 30 minutes of moodboarding.** Anything more is up to you, but you don't have to! **Remember that dev-notes need to be submitted every day, with updates on thoughts and progress for that day.**
+
+[You will find today's devnotes submission link here](https://github.com/open-making/web2026-dev-notes/issues/2).
 
 Start with the ruins. The [Internet Archive Wayback Machine](https://web.archive.org/) lets you see old versions of websites. Pick a year that interests you and search for random things. Maybe it is websites you already know of right now. What did Apple.com look like 20 years ago? How did your current favorite websites evolve in their visual aesthetic over time?
 
@@ -28,7 +30,7 @@ Take screenshots of things that catch your attention for any reason. Put them to
 
 ### Also tonight: finish your installs
 
-Check the [requirements page](/web2026/requirements). By tomorrow you need VS Code, GitHub Desktop, and accounts on GitHub, Netlify, and Figma. Day 2 starts with all of us building; installation delays are the least fun kind of delay.
+Check the [requirements page](/web2026/requirements). By tomorrow you need VS Code, GitHub Desktop, and accounts on GitHub, Netlify, and Figma. Day 2 starts with all of us building!
 
 ### Links to explore
 

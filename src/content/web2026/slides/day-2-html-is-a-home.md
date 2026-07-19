@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T17:35
 transition: none
 ---
 
@@ -14,7 +14,7 @@ transition: none
 
 Yesterday you made a website in four minutes with Notepad.
 
-Today we make it make *sense*.
+Using the same understanding, we'll build something a little bigger today.
 
 ---
 
@@ -352,7 +352,7 @@ https://github.com/open-making/web2026-hey-jude
 
 ---
 
-### Time: 40 Minutes
+### Time: 90 Minutes
 
 Sample properties to try:
 

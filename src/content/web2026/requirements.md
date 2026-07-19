@@ -1,13 +1,13 @@
 ---
 title: Things to keep ready before class
-description: "What to install and sign up for before Day 1 of web2026"
+description: What to install and sign up for before Day 1 of web2026
 seo_title: Course Requirements
 seo_description: Things to keep ready before class
 seo_keywords: web design, HTML, CSS, responsive design, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
 date: 2026-07-13T10:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T17:43
 published: true
 section: Course Info
 order: 2
@@ -24,11 +24,11 @@ Since we're in for a long haul, I have designed a system to help you keep track 
 
 ## How deadlines work
 
-Assignments are due at the **start of the next class**, not at midnight. Homework is time-boxed; each assignment says how long it should take. If you hit that limit and you're stuck, stop, post a dev note about where you got stuck, and rest. The stuck-note counts as a submission. Saturdays are deliberately light.
+Assignments are due at the **start of the next class**, not at midnight (please sleep on time). Please stick to this as a rule. If I specify that it will be due on Day 3 (say, 22nd July), then it is expected that by the morning of that day you are done. 
 
 ## Before you come in
 
-This is a web-design + dev class so, you guessed it, you'll be needing your laptops every single day! No laptop, no scene. But apart from that here are some things you either need to download and keep ready or platforms you need to sign up for. **Please have this done before Day 1.**
+This is a web-design + dev class so, you guessed it, you'll be needing your laptops every single day! No laptop, no scene. But apart from that here are some things you either need to download and keep ready or platforms you need to sign up for. **If possible, have this done by Day 1 afternoon**. 
 
 ### Software
 
@@ -44,14 +44,4 @@ If you're done with everything and still feeling a little adventurous, you can *
 - [Netlify](https://netlify.com): This is what takes our code and puts it on a URL anyone, anywhere can access. For free! Create an account here please (sign up *with* your GitHub account, it makes everything smoother later).
 - [Figma](https://figma.com): Designs, presentations, mockups, wireframes and more. Sign up! We'll have a guest lecture on Figma in Week 2.
 
-Non-essential, but if you've signed up for a GitHub account, you're eligible for a _ton_ of free goodies because you're a student. Applying for the [student developer pack](https://education.github.com/pack#offers) gives you access to a lot of stuff, including a free domain name for one year, Notion Pro and a bunch of other things. It's good stuff, get some!
-
-## What you'll leave with
-
-By the end of the course (Wed, Aug 5) you will have shipped:
-
-1. **An ugly website**: live on the internet by Day 2. Yes, really.
-2. **"Letters to a Young Designer"**: a two-page typographic site built with Astro, containing a public-domain letter you've typeset and your reply to a stranger.
-3. **Your personal website**: at least two real pages that feel like *you*, with real content, live on Netlify at a URL you'd consider paying a domain name for.
-
-Everything you make is yours, lives in your GitHub account, and keeps working after the course ends.
+Non-essential, but if you've signed up for a GitHub account, you're eligible for a _ton_ of free goodies because you're a student. Applying for the [student developer pack](https://education.github.com/pack#offers) gives you access to a lot of stuff, including a free domain name for one year, Notion Pro and a bunch of other things. It's good stuff, get some! Ask me if you need help.

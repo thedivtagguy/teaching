@@ -10,7 +10,7 @@ seo_description: Context for the class, internet archaeology, Geocities and nost
 seo_keywords: web design, HTML, CSS, small web, indieweb, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-15T12:00
+updated: 2026-07-19T17:30
 slug: day-1-the-small-web
 slides: https://teaching.aman.bh/slides/web2026/day-1-the-small-web
 show_metadata_card: true
@@ -23,7 +23,7 @@ readings:
     author: Laurel Schwulst
     url: https://handmade-web.net/assets/schwulst_website-is-a-shifting-house.pdf
     readingTime: 15
-devNotes: https://github.com/open-making/web2026-dev-notes/issues/1
+devNotes: https://github.com/open-making/web2026-dev-notes/issues/2
 assignments: true
 ---
 
