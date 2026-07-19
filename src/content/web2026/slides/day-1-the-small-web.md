@@ -17,11 +17,7 @@ transition: none
 
 ## Before anything else
 
-**The first website you remember.**
-
-90 seconds each: what's the earliest website you can remember using or loving? A game site, Orkut, a fan page, anything counts.
-
-Later today we go digging through the web's past, so let's start with the bits you remember.
+**What's the earliest website you can remember using or loving?**
 
 ---
 

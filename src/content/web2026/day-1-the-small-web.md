@@ -31,13 +31,11 @@ assignments: true
 
 Today is less about "how" and more about "why." We'll dig into what it _feels_ like to be a creative person making things for the web in an age when AI can generate code, designers are told to "stay in their lane," and all the web's starting to look eerily the same.
 
-**Warm-up (10 min):** _The first website you remember._ Ninety seconds each: what's the earliest website you can remember using or loving? A game site, Orkut, a fan page, whatever. No wrong answers; we're building a collective memory of the web before we go excavate it.
-
 **We'll talk about:**
 
 - The classic assembly-line model of web design (designer → dev → launch) and how it causes silo-ing of creativity. Instead, there's power in becoming a bit **T-shaped**: knowing your core craft well, but being able to play in the broad, messy, interconnected parts around it.
 
-- How the web, as a space, isn't fixed. It's a city or a garden; sometimes a pile of books. It can be a highly personal, living material, not just an industrial machine.
+- How the web, as a space, isn't fixed. It's a city or a garden or a pile of books. It can be a highly personal, living material, not just an industrial machine.
 
 - When the web opened up in the 90s, it wasn't the corporations we see now but **personal, weird, handmade sites on platforms like GeoCities.** A new vernacular emerged when everyone was allowed to play, not just the professional designers and makers.
 
@@ -45,13 +43,7 @@ Today is less about "how" and more about "why." We'll dig into what it _feels_ l
 
 **Internet archaeology (afternoon):** We'll learn how to explore both the bygone web and the small web that exists on the fringes: the Internet Archive, The GeoCities (Restored) Gallery, Marginalia, and some webrings. By scrap-booking from these sources and seeing the more hand-crafted and personal web, we'll start developing our own sensibilities for what *our* web could look like.
 
-**Before you leave (last 20 min):** You will make a website today, on day one. We'll each open a text editor, write a bare `index.html` (a heading, a sentence, maybe a terrible color) and open it in a browser. No servers, no accounts, no frameworks, just a file. The point is that a website is a *document you wrote*, and you now know how to make one; everything else in this course is refinement of that.
-
 For details on today's homework, [head over to the assignments page](/web2026/assignments) and look for the assignments under this day. Also: check the [requirements page](/web2026/requirements) tonight and finish your installs, because Day 2 starts with all of us building.
-
-## The Plan
-
-This course builds three things, each feeding the next: an intentionally ugly website (this week), a two-page typographic site called *Letters to a Young Designer* (next week, you'll see), and finally your own personal corner of the internet, live at a real URL. You're building just enough technical fluency to talk directly to the materials of the web (code, structure, layout), prototype ideas on your own, and, most importantly, see coding not as a rite of passage but as another creative tool.
 
 ## Today's Links
 

@@ -1,0 +1,23 @@
+{
+  "port": "3000",
+  "autoReload": true,
+  "autoStart": true,
+  "exportDirectory": "../../../static/slides/web2026",
+  "enableChalkboard": false,
+  "enableOverview": false,
+  "enableMenu": false,
+  "enablePointer": false,
+  "enableTimeBar": false,
+  "theme": "reveal-theme.css",
+  "highlightTheme": "monokai.css",
+  "transition": "slide",
+  "transitionSpeed": "fast",
+  "controls": true,
+  "progress": true,
+  "slideNumber": false,
+  "showGrid": false,
+  "autoComplete": "always",
+  "paneMode": "split",
+  "themeDirectory": "assets",
+  "center": true
+}
