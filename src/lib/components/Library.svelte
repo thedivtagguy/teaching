@@ -131,12 +131,9 @@
 {#if filteredLibrary.length === 0 && library.length === 0}
   <div class="bg-muted border-foreground btn-drop-shadow rounded-lg border-2 p-8 text-center">
     <p class="text-foreground font-archivo font-bold mb-4">
-      No library items found.
+      No library items found. Check back soon!
     </p>
-    <p class="text-muted-foreground font-archivo text-sm">
-      Export your Zotero collection as JSON and place it at
-      <code class="bg-card text-foreground rounded px-2 py-1">static/{courseId}/data/library.json</code>
-    </p>
+
   </div>
 {:else if filteredLibrary.length === 0}
   <div class="bg-muted border-foreground btn-drop-shadow rounded-lg border-2 p-8 text-center">
