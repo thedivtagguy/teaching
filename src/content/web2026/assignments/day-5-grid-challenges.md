@@ -2,7 +2,7 @@
 title: "Assignment 5: Grid Challenges"
 due: 2026-07-27
 description: Two grid layouts, solved with grid-template-areas
-published: true
+published: false
 date: 2026-07-24T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-grid-making/issues/1

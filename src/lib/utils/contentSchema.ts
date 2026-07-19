@@ -69,6 +69,7 @@ export type CourseMeta = {
   color?: string; // homepage card accent class (e.g. "bg-yellow")
   githubPrefix?: string;
   classStrength?: number;
+  publishReadings?: boolean; // set false to withhold all readings until ready (default true)
   instructor?: {
     name: string;
     email?: string;

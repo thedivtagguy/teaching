@@ -2,7 +2,7 @@
 title: "Assignment 7: Ship the Letters 💌"
 due: 2026-07-29
 description: Your two-page Letters site, live on the internet, submitted to the anthology
-published: true
+published: false
 date: 2026-07-28T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-letters/issues/new?template=letter-submission.yml

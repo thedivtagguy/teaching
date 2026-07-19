@@ -12,6 +12,7 @@ instructor:
 githubPrefix: web2026
 showcase: https://web2026-gallery.netlify.app/
 classStrength: 18
+publishReadings: false
 navigation:
   collapsibleSections: false
   showSections: false

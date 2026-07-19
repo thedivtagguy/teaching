@@ -2,7 +2,7 @@
 title: "Assignment 8: Wireframes in Figma"
 due: 2026-07-30
 description: Mid-fidelity wireframes of two pages of your personal site, with your real content
-published: true
+published: false
 date: 2026-07-29T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/9

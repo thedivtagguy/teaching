@@ -2,7 +2,7 @@
 title: "Assignment 4: Letters to a Young Designer 💌"
 due: 2026-07-25
 description: Typeset a public-domain letter from a great artist or thinker, your first real portfolio piece
-published: true
+published: false
 date: 2026-07-23T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-letters/issues/1

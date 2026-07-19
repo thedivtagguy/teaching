@@ -2,7 +2,7 @@
 title: "Assignment 9: Content Inventory (No Code Tonight)"
 due: 2026-07-31
 description: Write the real words for every page of your site, words before code
-published: true
+published: false
 date: 2026-07-30T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/10

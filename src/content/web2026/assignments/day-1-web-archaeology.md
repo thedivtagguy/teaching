@@ -2,7 +2,7 @@
 title: "Assignment 1: Web archaeology"
 due: 2026-07-22
 description: Exploring the ruins and fringes of the web
-published: true
+published: false
 date: 2026-07-20T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/1

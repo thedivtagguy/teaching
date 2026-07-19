@@ -437,6 +437,14 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       });
     }
 
+    // Readings are collected from each lesson's frontmatter; there's no per-reading
+    // publish flag. A course can withhold ALL readings until it's ready by setting
+    // `publishReadings: false` in meta.yaml. The Readings page/button stay; the list
+    // is just empty until the flag is flipped (or removed).
+    if (metadata?.publishReadings === false) {
+      courseMenu.readings = [];
+    }
+
     // Update cache
     contentCache.menus.set(courseId, courseMenu);
 

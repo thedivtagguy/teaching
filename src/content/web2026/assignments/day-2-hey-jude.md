@@ -2,7 +2,7 @@
 title: "Assignment 2: Hey Jude (Make It Ugly)"
 due: 2026-07-23
 description: Learning HTML and CSS by committing crimes against design, on purpose
-published: true
+published: false
 date: 2026-07-21T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-hey-jude/issues/1

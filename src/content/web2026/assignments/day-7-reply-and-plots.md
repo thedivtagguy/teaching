@@ -2,7 +2,7 @@
 title: "Assignment 6: Your Reply, and Your Plots"
 due: 2026-07-28
 description: Write your letter to a stranger, and choose the plots of your digital garden
-published: true
+published: false
 date: 2026-07-27T18:00
 updated: 2026-07-15T12:00
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/7
