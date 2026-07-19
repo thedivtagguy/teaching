@@ -1,23 +1,33 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-19T16:34
+updated: 2026-07-19T19:16
 transition: none
 ---
-
-<!-- NOTE: image/video assets referenced here live in the web2025 Obsidian vault
-     (../assets/slides/day-1-the-small-web/). Copy or re-link them into the
-     web2026 vault before exporting this deck. -->
 
 # Introduction To Making For the Web
 #### _WEB2026 - Day 1_
 
 
-
 ---
 
-## Before anything else
 
-**What's the earliest website you can remember using or loving?**
+<split even gap="2">
+
+<div>
+
+### A quick round of introductions? 
+
+**Also tell us, what's the earliest website you can remember using or loving?**
+
+</div>
+
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130227629.png)
+
+</split>
+
+
+
+
 
 ---
 
@@ -42,7 +52,7 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
-<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20250712210848865.png" -->
+<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20260719183828940.png" data-background-size="contain" -->
 
 <div class="full-screen-link">
 
@@ -56,92 +66,12 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
-<section data-background-size="cover" data-background-video="../assets/slides/day-1-the-small-web/output.mp4">
-</section>
+<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20260719184055417.png" data-background-size="contain" -->
 
 
 ---
 
-
-<section data-background-size="cover" data-background-video="../assets/slides/day-1-the-small-web/jor.mp4">
-</section>
-
-
-<div class="full-screen-link">
-
-[Journeys of Resilience](https://dtm.iom.int/data-stories/journeys-of-resilience-ukraine/index.html)
-
-</div>
-
----
-
-
-![](/assets/slides/that's-all-folks/IMG-20250813130226637.png)
-
-
----
-
-<div class="full-screen-link">
-
-[Votes in a name](https://diagramchasing.fun/2024/votes-in-a-name)
-
-</div>
-
-<section data-background-size="contain" data-background-video="../assets/slides/day-1-the-small-web/votes-2.mp4">
-</section>
-
-
-
----
-
-<!-- slide bg="../assets/slides/day-1-the-small-web/IMG-20250715001259582.png" -->
-
-
-<div class="full-screen-link">
-
-[BLR Water Log](https://diagramchasing.fun/2024/blr-water-log)
-
-</div>
-
-
-
----
-
-
-![](/assets/slides/that's-all-folks/IMG-20250813130226697.png)
-
-<div class="full-screen-link">
-
-[Who is my Neta](https://whoismyneta.com)
-
-</div>
-
-
----
-
-<!-- slide bg="../assets/slides/day-1-the-small-web/map.png" -->
-
-
-
-
-
----
-
-<!-- slide bg="../assets/slides/day-1-the-small-web/eji.png" -->
-
-
-
----
-
-<!-- slide bg="../assets/slides/day-1-the-small-web/fotus.jpg" -->
-
-
-
-
-
----
-
-# What Is This Class? 
+## What Is This Class? 
 
 ---
 
@@ -170,36 +100,45 @@ I have an interest in maps, history, urbanism, and open-source software.
 
 ---
 
+<split left="1" right="2" gap="2">
+
+<div style="text-align: left;">
+
 A lot of stuff on the web looks like other stuff on the web...
 
-<div class="fragment">
-
-```bash
-BAR WITH SPECIAL MESSAGE 
-
-LOGO    PLATFORM↓     SOLUTIONS↓   PRICING 
-
-BOLD STATEMENT 
-
-CALL TO ACTION 
-
-GRID OF LITTLE ILLUSTRATIONS 
-
-LARGE BOLD FOOTER 
-
-© 2025
-```
-
-
 <div class="compact-cite">
-   (2018). 
+  Coyier, Chris (2018). 
   <a href="https://css-tricks.com/website-sameness/" target="_blank">Website Sameness™</a>.
   
 <div class="publisher">
-  
+  CSS-Tricks
 </div>
 </div>
 </div>
+
+<div class="fragment">
+
+<div style="margin: 0 auto; font-family: sans-serif; font-size: 0.42em; letter-spacing: 0.08em; text-transform: uppercase; color: #666; border: 2px solid #999; border-radius: 8px; overflow: hidden; background: #fff; text-align: center;">
+  <div style="background: #333; color: #fff; padding: 0.6em;">✨ Bar with special message ✨</div>
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.9em 1.2em; border-bottom: 1px solid #ddd;">
+    <span style="font-weight: bold; color: #333;">◼ Logo</span>
+    <span>Platform ▾ &nbsp;&nbsp; Solutions ▾ &nbsp;&nbsp; Pricing</span>
+  </div>
+  <div style="padding: 2em 1.2em 0.5em; font-size: 2.2em; font-weight: 800; color: #333; letter-spacing: 0.02em;">Bold Statement</div>
+  <div style="padding: 1em;">
+    <span style="display: inline-block; background: #4a6cf7; color: #fff; padding: 0.6em 1.6em; border-radius: 99px;">Call to action</span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; padding: 0.8em 1.2em 1.6em;">
+    <div style="border: 1px dashed #bbb; border-radius: 4px; padding: 1.6em 0.4em;">little<br>illustration</div>
+    <div style="border: 1px dashed #bbb; border-radius: 4px; padding: 1.6em 0.4em;">little<br>illustration</div>
+    <div style="border: 1px dashed #bbb; border-radius: 4px; padding: 1.6em 0.4em;">little<br>illustration</div>
+  </div>
+  <div style="background: #222; color: #eee; padding: 1.4em 1.2em; font-weight: 700; font-size: 1.4em;">Large Bold Footer</div>
+  <div style="background: #222; color: #888; padding: 0 1.2em 1em; font-size: 0.9em;">© 2025</div>
+</div>
+</div>
+
+</split>
 
 ---
 
@@ -590,51 +529,63 @@ From the pre-class survey:
 ---
 
 
-<!-- slide data-auto-animate --><style> .slide-container { display: flex; margin: 0; padding: 0;} .left-column { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 8%; gap: 2rem; } .right-column { flex: 1; display: flex; justify-content: center; align-items: center; padding: 0 8%; position: relative; } .main-word {font-family: inherit;font-size: 6rem;font-weight: 700;letter-spacing: -0.03em;margin: 0;line-height: 0.9;transition: all 0.3s ease;opacity: 1; /* Default state - all visible */color: white;cursor: pointer;}/* Fragment behavior - only apply when there are visible fragments */.main-word.fragment.visible:not(.current-fragment) {opacity: 0.1 !important;}/* When no fragments are visible, show all at full opacity */.main-word.fragment:not(.visible) {opacity: 1 !important;}/* Highlight the current fragment */.main-word.highlight-current-blue.current-fragment {opacity: 1 !important;color: var(--color-orange) !important;transform: scale(1.05);} .interpretation-container { position: relative; width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; } .interpretation-group { font-family: 'Archivo Variable'; position: absolute; text-align: left; width: 100%; display: flex; flex-direction: column; gap: 4.5rem; } .interpretation-word { font-size: 4.5rem; font-weight: 400; line-height: 1.1; color: var(--color-neutral); margin: 0; letter-spacing: -0.02em; position: relative; padding-left: 2rem; }</style>
+<style>
+.slide-container { display: flex; align-items: center; justify-content: center; gap: 6rem; }
+.left-column { display: flex; flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+.right-column { display: grid; align-items: center; width: 14ch; }
+
+.main-word {
+  font-family: var(--font-libre-caslon);
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  color: var(--color-neutral);
+  transition: opacity 0.4s ease, color 0.4s ease;
+}
+.main-word.fragment.visible:not(.current-fragment) { opacity: 0.25 !important; }
+.main-word.fragment:not(.visible) { opacity: 1 !important; }
+.main-word.current-fragment { opacity: 1 !important; color: var(--color-orange) !important; }
+
+.interpretation-group {
+  font-family: var(--font-archivo);
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.interpretation-word { font-size: 2.6rem; font-weight: 300; line-height: 1; margin: 0; }
+</style>
 
 
-<div class="slide-container"><div class="left-column">
-        <h2 class="main-word fragment highlight-current-blue" data-fragment-index="0">Immersive</h2>
-        <h2 class="main-word fragment highlight-current-blue" data-fragment-index="1">Web</h2>
-        <h2 class="main-word fragment highlight-current-blue" data-fragment-index="2">Design</h2>
-    </div><div class="right-column">
-        <div class="interpretation-container">
-            <div class="interpretation-group fragment fade-in-then-out" data-fragment-index="0">
-                <div class="interpretation-word">Thoughtful</div>
-                <div class="interpretation-word">Complete</div>
-                <div class="interpretation-word">Enriching</div>
-            </div>
-            <div class="interpretation-group fragment fade-in-then-out" data-fragment-index="1">
-                <div class="interpretation-word">Small</div>
-                <div class="interpretation-word">Personal</div>
-                <div class="interpretation-word">Living</div>
-            </div>
-            <div class="interpretation-group fragment fade-in" data-fragment-index="2">
-                <div class="interpretation-word">Intentional</div>
-                <div class="interpretation-word">Crafted</div>
-                <div class="interpretation-word">Human</div>
-            </div>
+<div class="slide-container">
+    <div class="left-column">
+        <div class="main-word fragment" data-fragment-index="0">Immersive</div>
+        <div class="main-word fragment" data-fragment-index="1">Web</div>
+        <div class="main-word fragment" data-fragment-index="2">Design</div>
+    </div>
+    <div class="right-column">
+        <div class="interpretation-group fragment fade-in-then-out" data-fragment-index="0">
+            <div class="interpretation-word">Thoughtful</div>
+            <div class="interpretation-word">Complete</div>
+            <div class="interpretation-word">Enriching</div>
+        </div>
+        <div class="interpretation-group fragment fade-in-then-out" data-fragment-index="1">
+            <div class="interpretation-word">Small</div>
+            <div class="interpretation-word">Personal</div>
+            <div class="interpretation-word">Living</div>
+        </div>
+        <div class="interpretation-group fragment fade-in" data-fragment-index="2">
+            <div class="interpretation-word">Intentional</div>
+            <div class="interpretation-word">Crafted</div>
+            <div class="interpretation-word">Human</div>
         </div>
     </div>
 </div>
 
 notes: We don't mean VR headsets, we mean getting involved in the process from concept to creation. Not the massive, corporate web, but the _small, personal, living_ web.Not just pushing pixels in Figma. 
 
----
 
-## Welcome aboard!
-
----
-
-
-<split even gap="2">
-
-### A quick round of introductions? 
-
-
-![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130227629.png)
-
-</split>
 
 ---
 
@@ -853,10 +804,6 @@ It was not the only place where people did this, but it was by far the most popu
 
 Animated GIFs, page hit counters, scrolling marquee text, "under construction" signs, and wild tiled backgrounds. It's easy to look back now from our minimalist, professionally designed present and call it "bad design."...
 
----
-
-<section data-background-size="cover" data-background-video="[votes-2](uc.mp4)">
-</section>
 
 ---
 
@@ -1346,13 +1293,15 @@ Almost the same as the Internet Archive, but organized in a browsable way.
 
 ## One more thing before you go
 
-You're going to make a website right now, before you leave. On day one.
+You're going to make a webpage right now before you leave!
 
 ---
 
 ## Open a plain text editor
 
-Notepad, TextEdit (plain text mode), whatever. Type this. Make the words yours.
+Go to  **aman.bh/to/my-first-page** It has this: 
+
+Notepad, TextEdit (plain text mode), whatever. Paste this:
 
 ```html
 <!DOCTYPE html>
@@ -1379,7 +1328,6 @@ It opens in your browser.
 
 No servers, no accounts, no frameworks, no permission needed.<!--element class="fragment"-->
 
-Everything else in this course builds on what you just did.<!--element class="fragment"-->
 
 ---
 
@@ -1389,7 +1337,7 @@ Head over to the 'Assignments' page [here](https://teaching.aman.bh/web2026/assi
 
 Two things tonight:
 1. **Web archaeology**: surf the ruins, make a moodboard
-2. **Finish your installs**: check the [requirements page](https://teaching.aman.bh/web2026/requirements). Tomorrow we build all day.
+2. **Finish your installs**: check the [requirements page](https://teaching.aman.bh/web2026/requirements).
 
 ---
 
