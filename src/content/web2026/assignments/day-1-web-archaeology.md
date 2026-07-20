@@ -2,15 +2,15 @@
 title: "Assignment 1: Web archaeology"
 due: 2026-07-22
 description: Exploring the ruins and fringes of the web
-published: false
+published: true
 date: 2026-07-20T18:00
-updated: 2026-07-19T17:30
+updated: 2026-07-20T12:04
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/1
 ---
 
 We're going to spend some time exploring different corners of the internet, then make something with what we find. The web of today, the one that is mainstream, is a little boring, so we'll explore the ruins and the fringes instead.
 
-**This assignment is at the start of Day 3's class. Let's keep it limited (or at minimum) 90 minutes of surfing + 30 minutes of moodboarding.** Anything more is up to you, but you don't have to! **Remember that dev-notes need to be submitted every day, with updates on thoughts and progress for that day.**
+ **Remember that dev-notes need to be submitted every day, with updates on thoughts and progress for that day.**
 
 [You will find today's devnotes submission link here](https://github.com/open-making/web2026-dev-notes/issues/2).
 
@@ -18,7 +18,7 @@ Start with the ruins. The [Internet Archive Wayback Machine](https://web.archive
 
 You can also explore The [GeoCities Archive](https://geocities.restorativland.org/), which has thousands of personal homepages from the late 90s and early 2000s. [One Terabyte of Kilobyte Age](https://oneterabyteofkilobyteage.tumblr.com/) just shows you random screenshots from that era.
 
-Then look at what's happening now. Go back to those personal website examples from the slides and click around. Use [Marginalia Search](https://search.marginalia.nu/) to find small, non-commercial sites about topics you care about (search for a keyword and play with the filters on the sides. What do you end up with when you select 'Vintage'? What about 'Small web'?). When you find a personal site you like, look for links or blogs that they refer you to.
+Then look at what's happening now. Use [Marginalia Search](https://search.marginalia.nu/) to find small, non-commercial sites about topics you care about (search for a keyword and play with the filters on the sides. What do you end up with when you select 'Vintage'? What about 'Small web'?). When you find a personal site you like, look for links or blogs that they refer you to.
 
 Follow whatever interests you. If you see something that makes you curious, click on it. The goal is to get a sense of how many different ways people use this medium.
 
@@ -26,8 +26,7 @@ Follow whatever interests you. If you see something that makes you curious, clic
 
 ### Make a mood board
 
-Take screenshots of things that catch your attention for any reason. Put them together in whatever tool you prefer. This could be a Figma artboard, a Miro board, a Google doc with images, or you could print stuff out and make a physical collage. Don't worry about organizing it or making it look professional. Just collect things that seem worth remembering. **We'll come back to this board in Week 2 when you design your own site**; the things that caught your eye now are clues about your taste.
-
+Take screenshots of things that catch your attention for any reason. Put them together in whatever tool you prefer. This could be a Figma artboard, a Miro board, a Google doc with images, or you could print stuff out and make a physical collage. Don't worry about organizing it or making it look professional. Just collect things that seem worth remembering. **We'll come back to this board in Week 2 when you design your own site.**
 ### Also tonight: finish your installs
 
 Check the [requirements page](/web2026/requirements). By tomorrow you need VS Code, GitHub Desktop, and accounts on GitHub, Netlify, and Figma. Day 2 starts with all of us building!
