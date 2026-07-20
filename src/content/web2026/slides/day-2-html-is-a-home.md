@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-19T21:48
+updated: 2026-07-20T12:23
 transition: none
 ---
 
@@ -47,11 +47,10 @@ Use A4 sheets, scissors, glue, a pen to construct it from ground-up.
 
 ---
 
-## The rules
 
 1. Use an A4 sheet as your "page"
 2. Everything on this page is its own piece of paper labelled with words: "big heading", "menu", "photo", "caption"
-3. If something lives *inside* something else, it gets glued *on top of* it
+3. If something lives inside something else, it gets glued *on top of* it
 
 Maybe a menu with three links is one strip of paper with three smaller strips inside it. 
 A photo with a caption is two pieces in a bigger piece.
@@ -68,7 +67,6 @@ Small things go on big things, never the other way around.<!--element class="fra
 
 
 ---
-
 ## Mark, up
 
 Before computers, an editor would take a typed manuscript and scribble instructions all over it. *This line is the title. This bit, italics. New paragraph here.*

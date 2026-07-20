@@ -22,22 +22,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "b793b1e723a2c7fc",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "c25a0bd4b63fb1fb",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {},
-              "icon": "slides",
-              "title": "Preview: day-1-the-small-web.md"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -227,29 +211,30 @@
   },
   "active": "1172adac87189acd",
   "lastOpenFiles": [
-    "slides/day-1-the-small-web.md",
     "day-1-the-small-web.md",
-    "control-panel.md",
-    "day-2-html-is-a-home.md",
     "slides/day-2-html-is-a-home.md",
+    "slides/day-3-seeing-like-a-browser.md",
+    "day-5-grids-without-tears.md",
+    "day-4-setting-type-placing-images.md",
+    "day-3-seeing-like-a-browser.md",
+    "day-2-html-is-a-home.md",
+    "ai-policy.md",
+    "assignments/day-2-bohemian-rhapsody.md",
+    "assignments/day-1-web-archaeology.md",
+    "slides/day-1-the-small-web.md",
+    "control-panel.md",
     "assets/slides/day-2-html-is-a-home/IMG-20260719213915346.png",
     "assets/slides/day-2-html-is-a-home",
     "assets/slides/day-2-html-is-a-home/IMG-20260719213301816.png",
-    "assignments/day-2-bohemian-rhapsody.md",
     "assets/slides/day-1-the-small-web/IMG-20260719184055417.png",
     "assets/slides/day-1-the-small-web/IMG-20260719183828940.png",
     "requirements.md",
     "dump/web2025-retrospective.md",
-    "ai-policy.md",
-    "day-3-seeing-like-a-browser.md",
-    "day-4-setting-type-placing-images.md",
     "slides/day-4-setting-type-placing-images.md",
     "slides/day-5-grids-without-tears.md",
     "assignments/day-5-grid-challenges.md",
     "assignments/day-4-letters-to-a-young-designer.md",
     "assignments/day-3-flexbox-katas.md",
-    "slides/day-3-seeing-like-a-browser.md",
-    "assignments/day-1-web-archaeology.md",
     "assets/lib/fonts/LibreCaslonCondensed-Bold.ttf",
     "assets/lib/fonts/LibreCaslonCondensed-MediumItalic.woff2",
     "assets/lib/fonts/LibreCaslonCondensed-Italic[wght].woff2",

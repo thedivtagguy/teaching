@@ -4,8 +4,8 @@ due: 2026-07-20
 description: Exploring the ruins and fringes of the web
 published: true
 date: 2026-07-20T18:00
-updated: 2026-07-20T12:05
-submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/1
+updated: 2026-07-20T18:26
+submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/2
 ---
 
 We're going to spend some time exploring different corners of the internet, then make something with what we find. The web of today, the one that is mainstream, is a little boring, so we'll explore the ruins and the fringes instead.

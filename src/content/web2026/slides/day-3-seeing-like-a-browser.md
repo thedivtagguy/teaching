@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-19T16:19
+updated: 2026-07-20T12:33
 transition: none
 ---
 
@@ -12,7 +12,7 @@ transition: none
 
 ---
 
-## But first: pens out 🖊️
+## Pens out 🖊️
 
 **Box-spotting.** You have a printed screenshot of a website.
 

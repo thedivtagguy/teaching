@@ -11,17 +11,17 @@
   "enableExperimentalHash": false,
   "fileHashMap": {
     "slides/day-1-the-small-web.md": "c91c57805cf40bee63403f34ec4da9f713e407df5c26d9a1ca8a28d692461676",
-    "slides/day-3-seeing-like-a-browser.md": "de8e011fd9a9e3acde095c229a87a92f4c508310342e2ba33fa6c2a7a33e84f8",
+    "slides/day-3-seeing-like-a-browser.md": "d4c5674f8e33eb33729feef455e25698fc754ff2fc9f64cb21f98eb09e973d66",
     "slides/day-5-grids-without-tears.md": "c02ecfba936888afb61e78dc11c0ead53046814d41ad9874aa40469494490080",
     "slides/day-7-the-indieweb.md": "285d667d305da67eca03251a5062edd4ca9f1df559752635b103505b91cbd4f4",
-    "assignments/day-1-web-archaeology.md": "1fcc4ff4ddc1fe223f94bbbd9da73a52b0a0ef65834a0e9ef99e8973f80ad89a",
+    "assignments/day-1-web-archaeology.md": "4f8ba2692ef99008fb688eda34351061ac09412753f6bab548914ffdf26b66f2",
     "day-1-the-small-web.md": "fd4405ced113ee0e69239d59ac31d49b4b0ea8472baea3ce2725863373cf6dd2",
-    "slides/day-2-html-is-a-home.md": "050417d5b446fea0f3933fb420918df5707c2d041defb978dde75b8a8a906bae",
+    "slides/day-2-html-is-a-home.md": "edfd0df2ec3aa6218959c994353d037ce78a3f8fa790e8c8611a7e6475e6ccce",
     "requirements.md": "29c7a0ea55de0e2cb8a481109a37e8a02a0b4eaaa8143967a53fc4b7fff218b2",
     "ai-policy.md": "2ac75c9ffef28bda789eefaa1f22599fd1fe90cda1b23472546a267008e9dbf9",
     "outline.md": "22de9c8f504cfa3cec42d022bd0ad81de9e27b81af3f25a0d86a1202b63994c6",
-    "day-2-html-is-a-home.md": "2128b71e7d9a8989511610d3dac9849495e866154162ccf56ec97fab4eb2890f",
-    "assignments/day-2-bohemian-rhapsody.md": "8c13c24ec4e9e9c0eb315a8964c781d3a06805b23181f4d9d477c9397b40f756",
+    "day-2-html-is-a-home.md": "0897290a431ed4702b13ab8dc6f9c7c72ca33a33ebb2b298d3f84f56dba0b2e6",
+    "assignments/day-2-bohemian-rhapsody.md": "06862295fdcac1f4a96dfea91e5b0ed77fb16bb9c21e4f8f1efa764f09c952f3",
     "assignments/day-3-flexbox-katas.md": "fd8b1f4f466ac90cd4c8872e1dcfe85c84f0b89781d6b2b2b5648db5f2514f09"
   }
 }
