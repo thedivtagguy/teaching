@@ -7,7 +7,7 @@ seo_keywords: web design, HTML, CSS, responsive design, web development course, 
 seo_type: article
 seo_author: Aman Bhargava
 date: 2026-07-13T10:00
-updated: 2026-07-19T17:59
+updated: 2026-07-20T23:27
 published: true
 section: Course Info
 order: 2
@@ -36,7 +36,7 @@ This is a web-design + dev class so, you guessed it, you'll be needing your lapt
 - **GitHub Desktop**: Download it from [here](https://desktop.github.com/). This is a friendly app for saving versions of your work, think of it as a "save game" button for your projects. We'll start using it on Day 2.
 - **Obsidian**: Download it from [here](https://obsidian.md). It is a markdown editor (we will learn what that is), but you can think of it as a Notion that runs completely on your laptop and you fully own. 
 
-If you're done with everything and still feeling a little adventurous, you can **optionally** install Git (the command-line version) using [this guide](/web2026/install-guides). You don't have to do this before class, we'll do it together on Day 6.
+If you're done with everything and still feeling a little adventurous, you can **optionally** install Git (the command-line version) using [this guide](/web2026/guides). You don't have to do this before class, we'll do it together on Day 6.
 
 ### Platforms
 

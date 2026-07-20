@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrismPlus from 'rehype-prism-plus';
 import remarkGfm from 'remark-gfm';
 import remarkFootnotes from 'remark-footnotes';
+import rewriteImagePaths from './src/lib/remark/rewrite-image-paths.js';
 
 const config = defineMDSveXConfig({
   extensions: ['.svx', '.md'],
@@ -25,7 +26,9 @@ const config = defineMDSveXConfig({
   // Add remark plugins for GitHub Flavored Markdown and footnotes
   remarkPlugins: [
     remarkGfm,
-    [remarkFootnotes, { inlineNotes: true }]
+    [remarkFootnotes, { inlineNotes: true }],
+    // Rewrite bare image refs (e.g. ![](IMG-123.png)) to absolute /assets/... paths
+    rewriteImagePaths
   ],
 
   // Add rehype plugins for automatic heading IDs and anchor links

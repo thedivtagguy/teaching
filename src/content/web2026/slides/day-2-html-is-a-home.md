@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-20T23:23
+updated: 2026-07-20T23:27
 transition: none
 ---
 
@@ -324,12 +324,12 @@ When we're back we'll meet VS Code and you'll create a travesty.
 
 # Self-serve counter
 
-Please refer to the [**Install Guide**](https://teaching.aman.bh/web2026/install-guides) page on the course website.
+Please refer to the [**Guides**](https://teaching.aman.bh/web2026/guides) page on the course website.
 
 Preflight Checklist:
 
-1. You've [installed our class "profile" on VS Code](https://teaching.aman.bh/web2026/install-guides#installing-the-class-vs-code-profile). 
-2. You've [logged into Github Desktop](https://teaching.aman.bh/web2026/install-guides#github-desktop). 
+1. You've [installed our class "profile" on VS Code](https://teaching.aman.bh/web2026/guides#installing-the-class-vs-code-profile). 
+2. You've [logged into Github Desktop](https://teaching.aman.bh/web2026/guides#github-desktop). 
 
 ---
 
@@ -430,7 +430,7 @@ Would you want to drag and drop every single time you made a change?
 
 # Netlify and Chill
 
-Please refer to the [**Install Guide**](https://teaching.aman.bh/web2026/install-guides#connecting-your-repository-to-netlify) page for a guide on how to set your project up. 
+Please refer to the [**Guides**](https://teaching.aman.bh/web2026/guides#connecting-your-repository-to-netlify) page for a guide on how to set your project up. 
 
 ---
 
