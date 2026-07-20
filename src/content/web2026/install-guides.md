@@ -2,7 +2,7 @@
 title: Install Guides
 date: 2026-07-13
 section: Appendix
-updated: 2026-07-20T22:52
+updated: 2026-07-20T23:22
 published: true
 slug: install-guides
 ---
@@ -20,9 +20,9 @@ Step 1: Open VS Code.
 
 Step 2: Click the gear icon in the bottom-left corner and go to **Profiles**, then **Import Profile...**
 
-![](IMG-20260720205846983.png)
+![](/assets/install-guides/IMG-20260720205846983.png)
 
-![](IMG-20260720210400226.png)
+![](/assets/install-guides/IMG-20260720210400226.png)
 
 Step 3: In the box that appears, paste this link:
 
@@ -38,7 +38,7 @@ Step 5: Wait a minute or two while the extensions install. You'll see some activ
 
 Create a folder anywhere, open it in VS Code, and make a file called `index.html`. Type some HTML in it, right-click anywhere in the file, and you should see an option that says **Open with Live Server**.
 
-![](IMG-20260720210806206.png)
+![](/assets/install-guides/IMG-20260720210806206.png)
 
 If you see it, congratulations, you're set up. If you don't, the extensions might still be installing, give it a minute. Still nothing? Ask for my help!
 
@@ -52,11 +52,11 @@ Cloning means downloading a copy of a project from GitHub onto your laptop, with
 
 Step 1: In GitHub Desktop, go to **File > Clone Repository** (or click the big "Clone a repository" button if you see one).
 
-![](IMG-20260720223450610.png)
+![](/assets/install-guides/IMG-20260720223450610.png)
 
 Step 2: Under the **GitHub.com** tab, you'll see a list of all repositories on your account, including any forks you've made. Select the one you want. You can also click the "URL" tab and paste in a Github URL. 
 
-![](IMG-20260720223547678.png)
+![](/assets/install-guides/IMG-20260720223547678.png)
 
 
 Step 3: Check the **Local Path**. This is where the folder will live on your computer. 
@@ -69,7 +69,7 @@ That's it! The project is now a normal folder on your laptop.
 
 Once a repository is cloned, GitHub Desktop shows you three shortcuts on its main screen. The one you want is **Open in Visual Studio Code**.
 
-![](IMG-20260720223652660.png)
+![](/assets/install-guides/IMG-20260720223652660.png)
 
 
 Click it and VS Code opens with the whole project folder loaded. This is how you'll start work every time: open GitHub Desktop, pick the repository from the dropdown in the top-left, open in VS Code.
@@ -80,7 +80,7 @@ You've made some changes in VS Code. Time to checkpoint them.
 
 Step 1: Switch to GitHub Desktop. The left panel shows every file you've changed. Click on a file and the right panel shows exactly what changed: green lines are new, red lines are deleted (1).
 
-![](IMG-20260720223836821.png)
+![](/assets/install-guides/IMG-20260720223836821.png)
 
 Step 2: In the bottom-left corner, there's a small text box (2). Write a short message describing what you did. "Made the title enormous and red" is a perfectly good commit message. "changes" is a useless one, because in two weeks you won't remember what "changes" were.
 
@@ -92,7 +92,7 @@ Your checkpoint is saved. But only on your laptop, which brings us to:
 
 After you commit, a button appears at the top that says **Push origin**. Click it.
 
-![](IMG-20260720223957946.png)
+![](/assets/install-guides/IMG-20260720223957946.png)
 
 
 That's it. Your commits travel up to GitHub, safe from anything that happens to your laptop. If your site is connected to Netlify, this is also the moment your live website updates.
@@ -105,7 +105,7 @@ To do this within VS Code, at the left sidebar. One of the icons looks like a br
 
 When you've changed files, a number badge appears on this icon telling you how many.
 
-![](IMG-20260720224126196.png)
+![](/assets/install-guides/IMG-20260720224126196.png)
 
 Step 1: At the top of the Source Control panel there's a message box. Type your commit message there.
 
@@ -113,7 +113,7 @@ Step 2: Click the **Commit** button below it.
 
 Step 3: VS Code may ask if you want to "stage all changes and commit them directly". Say yes. (Staging is a git concept we'll get to later. For now, yes means "commit everything I changed", which is what you want.)
 
-![](IMG-20260720224322405.png)
+![](/assets/install-guides/IMG-20260720224322405.png)
 
 After committing, the Commit button changes to say **Sync Changes**. Click it. Sync is VS Code's word for push (technically push and pull together, but that distinction won't matter for a while).
 
@@ -137,17 +137,17 @@ Step 3: GitHub will ask you to authorize Netlify. Click **Authorize**.
 
 Step 1: From your Netlify dashboard, click **Add new project**.
 
-![](IMG-20260720224517782.png)
+![](/assets/install-guides/IMG-20260720224517782.png)
 
 Step 2: Choose **GitHub** as the source.
 
-![](IMG-20260720224555020.png)
+![](/assets/install-guides/IMG-20260720224555020.png)
 
 Step 3: A window may pop up asking which repositories Netlify can access. Select all.
 
 Step 4: Back in Netlify, find your repository in the list and click it.
 
-![](IMG-20260720224721556.png)
+![](/assets/install-guides/IMG-20260720224721556.png)
 
 ### Deploy settings
 
@@ -161,7 +161,7 @@ Our sites are plain files, there is nothing to build.
 
 Click **Deploy site**.
 
-![](IMG-20260720224835041.png)
+![](/assets/install-guides/IMG-20260720224835041.png)
 
 
 ### Finding your live URL
@@ -170,7 +170,7 @@ Netlify takes a minute or two. When it's done, you'll see a link at the top of y
 
 You can change this silly name: go to **Project configuration > Change site name** and pick something you like. The `.netlify.app` part stays for now.
 
-![](IMG-20260720224955245.png)
+![](/assets/install-guides/IMG-20260720224955245.png)
 
 ### How updates work from here
 
