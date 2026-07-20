@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-20T08:14
+updated: 2026-07-20T08:26
 transition: none
 ---
 
@@ -1062,6 +1062,120 @@ notes:  One is not better than the other. They serve different needs and both ca
 
 ---
 
+## Before looking forward, let us look back
+
+To really grasp what's special about making your own things on the web today, we may benefit from doing a dive into a bit of history.
+
+---
+
+We're going on an expedition, a bit of **Internet Archaeology**, to dig through the digital histories of the late 90s and early 2000s.
+
+---
+
+### The Internet Archive's Wayback Machine
+
+[The most important tool](https://web.archive.org/) for any internet archaeologist. It has saved snapshots of billions of web pages over time.
+
+---
+
+<split even gap="2">
+
+Enter a URL, select a year from the timeline, then click on a specific date in the calendar to see a snapshot of the site from that day.
+
+![IMG|700](/assets/slides/that's-all-folks/IMG-20250813130228988.png)
+
+</split>
+
+
+notes: The goal is to move beyond simple aesthetic judgment ("this looks ugly") and toward historical analysis ("_why_ does it look this way?")
+
+---
+
+![](/assets/slides/that's-all-folks/IMG-20250813130229011.png)
+
+---
+
+![](/assets/slides/that's-all-folks/IMG-20250813130229039.png)
+
+---
+
+![](/assets/slides/that's-all-folks/IMG-20250813130229060.png)
+
+---
+
+![](/assets/slides/that's-all-folks/IMG-20250813130229084.png)
+
+---
+
+### The GeoCities Archives
+
+Since GeoCities was shut down by Yahoo in 2009, volunteer groups like the Archive Team have rescued and archived terabytes of its data. 
+
+---
+
+<split even gap="2">
+
+<div>
+
+
+- https://geocities.restorativland.org/ Direct mirrors of old GeoCities sites, neatly sorted by their original "neighborhood". A bit like wandering through the ruins themselves.
+- [One Terabyte of Kilobyte Age](https://oneterabyteofkilobyteage.tumblr.com/): An art project by Olia Lialina and Dragan Espenschied that posts random, automated screenshots from the archive. 
+
+</div>
+
+![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130229126.png)
+
+</split>
+
+
+---
+
+### The Web Design Museum
+
+<split even gap="2">
+
+<div>
+
+[A gallery of screenshots and videos of websites through the years.](https://www.webdesignmuseum.org/all-websites)
+
+Almost the same as the Internet Archive, but organized in a browsable way.
+
+</div>
+
+
+![IMG|600](/assets/slides/that's-all-folks/IMG-20250813130229156.png)
+
+</split>
+
+
+---
+
+## Your turn
+
+For the next while, you're internet archaeologists. Pick a starting point and wander:
+
+- [The GeoCities archives](https://geocities.restorativland.org/)
+- [The Wayback Machine](https://web.archive.org/)
+- [The Web Design Museum](https://www.webdesignmuseum.org/all-websites)
+
+**Collect your finds into a moodboard as you go.** Screenshots, links, whatever catches your eye. Details on the [assignments page](https://teaching.aman.bh/web2026/assignments/).
+
+---
+
+## Show and tell
+
+Put your favourite find up on the projector.
+
+What made you stop scrolling? Why does it look the way it does?
+
+---
+
+## Break
+
+Back in 15.
+
+---
+
 ## The Web is a Material
 
 You can mould that material any way you want
@@ -1202,95 +1316,6 @@ You can mould that material any way you want
 
 ---
 
-## Before looking forward, let us look back
-
-To really grasp what's special about making your own things on the web today, we may benefit from doing a dive into a bit of history.
-
----
-
-We're going on an expedition, a bit of **Internet Archaeology**, to dig through the digital histories of the late 90s and early 2000s.
-
-
----
-
-### The Internet Archive's Wayback Machine
-
-[The most important tool](https://web.archive.org/) for any internet archaeologist. It has saved snapshots of billions of web pages over time.
-
----
-
-<split even gap="2">
-
-Enter a URL, select a year from the timeline, then click on a specific date in the calendar to see a snapshot of the site from that day.
-
-![IMG|700](/assets/slides/that's-all-folks/IMG-20250813130228988.png)
-
-</split>
-
-
-notes: The goal is to move beyond simple aesthetic judgment ("this looks ugly") and toward historical analysis ("_why_ does it look this way?")
-
----
-
-![](/assets/slides/that's-all-folks/IMG-20250813130229011.png)
-
----
-
-![](/assets/slides/that's-all-folks/IMG-20250813130229039.png)
-
----
-
-![](/assets/slides/that's-all-folks/IMG-20250813130229060.png)
-
----
-
-![](/assets/slides/that's-all-folks/IMG-20250813130229084.png)
-
----
-
-### The GeoCities Archives
-
-Since GeoCities was shut down by Yahoo in 2009, volunteer groups like the Archive Team have rescued and archived terabytes of its data. 
-
----
-
-<split even gap="2">
-
-<div>
-
-
-- https://geocities.restorativland.org/ Direct mirrors of old GeoCities sites, neatly sorted by their original "neighborhood". A bit like wandering through the ruins themselves.
-- [One Terabyte of Kilobyte Age](https://oneterabyteofkilobyteage.tumblr.com/): An art project by Olia Lialina and Dragan Espenschied that posts random, automated screenshots from the archive. 
-
-</div>
-
-![IMG|500](/assets/slides/that's-all-folks/IMG-20250813130229126.png)
-
-</split>
-
-
----
-
-### The Web Design Museum
-
-<split even gap="2">
-
-<div>
-
-[A gallery of screenshots and videos of websites through the years.](https://www.webdesignmuseum.org/all-websites)
-
-Almost the same as the Internet Archive, but organized in a browsable way.
-
-</div>
-
-
-![IMG|600](/assets/slides/that's-all-folks/IMG-20250813130229156.png)
-
-</split>
-
-
----
-
 ## One more thing before you go
 
 You're going to make a webpage right now before you leave!
@@ -1331,13 +1356,13 @@ No servers, no accounts, no frameworks, no permission needed.<!--element class="
 
 ---
 
-## Activity Brief
+## Before tomorrow
 
-Head over to the 'Assignments' page [here](https://teaching.aman.bh/web2026/assignments/) for more.
+Just one thing tonight:
 
-Two things tonight:
-1. **Web archaeology**: surf the ruins, make a moodboard
-2. **Finish your installs**: check the [requirements page](https://teaching.aman.bh/web2026/requirements).
+**Finish your installs**: check the [requirements page](https://teaching.aman.bh/web2026/requirements).
+
+If your moodboard from today feels thin, keep digging and add to it.
 
 ---
 
