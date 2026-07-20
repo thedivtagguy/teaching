@@ -1,2 +1,14 @@
 /web2025/short-stories https://web2025-short-stories.netlify.app/ 200!
 /web2025/showcase https://web2025-gallery.netlify.app/ 200!
+
+# Slide export path fixes. These only apply when no real file matches, mirroring
+# the /slides/ fallbacks in hooks.server.js (which only runs in local dev).
+
+# The Obsidian exporter links the theme as assets/reveal-theme.css but copies it
+# to css/reveal-theme.css.
+/slides/:edition/:deck/assets/reveal-theme.css /slides/:edition/:deck/css/reveal-theme.css 200
+
+# Decks reference shared media as ../assets/slides/<day>/<file>, which resolves
+# under /slides/... instead of the real /assets/... location.
+/slides/assets/slides/* /assets/slides/:splat 200
+/slides/:edition/assets/slides/* /assets/slides/:splat 200

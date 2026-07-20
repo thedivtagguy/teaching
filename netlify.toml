@@ -7,25 +7,6 @@
 [functions]
   included_files = ["!static/**"]
 
-# Slide export path fixes. These only apply when no real file matches, mirroring
-# the /slides/ fallbacks in hooks.server.js (which only runs in local dev).
-
-# The Obsidian exporter links the theme as assets/reveal-theme.css but copies it
-# to css/reveal-theme.css.
-[[redirects]]
-  from = "/slides/:edition/:deck/assets/reveal-theme.css"
-  to = "/slides/:edition/:deck/css/reveal-theme.css"
-  status = 200
-
-# Decks reference shared media as ../assets/slides/<day>/<file>, which resolves
-# under /slides/... instead of the real /assets/... location.
-[[redirects]]
-  from = "/slides/assets/slides/*"
-  to = "/assets/slides/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/slides/:edition/assets/slides/*"
-  to = "/assets/slides/:splat"
-  status = 200
+# Redirects live in _redirects at the repo root — adapter-netlify rejects
+# [[redirects]] in this file.
 
