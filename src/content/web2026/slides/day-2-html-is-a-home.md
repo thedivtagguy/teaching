@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-20T12:23
+updated: 2026-07-20T23:05
 transition: none
 ---
 
@@ -10,9 +10,13 @@ transition: none
 
 ---
 
-## Welcome back!
+## Dev-Notes
 
-Yesterday you made a website in four minutes with Notepad and typed something into a file. Today we'll figure out what that files means.<!--element class="fragment"-->
+No reports, but zooming out!
+
+❌ "We explored old websites and learned how design changed over time."
+
+✅ "Spent 20 minutes on a 1998 fan page for a band I've never heard of but for some reason the way it was _written_ kept me hanging around. It made me think about..."
 
 ---
 
@@ -20,19 +24,10 @@ Yesterday you made a website in four minutes with Notepad and typed something in
 
 Morning: paper, scissors, and what even is HTML??
 
-Afternoon: VS Code, a game, and your first website on the internet.<!--element class="fragment"-->
+Afternoon: VS Code, a game, and Freddie Mercury.<!--element class="fragment"-->
 
 ---
-
-# But first, some television
-
----
-
 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CkzbI1Tv_rQ?si=BYMe8b1FHbngjXl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
----
-
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BUZIaTHm_oE?si=MeYrYVMOZPGyVJM9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -238,9 +233,6 @@ Since we don't want to care about all the 132 tags today, here's what you want t
 <span>....Inline Container
 ```
 
----
-
-## There are divs and sections everywhere for those with the eyes to see
 
 ---
 
@@ -321,19 +313,23 @@ When we're back we'll meet VS Code and you'll create a travesty.
 
 ---
 
-# Setting Up Your Lab 👩‍🔬
 
-Preflight Checklist:
-
-1. You've installed VS Code
-2. You've installed GitHub Desktop
-3. You have an account on GitHub
-
-We'll take a quick tour together: the file explorer, the editor, the terminal you may politely ignore for now, and a little thing called Live Server.
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BUZIaTHm_oE?si=MeYrYVMOZPGyVJM9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
-# A five minute detour: saving your work
+# Setting Up Your Lab 👩‍🔬
+
+---
+
+# Self-serve counter
+
+Please refer to the **Install Guide** page on the course website.
+
+Preflight Checklist:
+
+1. You've installed our class "profile" on VS Code. 
+2. You've logged into Github Desktop. 
 
 ---
 
@@ -350,7 +346,7 @@ We've all been there.<!--element class="fragment"-->
 
 ## The fix: commits
 
-A **commit** is a save-game checkpoint for your whole project. What changed, when, and a tiny message saying why.
+A **commit** is a save-game checkpoint for your projects. What changed, when, and a tiny message saying why.
 
 
 You can always go back to any checkpoint.
@@ -358,7 +354,6 @@ You can always go back to any checkpoint.
 
 Today we do this with GitHub Desktop: it shows you what changed, you write a message, you click **Commit**, then **Push**. Push sends your checkpoints to GitHub, safe from laptop accidents.
 
-**Last five minutes of every class, forever: commit and push.**<!--element class="fragment"-->
 
 ---
 
@@ -368,19 +363,18 @@ Today we do this with GitHub Desktop: it shows you what changed, you write a mes
 
 # Bohemian Rhapsody 👨‍🎤
 
-By the end of this exercise, you will have a crappy website on the internet. Lets go.
+By the end of this exercise, you will have a crappy website on the internet. Lessssgooooo.
 
 ---
 
 
 I have marked up the entire song in clean, semantic HTML.
 
-
 Your job is to give it styles. BUT, it has to be messy, ugly, a complete Dada-ist masterpiece. Ugly. A CRIMEEE!!
 
 <div class="fragment">
 
-**One rule: you have to find out how to commit each crime yourself.** Ask "how do I make text blink?" and go search.
+**You have to find out how to commit each crime against design yourself.** Ask "how do I make text blink?" and go search.
 </div>
 
 ---
@@ -428,46 +422,22 @@ https://github.com/open-making/web2026-bohemian-rhapsody/blob/main/css-propertie
 
 ## Right now, your site lives on your laptop
 
-If you the lid it's gone from the world.
+Yesterday we dragged and dropped our websites in Netlify, but that's a pretty clumsy way to do it.
 
-We need a computer that never closes its lid, holding your files, handing them to anyone who asks.<!--element class="fragment"-->
-
-That's all a server is.<!--element class="fragment"-->
+Would you want to drag and drop every single time you made a change? 
 
 ---
 
 # Netlify and Chill
 
-[Netlify](https://netlify.app) is a company with a lot of computers that never close their lids.
-
-Give them your files and they'll serve your site to the whole world for free.
-
----
-
-## Free? What's the catch?
-
-Our site is **static**: it's just files. No database, no logins, nothing complicated done per visitor. Every visitor gets the same files.
-
-Handing out files is absurdly cheap. Your ugly masterpiece costs Netlify fractions of a paisa.<!--element class="fragment"-->
-
----
-
-## Let's deploy
-
-1. Go to [Netlify.com](https://netlify.com) and login **with your GitHub account**
-2. Add a new site. In the options, choose 'Import Existing Project'
-3. Select GitHub and search for your bohemian-rhapsody fork
-4. Click deploy
-
-In a few minutes, your website will be online with a silly looking URL.
-
-And because Netlify watches your GitHub repo: every push updates the live site. Commit, push, published.<!--element class="fragment"-->
+Please refer to the **Install Guide** page for a guide on how to set your project up. 
 
 ---
 
 # Your site is live!
 
-Day two, and you have a website on the actual internet.
+And because Netlify watches your GitHub repo: every push updates the live site. Commit, push, published.<!--element class="fragment"-->
+
 
 Everything you make after this will be better.<!--element class="fragment"-->
 

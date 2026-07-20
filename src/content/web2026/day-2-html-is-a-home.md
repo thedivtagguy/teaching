@@ -2,7 +2,7 @@
 title: Day 2 - HTML Is a Home
 date: 2026-07-21
 description: What markup really is, nesting with paper and scissors, CSS selectors, your first (ugly) deploy
-published: false
+published: true
 section: Foundations
 order: 2
 seo_title: HTML Is a Home
@@ -10,7 +10,7 @@ seo_description: What markup really is, nesting with paper and scissors, CSS sel
 seo_keywords: web design, HTML, CSS, semantic HTML, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-20T12:50
+updated: 2026-07-20T23:06
 slug: day-2-html-is-a-home
 slides: https://teaching.aman.bh/slides/web2026/day-2-html-is-a-home
 show_metadata_card: true
@@ -28,11 +28,11 @@ assignments: true
 ---
 ## Day 2: HTML Is a Home
 
-Today was about what HTML is.
+Today was about what HTML is!
 
 **In the morning** we put the laptops away and built webpages out of paper to learn about how things nest within a webpage. We went over tags and pairs, what nests inside what, and how browsers read HTML. After that, we got our first taste of CSS: selectors, `id`s and classes, practiced with a few rounds of CSS Diner.
 
-**In the afternoon** we set up our VS Code, Live Server, GitHub Desktop and learned the commit-and-push ritual we'll repeat in the last five minutes of every class. Building on our knowledge of CSS selectors, everyone forked a cleanly marked-up Bohemian Rhapsody and styled it into the ugliest website they could. We deployed the monstrosities to Netlify so that the world could see what we made. It's only day two, and everyone has a website on the actual internet!!
+**In the afternoon** we set up our VS Code, Live Server, GitHub Desktop and learnt how to commit. Building on our knowledge of CSS selectors, everyone forked a cleanly marked-up Bohemian Rhapsody and styled it into the ugliest website they could. We deployed the monstrosities to Netlify so that the world could see what we made. It's only day two, and everyone has a website on the actual internet!!
 
 Details on the [assignments page](/web2026/assignments).
 
