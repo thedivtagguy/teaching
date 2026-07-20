@@ -2,7 +2,7 @@
 title: Day 1 - The Small Web
 date: 2026-07-20
 description: Context for the class, internet archaeology, Geocities and nostalgia, and your first webpage, today.
-published: false
+published: true
 section: Foundations
 order: 1
 seo_title: The Small Web
@@ -10,7 +10,7 @@ seo_description: Context for the class, internet archaeology, Geocities and nost
 seo_keywords: web design, HTML, CSS, small web, indieweb, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-19T17:30
+updated: 2026-07-19T21:57
 slug: day-1-the-small-web
 slides: https://teaching.aman.bh/slides/web2026/day-1-the-small-web
 show_metadata_card: true
@@ -29,13 +29,13 @@ assignments: true
 
 ## Day 1: The Small Web
 
-Today is less about "how" and more about "why." We'll dig into what it _feels_ like to be a creative person making things for the web in an age when AI can generate code, designers are told to "stay in their lane," and all the web's starting to look eerily the same.
+Today is less about "how" and more about "why." We'll dig into what it _feels_ like to be a creative person making things for the web in an age when AI can generate code, designers are told to "stay in their lane," and all the web's starting to look the same.
 
 **We'll talk about:**
 
-- The classic assembly-line model of web design (designer → dev → launch) and how it causes silo-ing of creativity. Instead, there's power in becoming a bit **T-shaped**: knowing your core craft well, but being able to play in the broad, messy, interconnected parts around it.
+- The classic assembly-line model of web design (designer → dev → launch) and how it causes silo-ing of creativity.
 
-- How the web, as a space, isn't fixed. It's a city or a garden or a pile of books. It can be a highly personal, living material, not just an industrial machine.
+- How the web, as a space, isn't just one thing. It's a city or a garden or a pile of books. It can be a highly personal, living material, not just an industrial machine.
 
 - When the web opened up in the 90s, it wasn't the corporations we see now but **personal, weird, handmade sites on platforms like GeoCities.** A new vernacular emerged when everyone was allowed to play, not just the professional designers and makers.
 

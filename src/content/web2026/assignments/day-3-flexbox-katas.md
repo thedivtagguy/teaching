@@ -4,7 +4,7 @@ due: 2026-07-24
 description: Three small flexbox exercises to build layout muscle memory
 published: false
 date: 2026-07-22T18:00
-updated: 2026-07-15T12:00
+updated: 2026-07-19T21:23
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/3
 ---
 
@@ -26,6 +26,6 @@ Three images in a row that share the space equally, with consistent gaps, and do
 
 ### Submitting
 
-Deploy the file to Netlify (add it to your Hey Jude site as a second page if you like, in which case you'll also learn how two pages link) and drop the URL in the submission thread with your dev note.
+Deploy the file to Netlify (add it to your Bohemian Rhapsody site as a second page if you like, in which case you'll also learn how two pages link) and drop the URL in the submission thread with your dev note.
 
 Stuck past the hour? Stuck-note it. Flexbox Froggy levels 1 to 13 cover everything these katas need, so revisiting the game *is* a legitimate solving strategy.

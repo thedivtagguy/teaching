@@ -12,6 +12,8 @@ function getContentType(filePath) {
 		case 'jpg': case 'jpeg': return 'image/jpeg';
 		case 'gif': return 'image/gif';
 		case 'svg': return 'image/svg+xml';
+		case 'mp4': return 'video/mp4';
+		case 'webm': return 'video/webm';
 		case 'woff': return 'font/woff';
 		case 'woff2': return 'font/woff2';
 		case 'ttf': return 'font/ttf';
@@ -51,18 +53,49 @@ export async function handle({ event, resolve }) {
 				const assetPath = pathParts.slice(2).join('/'); // e.g. "dist/reveal.css"
 				const editionDir = resolvePath(process.cwd(), 'static', 'slides', edition);
 
+				// The Obsidian exporter sometimes links the theme as assets/<file> while
+				// copying it to css/<file> (or vice versa), so try both folders.
+				const withSwaps = (p) => {
+					const variants = [p];
+					if (p.startsWith('assets/')) variants.push(`css/${p.slice('assets/'.length)}`);
+					else if (p.startsWith('css/')) variants.push(`assets/${p.slice('css/'.length)}`);
+					return variants;
+				};
+
 				if (existsSync(editionDir) && statSync(editionDir).isDirectory()) {
 					const dayFolders = readdirSync(editionDir).filter((name) =>
 						statSync(resolvePath(editionDir, name)).isDirectory()
 					);
-					for (const dayFolder of dayFolders) {
-						const candidate = resolvePath(editionDir, dayFolder, assetPath);
-						if (existsSync(candidate) && statSync(candidate).isFile()) {
-							console.log('Found asset in slides folder:', candidate);
-							staticFilePath = candidate;
-							break;
+					outer: for (const dayFolder of dayFolders) {
+						// URLs with a trailing slash repeat the day folder in the asset
+						// path (day-x/assets/foo.css requested inside day-x); strip it.
+						const rel = assetPath.startsWith(`${dayFolder}/`)
+							? assetPath.slice(dayFolder.length + 1)
+							: assetPath;
+						for (const tryPath of withSwaps(rel)) {
+							const candidate = resolvePath(editionDir, dayFolder, tryPath);
+							if (existsSync(candidate) && statSync(candidate).isFile()) {
+								console.log('Found asset in slides folder:', candidate);
+								staticFilePath = candidate;
+								break outer;
+							}
 						}
 					}
+				}
+			}
+		}
+
+		// Decks reference shared media as ../assets/slides/<day>/<file>, which lands
+		// on /slides/assets/... or /slides/<edition>/assets/... depending on whether
+		// the deck URL had a trailing slash. Those files live in static/assets/, so
+		// remap anything still unresolved that contains assets/slides/.
+		if (!(existsSync(staticFilePath) && statSync(staticFilePath).isFile())) {
+			const assetsIdx = urlPath.indexOf('assets/slides/');
+			if (assetsIdx !== -1) {
+				const rootCandidate = resolvePath(process.cwd(), 'static', urlPath.slice(assetsIdx));
+				if (existsSync(rootCandidate) && statSync(rootCandidate).isFile()) {
+					console.log('Found asset in root assets folder:', rootCandidate);
+					staticFilePath = rootCandidate;
 				}
 			}
 		}

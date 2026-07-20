@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-19T17:35
+updated: 2026-07-19T21:48
 transition: none
 ---
 
@@ -12,49 +12,171 @@ transition: none
 
 ## Welcome back!
 
-Yesterday you made a website in four minutes with Notepad.
-
-Using the same understanding, we'll build something a little bigger today.
+Yesterday you made a website in four minutes with Notepad and typed something into a file. Today we'll figure out what that files means.<!--element class="fragment"-->
 
 ---
 
-## But first: sticky notes
+## Plan for today
 
-**Markup the room.**
+Morning: paper, scissors, and what even is HTML??
 
-You have sticky notes with tags on them:
-`<header>` `<nav>` `<main>` `<aside>` `<footer>` `<h1>` `<p>` `<img>`
-
-In pairs: stick them on things in this room. Or on each other.
-
-Where's the `<header>` of a person? What's the `<aside>` of this classroom?<!--element class="fragment"-->
+Afternoon: VS Code, a game, and your first website on the internet.<!--element class="fragment"-->
 
 ---
 
-# HTML
+# But first, some television
 
 ---
 
-# Hyper
-# Text
-# Markup
-# Language
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/CkzbI1Tv_rQ?si=BYMe8b1FHbngjXl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
-## HTML is the material of the web
-
-**It organizes your page for the browser to understand.**
-
-Human-readable. Words, not "programming" syntax. Uses tags.
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BUZIaTHm_oE?si=MeYrYVMOZPGyVJM9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
-### Every webpage is an html document
-
-### Every website is a collection of linked documents <!--element class="fragment"-->
+# Activity: Paper Layouts ✂️
 
 ---
+
+## Build a webpage without computer
+
+Pick a website you use every day. Or invent one!
+Use A4 sheets, scissors, glue, a pen to construct it from ground-up.
+
+---
+
+## The rules
+
+1. Use an A4 sheet as your "page"
+2. Everything on this page is its own piece of paper labelled with words: "big heading", "menu", "photo", "caption"
+3. If something lives *inside* something else, it gets glued *on top of* it
+
+Maybe a menu with three links is one strip of paper with three smaller strips inside it. 
+A photo with a caption is two pieces in a bigger piece.
+
+**Time: 30 minutes**
+
+---
+
+## Sheet happens
+
+A piece is either fully inside its parent, or it's outside. There is no half-in.
+
+Small things go on big things, never the other way around.<!--element class="fragment"-->
+
+
+---
+
+## Mark, up
+
+Before computers, an editor would take a typed manuscript and scribble instructions all over it. *This line is the title. This bit, italics. New paragraph here.*
+
+---
+
+![](IMG-20260719213301816.png)
+
+[Markup](https://www.ncbi.nlm.nih.gov/staff/beck/xml/markup/I-A.html) 
+
+---
+
+Here's some text. Browser be like "???"
+
+```
+Bohemian Rhapsody
+
+Is this the real life?
+Is this just fantasy?
+```
+
+---
+
+Now we scribble on it:
+
+```html
+<h1>Bohemian Rhapsody</h1>
+
+<p>Is this the real life?</p>
+<p>Is this just fantasy?</p>
+```
+
+
+HTML never says how things look and only says what the things are.<!--element class="fragment"-->
+
+---
+
+# Tag, you're it
+
+An HTML element is a start tag, some content, and an end tag.
+
+```html
+[tag] ────── content ────────── [tag]
+<p>       some text...          </p>
+└────────── element ──────────────┘
+```
+
+```html
+<html> is for the root document
+<head> is for meta information
+<p> is for paragraphs
+<audio> is for (lol take a guess)
+```
+
+---
+
+## Tags come in pairs
+
+`<p>` opens. `</p>` closes. 
+
+```html
+<!-- This sparks joy -->
+<h1> Page Title </h1>
+
+<!-- This does not spark joy -->
+<h1> Page Title
+```
+
+If you open a paragraph and never close it, the browser has to guess where it ends. Browsers are dumbasses.<!--element class="fragment"-->
+
+---
+
+## And pairs have to match
+
+Whoever opened last has to close first. Kind of like brackets in math?
+
+```html
+<b><i>bold and italic</i></b>    ← yes
+<b><i>bold and italic</b></i>    ← no.
+```
+
+---
+
+![](IMG-20260719213915346.png)
+
+
+---
+
+## Sheets and strips
+
+This morning you had two kinds of paper: big sheets you glued things onto, and small strips you glued onto them.
+
+HTML has the same two kinds.
+
+```html
+sheets: <div> <section> <ul> <h1> <p>
+strips: <a> <span> <img> <b>
+```
+
+---
+
+## Browsers are dumb but kind
+
+If you break these rules, browsers don't show an error, but instead rearrange your page into something "legal". And then you'll wonder why something isn't working.<!--element class="fragment"-->
+
+---
+
+So a full document is just this idea, nested a few levels deep:
 
 ```html
 <!DOCTYPE html>
@@ -65,13 +187,14 @@ Human-readable. Words, not "programming" syntax. Uses tags.
    <body>
       <h1>I was wondering if after all these years</h1>
       <p>You'd still like to meet</p>
-      <br/>
       <p>Probably not.</p>
    </body>
 </html>
 ```
 
 ---
+
+Your paper version, typed out:
 
 ```html
 <!DOCTYPE html>
@@ -88,110 +211,30 @@ Human-readable. Words, not "programming" syntax. Uses tags.
   │    <h1>I was wondering if after     │
   │        all these years</h1>         │
   │    <p>You'd still like to meet</p>  │
-  │    <br/>                            │
   │    <p>Probably not.</p>             │
+  │ </body>                             │
   └─────────────────────────────────────┘
 </html>
 ```
 
 ---
 
-# Tag, you're it
+### Every webpage is an html document
 
-An HTML element is defined by a start tag, some content, and an end tag.
-
-```html
-[tag] ────── content ────────── [tag]
-<p>       some text...          </p>
-└────────── element ──────────────┘
-```
-
-Tags always come in pairs.
-
----
-
-# Now: HTML is a home 🏠
-
-Yesterday's file was a room. A real page is a house.
-
----
-
-```html
-<body>
-  <header>   the porch & nameplate: who lives here     </header>
-  <nav>      the hallway signage: where things are     </nav>
-  <main>     the living room: where living happens     </main>
-  <aside>    the shelf of curiosities along the wall   </aside>
-  <footer>   the basement: important, rarely visited   </footer>
-</body>
-```
-
----
-
-## And a `<div>`?
-
-A `<div>` is a **cardboard box**.
-
-Fine for storage. Genuinely useful.<!--element class="fragment"-->
-
-But if your whole house is cardboard boxes, your guests get confused. <!--element class="fragment"-->
-
-So: rooms first (`header`, `main`, `footer`...), boxes when nothing else fits.<!--element class="fragment"-->
-
----
-
-## Why bother with rooms?
-
-- **Browsers** read them (Reader Mode knows what `<main>` is)
-- **Screen readers** navigate by them: a blind visitor can jump straight to `<main>`
-- **Search engines** rank them
-- **Future you** understands the house they built
-
----
-
-# The second metaphor: 📰
-
-Grab a newspaper from the stack. Yes, a real one.
-
----
-
-## Label it in pen
-
-Find and circle:
-
-- The **masthead** (the paper's name)
-- A **headline**, and the **byline** under it
-- The **lede** paragraph
-- A **pull-quote**
-- A **caption** under a photo
-
----
-
-## Now translate
-
-| On paper | On the web |
-|---|---|
-| Masthead | `<header><h1>` |
-| Headline | `<h2>` |
-| Byline | `<p class="byline">` |
-| Lede | `<p>` (maybe with a big first letter, later!) |
-| Pull-quote | `<blockquote>` |
-| Caption | `<figcaption>` |
-
-Newspapers solved information hierarchy a century before the web. We get to borrow all of it.
+### Every website is a collection of linked documents <!--element class="fragment"-->
 
 ---
 
 # Today's Special
 
-The tags to actually remember today:
+Since we don't want to care about all the 132 tags today, here's what you want to read up on:
 
 ```html
 <h1>......Main Heading
 <p>.......Text Paragraph
 <a>.......Hypertext Link
 <img>.....Embedded Image
-<div>.....Content Division (the cardboard box)
+<div>.....Content Division
 <ul>......Unordered List
 <li>......List Item
 <span>....Inline Container
@@ -199,9 +242,13 @@ The tags to actually remember today:
 
 ---
 
+## There are divs and sections everywhere for those with the eyes to see
+
+---
+
 # HTML Attributes
 
-Attributes provide extra information about an element, in the **start tag**. The two that matter for styling: `id` and `class`.
+Attributes provide extra information about an element and are always included in the **start tag**. The two most important ones for styling are `id` and `class`.
 
 ```html
 <h1 id="title" class="page-heading">
@@ -209,15 +256,17 @@ Attributes provide extra information about an element, in the **start tag**. The
 </h1>
 ```
 
-<span>`id`: a unique name for this ONE element. Cannot repeat.</span> <!--element class="fragment"-->
+<span>`id` A unique name for this element. It cannot be repeated.</span><!--element class="fragment"-->
 
-<span>`class`: a name shared by a GROUP of elements, styled together.</span> <!--element class="fragment"-->
+<span>`class` A name for a group of elements. Multiple elements can share a class name and get styled together.</span><!--element class="fragment"-->
+
+We'll use these to grab elements with CSS and style them.<!--element class="fragment"-->
 
 ---
 
 ### CSS
 
-CSS is all about targeting the HTML elements we write, and styling them. See if you can read this:
+CSS is all about targeting HTML elements that we write and styling them. It is pretty simple to understand most of the time. See if you can understand what this does:
 
 ```css
 #george {
@@ -226,10 +275,6 @@ CSS is all about targeting the HTML elements we write, and styling them. See if 
   border-color: red;
 }
 ```
-
-"Find the element with `id="george"`. Gray background. Dotted red border."<!--element class="fragment"-->
-
-That's it. Selector, then declarations. That's CSS.<!--element class="fragment"-->
 
 ---
 
@@ -252,29 +297,45 @@ That's it. Selector, then declarations. That's CSS.<!--element class="fragment"-
 }
 ```
 
-`.menu a` means "links inside the menu". Selectors can *combine*.
+`.menu a` means "links inside the menu". Selectors nest, because the HTML nests. Paper, again.
 
 ---
 
-# Game time 🍽️
+# Game time #1
 
 ---
 
 # Pick me pick me
 
-The first hurdle in CSS is learning how to **select** the element you want to style.
+So you have your HTML and you want to write some CSS for it. The first hurdle is learning how to **select** the element you want to style.
 
 Head over to [CSS Diner](https://flukeout.github.io/) and get started.
 
-**32 levels; you only need to reach level 10–12.**
+**There are 32 levels, but you only need to get till level 10-12.**
 
-#### Time: 20 Minutes
+**Time: 20 Minutes**
 
 ---
 
-# Git minute #1 ⏱️
+# Lunch 🍛
 
-*(This will take five minutes today, and five minutes every day, until it feels completely routine.)*
+When we're back we'll meet VS Code and you'll create a travesty.
+
+---
+
+# Setting Up Your Lab 👩‍🔬
+
+Preflight Checklist:
+
+1. You've installed VS Code
+2. You've installed GitHub Desktop
+3. You have an account on GitHub
+
+We'll take a quick tour together: the file explorer, the editor, the terminal you may politely ignore for now, and a little thing called Live Server.
+
+---
+
+# A five minute detour: saving your work
 
 ---
 
@@ -291,26 +352,15 @@ We've all been there.<!--element class="fragment"-->
 
 ## The fix: commits
 
-A **commit** is a save-game checkpoint for your whole project.
+A **commit** is a save-game checkpoint for your whole project. What changed, when, and a tiny message saying why.
 
-- What changed
-- When
-- And *why* (you write a tiny message)
 
-You can always go back to any checkpoint. It's a time machine.
+You can always go back to any checkpoint.
 
----
 
-## Today: GitHub Desktop
+Today we do this with GitHub Desktop: it shows you what changed, you write a message, you click **Commit**, then **Push**. Push sends your checkpoints to GitHub, safe from laptop accidents.
 
-1. Open GitHub Desktop, add your project folder
-2. It shows you *exactly* what changed
-3. Type a short message: `"Make the background offensive"`
-4. Click **Commit**, then **Push**
-
-Push = send your checkpoints to GitHub, where your code lives online, safe from laptop accidents.
-
-**Last five minutes of every class, forever: commit + push.**
+**Last five minutes of every class, forever: commit and push.**<!--element class="fragment"-->
 
 ---
 
@@ -318,13 +368,22 @@ Push = send your checkpoints to GitHub, where your code lives online, safe from 
 
 ---
 
-# Hey Jude 🎸
+# Bohemian Rhapsody 👨‍🎤
 
-By the end of this exercise, you will have a crappy website on the internet.
+By the end of this exercise, you will have a crappy website on the internet. Lets go.
 
-I have a barebones HTML page. Your job: give it styles. BUT it has to be messy, ugly, a complete Dada-ist masterpiece.
+---
 
-**One rule: you must find out how to commit each crime yourself.** Search. Ask. That's the skill.
+
+I have marked up the entire song in clean, semantic HTML.
+
+
+Your job is to give it styles. BUT, it has to be messy, ugly, a complete Dada-ist masterpiece. Ugly. A CRIMEEE!!
+
+<div class="fragment">
+
+**One rule: you have to find out how to commit each crime yourself.** Ask "how do I make text blink?" and go search.
+</div>
 
 ---
 
@@ -335,18 +394,18 @@ I have a barebones HTML page. Your job: give it styles. BUT it has to be messy, 
 1. Go to this link:
 
 ```bash
-https://github.com/open-making/web2026-hey-jude
+https://github.com/open-making/web2026-bohemian-rhapsody
 ```
 
 2. Click **Fork** (a photocopy of my project, for you to vandalize)
 
 3. Clone your fork with GitHub Desktop
 
-4. Open in VS Code, fire up Live Server
+4. Open it in VS Code and fire up Live Server
 
 </div>
 
-![Fork Icon|200](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+![Fork Icon|100](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
 </split>
 
@@ -354,38 +413,63 @@ https://github.com/open-making/web2026-hey-jude
 
 ### Time: 90 Minutes
 
-Sample properties to try:
+Here are some sample properties to try:
 
-https://github.com/open-making/web2026-hey-jude/blob/main/css-properties.md
+https://github.com/open-making/web2026-bohemian-rhapsody/blob/main/css-properties.md
 
-Tips:
-1. [Split editor](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing): HTML and CSS side by side
-2. Live Server reloads as you save
+**Tips to make your life easier**
+
+1. Enable a [split editor](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing) so you can edit two files side by side.
+2. Live Server reloads as you save.
 
 ---
 
-# Houston, we're ready for takeoff 🚀
+# Houston, we're ready for takeoff.
+
+---
+
+## Right now, your site lives on your laptop
+
+If you the lid it's gone from the world.
+
+We need a computer that never closes its lid, holding your files, handing them to anyone who asks.<!--element class="fragment"-->
+
+That's all a server is.<!--element class="fragment"-->
 
 ---
 
 # Netlify and Chill
 
-[Netlify](https://netlify.app) takes our code and puts it on a URL anyone, anywhere can access. Free.
+[Netlify](https://netlify.app) is a company with a lot of computers that never close their lids.
 
-1. Go to [Netlify.com](https://netlify.com), login **with your GitHub account**
-2. Add a new site → 'Import Existing Project'
-3. Select GitHub, find your hey-jude fork
-4. Click deploy
-
-In a few minutes: your monstrosity, live, with a silly URL.
+Give them your files and they'll serve your site to the whole world for free.
 
 ---
 
-# Your site is LIVE
+## Free? What's the catch?
 
-Day two, and you have deployed a website to the actual internet.
+Our site is **static**: it's just files. No database, no logins, nothing complicated done per visitor. Every visitor gets the same files.
 
-It's hideous. That's exactly right.<!--element class="fragment"-->
+Handing out files is absurdly cheap. Your ugly masterpiece costs Netlify fractions of a paisa.<!--element class="fragment"-->
+
+---
+
+## Let's deploy
+
+1. Go to [Netlify.com](https://netlify.com) and login **with your GitHub account**
+2. Add a new site. In the options, choose 'Import Existing Project'
+3. Select GitHub and search for your bohemian-rhapsody fork
+4. Click deploy
+
+In a few minutes, your website will be online with a silly looking URL.
+
+And because Netlify watches your GitHub repo: every push updates the live site. Commit, push, published.<!--element class="fragment"-->
+
+---
+
+# Your site is live!
+
+Day two, and you have a website on the actual internet.
 
 Everything you make after this will be better.<!--element class="fragment"-->
 
@@ -393,13 +477,13 @@ Everything you make after this will be better.<!--element class="fragment"-->
 
 ## Quick Recap
 
-You are now armed with:
+You are now armed with the knowledge of:
 
-1. HTML tags, and the house they build<!--element class="fragment"-->
-2. CSS selectors for targeting elements<!--element class="fragment"-->
-3. Commit + push: the save-game ritual<!--element class="fragment"-->
-4. Forking and cloning repositories<!--element class="fragment"-->
-5. Deploying to Netlify<!--element class="fragment"-->
+1. Markup: labels saying what things are<!--element class="fragment"-->
+2. Tags, pairs, and what nests inside what<!--element class="fragment"-->
+3. CSS selectors for targeting elements<!--element class="fragment"-->
+4. Forking, cloning, committing, pushing<!--element class="fragment"-->
+5. Deploying a static site to Netlify<!--element class="fragment"-->
 
 That's a massive amount for one day!<!--element class="fragment"-->
 
@@ -407,8 +491,4 @@ That's a massive amount for one day!<!--element class="fragment"-->
 
 ## Before you go
 
-**Git minute.** Commit today's chaos. Push it.
-
-(Message suggestion: `"Committed crimes against design, on purpose"`)
-
-Homework: finish your ugly site, due **start of Day 4**. Two evenings, 90 minutes each, stuck-notes count.
+Commit! Watch stuff update!

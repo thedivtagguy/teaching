@@ -13,12 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-2-html-is-a-home.md",
+                "file": "slides/day-1-the-small-web.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-2-html-is-a-home"
+              "title": "day-1-the-small-web"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b793b1e723a2c7fc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c25a0bd4b63fb1fb",
+            "type": "leaf",
+            "state": {
+              "type": "reveal-preview-view",
+              "state": {},
+              "icon": "slides",
+              "title": "Preview: day-1-the-small-web.md"
             }
           }
         ]
@@ -211,14 +227,19 @@
   },
   "active": "1172adac87189acd",
   "lastOpenFiles": [
-    "day-2-html-is-a-home.md",
     "day-1-the-small-web.md",
+    "control-panel.md",
     "slides/day-1-the-small-web.md",
+    "day-2-html-is-a-home.md",
+    "slides/day-2-html-is-a-home.md",
+    "assets/slides/day-2-html-is-a-home/IMG-20260719213915346.png",
+    "assets/slides/day-2-html-is-a-home",
+    "assets/slides/day-2-html-is-a-home/IMG-20260719213301816.png",
+    "assignments/day-2-bohemian-rhapsody.md",
     "assets/slides/day-1-the-small-web/IMG-20260719184055417.png",
     "assets/slides/day-1-the-small-web/IMG-20260719183828940.png",
     "requirements.md",
     "dump/web2025-retrospective.md",
-    "control-panel.md",
     "ai-policy.md",
     "day-3-seeing-like-a-browser.md",
     "day-4-setting-type-placing-images.md",
@@ -228,7 +249,6 @@
     "assignments/day-4-letters-to-a-young-designer.md",
     "assignments/day-3-flexbox-katas.md",
     "slides/day-3-seeing-like-a-browser.md",
-    "slides/day-2-html-is-a-home.md",
     "assignments/day-1-web-archaeology.md",
     "assets/lib/fonts/LibreCaslonCondensed-Bold.ttf",
     "assets/lib/fonts/LibreCaslonCondensed-MediumItalic.woff2",
@@ -239,22 +259,18 @@
     "assets/lib/fonts/LibreCaslonCondensed-BoldItalic.woff2",
     "assets/lib/fonts/LibreCaslonCondensed-Regular.woff2",
     "assets/lib/fonts/LibreCaslonCondensed-Italic.woff2",
-    "assets/lib/fonts/LibreCaslonCondensed-SemiBoldItalic.woff2",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723075655721.png",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122882.png",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122873.png",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122851.png",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122861.png",
     "assets/slides/day-3-seeing-and-searching/IMG-20250723001122841.png",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png",
-    "assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png",
     "outline.md",
     "quiz-node-and-npm.md",
     "library.md",
     "install-guides.md",
     "dev-notes.md",
     "day-11-to-15-project-week.md",
-    "day-10-design-systems-and-liftoff.md",
-    "day-9-visual-hierarchies.md"
+    "day-10-design-systems-and-liftoff.md"
   ]
 }

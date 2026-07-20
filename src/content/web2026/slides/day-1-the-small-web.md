@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-19T19:16
+updated: 2026-07-20T08:14
 transition: none
 ---
 
@@ -560,7 +560,7 @@ From the pre-class survey:
 
 <div class="slide-container">
     <div class="left-column">
-        <div class="main-word fragment" data-fragment-index="0">Immersive</div>
+        <div class="main-word" data-fragment-index="0">Immersive</div>
         <div class="main-word fragment" data-fragment-index="1">Web</div>
         <div class="main-word fragment" data-fragment-index="2">Design</div>
     </div>
