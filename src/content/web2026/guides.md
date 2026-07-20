@@ -2,7 +2,7 @@
 title: Guides
 date: 2026-07-13
 section: Appendix
-updated: 2026-07-20T23:27
+updated: 2026-07-20T23:31
 published: true
 slug: guides
 ---
@@ -217,7 +217,7 @@ Print this. Stick it somewhere. This is the entire lifecycle of your website, an
   your live website updates 🎉
 ```
 
-### FAQs
+## FAQs
 
 ### I have committed, but my site is not updating.
 
