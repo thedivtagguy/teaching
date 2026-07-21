@@ -11,7 +11,7 @@ instructor:
   hours: "Mon to Sat 2-5pm, or by appointment via email"
 githubPrefix: web2026
 classStrength: 18
-publishReadings: false
+publishReadings: true
 navigation:
   collapsibleSections: false
   showSections: false
