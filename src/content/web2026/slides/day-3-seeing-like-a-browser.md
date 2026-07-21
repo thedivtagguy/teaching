@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T14:53
+updated: 2026-07-21T15:28
 transition: none
 ---
 # Seeing Like a Browser
@@ -45,9 +45,76 @@ Can you spot **heading elements?**
 
 ---
 
+Can you spot **an image?**
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+
+---
+
 Can you spot the use of `background-color`?
 
 ![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+
+---
+
+Can you spot the use of `color`?
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+
+---
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
+
+---
+
+What is that **space on the sides called?**
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
+
+---
+
+How do I **add space below headings**?
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
+
+---
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122841.png)
+
+---
+
+Okay I got an answer, but what does this mean? Why the space between the two values?
+
+```css
+margin: 0px 10px;
+```
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122851.png)
+
+---
+
+I went to MDN, and in the page was written...
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122861.png)
+
+---
+
+# 🤠👍
+
+---
+
+## That was a good search!
+
+But what made it a **good search**?
+
+1. **We used specific keywords**: "margin", "CSS"
+2. **We knew what we wanted**: "add space below"
+
+---
+
+## That space has a name.
+
+In fact, *every* element carries four layers of space around its content.
 
 ---
 
@@ -66,16 +133,68 @@ Can you spot the use of `background-color`?
 └─────────────────────────────────────┘
 ```
 
-**Padding**: space inside the walls. 
+**Padding**: space inside the walls.
 
 **Margin**: space between houses.
 
 ---
+
+Once you see the boxes, you can't unsee them.
+
+And in a minute, the browser will show you the *actual* boxes on any live website.<!--element class="fragment"-->
+
+---
+
+## First, let's practice this detective work
+
+---
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122873.png)
+
+**What HTML elements do you see?**
+
+---
+
+## I spot:
+
+- A `<div>` container for the whole card
+- An `<img>` for the picture
+- An `<h3>` or `<p>` for the website name
+- A `<a>` for the link
+- Another `<p>` for the label texts
+
+---
+
+## What CSS properties would you search for?
+
+- "CSS card layout" <!--element class="fragment"-->
+- "CSS border rounded" <!--element class="fragment"-->
+- "CSS box shadow" <!--element class="fragment"-->
+- "CSS side by side layout" <!--element class="fragment"-->
+
+*(hold that last one in your head; it's the second half of today)* <!--element class="fragment"-->
+
+---
+
 ## The Browser Inspector 🦴
 
 **Right-click → Inspect Element** on any website!
 
 X-ray specs for web pages. See the boxes, tweak the values, break things for fun.
+
+---
+
+## Let's try it live!
+
+1. Open one of *your* Bohemian Rhapsody monstrosities from yesterday
+2. Right-click on something interesting
+3. Click "Inspect" or "Inspect Element"
+4. Look at the HTML structure
+5. Look at the CSS styles on the right — and *change them*
+
+---
+
+![](/assets/slides/day-3-seeing-and-searching/IMG-20250723075655721.png)
 
 ---
 
@@ -93,6 +212,14 @@ X-ray specs for web pages. See the boxes, tweak the values, break things for fun
 
 ---
 
+## So how *do* things sit side by side?
+
+Remember "CSS side by side layout"?
+
+The answer, nine times out of ten, is...
+
+---
+
 # Flexbox 🐸
 
 Boxes in a **row** or a **column**, sharing space sensibly.
@@ -100,8 +227,6 @@ Boxes in a **row** or a **column**, sharing space sensibly.
 ```css
 .parent {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
 }
 ```
 
@@ -109,58 +234,102 @@ The parent becomes the boss of the row. Children fall in line.
 
 ---
 
+## Which way does the line go?
+
+```css
+.parent {
+  display: flex;
+  flex-direction: row;     /* → the default */
+  /* flex-direction: column;  ↓ stack instead */
+}
+```
+
+One property flips a navbar into a sidebar.
+
+---
+
+## Two axes, two questions
+
+```css
+.parent {
+  display: flex;
+  justify-content: center;  /* along the row: left? right? spread out? */
+  align-items: center;      /* across the row: top? middle? bottom? */
+}
+```
+
+**justify-content** pushes things along the direction of travel.
+
+**align-items** lines them up across it.
+
+*(Yes, these two centered a div. The legend is real.)*<!--element class="fragment"-->
+
+---
+
+## And the space between?
+
+```css
+.parent {
+  display: flex;
+  gap: 1rem;   /* breathing room between children, no margin math */
+}
+```
+
+There's more in the family — `flex-wrap`, `order`, `flex-grow` — and you'll meet all of them in about twenty minutes.
+
+---
+
 ## Game time
 
 Head to [Flexbox Froggy](https://flexboxfroggy.com).
 
-Get as far as feels good. **Revisiting this game later is normal and encouraged**; plenty of people come back to it mid-project.
+**15–20 minutes.** Get to around level 13; that covers everything we need today.
 
-#### Time: 25 Minutes
-
----
-
-# The File-Paths Lab 🔨
-
-We are now going to break things. **On purpose.**
-
-File paths eat more homework hours than any CSS concept. Twenty minutes of deliberate breakage now saves whole evenings later.
+**Revisiting this game later is normal and encouraged**; plenty of people come back to it mid-project.
 
 ---
 
-## Break #1: The Case of the Vanishing Image
+## Time to leave the frog pond 🚀
 
-1. Your page shows `photo.jpg`. Lovely.
-2. Rename the file to `Photo.JPG`.
-3. Still works on your laptop? **It won't on the server.**
+One repo. Seven small design jobs. Each one a real layout you'll build again someday.
 
-Your Mac forgives. Netlify does not.<!--element class="fragment"-->
-
-**Rule for this course: filenames are always lowercase. Always.**<!--element class="fragment"-->
+# `web2026-space-oddity`
 
 ---
 
-## Break #2: Where does the path start?
+## You know this dance
 
-Move your image into a folder called `images/`. Now which of these works?
+Same moves as Bohemian Rhapsody:
 
-```html
-<img src="photo.jpg">          <!-- nope: not next to the HTML anymore -->
-<img src="images/photo.jpg">   <!-- yes: relative to this file -->
-<img src="/images/photo.jpg">  <!-- yes: from the site's root -->
-```
-
-`./` = "starting from where this file lives"
-`/` = "starting from the front door of the site"
+1. **Fork** [open-making/web2026-space-oddity](https://github.com/open-making/web2026-space-oddity) on GitHub
+2. Open **GitHub Desktop** → Clone *your* fork
+3. **Open in VS Code**
+4. Right-click `index.html` → **Open with Live Server**
 
 ---
 
-## Break #3: Reading a 404
+## How it works
 
-Open devtools → **Network tab** → refresh.
+- The landing page links every exercise
+- Each folder has its **own README** telling you the job
+- Each page shows the **goal** — refresh your browser to check yourself
+- Fix the CSS → write the CSS → write the HTML → build the whole thing
 
-The red line tells you *exactly* what the browser asked for and didn't get.
+The training wheels come off one at a time.<!--element class="fragment"-->
 
-Compare what it asked for with what actually exists. Spot the difference and you've found your bug.<!--element class="fragment"-->
+---
+
+## Today, in class:
+
+**01 — Ground Control**: fix four bugs, watch the panel snap together
+
+**02 — Comic Strip**: unscramble the panels so the joke lands
+
+**03 — Gallery Wall**: hang a painting dead center (yes, *that* div)
+
+**04 — Sticker Sheet**: make it wrap, make it breathe
+
+Homework: **05, 06, and 07**. More on that at the end.
 
 ---
 
@@ -176,22 +345,12 @@ Compare what it asked for with what actually exists. Spot the difference and you
 
 ---
 
-# Now you. 🏃
-
-**First solo sprint: 10 minutes.**
-
-We just built a small flexbox layout together. Now build its sibling (same skills, different content) on your own. Timer's on.
-
-(These sprints get longer every week, as the life jacket comes off a little at a time.)
-
----
-
 ## Wrapping up
 
 **Be ready to show:**
 
 1. One thing you searched for today
-2. One thing you broke on purpose (and fixed)
+2. One exercise payoff moment (before → after)
 3. One CSS property you discovered
 
 ---
@@ -200,6 +359,6 @@ We just built a small flexbox layout together. Now build its sibling (same skill
 
 Commit. Push. Leave.
 
-Homework: three flexbox katas. Assignments page, 60 minutes, stuck-notes count.
+Homework: exercises **05 (mixtape shelf), 06 (boarding pass), 07 (katas)** in the flexbox repo. 75 minutes, time-boxed. Stuck-notes count.
 
 Tomorrow: typography, images, and the start of the letters project. 💌
