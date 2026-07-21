@@ -4,7 +4,7 @@ due: 2026-07-25
 description: Typeset a public-domain letter from a great artist or thinker, your first real portfolio piece
 published: false
 date: 2026-07-23T18:00
-updated: 2026-07-15T12:00
+updated: 2026-07-21T15:48
 submissionUrl: https://github.com/open-making/web2026-letters/issues/1
 ---
 
@@ -16,8 +16,9 @@ This project grows over the week:
 
 | Milestone | When |
 |---|---|
-| Pick your letter + design review with me | Day 4 or 5 (in class or after) |
-| Typeset page, first full pass (vanilla HTML/CSS) | **Start of Day 6 (Sat, Jul 25)** |
+| Pick your letter + design review with me | **Day 4 (in class, required before you code)** |
+| Build day: typeset the page (vanilla HTML/CSS) | Day 5 (Fri, Jul 24), in class |
+| Typeset page, first full pass | **Start of Day 6 (Sat, Jul 25)** |
 | Migrate into Astro | Day 6, in class together |
 | Write your reply | Day 7, in class |
 | Two-page Astro site, live, with layout + components | Start of Day 9 (see Assignment 7) |
@@ -41,7 +42,7 @@ Read your letter properly, twice; you can't typeset a mood you haven't felt.
 - **Typography carries this project.** Your font choices should match the era and mood of the letter. Use web fonts deliberately; play with sizes, spacing, and measure (45 to 75 characters per line; this is a *letter*, it should read like one).
 - **Maximum two images**, both properly processed: cropped, compressed (under 500KB, use [Squoosh](https://squoosh.app/)), lowercase filenames, alt text. Two is a deliberately low cap; part of the design challenge here is restraint. **No AI imagery.** Use the [image pools](/web2026/day-4-setting-type-placing-images#image-pools) or your own drawings/scans.
 - **One technique from [Jen Simmons' labs](https://labs.jensimmons.com/)** you haven't tried: a dropcap with `initial-letter`, multicolumn text, text wrapping a CSS shape, or a considered overlap.
-- **Use flexbox or grid** for the page structure (no floats needed, it's 2026).
+- **Use flexbox** for the page structure (grid arrives later in the course; a letter doesn't need it, and no floats needed either, it's 2026).
 - Steal like a designer: find one [CSS Zen Garden](https://csszengarden.com) entry that inspires you and adapt its *approach*, not its code.
 
 ## Process

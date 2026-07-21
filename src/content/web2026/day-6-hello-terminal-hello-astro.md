@@ -10,7 +10,7 @@ seo_description: Terminal basics, node and pnpm, and your first Astro project
 seo_keywords: terminal, command line, node, npm, pnpm, Astro, static site generator, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-15T12:00
+updated: 2026-07-21T15:49
 slug: day-6-hello-terminal-hello-astro
 slides: https://teaching.aman.bh/slides/web2026/day-6-hello-terminal-hello-astro
 show_metadata_card: true
@@ -39,7 +39,7 @@ Together, step by step (this follows the [starter's README](https://github.com/o
 1. Clone the starter, `pnpm install`, `pnpm dev`, and understand what `localhost:4321` means.
 2. Edit the homepage, watch the browser hot-reload.
 3. **File-based routing**: a file at `src/pages/about.astro` *is* the page `/about`. File = URL. That's the whole routing system.
-4. Learn where images go in Astro (`public/`): your Day 3 paths knowledge, with one new wrinkle.
+4. Learn where images go in Astro (`public/`): your Day 4 paths knowledge, with one new wrinkle.
 
 ### The migration 💌
 
@@ -52,7 +52,7 @@ Then the payoff: **your letter moves into Astro.** We do this as a script, toget
 5. Copy your images into `public/images/` (lowercase, hyphens) and point every `src` at `/images/...`.
 6. Final check: old file and new page side by side. They should look identical.
 
-If something breaks along the way, that's Day 3's lab paying rent: the Network tab for missing images, the terminal for everything else (Astro's errors name the file and line). Stuck protocol applies. And no, your letter doesn't get the starter's nav today; that's on purpose, and on Tuesday it gains a layout, components, and a second page.
+If something breaks along the way, that's Day 4's paths lab paying rent: the Network tab for missing images, the terminal for everything else (Astro's errors name the file and line). Stuck protocol applies. And no, your letter doesn't get the starter's nav today; that's on purpose, and on Tuesday it gains a layout, components, and a second page.
 
 The same script lives in the [starter's README](https://github.com/open-making/your-first-astro-site#interlude-moving-a-page-you-already-built) so you can replay it anytime, or catch up at your own pace if the afternoon ran fast.
 

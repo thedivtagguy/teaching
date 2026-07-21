@@ -1,16 +1,25 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-19T16:19
+updated: 2026-07-21T15:48
 transition: none
 ---
 
-<!-- NOTE: recap-stats and grid-challenge images referenced below live in the
+<!-- PARKED DECK: CSS Grid was pulled out of Week 1. This deck needs a home
+     later (recommended: Day 11, project-week kickoff). To reinstate, move
+     this file back into slides/ under a day-N-grids-without-tears.md name
+     and point that day's content page `slides:` URL at it.
+
+     The recap/housekeeping block (invalid HTML, boilerplate, naming,
+     no <br> stacking, position:absolutely-not) was salvaged into the new
+     Day 5 "Make Day" deck — delete it here if you don't want it twice.
+
+     NOTE: recap-stats and grid-challenge images referenced below live in the
      web2025 vault (day-6-making-grids assets). Regenerate stats from 2026
      submissions and copy challenge images before exporting. -->
 
 # Grids Without Tears
 
-_Day 5: WEB2026_
+_WEB2026 · parked lesson_
 
 ---
 

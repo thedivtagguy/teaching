@@ -24,17 +24,17 @@
         ]
       },
       {
-        "id": "564d123e698c8699",
+        "id": "48a4d3c6c0c903cf",
         "type": "tabs",
         "children": [
           {
-            "id": "5c4849ce9e80745a",
+            "id": "4bfa0af73940dcda",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: day-2-html-css-and-you.md"
+              "title": "Preview: day-5-short-stories.md"
             }
           }
         ]
@@ -189,7 +189,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "6943cb73d5e1d591",
+  "active": "4bfa0af73940dcda",
   "lastOpenFiles": [
     "day-4-typesetting-a-page.md",
     "day-3-seeing-and-searching.md",

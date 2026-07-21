@@ -1,23 +1,30 @@
 ---
-title: Day 5 - Grids Without Tears
+title: Grids Without Tears (PARKED)
 date: 2026-07-24
-description: CSS Grid with grid-template-areas first, editorial layouts, and applying a grid to your letter
+description: CSS Grid with grid-template-areas first, editorial layouts, and responsive basics
 published: false
-section: Foundations
-order: 5
+section: Appendix
 seo_title: Grids Without Tears
 seo_description: CSS Grid via grid-template-areas, editorial layout, and responsive basics
 seo_keywords: web design, CSS grid, grid-template-areas, responsive design, editorial layout
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-15T12:00
-slug: day-5-grids-without-tears
-slides: https://teaching.aman.bh/slides/web2026/day-5-grids-without-tears
+updated: 2026-07-21T15:47
+slug: grids-without-tears
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2026-dev-notes/issues/5
-assignments: true
+assignments: false
 ---
-## Day 5: Grids Without Tears
+<!-- PARKED: CSS Grid was pulled out of Week 1 (Day 5 became "The Make Day").
+     This lesson needs a home later in the course. Recommended slot:
+     Day 11, the kickoff of project week, right before students lay out
+     their own personal sites on Day 12 ("your grids"). To reinstate:
+     give it a day-N slug + slides URL, flip published:true, and move
+     the deck (dump/grids-without-tears-slides.md) back into slides/.
+     Its companion assignment lives at assignments/day-5-grid-challenges.md
+     (currently unpublished). The old NYT code-along slides are preserved
+     in the deck; compress to a demo if the target day is tight. -->
+## Grids Without Tears
 
 Flexbox gave us one-dimensional layouts, rows *or* columns. CSS Grid lets us work in both dimensions at once; it's the editorial control over space that web designers dreamed about for decades. Grid has a reputation for frying brains with column math, so we're teaching it in a friendlier order: names first, numbers later.
 

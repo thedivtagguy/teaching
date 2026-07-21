@@ -1,31 +1,31 @@
 ---
-title: "Assignment 3: Flexbox Katas"
-due: 2026-07-24
-description: Three small flexbox exercises to build layout muscle memory
+title: "Assignment 3: Finish Space Oddity"
+due: 2026-07-23
+description: Finish the back half of the flexbox exercise repo
 published: false
 date: 2026-07-22T18:00
-updated: 2026-07-19T21:23
+updated: 2026-07-21T15:43
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/3
 ---
 
-Three tiny layouts, one property family. A *kata* is a small exercise you repeat until the movement is automatic, which is what we're doing with flexbox tonight.
+In class we did the first four exercises of [**web2026-space-oddity**](https://github.com/open-making/web2026-space-oddity), the flexbox gym. Tonight you finish the back half — the three exercises where the training wheels are properly off.
 
-**Due at the start of Day 5's class. Time-box: 60 minutes total.** All three go in one HTML file (stack them vertically). No visual polish expected; these are movement drills, not portfolio pieces.
+**Due at the start of Day 4's class. Time-box: 75 minutes total.** Work in your fork of the repo; each exercise lives in its own folder with its own README.
 
-### Kata 1: The navbar
+### 05 — Mixtape Shelf (write the HTML)
 
-A `<nav>` with your name on the left and three links on the right. One flex container, `justify-content: space-between`. You've seen this layout on ten thousand websites; now you know its secret.
+The flip of everything so far: the CSS is finished and you write the HTML to match it. Read `style.css` like a blueprint — it tells you exactly which elements and classes it expects — then build two shelves of cassettes and put your own favourite albums on them. Reading CSS you didn't write is the real day-to-day skill.
 
-### Kata 2: The centered card
+### 06 — Boarding Pass (build the whole thing)
 
-A card (a `<div>` with a heading and a sentence) perfectly centered, horizontally *and* vertically, in a section that takes up the full height of the browser window. Yes, this is the legendary "center a div." Millions have googled it. Tonight, you become one of them, and then you'll know it forever.
+No starter code, just a picture (`goal.png`). Box it in pen first, like the Day 3 warm-up, then build the HTML rooms and flex them into place. The key move is nesting: a *row that contains columns*. Match the vibe, not the pixels — your airline, your destination, your name on the ticket.
 
-### Kata 3: The photo row
+### 07 — Katas (three tiny drills)
 
-Three images in a row that share the space equally, with consistent gaps, and don't overflow on a narrow window. (Hints: `display: flex` on the parent, `gap`, and every image gets `max-width: 100%`. Remember today's image sizing preview? It comes back with a vengeance tomorrow.)
+Movement drills, not portfolio pieces: the navbar (`justify-content: space-between`), the legendary centered card ("center a div"), and the photo row (`display: flex` + `gap` + `max-width: 100%` on every image — that last one comes back with a vengeance tomorrow).
 
 ### Submitting
 
-Deploy the file to Netlify (add it to your Bohemian Rhapsody site as a second page if you like, in which case you'll also learn how two pages link) and drop the URL in the submission thread with your dev note.
+Commit and push your fork with GitHub Desktop, then drop the link to your fork in the submission thread along with your dev note. (Optional: deploy it to Netlify too, if you'd like a live link.)
 
-Stuck past the hour? Stuck-note it. Flexbox Froggy levels 1 to 13 cover everything these katas need, so revisiting the game *is* a legitimate solving strategy.
+Stuck past your time-box? Stuck-note it. Flexbox Froggy levels 1 to 13 cover everything these exercises need, so revisiting the game *is* a legitimate solving strategy.

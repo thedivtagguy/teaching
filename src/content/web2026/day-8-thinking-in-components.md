@@ -10,12 +10,17 @@ seo_description: Astro components, props, slots and layouts, multi-page routing,
 seo_keywords: Astro, components, props, slots, layouts, continuous deployment, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-15T12:00
+updated: 2026-07-21T15:44
 slug: day-8-thinking-in-components
 slides: https://teaching.aman.bh/slides/web2026/day-8-thinking-in-components
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2026-dev-notes/issues/8
 assignments: true
+readings:
+  - title: Revolutionize Your Page
+    author: Jen Simmons
+    url: https://www.youtube.com/watch?v=aYgMExb-mlo
+    readingTime: 60
 ---
 ## Day 8: Thinking in Components
 

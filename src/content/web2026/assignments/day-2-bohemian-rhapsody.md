@@ -4,8 +4,8 @@ due: 2026-07-21
 description: Learning CSS by committing crimes against design
 published: true
 date: 2026-07-21T18:00
-updated: 2026-07-21T14:51
-submissionUrl: https://github.com/open-making/web2026-bohemian-rhapsody/issues/1
+updated: 2026-07-21T16:56
+submissionUrl: https://github.com/open-making/web2026-bohemian-rhapsody/issues/new
 ---
 
 Take the [Bohemian Rhapsody starter repository](https://github.com/open-making/web2026-bohemian-rhapsody), and make it as visually offensive as possible. Clashing colors, cursed fonts, broken layouts; anything goes. The goal is to learn CSS properties through experimentation rather than trying to follow design rules.

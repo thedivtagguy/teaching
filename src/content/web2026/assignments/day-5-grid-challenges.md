@@ -1,12 +1,19 @@
 ---
-title: "Assignment 5: Grid Challenges"
+title: Grid Challenges (PARKED)
 due: 2026-07-27
 description: Two grid layouts, solved with grid-template-areas
 published: false
 date: 2026-07-24T18:00
-updated: 2026-07-15T12:00
+updated: 2026-07-21T15:48
 submissionUrl: https://github.com/open-making/web2026-grid-making/issues/1
 ---
+
+<!-- PARKED with the CSS Grid lesson (pulled out of Week 1; see
+     dump/grids-without-tears.md). Reinstate alongside that lesson —
+     recommended Day 11. Set a real due date then, flip published:true,
+     keep this submissionUrl (the web2026-grid-making repo is fine as-is).
+     Consider scoping to "solve one" given the week-2 homework load.
+     Still TODO: export the four challenge images (see comment at bottom). -->
 
 # Grid Challenges
 

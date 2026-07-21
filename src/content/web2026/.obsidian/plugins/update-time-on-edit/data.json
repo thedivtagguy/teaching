@@ -12,7 +12,6 @@
   "fileHashMap": {
     "slides/day-1-the-small-web.md": "c91c57805cf40bee63403f34ec4da9f713e407df5c26d9a1ca8a28d692461676",
     "slides/day-3-seeing-like-a-browser.md": "8b6c00682c087b5a8fdac5d78ee38e780aa7685d50fa1f270c46b0acb920908e",
-    "slides/day-5-grids-without-tears.md": "c02ecfba936888afb61e78dc11c0ead53046814d41ad9874aa40469494490080",
     "slides/day-7-the-indieweb.md": "285d667d305da67eca03251a5062edd4ca9f1df559752635b103505b91cbd4f4",
     "assignments/day-1-web-archaeology.md": "4f8ba2692ef99008fb688eda34351061ac09412753f6bab548914ffdf26b66f2",
     "day-1-the-small-web.md": "fd4405ced113ee0e69239d59ac31d49b4b0ea8472baea3ce2725863373cf6dd2",
@@ -21,8 +20,18 @@
     "ai-policy.md": "2ac75c9ffef28bda789eefaa1f22599fd1fe90cda1b23472546a267008e9dbf9",
     "outline.md": "22de9c8f504cfa3cec42d022bd0ad81de9e27b81af3f25a0d86a1202b63994c6",
     "day-2-html-is-a-home.md": "923ff90513b05d9fe513ea562968cf32120ec6354d6f3a178e8d6f48e7e8fefd",
-    "assignments/day-2-bohemian-rhapsody.md": "6db19158ce7a3826c3e69f1ea3a16d947df4a987cef72e1de145a81f1feff492",
-    "assignments/day-3-flexbox-katas.md": "fd8b1f4f466ac90cd4c8872e1dcfe85c84f0b89781d6b2b2b5648db5f2514f09",
-    "guides.md": "c85161a12ad2f5e4b01c9adb3a580965847fb2cfb9a193aaa509ee14efcf605b"
+    "assignments/day-2-bohemian-rhapsody.md": "ee2ee2f90240d09469bcfc099631b6599b283d8e4d8706d8b7609574ced317f8",
+    "assignments/day-3-flexbox-katas.md": "7f333d9619e5e6aa2788c683b9fd934c6ee1ef87ba999ccd7c0f15e0ba4cc36f",
+    "guides.md": "c85161a12ad2f5e4b01c9adb3a580965847fb2cfb9a193aaa509ee14efcf605b",
+    "day-3-seeing-like-a-browser.md": "07e0bff517120dcf2e3d78b6eeb414289ce384737f3dc524b2f1da029e013721",
+    "slides/day-4-setting-type-placing-images.md": "f660daf7a61f35bb66a1c912cd9f133e5e5a27e23895f1439604b7e0c02929d5",
+    "day-4-setting-type-placing-images.md": "ae0f42cdfdca586d0c891753264ff1b992b21966655563cd845615d28e5ea86b",
+    "day-8-thinking-in-components.md": "3e75dd9571612356053cc17c556bdaa2b992eae78852429150a05ac66bceb6a0",
+    "dump/grids-without-tears.md": "8330932cabbce5851d28d390521eb0ad48c7000a7fe4b05be565898e9400372d",
+    "dump/grids-without-tears-slides.md": "0f5c83016c378de9a2dd2066ddab2a53832aca335362561bcfb2cb4287160d48",
+    "assignments/day-5-grid-challenges.md": "0cfa3048d5e4f0c19f59c744c9a9aef701fb2743f659bd543e363f085c43a2c3",
+    "assignments/day-4-letters-to-a-young-designer.md": "8b42285dbbfa0db159d64fce2130cd42b1f102ab25b6ac1fae4cbddc0beda5be",
+    "day-6-hello-terminal-hello-astro.md": "d49b91c55b4736ec99c9e2f191b5bca5d3cedfbe507d134921d03e40f6497926",
+    "slides/day-6-hello-terminal-hello-astro.md": "cc0bd71cd533f63391d36e9edcb717329db745e65614fd701e990a3fd58c4bd8"
   }
 }

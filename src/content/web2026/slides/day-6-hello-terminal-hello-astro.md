@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-21T15:49
 transition: none
 ---
 
@@ -283,7 +283,7 @@ Text there but the design gone? Then your CSS lived in a separate `styles.css`, 
 <img src="/images/van-gogh.jpg" alt="..." />
 ```
 
-**Check every image.** One missing? Network tab: what did the browser ask for vs. what exists. This is Day 3's lab paying rent.
+**Check every image.** One missing? Network tab: what did the browser ask for vs. what exists. This is Day 4's paths lab paying rent.
 
 ---
 

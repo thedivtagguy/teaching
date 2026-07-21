@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-21T16:10
 transition: none
 ---
 
@@ -9,100 +9,138 @@ transition: none
 
 ---
 
-# Type Crimes 🚨
+## Where we are
 
-Three exhibits. The class prosecutes.
+Yesterday we learned to push boxes around. Flexbox: a parent, its children, who sits where.
 
-For each: **name the crime.**
-
----
-
-## Exhibit A
-
-*(a menu / poster / website with the works: six fonts, centered body text, letter-spaced lowercase, lines 200 characters long)*
-
-<!-- TODO: add 3 exhibit screenshots to the vault (local finds are funnier than famous ones) -->
-
-What's wrong here? Shout it out.
+But we never asked what goes *inside* the boxes.
 
 ---
 
-## The point of the game
+## That's today.
 
-You already *feel* bad typography. You flinched before you could name it.
+A webpage, when you strip everything else away, is two things:
 
-Today we learn the names, so next time you can fix it instead of just flinching.
+**words, and pictures.**
+
+Type and images. Get those right and most of the page is already good. So that's the whole day: how to set text well, how to place an image without it fighting you, and then a project that needs both.
 
 ---
+
+# Part 1: Type
+
+---
+
+Most of a page is text. So most of designing a page is really just deciding how the text looks.
+
+Someone put a number on it:
 
 > Web design is 95% typography
 
 ~ Oliver Reichenstein, [ia.net](https://ia.net/topics/the-web-is-all-about-typography-period)
 
-The web is text. Letters, words, paragraphs. Master the type, and most of the design is done.
+I think he's mostly right.
 
 ---
 
-# Rule 1: Measure
+# But first, a game: Type Crimes 🚨
 
-**45 to 75 characters per line.**
+Three exhibits on the screen. The class is the jury.
 
-Longer: eyes get lost on the return trip. Shorter: choppy reading.
+For each one: **what's wrong here?** Shout it out.
+
+---
+
+## Exhibit A
+
+*(a menu / poster / website with the works: six fonts, centered body text, letter-spaced lowercase, lines running 200 characters wide)*
+
+<!-- TODO: add 3 exhibit screenshots to the vault (local finds are funnier than famous ones) -->
+
+---
+
+## Here's the thing
+
+You already *felt* what was wrong. You winced before anyone explained a rule.
+
+You have design eyes. What you don't have yet is the vocabulary to say *why*, and the CSS to fix it.
+
+That's all today is: names for the wincing.<!--element class="fragment"-->
+
+---
+
+## Typesetting isn't magic
+
+It's four small decisions, made on purpose instead of by accident.
+
+Here they are, in order of how much they matter.
+
+---
+
+# Decision 1: Line length
+
+The single most common mistake on amateur sites: lines that run too wide. Your eye gets lost finding the way back to the start of the next line.
+
+Aim for **45 to 75 characters** per line.
 
 ```css
 article {
-  max-width: 65ch; /* the "ch" unit ≈ one character width! */
+  max-width: 65ch;
 }
 ```
 
-This one rule fixes more amateur websites than any other.
+`ch` is a unit that means "the width of a character." So `65ch` is roughly 65 letters wide. Neat, isn't it.
 
 ---
 
-# Rule 2: Line height
+# Decision 2: Line height
 
-Body text wants room to breathe.
+Lines of text sitting too close together feel cramped. A little air makes a paragraph readable.
 
 ```css
 body {
-  line-height: 1.6;  /* 1.5–1.7 for body text */
+  line-height: 1.6;   /* 1.5 to 1.7 reads nicely */
 }
 
 h1 {
-  line-height: 1.2;  /* headings: tighter */
+  line-height: 1.2;   /* big headings can sit tighter */
 }
 ```
 
+`1.6` means "one-and-a-bit times the font's own height." No units, just a multiplier.
+
 ---
 
-# Rule 3: A deliberate scale
+# Decision 3: A few sizes, chosen on purpose
 
-A page needs maybe **3–4 text sizes**. Not twelve.
+A page needs maybe **three or four** text sizes. Not twelve.
 
 ```css
---text-small: 0.875rem;   /* captions */
---text-normal: 1.125rem;  /* body */
---text-large: 1.5rem;     /* section headings */
---text-huge: 2.5rem;      /* the title */
+h1 { font-size: 2.5rem; }     /* the title */
+h2 { font-size: 1.5rem; }     /* section headings */
+p  { font-size: 1.1rem; }     /* the body */
+small { font-size: 0.85rem; } /* captions, footnotes */
 ```
 
-Try [typescale.com](https://typescale.com/): pick a ratio, get a system.
+Pick your handful and stick to them. If you want help picking, [typescale.com](https://typescale.com/) hands you a set.
 
 ---
 
-# Rule 4: Two typefaces, max
+# Decision 4: Two typefaces, at most
 
-One for **headings**, allowed to have personality.
+One for **headings** — this one is allowed some personality.
 
-One for **body**, which should disappear politely while you read.
+One for **body text** — this one should be quiet and just let you read.
 
-Where to get them: [Google Fonts](https://fonts.google.com/), [Fontshare](https://www.fontshare.com/).
+That's it. Two. A third rarely helps and usually hurts.
+
+Free fonts: [Google Fonts](https://fonts.google.com/), [Fontshare](https://www.fontshare.com/).
 
 ---
 
-## Loading a web font
+## Actually using a web font
 
-Google Fonts gives you a `<link>` for your `<head>`, then:
+Google Fonts gives you a `<link>` to paste in your `<head>`. Then you name the font in CSS:
 
 ```css
 body {
@@ -110,55 +148,111 @@ body {
 }
 ```
 
-The names after the comma are the **fallback stack**: undershirts in case the fancy shirt doesn't arrive.
+The names after the comma are backups. If the first font hasn't loaded yet, the browser falls back to the next one, and so on. Always leave a backup or two.
 
 ---
 
-## One showpiece: the dropcap
+## One nice thing, if you want it
+
+A dropcap — the big first letter, like an old book:
 
 ```css
 p:first-of-type::first-letter {
   initial-letter: 3;
-  font-family: var(--font-display);
-  margin-right: 0.5rem;
 }
 ```
 
-Browse [Jen Simmons' labs](https://labs.jensimmons.com/): dropcaps, multicolumn, shapes, overlap. You'll pick one technique for today's project.
+Poke around [Jen Simmons' labs](https://labs.jensimmons.com/): dropcaps, columns, text wrapping a shape. Pick *one* for your project. One is elegant. Three is a mess.
 
 ---
 
-# Part 2: The Image Survival Kit 🖼️
-
-Images have a talent for eating entire evenings: wrong paths, giant files, squished faces.
-
-This kit is how we keep those evenings.
+# Part 2: Pictures
 
 ---
 
-## Where images live
+That's words handled. Now pictures.
+
+But there's a small thing standing in the way, and nearly everyone trips on it at least once. So we're going to deal with it first, properly.
+
+**A picture is a file. And before you can put a file on a page, you have to be able to say where the file lives.**
+
+---
+
+## Your project is a folder
+
+Everything for one website sits in one folder. Open it and you'll see:
 
 ```
-project/
+my-site/
 ├── index.html
 ├── style.css
 └── images/
-    └── my-photo.jpg    ← lowercase. hyphens. always.
+    └── cat.jpg
 ```
 
-```html
-<img src="images/my-photo.jpg" alt="...">
-```
-
-Yesterday's paths lab pays rent immediately.
+A folder holds files. It can also hold *other* folders — like `images/` there. It nests as deep as you like. That's the whole idea of a folder.
 
 ---
 
-## Why images blow out layouts
+## A path is just directions
 
-An image is as big as its file says it is. A 4000px photo doesn't care about your layout.
+When you write this:
 
-The fix, once, in your CSS, forever:
+```html
+<img src="images/cat.jpg">
+```
+
+you're giving the browser directions from where it's standing to the file you want.
+
+It's no different from telling a friend: *go into the kitchen, the mug's on the second shelf.*
+
+---
+
+## Where do the directions start from?
+
+Say your `index.html` is looking for `cat.jpg`:
+
+```html
+<img src="cat.jpg">          <!-- right here, next to me -->
+<img src="images/cat.jpg">   <!-- go into the images folder, then grab it -->
+<img src="/images/cat.jpg">  <!-- start from the site's front door, then follow -->
+```
+
+The leading `/` means "start from the very top." No slash means "start from where I am." Most of the time you want one of the first two.
+
+---
+
+## Two ways this bites you
+
+**One: capital letters matter.** `Cat.JPG` and `cat.jpg` are two different files as far as the server is concerned.
+
+Your Mac shrugs and finds it anyway. Netlify does not. The image works on your laptop, vanishes online, and you lose an hour.
+
+**So, a rule for this whole course: filenames stay lowercase. Always.**<!--element class="fragment"-->
+
+---
+
+## Two: when it goes missing, ask the browser
+
+Image not showing? Open devtools → the **Network** tab → refresh.
+
+The red line shows you *exactly* what the browser went looking for. Compare that to what's actually in your folder.
+
+Nine times out of ten the bug is right there in the difference: a capital letter, a wrong folder, a typo.<!--element class="fragment"-->
+
+---
+
+## Right. Now the pictures themselves. 🖼️
+
+Four things to know, and images stop fighting you.
+
+---
+
+## 1. An image is as big as its file
+
+A photo off your phone might be 4000 pixels wide. It does not care about your layout, and it will happily blow straight through it.
+
+Write this once and forget about it:
 
 ```css
 img {
@@ -167,77 +261,78 @@ img {
 }
 ```
 
-Now images respect their containers.
+Now every image shrinks to fit its container instead of the other way round.
 
 ---
 
-## `object-fit`: cropping without squishing
+## 2. Fitting an image to a box
 
-Want every image in a neat 300×200 box?
+Want every picture in a tidy box the same shape?
 
 ```css
 .card img {
   width: 300px;
   height: 200px;
-  object-fit: cover;    /* fill the box, crop the overflow */
+  object-fit: cover;
 }
 ```
 
-`cover` = fill and crop. `contain` = fit inside, maybe with gaps.
+`cover` fills the box and crops whatever spills over. `contain` fits the whole thing inside, gaps and all.
 
-Use `cover` for photos of people. Faces stay un-stretched.
+For photos of people, use `cover`. Nobody wants their face stretched.
 
 ---
 
-## The semantic home for images
+## 3. Give an image a proper home
 
 ```html
 <figure>
   <img src="images/moth.jpg"
-       alt="A moth resting on a lit lampshade at night">
+       alt="A moth on a lit lampshade at night">
   <figcaption>The visitor, 2am.</figcaption>
 </figure>
 ```
 
-`<figure>` + `<figcaption>`: the frame and the museum label.
+`<figure>` wraps the picture, `<figcaption>` is the little label underneath. The museum frame and its plaque.
 
 ---
 
-## Alt text: write it like a considerate human
+## 4. Write the alt text like a person
 
-For screen readers, broken images, and search engines.
+`alt` is the text that stands in for the image — for screen readers, for a broken link, for search.
 
-❌ `alt="image"` `alt="photo1"`
-✅ `alt="Hand-drawn map of my neighborhood, annotated in red ink"`
+```html
+❌ alt="image"        ❌ alt="photo1"
+✅ alt="Hand-drawn map of my street, annotated in red"
+```
 
-Describe what matters about the image, to someone who can't see it.
-
----
-
-## Compression: the 500KB rule
-
-A 14MB photo makes your site feel broken on a phone.
-
-1. Go to [squoosh.app](https://squoosh.app/)
-2. Drop your image in
-3. Watch it shrink 90% with no visible difference
-4. Download, use *that* one
-
-**If an image file is over 500KB, ask it why.**
+Describe what matters about the picture, to someone who can't see it. Takes ten seconds, means a lot.
 
 ---
 
-## What we're NOT doing
+## And one habit: shrink your files
 
-**Floats**: a historical curiosity. We wave at them from a distance. 👋
+A 14MB photo will make your whole site feel broken on a phone.
 
-**`position: absolute`**: the course rule is *ask before you absolute*. Nine times out of ten, flexbox or grid does it better with less pain.
+Drop it into [squoosh.app](https://squoosh.app/), watch it get 90% smaller with no visible difference, and use *that* one.
 
-(Absolute positioning is a rabbit hole at this stage. We'd rather spend those hours on type.)
+Rough rule: if a file is over 500KB, ask it why.
+
+---
+
+## What we're leaving alone today
+
+**Floats** — an old way of doing layout. We'll wave from a distance.
+
+**`position: absolute`** — the course rule is *ask before you absolute*. Nine times in ten, flexbox does the job with far less pain. I've lost whole evenings to a single stubborn absolutely-positioned image, and I'd rather you spend those evenings on type.
 
 ---
 
 # Part 3 💌
+
+You can set type. You can place a picture. That's genuinely everything a real page needs.
+
+So let's make one that's worth the effort.
 
 ---
 
@@ -247,64 +342,102 @@ A 14MB photo makes your site feel broken on a phone.
 
 ## The project
 
-Real correspondence, from one human to another:
+Real letters, one human writing to another:
 
-Rilke writing to a young poet. Van Gogh writing to Theo. Ada Lovelace writing to Babbage. Seneca writing to Lucilius.
+Rilke to a young poet. Van Gogh to his brother Theo. Ada Lovelace to Babbage. Seneca to Lucilius.
 
-**You pick one letter. You typeset it so beautifully the writer would forgive the medium.**
+**You pick one. You set it so beautifully the writer would forgive you for putting it on a screen.**
 
 ---
 
-## Why letters?
+## Why a letter?
 
-- A letter is *addressed*: it already has a voice and a reader
-- It's typography-first: no galleries, no gimmicks to hide behind
-- And next week you'll write the reply, to a stranger, on your website<!--element class="fragment"-->
+- A letter already has a voice, and someone it's speaking to. Half the design brief is written for you.
+- It's almost pure text, which means there's nowhere to hide — this is a typography project, and you just learned typography.
+- And next week, you write the reply. On your own website.<!--element class="fragment"-->
 
 More on that after the weekend.<!--element class="fragment"-->
 
 ---
 
-## This week's arc
+## How the week goes
 
 | When | What |
 |---|---|
-| Today | Pick your letter, read it twice, sketch |
-| Tomorrow | Grid arrives: layout your letter |
-| Saturday | Your letter moves into Astro (!) |
-| Next week | The reply, components, and shipping |
+| Today, afternoon | Pick it, read it, sketch it, gather your bits — **no code** |
+| Tomorrow | The make day. You build it, all day, in the browser |
+| Saturday | It moves into Astro (yes, really) |
+| Next week | The reply, and shipping it |
 
 ---
 
-## Expectations (the short version)
+## What I'll be looking for
 
-- **Typography carries it.** Fonts that match the letter's era and mood.
-- **Max two images**, processed properly.
-- **One Jen Simmons technique** you haven't tried.
-- **NO AI imagery.** Public domain pools or your own hands.
+- **Typography doing the work.** Fonts that suit the letter's age and mood.
+- **Two images at most**, cleaned up properly. Restraint is part of the brief.
+- **One Jen Simmons technique** you haven't tried before.
+- **No AI images.** Public-domain pools, or your own hands.
 
-Full brief on the assignments page. **Design review with me before you code.**
-
----
-
-## Step 1: Read and visualize
-
-1. Read your letter twice. Notice its mood before you pick a single font.
-2. Sketch the page (paper or Figma).
-3. Think: what should a reader *feel* before they read a word?
+Full brief's on the assignments page.
 
 ---
 
-## Go pick your letter
+## This afternoon, you don't write code
 
-The menu is on the assignments page. Take 20 minutes. Read a few.
+No VS Code. No `index.html`. Not today.
 
-Pick the one that makes you feel something; you're going to live with it for a week.
+The whole point of today is to plan well enough that tomorrow is *just building*. A sketch in your hand is worth an hour of flailing at the keyboard, I promise you.
+
+---
+
+## Step 1: Pick your letter
+
+The menu's on the assignments page. Take twenty minutes. Read a few properly.
+
+Pick the one that makes you feel *something*. You'll be living with it for a week.
+
+---
+
+## Step 2: Read it twice, and listen
+
+Read it again, slowly. What's the mood — before you've chosen a single font?
+
+What should someone feel looking at this page, before they've read a word of it?
+
+Whatever that feeling is, everything else you do serves it.
+
+---
+
+## Step 3: Sketch
+
+Paper or Figma, I don't mind which. Two or three quick directions, then pick one.
+
+Sketch **what you can actually build**: rows and columns, generous margins, one nice moment. No magic — only the tools you already have.
+
+---
+
+## Step 4: Gather your bits
+
+- **Fonts** — two, one for headings, one for the body
+- **Images** — at most two, from the [public-domain pools](/web2026/day-4-setting-type-placing-images#image-pools), cleaned up in Squoosh (cropped, shrunk, lowercase names)
+- **Colours** — three or four, chosen on purpose, not grabbed at random
+
+---
+
+## Step 5: Show me before you leave
+
+Come find me with:
+
+- your letter
+- your sketch
+- your bits, in a folder
+
+That's your ticket into tomorrow. No sign-off, no building. This is the one checkpoint I'm strict about.
 
 ---
 
 ## Git minute ⏱️
 
-Commit your sketches folder, your started HTML, whatever exists. Push.
+Commit your sketches and your assets. Push. (Yes, even with no code written — you always leave with *something* saved.)
 
-Tomorrow: grids without tears. Bring your letter.
+Tomorrow: the make day. Bring your sketch, your bits, and a rested head.
