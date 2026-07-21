@@ -11,30 +11,28 @@
             "id": "6943cb73d5e1d591",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "day-5-short-stories.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/slides/day-6-making-grids/IMG-20250728134935743.png"
               },
-              "icon": "lucide-file",
-              "title": "day-5-short-stories"
+              "icon": "lucide-image",
+              "title": "IMG-20250728134935743"
             }
           }
         ]
       },
       {
-        "id": "48a4d3c6c0c903cf",
+        "id": "3e14f6f1a7c4d6b5",
         "type": "tabs",
         "children": [
           {
-            "id": "4bfa0af73940dcda",
+            "id": "5e4bd52953eafb22",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: day-5-short-stories.md"
+              "title": "Preview: IMG-20250728134935743.png"
             }
           }
         ]
@@ -189,22 +187,29 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4bfa0af73940dcda",
+  "active": "5e4bd52953eafb22",
   "lastOpenFiles": [
+    "assets/slides/day-6-making-grids/IMG-20250728093826350.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826339.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826305.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826317.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826294.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826257.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826234.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826166.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826125.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826109.png",
+    "assets/slides/day-6-making-grids/IMG-20250728093826090.png",
+    "assignments/day-6-making-grids.md",
+    "day-5-short-stories.md",
     "day-4-typesetting-a-page.md",
     "day-3-seeing-and-searching.md",
-    "day-5-short-stories.md",
     "slides/day-3-seeing-and-searching.md",
     "day-2-html-css-and-you.md",
     "day-1-the-small-web.md",
     "slides/that's-all-folks.md",
     "day-8-visual-hierarchies.md",
-    "assets/slides/that's-all-folks/IMG-20250813131438886.png",
-    "assets/slides/that's-all-folks/IMG-20250813131000785.png",
-    "assets/slides/that's-all-folks/IMG-20250813130932479.png",
     "slides/day-1-the-small-web.md",
-    "assets/slides/that's-all-folks/IMG-20250813130411741.png",
-    "assets/slides/that's-all-folks/IMG-20250813130338765.png",
     "assets/slides/that's-all-folks",
     "slides/day-7-the-indieweb.md",
     "day-10-introducing-astro.md",
@@ -213,11 +218,6 @@
     "new-post.md",
     "day-17-domains-and-final-touches.md",
     "assets/slides/day-1-the-small-web/vid-7.mp4",
-    "assets/slides/day-1-the-small-web/Pasted image 20250719134745.png",
-    "assets/slides/day-1-the-small-web/Pasted image 20250715234219.png",
-    "assets/slides/that's-all-folks/IMG-20250813130229011.png",
-    "assets/slides/that's-all-folks/IMG-20250813130229060.png",
-    "assets/slides/that's-all-folks/IMG-20250813130229126.png",
     "day-7-the-indieweb.md",
     "day-6-making-grids.md",
     "Excalidraw/Drawing 2025-08-07 16.08.04.excalidraw.md",
@@ -229,9 +229,7 @@
     "Excalidraw/Drawing 2025-07-31 09.37.19.excalidraw.md",
     "assets/day-9-thinking-in-frameworks",
     "slides/git-and-version-control.md",
-    "slides/day-6-making-grids.md",
     "assets/day-8-visual-hierarchies",
-    "assignments/day-6-making-grids.md",
     "data/library.json",
     "data",
     "assets/slides/day-7-the-indieweb",

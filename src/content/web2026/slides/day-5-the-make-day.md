@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T15:00
+updated: 2026-07-21T22:47
 transition: none
 ---
 
@@ -143,7 +143,7 @@ One page. Five layers. A checkpoint at each.
 | 10:00 | Blocks on paper |
 | 10:30 | HTML done (unstyled) |
 | 11:30 | Typography pass |
-| — | *lunch* |
+| 13:00 | *lunch* |
 | 14:00 | Layout pass |
 | 15:30 | The flourish |
 | 16:15 | Ship + show-and-tell |
@@ -156,11 +156,11 @@ Slower than you'd like. Faster than doing it all at once and drowning.
 
 A letter is almost pre-structured:
 
-- **Headings** — `<h1>`, `<h2>`
-- **Paragraphs** — `<p>`
-- **Emphasized lines** — `<strong>`, `<em>`
-- **A quote** — `<blockquote>`
-- **The signature** — a `<p>` or a `<footer>`
+- **Headings**: `<h1>`, `<h2>`
+- **Paragraphs**: `<p>`
+- **Emphasized lines**: `<strong>`, `<em>`
+- **A quote**: `<blockquote>`
+- **The signature**: a `<p>` or a `<footer>`
 
 Name them before you type them.
 
@@ -183,7 +183,7 @@ Yesterday's four rules, in order:
 1. Load your fonts (`<link>` + `font-family`)
 2. Set the measure: `max-width: 65ch`
 3. Set line-height (1.6 body, 1.2 headings)
-4. Apply your 3–4 size scale
+4. Apply your 3-4 size scale
 
 **Checkpoint:** the squint test. Can you feel the hierarchy from across the room?
 
@@ -226,12 +226,12 @@ Stuck on one thing for more than fifteen minutes?
 
 ## Search prompts to keep moving
 
-- `CSS font family` — change the typeface
-- `CSS line height` — space between lines
-- `CSS max width center` — the measure, centered
-- `CSS drop cap first letter` — the showpiece
-- `CSS blockquote styling` — make the quote sing
-- `CSS letter spacing uppercase` — refined small caps
+- `CSS font family`: change the typeface
+- `CSS line height`: space between lines
+- `CSS max width center`: the measure, centered
+- `CSS drop cap first letter`: the showpiece
+- `CSS blockquote styling`: make the quote sing
+- `CSS letter spacing uppercase`: refined small caps
 
 ---
 
@@ -258,7 +258,7 @@ Kind, specific, useful.
 
 ---
 
-## Git minute ⏱️ — ship it
+## Git minute ⏱️: ship it
 
 Commit. Push. Deploy to Netlify.
 

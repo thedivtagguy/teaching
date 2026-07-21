@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T16:10
+updated: 2026-07-21T22:47
 transition: none
 ---
 
@@ -128,9 +128,9 @@ Pick your handful and stick to them. If you want help picking, [typescale.com](h
 
 # Decision 4: Two typefaces, at most
 
-One for **headings** — this one is allowed some personality.
+One for **headings**, allowed some personality.
 
-One for **body text** — this one should be quiet and just let you read.
+One for **body text**, which should be quiet and just let you read.
 
 That's it. Two. A third rarely helps and usually hurts.
 
@@ -154,7 +154,7 @@ The names after the comma are backups. If the first font hasn't loaded yet, the 
 
 ## One nice thing, if you want it
 
-A dropcap — the big first letter, like an old book:
+A dropcap, the big first letter like an old book:
 
 ```css
 p:first-of-type::first-letter {
@@ -190,7 +190,7 @@ my-site/
     └── cat.jpg
 ```
 
-A folder holds files. It can also hold *other* folders — like `images/` there. It nests as deep as you like. That's the whole idea of a folder.
+A folder holds files. It can also hold *other* folders, like `images/` there. It nests as deep as you like. That's the whole idea of a folder.
 
 ---
 
@@ -299,7 +299,7 @@ For photos of people, use `cover`. Nobody wants their face stretched.
 
 ## 4. Write the alt text like a person
 
-`alt` is the text that stands in for the image — for screen readers, for a broken link, for search.
+`alt` is the text that stands in for the image: for screen readers, for a broken link, for search.
 
 ```html
 ❌ alt="image"        ❌ alt="photo1"
@@ -322,9 +322,9 @@ Rough rule: if a file is over 500KB, ask it why.
 
 ## What we're leaving alone today
 
-**Floats** — an old way of doing layout. We'll wave from a distance.
+**Floats**: an old way of doing layout. We'll wave from a distance.
 
-**`position: absolute`** — the course rule is *ask before you absolute*. Nine times in ten, flexbox does the job with far less pain. I've lost whole evenings to a single stubborn absolutely-positioned image, and I'd rather you spend those evenings on type.
+**`position: absolute`**: the course rule is *ask before you absolute*. Nine times in ten, flexbox does the job with far less pain. I've lost whole evenings to a single stubborn absolutely-positioned image, and I'd rather you spend those evenings on type.
 
 ---
 
@@ -353,7 +353,7 @@ Rilke to a young poet. Van Gogh to his brother Theo. Ada Lovelace to Babbage. Se
 ## Why a letter?
 
 - A letter already has a voice, and someone it's speaking to. Half the design brief is written for you.
-- It's almost pure text, which means there's nowhere to hide — this is a typography project, and you just learned typography.
+- It's almost pure text, so there's nowhere to hide. This is a typography project, and you just learned typography.
 - And next week, you write the reply. On your own website.<!--element class="fragment"-->
 
 More on that after the weekend.<!--element class="fragment"-->
@@ -364,7 +364,7 @@ More on that after the weekend.<!--element class="fragment"-->
 
 | When | What |
 |---|---|
-| Today, afternoon | Pick it, read it, sketch it, gather your bits — **no code** |
+| Today, afternoon | Pick it, read it, sketch it, gather your bits, **no code** |
 | Tomorrow | The make day. You build it, all day, in the browser |
 | Saturday | It moves into Astro (yes, really) |
 | Next week | The reply, and shipping it |
@@ -400,7 +400,7 @@ Pick the one that makes you feel *something*. You'll be living with it for a wee
 
 ## Step 2: Read it twice, and listen
 
-Read it again, slowly. What's the mood — before you've chosen a single font?
+Read it again, slowly. What's the mood, before you've chosen a single font?
 
 What should someone feel looking at this page, before they've read a word of it?
 
@@ -412,15 +412,15 @@ Whatever that feeling is, everything else you do serves it.
 
 Paper or Figma, I don't mind which. Two or three quick directions, then pick one.
 
-Sketch **what you can actually build**: rows and columns, generous margins, one nice moment. No magic — only the tools you already have.
+Sketch **what you can actually build**: rows and columns, generous margins, one nice moment. No magic, only the tools you already have.
 
 ---
 
 ## Step 4: Gather your bits
 
-- **Fonts** — two, one for headings, one for the body
-- **Images** — at most two, from the [public-domain pools](/web2026/day-4-setting-type-placing-images#image-pools), cleaned up in Squoosh (cropped, shrunk, lowercase names)
-- **Colours** — three or four, chosen on purpose, not grabbed at random
+- **Fonts**: two, one for headings, one for the body
+- **Images**: at most two, from the [public-domain pools](/web2026/day-4-setting-type-placing-images#image-pools), cleaned up in Squoosh (cropped, shrunk, lowercase names)
+- **Colors**: three or four, chosen on purpose, not grabbed at random
 
 ---
 
@@ -438,6 +438,6 @@ That's your ticket into tomorrow. No sign-off, no building. This is the one chec
 
 ## Git minute ⏱️
 
-Commit your sketches and your assets. Push. (Yes, even with no code written — you always leave with *something* saved.)
+Commit your sketches and your assets. Push. (Yes, even with no code written, you always leave with *something* saved.)
 
 Tomorrow: the make day. Bring your sketch, your bits, and a rested head.

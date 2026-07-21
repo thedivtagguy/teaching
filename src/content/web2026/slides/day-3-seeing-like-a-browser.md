@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T15:28
+updated: 2026-07-21T23:53
 transition: none
 ---
 # Seeing Like a Browser
@@ -13,17 +13,94 @@ transition: none
 - CSS selectors for grabbing elements to style them
 - Deploying a monstrosity to the internet
 
+
+
+
+
+
+
+---
+
+> it sounded easy at first. But the more I thought about it, it was not easy? or is it? coz we were thinking and taking certain decison to make it ugly. Even an "ugly" website is designed in its own way.
+
+
+---
+
+> On the other hand traditional method (learning step by step, like syntax/property-wise) could have been like deep learning , but would have wasted lot of time. And that doesn't make sense.
+
 ---
 
 <split even gap="2">
 
-> ...whatever we'll create further on will somehow be better than what we did [yesterday]...
+> "It felt like [the] filmmaking process. HTML code is... structure and content, but then there are things like art direction, lighting, [and] set design... which is similar to the CSS part where we style the frame."
 
 ![IMG|500](https://media.tenor.com/gSH3zUtBzN4AAAAM/fist-bump-high-five.gif)
 
 </split>
 
 ---
+
+
+## Action Replayy
+
+Things we need to remember from now on.
+
+---
+
+## How to select classes, ids, children and parents
+
+- `#id` for ids
+- `.className` for classes
+- and everything else you learnt in CSS Diner
+
+---
+
+## VS Code tells you about your errors, pay attention 
+
+![](IMG-20260721230316849.png)
+
+---
+
+## If things don't show up, you've typed something wrong
+
+Is it the correct file name? Is it in the right folder? Is it the correct className? 
+
+There's a different between `thisclass` and `Thisclass` even though they look the same!
+
+
+---
+
+> I don't yet have the full grasp of what exactly are the things that can be achieved from CSS
+
+
+---
+
+## CSS Zen Garden
+
+[This was a project from over a decade ago](https://csszengarden.com/) where people got the same HTML file but styled it in all sorts of ways. 
+
+---
+
+![](IMG-20260721230702305.png)
+
+---
+
+![](IMG-20260721230723127.png)
+
+---
+
+![](IMG-20260721230738239.png)
+
+---
+
+![](IMG-20260721230750418.png)
+
+---
+
+![](IMG-20260721230802199.png)
+
+---
+
 
 ## Can we start seeing pages as tags?
 
@@ -63,61 +140,6 @@ Can you spot the use of `color`?
 
 ---
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
-
----
-
-What is that **space on the sides called?**
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
-
----
-
-How do I **add space below headings**?
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
-
----
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122841.png)
-
----
-
-Okay I got an answer, but what does this mean? Why the space between the two values?
-
-```css
-margin: 0px 10px;
-```
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122851.png)
-
----
-
-I went to MDN, and in the page was written...
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122861.png)
-
----
-
-# 🤠👍
-
----
-
-## That was a good search!
-
-But what made it a **good search**?
-
-1. **We used specific keywords**: "margin", "CSS"
-2. **We knew what we wanted**: "add space below"
-
----
-
-## That space has a name.
-
-In fact, *every* element carries four layers of space around its content.
-
----
-
 # The Box Model 📦
 
 
@@ -139,12 +161,6 @@ In fact, *every* element carries four layers of space around its content.
 
 ---
 
-Once you see the boxes, you can't unsee them.
-
-And in a minute, the browser will show you the *actual* boxes on any live website.<!--element class="fragment"-->
-
----
-
 ## First, let's practice this detective work
 
 ---
@@ -155,24 +171,12 @@ And in a minute, the browser will show you the *actual* boxes on any live websit
 
 ---
 
-## I spot:
-
-- A `<div>` container for the whole card
-- An `<img>` for the picture
-- An `<h3>` or `<p>` for the website name
-- A `<a>` for the link
-- Another `<p>` for the label texts
-
----
-
-## What CSS properties would you search for?
+## What CSS techniques would you search for?
 
 - "CSS card layout" <!--element class="fragment"-->
 - "CSS border rounded" <!--element class="fragment"-->
 - "CSS box shadow" <!--element class="fragment"-->
 - "CSS side by side layout" <!--element class="fragment"-->
-
-*(hold that last one in your head; it's the second half of today)* <!--element class="fragment"-->
 
 ---
 
@@ -180,17 +184,17 @@ And in a minute, the browser will show you the *actual* boxes on any live websit
 
 **Right-click → Inspect Element** on any website!
 
-X-ray specs for web pages. See the boxes, tweak the values, break things for fun.
+See the boxes, tweak the values, break things for fun.
 
 ---
 
 ## Let's try it live!
 
-1. Open one of *your* Bohemian Rhapsody monstrosities from yesterday
+1. Open one of your Bohemian Rhapsody monstrosities from yesterday
 2. Right-click on something interesting
 3. Click "Inspect" or "Inspect Element"
 4. Look at the HTML structure
-5. Look at the CSS styles on the right — and *change them*
+5. Look at the CSS styles on the right and change them
 
 ---
 
@@ -200,82 +204,75 @@ X-ray specs for web pages. See the boxes, tweak the values, break things for fun
 
 ## Activity: Sniffing Things 🕵️
 
-**15 minutes**
+**20 minutes**
 
-1. Pick any website you visit regularly
-2. Find something visually interesting
-3. Inspect it with browser tools
-4. Write down:
+1. Pick any website from [CSS Zen Garden Gallery](https://csszengarden.com/pages/alldesigns/)
+2. Inspect it with browser tools
+3. Write down:
+    - What is the effect (in words)?
     - What HTML tags are used?
     - What CSS properties create the visual effect?
     - What would you search for to recreate this?
 
 ---
 
-## So how *do* things sit side by side?
-
-Remember "CSS side by side layout"?
-
-The answer, nine times out of ten, is...
+## So how do things sit side by side?
 
 ---
 
 # Flexbox 🐸
 
-Boxes in a **row** or a **column**, sharing space sensibly.
+Put boxes in a **row** or a **column**, sharing the space between them.
 
-```css
-.parent {
-  display: flex;
-}
-```
+<split even gap="2">
 
-The parent becomes the boss of the row. Children fall in line.
+![display block|360](/assets/slides/day-3-seeing-like-a-browser/flex-off.png)
+
+![display flex|360](/assets/slides/day-3-seeing-like-a-browser/flex-on.png)
+
+</split>
 
 ---
 
 ## Which way does the line go?
 
-```css
-.parent {
-  display: flex;
-  flex-direction: row;     /* → the default */
-  /* flex-direction: column;  ↓ stack instead */
-}
-```
+<split even gap="2">
+
+![row|360](/assets/slides/day-3-seeing-like-a-browser/flex-row.png)
+
+![column|360](/assets/slides/day-3-seeing-like-a-browser/flex-column.png)
+
+</split>
 
 One property flips a navbar into a sidebar.
 
 ---
 
-## Two axes, two questions
+## Two axes
 
-```css
-.parent {
-  display: flex;
-  justify-content: center;  /* along the row: left? right? spread out? */
-  align-items: center;      /* across the row: top? middle? bottom? */
-}
-```
+<split even gap="2">
 
-**justify-content** pushes things along the direction of travel.
+![justify-content|360](/assets/slides/day-3-seeing-like-a-browser/flex-justify.png)
 
-**align-items** lines them up across it.
+![align-items|360](/assets/slides/day-3-seeing-like-a-browser/flex-align.png)
 
-*(Yes, these two centered a div. The legend is real.)*<!--element class="fragment"-->
+</split>
+
+**justify-content** works along the row. **align-items** works across it.
 
 ---
 
-## And the space between?
+## Spaces between us...
 
-```css
-.parent {
-  display: flex;
-  gap: 1rem;   /* breathing room between children, no margin math */
-}
-```
+<split even gap="2">
 
-There's more in the family — `flex-wrap`, `order`, `flex-grow` — and you'll meet all of them in about twenty minutes.
+![no gap|360](/assets/slides/day-3-seeing-like-a-browser/flex-gap-off.png)
+
+![gap|360](/assets/slides/day-3-seeing-like-a-browser/flex-gap-on.png)
+
+</split>
+
+`gap` adds space between children. More of the family (`flex-wrap`, `order`, `flex-grow`) shows up in the exercises!
 
 ---
 
@@ -283,23 +280,14 @@ There's more in the family — `flex-wrap`, `order`, `flex-grow` — and you'll 
 
 Head to [Flexbox Froggy](https://flexboxfroggy.com).
 
-**15–20 minutes.** Get to around level 13; that covers everything we need today.
-
-**Revisiting this game later is normal and encouraged**; plenty of people come back to it mid-project.
+**35 minutes.** Get to around level 13 at least.
 
 ---
 
-## Time to leave the frog pond 🚀
 
-One repo. Seven small design jobs. Each one a real layout you'll build again someday.
+## Exercise Time: Space Oddity
 
-# `web2026-space-oddity`
-
----
-
-## You know this dance
-
-Same moves as Bohemian Rhapsody:
+You know the scene! Make the same moves as Bohemian Rhapsody:
 
 1. **Fork** [open-making/web2026-space-oddity](https://github.com/open-making/web2026-space-oddity) on GitHub
 2. Open **GitHub Desktop** → Clone *your* fork
@@ -311,54 +299,25 @@ Same moves as Bohemian Rhapsody:
 ## How it works
 
 - The landing page links every exercise
-- Each folder has its **own README** telling you the job
-- Each page shows the **goal** — refresh your browser to check yourself
-- Fix the CSS → write the CSS → write the HTML → build the whole thing
-
-The training wheels come off one at a time.<!--element class="fragment"-->
+- Each folder has its own README with the task
+- Most have a `goal.png` to check against
+- Fix the CSS, write the CSS, write the HTML, build from a screenshot
 
 ---
 
-## Today, in class:
+# Stuck? 🦆
 
-**01 — Ground Control**: fix four bugs, watch the panel snap together
-
-**02 — Comic Strip**: unscramble the panels so the joke lands
-
-**03 — Gallery Wall**: hang a painting dead center (yes, *that* div)
-
-**04 — Sticker Sheet**: make it wrap, make it breathe
-
-Homework: **05, 06, and 07**. More on that at the end.
-
----
-
-# The Stuck Protocol 🦆
-
-
-1. **Read the error out loud.**
-2. **Rubber duck it**
-3. **Check the docs**
-4. **Ask a neighbor**
-5. **Ask me or an LLM**, with the actual error, the actual code, expected vs. got
-
-
----
-
-## Wrapping up
-
-**Be ready to show:**
-
-1. One thing you searched for today
-2. One exercise payoff moment (before → after)
-3. One CSS property you discovered
+1. **Rubber duck it**
+2. **Check the docs**
+3. **Ask a neighbor**
+4. **Ask me or an LLM**, with the actual error, the actual code, expected vs. got
 
 ---
 
 ## Git minute ⏱️
 
-Commit. Push. Leave.
+---
 
-Homework: exercises **05 (mixtape shelf), 06 (boarding pass), 07 (katas)** in the flexbox repo. 75 minutes, time-boxed. Stuck-notes count.
+## Letters of Note
 
-Tomorrow: typography, images, and the start of the letters project. 💌
+Tomorrow we start designing some letters! The start of your first properly designed project. 

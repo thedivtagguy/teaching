@@ -10,7 +10,7 @@ seo_description: Building the Letters to a Young Designer page in vanilla HTML a
 seo_keywords: web design, HTML, CSS, typography, flexbox, portfolio project, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-21T15:00
+updated: 2026-07-21T22:47
 slug: day-5-the-make-day
 slides: https://teaching.aman.bh/slides/web2026/day-5-the-make-day
 show_metadata_card: true
@@ -37,8 +37,8 @@ You walked in with a letter, a sketch, and a folder of assets (that was the deal
 
 1. **Identify your building blocks.** A letter is almost pre-structured: a heading, paragraphs, the odd emphasized line, a signature, a `<blockquote>` maybe. Name them before you type them.
 2. **HTML first. Always.** Write the whole letter as plain, unstyled HTML and get it reading correctly top to bottom *before you write a line of CSS*. If the naked HTML doesn't make sense, no styling will save it.
-3. **Typography pass.** Now, yesterday's four rules in order: load your fonts, set your measure (`max-width: 65ch`), set line-height, apply your 3–4 size scale. Squint at it.
-4. **Layout pass.** Flexbox only, and honestly mostly margins: a generous margin column, a centered text column, maybe a header row. Your letter needs *less* layout than you think. (No grid — grid arrives later, and your letter doesn't need it.)
+3. **Typography pass.** Now, yesterday's four rules in order: load your fonts, set your measure (`max-width: 65ch`), set line-height, apply your 3-4 size scale. Squint at it.
+4. **Layout pass.** Flexbox only, and honestly mostly margins: a generous margin column, a centered text column, maybe a header row. Your letter needs *less* layout than you think. (No grid; grid arrives later, and your letter doesn't need it.)
 5. **The flourish.** One showpiece: a dropcap, a pull quote, text wrapping a shape. Set a timer. One is elegant; three is a mess.
 
 ### When you get stuck (you will)
