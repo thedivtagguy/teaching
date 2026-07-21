@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-20T23:27
+updated: 2026-07-21T08:53
 transition: none
 ---
 
@@ -35,26 +35,32 @@ Afternoon: VS Code, a game, and Freddie Mercury.<!--element class="fragment"-->
 
 ---
 
-## Build a webpage without computer
-
-Pick a website you use every day. Or invent one!
-Use A4 sheets, scissors, glue, a pen to construct it from ground-up.
-
----
-
-
-1. Use an A4 sheet as your "page"
-2. Everything on this page is its own piece of paper labelled with words: "big heading", "menu", "photo", "caption"
-3. If something lives inside something else, it gets glued *on top of* it
-
-Maybe a menu with three links is one strip of paper with three smaller strips inside it. 
-A photo with a caption is two pieces in a bigger piece.
-
-**Time: 30 minutes**
-
----
-
 ## Sheet happens
+
+1. Pick between a Zomato restaurant page or a newspaper website.
+
+2. Ask: **"what are the big regions?"** Top bar? Main area? Menu?
+   Cut one sheet of paper for each. Label it and glue onto your A4.
+
+3. Pick one region. Ask **"what's inside this?"** Cut a piece for each thing and label and glue inside it.
+
+4. Keep going until the pieces are single things:
+   one heading, one photo, one button, one link.
+
+
+---
+
+## Rules
+
+1. If two things belong together, they share a parent piece.
+   A photo + its caption = both glued onto one "card".
+
+2. Something must be glued onto something that's glued onto something.
+   **Three layers deep, minimum.**
+
+---
+
+## Two things to remember
 
 A piece is either fully inside its parent, or it's outside. There is no half-in.
 
@@ -62,7 +68,7 @@ Small things go on big things, never the other way around.<!--element class="fra
 
 
 ---
-## Mark, up
+## WTH is "markup"?
 
 Before computers, an editor would take a typed manuscript and scribble instructions all over it. *This line is the title. This bit, italics. New paragraph here.*
 
@@ -165,7 +171,9 @@ strips: <a> <span> <img> <b>
 
 ## Browsers are dumb but kind
 
-If you break these rules, browsers don't show an error, but instead rearrange your page into something "legal". And then you'll wonder why something isn't working.<!--element class="fragment"-->
+If you break these rules, browsers don't show an error, but instead rearrange your page into something "legal". 
+
+Things will still show up! But they aren't what you want them to be.
 
 ---
 
