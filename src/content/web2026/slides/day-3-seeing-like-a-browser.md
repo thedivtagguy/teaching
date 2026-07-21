@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T13:01
+updated: 2026-07-21T14:53
 transition: none
 ---
 # Seeing Like a Browser
@@ -69,75 +69,6 @@ Can you spot the use of `background-color`?
 **Padding**: space inside the walls. 
 
 **Margin**: space between houses.
-
----
-
-## #1 Skill: Knowing how to ask
-
----
-
-What is that **space on the sides called?**
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122827.png)
-
----
-
-Okay, I searched, and got an answer. But what does this mean?
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122851.png)
-
----
-
-I went to MDN, and in the page was written...
-
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122861.png)
-
----
-
-## That was a good search!
-
-What made it a **good search**?
-
-1. **Specific keywords**: "margin", "CSS"
-2. **We knew what we wanted**: "add space below"
-
----
-## Is Aman a boomer? Who searches anymore?
-
-notes: output isn't the only point.
-
-
----
-
-## What searching builds that asking doesn't
-
-1. **Vocabulary.**
-
-2. **Relationships between things** 
-
-3. **A nose for wrongness.** 
-
-notes:  Searching forces you to learn what things are *called*. Names are how you think about a medium. /  MDN shows you how things are related to other things. Margin sits next to padding, next to border. You get much more information in the process.  / Docs, Stack Overflow, blogs disagree. Deciding who to trust is a skill. 
-
----
-
-##  Better your vocabulary, the better your prompts
-
-"make it look nicer" → garbage in, garbage out
-
-"increase the margin between sections" → great!
-
-**People who read docs are *better* at using LLMs.** <!--element class="fragment"-->
-
-You're not choosing between skills. One feeds the other.<!--element class="fragment"-->
-
----
-
-## Search first, then ask
-
-Use LLMs to *explain* things you found, not to *produce*
-things you didn't.
-
 
 ---
 ## The Browser Inspector 🦴

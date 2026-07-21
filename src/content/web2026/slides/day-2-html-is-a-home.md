@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T08:53
+updated: 2026-07-21T14:57
 transition: none
 ---
 
@@ -339,29 +339,6 @@ Preflight Checklist:
 1. You've [installed our class "profile" on VS Code](https://teaching.aman.bh/web2026/guides#installing-the-class-vs-code-profile). 
 2. You've [logged into Github Desktop](https://teaching.aman.bh/web2026/guides#github-desktop). 
 
----
-
-## The problem
-
-`final.html`
-`final-v2.html`
-`final-v2-REAL.html`
-`final-v2-REAL-use-this-one.html`
-
-We've all been there.<!--element class="fragment"-->
-
----
-
-## The fix: commits
-
-A **commit** is a save-game checkpoint for your projects. What changed, when, and a tiny message saying why.
-
-
-You can always go back to any checkpoint.
-
-
-Today we do this with GitHub Desktop: it shows you what changed, you write a message, you click **Commit**, then **Push**. Push sends your checkpoints to GitHub, safe from laptop accidents.
-
 
 ---
 
@@ -387,9 +364,6 @@ Your job is to give it styles. BUT, it has to be messy, ugly, a complete Dada-is
 
 ---
 
-<split left="2" right="1">
-
-<div>
 
 1. Go to this link:
 
@@ -397,17 +371,54 @@ Your job is to give it styles. BUT, it has to be messy, ugly, a complete Dada-is
 https://github.com/open-making/web2026-bohemian-rhapsody
 ```
 
-2. Click **Fork** (a photocopy of my project, for you to vandalize)
+2. Click **Fork** (a photocopy of my project for you to vandalize)
 
 3. Clone your fork with GitHub Desktop
 
 4. Open it in VS Code and fire up Live Server
 
-</div>
 
-![Fork Icon|100](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+---
 
-</split>
+## Knowing what to search is a huge skill
+
+---
+## Is Aman a boomer? Who searches anymore?
+
+notes: output isn't the only point.
+
+
+---
+
+## What searching builds that asking doesn't
+
+1. **Vocabulary.**
+
+2. **Relationships between things** 
+
+3. **A nose for wrongness.** 
+
+notes:  Searching forces you to learn what things are *called*. Names are how you think about a medium. /  MDN shows you how things are related to other things. Margin sits next to padding, next to border. You get much more information in the process.  / Docs, Stack Overflow, blogs disagree. Deciding who to trust is a skill. 
+
+---
+
+##  Better your vocabulary, the better your prompts
+
+"make it look nicer" → garbage in, garbage out
+
+"increase the margin between sections" → great!
+
+**People who read docs are *better* at using LLMs.** <!--element class="fragment"-->
+
+You're not choosing between skills. One feeds the other.<!--element class="fragment"-->
+
+---
+
+## Search first, then ask
+
+Use LLMs to *explain* things you found, not to *produce*
+things you didn't.
+
 
 ---
 
@@ -421,6 +432,27 @@ https://github.com/open-making/web2026-bohemian-rhapsody/blob/main/css-propertie
 
 1. Enable a [split editor](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing) so you can edit two files side by side.
 2. Live Server reloads as you save.
+
+---
+## The problem
+
+`final.html`
+`final-v2.html`
+`final-v2-REALLY-use-this-one.html`
+`final-v2-FOR-REAL-MUMMY-KASAM-use-this-one.html`
+
+
+---
+
+## The fix: commits
+
+A **commit** is a save-game checkpoint for your projects. What changed, when, and a tiny message saying why.
+
+
+You can always go back to any checkpoint.
+
+
+Today we do this with GitHub Desktop: it shows you what changed, you write a message, you click **Commit**, then **Push**. Push sends your checkpoints to GitHub, safe from laptop accidents.
 
 ---
 
@@ -465,6 +497,4 @@ That's a massive amount for one day!<!--element class="fragment"-->
 
 ---
 
-## Before you go
-
-Commit! Watch stuff update!
+## Stay committed and see you tomorrow

@@ -1,10 +1,10 @@
 ---
 title: "Assignment 2: Bohemian Rhapsody (Make It Ugly)"
-due: 2026-07-23
-description: Learning CSS by committing crimes against design, on purpose
-published: false
+due: 2026-07-21
+description: Learning CSS by committing crimes against design
+published: true
 date: 2026-07-21T18:00
-updated: 2026-07-20T12:33
+updated: 2026-07-21T14:51
 submissionUrl: https://github.com/open-making/web2026-bohemian-rhapsody/issues/1
 ---
 
@@ -18,9 +18,16 @@ When you're satisfied with your monstrosity:
 
 1. Commit and push it with GitHub Desktop
 2. Deploy it to Netlify the way we did together
-3. Share the live URL on the submission thread
+3. Share the live URL on the submission thread.
 
-On Day 3 we'll do a quick show-and-tell.
+Today's submission link is different from dev-notes. 
+
+**Please submit your entries by creating a new issue in this repository:** [https://github.com/open-making/web2026-bohemian-rhapsody/issues/new](https://github.com/open-making/web2026-bohemian-rhapsody/issues/new)
+
+In the title field, please enter details in the following format: `FIRSTNAME-LASTNAME-SUBMISSION`
+In the description field, add a link to your Netlify deployment (hopefully you've renamed it!) and a screenshot of the website.
+
+Dev notes to be submitted in the dev-notes repository. 
 
 ### Links and Resources
 
