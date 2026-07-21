@@ -2,7 +2,7 @@
 title: Guides
 date: 2026-07-13
 section: Appendix
-updated: 2026-07-20T23:31
+updated: 2026-07-21T13:18
 published: true
 slug: guides
 ---
@@ -41,6 +41,35 @@ Create a folder anywhere, open it in VS Code, and make a file called `index.html
 ![](/assets/guides/IMG-20260720210806206.png)
 
 If you see it, congratulations, you're set up. If you don't, the extensions might still be installing, give it a minute. Still nothing? Ask for my help!
+
+## Forking a repository
+
+Before you can clone anything, you need something of your own to clone. That's what forking is for. A fork is your own personal copy of somebody else's repository, sitting on your own GitHub account.
+### Fork vs clone
+
+- **Fork** = cloud to cloud. My repo on GitHub → your repo on GitHub. You do this in the browser, and once per project.
+- **Clone** = cloud to laptop. Your repo on GitHub → a folder on your computer. You do this in GitHub Desktop.
+
+### How to fork
+
+Step 1: Open the repository I've given you in your browser. Make sure you're signed in to GitHub, otherwise the button won't be there.
+
+![](IMG-20260721131655680.png)
+
+
+Step 2: Click **Fork**, at the top right of the page.
+
+![](IMG-20260721131725279.png)
+
+Step 3: A settings page appears. The **Owner** should be your username, and the repository name will be the same as mine, which is fine. Ignore the rest.
+
+Step 4: Click **Create fork** and wait a few seconds.
+
+### Checking it worked
+
+Look at the top of the page you land on. It should say `your-username / repository-name`, not mine, and underneath it in small grey text, "forked from ...".
+
+That's your copy! You can now clone it. 
 
 ## Using GitHub Desktop
 
@@ -182,9 +211,7 @@ You never touch Netlify again for THIS website. From now on:
 
 About a minute after you push, your live site updates by itself. Netlify is watching your GitHub repository and republishes every time something new arrives.
 
-## Git flow: the one-pager
-
-Print this. Stick it somewhere. This is the entire lifecycle of your website, and we will use it every single day.
+## Git flow
 
 ```
   GITHUB (the cloud)                      YOUR LAPTOP

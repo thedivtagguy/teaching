@@ -13,28 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-2-html-is-a-home.md",
+                "file": "guides.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-2-html-is-a-home"
-            }
-          }
-        ]
-      },
-      {
-        "id": "9252727cf519efa9",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "3ee6a1cdb7489a5e",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {},
-              "icon": "slides",
-              "title": "Preview: day-2-html-is-a-home.md"
+              "title": "guides"
             }
           }
         ]
@@ -172,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "outline.md",
+                "file": "guides.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of outline"
+              "title": "Outline of guides"
             }
           },
           {
@@ -225,12 +209,16 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "3ee6a1cdb7489a5e",
+  "active": "5b4c51496b492876",
   "lastOpenFiles": [
+    "assets/guides/IMG-20260721131725279.png",
+    "assets/guides/IMG-20260721131655680.png",
+    "slides/day-4-setting-type-placing-images.md",
+    "slides/day-3-seeing-like-a-browser.md",
+    "slides/day-2-html-is-a-home.md",
     "assignments/day-2-bohemian-rhapsody.md",
     "day-4-setting-type-placing-images.md",
     "day-3-seeing-like-a-browser.md",
-    "slides/day-2-html-is-a-home.md",
     "guides.md",
     "assets/install-guides/IMG-20250722150636812.gif",
     "assets/install-guides/IMG-20250722145758024.png",
@@ -245,7 +233,6 @@
     "assets/guides/IMG-20260720224955245.png",
     "assets/guides/IMG-20260720224835041.png",
     "assets/guides/IMG-20260720224721556.png",
-    "assets/guides/IMG-20260720224555020.png",
     "assets/guides",
     "day-2-html-is-a-home.md",
     "web2026/assignments.md",
@@ -253,7 +240,6 @@
     "install-guides.md",
     "assignments/day-1-web-archaeology.md",
     "day-1-the-small-web.md",
-    "slides/day-3-seeing-like-a-browser.md",
     "day-5-grids-without-tears.md",
     "ai-policy.md",
     "slides/day-1-the-small-web.md",
@@ -261,7 +247,6 @@
     "assets/slides/day-2-html-is-a-home",
     "requirements.md",
     "dump/web2025-retrospective.md",
-    "slides/day-4-setting-type-placing-images.md",
     "slides/day-5-grids-without-tears.md",
     "assignments/day-5-grid-challenges.md",
     "assignments/day-4-letters-to-a-young-designer.md",

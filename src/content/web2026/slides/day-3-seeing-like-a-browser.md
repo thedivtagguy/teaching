@@ -1,33 +1,17 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-20T12:33
+updated: 2026-07-21T13:01
 transition: none
 ---
-
-<!-- NOTE: image assets (IMG-2025...) live in the web2025 Obsidian vault.
-     Copy or re-link them into the web2026 vault before exporting. -->
-
 # Seeing Like a Browser
 ### _Day 3 - WEB2026_
 
 ---
 
-## Pens out 🖊️
-
-**Box-spotting.** You have a printed screenshot of a website.
-
-Draw the boxes. Every heading, every image, every column: box it.
-
-This drawing is the layout code you'll write today.<!--element class="fragment"-->
-If you can box it, you can build it.<!--element class="fragment"-->
-
----
-
 ## Yesterday
-
-- HTML is a home; tags are rooms
-- CSS selectors grab elements to style them
-- You deployed a monstrosity to the actual internet
+- Understanding HTML in terms of sheets and strips
+- CSS selectors for grabbing elements to style them
+- Deploying a monstrosity to the internet
 
 ---
 
@@ -69,7 +53,6 @@ Can you spot the use of `background-color`?
 
 # The Box Model 📦
 
-Every element is a box. Four layers, inside out:
 
 ```
 ┌─ margin ────────────────────────────┐
@@ -80,12 +63,16 @@ Every element is a box. Four layers, inside out:
 │  │  │                       │   │   │
 │  │  └───────────────────────┘   │   │
 │  └──────────────────────────────┘   │
-└──────────────────────────────────────┘
+└─────────────────────────────────────┘
 ```
 
-**Padding**: space inside the walls. **Margin**: space between houses.
+**Padding**: space inside the walls. 
 
-Once you see the boxes, you can't unsee them.
+**Margin**: space between houses.
+
+---
+
+## #1 Skill: Knowing how to ask
 
 ---
 
@@ -96,10 +83,6 @@ What is that **space on the sides called?**
 ---
 
 Okay, I searched, and got an answer. But what does this mean?
-
-```css
-margin: 0px 10px;
-```
 
 ![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122851.png)
 
@@ -119,12 +102,49 @@ What made it a **good search**?
 2. **We knew what we wanted**: "add space below"
 
 ---
+## Is Aman a boomer? Who searches anymore?
 
+notes: output isn't the only point.
+
+
+---
+
+## What searching builds that asking doesn't
+
+1. **Vocabulary.**
+
+2. **Relationships between things** 
+
+3. **A nose for wrongness.** 
+
+notes:  Searching forces you to learn what things are *called*. Names are how you think about a medium. /  MDN shows you how things are related to other things. Margin sits next to padding, next to border. You get much more information in the process.  / Docs, Stack Overflow, blogs disagree. Deciding who to trust is a skill. 
+
+---
+
+##  Better your vocabulary, the better your prompts
+
+"make it look nicer" → garbage in, garbage out
+
+"increase the margin between sections" → great!
+
+**People who read docs are *better* at using LLMs.** <!--element class="fragment"-->
+
+You're not choosing between skills. One feeds the other.<!--element class="fragment"-->
+
+---
+
+## Search first, then ask
+
+Use LLMs to *explain* things you found, not to *produce*
+things you didn't.
+
+
+---
 ## The Browser Inspector 🦴
 
 **Right-click → Inspect Element** on any website!
 
-X-ray specs for web pages. See the boxes, tweak the values, break things for fun. (Refresh un-breaks them.)
+X-ray specs for web pages. See the boxes, tweak the values, break things for fun.
 
 ---
 
@@ -215,25 +235,13 @@ Compare what it asked for with what actually exists. Spot the difference and you
 
 # The Stuck Protocol 🦆
 
-This poster now governs the rest of the course:
 
-1. **Read the error out loud.** Actually out loud.
-2. **Rubber duck it**: explain what *should* happen to a duck, neighbor, or water bottle
-3. **Check the docs** (MDN first)
+1. **Read the error out loud.**
+2. **Rubber duck it**
+3. **Check the docs**
 4. **Ask a neighbor**
 5. **Ask me or an LLM**, with the actual error, the actual code, expected vs. got
 
-Steps 1–4 aren't bureaucracy. They're where the learning happens.
-
----
-
-## Also: the 15-minute rule
-
-**Stuck on one thing for more than 15 minutes?**
-
-Screenshot it, protocol it, or park it and move on.
-
-Don't let one problem stop all progress.
 
 ---
 
