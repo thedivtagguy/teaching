@@ -10,15 +10,15 @@ seo_description: What markup really is, nesting with paper and scissors, CSS sel
 seo_keywords: web design, HTML, CSS, semantic HTML, web development course, portfolio website
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-21T17:06
+updated: 2026-07-21T17:28
 slug: day-2-html-is-a-home
 slides: https://teaching.aman.bh/slides/web2026/day-2-html-is-a-home
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2026-dev-notes/issues/3
 readings:
-  - title: Scroll, Skim, Stare
-    author: Orit Gat
-    url: https://web.archive.org/web/20250215172659/https://www.thewhitereview.org/feature/scroll-skim-stare/
+  - title: A Dao of Web Design
+    author: John Allsopp
+    url: https://alistapart.com/article/dao/
     readingTime: 20
 assignments: true
 ---
