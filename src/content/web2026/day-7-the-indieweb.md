@@ -10,21 +10,12 @@ seo_description: What do your spaces feel like? What is the IndieWeb?
 seo_keywords: indieweb, digital garden, personal website, web design, manifesto
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-15T12:00
+updated: 2026-07-21T17:07
 slug: day-7-the-indieweb
 slides: https://teaching.aman.bh/slides/web2026/day-7-the-indieweb
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2026-dev-notes/issues/7
 assignments: true
-readings:
-  - title: The Garden and the Stream
-    author: Mike Caulfield
-    url: https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/
-    readingTime: 35
-  - title: Digital gardens let you cultivate your own little bit of the internet
-    author: Tanya Basu
-    url: https://www.technologyreview.com/2020/09/03/1007716/digital-gardens-let-you-cultivate-your-own-little-bit-of-the-internet/
-    readingTime: 10
 ---
 ## Day 7: The IndieWeb
 
