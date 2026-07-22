@@ -10,7 +10,7 @@ seo_description: Reading pages as HTML and CSS, browser devtools, and flexbox
 seo_keywords: web design, HTML, CSS, flexbox, box model, devtools, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-22T15:02
+updated: 2026-07-22T15:20
 slug: day-3-seeing-like-a-browser
 slides: https://teaching.aman.bh/slides/web2026/day-3-seeing-like-a-browser
 show_metadata_card: true
@@ -24,7 +24,7 @@ Flexboxes are introduced and we played Flexbox Froggy to understand how to move 
 
 The fundamentals of styling from yesterday and layouts from today will become the basis of our projects tomorrow.
 
-Link to the [Space Oddity exercise pack](github.com/open-making/web2026-space-oddity). 
+Link to the [Space Oddity exercise pack](https://github.com/open-making/web2026-space-oddity). 
 
 ### Misc.
 
