@@ -10,11 +10,12 @@ seo_description: Reading pages as HTML and CSS, browser devtools, and flexbox
 seo_keywords: web design, HTML, CSS, flexbox, box model, devtools, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-22T15:20
+updated: 2026-07-22T15:36
 slug: day-3-seeing-like-a-browser
 slides: https://teaching.aman.bh/slides/web2026/day-3-seeing-like-a-browser
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2026-dev-notes/issues/4
+assignments: true
 ---
 ## Day 3: Seeing Like a Browser
 
