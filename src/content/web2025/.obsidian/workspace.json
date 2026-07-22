@@ -11,22 +11,24 @@
             "id": "6943cb73d5e1d591",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/slides/day-6-making-grids/IMG-20250728134935743.png"
+                "file": "day-4-typesetting-a-page.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "IMG-20250728134935743"
+              "icon": "lucide-file",
+              "title": "day-4-typesetting-a-page"
             }
           }
         ]
       },
       {
-        "id": "3e14f6f1a7c4d6b5",
+        "id": "c2802d24e7b848df",
         "type": "tabs",
         "children": [
           {
-            "id": "5e4bd52953eafb22",
+            "id": "a75794710b49189a",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -187,8 +189,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "5e4bd52953eafb22",
+  "active": "6943cb73d5e1d591",
   "lastOpenFiles": [
+    "assets/slides/day-6-making-grids/IMG-20250728134935743.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826350.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826339.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826305.png",
@@ -199,7 +202,6 @@
     "assets/slides/day-6-making-grids/IMG-20250728093826166.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826125.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826109.png",
-    "assets/slides/day-6-making-grids/IMG-20250728093826090.png",
     "assignments/day-6-making-grids.md",
     "day-5-short-stories.md",
     "day-4-typesetting-a-page.md",

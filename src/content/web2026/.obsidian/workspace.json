@@ -13,12 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assignments/day-3-space-oddity.md",
+                "file": "day-4-setting-type-placing-images.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-3-space-oddity"
+              "title": "day-4-setting-type-placing-images"
+            }
+          }
+        ]
+      },
+      {
+        "id": "90e65885b08c89c7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "776c4c6790185e7a",
+            "type": "leaf",
+            "state": {
+              "type": "reveal-preview-view",
+              "state": {},
+              "icon": "slides",
+              "title": "Preview: day-4-setting-type-placing-images.md"
             }
           }
         ]
@@ -211,29 +227,30 @@
   },
   "active": "1cddfb5fc5c9dabd",
   "lastOpenFiles": [
+    "slides/day-4-setting-type-placing-images.md",
+    "slides/day-3-seeing-like-a-browser.md",
+    "assets/slides/day-4-setting-type-placing-images/r1-notion-hero-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r1-stripe-hero-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r1-stripe-cards-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r1-stripe-nav-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r2-zen213-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r2-zen214-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r2-zen221-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r3-rushi-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r3-sanskar-q.png",
+    "assets/slides/day-4-setting-type-placing-images/r3-darshan-q.png",
+    "assets/slides/day-4-setting-type-placing-images",
+    "assignments/day-3-space-oddity.md",
     "assignments/day-4-letters-to-a-young-designer.md",
     "day-4-setting-type-placing-images.md",
-    "assignments/day-3-space-oddity.md",
     "day-3-seeing-like-a-browser.md",
     "day-2-html-is-a-home.md",
     "control-panel.md",
-    "slides/day-3-seeing-like-a-browser.md",
-    "assets/slides/day-3-seeing-like-a-browser/display-inline.png",
-    "assets/slides/day-3-seeing-like-a-browser/display-block.png",
-    "Pasted image 20260722095401.png",
     "day-9-visual-hierarchies.md",
     "day-7-the-indieweb.md",
     "day-5-the-make-day.md",
-    "assets/slides/day-3-seeing-like-a-browser/flex-column.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-row.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-on.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-off.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-gap-on.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-gap-off.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-align.png",
     "assets/slides/day-3-seeing-like-a-browser",
     "assignments/day-2-bohemian-rhapsody.md",
-    "slides/day-4-setting-type-placing-images.md",
     "dump/grids-without-tears-slides.md",
     "dump/grids-without-tears.md",
     "slides/day-5-the-make-day.md",
@@ -254,8 +271,6 @@
     "ai-policy.md",
     "slides/day-1-the-small-web.md",
     "assets/slides/day-2-html-is-a-home",
-    "requirements.md",
-    "dump/web2025-retrospective.md",
-    "assets/lib/fonts/LibreCaslonCondensed-Bold.ttf"
+    "requirements.md"
   ]
 }
