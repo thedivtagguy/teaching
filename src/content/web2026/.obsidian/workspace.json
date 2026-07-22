@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assignments/day-3-space-oddity.md",
+                "file": "day-4-setting-type-placing-images.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-3-space-oddity"
+              "title": "day-4-setting-type-placing-images"
             }
           }
         ]
@@ -211,9 +211,10 @@
   },
   "active": "1cddfb5fc5c9dabd",
   "lastOpenFiles": [
+    "control-panel.md",
+    "assignments/day-3-space-oddity.md",
     "day-3-seeing-like-a-browser.md",
     "day-4-setting-type-placing-images.md",
-    "assignments/day-3-space-oddity.md",
     "slides/day-3-seeing-like-a-browser.md",
     "assets/slides/day-3-seeing-like-a-browser/display-inline.png",
     "assets/slides/day-3-seeing-like-a-browser/display-block.png",
@@ -251,7 +252,6 @@
     "day-5-grids-without-tears.md",
     "ai-policy.md",
     "slides/day-1-the-small-web.md",
-    "control-panel.md",
     "assets/slides/day-2-html-is-a-home",
     "requirements.md",
     "dump/web2025-retrospective.md",
