@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T23:53
+updated: 2026-07-22T09:30
 transition: none
 ---
 # Seeing Like a Browser
@@ -106,37 +106,37 @@ There's a different between `thisclass` and `Thisclass` even though they look th
 
 ---
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot **paragraph elements?**
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot **heading elements?**
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot **an image?**
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot the use of `background-color`?
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
 Can you spot the use of `color`?
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723001122784.png)
 
 ---
 
@@ -165,7 +165,7 @@ Can you spot the use of `color`?
 
 ---
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723001122873.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723001122873.png)
 
 **What HTML elements do you see?**
 
@@ -198,7 +198,7 @@ See the boxes, tweak the values, break things for fun.
 
 ---
 
-![](/assets/slides/day-3-seeing-and-searching/IMG-20250723075655721.png)
+![](assets/slides/day-3-seeing-and-searching/IMG-20250723075655721.png)
 
 ---
 
@@ -226,9 +226,9 @@ Put boxes in a **row** or a **column**, sharing the space between them.
 
 <split even gap="2">
 
-![display block|360](/assets/slides/day-3-seeing-like-a-browser/flex-off.png)
+![display block|360](assets/slides/day-3-seeing-like-a-browser/flex-off.png)
 
-![display flex|360](/assets/slides/day-3-seeing-like-a-browser/flex-on.png)
+![display flex|360](assets/slides/day-3-seeing-like-a-browser/flex-on.png)
 
 </split>
 
@@ -238,9 +238,9 @@ Put boxes in a **row** or a **column**, sharing the space between them.
 
 <split even gap="2">
 
-![row|360](/assets/slides/day-3-seeing-like-a-browser/flex-row.png)
+![row|360](assets/slides/day-3-seeing-like-a-browser/flex-row.png)
 
-![column|360](/assets/slides/day-3-seeing-like-a-browser/flex-column.png)
+![column|360](assets/slides/day-3-seeing-like-a-browser/flex-column.png)
 
 </split>
 
@@ -252,9 +252,9 @@ One property flips a navbar into a sidebar.
 
 <split even gap="2">
 
-![justify-content|360](/assets/slides/day-3-seeing-like-a-browser/flex-justify.png)
+![justify-content|360](assets/slides/day-3-seeing-like-a-browser/flex-justify.png)
 
-![align-items|360](/assets/slides/day-3-seeing-like-a-browser/flex-align.png)
+![align-items|360](assets/slides/day-3-seeing-like-a-browser/flex-align.png)
 
 </split>
 
@@ -266,9 +266,9 @@ One property flips a navbar into a sidebar.
 
 <split even gap="2">
 
-![no gap|360](/assets/slides/day-3-seeing-like-a-browser/flex-gap-off.png)
+![no gap|360](assets/slides/day-3-seeing-like-a-browser/flex-gap-off.png)
 
-![gap|360](/assets/slides/day-3-seeing-like-a-browser/flex-gap-on.png)
+![gap|360](assets/slides/day-3-seeing-like-a-browser/flex-gap-on.png)
 
 </split>
 

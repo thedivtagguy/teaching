@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-3-seeing-like-a-browser.md",
+                "file": "slides/day-3-seeing-like-a-browser.md",
                 "mode": "source",
                 "source": false
               },
@@ -227,6 +227,10 @@
   },
   "active": "1cddfb5fc5c9dabd",
   "lastOpenFiles": [
+    "day-9-visual-hierarchies.md",
+    "day-7-the-indieweb.md",
+    "day-5-the-make-day.md",
+    "day-2-html-is-a-home.md",
     "slides/day-3-seeing-like-a-browser.md",
     "day-3-seeing-like-a-browser.md",
     "assets/slides/day-3-seeing-like-a-browser/flex-column.png",
@@ -240,13 +244,11 @@
     "assets/slides/day-3-seeing-like-a-browser/flex-dir-column.png",
     "assets/slides/day-3-seeing-like-a-browser/flex-dir-row.png",
     "assets/slides/day-3-seeing-like-a-browser",
-    "day-2-html-is-a-home.md",
     "assignments/day-2-bohemian-rhapsody.md",
     "slides/day-4-setting-type-placing-images.md",
     "dump/grids-without-tears-slides.md",
     "dump/grids-without-tears.md",
     "slides/day-5-the-make-day.md",
-    "day-5-the-make-day.md",
     "slides/day-2-html-is-a-home.md",
     "assets/assignments/day-2-bohemian-rhapsody",
     "guides.md",
@@ -270,7 +272,6 @@
     "dump/web2025-retrospective.md",
     "slides/day-5-grids-without-tears.md",
     "assignments/day-5-grid-challenges.md",
-    "assignments/day-4-letters-to-a-young-designer.md",
     "assets/lib/fonts/LibreCaslonCondensed-Bold.ttf"
   ]
 }
