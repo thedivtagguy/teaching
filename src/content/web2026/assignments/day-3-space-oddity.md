@@ -1,10 +1,10 @@
 ---
 title: "Assignment 3: Finish Space Oddity"
 due: 2026-07-23
-description: Finish the back half of the flexbox exercise repo
+description: Finish the flexbox exercise repo
 published: true
 date: 2026-07-22T18:00
-updated: 2026-07-22T16:07
+updated: 2026-07-22T16:16
 submissionUrl: https://github.com/open-making/web2026-space-oddity/issues/new
 ---
 
