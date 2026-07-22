@@ -13,28 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-3-seeing-like-a-browser.md",
+                "file": "day-3-seeing-like-a-browser.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "day-3-seeing-like-a-browser"
-            }
-          }
-        ]
-      },
-      {
-        "id": "154afd710ddf688a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "07d64ac2ab2703c8",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {},
-              "icon": "slides",
-              "title": "Preview: day-3-seeing-like-a-browser.md"
             }
           }
         ]
@@ -227,12 +211,17 @@
   },
   "active": "1cddfb5fc5c9dabd",
   "lastOpenFiles": [
+    "day-4-setting-type-placing-images.md",
+    "day-3-seeing-like-a-browser.md",
+    "assignments/day-3-space-oddity.md",
+    "slides/day-3-seeing-like-a-browser.md",
+    "assets/slides/day-3-seeing-like-a-browser/display-inline.png",
+    "assets/slides/day-3-seeing-like-a-browser/display-block.png",
+    "Pasted image 20260722095401.png",
     "day-9-visual-hierarchies.md",
     "day-7-the-indieweb.md",
     "day-5-the-make-day.md",
     "day-2-html-is-a-home.md",
-    "slides/day-3-seeing-like-a-browser.md",
-    "day-3-seeing-like-a-browser.md",
     "assets/slides/day-3-seeing-like-a-browser/flex-column.png",
     "assets/slides/day-3-seeing-like-a-browser/flex-row.png",
     "assets/slides/day-3-seeing-like-a-browser/flex-on.png",
@@ -240,9 +229,6 @@
     "assets/slides/day-3-seeing-like-a-browser/flex-gap-on.png",
     "assets/slides/day-3-seeing-like-a-browser/flex-gap-off.png",
     "assets/slides/day-3-seeing-like-a-browser/flex-align.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-justify.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-dir-column.png",
-    "assets/slides/day-3-seeing-like-a-browser/flex-dir-row.png",
     "assets/slides/day-3-seeing-like-a-browser",
     "assignments/day-2-bohemian-rhapsody.md",
     "slides/day-4-setting-type-placing-images.md",
@@ -252,7 +238,6 @@
     "slides/day-2-html-is-a-home.md",
     "assets/assignments/day-2-bohemian-rhapsody",
     "guides.md",
-    "day-4-setting-type-placing-images.md",
     "assets/install-guides",
     "assets/guides/static/assets/install-guides",
     "assets/guides/static/assets",
@@ -271,7 +256,6 @@
     "requirements.md",
     "dump/web2025-retrospective.md",
     "slides/day-5-grids-without-tears.md",
-    "assignments/day-5-grid-challenges.md",
     "assets/lib/fonts/LibreCaslonCondensed-Bold.ttf"
   ]
 }

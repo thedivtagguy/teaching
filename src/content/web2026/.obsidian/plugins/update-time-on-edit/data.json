@@ -10,9 +10,9 @@
   "ignoreCreatedFolder": [],
   "enableExperimentalHash": false,
   "fileHashMap": {
-    "slides/day-1-the-small-web.md": "c91c57805cf40bee63403f34ec4da9f713e407df5c26d9a1ca8a28d692461676",
-    "slides/day-3-seeing-like-a-browser.md": "3c482ddb0a5b3bc37266eecf52469ac689c34c4d227f1bfd2c65093204874fcc",
-    "slides/day-7-the-indieweb.md": "285d667d305da67eca03251a5062edd4ca9f1df559752635b103505b91cbd4f4",
+    "slides/day-1-the-small-web.md": "59737b56dae443fa064c165a73fb2354bc8a26459028ea9fe14ff6ecdcdd1cc4",
+    "slides/day-3-seeing-like-a-browser.md": "46580557825489e6f20ac1d50c6b637dbd91921e6c87c534cca928c559f1901a",
+    "slides/day-7-the-indieweb.md": "3ccb61a20b090a0abdc62564055327b265dea1b965b278fc00cff6c13439f84c",
     "assignments/day-1-web-archaeology.md": "4f8ba2692ef99008fb688eda34351061ac09412753f6bab548914ffdf26b66f2",
     "day-1-the-small-web.md": "9427dc3788e38474b1c38f9cb74cb4c3d8ed26a6befee288b0832058dd74aa60",
     "slides/day-2-html-is-a-home.md": "29fb058e3006566c36350e3b525b382cfbcacfab054cb7bdb4e0e65aec3b5bc1",
@@ -21,9 +21,8 @@
     "outline.md": "22de9c8f504cfa3cec42d022bd0ad81de9e27b81af3f25a0d86a1202b63994c6",
     "day-2-html-is-a-home.md": "59ffe4bf139b7ee1f76b6fb4c8e2720ae437125371dd5fddbcb984d7316459ca",
     "assignments/day-2-bohemian-rhapsody.md": "ee2ee2f90240d09469bcfc099631b6599b283d8e4d8706d8b7609574ced317f8",
-    "assignments/day-3-flexbox-katas.md": "1e5bb60c3f2c71edc6f6bf92ac45b593c69049b333a50144097c604327835d0d",
     "guides.md": "c85161a12ad2f5e4b01c9adb3a580965847fb2cfb9a193aaa509ee14efcf605b",
-    "day-3-seeing-like-a-browser.md": "1d2b5a14e76e70e1ec74e68c97860c9136c7242f9543fcf57e475548429ad19e",
+    "day-3-seeing-like-a-browser.md": "cfe199b6db779951f138114418f9ab4b7f508ee53fbedf403187a57ff05fe425",
     "slides/day-4-setting-type-placing-images.md": "c6092f9f5225aaded8f3a2be0d49f2186dba7cea0e31ed95901dc08ee7281472",
     "day-4-setting-type-placing-images.md": "9c2a70574e76c9caeeabaccf7b29284d02535a33afd227745c892792b16669bd",
     "day-8-thinking-in-components.md": "3e75dd9571612356053cc17c556bdaa2b992eae78852429150a05ac66bceb6a0",
@@ -35,6 +34,7 @@
     "slides/day-6-hello-terminal-hello-astro.md": "cc0bd71cd533f63391d36e9edcb717329db745e65614fd701e990a3fd58c4bd8",
     "day-7-the-indieweb.md": "b799077be6e9ecdb88f9385a33721d9684dc46393f94e0d8211ae52793c896e0",
     "day-5-the-make-day.md": "41b604adf1ef8c1dd3f0e78f4fa368611532f6a5020b71e19a389f97b94ceec1",
-    "slides/day-5-the-make-day.md": "ad2ba7d5eaf994eaa55d51894cf8c43cad7ef482cf130acd0c4b71f76683952b"
+    "slides/day-5-the-make-day.md": "ad2ba7d5eaf994eaa55d51894cf8c43cad7ef482cf130acd0c4b71f76683952b",
+    "assignments/day-3-space-oddity.md": "03d3537fd8e8a68cfd31ddaf5ccc3748fe76c7015665690710af96beb570babe"
   }
 }

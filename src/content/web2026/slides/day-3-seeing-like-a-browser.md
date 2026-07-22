@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-22T09:30
+updated: 2026-07-22T11:11
 transition: none
 ---
 # Seeing Like a Browser
@@ -8,16 +8,22 @@ transition: none
 
 ---
 
+## A Dao of Web Design: Discussion
+
+- 5 mins for catching up with the article again
+- 15 mins to work together in groups to discuss some open questions
+- 5 mins of discussion
+
+---
+
+![](Pasted%20image%2020260722095401.png)
+
+---
+
 ## Yesterday
 - Understanding HTML in terms of sheets and strips
 - CSS selectors for grabbing elements to style them
 - Deploying a monstrosity to the internet
-
-
-
-
-
-
 
 ---
 
@@ -216,13 +222,41 @@ See the boxes, tweak the values, break things for fun.
 
 ---
 
+## Why do things stack at all?
+
+Every box you have made so far has sat on its own line, top to bottom.
+
+That is a default CSS property added to each box which is: `display: block`.
+
+---
+
+## Every element has a `display`
+
+It is the property that decides how a box lays itself out.
+
+<split even gap="2">
+
+![block|360](assets/slides/day-3-seeing-like-a-browser/display-block.png)
+
+![inline|360](assets/slides/day-3-seeing-like-a-browser/display-inline.png)
+
+</split>
+
+**block** (`div`, `p`, `h1`): starts a new line, takes the full width. 
+
+**inline** (`span`, `a`): sits inside the line of text.
+
+---
+
 ## So how do things sit side by side?
 
 ---
 
 # Flexbox 🐸
 
-Put boxes in a **row** or a **column**, sharing the space between them.
+`display: flex` is another value for that same property. 
+
+Put it on a parent and its children stop stacking. They line up in a **row** (or a **column**), sharing the space.
 
 <split even gap="2">
 
