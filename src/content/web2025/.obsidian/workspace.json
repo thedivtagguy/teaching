@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-3-seeing-and-searching.md",
+                "file": "day-5-short-stories.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-3-seeing-and-searching"
+              "title": "day-5-short-stories"
             }
           }
         ]
@@ -176,6 +176,7 @@
   "active": "6943cb73d5e1d591",
   "lastOpenFiles": [
     "day-4-typesetting-a-page.md",
+    "day-3-seeing-and-searching.md",
     "assets/slides/day-6-making-grids/IMG-20250728134935743.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826350.png",
     "assets/slides/day-6-making-grids/IMG-20250728093826339.png",
@@ -188,7 +189,6 @@
     "assets/slides/day-6-making-grids/IMG-20250728093826125.png",
     "assignments/day-6-making-grids.md",
     "day-5-short-stories.md",
-    "day-3-seeing-and-searching.md",
     "slides/day-3-seeing-and-searching.md",
     "day-2-html-css-and-you.md",
     "day-1-the-small-web.md",
