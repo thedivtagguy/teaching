@@ -10,7 +10,7 @@ seo_description: Web typography through short stories and historical newspapers
 seo_keywords: web design, typography, web fonts, images, object-fit, editorial layout, newspaper design, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-23T09:40
+updated: 2026-07-23T09:47
 slug: day-4-typesetting-a-page
 slides: https://teaching.aman.bh/slides/web2026/day-4-setting-type-placing-images
 show_metadata_card: true
@@ -32,7 +32,7 @@ This project needs to demonstrate that you can handle the fundamentals we've cov
 
 - You need to use both flexbox and the other tools you learnt over the last few days somewhere in your design.
 - Your font choices should match the mood of your tale. Use web fonts, play with sizes and spacing, make text feel intentional.
-- At least three images that aren't just thrown in randomly. Process them properly - crop them, resize them for web, make them part of the storytelling. **NO AI IMAGERY**. Refer to the [image pools](/web2026/day-4-seeing-and-searching#image-pools) or assemble your own images (either by drawing your own or using publicly available material).
+- At least three images that aren't just thrown in randomly. Process them properly - crop them, resize them for web, make them part of the storytelling. **NO AI IMAGERY**. Refer to the [image pools](#image-pools) or assemble your own images (either by drawing your own or using publicly available material).
 - Find idea from CSS Zen Garden that inspires you and figure out how to steal... I mean, be inspired by their approach and adapt that concept to your story.
 - Pick one technique from Jen Simmons' labs. Maybe it's just making the [first letter nice and big like a dropcap](https://labs.jensimmons.com/#initialletter), maybe a float layout, maybe text wrapping around an image. Here's some of her cool stuff that you can just use browser tools to see the CSS for.
 
