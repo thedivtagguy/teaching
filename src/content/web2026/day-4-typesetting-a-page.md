@@ -10,11 +10,11 @@ seo_description: Web typography through short stories and historical newspapers
 seo_keywords: web design, typography, web fonts, images, object-fit, editorial layout, newspaper design, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-23T12:52
+updated: 2026-07-23T19:37
 slug: day-4-typesetting-a-page
 slides: https://teaching.aman.bh/slides/web2026/day-4-typesetting-a-page
 show_metadata_card: true
-devNotes: https://github.com/open-making/web2026-dev-notes/issues/4
+devNotes: https://github.com/open-making/web2026-dev-notes/issues/5
 assignments: true
 ---
 # Fit to `<p>`rint 🗞️
