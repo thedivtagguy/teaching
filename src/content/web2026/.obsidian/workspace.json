@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-4-typesetting-a-page.md",
+                "file": "assignments/day-4-fit-to-print.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-4-typesetting-a-page"
+              "title": "day-4-fit-to-print"
             }
           }
         ]
@@ -211,10 +211,10 @@
   },
   "active": "1cddfb5fc5c9dabd",
   "lastOpenFiles": [
+    "day-4-typesetting-a-page.md",
+    "assignments/day-4-fit-to-print.md",
     "day-3-seeing-like-a-browser.md",
     "day-5-the-make-day.md",
-    "assignments/day-4-letters-to-a-young-designer.md",
-    "day-4-typesetting-a-page.md",
     "slides/day-5-the-make-day.md",
     "github.com/open-making/web2026-fit-to-print.md",
     "github.com/open-making",

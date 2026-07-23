@@ -1,13 +1,12 @@
 ---
 title: "Assignment 4: Fit to Print 🗞️"
 due: 2026-07-25
-description: Typeset a fairy tale or a historical newspaper page into your first real portfolio piece.
+description: Typeset a fairy tale or a historical newspaper page
 published: true
 date: 2026-07-23T18:00
 updated: 2026-07-23T18:30
 submissionUrl: https://github.com/open-making/web2026-fit-to-print/issues/new
 ---
-
 # Fit to Print
 
 This exercise has two tracks, of which you need to choose one.
