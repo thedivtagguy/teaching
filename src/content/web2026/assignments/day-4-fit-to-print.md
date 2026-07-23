@@ -1,5 +1,5 @@
 ---
-title: "Assignment 4: Fit to Print 🗞️"
+title: "Assignment 4: Fit to Print"
 due: 2026-07-25
 description: Typeset a fairy tale or a historical newspaper page
 published: true
