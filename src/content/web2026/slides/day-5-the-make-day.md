@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-21T22:47
+updated: 2026-07-23T02:42
 transition: none
 ---
 
@@ -208,6 +208,66 @@ A generous margin column. A centered text column. Maybe a header row.
 A dropcap. A pull quote. Text wrapping a shape.
 
 Set a timer. One is elegant. Three is a mess.
+
+---
+
+## Flourish: text that hugs an image ✨
+
+If your one flourish is a picture with text wrapping around it, that's a **float**. By default the image sits *in the way*: the text stops, the picture takes the line, the words resume below. One property fixes it:
+
+```css
+.portrait {
+  float: left;              /* or right */
+  margin: 0 1.5rem 1rem 0;  /* space on the text side */
+  width: 260px;
+}
+```
+
+The image steps aside; the paragraph wraps around it.
+
+---
+
+## Before / after
+
+<split even gap="2">
+
+![no float|360](assets/slides/day-5-the-make-day/float-none.png)
+
+![float: left|360](assets/slides/day-5-the-make-day/float-left.png)
+
+</split>
+
+**Without `float`** the picture is a block: the paragraph starts below it. **With `float: left`** it tucks aside and the words flow up into the gap.
+
+---
+
+## Which side?
+
+<split even gap="2">
+
+![float: left|360](assets/slides/day-5-the-make-day/float-left.png)
+
+![float: right|360](assets/slides/day-5-the-make-day/float-right.png)
+
+</split>
+
+`float: left` hugs the left and the text runs down its right. `float: right` is the mirror image.
+
+---
+
+## If the next bit creeps up
+
+A float steps out of the normal flow, so whatever comes next can slide *up* beside it instead of starting below.
+
+<split even gap="2">
+
+![no clear|360](assets/slides/day-5-the-make-day/clear-off.png)
+
+![clear: both|360](assets/slides/day-5-the-make-day/clear-on.png)
+
+</split>
+
+`clear: both` on that next element sends it back down where it belongs.
 
 ---
 

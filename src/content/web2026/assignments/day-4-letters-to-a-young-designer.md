@@ -4,7 +4,7 @@ due: 2026-07-25
 description: Typeset a public-domain letter from a great artist or thinker, your first real portfolio piece
 published: false
 date: 2026-07-23T18:00
-updated: 2026-07-21T15:48
+updated: 2026-07-23T02:16
 submissionUrl: https://github.com/open-making/web2026-letters/issues/1
 ---
 
@@ -41,8 +41,8 @@ Read your letter properly, twice; you can't typeset a mood you haven't felt.
 
 - **Typography carries this project.** Your font choices should match the era and mood of the letter. Use web fonts deliberately; play with sizes, spacing, and measure (45 to 75 characters per line; this is a *letter*, it should read like one).
 - **Maximum two images**, both properly processed: cropped, compressed (under 500KB, use [Squoosh](https://squoosh.app/)), lowercase filenames, alt text. Two is a deliberately low cap; part of the design challenge here is restraint. **No AI imagery.** Use the [image pools](/web2026/day-4-setting-type-placing-images#image-pools) or your own drawings/scans.
-- **One technique from [Jen Simmons' labs](https://labs.jensimmons.com/)** you haven't tried: a dropcap with `initial-letter`, multicolumn text, text wrapping a CSS shape, or a considered overlap.
-- **Use flexbox** for the page structure (grid arrives later in the course; a letter doesn't need it, and no floats needed either, it's 2026).
+- **One technique from [Jen Simmons' labs](https://labs.jensimmons.com/)** you haven't tried: a dropcap with `initial-letter`, multicolumn text, text wrapping an image or a CSS shape (`float` / `shape-outside`), or a considered overlap.
+- **Use flexbox** for the page structure (grid arrives later in the course; a letter doesn't need it). And reach for `float` when you want text to wrap an image or a pull-quote — that's exactly what it's for.
 - Steal like a designer: find one [CSS Zen Garden](https://csszengarden.com) entry that inspires you and adapt its *approach*, not its code.
 
 ## Process

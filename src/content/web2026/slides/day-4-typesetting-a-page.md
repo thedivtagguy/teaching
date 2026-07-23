@@ -9,6 +9,24 @@ transition: none
 
 ---
 
+> made my head hurt
+
+> I am not in a state to write anything
+
+> Ctrl + Panic
+
+---
+
+> ##### JNJEBHJVBEFJNVIUESBVUIDFKJDVFEVFDVFDVFDV 
+
+> hey there is always a rise after the fall
+
+---
+
+![](IMG-20260723024945025.png)
+
+---
+
 ## CSS Detection 🔍
 
 1. which **HTML elements** do you see?
@@ -22,13 +40,13 @@ transition: none
 
 ## Round 1 · Card 1
 
-![nav|900](assets/slides/day-4-setting-type-placing-images/r1-stripe-nav-q.png)
+![nav|900](IMG-20260723024945059.png)
 
 ---
 
 ## Round 1 · Card 1 
 
-![nav|380](assets/slides/day-4-setting-type-placing-images/r1-stripe-nav-q.png)
+![nav|380](IMG-20260723024945059.png)
 
 `nav` · `a` · `button` · `svg`
 
@@ -40,13 +58,13 @@ transition: none
 
 ## Round 1 · Card 2
 
-![cards|900](assets/slides/day-4-setting-type-placing-images/r1-stripe-cards-q.png)
+![cards|900](IMG-20260723024945085.png)
 
 ---
 
 ## Round 1 · Card 2
 
-![cards|440](assets/slides/day-4-setting-type-placing-images/r1-stripe-cards-q.png)
+![cards|440](IMG-20260723024945085.png)
 
 `div` · `h1` · `p` · `a` · `span`
 
@@ -58,13 +76,13 @@ transition: none
 
 ## Round 1 · Card 3
 
-![hero|860](assets/slides/day-4-setting-type-placing-images/r1-notion-hero-q.png)
+![hero|860](IMG-20260723024945104.png)
 
 ---
 
 ## Round 1 · Card 3
 
-![hero|440](assets/slides/day-4-setting-type-placing-images/r1-notion-hero-q.png)
+![hero|440](IMG-20260723024945104.png)
 
 `h1` · `span` · `p` · `a` · `img`
 
@@ -81,13 +99,13 @@ transition: none
 
 ## Round 2 · Card 1
 
-![zen|860](assets/slides/day-4-setting-type-placing-images/r2-zen214-q.png)
+![zen|860](IMG-20260723024945150.png)
 
 ---
 
 ## Round 2 · Card 1
 
-![zen|440](assets/slides/day-4-setting-type-placing-images/r2-zen214-q.png)
+![zen|440](IMG-20260723024945150.png)
 
 `header` · `h1` · `h2` · `a`
 
@@ -99,13 +117,13 @@ transition: none
 
 ## Round 2 · Card 2
 
-![zen|760](assets/slides/day-4-setting-type-placing-images/r2-zen213-q.png)
+![zen|760](IMG-20260723024945184.png)
 
 ---
 
 ## Round 2 · Card 2
 
-![zen|440](assets/slides/day-4-setting-type-placing-images/r2-zen213-q.png)
+![zen|440](IMG-20260723024945184.png)
 
 `h1` · `div` · `p` · `a` · `h3` (same HTML as Card 1)
 
@@ -118,13 +136,13 @@ transition: none
 
 ## Round 2 · Card 3
 
-![zen|760](assets/slides/day-4-setting-type-placing-images/r2-zen221-q.png)
+![zen|760](IMG-20260723024945214.png)
 
 ---
 
 ## Round 2 · Card 3
 
-![zen|420](assets/slides/day-4-setting-type-placing-images/r2-zen221-q.png)
+![zen|420](IMG-20260723024945214.png)
 
 `header` · `h1` · `h2` · `div` · `p`
 
@@ -141,13 +159,13 @@ transition: none
 
 ## Round 3 · Card 1
 
-![chaos|860](assets/slides/day-4-setting-type-placing-images/r3-anchita-q.png)
+![chaos|860](IMG-20260723024945253.png)
 
 ---
 
 ## Round 3 · Card 1 · Answer
 
-![chaos|440](assets/slides/day-4-setting-type-placing-images/r3-anchita-q.png)
+![chaos|440](IMG-20260723024945253.png)
 
 `section` · `h2` · `p`
 
@@ -159,13 +177,13 @@ transition: none
 
 ## Round 3 · Card 2
 
-![chaos|900](assets/slides/day-4-setting-type-placing-images/r3-darshan-q.png)
+![chaos|900](IMG-20260723024945311.png)
 
 ---
 
 ## Round 3 · Card 2
 
-![chaos|440](assets/slides/day-4-setting-type-placing-images/r3-darshan-q.png)
+![chaos|440](IMG-20260723024945311.png)
 
 `header` · `h1` · `p` · `section` · `img`
 
@@ -178,13 +196,13 @@ transition: none
 
 ## Round 3 · Card 3
 
-![chaos|880](assets/slides/day-4-setting-type-placing-images/r3-sanskar-q.png)
+![chaos|880](IMG-20260723024945343.png)
 
 ---
 
 ## Round 3 · Card 3
 
-![chaos|460](assets/slides/day-4-setting-type-placing-images/r3-sanskar-q.png)
+![chaos|460](IMG-20260723024945343.png)
 
 `section` · `h2` · `p` · `audio`
 
@@ -193,7 +211,7 @@ transition: none
 - `text-align: center` (all centred)
 
 ---
-# How to handle pictures
+# Tip: How to handle pictures
 
 ---
 
@@ -254,51 +272,34 @@ Now every image shrinks to fit its container instead of the other way round.
 
 ---
 
-## 2. Fitting an image to a box
+## Steal an idea: Jen Simmons (20 mins)
 
-Want every picture in a tidy box the same shape?
+Before you move on, look at what a page *can* do. Not to copy, but to raise your ambition.
 
-```css
-.card img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-}
-```
-
-`cover` fills the box and crops whatever spills over. `contain` fits the whole thing inside, gaps and all.
-
----
-## Step 1: Pick your letter
-
-The menu's on the assignments page. Take twenty minutes. Read a few properly.
-
-Pick the one that makes you feel *something*. You'll be living with it for a week.
+Go to [**Jen Simmons' Labs**](https://labs.jensimmons.com/). Open it, poke around, screenshot anything that makes you feel that you'd like to try it too. Choose between **multi-column layout**, **dropcaps**, **floats** and **css shapes only.**
 
 ---
 
-## Step 3: Sketch
+## The prinCSS and the p
+
+---
+## Step 1: Pick your story
+
+[Pick one of HCA's stories](https://www.gutenberg.org/cache/epub/32572/pg32572-images.html) after you've read a few.
+
+---
+
+## Step 2: Sketch
 
 Paper or Figma, I don't mind which. Two or three quick directions, then pick one.
 
-Sketch **what you can actually build**: rows and columns, generous margins, one nice moment. No magic, only the tools you already have.
+Sketch **what you can build for real, according to you**. If you are unsure about what CSS would be required to execute a design, first try finding references and/or CSS properties. Only design what is possible for you at the moment.
 
 ---
 
-## Step 4: Gather your bits
+## Step 3: Refine and review
 
-- **Fonts**: two, one for headings, one for the body
-- **Images**: at most two, from the [public-domain pools](/web2026/day-4-setting-type-placing-images#image-pools), cleaned up in Squoosh (cropped, shrunk, lowercase names)
-- **Colors**: three or four, chosen on purpose, not grabbed at random
-
----
-
-## Step 5: Show me before you leave
-
-Come find me with:
-
-- your letter
-- your sketch
-- your bits, in a folder
-
-That's your ticket into tomorrow. No sign-off, no building. This is the one checkpoint I'm strict about.
+Come to me with:
+- your story
+- your designs
+- your art direction
