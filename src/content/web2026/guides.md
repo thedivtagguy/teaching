@@ -2,7 +2,7 @@
 title: Guides
 date: 2026-07-13
 section: Appendix
-updated: 2026-07-21T13:18
+updated: 2026-07-24T11:02
 published: true
 slug: guides
 ---
@@ -125,6 +125,82 @@ After you commit, a button appears at the top that says **Push origin**. Click i
 
 
 That's it. Your commits travel up to GitHub, safe from anything that happens to your laptop. If your site is connected to Netlify, this is also the moment your live website updates.
+
+## Starting a new project from scratch
+
+Sometimes there's nothing to fork. You just want to start something of your own for a project, so how do you create a Github repository then? This is the reverse of cloning. Instead of GitHub → your laptop, you're going laptop → GitHub. 
+
+There are two ways to do this, depending on whether the folder already exists.
+
+- **You have nothing yet**: let GitHub Desktop make the folder for you. Start at "Creating a new repository" below.
+- **You already have a folder with files in it**:  skip down to "I already made the folder".
+
+### Creating a new repository
+
+Step 1: In GitHub Desktop, go to **File > New Repository...**
+
+![](IMG-20260724105438216.png)
+
+Step 2: Fill in the **Name**. This is the name of the folder on your laptop, and the name of the repository on GitHub. Use hyphens instead of spaces. `my-first-site` is good `My First Site` is bad. **Description** is optional. Write one sentence or leave it empty.
+
+Step 4: Check the **Local Path**. This is the folder your new project folder will be created _inside_. If the path says `/Users/you/Documents` and your repository is called `my-first-site`, you'll end up with `/Users/you/Documents/my-first-site`.
+
+> Don't put a repository inside another repository. If the local path is somewhere inside a project you've already cloned, pick somewhere else. GitHub Desktop will usually stop you, but not always.
+
+Step 5: Tick **Initialize this repository with a README**. This creates a file called `README.md` so your repository isn't completely empty, which makes the next steps easier to see.
+
+Step 6: Leave **Git ignore** and **License** as **None**. We don't need them yet.
+
+Step 7: Click **Create repository**.
+
+![](IMG-20260724105608347.png)
+
+#### Checking it worked
+
+The top-left dropdown in GitHub Desktop should now show your repository name, and the middle of the screen should say something like "No local changes".
+
+Go and look at the folder on your computer. It's there, with a `README.md` inside it. This exists only on your laptop right now. Nothing has gone to GitHub yet.
+
+### I already made the folder
+
+If you've already got a folder with your files in it, you don't need to start over.
+
+Step 1: Drag the folder onto the GitHub Desktop window. (Or use **File > Add Local Repository...** and choose it.)
+
+![](IMG-20260724105842842.png)
+
+Step 2: GitHub Desktop will complain that the folder isn't a git repository, and offer you a link that says **create a repository**. Click it.
+
+![](IMG-20260724105910365.png)
+
+
+Step 3: The same dialog from the section above appears, with the path and name already filled in. Click **Create repository**.
+
+![](IMG-20260724105935929.png)
+
+Your existing files will now show up in the left panel as changes waiting to be committed. Carry on from here.
+
+### Publishing to GitHub
+
+Now the new bit. At the top of GitHub Desktop there's a button that says **Publish repository**. Click it.
+
+![](IMG-20260724110023895.png)
+
+A small window appears:
+
+- **Name**: the same name as your folder.
+- **Description**: optional again.
+- **Keep this code private**: Uncheck this! Otherwise I won't be able to see your code.
+
+Click **Publish repository** and wait a few seconds.
+
+#### Checking it worked
+
+The button at the top has changed. It now says **Fetch origin**, or **Push origin** if you've committed something since publishing.
+
+Go to `github.com/your-username` in a browser. Your repository is sitting there, with your files in it.
+
+If the repository is on GitHub but looks empty, you published _before_ you committed. Go back, commit your files, then click **Push origin**.
 
 ## Using version control inside VS Code
 
