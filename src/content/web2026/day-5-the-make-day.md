@@ -10,7 +10,7 @@ seo_description: Bringing print pages to life with HTML and CSS
 seo_keywords: web design, HTML, CSS, typography, flexbox, portfolio project, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-23T22:08
+updated: 2026-07-24T10:22
 slug: day-5-the-make-day
 slides:
 show_metadata_card: true
@@ -52,7 +52,7 @@ As your page grows, your code will get harder and harder to keep track of. At so
 <blockquote>"A quote."</blockquote>
 ```
 
-**Use semantic tags, not `<div>` all the time.**
+Use semantic tags, not `<div>` all the time.
 
 ```html
 <!-- Bad -->
@@ -66,11 +66,11 @@ As your page grows, your code will get harder and harder to keep track of. At so
 
 Reach for `<header>`, `<main>`, `<article>`, `<section>`, `<figure>` + `<figcaption>`, `<blockquote>`, `<em>`, `<strong>`.
 
-`<div>` is the last resort.
+`<div>` should be the last resort.
 
-**There is only one `<h1>` per page.** Then `<h2>`, `<h3>`, in order, no skipping. Pick by structure, but if you're worried about size, then style it in CSS.
+There is only one `<h1>` per page. Then `<h2>`, `<h3>`, in order, no skipping. Pick by structure, but if you're worried about size, then style it in CSS.
 
-**No blocks inside a `<p>`.** A `<p>` can't hold a `<div>`, `<blockquote>`, or another `<p>`.
+No blocks inside a `<p>`. A `<p>` can't hold a `<div>`, `<blockquote>`, or another `<p>`.
 
 ```html
 <!-- Bad -->
@@ -81,32 +81,11 @@ Reach for `<header>`, `<main>`, `<article>`, `<section>`, `<figure>` + `<figcapt
 <blockquote>quote</blockquote>
 ```
 
-**No style in the HTML.** No `style=""`. No `<br><br>` for spacing. No `<b>`/`<i>` for looks.
-
-```html
-<!-- Bad -->
-<p style="margin-top: 40px; color: gray;">...</p>
-
-<!-- Good -->
-<p class="byline">...</p>
-```
-
 ### CSS
 
-**Name the className for what it is.** `.pull-quote`, not `.box3`.
+**Name the className for what it is for.** Names like `.pull-quote` are easier to understand for you than `.box3`.
 
-**Don't repeat yourself. Group selectors if the styles are the same with commas**
-
-```css
-/* Bad */
-.headline { font-family: Georgia, serif; color: #222; }
-.deck     { font-family: Georgia, serif; color: #222; }
-
-/* Good */
-.headline, .deck { font-family: Georgia, serif; color: #222; }
-```
-
-**Repeated value? Set it once.** Use a variable. Change one line and you will see that every other value that uses it will update. It is defined like so:
+**Repeated value? Set it once.** If you're curious, you can try looking up [what a CSS variable is](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties#using_the_root_pseudo-class). If you define your colors and font sizes on top in your `styles.css`, you can only have to update one line and you will see that every other value that uses it will update. It is defined like so:
 
 ```css
 :root {
@@ -117,19 +96,31 @@ Reach for `<header>`, `<main>`, `<article>`, `<section>`, `<figure>` + `<figcapt
 body { color: var(--ink); background: var(--paper); }
 ```
 
-Very useful for setting your color palette, your font sizes and other values that you might be reusing again and again.
+Here, `--ink` becomes a variable which will show the color `#1a1a1a`. Very useful for values that you might be reusing again and again.
 
+## Debug your CSS
+
+[There is a very simple trick that will make it easy for you to debug CSS](https://whitep4nth3r.com/blog/debug-css-layouts/). If you feel like you can't _see_ what the CSS is doing and where the "boxes" are, add this to the top of your styles.css file temporarily: 
+
+```
+* {
+  outline: 1px solid red;
+}
+
+```
+
+Try it! Very helpful.
 ### As you work
 
-- **Build in order.** HTML first and only then you style it.
-- **Commit when a piece works.** Save progress all the time, otherwise who knows what can happen!
-- **Use DevTools.** Right-click, Inspect. See the box, test CSS live before you write it.
+- **Build in order.** HTML first and only then you start to style it.
+- **Commit when a piece works.** Save progress all the time, otherwise who knows what can happen! When your HTML is halfway done, when a section is done, when some CSS is in. Commits are free, use them please. Don't be afraid to commit ;)
+- **If something is going wrong, use DevTools.** Right-click, Inspect. See the box, tweak the CSS and try to debug live before you write it in your styles.css
 
 ### If you are stuck, ask LLMs the right way
 
 The goal is to learn, not to copy. Ask so you understand the fix and can do it yourself next time.
 
-**Ask *why*, not "fix it."**
+**You should ask *why*, not ask it to "fix it."**
 
 ```
 Bad:   Fix my CSS.
