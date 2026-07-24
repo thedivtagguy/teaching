@@ -2,7 +2,7 @@
 title: Day 5 - The Make Day
 date: 2026-07-24
 description: A full studio day building your pages in HTML and CSS
-published: false
+published: true
 section: Foundations
 order: 5
 seo_title: The Make Day
@@ -10,11 +10,11 @@ seo_description: Bringing print pages to life with HTML and CSS
 seo_keywords: web design, HTML, CSS, typography, flexbox, portfolio project, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-23T15:44
+updated: 2026-07-23T22:08
 slug: day-5-the-make-day
 slides:
 show_metadata_card: true
-devNotes: https://github.com/open-making/web2026-dev-notes/issues/5
+devNotes: https://github.com/open-making/web2026-dev-notes/issues/7
 assignments: true
 ---
 ## Day 5: Make Day
@@ -151,3 +151,5 @@ Good:  This <p> won't center. I tried text-align: center. Here's the code.
 ```
 Good:  What's it called when text flows around an image? I want to read about it.
 ```
+
+Besides this, please reach out to Aman over the course of the day to clear up any doubts and/or get some pointers if you are stuck. Looking forward to seeing what we've made on Monday!
