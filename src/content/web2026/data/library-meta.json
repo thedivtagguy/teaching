@@ -1,0 +1,983 @@
+{
+	"http://deletedcity.net/": {
+		"url": "http://deletedcity.net/",
+		"fetchedAt": "2026-07-27",
+		"domain": "deletedcity.net",
+		"title": "The Deleted City 3.1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"http://learncssgrid.com/": {
+		"url": "http://learncssgrid.com/",
+		"fetchedAt": "2026-07-27",
+		"domain": "learncssgrid.com",
+		"title": "Learn CSS Grid - A Guide to Learning CSS Grid",
+		"description": "A comprehensive guide to help you understand and learn CSS Grid Layout, by Jonathan Suh.",
+		"image": "http://learncssgrid.com/screenshot.png",
+		"themeColor": "#e91e63",
+		"kind": "page",
+		"status": "ok"
+	},
+	"http://theconversation.com/a-nostalgic-journey-through-the-evolution-of-web-design-98626": {
+		"url": "http://theconversation.com/a-nostalgic-journey-through-the-evolution-of-web-design-98626",
+		"fetchedAt": "2026-07-27",
+		"domain": "theconversation.com",
+		"themeColor": "#d8352a",
+		"description": "Web design has come a long way since the days of blue hyperlinks and flashy GIFs.",
+		"siteName": "The Conversation",
+		"title": "A nostalgic journey through the evolution of web design",
+		"image": "https://images.theconversation.com/files/234307/original/file-20180830-195328-1c0awq1.png?ixlib=rb-4.1.1&rect=57%2C0%2C1300%2C650&q=45&auto=format&w=1356&h=668&fit=crop",
+		"favicon": "https://images.theconversation.com/files/581997/original/9275d5c0-7dd5-4ddf-b50b-98d537e016f4.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/": {
+		"url": "http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/",
+		"fetchedAt": "2026-07-27",
+		"domain": "bloomberg.com",
+		"status": "http-403"
+	},
+	"http://www.jstor.org/stable/10.2307/j.ctt1mtz55k.13": {
+		"url": "http://www.jstor.org/stable/10.2307/j.ctt1mtz55k.13",
+		"fetchedAt": "2026-07-27",
+		"domain": "jstor.org",
+		"status": "http-403"
+	},
+	"http://www.rdrop.com/~half/Creations/Writings/Web.patterns/introduction.html": {
+		"url": "http://www.rdrop.com/~half/Creations/Writings/Web.patterns/introduction.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "rdrop.com",
+		"description": "The what and why of these patterns for personal Web sites.",
+		"title": "Introduction To These Patterns for Personal Web Sites",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://1linelayouts.com/": {
+		"url": "https://1linelayouts.com/",
+		"fetchedAt": "2026-07-27",
+		"domain": "1linelayouts.com",
+		"title": "1-Line Layouts",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://52weeksofux.com/post/443828775/visual-hierarchy": {
+		"url": "https://52weeksofux.com/post/443828775/visual-hierarchy",
+		"fetchedAt": "2026-07-27",
+		"domain": "52weeksofux.com",
+		"description": "We have many words for the frustration we feel when an interface isn't directing us to what we need to know. Loud, messy, cluttered, busy. These words have been appropriated from other parts of life,...",
+		"siteName": "Tumblr",
+		"title": "Visual Hierarchy",
+		"image": "https://64.media.tumblr.com/c44014bbab58404ed65c26992a486df7/b2490c6a0183f6e7-82/s400x600/85bc784633c644ed6c3b7d7699414a19e5ed0638.png",
+		"favicon": "https://64.media.tumblr.com/avatar_2df26f93ef81_128.pnj",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://adactio.com/journal/11608": {
+		"url": "https://adactio.com/journal/11608",
+		"fetchedAt": "2026-07-27",
+		"domain": "adactio.com",
+		"themeColor": "#ffffff",
+		"description": "I wrote a web book.",
+		"image": "https://adactio.com/images/photo-300.jpg",
+		"title": "Introducing Resilient Web Design",
+		"favicon": "https://adactio.com/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://agripongit.VincentTunru.com": {
+		"url": "https://agripongit.VincentTunru.com",
+		"fetchedAt": "2026-07-27",
+		"domain": "agripongit.vincenttunru.com",
+		"title": "A Grip On Git — A simple, visual Git tutorial",
+		"description": "Level up from just being able to *use* Git to *understanding* it, and get a better grip on one of the most important tools in software engineering.",
+		"image": "https://agripongit.vincenttunru.com/logo.svg",
+		"favicon": "https://agripongit.vincenttunru.com/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://alistapart.com/article/contrastandmeaning/": {
+		"url": "https://alistapart.com/article/contrastandmeaning/",
+		"fetchedAt": "2026-07-27",
+		"domain": "alistapart.com",
+		"description": "Yes, Virginia, design does matter. Better web page layouts aren’t only about aesthetics. A layout with clear hierarchies can turn scanners to readers, and readers to members. Learn how visual…",
+		"title": "Contrast and Meaning",
+		"siteName": "A List Apart",
+		"image": "https://s0.wp.com/_si/?t=eyJpbWciOiJodHRwczpcL1wvaTAud3AuY29tXC9hbGlzdGFwYXJ0LmNvbVwvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAxOVwvMDNcL2Nyb3BwZWQtaWNvbl9uYXZpZ2F0aW9uLWxhdXJlbC01MTIuanBnP2ZpdD01MTIlMkM1MTImcXVhbGl0eT04OSZzc2w9MSIsInR4dCI6IkEgTGlzdCBBcGFydCIsInRlbXBsYXRlIjoiZWRnZSIsImZvbnQiOiIiLCJibG9nX2lkIjoxNTgwOTQ3MjZ9.0oP5GNj3vHR_yLJaXkr_AaWMuS_ItN_HPB-deU1HBBgMQ",
+		"favicon": "https://i0.wp.com/alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg?fit=180%2C180&#038;quality=89&#038;ssl=1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://alistapart.com/article/dao/": {
+		"url": "https://alistapart.com/article/dao/",
+		"fetchedAt": "2026-07-27",
+		"domain": "alistapart.com",
+		"description": "Web designers often bemoan the malleable nature of the web, which seems to defy our efforts at strict control over layout and typography. But maybe the problem is not the web. Maybe the problem is …",
+		"title": "A Dao of Web Design",
+		"siteName": "A List Apart",
+		"image": "https://s0.wp.com/_si/?t=eyJpbWciOiJodHRwczpcL1wvaTAud3AuY29tXC9hbGlzdGFwYXJ0LmNvbVwvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAxOVwvMDNcL2Nyb3BwZWQtaWNvbl9uYXZpZ2F0aW9uLWxhdXJlbC01MTIuanBnP2ZpdD01MTIlMkM1MTImcXVhbGl0eT04OSZzc2w9MSIsInR4dCI6IkEgTGlzdCBBcGFydCIsInRlbXBsYXRlIjoiZWRnZSIsImZvbnQiOiIiLCJibG9nX2lkIjoxNTgwOTQ3MjZ9.0oP5GNj3vHR_yLJaXkr_AaWMuS_ItN_HPB-deU1HBBgMQ",
+		"favicon": "https://i0.wp.com/alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg?fit=180%2C180&#038;quality=89&#038;ssl=1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://alistapart.com/article/oncreativity/": {
+		"url": "https://alistapart.com/article/oncreativity/",
+		"fetchedAt": "2026-07-27",
+		"domain": "alistapart.com",
+		"description": "As designers, we’re wrongly perceived as custodians and exponents of creativity. This matters because business currently overvalues creativity. To avoid the inevitable backlash, we must lead …",
+		"title": "On Creativity",
+		"siteName": "A List Apart",
+		"image": "https://i0.wp.com/alistapart.com/wp-content/uploads/2012/07/creativity.jpg?fit=270%2C570&quality=89&ssl=1",
+		"favicon": "https://i0.wp.com/alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg?fit=180%2C180&#038;quality=89&#038;ssl=1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://alistapart.com/article/responsive-web-design/": {
+		"url": "https://alistapart.com/article/responsive-web-design/",
+		"fetchedAt": "2026-07-27",
+		"domain": "alistapart.com",
+		"description": "Designers have coveted print for its precision layouts, lamenting the varying user contexts on the web that compromise their designs. Ethan Marcotte advocates we shift our design thinking to approp…",
+		"title": "Responsive Web Design",
+		"siteName": "A List Apart",
+		"image": "https://i0.wp.com/alistapart.com/wp-content/uploads/2013/01/ALA306_respdesign_300.png?fit=1200%2C549&quality=80&ssl=1",
+		"favicon": "https://i0.wp.com/alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg?fit=180%2C180&#038;quality=89&#038;ssl=1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://alistapart.com/article/web-typography-tables/": {
+		"url": "https://alistapart.com/article/web-typography-tables/",
+		"fetchedAt": "2026-07-27",
+		"domain": "alistapart.com",
+		"description": "You may not think about it often, but tables are meant to be read. In this excerpt from Chapter 2 of his book, Web Typography, Richard Rutter explains how typography can improve the UX of our rows …",
+		"title": "Web Typography: Designing Tables to be Read, Not Looked At",
+		"siteName": "A List Apart",
+		"image": "https://i0.wp.com/alistapart.com/wp-content/uploads/2017/10/excerptillustration_300-4.png?fit=1200%2C586&quality=80&ssl=1",
+		"favicon": "https://i0.wp.com/alistapart.com/wp-content/uploads/2019/03/cropped-icon_navigation-laurel-512.jpg?fit=180%2C180&#038;quality=89&#038;ssl=1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://ar.al/2020/08/07/what-is-the-small-web/": {
+		"url": "https://ar.al/2020/08/07/what-is-the-small-web/",
+		"fetchedAt": "2026-07-27",
+		"domain": "ar.al",
+		"title": "What is the Small Web?",
+		"description": "Updated June 19th, 2023 Sorry, your browser doesn't support embedded videos. But that doesn’t mean you can’t watch it! You can download Small Is Beautiful #23 directly, and watch it with your favourite video player. Small Is Beautiful (Oct, 2022): What is the Small Web and why do we need it? Today, I want to introduce you to a concept – and a vision for the future of our species in the digital and networked age – that I’ve spoken about for a while but never specifically written about:",
+		"image": "https://ar.al/2020/08/07/what-is-the-small-web/small-web-topology.jpg",
+		"siteName": "Aral Balkan",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://archive.blogs.harvard.edu/digitalnatives/2009/04/26/living-and-dying-on-geocities/": {
+		"url": "https://archive.blogs.harvard.edu/digitalnatives/2009/04/26/living-and-dying-on-geocities/",
+		"fetchedAt": "2026-07-27",
+		"domain": "archive.blogs.harvard.edu",
+		"title": "Digital Natives &raquo; Blog Archive &raquo; Living and Dying on Geocities",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://art.teleportacia.org/exhibition/online_newspapers_new_york_edition/": {
+		"url": "https://art.teleportacia.org/exhibition/online_newspapers_new_york_edition/",
+		"fetchedAt": "2026-07-27",
+		"domain": "art.teleportacia.org",
+		"title": "Online Newspapers (New York Edition)",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://art.teleportacia.org/observation/vernacular/": {
+		"url": "https://art.teleportacia.org/observation/vernacular/",
+		"fetchedAt": "2026-07-27",
+		"domain": "art.teleportacia.org",
+		"title": "Olia Lialina. A Vernacular web. Indigenous and Barbarians.",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://blog.florianherrengt.com/vibe-coder-career-path.html": {
+		"url": "https://blog.florianherrengt.com/vibe-coder-career-path.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "blog.florianherrengt.com",
+		"title": "The vibe coder",
+		"siteName": "Blog - Florian Herrengt",
+		"favicon": "https://blog.florianherrengt.com/favicon.svg",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://blog.geocities.institute/archives/5118": {
+		"url": "https://blog.geocities.institute/archives/5118",
+		"fetchedAt": "2026-07-27",
+		"domain": "blog.geocities.institute",
+		"title": "“My corner of the internet” | One Terabyte of Kilobyte Age",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://blog.geocities.institute/archives/6418": {
+		"url": "https://blog.geocities.institute/archives/6418",
+		"fetchedAt": "2026-07-27",
+		"domain": "blog.geocities.institute",
+		"title": "GeoCities’ Afterlife and Web History | One Terabyte of Kilobyte Age",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://blog.geocities.institute/wp-content/uploads/popularity-2019-03-29.html": {
+		"url": "https://blog.geocities.institute/wp-content/uploads/popularity-2019-03-29.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "blog.geocities.institute",
+		"description": "Tumblr note counter and original post finder",
+		"title": "Most Popular posts for One Terabyte of Kilobyte Age Photo Op 2019-03-29",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://cheapskatesguide.org/articles/old-internet-coming-back.html": {
+		"url": "https://cheapskatesguide.org/articles/old-internet-coming-back.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "cheapskatesguide.org",
+		"status": "http-403"
+	},
+	"https://community.sap.com/t5/technology-blog-posts-by-sap/designing-with-code/ba-p/13574949": {
+		"url": "https://community.sap.com/t5/technology-blog-posts-by-sap/designing-with-code/ba-p/13574949",
+		"fetchedAt": "2026-07-27",
+		"domain": "community.sap.com",
+		"status": "http-403"
+	},
+	"https://coolguy.website/web-zine/01/": {
+		"url": "https://coolguy.website/web-zine/01/",
+		"fetchedAt": "2026-07-27",
+		"domain": "coolguy.website",
+		"description": "First in a series on homemade web pages",
+		"title": "web zine 01",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://css-tricks.com/website-sameness/": {
+		"url": "https://css-tricks.com/website-sameness/",
+		"fetchedAt": "2026-07-27",
+		"domain": "css-tricks.com",
+		"themeColor": "#ff7a18",
+		"description": "Here's captain obvious (yours truly) with an extra special observation for you:",
+		"title": "Website Sameness™ | CSS-Tricks",
+		"siteName": "CSS-Tricks",
+		"image": "https://i0.wp.com/css-tricks.com/wp-content/uploads/2018/02/template-01-.png",
+		"favicon": "https://css-tricks.com/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://danmall.com/posts/creating-portfolio-pieces/": {
+		"url": "https://danmall.com/posts/creating-portfolio-pieces/",
+		"fetchedAt": "2026-07-27",
+		"domain": "danmall.com",
+		"status": "http-404"
+	},
+	"https://designsystems.international/ideas/when-figma-starts-designing-us/": {
+		"url": "https://designsystems.international/ideas/when-figma-starts-designing-us/",
+		"fetchedAt": "2026-07-27",
+		"domain": "designsystems.international",
+		"description": "The subtle ways in which design tools shape how we think and what we make",
+		"title": "When Figma Starts Designing Us / Design Systems International",
+		"image": "https://designsystems.international/static/3a973e14f6766bb97d14213cd06129ad/2d11e/social-banner.png",
+		"siteName": "Design Systems International",
+		"favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGvSURBVHgB7dXBaQIBFEXRPyEQd1qBpAtJES7Sf9zGzXRgwBRxFzpyTgcPLrzlePy8Dw9xOn3N7mM3W/Y2EAiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIlvP5+z5P6PJzmev1d17Zfn+YrXs/POmIZVnmdvubV7au62ydCyMREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiI5B+VXhCEMzdVcgAAAABJRU5ErkJggg==",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://dl.acm.org/doi/10.1145/1095872.1095876": {
+		"url": "https://dl.acm.org/doi/10.1145/1095872.1095876",
+		"fetchedAt": "2026-07-27",
+		"domain": "dl.acm.org",
+		"status": "http-403"
+	},
+	"https://dl.acm.org/doi/10.1145/3025453.3025607": {
+		"url": "https://dl.acm.org/doi/10.1145/3025453.3025607",
+		"fetchedAt": "2026-07-27",
+		"domain": "dl.acm.org",
+		"status": "http-403"
+	},
+	"https://educationaltechnologyjournal.springeropen.com/articles/10.1186/s41239-021-00308-4": {
+		"url": "https://educationaltechnologyjournal.springeropen.com/articles/10.1186/s41239-021-00308-4",
+		"fetchedAt": "2026-07-27",
+		"domain": "educationaltechnologyjournal.springeropen.com",
+		"title": "Client Challenge",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://flexibletypesetting.com/": {
+		"url": "https://flexibletypesetting.com/",
+		"fetchedAt": "2026-07-27",
+		"domain": "flexibletypesetting.com",
+		"title": "Flexible Typesetting",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://goodinternetmagazine.com/homecoming-the-small-web-and-release-from-the-unitary-public-self/": {
+		"url": "https://goodinternetmagazine.com/homecoming-the-small-web-and-release-from-the-unitary-public-self/",
+		"fetchedAt": "2026-07-27",
+		"domain": "goodinternetmagazine.com",
+		"title": "Homecoming: the small web and release from the unitary public self",
+		"favicon": "https://www.goodinternetmagazine.com/content/images/size/w256h256/format/png/2026/06/favicon.svg",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://gossipsweb.net/": {
+		"url": "https://gossipsweb.net/",
+		"fetchedAt": "2026-07-27",
+		"domain": "gossipsweb.net",
+		"description": "The directory of handmade websites.",
+		"title": "Gossip’s Web",
+		"image": "https://gossipsweb.net/images/social.jpg",
+		"favicon": "https://gossipsweb.net/images/favicon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://hairyelefante.medium.com/we-dont-need-more-designers-who-can-code-b81483d2a0e6": {
+		"url": "https://hairyelefante.medium.com/we-dont-need-more-designers-who-can-code-b81483d2a0e6",
+		"fetchedAt": "2026-07-27",
+		"domain": "hairyelefante.medium.com",
+		"themeColor": "#000000",
+		"siteName": "Medium",
+		"title": "We Don’t Need More Designers Who Can Code",
+		"description": "To say that we need designers who can code misrepresents the underlying issue..",
+		"image": "https://miro.medium.com/v2/resize:fit:1200/1*8i5szApc_vy6CdQrw3-4DA.jpeg",
+		"favicon": "https://miro.medium.com/v2/resize:fill:304:304/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://handmade-web.net/assets/schwulst_website-is-a-shifting-house.pdf": {
+		"url": "https://handmade-web.net/assets/schwulst_website-is-a-shifting-house.pdf",
+		"fetchedAt": "2026-07-27",
+		"domain": "handmade-web.net",
+		"kind": "pdf",
+		"status": "ok"
+	},
+	"https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/": {
+		"url": "https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/",
+		"fetchedAt": "2026-07-27",
+		"domain": "hapgood.us",
+		"title": "The Garden and the Stream: A Technopastoral",
+		"description": "Opening keynote for dLRN 2015. Delivered October 16th @ Stanford. Actual keynote may have gone on significant tangents… 1 | a year in the garden A week or so ago, I was reading about the Oreg…",
+		"siteName": "Hapgood",
+		"image": "https://hapgood.us/wp-content/uploads/2015/10/t_d4424f37-afe9-7065-bc7f-13540c92ce85.jpg",
+		"favicon": "https://s2.wp.com/i/webclip.png?m=1713868326i",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://hci.stanford.edu/courses/cs147/2022/wi/calendar.html": {
+		"url": "https://hci.stanford.edu/courses/cs147/2022/wi/calendar.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "hci.stanford.edu",
+		"title": "Calendar - CS 147 2022",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://ia.net/topics/the-web-is-all-about-typography-period": {
+		"url": "https://ia.net/topics/the-web-is-all-about-typography-period",
+		"fetchedAt": "2026-07-27",
+		"domain": "ia.net",
+		"description": "Text as UI",
+		"title": "Web Design is 95% Typography",
+		"siteName": "iA",
+		"favicon": "https://static.ia.net/favicon-180.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://indieweb.org/digital_garden": {
+		"url": "https://indieweb.org/digital_garden",
+		"fetchedAt": "2026-07-27",
+		"domain": "indieweb.org",
+		"description": "🌿🪴",
+		"siteName": "IndieWeb",
+		"title": "digital garden",
+		"favicon": "https://indieweb.org/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://indieweb.org/principles": {
+		"url": "https://indieweb.org/principles",
+		"fetchedAt": "2026-07-27",
+		"domain": "indieweb.org",
+		"description": "🗽 The IndieWeb Community is largely based on principles that we practice and aspire to, such as own your data and remember to have fun! You can read all of our guiding principles below.",
+		"siteName": "IndieWeb",
+		"title": "principles",
+		"favicon": "https://indieweb.org/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://kwsong.github.io/cs160su23/schedule/": {
+		"url": "https://kwsong.github.io/cs160su23/schedule/",
+		"fetchedAt": "2026-07-27",
+		"domain": "kwsong.github.io",
+		"title": "Schedule",
+		"description": "Schedule with listing of course modules and topics.",
+		"siteName": "CS 160",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://kwsong.github.io/cs160su23/syllabus/": {
+		"url": "https://kwsong.github.io/cs160su23/syllabus/",
+		"fetchedAt": "2026-07-27",
+		"domain": "kwsong.github.io",
+		"title": "Syllabus",
+		"description": "Course policies and information.",
+		"siteName": "CS 160",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://labs.jensimmons.com/": {
+		"url": "https://labs.jensimmons.com/",
+		"fetchedAt": "2026-07-27",
+		"domain": "labs.jensimmons.com",
+		"description": "Experiments demonstrating CSS Grid, and what",
+		"themeColor": "#f6f3ea",
+		"title": "Web Design Experiments by Jen Simmons",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://laurelschwulst.com/e/my-website-is-a-shifting-house/": {
+		"url": "https://laurelschwulst.com/e/my-website-is-a-shifting-house/",
+		"fetchedAt": "2026-07-27",
+		"domain": "laurelschwulst.com",
+		"title": "My website is a shifting house ... | Laurel Schwulst",
+		"image": "https://laurelschwulst.com/assets/media/images_compressed/writing-website-flock.webp",
+		"favicon": "https://laurelschwulst.com/assets/media/fffff2e.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://lithub.com/what-happened-when-i-tried-to-replace-myself-with-chatgpt-in-my-english-classroom/": {
+		"url": "https://lithub.com/what-happened-when-i-tried-to-replace-myself-with-chatgpt-in-my-english-classroom/",
+		"fetchedAt": "2026-07-27",
+		"domain": "lithub.com",
+		"title": "What Happened When I Tried to Replace Myself with ChatGPT in My English Classroom",
+		"description": "My students call it “Chat,” a cute nickname they all seem to have agreed on at some point. They use it to make study guides, interpret essay prompts, and register for classes, turning it loose on t…",
+		"siteName": "Literary Hub",
+		"image": "https://s26162.pcdn.co/wp-content/uploads/2025/07/Untitled-design-30.png",
+		"favicon": "https://s26162.pcdn.co/wp-content/uploads/2015/04/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://maggieappleton.com/garden-history/": {
+		"url": "https://maggieappleton.com/garden-history/",
+		"fetchedAt": "2026-07-27",
+		"domain": "maggieappleton.com",
+		"description": "A newly revived philosophy for publishing personal knowledge on the web",
+		"title": "A Brief History & Ethos of the Digital Garden",
+		"image": "https://maggieappleton.com/og/garden-history.png",
+		"favicon": "https://maggieappleton.com/images/favicon/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://maggieappleton.com/nontechnical-gardening/": {
+		"url": "https://maggieappleton.com/nontechnical-gardening/",
+		"fetchedAt": "2026-07-27",
+		"domain": "maggieappleton.com",
+		"description": "How to build a digital garden without touching code",
+		"title": "Digital Gardening for Non-Technical Folks",
+		"image": "https://maggieappleton.com/og/nontechnical-gardening.png",
+		"favicon": "https://maggieappleton.com/images/favicon/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://matthiasott.com/articles/into-the-personal-website-verse": {
+		"url": "https://matthiasott.com/articles/into-the-personal-website-verse",
+		"fetchedAt": "2026-07-27",
+		"domain": "matthiasott.com",
+		"description": "Discover why personal websites are the backbone of the independent web. Learn how to build, connect, and maintain your own space on the internet.",
+		"title": "Into the Personal-Website-Verse · Matthias Ott",
+		"siteName": "Matthias Ott – Web Design Engineer",
+		"image": "https://matthiasott.com//assets/pictures/_twitterimage/into-the-personal-website-verse-wide-01.jpg",
+		"themeColor": "#0F1329",
+		"favicon": "https://matthiasott.com/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://neal.fun/internet-artifacts/": {
+		"url": "https://neal.fun/internet-artifacts/",
+		"fetchedAt": "2026-07-27",
+		"domain": "neal.fun",
+		"status": "http-403"
+	},
+	"https://neustadt.fr/essays/the-small-web/": {
+		"url": "https://neustadt.fr/essays/the-small-web/",
+		"fetchedAt": "2026-07-27",
+		"domain": "neustadt.fr",
+		"description": "Most websites today are built like commercial products by professionals and marketers, optimised to draw the largest audience, generate engagement and",
+		"image": "https://neustadt.fr/essays/the-small-web/neustadt-small-web-thumbnail.jpg",
+		"title": "Rediscovering the Small Web - Neustadt.fr",
+		"favicon": "https://neustadt.fr/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://notlaura.com/garden/": {
+		"url": "https://notlaura.com/garden/",
+		"fetchedAt": "2026-07-27",
+		"domain": "notlaura.com",
+		"title": "Garden - Lara (Schenck) Karki",
+		"description": "Update 2/3/23: Yeah. It’s official. The digital garden thing is not working for me. Oh well! This garden is dead, which means something exciting will take its place. Also. Isn’t the idea of a website you continue to tend over a long time a digital garden? So yeah, not dead, but I decided I don’t […]",
+		"siteName": "Lara (Schenck) Karki",
+		"favicon": "https://i0.wp.com/notlaura.com/wp-content/uploads/2018/01/cropped-favicon.png?fit=180%2C180&#038;ssl=1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://novum.substack.com/p/the-internet-is-like-a-city": {
+		"url": "https://novum.substack.com/p/the-internet-is-like-a-city",
+		"fetchedAt": "2026-07-27",
+		"domain": "novum.substack.com",
+		"themeColor": "#fafafa",
+		"title": "The Internet Is Like a City (But Not in the Way You'd Think)",
+		"description": "Rereading Christopher Alexander's classic 1965 essay \"A City Is Not a Tree\" in the digital age",
+		"image": "https://substackcdn.com/image/fetch/$s_!Ap-5!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c3e390d-93e4-4091-8c5e-5ced6476c5ae_550x364.jpeg",
+		"favicon": "https://substackcdn.com/image/fetch/$s_!MBDy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8de20f68-bcf6-4178-b737-195ffb520ee8%2Fapple-touch-icon-57x57.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://parv.bearblog.dev/kayaking/": {
+		"url": "https://parv.bearblog.dev/kayaking/",
+		"fetchedAt": "2026-07-27",
+		"domain": "parv.bearblog.dev",
+		"description": "I've never been known for my coordination, balance, or cardiovascular enthusiasm. In team sports, I was invariably the last one picked – probably only becaus...",
+		"siteName": "parv bhadra",
+		"title": "On Doing Hard Things",
+		"image": "https://parv.bearblog.dev/static/og-image.png",
+		"favicon": "data:image/svg+xml,%3Csvg%20xmlns=",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet": {
+		"url": "https://qz.com/333313/milliions-of-facebook-users-have-no-idea-theyre-using-the-internet",
+		"fetchedAt": "2026-07-27",
+		"domain": "qz.com",
+		"status": "http-403"
+	},
+	"https://resilientwebdesign.com/": {
+		"url": "https://resilientwebdesign.com/",
+		"fetchedAt": "2026-07-27",
+		"domain": "resilientwebdesign.com",
+		"themeColor": "#5f7995",
+		"description": "By Jeremy Keith",
+		"title": "Resilient Web Design",
+		"image": "https://resilientwebdesign.com/author/images/medium/jeremykeith.jpg",
+		"favicon": "https://resilientwebdesign.com/images/icon512.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://rhizome.org/editorial/2012/may/16/screen-image-text/": {
+		"url": "https://rhizome.org/editorial/2012/may/16/screen-image-text/",
+		"fetchedAt": "2026-07-27",
+		"domain": "rhizome.org",
+		"status": "http-403"
+	},
+	"https://risd-ai-studio.notion.site/AI-Software-Design-Studio-Fall-2024-b5c1d283e5534565a64f199c90e90211": {
+		"url": "https://risd-ai-studio.notion.site/AI-Software-Design-Studio-Fall-2024-b5c1d283e5534565a64f199c90e90211",
+		"fetchedAt": "2026-07-27",
+		"domain": "risd-ai-studio.notion.site",
+		"description": "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team",
+		"title": "Notion | Where teams and agents work together",
+		"image": "https://app.notion.com/images/meta/default.png",
+		"siteName": "Notion",
+		"favicon": "https://risd-ai-studio.notion.site/images/logo-ios.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://scholarworks.gvsu.edu/lajm/vol30/iss2/4": {
+		"url": "https://scholarworks.gvsu.edu/lajm/vol30/iss2/4",
+		"fetchedAt": "2026-07-27",
+		"domain": "scholarworks.gvsu.edu",
+		"title": "Engaging the \"Othered\": Using Zines to Support Student Identities",
+		"description": "By Chelsea Lonsdale, Published on 04/01/15",
+		"siteName": "ScholarWorks@GVSU",
+		"favicon": "https://scholarworks.gvsu.edu/lajm/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://scottwillsey.com/small-web/": {
+		"url": "https://scottwillsey.com/small-web/",
+		"fetchedAt": "2026-07-27",
+		"domain": "scottwillsey.com",
+		"description": "The internet is better than ever, if you just focus your attention.",
+		"title": "Small Web, Indie Web",
+		"favicon": "https://scottwillsey.com/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://solarpunk.cool/webpage-setup/": {
+		"url": "https://solarpunk.cool/webpage-setup/",
+		"fetchedAt": "2026-07-27",
+		"domain": "solarpunk.cool",
+		"title": "webpage setup",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://sovereignweb.thecozy.cat/blog/resources/#elementor-toc__heading-anchor-28": {
+		"url": "https://sovereignweb.thecozy.cat/blog/resources/#elementor-toc__heading-anchor-28",
+		"fetchedAt": "2026-07-27",
+		"domain": "sovereignweb.thecozy.cat",
+		"status": "error:fetch failed"
+	},
+	"https://stackingthebricks.com/how-blogs-broke-the-web/": {
+		"url": "https://stackingthebricks.com/how-blogs-broke-the-web/",
+		"fetchedAt": "2026-07-27",
+		"domain": "stackingthebricks.com",
+		"title": "How the Blog Broke the Web",
+		"description": "I first got online in 1993, back when the Web had a capital letter — three, in fact — and long before irony stretched its legs and unbuttoned its flan",
+		"image": "https://stackingthebricks.com/assets/images/mozcool.gif",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://talks.jensimmons.com/jugbbe": {
+		"url": "https://talks.jensimmons.com/jugbbe",
+		"fetchedAt": "2026-07-27",
+		"domain": "talks.jensimmons.com",
+		"description": "2017 saw a sea change in web layout, one that few of us have truly come to grips with. We’re standing at the threshold of an entirely new era in digital design—one in which, rather than hacking layouts together, we can actually describe layouts directly. The benefits will touch everything from prototyping to custom art direction to responsive design. In this visionary talk, rooted in years of practical experience, Jen will show you how to understand what’s different, learn to think through multiple stages of flexibility, and let go of pixel constraints forever.",
+		"title": "Everything You Know About Web Design Just Changed by Jen Simmons",
+		"favicon": "https://on.notist.cloud/assets/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://thetyee.ca/Culture/2025/05/26/Internet-Sucks-Cory-Doctorow/": {
+		"url": "https://thetyee.ca/Culture/2025/05/26/Internet-Sucks-Cory-Doctorow/",
+		"fetchedAt": "2026-07-27",
+		"domain": "thetyee.ca",
+		"description": "The digital savant on &lsquo;enshittification,&rsquo; how &lsquo;twiddlers&rsquo; secretly rip us off, powering down Big Tech and more. A Tyee interview.",
+		"title": "&lsquo;The Internet Sucks.&rsquo; Cory Doctorow Tells How to Fix It | The Tyee",
+		"image": "https://thetyee.ca/Culture/2025/05/24/CoryDoctorow.jpg",
+		"siteName": "The Tyee",
+		"favicon": "https://thetyee.ca/design-article.thetyee.ca/ui/img/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://tomcritchlow.com/2018/10/10/of-gardens-and-wikis/": {
+		"url": "https://tomcritchlow.com/2018/10/10/of-gardens-and-wikis/",
+		"fetchedAt": "2026-07-27",
+		"domain": "tomcritchlow.com",
+		"description": "Building personal learning environments across the different time horizons of information consumption",
+		"title": "Of Digital Streams, Campfires and Gardens",
+		"image": "https://tomcritchlow.com/images/green.png",
+		"favicon": "https://tomcritchlow.com/images/favicon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://tomcritchlow.com/2019/02/17/building-digital-garden/": {
+		"url": "https://tomcritchlow.com/2019/02/17/building-digital-garden/",
+		"fetchedAt": "2026-07-27",
+		"domain": "tomcritchlow.com",
+		"description": "How I built myself a simple wiki using folders and files and published via Jekyll",
+		"title": "Building a digital garden",
+		"image": "https://tomcritchlow.com/images/green.png",
+		"favicon": "https://tomcritchlow.com/images/favicon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://umw.domains/": {
+		"url": "https://umw.domains/",
+		"fetchedAt": "2026-07-27",
+		"domain": "umw.domains",
+		"title": "Web Building at UMW",
+		"favicon": "https://umw.domains/wp-content/uploads/2022/12/cropped-2colorUMWcirclewordmark-180x180.jpg",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://untappedjournal.com/stories/jarrett-fuller-building-with-simple-tools-longevity": {
+		"url": "https://untappedjournal.com/stories/jarrett-fuller-building-with-simple-tools-longevity",
+		"fetchedAt": "2026-07-27",
+		"domain": "untappedjournal.com",
+		"description": "Building with basic mediums, from HTML to 2x4s, can be a way to assert autonomy and longevity.",
+		"title": "Untapped : Using Simple Tools as a Radical Act of Independence : By Jarrett Fuller",
+		"siteName": "Untapped",
+		"image": "https://admin.untappedjournal.com/media/pages/stories/jarrett-fuller-building-with-simple-tools-longevity/f841c76d01-1760108794/jarrett-fuller_untapped-1200x630-crop.jpg",
+		"favicon": "https://untappedjournal.com/favicon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://vimeo.com/4394152": {
+		"url": "https://vimeo.com/4394152",
+		"fetchedAt": "2026-07-27",
+		"domain": "vimeo.com",
+		"title": "SVA Dot Dot Dot Lectures: Jason Santa Maria",
+		"image": "https://i.vimeocdn.com/video/10409617-ac9bd08a0586fe378cbf345a278973e79ed8ca6742829b3ccfc4cd8731739eb3-d_295x166?region=us",
+		"siteName": "Vimeo",
+		"authorName": "MFA Interaction Design",
+		"kind": "video",
+		"status": "ok"
+	},
+	"https://webstyleguide.com/wsg3/3-information-architecture/3-site-structure.html": {
+		"url": "https://webstyleguide.com/wsg3/3-information-architecture/3-site-structure.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "webstyleguide.com",
+		"title": "Site Structure | Web Style Guide 3",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.alexhyett.com/newsletter/the-indie-web-is-the-new-and-the-old-web/": {
+		"url": "https://www.alexhyett.com/newsletter/the-indie-web-is-the-new-and-the-old-web/",
+		"fetchedAt": "2026-07-27",
+		"domain": "alexhyett.com",
+		"title": "The IndieWeb is the new and the old web | Alex Hyett",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.are.na/aidan-quinlan/hw-handmade-website-examples": {
+		"url": "https://www.are.na/aidan-quinlan/hw-handmade-website-examples",
+		"fetchedAt": "2026-07-27",
+		"domain": "are.na",
+		"status": "http-404"
+	},
+	"https://www.bloomberg.com/news/articles/2013-03-12/back-when-we-thought-the-internet-was-like-a-city": {
+		"url": "https://www.bloomberg.com/news/articles/2013-03-12/back-when-we-thought-the-internet-was-like-a-city",
+		"fetchedAt": "2026-07-27",
+		"domain": "bloomberg.com",
+		"status": "http-403"
+	},
+	"https://www.bramstein.com/writing/": {
+		"url": "https://www.bramstein.com/writing/",
+		"fetchedAt": "2026-07-27",
+		"domain": "bramstein.com",
+		"title": "Writing - Bram Stein",
+		"favicon": "https://www.bramstein.com/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.contentstrategy.at/literature-reviews/A manifest for content centered web development: Resilient Web Design by Jeremy Keith": {
+		"url": "https://www.contentstrategy.at/literature-reviews/A manifest for content centered web development: Resilient Web Design by Jeremy Keith",
+		"fetchedAt": "2026-07-27",
+		"domain": "contentstrategy.at",
+		"status": "http-404"
+	},
+	"https://www.creativeapplications.net/project/fish-a-tap-essay-for-iphone-by-robin-sloan/": {
+		"url": "https://www.creativeapplications.net/project/fish-a-tap-essay-for-iphone-by-robin-sloan/",
+		"fetchedAt": "2026-07-27",
+		"domain": "creativeapplications.net",
+		"themeColor": "#F1F1F1",
+		"siteName": "CreativeApplications.Net",
+		"title": "Fish - A tap essay for iPhone by Robin Sloan",
+		"description": "Created by Robin Sloan, a writer and media inventor from San Francisco, 'Fish' is a tap essay iPhone application, a short but 'heartfelt manifesto' about the difference between likingsomething on the internet and loving something on the internet. The app is also an experiment in a new format, en",
+		"image": "https://www.creativeapplications.net/wp-content/uploads/2012/04/fish_typeessay00-copy.jpg",
+		"favicon": "https://www.creativeapplications.net/wp-content/uploads/2025/01/CAN_Logo_512-512x500.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.cricketdesignworks.com/field-notes/a-closer-look-at-website-sameness": {
+		"url": "https://www.cricketdesignworks.com/field-notes/a-closer-look-at-website-sameness",
+		"fetchedAt": "2026-07-27",
+		"domain": "cricketdesignworks.com",
+		"description": "A recent discussion about Website Sameness™ got me wondering if uniformity in web design is really such a bad thing.",
+		"siteName": "Cricket Design Works",
+		"title": "Cricket Design Works | A closer look at website sameness",
+		"image": "https://www.cricketdesignworks.com/assets/images/blog/_1200x630_crop_center-center_82_none/normal-forks.jpg?mtime=1710202950",
+		"favicon": "https://www.cricketdesignworks.com/field-notes/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.ctl.ox.ac.uk/peer-feedback": {
+		"url": "https://www.ctl.ox.ac.uk/peer-feedback",
+		"fetchedAt": "2026-07-27",
+		"domain": "ctl.ox.ac.uk",
+		"title": "Peer feedback",
+		"description": "Help students to understand assessment criteria through peer feedback activities",
+		"image": "https://www.ctl.ox.ac.uk/",
+		"themeColor": "#44687d",
+		"favicon": "https://www.ctl.ox.ac.uk/sites/all/themes/custom/oxtheme/images/favicons/university_of_oxford/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.eastgate.com/garden/Enter.html": {
+		"url": "https://www.eastgate.com/garden/Enter.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "eastgate.com",
+		"title": "Hypertext Gardens",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.figma.com/deck/KkTsmUICfItxltQ9Xr6dku/10-More-Things-I-Wish-Every-Design-Student-Knew?node-id=92-2&viewport=-136%2C-64%2C0.63&t=AUFWrCNwf4YdgmYM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&fuid=766165571247123690": {
+		"url": "https://www.figma.com/deck/KkTsmUICfItxltQ9Xr6dku/10-More-Things-I-Wish-Every-Design-Student-Knew?node-id=92-2&viewport=-136%2C-64%2C0.63&t=AUFWrCNwf4YdgmYM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&fuid=766165571247123690",
+		"fetchedAt": "2026-07-27",
+		"domain": "figma.com",
+		"title": "10 More Things I Wish Every Design Student Knew",
+		"image": "https://www.figma.com/file/KkTsmUICfItxltQ9Xr6dku/thumbnail?node-id=92-2&in-better-link-exp=true&t=AUFWrCNwf4YdgmYM-1",
+		"description": "Created with Figma",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.figma.com/file/QtM2opf4sujCVN7gR8sqPl/Week-1-Lecture-Slides": {
+		"url": "https://www.figma.com/file/QtM2opf4sujCVN7gR8sqPl/Week-1-Lecture-Slides",
+		"fetchedAt": "2026-07-27",
+		"domain": "figma.com",
+		"title": "Week 1 Lecture Slides",
+		"image": "https://www.figma.com/file/QtM2opf4sujCVN7gR8sqPl/thumbnail?ver=thumbnails/c3a5af2a-c328-4517-9df0-9a8fe885020d",
+		"description": "Created with Figma",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.greeneuropeanjournal.eu/cory-doctorow-how-to-take-back-the-internet/": {
+		"url": "https://www.greeneuropeanjournal.eu/cory-doctorow-how-to-take-back-the-internet/",
+		"fetchedAt": "2026-07-27",
+		"domain": "greeneuropeanjournal.eu",
+		"title": "Cory Doctorow: How to Take Back the Internet",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.hackdesign.org/lessons/19-achieving-visual-hierarchy/": {
+		"url": "https://www.hackdesign.org/lessons/19-achieving-visual-hierarchy/",
+		"fetchedAt": "2026-07-27",
+		"domain": "hackdesign.org",
+		"image": "https://www.hackdesign.org/assets/images/og/og-19-achieving-visual-hierarchy.png",
+		"title": "Achieving Visual Hierarchy",
+		"description": "Master visual hierarchy to organize and prioritize your content effectively. Learn to guide users through your designs with intention.",
+		"siteName": "Hack Design",
+		"favicon": "https://www.hackdesign.org/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.henrikkarlsson.xyz/p/search-query": {
+		"url": "https://www.henrikkarlsson.xyz/p/search-query",
+		"fetchedAt": "2026-07-27",
+		"domain": "henrikkarlsson.xyz",
+		"themeColor": "#f4f4f0",
+		"title": "A blog post is a very long and complex search query to find fascinating people and make them route interesting stuff to your inbox",
+		"description": "When writing in public, there is a common idea that you should make it accessible. This is a left over from mass media.",
+		"image": "https://substackcdn.com/image/fetch/$s_!pqlO!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0dbceaf-9fe3-4673-b229-bfb1b5cf8cad_800x588.jpeg",
+		"favicon": "https://substackcdn.com/image/fetch/$s_!FUBA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F212e611c-82bd-4622-a8dc-5cbd2695c8a2%2Fapple-touch-icon-57x57.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.newstatesman.com/science-tech/2016/08/25-years-here-are-worst-ever-predictions-about-internet": {
+		"url": "https://www.newstatesman.com/science-tech/2016/08/25-years-here-are-worst-ever-predictions-about-internet",
+		"fetchedAt": "2026-07-27",
+		"domain": "newstatesman.com",
+		"status": "http-403"
+	},
+	"https://www.robinsloan.com/lab/is-it-okay/": {
+		"url": "https://www.robinsloan.com/lab/is-it-okay/",
+		"fetchedAt": "2026-07-27",
+		"domain": "robinsloan.com",
+		"description": "Squaring up to the foundational question for language models.",
+		"themeColor": "hsl(14, 76%, 55%)",
+		"siteName": "Robin Sloan",
+		"title": "Is it okay?",
+		"image": "https://www.robinsloan.com/img/delacroix-1.jpg",
+		"favicon": "https://www.robinsloan.com/img/dragon-moon-logotype-2025-256.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.robinsloan.com/notes/home-cooked-app/": {
+		"url": "https://www.robinsloan.com/notes/home-cooked-app/",
+		"fetchedAt": "2026-07-27",
+		"domain": "robinsloan.com",
+		"description": "I made a messaging app for my family and my family only.",
+		"themeColor": "hsl(14, 76%, 55%)",
+		"siteName": "Robin Sloan",
+		"title": "An app can be a home-cooked meal",
+		"image": "https://www.robinsloan.com/img/boopsnoop-card-v2.png",
+		"favicon": "https://www.robinsloan.com/img/dragon-moon-logotype-2025-256.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.smashingmagazine.com/2013/02/creating-visual-hierarchies-typography/": {
+		"url": "https://www.smashingmagazine.com/2013/02/creating-visual-hierarchies-typography/",
+		"fetchedAt": "2026-07-27",
+		"domain": "smashingmagazine.com",
+		"title": "Creating Exciting And Unusual Visual Hierarchies — Smashing Magazine",
+		"description": "Layout, for both print and screen, is one of the most important aspects of graphic design. Designs that extend across multiple pages or screens, whether containing large or small amounts of type, must be carefully controlled in a way that is enticing and is easy for all to access.",
+		"siteName": "Smashing Magazine",
+		"image": "https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/6a65e4e8-7792-4082-bfcc-0c2fc5690cd5/typo-9.jpg",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.themarginalian.org/2012/04/23/the-shape-of-design-frank-chimero/": {
+		"url": "https://www.themarginalian.org/2012/04/23/the-shape-of-design-frank-chimero/",
+		"fetchedAt": "2026-07-27",
+		"domain": "themarginalian.org",
+		"title": "Frank Chimero on the Shape of Design and the Harmonics of Influence",
+		"description": "‘…we accept the light contained in the work of others without darkening their efforts.’",
+		"siteName": "The Marginalian",
+		"image": "https://i1.wp.com/www.themarginalian.org/wp-content/themes/themarginalian/images/the_marginalian_opengraph.png",
+		"favicon": "https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2021/10/cropped-tm_site_icon-1.png?fit=180%2C180&#038;ssl=1",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.theodinproject.com/lessons/foundations-git-basics": {
+		"url": "https://www.theodinproject.com/lessons/foundations-git-basics",
+		"fetchedAt": "2026-07-27",
+		"domain": "theodinproject.com",
+		"description": "The Odin Project empowers aspiring web developers to learn together for free",
+		"image": "https://www.theodinproject.com/assets/og-logo-2bdf3a30.png",
+		"title": "Git Basics | The Odin Project",
+		"favicon": "https://www.theodinproject.com/apple-touch-icon.png",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.underconsideration.com/speakup/archives/004033.html": {
+		"url": "https://www.underconsideration.com/speakup/archives/004033.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "underconsideration.com",
+		"description": "Speak Up, The Archives, August 2002 – April 2009",
+		"title": "Speak Up Archive: Landmark Web Sites, Where Art Thou?",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.versionmuseum.com/history-of/amazon-website": {
+		"url": "https://www.versionmuseum.com/history-of/amazon-website",
+		"fetchedAt": "2026-07-27",
+		"domain": "versionmuseum.com",
+		"description": "A comprehensive visual history of Amazon.com from 1995 to 2026. See a gallery of the Amazon.com evolution from the beginning to present day.",
+		"title": "31 Years of Amazon.com Website Design History - 34 Images - Version Museum",
+		"image": "https://www.versionmuseum.com/images/websites/amazon-website/amazon-website%5E2000%5Eamazon-logo-900.png",
+		"siteName": "Version Museum",
+		"favicon": "https://www.versionmuseum.com/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.washington.edu/accesscomputing/webd2/student/unit1/module1/lesson1.html": {
+		"url": "https://www.washington.edu/accesscomputing/webd2/student/unit1/module1/lesson1.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "washington.edu",
+		"title": "Basic Site Evaluation and Rubric Creation",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.washington.edu/accesscomputing/webd2/student/unit1/module4/lesson1.html": {
+		"url": "https://www.washington.edu/accesscomputing/webd2/student/unit1/module4/lesson1.html",
+		"fetchedAt": "2026-07-27",
+		"domain": "washington.edu",
+		"title": "Organizing a Website",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.webdesignmuseum.org/gallery/geocities-1996": {
+		"url": "https://www.webdesignmuseum.org/gallery/geocities-1996",
+		"fetchedAt": "2026-07-27",
+		"domain": "webdesignmuseum.org",
+		"status": "http-403"
+	},
+	"https://www.webdesignmuseum.org/web-design-history": {
+		"url": "https://www.webdesignmuseum.org/web-design-history",
+		"fetchedAt": "2026-07-27",
+		"domain": "webdesignmuseum.org",
+		"status": "http-403"
+	},
+	"https://www.youtube.com/": {
+		"url": "https://www.youtube.com/",
+		"fetchedAt": "2026-07-27",
+		"domain": "youtube.com",
+		"image": "https://www.youtube.com/img/desktop/yt_1200.png",
+		"title": "YouTube",
+		"description": "Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.",
+		"favicon": "https://www.youtube.com/s/desktop/cf14c559/img/favicon.ico",
+		"kind": "page",
+		"status": "ok"
+	},
+	"https://www.youtube.com/watch?v=CkzbI1Tv_rQ": {
+		"url": "https://www.youtube.com/watch?v=CkzbI1Tv_rQ",
+		"fetchedAt": "2026-07-27",
+		"domain": "youtube.com",
+		"image": "https://i.ytimg.com/vi/CkzbI1Tv_rQ/hqdefault.jpg",
+		"title": "Basics of HTML",
+		"siteName": "YouTube",
+		"authorName": "Laurel Video",
+		"kind": "video",
+		"status": "ok"
+	},
+	"https://www.zinelibraries.info/running-a-zine-library/teaching-with-zines/": {
+		"url": "https://www.zinelibraries.info/running-a-zine-library/teaching-with-zines/",
+		"fetchedAt": "2026-07-27",
+		"domain": "zinelibraries.info",
+		"title": "teaching with zines | zinelibraries.info",
+		"favicon": "https://www.zinelibraries.info/wp-content/uploads/2016/09/cropped-zine-libraries-icon-180x180.jpg",
+		"kind": "page",
+		"status": "ok"
+	}
+}

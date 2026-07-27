@@ -27,6 +27,9 @@
 	};
 	$: currentDayPath = `/${courseId}/${dayId}`;
 
+	// Pages can opt out of the table of contents with `toc: false` in frontmatter
+	$: showToc = content?.metadata?.toc !== false;
+
 	// Find next and previous pages for navigation
 	$: {
 		let allItems: MenuItem[] = [];
@@ -117,11 +120,13 @@
 	{:else if content}
 		<div class="flex flex-col md:flex-row">
 			<!-- Main content area -->
-			<div class="md:max-w-3xl md:flex-1">
+			<div class="md:flex-1 {showToc ? 'md:max-w-3xl' : ''}">
 				<!-- Mobile Table of Contents at the top -->
-				<div class="md:hidden">
-					<TableOfContents />
-				</div>
+				{#if showToc}
+					<div class="md:hidden">
+						<TableOfContents />
+					</div>
+				{/if}
 
 				<div>
 					<!-- Content header with title, date & description -->
@@ -242,11 +247,13 @@
 			</div>
 
 			<!-- Right sidebar with Table of Contents (desktop only) -->
-			<div
-				class="hidden md:sticky md:top-8 md:block md:max-h-screen md:w-64 md:self-start md:overflow-y-auto md:pl-8"
-			>
-				<TableOfContents />
-			</div>
+			{#if showToc}
+				<div
+					class="hidden md:sticky md:top-8 md:block md:max-h-screen md:w-64 md:self-start md:overflow-y-auto md:pl-8"
+				>
+					<TableOfContents />
+				</div>
+			{/if}
 		</div>
 	{:else}
 		<div class="bg-card flex h-64 items-center justify-center rounded-lg shadow-sm">

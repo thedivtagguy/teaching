@@ -3,10 +3,11 @@ title: Library 📖
 description: Course reading list and resources from Zotero collection
 layout: default
 date: 2026-07-13T12:00
-updated: 2026-07-15T12:00
+updated: 2026-07-27T22:18
 section: Appendix
 order: 1
 slug: library
+toc: false
 ---
 
 # Library
