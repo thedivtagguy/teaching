@@ -4,37 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4e348eb55fde9afe",
+        "id": "d500dee1486a9aeb",
         "type": "tabs",
         "children": [
           {
-            "id": "1cddfb5fc5c9dabd",
+            "id": "0c3b3056b205c6d9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "day-6-ask-better-make-a-clock.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "day-6-ask-better-make-a-clock"
-            }
-          }
-        ]
-      },
-      {
-        "id": "e21aefed31a1422e",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "4f8c79f5187dd1e6",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
+              "type": "empty",
               "state": {},
-              "icon": "slides",
-              "title": "Preview: day-6-ask-better-make-a-clock.md"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -225,11 +205,18 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1cddfb5fc5c9dabd",
+  "active": "0c3b3056b205c6d9",
   "lastOpenFiles": [
-    "slides/day-6-ask-better-make-a-clock.md",
-    "slides/day-5-the-make-day.md",
     "day-6-ask-better-make-a-clock.md",
+    "assignments/day-7-reply-and-plots.md",
+    "assignments/day-5-grid-challenges.md",
+    "slides/day-6-ask-better-make-a-clock.md",
+    "day-4-typesetting-a-page.md",
+    "day-5-the-make-day.md",
+    "day-10-design-systems-and-liftoff.md",
+    "day-8-thinking-in-components.md",
+    "day-7-the-indieweb.md",
+    "slides/day-5-the-make-day.md",
     "Pasted image 20260727090442.png",
     "assets/slides/day-6-ask-better-make-a-clock/IMG-20260727090436789.png",
     "assets/slides/day-6-ask-better-make-a-clock/IMG-20260727090356246.png",
@@ -238,14 +225,12 @@
     "assets/slides/day-6-ask-better-make-a-clock/IMG-20260727090252727.png",
     "Untitled.md",
     "slides/day-7-the-indieweb.md",
-    "day-5-the-make-day.md",
     "guides.md",
     "assets/guides/IMG-20260724110023895.png",
     "assets/guides/IMG-20260724105935929.png",
     "assets/guides/IMG-20260724105910365.png",
     "assets/guides/IMG-20260724105842842.png",
     "assets/guides/IMG-20260724105608347.png",
-    "day-4-typesetting-a-page.md",
     "slides/day-4-typesetting-a-page.md",
     "assignments/day-4-fit-to-print.md",
     "day-3-seeing-like-a-browser.md",
@@ -260,7 +245,6 @@
     "day-2-html-is-a-home.md",
     "control-panel.md",
     "day-9-visual-hierarchies.md",
-    "day-7-the-indieweb.md",
     "assets/slides/day-3-seeing-like-a-browser",
     "assignments/day-2-bohemian-rhapsody.md",
     "dump/grids-without-tears-slides.md",
@@ -268,9 +252,6 @@
     "slides/day-2-html-is-a-home.md",
     "assets/assignments/day-2-bohemian-rhapsody",
     "assets/install-guides",
-    "assets/guides/static/assets/install-guides",
-    "web2026/assignments.md",
-    "install-guides.md",
-    "assignments/day-1-web-archaeology.md"
+    "assets/guides/static/assets/install-guides"
   ]
 }

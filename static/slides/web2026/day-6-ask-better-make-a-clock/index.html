@@ -226,10 +226,172 @@ Navigate to the folder where last week's letter project lives, using only `cd`, 
 
 ## Why a framework?
 
+<div class="fragment">
+
 Plain HTML has no way to write something once and reuse it everywhere!
 
 If one page is 1000 lines long, how would 50 page websites look?
+
+</div>
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## The same menu, on every page
+
+```html
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+  <button class="chip">Engineering</button>
+  <button class="chip">Photography</button>
+  <button class="chip">Writing</button>
+</div>
+```
+
+This filter bar sits on the home page. And the projects page. And the archive page.
+</div>
+
+<aside class="notes"><p>A real one, from Darshan&#39;s site. Harmless on one page. The trouble starts when the same block has to live on all of them.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Now add one button
+
+You decide every page needs a **Contact** chip.
+
+```html [7]
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+  <button class="chip">Engineering</button>
+  <button class="chip">Photography</button>
+  <button class="chip">Writing</button>
+  <button class="chip">Contact</button>
+</div>
+```
+
+One new line. Now paste that same edit into all 50 pages by hand. Miss one, and that page is quietly wrong.
+</div>
+
+<aside class="notes"><p>This is the pain we are naming: no single source of truth. Copy-paste means every fix is 50 fixes. Ask the room what happens when you also rename a chip, or change a colour.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Write it once: a component
+
+Put the menu in its own file, `Menu.astro`:
+
+```html
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+  <button class="chip">Engineering</button>
+  <button class="chip">Photography</button>
+  <button class="chip">Writing</button>
+</div>
+```
+
+Then every page just says:
+
+```astro
+<Menu ></Menu>
+```
+
+That reusable piece is a **component**. Change the menu in one place, and every page updates.
+</div>
+
+<aside class="notes"><p>The whole promise of a framework, made concrete. They do not write this today, it is the &quot;why&quot; before the &quot;how&quot;. Astro is how we get to <code>&lt;Menu &gt;&lt;/Menu&gt;</code>.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Other things repeat too!
+
+```html
+<html>
+  <head><title>My Site</title></head>
+  <body>
+    <div class="filters">...</div>
+    <main>
+      This is some text for page
+    </main>
+    <footer>© 2026</footer>
+  </body>
+</html>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Other things repeat too!
+
+
+```html [6]
+<html>
+  <head><title>My Site</title></head>
+  <body>
+    <div class="filters">...</div>
+    <main>
+      This is some text for page
+    </main>
+    <footer>© 2026</footer>
+  </body>
+</html>
+```
+</div>
+
+<aside class="notes"><p>Click once to light up the shell, again for the line that changes. The menu was one repeated piece; the shell is the repeated <em>frame</em> around every page.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Reusable layouts
+
+`Layout.astro` keeps every repeated part in one file, with a `<slot ></slot>` where each page drops its own content:
+
+```astro [4,6]
+<html>
+  <head><title>My Site</title></head>
+  <body>
+    <Menu ></Menu>
+    <main>
+      <slot ></slot>
+    </main>
+    <footer>© 2026</footer>
+  </body>
+</html>
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Then every page is just its own content:
+
+```astro
+<Layout>
+  <h1>My Work</h1>
+</Layout>
+```
+</div>
+
+<aside class="notes"><p>Component = a reusable piece, like the menu. Layout = the shared shell every page lives inside. Click through: the <code>&lt;Menu &gt;&lt;/Menu&gt;</code> component nests inside the layout, and <code>&lt;slot &gt;&lt;/slot&gt;</code> is the hole your page&#39;s content drops into. Shell in one place, pages stay short.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Bonus: styles become easier!
+
+In Astro, a `<style>` inside a component only touches *that* component:
+
+```astro [5-9]
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+</div>
+
+<style>
+  .chip { border-radius: 999px; }
+</style>
+```
+</div>
+
+<aside class="notes"><p>This is &quot;scoped CSS&quot;. Astro rewrites these selectors so they only match this component&#39;s markup. It kills the whole class of &quot;why did my button change on a page I never touched&quot; bugs from the weekend messages. Reinforces the same lesson: keep each piece self-contained.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Installation Break
@@ -319,8 +481,9 @@ Suppose I have a website called `laxmichitfund.com`
 
 ## The brief
 
+**Make a clock.** 
 
-**Make a clock.** "Clock" is anything that measures time. It should be interesting _to you_! it does not need to be complicated!
+"Clock" is anything that measures time. It should be interesting _to you_! it does not need to be complicated!
 
 Sketch it, design it and use Github Copilot or some other LLM to bring it to life within Astro.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
@@ -331,11 +494,18 @@ Sketch it, design it and use Github Copilot or some other LLM to bring it to lif
 - Your HTML and CSS remain **your** strength. I expect you to understand that part well.
 - The JavaScript is a **mechanism**. You must specify exactly what it must do, and test that it does it.
 - So your job shifts from reading and writing lines to **directing and verifying behaviour**.
-- Be curious! Ask for explanations.
+- Be curious! Ask for explanations. 
+
+This is how everyone, professionals included, works with material they have not mastered yet. The skill is staying the designer and someone with with the intent, the taste, and the tests.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-This is how everyone, professionals included, works with material they have not mastered yet. The skill is staying the designer and someone with  with the intent, the taste, and the tests.
+## Make a clock
+
+- Sketch and thumbnailing (30 mins)
+- Coding the selected sketch and design with LLMs (2 hours)
+- At each stage, review the code. Take notes about things you discover or what interests you. This should be added to the dev notes (it can be even hand-written notes). Any tricks, anything you're curious about, what prompts work, what don't, learnings along the way.
+- For the end, figure out how to push to Github, connect to Netlify. [Follow these steps](https://docs.astro.build/en/guides/deploy/netlify/#website-ui-deployment). Do not add a new "adapter", just set the correct build command.
 </div></script></section></div>
     </div>
 

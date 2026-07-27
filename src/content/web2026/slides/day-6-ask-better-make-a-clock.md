@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-27T09:42
+updated: 2026-07-27T13:51
 transition: none
 ---
 # Ask Better, Make a Clock
@@ -143,9 +143,168 @@ note: Finding their own project is the whole exercise: real files, real navigati
 
 ## Why a framework?
 
+<div class="fragment">
+
 Plain HTML has no way to write something once and reuse it everywhere!
 
 If one page is 1000 lines long, how would 50 page websites look?
+
+</div>
+
+---
+
+## The same menu, on every page
+
+```html
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+  <button class="chip">Engineering</button>
+  <button class="chip">Photography</button>
+  <button class="chip">Writing</button>
+</div>
+```
+
+This filter bar sits on the home page. And the projects page. And the archive page.
+
+note: A real one, from Darshan's site. Harmless on one page. The trouble starts when the same block has to live on all of them.
+
+---
+
+## Now add one button
+
+You decide every page needs a **Contact** chip.
+
+```html [7]
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+  <button class="chip">Engineering</button>
+  <button class="chip">Photography</button>
+  <button class="chip">Writing</button>
+  <button class="chip">Contact</button>
+</div>
+```
+
+One new line. Now paste that same edit into all 50 pages by hand. Miss one, and that page is quietly wrong.
+
+note: This is the pain we are naming: no single source of truth. Copy-paste means every fix is 50 fixes. Ask the room what happens when you also rename a chip, or change a colour.
+
+---
+
+## Write it once: a component
+
+Put the menu in its own file, `Menu.astro`:
+
+```html
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+  <button class="chip">Engineering</button>
+  <button class="chip">Photography</button>
+  <button class="chip">Writing</button>
+</div>
+```
+
+Then every page just says:
+
+```astro
+<Menu />
+```
+
+That reusable piece is a **component**. Change the menu in one place, and every page updates.
+
+note: The whole promise of a framework, made concrete. They do not write this today, it is the "why" before the "how". Astro is how we get to `<Menu />`.
+
+---
+
+## Other things repeat too!
+
+```html
+<html>
+  <head><title>My Site</title></head>
+  <body>
+    <div class="filters">...</div>
+    <main>
+      This is some text for page
+    </main>
+    <footer>© 2026</footer>
+  </body>
+</html>
+```
+
+---
+
+## Other things repeat too!
+
+
+```html [6]
+<html>
+  <head><title>My Site</title></head>
+  <body>
+    <div class="filters">...</div>
+    <main>
+      This is some text for page
+    </main>
+    <footer>© 2026</footer>
+  </body>
+</html>
+```
+
+
+
+note: Click once to light up the shell, again for the line that changes. The menu was one repeated piece; the shell is the repeated *frame* around every page.
+
+---
+
+## Reusable layouts
+
+`Layout.astro` keeps every repeated part in one file, with a `<slot />` where each page drops its own content:
+
+```astro [4,6]
+<html>
+  <head><title>My Site</title></head>
+  <body>
+    <Menu />
+    <main>
+      <slot />
+    </main>
+    <footer>© 2026</footer>
+  </body>
+</html>
+```
+
+---
+
+Then every page is just its own content:
+
+```astro
+<Layout>
+  <h1>My Work</h1>
+</Layout>
+```
+
+note: Component = a reusable piece, like the menu. Layout = the shared shell every page lives inside. Click through: the `<Menu />` component nests inside the layout, and `<slot />` is the hole your page's content drops into. Shell in one place, pages stay short.
+
+---
+
+## Bonus: styles become easier!
+
+In Astro, a `<style>` inside a component only touches *that* component:
+
+```astro [5-9]
+<div class="filters">
+  <button class="chip">All</button>
+  <button class="chip">Design</button>
+</div>
+
+<style>
+  .chip { border-radius: 999px; }
+</style>
+```
+
+
+note: This is "scoped CSS". Astro rewrites these selectors so they only match this component's markup. It kills the whole class of "why did my button change on a page I never touched" bugs from the weekend messages. Reinforces the same lesson: keep each piece self-contained.
 
 ---
 
@@ -232,8 +391,9 @@ note: Quick, whole room answering together. The capitalisation row tees up the f
 
 ## The brief
 
+**Make a clock.** 
 
-**Make a clock.** "Clock" is anything that measures time. It should be interesting _to you_! it does not need to be complicated!
+"Clock" is anything that measures time. It should be interesting _to you_! it does not need to be complicated!
 
 Sketch it, design it and use Github Copilot or some other LLM to bring it to life within Astro.
 
@@ -246,8 +406,15 @@ Sketch it, design it and use Github Copilot or some other LLM to bring it to lif
 - So your job shifts from reading and writing lines to **directing and verifying behaviour**.
 - Be curious! Ask for explanations. 
 
+This is how everyone, professionals included, works with material they have not mastered yet. The skill is staying the designer and someone with with the intent, the taste, and the tests.
+
 
 ---
 
+## Make a clock
 
-This is how everyone, professionals included, works with material they have not mastered yet. The skill is staying the designer and someone with  with the intent, the taste, and the tests.
+- Sketch and thumbnailing (30 mins)
+- Coding the selected sketch and design with LLMs (2 hours)
+- At each stage, review the code. Take notes about things you discover or what interests you. This should be added to the dev notes (it can be even hand-written notes). Any tricks, anything you're curious about, what prompts work, what don't, learnings along the way.
+- For the end, figure out how to push to Github, connect to Netlify. [Follow these steps](https://docs.astro.build/en/guides/deploy/netlify/#website-ui-deployment). Do not add a new "adapter", just set the correct build command.
+
