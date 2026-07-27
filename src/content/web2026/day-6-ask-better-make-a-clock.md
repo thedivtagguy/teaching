@@ -1,6 +1,6 @@
 ---
 title: Day 6 - Ask Better, Make a Clock
-date: 2026-07-25
+date: 2026-07-27
 description: What can we learn about asking through a clock?
 published: true
 section: Building with Astro
