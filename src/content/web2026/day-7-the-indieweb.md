@@ -1,8 +1,8 @@
 ---
 title: Day 7 - The IndieWeb
 date: 2026-07-27
-description: What do your spaces feel like? Digital gardens, manifestos, and your reply letter
-published: false
+description: What do your spaces feel like? Digital gardens and manifestos
+published: true
 section: Building with Astro
 order: 2
 seo_title: Day 7 - The IndieWeb
@@ -10,29 +10,30 @@ seo_description: What do your spaces feel like? What is the IndieWeb?
 seo_keywords: indieweb, digital garden, personal website, web design, manifesto
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-27T21:58
+updated: 2026-07-27T23:37
 slug: day-7-the-indieweb
 slides: https://teaching.aman.bh/slides/web2026/day-7-the-indieweb
 show_metadata_card: true
-devNotes: https://github.com/open-making/web2026-dev-notes/issues/7
+devNotes: https://github.com/open-making/web2026-dev-notes/issues/9
 assignments: true
 ---
-## Day 7: The IndieWeb
+# Day 7: The IndieWeb
 
-What, this class isn't about flexbox or CSS grid today? Have you been scammed? Not really.
+Today there is no CSS and no code. After one week of code, we stop and look at the reason for the course: we want our own creative spaces on the web. The course started with the small web, and today we look at the IndieWeb, which is a larger set of ideas about the same subject. From today to the end of the course, all the work is on your own website. This is one of my favorite days of the course!
 
-After a week of code, we step back and remember why we're here in the first place: having our own creative spaces. This class was introduced as focusing on the small web, and today we expand that through the principles and ideas of the **IndieWeb**. From now till the end of class, our energies concentrate on our own websites. Today is a no-code day, and one of my favorite days of the whole course.
+## What we discuss
 
-**We'll explore:**
+- A website does not have to be the usual type of website. It can have conventional parts, but it can also have very personal parts that fit in no clear category.
+- The digital garden. A garden is a website that is alive and that becomes larger while you look after it.
+- Control of your own content. You write for one person and not for a large audience. Content on a company's platform is on rented land, and a personal website with faults is better than that.
 
-- Websites need not be what we traditionally think of them as. There can be conventional spaces on our websites, but also highly personal and individual patches of personality that you can't box into one thing.
-- **The digital garden**: a website as a living, growing space you *tend*
-- Owning your data, writing for one person instead of an audience, and why "messy but personal beats polished but rented."
+## The afternoon
 
-**The afternoon has two writing tasks**:
+There are two tasks in the afternoon.
 
-1. **Your manifesto and your plots.** What is your space for? Brainstorm the *plots* in your garden: an art journal, a link list, a collection of things you're learning, playlists, projects. Then write a short personal manifesto for what this space is to be. We'll share these in dev notes, and I am genuinely looking forward to reading them.
+1. **Your plots and your manifesto.** First, decide what your space is for. Then make a list of the possible plots, which are the sections of your garden. Some examples are an art journal, a list of links, a collection of the things that you learn, playlists, and projects. Then write a short personal manifesto about the purpose of the space. We put the manifestos in the dev notes, and I want to read them.
+2. **Other gardens.** Read a minimum of one essay about personal websites. Then look at the personal websites of other people. Select one website, examine it carefully, and write notes about it.
 
-## The Library
+## The library
 
-The course library lives at [/web2026/library](/web2026/library): readings, blogs and material that I might not share in class but have been used to prepare slides or are just generally interesting.
+The course library is at [/web2026/library](/web2026/library). It has readings, blogs, and other material. Some of this material is not in the class, but I used it to prepare the slides, or it is of general interest. Have a read if you want!

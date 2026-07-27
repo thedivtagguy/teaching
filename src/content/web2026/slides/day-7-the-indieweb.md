@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-27T21:52
+updated: 2026-07-27T23:33
 transition: none
 ---
 
@@ -440,152 +440,185 @@ This patch should not live on the servers of Facebook, LinkedIn, Twitter, Instag
 
 ---
 
+
 # In order to connect dots, one must first have the dots
-
+ 
 ---
+ 
+## The afternoon
+ 
+The full instructions are in the assignment.
+ 
+1. **Personal archaeology.** Find what you have to say.
+2. **Roaming.** Look at the gardens of other people.
+3. **Return to your wall.** Select your plots.
+4. **Your manifesto.** Write what the space is for.
 
-## Planting the seeds for our gardens
-
-
-
+ 
 ---
-
-## Phase 1: Personal Archaeology
-
-You already have more dots than you think.
-
+ 
+## 1. Personal archaeology
+ 
+ 
 ---
-
-**Part 1: The dump**
-
-List everything that falls into these categories:
-
-- Things you've learned that surprised you
-- Tools/methods you use that others might not know about
-- Processes you've figured out through trial and error
-- Opinions you hold that seem unpopular
-- Projects you're working on (even tiny ones)
-- Collections you're building (even mental ones)
-
-Don't edit yourself. Just dump.
-
+ 
+**The dump**
+ 
+Write one item on each sticky note. Paper or FigJam, your choice.
+ 
+- Things that you have learnt and did not expect to get good at
+- Tools and methods that other people possibly do not know
+- Procedures that you found by trial and error
+- Opinions that few other people agree with
+- Projects that you do now, also very small projects
+- Collections that you make, also collections that are only in your mind
+ 
 ---
-
-**Part 2: The dig**
-
-- Put each brain dump item on a separate sticky note (whether IRL or FigJam is up to you)
-- Arrange them in some space, what clusters together?
-- What connects to what? Draw lines.
-- What sits in the center with the most connections?
-- What sits alone but still interests you?
-
+ 
+**The dig**
+ 
+Then arrange the notes on a wall.
+ 
+- Put related notes near each other
+- Draw a line between two notes that connect
+- The notes in the center are your main subjects
+- Keep the notes that sit alone but still interest you
 ---
-
-## Phase 2: Roaming
-
+ 
+## 2. Roaming
+ 
 ---
-
-## Now let's wander through some gardens
-
-First, read at least one of these essays.
-
-- [“The Garden and the Stream: A Technopastoral”](https://garden.synesthesia.co.uk/references/readwise/articles/mike-caulfield-the-garden-and-the-stream/) by Mike Caulfield
+ 
+Read a minimum of one of these:
+ 
+- ["The Garden and the Stream: A Technopastoral"](https://garden.synesthesia.co.uk/references/readwise/articles/mike-caulfield-the-garden-and-the-stream/) by Mike Caulfield
 - [Laurel Schwulst's shifting house essay](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) (my recommendation for designers)
-- [“My blog is a digital garden, not a blog”](https://joelhooks.com/digital-garden/) by Joel Hooks
-- Maggie Appleton’s [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history/)
-
+- ["My blog is a digital garden, not a blog"](https://joelhooks.com/digital-garden/) by Joel Hooks
+- Maggie Appleton's [A Brief History & Ethos of the Digital Garden](https://maggieappleton.com/garden-history/)
 ---
-
+ 
 Then roam:
-
+ 
 - [Robin Sloan's notes](https://www.robinsloan.com/notes/)
 - [Maggie Appleton's garden](https://maggieappleton.com/)
 - [Tom MacWright's blog](https://macwright.com/)
 - [Winnie Lim's journal](https://winnielim.org/)
 - [Neocities websites](https://neocities.org/browse)
 - [Webrings](https://webring.xxiivv.com/)
-- Find topics and small blogs you're interested in by browsing [Marginalia](https://marginalia-search.com/)
-
+- [Marginalia](https://marginalia-search.com/), to find small blogs about your own subjects
 ---
+ 
+### Field notes
+ 
+For one blog that you liked, answer these questions in your dev notes.
+ 
+- What does this person assume you already know?
+- Where is the newest thing on the site? How did you find it?
+- Where is the oldest thing? Did the author keep it, change it, or hide it? If nothing on the site has a date, that is also an answer.
+- What is the smallest thing the author published? How long would it take you to make one of those?
+- Which navigation choice would no template make?
+- Where do you hear the author's voice most clearly?
+- **What would break if this site had to live on Instagram?**
+- Steal one idea.
 
-## Document your roaming
-
+note: When you can say exactly what a platform would flatten out of a site you love, you understand the politics of the indie web better than any manifesto can teach you.
+ 
 ---
-
-### Field Notes for Visiting a Garden
-
-1. What is the very first thing this person assumes you already know?
-2. Where is the newest thing on the site? How did you find it?
-3. Find something unfinished or half-grown. How is it marked?
-4. When was this site last tended? What are the clues?
-5. What is one navigation choice here that no template would ever make?
-6. Where does the author's voice leak through the most?
-7. **What would break if this site had to live on Instagram instead?**
-8. Steal one idea.
-
-notes: When you can say _exactly_ what a platform would flatten out of a site you love, you understand the politics of the indie web better than any manifesto can teach you.
-
+ 
+## 3. Return to your wall
+ 
+Come back to your sticky notes with the field notes in hand.
+ 
+- Which clusters could become a plot?
+- Where does the idea you stole in question 8 fit?
+- What kind of room, shelf, plant, or space is forming here?
 ---
-
-![](assets/slides/day-7-the-indieweb/IMG-20250729094917170.png)
-
----
-
-## Phase 3: Return to your wall
-
-Come back to your sticky notes with your field notes in hand.
-
-- Which of your clusters could become a _plot_ in your garden?
-- Does the idea you stole (question 8) fit anywhere on your wall?
-- What kind of room, shelf, plant, or puddle is forming here?
-
----
-
-## Phase 4: Mapping
-
----
-
-#### How do people wander through your space?
-
-**Part 1**
-
-Someone lands on your site for the first time. In 10 seconds, they need to understand:
-
-- Who you are
-- What you care about
-- Why they should stick around
-
----
-
-**Part 2**
-
-- Using your clusters, sketch your site structure
-- How do things connect to each other?
-- What are your main sections?
-- How does someone discover your best work?
-- How do you handle works-in-progress vs. finished thoughts?
-
-Draw this as a map, not a hierarchy.
-
----
+ 
 ## The 15-minute Tuesday test
-
-For every plot you're considering, ask:
-
-
-**"Could I add to this in 15 minutes, on a random Tuesday, when I am tired?"** <!--element class="fragment"-->
-
-If no, it is a Project, not a plot. <!--element class="fragment"-->
+ 
+Ask this about every plot:
+ 
+**"Could I add to this in 15 minutes, on a Tuesday, when I am tired?"** <!--element class="fragment"-->
+ 
+If the answer is no, it is a project, not a plot. <!--element class="fragment"-->
+ 
+---
+ 
+### A plot and a project
+ 
+| This is a plot                        | This is a project                  |
+| ------------------------------------- | ---------------------------------- |
+| One line about each book I finish     | An essay about everything I read   |
+| A photograph of my desk each week     | A photo series with a written text |
+| Short notes on each tool I try        | A tool review site                 |
+| Links I read this week, with one line | A weekly newsletter                |
+ 
+Projects are welcome on your site. They are not the parts that keep it alive. <!--element class="fragment"-->
+ 
+---
+ 
+## 4. Your manifesto
+ 
+Commit to your **three plots**. Then write 200 to 300 words about the place they live in.
+ 
+---
+ 
+### This could be anyone...
+ 
+> This is my personal website. Here I will share my thoughts about design, technology and life, away from the noise of social media. I hope you enjoy your stay and explore my creative space.
+ 
+---
+ 
+### Six things yours must contain
+ 
+1. **Three things that will exist**, named exactly. Not "a blog". "A list of every bus I take."
+2. **One reader, with a name.** Not "people". Not "anyone who visits".
+3. **One refusal.** What will never be here, and who should leave.
+4. **One number.** How often you add something, on which day.
+5. **One thing you would not post on Instagram**, and why it is safe here.
+6. **One sentence nobody else in this room could write.**
 
 ---
+ 
+### Banned words
+ 
+algorithm · authentic · corporate · creative journey · digital garden · explore · in today's world · journey · passion · showcase · space to express myself · unfiltered · vibe
 
-## Writing your manifesto
+---
+ 
+ ### Bade sayane kehkar ke gaye hai
+ 
+| Could be any of you                  | Could only be one person                                 |
+| ------------------------------------ | -------------------------------------------------------- |
+| a space to create, learn and grow    | every insect in her camera roll, and what happened to one ant |
+| a reflection of who I really am      | the year of owning her curly hair                         |
+| my work and ideas, unfiltered        | one coffee thought each morning, with a photo             |
+| as I grow, this space will grow too  | a site named after an onion, because ogres have layers    |
 
-1. Commit to your **three plots**
-2. Draft your 200-300 word **manifesto**:
-    - _Why am I making this space?_
-    - _What kind of room is it? What does it have, why does it have it? What is your philosophy?_
-    - _What tone fits me?_
-    - _How will this space grow?_
-
-Some manifestos to look at: https://yesterweb.org/#appendix-i
+ 
+---
+ 
+### Stuck? Finish these lines
+ 
+- This is a place for ________.
+- It is not a ________.
+- If you came here for ________, you can leave now.
+- The oldest thing here will be ________.
+- I add to it when ________.
+- Nothing here is ________.
+- You can tell it is mine because ________.
+- Elsewhere I pretend that ________. Here I don't.
+---
+ 
+### Who are you?
+ 
+More to read but not to copy: https://yesterweb.org/#appendix-i
+ 
+---
+ 
+## In your dev notes today
+ 
+- A photograph of your sticky-note wall
+- Field notes from the one garden you visited
+- Your three plots, and one line on why each passes the Tuesday test
+- Your manifesto draft, 200 to 300 words

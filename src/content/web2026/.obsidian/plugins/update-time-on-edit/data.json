@@ -12,7 +12,7 @@
   "fileHashMap": {
     "slides/day-1-the-small-web.md": "59737b56dae443fa064c165a73fb2354bc8a26459028ea9fe14ff6ecdcdd1cc4",
     "slides/day-3-seeing-like-a-browser.md": "46580557825489e6f20ac1d50c6b637dbd91921e6c87c534cca928c559f1901a",
-    "slides/day-7-the-indieweb.md": "097f71a2a695705727d86dd91b5439c7d190b33e6981a8bf02b852d4ebe0b022",
+    "slides/day-7-the-indieweb.md": "9972031884bc7b5ead7855694d61314903d724d32d6559c132dea20e9b4d2a6d",
     "assignments/day-1-web-archaeology.md": "4f8ba2692ef99008fb688eda34351061ac09412753f6bab548914ffdf26b66f2",
     "day-1-the-small-web.md": "9427dc3788e38474b1c38f9cb74cb4c3d8ed26a6befee288b0832058dd74aa60",
     "slides/day-2-html-is-a-home.md": "29fb058e3006566c36350e3b525b382cfbcacfab054cb7bdb4e0e65aec3b5bc1",
@@ -20,14 +20,14 @@
     "ai-policy.md": "2ac75c9ffef28bda789eefaa1f22599fd1fe90cda1b23472546a267008e9dbf9",
     "outline.md": "22de9c8f504cfa3cec42d022bd0ad81de9e27b81af3f25a0d86a1202b63994c6",
     "day-2-html-is-a-home.md": "59ffe4bf139b7ee1f76b6fb4c8e2720ae437125371dd5fddbcb984d7316459ca",
-    "assignments/day-2-bohemian-rhapsody.md": "ee2ee2f90240d09469bcfc099631b6599b283d8e4d8706d8b7609574ced317f8",
+    "assignments/day-2-bohemian-rhapsody.md": "6fe7d13a38499d35e4d11f38fa10d64ca1dc5f08d8dd7ec7bf040f42572e777a",
     "guides.md": "70506a837c469a96ecdbdbf3985dea8c8ec8128701a7a553eb43f643dabb2ba8",
     "day-3-seeing-like-a-browser.md": "51072f9155896d938a2e397713a9c7de87a7ee969875ec87773d4f6b5afabd8a",
     "day-8-thinking-in-components.md": "3e75dd9571612356053cc17c556bdaa2b992eae78852429150a05ac66bceb6a0",
     "dump/grids-without-tears.md": "8330932cabbce5851d28d390521eb0ad48c7000a7fe4b05be565898e9400372d",
     "dump/grids-without-tears-slides.md": "0f5c83016c378de9a2dd2066ddab2a53832aca335362561bcfb2cb4287160d48",
     "assignments/day-5-grid-challenges.md": "0cfa3048d5e4f0c19f59c744c9a9aef701fb2743f659bd543e363f085c43a2c3",
-    "day-7-the-indieweb.md": "bfebf8ab7d7b760b81d4474452ede0cb8c08ff268c0615b42b3780b2dceb4f30",
+    "day-7-the-indieweb.md": "74441dceb6f59f1e5b1cf2519458eed4dac06834d99eb316e1b2ce22c4ddfe76",
     "day-5-the-make-day.md": "02a52f838ec69730c5cd2804111db36e60bf3ffb88fbc535f1bc01f944e42d11",
     "slides/day-5-the-make-day.md": "1a2fd9305f82613b0586da22332c5dfd0f8f25cfd9182bb69f4c2e6d73f99de4",
     "assignments/day-3-space-oddity.md": "e3ebbbf9e1dc18f11478ae2e793db7512e518b566da3965445f1bf5e67d5d873",
@@ -37,6 +37,7 @@
     "slides/day-6-ask-better-make-a-clock.md": "ee22477a12f4241a2bd31ecafb2ab9a0c8ea97368a37a56d27c6b43444d069ac",
     "day-6-ask-better-make-a-clock.md": "87aa01552453b0c1b477c59d75a66226a5ca7054a006f0b766145e6c248c04f1",
     "assignments/day-6-make-a-clock.md": "cd4b980887960297d96f0b2c25a4c7c73031e2d72864e765cf72ed3ef8332e6c",
-    "library.md": "dd493aa4b64c843646c1f6bd58d9b280c3aed977b1f59cf11a05db02e4115cbb"
+    "library.md": "dd493aa4b64c843646c1f6bd58d9b280c3aed977b1f59cf11a05db02e4115cbb",
+    "assignments/day-7-planting-your-garden.md": "52eb8e0d3761ab375a868636d9ea05711a16c8e9e1fe43e161ff044de35a226c"
   }
 }

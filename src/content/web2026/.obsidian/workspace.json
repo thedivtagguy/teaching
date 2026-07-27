@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d500dee1486a9aeb",
+        "id": "0741470044de434c",
         "type": "tabs",
         "children": [
           {
-            "id": "0c3b3056b205c6d9",
+            "id": "168e40cb3196f930",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -225,10 +225,18 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0c3b3056b205c6d9",
+  "active": "168e40cb3196f930",
   "lastOpenFiles": [
-    "data/library-meta.json",
     "slides/day-7-the-indieweb.md",
+    "assignments/day-7-planting-your-garden.md",
+    "day-6-ask-better-make-a-clock.md",
+    "day-7-the-indieweb.md",
+    "assignments/day-1-web-archaeology.md",
+    "assignments/day-2-bohemian-rhapsody.md",
+    "assignments/day-3-space-oddity.md",
+    "assignments/day-4-fit-to-print.md",
+    "assignments/day-6-make-a-clock.md",
+    "data/library-meta.json",
     "assets/slides/day-7-the-indieweb/IMG-20260727214724814.png",
     "assets/slides/day-7-the-indieweb/IMG-20260727214600487.png",
     "assets/slides/day-7-the-indieweb/IMG-20260727214133082.png",
@@ -240,9 +248,6 @@
     "slides/day-6-ask-better-make-a-clock.md",
     "slides/day-5-the-make-day.md",
     "assignments/day-5-grid-challenges.md",
-    "day-6-ask-better-make-a-clock.md",
-    "assignments/day-6-make-a-clock.md",
-    "day-7-the-indieweb.md",
     "assignments/day-7-reply-and-plots.md",
     "day-4-typesetting-a-page.md",
     "day-5-the-make-day.md",
@@ -254,7 +259,6 @@
     "Untitled.md",
     "guides.md",
     "slides/day-4-typesetting-a-page.md",
-    "assignments/day-4-fit-to-print.md",
     "day-3-seeing-like-a-browser.md",
     "github.com/open-making/web2026-fit-to-print.md",
     "github.com/open-making",
@@ -263,15 +267,11 @@
     "slides/day-3-seeing-like-a-browser.md",
     "assets/slides/day-5-the-make-day",
     "assets/slides/day-4-setting-type-placing-images",
-    "assignments/day-3-space-oddity.md",
     "day-2-html-is-a-home.md",
     "control-panel.md",
     "day-9-visual-hierarchies.md",
     "assets/slides/day-3-seeing-like-a-browser",
-    "assignments/day-2-bohemian-rhapsody.md",
-    "dump/grids-without-tears-slides.md",
     "assets/assignments/day-2-bohemian-rhapsody",
-    "assets/install-guides",
-    "assets/guides/static/assets/install-guides"
+    "assets/install-guides"
   ]
 }
