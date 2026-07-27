@@ -36,5 +36,4 @@ Then we asked why frameworks exist and answered it from first principles: plain 
 - [Astro's "why Astro"](https://docs.astro.build/en/concepts/why-astro/), if you want to understand static-site generators beyond our use of them.
 - [Svelte](https://svelte.dev), the other tool I reach for when a site needs to be more interactive.
 - [Rubber duck debugging](https://rubberduckdebugging.com/), which is basically step two of our asking protocol.
-- ["How to ask questions the smart way"](http://www.catb.org/~esr/faqs/smart-questions.html), an old but useful essay.
 - [Simon Willison on how he uses LLMs](https://simonwillison.net/2025/Mar/11/using-llms-for-code/), a grounded look at working with generated code without switching your brain off.
