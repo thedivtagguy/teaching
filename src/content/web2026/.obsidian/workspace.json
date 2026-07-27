@@ -13,28 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-6-hello-terminal-hello-astro.md",
+                "file": "slides/day-6-ask-better-make-a-clock.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-6-hello-terminal-hello-astro"
+              "title": "day-6-ask-better-make-a-clock"
             }
           }
         ]
       },
       {
-        "id": "386de9a235c1fa65",
+        "id": "e21aefed31a1422e",
         "type": "tabs",
         "children": [
           {
-            "id": "15e54ee6d6718237",
+            "id": "4f8c79f5187dd1e6",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
               "state": {},
               "icon": "slides",
-              "title": "Preview: day-6-hello-terminal-hello-astro.md"
+              "title": "Preview: day-6-ask-better-make-a-clock.md"
             }
           }
         ]
@@ -225,11 +225,19 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1cddfb5fc5c9dabd",
+  "active": "4f8c79f5187dd1e6",
   "lastOpenFiles": [
-    "slides/day-6-hello-terminal-hello-astro.md",
+    "slides/day-5-the-make-day.md",
+    "day-6-ask-better-make-a-clock.md",
+    "slides/day-6-ask-better-make-a-clock.md",
+    "Pasted image 20260727090442.png",
+    "assets/slides/day-6-ask-better-make-a-clock/IMG-20260727090436789.png",
+    "assets/slides/day-6-ask-better-make-a-clock/IMG-20260727090356246.png",
+    "assets/slides/day-6-ask-better-make-a-clock/IMG-20260727090326717.png",
+    "assets/slides/day-6-ask-better-make-a-clock",
+    "assets/slides/day-6-ask-better-make-a-clock/IMG-20260727090252727.png",
+    "Untitled.md",
     "slides/day-7-the-indieweb.md",
-    "day-6-hello-terminal-hello-astro.md",
     "day-5-the-make-day.md",
     "guides.md",
     "assets/guides/IMG-20260724110023895.png",
@@ -237,21 +245,15 @@
     "assets/guides/IMG-20260724105910365.png",
     "assets/guides/IMG-20260724105842842.png",
     "assets/guides/IMG-20260724105608347.png",
-    "assets/guides/IMG-20260724105438216.png",
     "day-4-typesetting-a-page.md",
     "slides/day-4-typesetting-a-page.md",
     "assignments/day-4-fit-to-print.md",
     "day-3-seeing-like-a-browser.md",
-    "slides/day-5-the-make-day.md",
     "github.com/open-making/web2026-fit-to-print.md",
     "github.com/open-making",
     "github.com",
     "assets/slides/day-4-typesetting-a-page",
     "slides/day-3-seeing-like-a-browser.md",
-    "assets/slides/day-5-the-make-day/clear-on.png",
-    "assets/slides/day-5-the-make-day/clear-off.png",
-    "assets/slides/day-5-the-make-day/float-right.png",
-    "assets/slides/day-5-the-make-day/float-left.png",
     "assets/slides/day-5-the-make-day",
     "assets/slides/day-4-setting-type-placing-images",
     "assignments/day-3-space-oddity.md",
@@ -267,11 +269,8 @@
     "assets/assignments/day-2-bohemian-rhapsody",
     "assets/install-guides",
     "assets/guides/static/assets/install-guides",
-    "assets/guides/static/assets",
     "web2026/assignments.md",
     "install-guides.md",
-    "assignments/day-1-web-archaeology.md",
-    "day-1-the-small-web.md",
-    "day-5-grids-without-tears.md"
+    "assignments/day-1-web-archaeology.md"
   ]
 }

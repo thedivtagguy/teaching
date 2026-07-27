@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-6-making-grids.md",
+                "file": "install-guides.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-6-making-grids"
+              "title": "install-guides"
             }
           }
         ]
@@ -175,12 +175,15 @@
   },
   "active": "6943cb73d5e1d591",
   "lastOpenFiles": [
+    "requirements.md",
+    "quiz-node-and-npm.md",
+    "install-guides.md",
+    "day-6-making-grids.md",
     "day-7-the-indieweb.md",
     "day-11-to-17-project-week.md",
     "day-10-introducing-astro.md",
     "day-9-thinking-in-frameworks.md",
     "day-8-visual-hierarchies.md",
-    "day-6-making-grids.md",
     "day-5-short-stories.md",
     "day-4-typesetting-a-page.md",
     "day-3-seeing-and-searching.md",
@@ -211,9 +214,7 @@
     "slides/day-9-intro-to-astro.md",
     "day-3-git-and-version-control.md",
     "Excalidraw/Drawing 2025-07-31 14.41.15.excalidraw.md",
-    "Excalidraw/Drawing 2025-07-31 09.37.19.excalidraw.md",
     "assets/day-9-thinking-in-frameworks",
-    "slides/git-and-version-control.md",
     "assets/day-8-visual-hierarchies",
     "data/library.json",
     "data",
