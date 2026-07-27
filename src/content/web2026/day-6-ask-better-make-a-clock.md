@@ -24,6 +24,10 @@ readings:
     author: Robin Sloan
     url: https://www.robinsloan.com/notes/home-cooked-app/
     readingTime: 10
+  - title: The Web is Fantastic Actually
+    author: Robert Kingett
+    url: https://sightlessscribbles.com/posts/web-fantastic/
+    readingTime: 10
 assignments: true
 ---
 Week 2 begins and the training wheels start coming off. Today was about two things: asking better questions, and meeting our first framework. As your work gets more complex, your progress depends less on what you know and more on how well you ask, of yourself, an error message, a classmate, an LLM, and only then me.
