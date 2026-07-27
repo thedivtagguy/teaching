@@ -15,6 +15,15 @@ slug: day-6-ask-better-make-a-clock
 slides: https://teaching.aman.bh/slides/web2026/day-6-ask-better-make-a-clock
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2026-dev-notes/issues/8
+readings:
+  - title: How to Take Back the Internet
+    author: Cory Doctorow
+    url: https://www.greeneuropeanjournal.eu/cory-doctorow-how-to-take-back-the-internet/
+    readingTime: 25
+  - title: An app can be a home-cooked meal
+    author: Robin Sloan
+    url: https://www.robinsloan.com/notes/home-cooked-app/
+    readingTime: 10
 assignments: true
 ---
 Week 2 begins and the training wheels start coming off. Today was about two things: asking better questions, and meeting our first framework. As your work gets more complex, your progress depends less on what you know and more on how well you ask, of yourself, an error message, a classmate, an LLM, and only then me.
