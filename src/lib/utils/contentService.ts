@@ -422,10 +422,10 @@ export function generateCourseMenu(courseId: string): CourseMenu | null {
       courseMenu.assignments.push(...metadata.assignments);
     }
 
-    // Sort readings and assignments by title
-    if (courseMenu.readings) {
-      courseMenu.readings.sort((a, b) => a.title.localeCompare(b.title));
-    }
+    // Readings keep the order they are authored in within each day's frontmatter.
+    // The readings page groups these by source and sorts the groups by date, so the
+    // only thing order here controls is the sequence within a single day. Sorting by
+    // title would scramble a deliberately sequenced reading list, so we leave it be.
 
     if (courseMenu.assignments) {
       courseMenu.assignments.sort((a, b) => {
