@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-27T09:18
+updated: 2026-07-27T09:42
 transition: none
 ---
 # Ask Better, Make a Clock
@@ -163,7 +163,7 @@ The output is the same kind of files you wrote by hand last week. **An `.astro` 
 
 <br/>
 
-<style> .flow { display: flex; align-items: stretch; justify-content: center; gap: 0.6em; font-family: var(--font-archivo); } .flow p { margin: 0; } .flow .box { border: 1px solid var(--color-neutral); border-radius: 6px; padding: 0.6em 0.9em; font-size: 0.48em; text-align: left; line-height: 1.4; display: flex; flex-direction: column; justify-content: center; } .flow .box .t { font-weight: 700; } .flow .box .s { font-weight: 300; } .flow .arrow { font-size: 0.8em; align-self: center; } .flow .astro-box { border: 2px solid var(--color-orange); } </style> <div class="flow"> <div class="box"><span class="t">Your pages</span><span class="s">HTML and CSS with components, content, files</span></div> <div class="arrow">→</div> <div class="box astro-box"><span class="t">Astro</span><span class="s">processes every copy</span></div> <div class="arrow">→</div> <div class="box"><span class="t">A finished site</span><span class="s">plain HTML and CSS files</span></div> </div> <br/>
+<style> .flow { display: flex; align-items: stretch; justify-content: center; gap: 0.6em; font-family: var(--font-archivo); } .flow p { margin: 0; } .flow .box { border: 1px solid var(--color-neutral); border-radius: 6px; padding: 0.6em 0.9em; font-size: 0.48em; text-align: left; line-height: 1.4; display: flex; flex-direction: column; justify-content: center; } .flow .box .t { font-weight: 700; } .flow .box .s { font-weight: 300; } .flow .arrow { font-size: 0.8em; align-self: center; } .flow .astro-box { border: 2px solid var(--color-orange); } .route-list { font-family: var(--font-archivo); font-size: 0.55em; text-align: left; display: flex; flex-direction: column; gap: 0.5em; margin-top: 0.6em; } .route-list p { margin: 0; } .route-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.8em; align-items: center; } .route-row code { background: rgba(128,128,128,0.15); padding: 0.15em 0.45em; border-radius: 4px; } .route-row .to { color: var(--color-orange); } </style> <div class="flow"> <div class="box"><span class="t">Your pages</span><span class="s">HTML and CSS with components, content, files</span></div> <div class="arrow">→</div> <div class="box astro-box"><span class="t">Astro</span><span class="s">processes every copy</span></div> <div class="arrow">→</div> <div class="box"><span class="t">A finished site</span><span class="s">plain HTML and CSS files</span></div> </div> <br/>
 
 ---
 
@@ -181,8 +181,6 @@ The output is the same kind of files you wrote by hand last week. **An `.astro` 
 ## File = URL
 
 Suppose I have a website called `laxmichitfund.com`
-
-<style> .route-list { font-family: var(--font-archivo); font-size: 0.55em; text-align: left; display: flex; flex-direction: column; gap: 0.5em; margin-top: 0.6em; } .route-list p { margin: 0; } .route-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.8em; align-items: center; } .route-row code { background: rgba(128,128,128,0.15); padding: 0.15em 0.45em; border-radius: 4px; } .route-row .to { color: var(--color-orange); } </style>
 
 <div class="route-list"> <div class="route-row"><code>src/pages/index.astro</code> <span class="to">→</span> <span class="fragment">laxmichitfund.com/</span></div> <div class="route-row"><code>src/pages/about.astro</code> <span class="to">→</span> <span class="fragment">laxmichitfund.com/about</span></div> <div class="route-row"><code>src/pages/About.astro</code> <span class="to">→</span> <span class="fragment">laxmichitfund.com/About</span></div> </div> <div class="fragment">
 
