@@ -28,7 +28,7 @@ assignments: true
 ---
 Week 2 begins and the training wheels start coming off. Today was about two things: asking better questions, and meeting our first framework. As your work gets more complex, your progress depends less on what you know and more on how well you ask, of yourself, an error message, a classmate, an LLM, and only then me.
 
-Then we asked why frameworks exist and answered it from first principles: plain HTML gives you no way to write something once and reuse it everywhere. That leads to components, layouts, and scoped CSS, which is what Astro gives us. We set up a first Astro project and saw that a file in `src/pages/` becomes a URL. The day's exercise is to [make a clock, based on a segment in Kelin Zhang's "AI Studio" course @ RISD](https://risd-ai-studio.notion.site/Make-a-clock-d841eb2f3a804bc191a605f399feb0f7): sketch something that measures time, then use an LLM to bring it to life.
+Then we asked why frameworks exist and answered it from first principles: plain HTML gives you no way to write something once and reuse it everywhere. That leads to components, layouts, and scoped CSS, which is what Astro gives us. We set up a first Astro project and saw that a file in `src/pages/` becomes a URL. The day's exercise is to make clocks!
 
 ## Today's links
 
