@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assignments/day-7-planting-your-garden.md",
+                "file": "slides/day-7-the-indieweb.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-7-planting-your-garden"
+              "title": "day-7-the-indieweb"
             }
           }
         ]
@@ -227,8 +227,9 @@
   },
   "active": "168e40cb3196f930",
   "lastOpenFiles": [
-    "assignments/day-6-make-a-clock.md",
+    "Pasted image 20260728085207.png",
     "assignments/day-7-planting-your-garden.md",
+    "assignments/day-6-make-a-clock.md",
     "slides/day-7-the-indieweb.md",
     "day-7-the-indieweb.md",
     "Pasted image 20260728084019.png",

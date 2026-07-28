@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-28T08:45
+updated: 2026-07-28T08:52
 transition: none
 ---
 
@@ -601,6 +601,13 @@ Commit to your **three plots**. Then write 200 to 300 words about the place they
 ### This could be anyone...
  
 > This is my personal website. Here I will share my thoughts about design, technology and life, away from the noise of social media. I hope you enjoy your stay and explore my creative space.
+
+---
+
+![](Pasted%20image%2020260728085207.png)
+
+[Sightless Scribbles](https://sightlessscribbles.com/about/)
+
  
 ---
  
