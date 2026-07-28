@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-27T23:33
+updated: 2026-07-28T08:45
 transition: none
 ---
 
@@ -362,6 +362,18 @@ Instead of just a timeline, posts are connected to other posts through related t
 
 ---
 
+![](Pasted%20image%2020260728083023.png)
+
+[Arjun's ITP Blog](https://arjunmakesthings.github.io/itp-blog/)
+
+---
+
+![](Pasted%20image%2020260728083109.png)
+
+[To social media or not to social media](https://arjunmakesthings.github.io/itp-blog/to-social-media-or-not-to-social-media)
+
+---
+
 ![](assets/slides/day-7-the-indieweb/IMG-20250728233813579.png)
 
 ---
@@ -386,7 +398,20 @@ Gardens are never finished, they’re **constantly growing, evolving, and changi
 
 ![](assets/slides/day-7-the-indieweb/IMG-20250729001846131.png)
 
+
 note: You’re freed from the pressure to get everything right immediately. You can test ideas, get feedback, and revise your opinions like a good internet citizen. It’s _low friction_. Gardening your thoughts becomes a daily ritual that only takes a small amount of effort. Over time, big things grow. It gives readers an insight into your writing and thinking process. They come to realise you are not a magical idea machine banging out perfectly formed thoughts, but instead an equally mediocre human doing The Work of trying to understand the world and make sense of it alongside you.
+
+---
+
+![](Pasted%20image%2020260728083227.png)
+
+[Adhavan's weekly notes](https://adhavansivaraj.xyz/tags/weekly-notes/)
+
+---
+
+![](Pasted%20image%2020260728083347.png)
+
+[A Believable Fiction](https://abelievablefiction.net/?ref=blr.indiewebclub.org)
 
 ---
 
@@ -420,6 +445,15 @@ The point of a garden is that it’s a personal playspace. You organise the gard
 
 ---
 
+![](Pasted%20image%2020260728083842.png)
+
+[Where is Anirudh](https://whereisanirudh.info/blog/side-quests/)
+
+---
+
+![](Pasted%20image%2020260728084019.png)
+
+---
 ### Intercropping & Content Diversity
 
 Is it all just words? Text? Of course not.
@@ -483,6 +517,7 @@ Then arrange the notes on a wall.
 - Draw a line between two notes that connect
 - The notes in the center are your main subjects
 - Keep the notes that sit alone but still interest you
+
 ---
  
 ## 2. Roaming
@@ -569,14 +604,13 @@ Commit to your **three plots**. Then write 200 to 300 words about the place they
  
 ---
  
-### Six things yours must contain
+### Five things yours must contain
  
 1. **Three things that will exist**, named exactly. Not "a blog". "A list of every bus I take."
 2. **One reader, with a name.** Not "people". Not "anyone who visits".
 3. **One refusal.** What will never be here, and who should leave.
 4. **One number.** How often you add something, on which day.
 5. **One thing you would not post on Instagram**, and why it is safe here.
-6. **One sentence nobody else in this room could write.**
 
 ---
  

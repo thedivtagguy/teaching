@@ -12,7 +12,7 @@
   "fileHashMap": {
     "slides/day-1-the-small-web.md": "59737b56dae443fa064c165a73fb2354bc8a26459028ea9fe14ff6ecdcdd1cc4",
     "slides/day-3-seeing-like-a-browser.md": "46580557825489e6f20ac1d50c6b637dbd91921e6c87c534cca928c559f1901a",
-    "slides/day-7-the-indieweb.md": "9972031884bc7b5ead7855694d61314903d724d32d6559c132dea20e9b4d2a6d",
+    "slides/day-7-the-indieweb.md": "dcb1f8ac27f4181f32227d49866ccf5df25bbe7716cd0023c08e8fb86fb8a566",
     "assignments/day-1-web-archaeology.md": "4f8ba2692ef99008fb688eda34351061ac09412753f6bab548914ffdf26b66f2",
     "day-1-the-small-web.md": "9427dc3788e38474b1c38f9cb74cb4c3d8ed26a6befee288b0832058dd74aa60",
     "slides/day-2-html-is-a-home.md": "29fb058e3006566c36350e3b525b382cfbcacfab054cb7bdb4e0e65aec3b5bc1",
@@ -27,7 +27,7 @@
     "dump/grids-without-tears.md": "8330932cabbce5851d28d390521eb0ad48c7000a7fe4b05be565898e9400372d",
     "dump/grids-without-tears-slides.md": "0f5c83016c378de9a2dd2066ddab2a53832aca335362561bcfb2cb4287160d48",
     "assignments/day-5-grid-challenges.md": "0cfa3048d5e4f0c19f59c744c9a9aef701fb2743f659bd543e363f085c43a2c3",
-    "day-7-the-indieweb.md": "74441dceb6f59f1e5b1cf2519458eed4dac06834d99eb316e1b2ce22c4ddfe76",
+    "day-7-the-indieweb.md": "a40cf6d9066e451d213591086c4d93125526a5a19f18fb5e3a5b38c2ed4ccf49",
     "day-5-the-make-day.md": "02a52f838ec69730c5cd2804111db36e60bf3ffb88fbc535f1bc01f944e42d11",
     "slides/day-5-the-make-day.md": "1a2fd9305f82613b0586da22332c5dfd0f8f25cfd9182bb69f4c2e6d73f99de4",
     "assignments/day-3-space-oddity.md": "e3ebbbf9e1dc18f11478ae2e793db7512e518b566da3965445f1bf5e67d5d873",
@@ -36,8 +36,8 @@
     "assignments/day-4-fit-to-print.md": "6ceb19255ae090e1577a98a62959c87e02a0756c3f76d421c2adfc22c27408e7",
     "slides/day-6-ask-better-make-a-clock.md": "ee22477a12f4241a2bd31ecafb2ab9a0c8ea97368a37a56d27c6b43444d069ac",
     "day-6-ask-better-make-a-clock.md": "87aa01552453b0c1b477c59d75a66226a5ca7054a006f0b766145e6c248c04f1",
-    "assignments/day-6-make-a-clock.md": "cd4b980887960297d96f0b2c25a4c7c73031e2d72864e765cf72ed3ef8332e6c",
+    "assignments/day-6-make-a-clock.md": "efb7275c31dfb29065278037d2a691717d9177baec123e4d78a33793814eb419",
     "library.md": "dd493aa4b64c843646c1f6bd58d9b280c3aed977b1f59cf11a05db02e4115cbb",
-    "assignments/day-7-planting-your-garden.md": "52eb8e0d3761ab375a868636d9ea05711a16c8e9e1fe43e161ff044de35a226c"
+    "assignments/day-7-planting-your-garden.md": "2cec615871d92917cd80477aa35bb80349dda7f7b06389d73cad7cb370b536e8"
   }
 }

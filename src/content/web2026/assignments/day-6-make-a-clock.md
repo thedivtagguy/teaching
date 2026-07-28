@@ -1,10 +1,10 @@
 ---
-title: Make a Clock
+title: "Assignment 5: Make a Clock"
 due: 2026-07-28
 description: Sketch a clock, then bring it to life in Astro with an LLM
 published: true
 date: 2026-07-27T15:00
-updated: 2026-07-27T15:12
+updated: 2026-07-28T08:46
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/8
 ---
 Today's exercise is [based on a segment in Kelin Zhang's "AI Studio" course @ RISD](https://risd-ai-studio.notion.site/Make-a-clock-d841eb2f3a804bc191a605f399feb0f7).

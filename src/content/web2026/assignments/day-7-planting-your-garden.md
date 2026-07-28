@@ -1,10 +1,10 @@
 ---
-title: "Assignment 7: Planting Your Garden"
+title: "Assignment 6: Planting Your Garden"
 due: 2026-07-29
 description: Commit to a small, sustainable plan for your own site
 published: true
 date: 2026-07-27T18:00
-updated: 2026-07-27T23:35
+updated: 2026-07-28T08:46
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/7
 ---
 For one week, you learned how to build a website. In the next two days, you decide what your website is for.
@@ -53,7 +53,7 @@ Then look at a minimum of five personal websites. You can start at these locatio
 - Your mood board from Day 1. Look at those websites again, because you know more now than you did on Day 1.
 - [Marginalia Search](https://marginalia-search.com/), which is useful to find small blogs about your own subjects
 
-Then select one website that you like and examine it carefully. Write notes on it, and answer these questions in your notes:
+Then select one website that you like and examine it carefully. Write notes (I don't want vibes and short notes here, explain! expound! elucidate!) on it, and answer these questions in your notes:
 
 - What does this person assume you already know?
 - Where is the newest thing on the site? How did you find it?
@@ -93,7 +93,7 @@ Your manifesto must contain:
 - **One refusal.** Tell the reader what is never on this website, and who can leave now.
 - **One number.** How frequently you add something, and on which day.
 - **One thing that you do not put on Instagram or LinkedIn.** Tell the reader why it is safe on your own website.
-- **One sentence that no other student in this class can write.**
+
 Do not use these words today: algorithm, authentic, corporate, creative journey, digital garden, explore, in today's world, journey, passion, showcase, space to express myself, unfiltered, and vibe. You heard most of them in the class this morning. Use your own words for the same ideas.
  
 The form is yours. A manifesto can be a list of rules, a letter to one person, or a description of an object. It does not have to be three paragraphs of prose.
@@ -108,6 +108,7 @@ If you cannot start, complete some of these sentences and then remove the parts 
 - Nothing here is ________.
 - You can tell that it is mine because ________.
 - Elsewhere I pretend that ________. Here I do not.
+
 There are example manifestos at <https://yesterweb.org/#appendix-i>. Read them for ideas, but do not copy them, because the tone must be your own.
  
 
