@@ -4,7 +4,7 @@ due: 2026-07-29
 description: Commit to a small, sustainable plan for your own site
 published: true
 date: 2026-07-27T18:00
-updated: 2026-07-28T08:46
+updated: 2026-07-28T12:15
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/7
 ---
 For one week, you learned how to build a website. In the next two days, you decide what your website is for.
@@ -38,7 +38,7 @@ When all the notes are on the wall, arrange them. Put related notes near each ot
 
 Other people made these decisions before you, and many of them wrote about the decisions. Read a minimum of one of these essays:
 
-- [Laurel Schwulst, "My website is a shifting house next to a river of knowledge"](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) (recommended for designers)
+- [Laurel Schwulst, "My website is a shifting house next to a river of knowledge"](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/)
 - [Mike Caulfield, "The Garden and the Stream: A Technopastoral"](https://garden.synesthesia.co.uk/references/readwise/articles/mike-caulfield-the-garden-and-the-stream/)
 - [Joel Hooks, "My blog is a digital garden, not a blog"](https://joelhooks.com/digital-garden/)
 - [Maggie Appleton, "A Brief History & Ethos of the Digital Garden"](https://maggieappleton.com/garden-history/)
@@ -52,6 +52,7 @@ Then look at a minimum of five personal websites. You can start at these locatio
 - [Neocities](https://neocities.org/browse) and [webrings](https://webring.xxiivv.com/)
 - Your mood board from Day 1. Look at those websites again, because you know more now than you did on Day 1.
 - [Marginalia Search](https://marginalia-search.com/), which is useful to find small blogs about your own subjects
+- More small-web and indieweb search engines and lists: [Kagi Small Web](https://kagi.com/smallweb/) and its [source list of feeds](https://github.com/kagisearch/smallweb), [searchmysite.net](https://searchmysite.net/), [the IndieWeb webring](https://xn--sr8hvo.ws/directory) and [IndieWeb.org's sites list](https://indieweb.org/sites), and [ooh.directory](https://ooh.directory/) (blogs organized by subject)
 
 Then select one website that you like and examine it carefully. Write notes (I don't want vibes and short notes here, explain! expound! elucidate!) on it, and answer these questions in your notes:
 
