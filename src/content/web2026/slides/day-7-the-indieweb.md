@@ -1,6 +1,6 @@
 ---
 date: 2026-07-15T12:00
-updated: 2026-07-28T08:52
+updated: 2026-07-28T11:15
 transition: none
 ---
 
@@ -37,7 +37,9 @@ Whatever it is that space looks like.
 
 ---
 
-<split even gap="2"> <div>
+<split even gap="2"> 
+
+<div>
 
 > Social networks standardised people and their way to think and talk. It's not a conspiracy theory but a matter of fact. We're loosing our originality.
 
@@ -51,7 +53,9 @@ https://darkmiryam.neocities.org/manifesto
 
 ---
 
-<split even gap="2"> <div>
+<split even gap="2">
+
+<div>
 
 > Ever since Youtube video makers went “professional”, it’s been nothing but CONTENT CONTENT CONTENT. It doesn’t have to be interesting, it just has to be more than 10 minutes and have an audience that will be entertained by it; It rewards the uploading of junk.
 
