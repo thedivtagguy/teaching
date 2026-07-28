@@ -22,22 +22,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "2ae90cb352a7c026",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "5dba32c26162f577",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {},
-              "icon": "slides",
-              "title": "Preview: day-7-the-indieweb.md"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -227,11 +211,14 @@
   },
   "active": "168e40cb3196f930",
   "lastOpenFiles": [
+    "day-7-the-indieweb.md",
+    "day-8-thinking-in-components.md",
+    "slides/day-5-the-make-day.md",
+    "day-4-typesetting-a-page.md",
+    "assignments/day-7-planting-your-garden.md",
     "slides/day-7-the-indieweb.md",
     "Pasted image 20260728085207.png",
-    "assignments/day-7-planting-your-garden.md",
     "assignments/day-6-make-a-clock.md",
-    "day-7-the-indieweb.md",
     "Pasted image 20260728084019.png",
     "Pasted image 20260728083842.png",
     "Pasted image 20260728083508.png",
@@ -248,13 +235,10 @@
     "assets/slides/day-7-the-indieweb/IMG-20260727214724814.png",
     "assets/slides/day-7-the-indieweb/IMG-20260727214600487.png",
     "slides/day-6-ask-better-make-a-clock.md",
-    "slides/day-5-the-make-day.md",
     "assignments/day-5-grid-challenges.md",
     "assignments/day-7-reply-and-plots.md",
-    "day-4-typesetting-a-page.md",
     "day-5-the-make-day.md",
     "day-10-design-systems-and-liftoff.md",
-    "day-8-thinking-in-components.md",
     "assets/slides/day-6-ask-better-make-a-clock",
     "Untitled.md",
     "guides.md",

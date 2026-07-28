@@ -3,9 +3,9 @@ title: "Assignment 6: Planting Your Garden"
 due: 2026-07-29
 description: Commit to a small, sustainable plan for your own site
 published: true
-date: 2026-07-27T18:00
-updated: 2026-07-28T12:15
-submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/7
+date: 2026-07-28T18:00:00
+updated: 2026-07-28T15:04
+submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/9
 ---
 For one week, you learned how to build a website. In the next two days, you decide what your website is for.
 
