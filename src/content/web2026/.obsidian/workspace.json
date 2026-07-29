@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-8-information-architecture.md",
+                "file": "slides/day-7-the-indieweb.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-8-information-architecture"
+              "title": "day-7-the-indieweb"
             }
           }
         ]
@@ -227,8 +227,9 @@
   },
   "active": "168e40cb3196f930",
   "lastOpenFiles": [
-    "slides/day-8-information-architecture.md",
+    "day-7-the-indieweb.md",
     "day-8-information-architecture.md",
+    "slides/day-8-information-architecture.md",
     "assignments/day-4-fit-to-print.md",
     "assets/slides/day-8-information-architecture/IMG-20260729085939761.png",
     "assets/slides/day-8-information-architecture/IMG-20260729085930713.png",
@@ -249,7 +250,6 @@
     "assignments/day-7-planting-your-garden.md",
     "day-10-design-day.md",
     "day-9-components-layouts-and-markdown.md",
-    "day-7-the-indieweb.md",
     "day-8-thinking-in-components.md",
     "slides/day-5-the-make-day.md",
     "day-4-typesetting-a-page.md",

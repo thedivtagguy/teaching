@@ -1,6 +1,6 @@
 ---
 date: 2026-07-28T23:00
-updated: 2026-07-29T09:02
+updated: 2026-07-29T09:59
 transition: none
 ---
 
@@ -66,7 +66,7 @@ Information architecture is the practice of three decisions:
 
 ![](IMG-20260729083536732.png)
 
-</div>
+</split>
 
 
 ---
