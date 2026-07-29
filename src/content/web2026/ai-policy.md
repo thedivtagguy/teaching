@@ -2,7 +2,7 @@
 title: AI Policy
 date: 2026-07-13
 section: Appendix
-updated: 2026-07-19T17:49
+updated: 2026-07-28T20:16
 published: true
 slug: ai-policy
 ---
@@ -19,7 +19,7 @@ AI tools are everywhere now and yes they're pretty useful for certain things. I 
 
 ## What's Not Fine
 
-**Any written work**: Essays, reflections, design rationales, project descriptions, your manifesto, your reply letter. Nope. These need to be in your voice, with your thoughts. I want to read what you think, not what GPT thinks you should think. You ain't bothering to write it, I ain't bothering to read it.
+**Any written work**: Essays, reflections, design rationales, project descriptions, your manifesto, your content inventory. Nope. These need to be in your voice, with your thoughts. I want to read what you think, not what GPT thinks you should think. You ain't bothering to write it, I ain't bothering to read it.
 
 **Creative work**: Don't use AI to generate your graphics, illustrations, please. Same goes for website copy or creative writing. That may not be your preference, but please try to stick with this for the duration of the class. The whole point is for you to develop your own design voice and perspective.
 

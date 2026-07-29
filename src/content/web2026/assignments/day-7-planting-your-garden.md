@@ -4,7 +4,7 @@ due: 2026-07-29
 description: Commit to a small, sustainable plan for your own site
 published: true
 date: 2026-07-28T18:00:00
-updated: 2026-07-28T15:04
+updated: 2026-07-28T20:16
 submissionUrl: https://github.com/open-making/web2026-dev-notes/issues/9
 ---
 For one week, you learned how to build a website. In the next two days, you decide what your website is for.
@@ -15,7 +15,7 @@ These two days have no code in them (phew). You look at what you know, you look 
 
 **Day 7 (today).** In the class, you make a list of your subjects and you examine the websites of other people. After the class, you select your sections and you write a manifesto.
 
-**Day 8 (tomorrow).** In the morning, you read the purpose statements of the other students and you discuss them. Then you draw a site map and you write an update plan for each section. After that, the design work starts.
+**Day 8 (tomorrow).** In the morning, you read the purpose statements of the other students and you discuss them. Then you draw a site map and you write an update plan for each section. This work has a professional name, information architecture, and tomorrow we learn the full process. The design work starts on Friday.
 
 ## Day 7, in class
 
@@ -118,8 +118,8 @@ There are example manifestos at <https://yesterweb.org/#appendix-i>. Read them f
 1. Read the manifestos of everyone else, and discuss how each person selected a different tone for the same task.
 2. Draw a site map on paper. Use your groups of sticky notes as the sections, and show how a visitor moves through the website.
 3. Put your site map on the wall and show it to the class.
-4. Write an update plan for each of your sections. There are instructions below.
-5. Then start the design work.
+4. Choose your navigation labels and walk one user flow for the reader that your manifesto names.
+5. Write an update plan for each of your sections. There are instructions below.
 
 ### The update plan
 

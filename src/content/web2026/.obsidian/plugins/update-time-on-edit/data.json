@@ -17,13 +17,12 @@
     "day-1-the-small-web.md": "9427dc3788e38474b1c38f9cb74cb4c3d8ed26a6befee288b0832058dd74aa60",
     "slides/day-2-html-is-a-home.md": "29fb058e3006566c36350e3b525b382cfbcacfab054cb7bdb4e0e65aec3b5bc1",
     "requirements.md": "a2b758b999cfa06039cc0a02a4d4253cf2fd801d1abe60b7590909c4b6df9580",
-    "ai-policy.md": "2ac75c9ffef28bda789eefaa1f22599fd1fe90cda1b23472546a267008e9dbf9",
+    "ai-policy.md": "80b1e90a6e81dab69a0ba3f7c0fe540dd851dcb74340bbce0f5b3e15c0820722",
     "outline.md": "22de9c8f504cfa3cec42d022bd0ad81de9e27b81af3f25a0d86a1202b63994c6",
     "day-2-html-is-a-home.md": "59ffe4bf139b7ee1f76b6fb4c8e2720ae437125371dd5fddbcb984d7316459ca",
     "assignments/day-2-bohemian-rhapsody.md": "6fe7d13a38499d35e4d11f38fa10d64ca1dc5f08d8dd7ec7bf040f42572e777a",
     "guides.md": "70506a837c469a96ecdbdbf3985dea8c8ec8128701a7a553eb43f643dabb2ba8",
     "day-3-seeing-like-a-browser.md": "51072f9155896d938a2e397713a9c7de87a7ee969875ec87773d4f6b5afabd8a",
-    "day-8-thinking-in-components.md": "3e75dd9571612356053cc17c556bdaa2b992eae78852429150a05ac66bceb6a0",
     "dump/grids-without-tears.md": "8330932cabbce5851d28d390521eb0ad48c7000a7fe4b05be565898e9400372d",
     "dump/grids-without-tears-slides.md": "0f5c83016c378de9a2dd2066ddab2a53832aca335362561bcfb2cb4287160d48",
     "assignments/day-5-grid-challenges.md": "0cfa3048d5e4f0c19f59c744c9a9aef701fb2743f659bd543e363f085c43a2c3",
@@ -38,6 +37,10 @@
     "day-6-ask-better-make-a-clock.md": "87aa01552453b0c1b477c59d75a66226a5ca7054a006f0b766145e6c248c04f1",
     "assignments/day-6-make-a-clock.md": "efb7275c31dfb29065278037d2a691717d9177baec123e4d78a33793814eb419",
     "library.md": "dd493aa4b64c843646c1f6bd58d9b280c3aed977b1f59cf11a05db02e4115cbb",
-    "assignments/day-7-planting-your-garden.md": "a934df5386199b6cc5db00228ea35e80c91492a5159cfc62f2e7558277c0600f"
+    "assignments/day-7-planting-your-garden.md": "f266dba360e76ed90ef2935b8e62479bd3efd305eeea479c268a8958d8796b5c",
+    "slides/day-8-information-architecture.md": "824a6a3d38f0437f9dcc3b9f6012768df3b1d95780ad640b9d093a8af47a5c2d",
+    "slides/day-9-components-layouts-and-markdown.md": "75cc4aa2b000eb1b0627faa7ffc6f905003496f83a6f73bc0fc85617059503f1",
+    "slides/day-10-design-day.md": "d95e5b81df641247a5c1feef39464029f01ba7fdd91dd4d2b126145555998851",
+    "day-8-information-architecture.md": "394ecb39e8c88eefde06cb4e6291b423582458eadf5bdb10ee54135227b89248"
   }
 }
