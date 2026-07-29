@@ -14,7 +14,10 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			split: true,
+			// One bundled function instead of one-per-route. The split fan-out
+			// was OOMing Netlify's function bundling; this site is almost
+			// entirely prerendered, so a single function is plenty.
+			split: false,
 			edge: false
 		}),
 		prerender: {
