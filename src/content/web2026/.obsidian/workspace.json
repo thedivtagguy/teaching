@@ -13,22 +13,37 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-7-the-indieweb.md",
+                "file": "day-9-components-layouts-and-markdown.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-7-the-indieweb"
+              "title": "day-9-components-layouts-and-markdown"
+            }
+          },
+          {
+            "id": "b5af0edadb94fba4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "slides/day-8-information-architecture.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "day-8-information-architecture"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
-        "id": "3b54b28e9e29c7cc",
+        "id": "b943da1ec52e7597",
         "type": "tabs",
         "children": [
           {
-            "id": "dd75f84df00afa9e",
+            "id": "eb991a7ab8dd9ce9",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -225,11 +240,20 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "168e40cb3196f930",
+  "active": "eb991a7ab8dd9ce9",
   "lastOpenFiles": [
-    "day-7-the-indieweb.md",
+    "slides/day-7-the-indieweb.md",
     "day-8-information-architecture.md",
+    "assignments/day-8-information-architecture.md",
     "slides/day-8-information-architecture.md",
+    "dump/Notes from repo.md",
+    "assets/assignments/day-8-information-architecture/book.png",
+    "assets/assignments/day-8-information-architecture/artwork.png",
+    "assets/assignments/day-8-information-architecture/note.png",
+    "assets/assignments/day-8-information-architecture/shown-and-hidden.png",
+    "assets/assignments/day-8-information-architecture",
+    "day-9-components-layouts-and-markdown.md",
+    "day-7-the-indieweb.md",
     "assignments/day-4-fit-to-print.md",
     "assets/slides/day-8-information-architecture/IMG-20260729085939761.png",
     "assets/slides/day-8-information-architecture/IMG-20260729085930713.png",
@@ -238,9 +262,6 @@
     "assets/slides/day-8-information-architecture/IMG-20260729085409007.png",
     "assets/slides/day-8-information-architecture/IMG-20260729085111478.png",
     "assets/slides/day-8-information-architecture",
-    "assets/slides/day-8-information-architecture/IMG-20260729083536732.png",
-    "Pasted image 20260729083514.png",
-    "Pasted image 20260729083355.png",
     "slides/day-9-components-layouts-and-markdown.md",
     "slides/day-8-thinking-in-components.md",
     "day-11-to-18-project-week.md",
@@ -249,12 +270,9 @@
     "slides/day-10-design-day.md",
     "assignments/day-7-planting-your-garden.md",
     "day-10-design-day.md",
-    "day-9-components-layouts-and-markdown.md",
     "day-8-thinking-in-components.md",
     "slides/day-5-the-make-day.md",
     "day-4-typesetting-a-page.md",
-    "slides/day-7-the-indieweb.md",
-    "Pasted image 20260728085207.png",
     "assignments/day-6-make-a-clock.md",
     "day-6-ask-better-make-a-clock.md",
     "assignments/day-1-web-archaeology.md",
@@ -263,14 +281,12 @@
     "data/library-meta.json",
     "slides/day-6-ask-better-make-a-clock.md",
     "assignments/day-5-grid-challenges.md",
-    "assignments/day-7-reply-and-plots.md",
     "assets/slides/day-6-ask-better-make-a-clock",
     "github.com/open-making",
     "github.com",
     "assets/slides/day-4-typesetting-a-page",
     "assets/slides/day-5-the-make-day",
     "assets/slides/day-4-setting-type-placing-images",
-    "assets/slides/day-3-seeing-like-a-browser",
-    "assets/assignments/day-2-bohemian-rhapsody"
+    "assets/slides/day-3-seeing-like-a-browser"
   ]
 }

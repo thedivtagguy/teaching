@@ -1,6 +1,6 @@
 ---
 date: 2026-07-28T23:00
-updated: 2026-07-29T09:59
+updated: 2026-07-29T20:30
 transition: none
 ---
 
@@ -75,74 +75,58 @@ Information architecture is the practice of three decisions:
 
 ---
 
-1. **Content inventory**
-2. **Card sort**
-3. Site map
-4. Navigation and labels
-5. User flows
+## Today
 
-note: Say clearly that this process transfers. If they work on an app, a client website, or a museum kiosk later, the steps are the same. Their own website is their first client.
+1. Card sort our subjects
+2. Review each other's plans
+3. Narrow down to three sections
+4. Write a schema for each section
 
----
-
-## Step 3: The site map
-
-A site map is a drawing of the full website as boxes and lines.
-
-- Each box is a page or a section.
-- Each line connects a section to the pages inside it.
-- The homepage is one box. It is not the whole site.
+note: We are working the front of this process only. Site maps, navigation, and user flows are the later steps, and the same steps transfer to any app or client site later. Their own website is their first client.
 
 ---
 
-## An example site map
+## Review Time
+
+
+---
+
+## Content schemas
+
+A schema is the fixed shape that every entry of one kind shares.
+
+---
+
+## Shown and hidden
+
+![A note wireframe split by a dashed line: title, date, tags, and body are shown; slug, draft, and updated are hidden below.](/assets/assignments/day-8-information-architecture/shown-and-hidden.png)
+
+---
+
+## Shown and hidden
+
+- **Shown** fields the visitor reads: `title`, `date`, `body`.
+- **Hidden** fields only the site uses: `slug`, `draft`, `order`, `updated`.
+
+
+---
+
+## Example: a note
 
 ```
-            Home
-              |
-   +------+---+------+--------+
-   |      |          |        |
- About  Notes    Bus log   Playlists
-          |
-     one page per note
+# shown on the page
+title:  Reheating rice without a soggy mess
+date:   2026-07-31
+tags:   [cooking, notes]
+body:   The trick is a splash of water and a plate on top...
+
+# hidden, used by the website
+slug:   reheating-rice
+draft:  false
 ```
 
-
 ---
 
-## Draw your site map
+## Your turn
 
-- Include all three of your sections.
-- Show the pages inside each section.
-- Mark the page where a visitor arrives first.
-
-
----
-
-## Step 4: The navigation is not the site map
-
-The site map shows every page. The navigation shows only the three to five links that you select for the menu.
-
-A page that is not in the menu is still a valid page. A visitor can reach it through another page. <!--element class="fragment"-->
-
----
-
-## Labels
-
-
-| How you talk       | What they need  |     |
-| ------------------ | --------------- | --- |
-| Musings            | Notes           |     |
-| My practice        | Paintings       |     |
-| Miscellany         | Everything else |     |
-| Thoughts and rants | Blog            |     |
-
----
-
-## Step 6: The update plan
-
-**Content governance** is a plan that keeps content correct over time. Write two or three sentences for each section:
-
-- How fast does this content become old? A week, six months, or never?
-- How often do you add a new item?
-- What happens to old content? Keep it with a date, revise it, or remove it.
+Write a schema for each of your three sections with one real entry each.
