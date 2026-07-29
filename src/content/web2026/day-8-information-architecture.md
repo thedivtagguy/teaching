@@ -10,14 +10,14 @@ seo_description: Content inventories, card sorting, site maps, navigation, and u
 seo_keywords: information architecture, site map, card sorting, content inventory, navigation, user flows, web design
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-29T09:01
+updated: 2026-07-29T10:48
 slug: day-8-information-architecture
 slides: https://teaching.aman.bh/slides/web2026/day-8-information-architecture
 show_metadata_card: true
 devNotes: https://github.com/open-making/web2026-dev-notes/issues/10
 assignments: true
 readings:
-  - title: How to Make Sense of Any Mess (chapters 1 and 2)
+  - title: How to Make Sense of Any Mess (chapters 1-3)
     author: Abby Covert
     url: https://www.howtomakesenseofanymess.com/
     readingTime: 40
