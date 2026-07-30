@@ -27,32 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/day-8-information-architecture.md",
+                "file": "day-10-design-day.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-8-information-architecture"
+              "title": "day-10-design-day"
             }
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "b943da1ec52e7597",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "eb991a7ab8dd9ce9",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {},
-              "icon": "slides",
-              "title": "Preview: day-8-information-architecture.md"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -240,53 +224,52 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "eb991a7ab8dd9ce9",
+  "active": "b5af0edadb94fba4",
   "lastOpenFiles": [
-    "slides/day-7-the-indieweb.md",
-    "day-8-information-architecture.md",
-    "assignments/day-8-information-architecture.md",
-    "slides/day-8-information-architecture.md",
-    "dump/Notes from repo.md",
-    "assets/assignments/day-8-information-architecture/book.png",
-    "assets/assignments/day-8-information-architecture/artwork.png",
-    "assets/assignments/day-8-information-architecture/note.png",
-    "assets/assignments/day-8-information-architecture/shown-and-hidden.png",
-    "assets/assignments/day-8-information-architecture",
-    "day-9-components-layouts-and-markdown.md",
-    "day-7-the-indieweb.md",
-    "assignments/day-4-fit-to-print.md",
-    "assets/slides/day-8-information-architecture/IMG-20260729085939761.png",
-    "assets/slides/day-8-information-architecture/IMG-20260729085930713.png",
-    "assets/slides/day-8-information-architecture/IMG-20260729085913547.png",
-    "assets/slides/day-8-information-architecture/IMG-20260729085858738.png",
-    "assets/slides/day-8-information-architecture/IMG-20260729085409007.png",
-    "assets/slides/day-8-information-architecture/IMG-20260729085111478.png",
-    "assets/slides/day-8-information-architecture",
-    "slides/day-9-components-layouts-and-markdown.md",
-    "slides/day-8-thinking-in-components.md",
     "day-11-to-18-project-week.md",
     "assignments/day-10-wireframes-in-figma.md",
-    "assignments/day-8-content-inventory.md",
-    "slides/day-10-design-day.md",
-    "assignments/day-7-planting-your-garden.md",
     "day-10-design-day.md",
+    "day-9-components-layouts-and-markdown.md",
+    "slides/day-9-components-layouts-and-markdown.md",
+    "slides/day-10-design-day.md",
+    "assets/slides/day-10-design-day/squint-robinsloan.png",
+    "assets/slides/day-10-design-day/squint-maggieappleton.png",
+    "assets/slides/day-10-design-day/squint-restofworld.png",
+    "assets/_squint-tmp.html",
+    "assets/_raw-editorial.png",
+    "assets/_raw-blog.png",
+    "assets/_raw-personal.png",
+    "assets/slides/day-10-design-day/gantt-timeline.png",
+    "assets/_gantt-tmp.html",
+    "assets/slides/day-10-design-day/IMG-20260730234433134.png",
+    "assets/slides/day-10-design-day/IMG-20260730233508159.png",
+    "assets/slides/day-10-design-day/IMG-20260730233407645.png",
+    "assets/slides/day-10-design-day",
+    "assignments/day-3-space-oddity.md",
+    "assignments/day-8-information-architecture.md",
+    "outline.md",
+    "day-1-the-small-web.md",
+    "dump/Notes from repo.md",
+    "slides/day-8-information-architecture.md",
+    "slides/day-7-the-indieweb.md",
+    "day-8-information-architecture.md",
+    "assets/assignments/day-8-information-architecture",
+    "day-7-the-indieweb.md",
+    "assignments/day-4-fit-to-print.md",
+    "assets/slides/day-8-information-architecture",
+    "slides/day-8-thinking-in-components.md",
+    "assignments/day-8-content-inventory.md",
+    "assignments/day-7-planting-your-garden.md",
     "day-8-thinking-in-components.md",
     "slides/day-5-the-make-day.md",
     "day-4-typesetting-a-page.md",
     "assignments/day-6-make-a-clock.md",
     "day-6-ask-better-make-a-clock.md",
     "assignments/day-1-web-archaeology.md",
-    "assignments/day-2-bohemian-rhapsody.md",
-    "assignments/day-3-space-oddity.md",
     "data/library-meta.json",
-    "slides/day-6-ask-better-make-a-clock.md",
-    "assignments/day-5-grid-challenges.md",
     "assets/slides/day-6-ask-better-make-a-clock",
     "github.com/open-making",
     "github.com",
-    "assets/slides/day-4-typesetting-a-page",
-    "assets/slides/day-5-the-make-day",
-    "assets/slides/day-4-setting-type-placing-images",
-    "assets/slides/day-3-seeing-like-a-browser"
+    "assets/slides/day-4-typesetting-a-page"
   ]
 }
