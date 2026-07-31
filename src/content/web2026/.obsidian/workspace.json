@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-9-components-layouts-and-markdown.md",
+                "file": "day-10-design-day.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-9-components-layouts-and-markdown"
+              "title": "day-10-design-day"
             }
           }
         ],
@@ -226,10 +226,12 @@
   },
   "active": "b5af0edadb94fba4",
   "lastOpenFiles": [
+    "day-9-components-layouts-and-markdown.md",
+    "day-8-information-architecture.md",
+    "day-7-the-indieweb.md",
     "day-10-design-day.md",
     "day-11-to-18-project-week.md",
     "assignments/day-10-wireframes-in-figma.md",
-    "day-9-components-layouts-and-markdown.md",
     "slides/day-9-components-layouts-and-markdown.md",
     "slides/day-10-design-day.md",
     "assets/slides/day-10-design-day/squint-robinsloan.png",
@@ -252,9 +254,7 @@
     "dump/Notes from repo.md",
     "slides/day-8-information-architecture.md",
     "slides/day-7-the-indieweb.md",
-    "day-8-information-architecture.md",
     "assets/assignments/day-8-information-architecture",
-    "day-7-the-indieweb.md",
     "assignments/day-4-fit-to-print.md",
     "assets/slides/day-8-information-architecture",
     "slides/day-8-thinking-in-components.md",
