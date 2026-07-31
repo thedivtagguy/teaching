@@ -10,7 +10,7 @@ seo_description: Astro components, props, slots, and layouts, built with an LLM 
 seo_keywords: Astro, components, layouts, markdown, LLM, Obsidian, digital garden, web development course
 seo_type: article
 seo_author: Aman Bhargava
-updated: 2026-07-31T00:53
+updated: 2026-07-31T10:49
 slug: day-9-components-layouts-and-markdown
 slides: https://teaching.aman.bh/slides/web2026/day-9-components-layouts-and-markdown
 show_metadata_card: true
@@ -26,6 +26,7 @@ readings:
 
 ## Today's links
 
+- [LLM Prompting tips](https://risd-ai-studio.notion.site/Prompting-tips-bcc8d2a5cea540139a63b37a83245a17)
 - [Astro Tutorial Follow-Along](https://docs.astro.build/en/tutorial/1-setup/)
 - [Astro docs: Components](https://docs.astro.build/en/basics/astro-components/)
 - [Astro docs: Layouts](https://docs.astro.build/en/basics/layouts/)

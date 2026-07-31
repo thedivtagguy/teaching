@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "day-10-design-day.md",
+                "file": "day-9-components-layouts-and-markdown.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "day-10-design-day"
+              "title": "day-9-components-layouts-and-markdown"
             }
           }
         ],
@@ -56,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -226,10 +228,10 @@
   },
   "active": "b5af0edadb94fba4",
   "lastOpenFiles": [
+    "day-10-design-day.md",
     "day-9-components-layouts-and-markdown.md",
     "day-8-information-architecture.md",
     "day-7-the-indieweb.md",
-    "day-10-design-day.md",
     "day-11-to-18-project-week.md",
     "assignments/day-10-wireframes-in-figma.md",
     "slides/day-9-components-layouts-and-markdown.md",
