@@ -34,7 +34,7 @@ readings:
 
 ## Build week plan
 
-![Build week timeline from 31 Jul to 12 Aug: three days of design, a five day build sprint, and two days of polish before the exhibition](gantt-timeline.png)
+![Build week timeline from 31 Jul to 12 Aug: three days of design, a five day build sprint, and two days of polish before the exhibition](/assets/day-10-design-day/gantt-timeline.png)
 
 ## Today's links
 
