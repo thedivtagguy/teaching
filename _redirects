@@ -1,6 +1,12 @@
 /web2025/short-stories https://web2025-short-stories.netlify.app/ 200!
 /web2025/showcase https://web2025-gallery.netlify.app/ 200!
 
+# web2026 gallery builds with paths.base=/web2026/showcase, so its assets and
+# subroutes (/aaditi etc.) arrive prefixed; the splat rule strips the prefix
+# back off, since the gallery site serves its files at root.
+/web2026/showcase https://web2026-gallery.netlify.app/ 200!
+/web2026/showcase/* https://web2026-gallery.netlify.app/:splat 200!
+
 # Slide export path fixes. These only apply when no real file matches, mirroring
 # the /slides/ fallbacks in hooks.server.js (which only runs in local dev).
 
